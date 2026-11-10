@@ -1,0 +1,139 @@
+% !TEX program = lualatex
+\documentclass[11pt,a4paper]{ltjsarticle}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs}
+\usepackage{luatexja-fontspec}
+\setmainjfont{HaranoAjiMincho-Regular}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{remark}[theorem]{注意}
+\newtheorem{proposition}[theorem]{命題}
+\renewcommand{\proofname}{証明}
+\newcommand{\C}{\mathbb C}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Gr}{\operatorname{Gr}}
+\newcommand{\supp}{\operatorname{supp}}
+\title{滑らかな三次超曲面のPoisson対モジュライの既約成分\\
+\large 全次元の個数公式と各成分の次元}
+\author{研究草稿（著者情報未記入）}
+\date{2026年11月11日・v1}
+\begin{document}
+\maketitle
+\begin{abstract}
+滑らかな射影cubic $n$-fold ($n\ge3$) と非零の正則Poisson双ベクトルを同時に動かす相対Poissonスキームを考え、Poissonスカラーを保持して射影座標変換で割る。既存のPoisson正規形定理を明示的な入力として、基礎位相空間の既約成分が一般Poisson階数$2k$ ($1\le k\le\lfloor(n+2)/3\rfloor$)でちょうど一つずつあり、従って総数は$\lfloor(n+2)/3\rfloor$であることを証明する。各成分の次元を閉公式で求め、成分閉包が相互に包含されないことを示す。相対Poissonスキームの非被約構造、成分の交叉、入力正規形定理の独立監査および新規性の包括調査は未完了である。
+\end{abstract}
+\section{定義とPoisson正規形の入力}
+$N=n+2\ge5$、$\dim_\C V=N$とする。$\mathcal U_N\subset\PP(\Sym^3V^*)$を滑らかな三次超曲面$X_F=V(F)$の非空開集合とし、$\mathfrak I_N^\times\to\mathcal U_N$を非零Poisson双ベクトルの相対スキームとする。射影多項式$[F]$の局所自明化では、$P\in\wedge^3V$を用いて$\pi=\iota_{dF}P|_{X_F}$と表示する。$F$のスカラー倍変更は$P$の逆スカラー倍で吸収する。従って局所表示の$P$は$\wedge^3V$に値を持ち、以下の軌道・次元計算はこの同変な局所表示で行う。
+
+\begin{theorem}[既存研究の正規形定理（入力）]\label{thm:normal}
+滑らかな三次$F$について$P\mapsto \iota_{dF}P$は$\wedge^3V\xrightarrow{\sim} H^0(X_F,\wedge^2T_{X_F})$を与える。非零Poisson条件が成り立つなら、線形変数変換と適切な整数$k\ge1$により
+\[
+ V=W_1\oplus\cdots\oplus W_k\oplus Z,\qquad
+ \dim W_s=3,\quad m:=\dim Z=N-3k,
+\]
+\[
+ P=P_1+\cdots+P_k,\quad
+ 0\ne P_s\in\wedge^3W_s,\qquad
+ F=\sum_{s=1}^k f_s(W_s,Z)
+\]
+と書ける。$F$の純$Z$次数三の部分は一度だけ数える。Poisson双ベクトルの一般階数は$2k$である。逆にこの形式の任意の滑らかな$F$はPoisson条件を満たす。
+\end{theorem}
+証明の所在は
+\url{https://github.com/uedakazushi/nc-cubic/blob/main/papers/sections/poisson_geometry.tex} の\texttt{thm:pg-normal}、\texttt{prop:pg-represent}、\texttt{prop:pg-jacobi-extension}および関連補題である。本稿ではこれらを既存研究の\emph{入力}とし、今回独立に全証明を監査したとは述べない。上の$k$は$1\le k\le\lfloor N/3\rfloor$を動く。
+
+\section{各rank層の幾何と次元}
+局所的に$P$の一般階数が$2k$となる対の集合を$\mathfrak I_{N,k}$と置く。
+\begin{lemma}[非零三重ベクトルの軌道]\label{lem:orbit}
+$P_k=e_{123}+e_{456}+\cdots+e_{3k-2,3k-1,3k}$とする。この形の三重ベクトルは$\GL(V)$の一軌道$\mathcal O_{N,k}$をなし、
+\[
+ \dim\mathcal O_{N,k}=k(3N-8).
+\]
+また、縮約写像$\wedge^2V^*\to V$の像の次元は$3k$である。
+\end{lemma}
+\begin{proof}
+任意の$P_s$は$W_s$の基底の体積元へ正規化できるので一軌道となる。縮約写像の像は$W_1\oplus\cdots\oplus W_k$であり、これが$P$のsupportを内在的に復元する。Lie環で安定化子を計算する。$W_s$から他の$W_t$や$Z$へ写す非対角成分は$P_s$の変分中の$\wedge^2W_s\otimes W_t$あるいは$\wedge^2W_s\otimes Z$を生み、異なる$s,t$由来の成分と相殺できない。各$W_s$の対角成分はtrace零なので$\mathfrak{sl}_3$、$Z\to W_1\oplus\cdots\oplus W_k$は自由、$Z\to Z$も自由である。従って安定化子のLie次元は$8k+3km+m^2$。軌道次元は
+\[
+ N^2-(8k+3km+m^2)=k(9k+3m-8)=k(3N-8).
+\]
+有限のブロック置換は次元を変えない。最後の主張は縮約の表示から従う。
+\end{proof}
+\begin{lemma}[固定三重ベクトルの三次式空間]\label{lem:fiber}
+$P=P_k$を固定すると、定理\ref{thm:normal}で許される斉次三次式は線形空間$L_{N,k}$をなし、その次元は
+\[
+ \ell_{N,k}=\binom{m+2}{3}
+ +k\left(10+6m+3\binom{m+1}{2}\right),\qquad m=N-3k.
+\]
+この空間の滑らかな三次式の開集合は非空かつ既約である。
+\end{lemma}
+\begin{proof}
+純$Z$三次は$\binom{m+2}3$方向。各$W_s$のみに依存する三次は10方向、$W_s$次数2・$Z$次数1は$6m$方向、$W_s$次数1・$Z$次数2は$3\binom{m+1}2$方向である。異なる$W_s$同士の混合単項式は存在しない。座標の三乗和$\sum_{i=1}^N x_i^3$はこの空間にあり滑らかなので、滑らかなものは非空Zariski開集合である。逆向きのPoisson性も正規形定理による。
+\end{proof}
+\begin{proposition}[相対rank層の既約性]\label{prop:strata}
+各$\mathfrak I_{N,k}$は非空既約の局所閉集合で、次元
+\[
+ D_{N,k}=k(3N-8)+\ell_{N,k}-1
+\]
+を持つ。商スタック$[\mathfrak I_{N,k}/\PGL(V)]$の次元は
+\begin{equation}\label{eq:dimension}
+ \boxed{\quad d_{n,k}
+ =k(3N-8)+\binom{m+2}{3}
+ +k\left(10+6m+3\binom{m+1}{2}\right)-N^2,\quad
+ N=n+2,\ m=N-3k.\quad}
+\end{equation}
+\end{proposition}
+\begin{proof}
+$\mathcal O_{N,k}$は連結な$\GL(V)$の一軌道なので既約。$P\in\mathcal O_{N,k}$の上で$[F]$の許される空間は$\PP(L_{N,k})$で、安定化子の作用により軌道上で同変な射影束をなす。その中の滑らかさの開集合も既約非空。Poisson対の相対自明化の下でこれが$\mathfrak I_{N,k}$を表すので次元は軌道次元と射影ファイバー次元$\ell_{N,k}-1$の和である。$\dim\PGL_N=N^2-1$を引けば\eqref{eq:dimension}となる。滑らかなcubicの射影自己同型群は有限（Matsumura--Monskyの標準結果）なので、この商次元は通常の幾何学的同型類の局所次元とも一致する。商スタックの次元式自体には有限安定化の議論は不要である。
+\end{proof}
+\section{既約成分の完全な集合論的分類}
+\begin{theorem}[全次元の成分数と次元]\label{thm:classification}
+定理\ref{thm:normal}を入力とすると、$\mathfrak I_N^\times$の基礎位相空間の既約成分は、$\overline{\mathfrak I_{N,k}}$（$1\le k\le\lfloor N/3\rfloor$）のちょうど$\lfloor N/3\rfloor$個である。これらは商スタックでも異なる既約成分を定め、一般Poisson階数は$2k$、次元は\eqref{eq:dimension}で与えられる。特に
+\[
+ \boxed{\quad\#\operatorname{Irr}(\mathfrak M_n)
+ =\left\lfloor\frac{n+2}{3}\right\rfloor\quad(n\ge3).\quad}
+\]
+\end{theorem}
+\begin{proof}
+各層は命題\ref{prop:strata}によって非空既約であり、正規形定理より全体は有限個の層の和である。異なる層の閉包は相互に包含されないことを示す。
+
+まず$j<k$なら$\overline{\mathfrak I_{N,j}}$上で縮約写像$\wedge^2V^*\to V$の階数は高々$3j$である。これは小行列式による閉条件である。しかし$\mathfrak I_{N,k}$上のその階数は$3k$なので、$\mathfrak I_{N,k}$は$\overline{\mathfrak I_{N,j}}$に含まれない。
+
+逆に$j>k$とすると、次元式を$N$を固定して整理し
+\begin{align*}
+ D_{N,k}-D_{N,k+1}
+ &=3(3k-1)(N-3k)+8>0
+\end{align*}
+を得る。ここで両方の層が存在する場合$N-3k\ge3$である。従って$D_{N,j}<D_{N,k}$で、$k$層全体は$j$層の閉包に含まれ得ない。
+これらの閉包は互いに包含されず、有限個で全体を被覆する既約閉集合なので、すべてが既約成分であり他にない。$\PGL(V)$による商は連結群の不変な各成分を保つため、同じ個数を持つ。
+\end{proof}
+\begin{center}
+\begin{tabular}{rcl}
+\toprule
+$n$ & 成分数 & $d_{n,k}$（$k=1,2,\ldots$の順）\\\midrule
+3 &1&17\\
+4 &2&30,\ 4\\
+5 &2&48,\ 16\\
+6 &2&72,\ 34\\
+7 &3&103,\ 59,\ 6\\
+8 &3&142,\ 92,\ 24\\
+9 &3&190,\ 134,\ 51\\
+10&4&248,\ 186,\ 88,\ 8\\\bottomrule
+\end{tabular}
+\end{center}
+\begin{remark}[零構造とスカラー]
+$\pi=0$も許せば零切断は$k=1$成分の閉包に含まれ、位相的既約成分の個数は変わらない。非零Poissonスカラーも$\C^*$で割って射影化する場合は各成分の次元が一つ減る。固定Fermat cubic上のPoisson schemeの成分数とは一致しない。
+\end{remark}
+\begin{remark}[scheme-theoreticな限界]
+本定理は基礎位相空間の既約成分を決める。全Poisson schemeが被約であること、成分交叉のscheme構造、embedded associated primeの不存在は示していない。$n=4$のrank4成分のgeneric smoothnessについては独立稿\texttt{poisson\_cubic\_fourfold\_moduli.tex}を参照。一般$n$のgeneric reducednessは未決着である。
+\end{remark}
+\section{新規性、検証状況と再現}
+証明は既存のPoisson正規形定理からの厳密な帰結であり、軌道安定化子・係数数・閉包の非包含は本稿で示した。先行研究の一次資料の全面調査、および元の正規形定理の全証明の独立検証は未完了。公表時には新規性の確認と証明依存の全面監査を行う。Pymの概説は背景であり本定理の根拠として引用しない。
+\texttt{python3 computations/verify\_poisson\_cubic\_pair\_dimensions.py} は$3\le n\le20$について整数公式、正の次元差と表をPython標準ライブラリだけで検算する。これは定理\ref{thm:normal}の証明ではない。
+\begin{thebibliography}{9}
+\bibitem{Pym} B.~Pym, \emph{Constructions and classifications of projective Poisson varieties}, Lett. Math. Phys. \textbf{108} (2018), 573--632, \url{https://doi.org/10.1007/s11005-017-0984-5}.
+\bibitem{MM} H.~Matsumura and P.~Monsky, \emph{On the automorphisms of hypersurfaces}, J. Math. Kyoto Univ. \textbf{3} (1964), 347--361. 書誌と正確な適用範囲は公表前に原典を再照合する。
+\bibitem{Main} 現行研究原稿 \emph{Poisson normal form for smooth cubic hypersurfaces}, \url{https://github.com/uedakazushi/nc-cubic/blob/main/papers/sections/poisson_geometry.tex}, 定理\texttt{thm:pg-normal}。
+\end{thebibliography}
+\end{document}

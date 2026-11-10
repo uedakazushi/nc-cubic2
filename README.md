@@ -1,6 +1,14 @@
 # nc-cubic2：非可換cubicの独立境界・モジュライ研究
 
-**2026年11月11日・v2。独立した研究内容の正本は本リポジトリの `main`。**
+**2026年11月11日・v3。独立した研究内容の正本は本リポジトリの `main`。**
+
+## Poisson cubic $n$-fold pair の全次元分類
+
+**既存Poisson正規形定理を入力とする結果**：滑らかなcubic $n$-fold（$n\ge3$）を動かし、非零Poissonスカラーを保持したpair moduliの既約成分は $\lfloor(n+2)/3\rfloor$ 個。成分の次元閉公式は [全次元の論文草稿](papers/poisson_cubic_pair_components.tex)、仮定・未解決課題は [全次元研究ノート](notes/poisson_cubic_all_dimensions.md)、検算は `python3 computations/verify_poisson_cubic_pair_dimensions.py`。
+
+## VS Code / LaTeX Workshop
+
+リポジトリをVS Codeで**フォルダとして開き**、TeX LiveとLaTeX Workshopを導入する。`.vscode/settings.json` の既定recipeは `latexmk (LuaLaTeX, repository root)`。どの `papers/*.tex` を開いても、リポジトリrootを作業ディレクトリにしてルートの `.latexmkrc` を明示的に読み、生成物は `build/` に置く。TeXを保存するとビルド、手動では `LaTeX Workshop: Build LaTeX project`。ルートから `latexmk papers/poisson_cubic_pair_components.tex` でも同じ原稿を組版できる。LaTeX Workshopの設定だけではTeX Live自体はインストールされない。
 
 ## 新プロジェクト：Poisson cubic fourfold の同時モジュライ
 

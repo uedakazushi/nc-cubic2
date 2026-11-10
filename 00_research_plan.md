@@ -1,6 +1,13 @@
 # 研究方針：独立境界・モジュライ研究
 
-**2026-11-11 / v2。再開時は最初に本ファイルを読む。**
+**2026-11-11 / v3。再開時は最初に本ファイルを読む。**
+
+## 最重要の構造結果：全次元のPoisson cubic pairの既約成分
+
+- **新定理（既存Poisson正規形定理を入力とする）**：滑らかなcubic $n$-fold（$n\ge3$）の非零Poisson pairを同時に変形させると、基礎位相空間の既約成分は一般rank $2k$（$1\le k\le\lfloor(n+2)/3\rfloor$）について各一つ、合計 $\lfloor(n+2)/3\rfloor$ 個。各成分の次元は `papers/poisson_cubic_pair_components.tex` の閉公式で与える。$n=3,4,5,6,7$の次元は順に $(17)$、$(30,4)$、$(48,16)$、$(72,34)$、$(103,59,6)$。
+- **主張の確実性**：軌道次元、係数空間、層の既約性、閉包の非包含について原稿に証明を記載。深い正規形定理は `nc-cubic/papers/sections/poisson_geometry.tex` に既存証明があるが、今回その独立再監査は未完了。全次元のPoisson schemeのgeneric reducedness・交叉のscheme構造・初出確認は未解決。
+- **最優先の研究手順**：正規形定理の独立監査→各成分の接空間／非被約性→成分交叉・零切断→先行研究に基づく公表稿の再編。詳細は `notes/poisson_cubic_all_dimensions.md`。
+- **保存と組版**：GitHub mainが正本、.vscodeでLaTeX Workshop + LuaLaTeX、PDFはbuildに生成してGit追跡しない。GitHub Actionsとforce pushは使わない。
 
 ## 新しい重点課題：Poisson cubic fourfold pairモジュライ（独立研究）
 
