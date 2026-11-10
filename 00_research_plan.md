@@ -8,7 +8,8 @@
 
 - **現在の最重要の到達点（既存Poisson正規形定理を入力とする）**：成分数は2、rank2成分のモジュライ次元30、rank4成分の次元4。rank2は$\operatorname{Gr}(3,6)$の非零錐、rank4は二つの平面三次Jacobianブロックに由来する。証明は `papers/poisson_cubic_fourfold_moduli.tex`。
 - **依存**：主リポジトリ `nc-cubic/papers/sections/poisson_geometry.tex` のPoisson正規形定理（独立再監査は未実施）。そのため、公表完成定理であるとの主張はしない。数学的な帰結の証明と定理の独立監査を区別する。
-- **未解決の核心**：各成分のgeneric reducedness、交叉のscheme構造、零Poissonの近傍、成分の境界、および新規性の一次文献照合。
+- **新たに確認した点**：rank4成分のgeneric reducednessをFermat点のJacobi微分の整数36次小行列式で証明。検算コードは `verify_poisson_cubic_fourfold_tangent.py`。
+- **未解決の核心**：rank2成分のgeneric reducedness、交叉のscheme構造、零Poissonの近傍、成分の境界、および新規性の一次文献照合。
 - **優先手順**：六変数で正規形の独立証明→generic tangent/obstruction計算→交叉の局所環→全scheme分類→最終稿の先行研究調査。
 - **再開順**：本方針→`notes/poisson_cubic_fourfold_moduli.md`→`papers/poisson_cubic_fourfold_moduli.tex`→`computations/verify_poisson_cubic_fourfold.py`。既存の独立Pfaffian研究も保持する。
 

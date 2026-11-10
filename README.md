@@ -6,7 +6,7 @@
 
 - [研究方針](00_research_plan.md) → [研究ノート](notes/poisson_cubic_fourfold_moduli.md) → [日本語LuaLaTeX草稿](papers/poisson_cubic_fourfold_moduli.tex)
 - **既存のPoisson正規形定理に基づく分類**：滑らかなcubicと非零Poisson構造の組のモジュライは基礎位相空間として2既約成分、次元30（rank2）と4（rank4）。
-- 重要な残課題は入力定理の独立検証、Poisson schemeの非被約構造・交叉の解析、新規性の照合。検算：`python3 computations/verify_poisson_cubic_fourfold.py`（SymPy）。
+- rank4成分はFermat点のJacobi線形化の階数36からgeneric reducednessも確認。重要な残課題は入力定理の独立検証、rank2と成分交叉のscheme構造、新規性の照合。検算：`python3 computations/verify_poisson_cubic_fourfold.py`（SymPy）。
 - LuaLaTeX：`latexmk papers/poisson_cubic_fourfold_moduli.tex`。GitHub Actions不使用、PDFは生成物としてbuild/へ。
 
 ## 現在の研究内容

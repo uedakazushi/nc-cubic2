@@ -10,6 +10,10 @@
 
 `papers/poisson_cubic_fourfold_moduli.tex` に分類の証明をまとめた。**今回独立に検証したのは有限例のJacobi条件・rank・整数次元計数と、この論理的な既約性の組合せであり、入力正規形定理の深いLie理論的証明そのものではない。**
 
+## 新しい厳密計算：rank4成分のgeneric reducedness
+
+分離Fermat点 \(F_0=\sum_i x_i^3,\ P_0=e_{123}+e_{456}\) で、Jacobi式の \(F\) 方向の微分を混合三次式の36方向に制限した \(720\times36\) 整数行列の階数は36。36次の非零小行列式は \(-39346408075296537575424\)。列は36混合三次単項式、行は20三重添字×36混合三次単項式。行番号と再現の詳細は論文命題 `prop:rank4-generically-smooth` および `computations/verify_poisson_cubic_fourfold_tangent.py`。rank4の集合論的な39次元正規形を入力すれば、Fermat点での局所接空間は39次元で滑らか。rank4成分はgeneric reduced。rank2成分と交叉のscheme構造については依然未解決。
+
 ## 複数の成分を混同しない
 
 固定Fermat cubic fourfoldでは、6変数を二つの3変数に分割する組合せが10通り存在する。固定fiberで見えるrank4成分が、cubicを動かすと一つの既約なrank4 locusに統合される。零Poissonを含めても零切断はrank2成分に含まれる。Poissonスカラーを割れば次元は29と3となる。
