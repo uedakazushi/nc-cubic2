@@ -1,6 +1,6 @@
 # 研究ノート：境界研究の現在の知識と障害
 
-**2026-11-10 / v1**
+**2026-11-11 / v2**
 
 - 独立の大部原稿は `papers/pfaffian_brill_noether_technical.tex` に完全なTeXソースで存在する。移管元の `papers/boundary/pfaffian_brill_noether_technical.tex` と**Git blob一致**を確認した。主論文A・Cから直接 `\\input` されない一方、内容上の引用・既知結果への依存は今後も監査する。
 - 中心三次曲面
@@ -14,3 +14,7 @@
 ## 最優先の制約
 
 主リポジトリの可換復元（特に相対残余対角のperfectness）を妨げない。必要なdg perfectness反例や中心正則性補題は `nc-cubic` 側に残し、この独立研究のために主論文A/Cを削除・書き換えない。
+
+## 同時Poisson cubic fourfold の現行知識
+
+専用の研究方針・正規形依存の2成分分類・未解決事項は `notes/poisson_cubic_fourfold_moduli.md` と `papers/poisson_cubic_fourfold_moduli.tex` にまとめた。証明や研究課題は専用ファイルに集約し、ここで重複しない。
