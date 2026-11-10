@@ -1,11 +1,32 @@
-# nc-cubic2 — 非可換cubicの独立境界・モジュライ研究
+# nc-cubic2：非可換cubicの独立境界・モジュライ研究
 
-**2026-11-10 / v1. GitHub mainをこの研究の正本とする。**
+**2026年11月10日・v1。独立した研究内容の正本は本リポジトリの `main`。**
 
-ここには、[nc-cubic](https://github.com/uedakazushi/nc-cubic) の最終三目標（1. 滑らかなcubic上のPoisson構造の構造定理、2. そのAS-regular代数による代数的量子化、3. 非可換cubicからのrotation付き可換復元）から、数学的に独立した境界研究・分類・モジュライ・Pfaffian/contact・Brill–Noether等の結果を整理する。
+## 現在の研究内容
 
-研究再開時は `00_research_plan.md`、次に `notes/research_notes.md` を読む。重要な定理と証明は自己完結したTeXソースに収める。原稿の内容が完全に移管先で再現・検証される前に、移管元から唯一の原本を削除してはならない。
+- `papers/pfaffian_brill_noether_technical.tex`：独立した大部の境界・モジュライ・Pfaffian・Brill–Noether等の技術原稿。移管元と完全に同じGit blobで保存した。独立LuaLaTeX原稿（65件のbibliography項目を含む）。
+- `papers/central_fiber_discriminant.tex`：中心三次曲面の必要十分判別式・特異点の解析。対応する正確な記号計算は `computations/verify_central_fiber_discriminant.py`。
+- `notes/research_notes.md`：現行の数学的状態、欠けている入力、研究再開手順。
 
-原稿は日本語LuaLaTeX、ビルドは `latexmk`。生成PDFはGitで追跡しない。完全なソースがまだないPDF原本の移管は、バイナリの一致と内容保存を確認してから行う。外部参照・未確認文献・未証明の主張は明記する。
+初期移管の対象は**完全なTeXソースがGitHub APIで転送・blob一致検証できた部分のみ**。PDF原本は転送できておらず、`PDF_TRANSFER_PENDING.md` に移管元と障害を記載している。欠落したPDFが移管されたと主張しない。
 
-通常はGitHub mainだけを正本とし、ChatGPT Library保存はGitHub pushの実失敗時の緊急退避に限る。GitHub Actionsは使わない。
+## 再現
+
+リポジトリルートから：
+
+```sh
+latexmk papers/pfaffian_brill_noether_technical.tex
+latexmk papers/central_fiber_discriminant.tex
+python3 -m pip install sympy
+python3 computations/verify_central_fiber_discriminant.py
+```
+
+LuaLaTeX、LuaTeX-ja、HaranoAji日本語フォント、標準数学パッケージが必要。PDF・補助ファイルは `build/` に生成しGit追跡しない。今回のGitHub APIによる配置確認と実際の組版実行は区別する。
+
+## nc-cubicとの関係
+
+[uedakazushi/nc-cubic](https://github.com/uedakazushi/nc-cubic) は **① Poisson構造の構造定理、② AS-regular代数による代数的量子化、③ rotation付き可換復元** の三目標に限定し、特に③の相対smoothness (SM) に集中する。
+
+三目標の定理に必要な証明・反例・検算は、移管先だけへの参照で代用せず `nc-cubic` の現行論文またはノートへ自立的に保持する。境界研究の完全な本体は本リポジトリへ整理する。構成の整理を可換復元の研究の妨げにしない。
+
+GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗時の緊急避難に限る。
