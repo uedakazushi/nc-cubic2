@@ -1,5 +1,8 @@
 # Codex 研究指示：pdf-only の数学的発展・論文化・追跡解除
 
+Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
+
+
 **日付：2026-11-13 / v7**
 **現在の状態：Git追跡PDFは0件。全原PDFの固有内容は現行TeXと計算に統合済み。以下の削除ゲートは今後新たな原資料を扱う場合にも保持する。**
 

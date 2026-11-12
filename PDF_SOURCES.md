@@ -1,5 +1,8 @@
 # PDF-onlyの現行判定（2026-11-13 / v27）
 
+Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
+
+
 **研究・TeX化・削除に関するCodexの恒久指示：** [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)。単純転記ではなく、証明を洗練し、重要な新しい結果の追加も目指す。以下は現行の残存PDFと削除障害の一覧であり、作業履歴のアーカイブではない。
 
 **Git追跡PDFは0件。** 旧原PDFの固有内容は、下記の現行TeX・証明・再生成可能な計算へ統合済み。生成PDFや原PDFの別形式アーカイブは追跡しない。以後の再開に原PDFは不要である。
@@ -62,20 +65,20 @@ LuaLaTeXで親TeX全体を組版し、追加した数式をPDF表示で確認。
 
 ## Pfaffian接触境界（旧III、89頁）の削除判定
 
-現行入口は `papers/pfaffian_brill_noether_technical.tex`。原PDF全25節の固有内容を、既存の低次/高次接触・境界幾何節と以下の追加証明で置換した。
+現行入口は `https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/pfaffian_brill_noether_technical.tex`。原PDF全25節の固有内容を、既存の低次/高次接触・境界幾何節と以下の追加証明で置換した。
 
 | 旧節 | 現行の証明所在（`papers/sections/`以下） |
 | --- | --- |
-| §1–5 | Pfaffian微分・共変量・消滅イデアル・横断射影：`pfaffian_contact_low_order.tex` と `pfaffian_contact_high_order.tex`。通常像と勾配イデアル、全次数分裂射影を保持 |
-| §6–9 | 判別式torsion・頂点支持・有限性・巨大だが明示的な補助上界・Hessian socleとその微分：`pfaffian_contact_high_order.tex`。全頂点加群と指定された対角成分を区別 |
-| §10 | Pfaffian係数環上のSchur分解・長さ二の自由分解・Bott二行・Čech–Koszul・16生成元と乗法・全次数頂点核：`pfaffian_vertex_structure.tex`。Hの非零性はB直和因子とFermat特殊化でも証明し、大型有限rankへの依存を除去 |
+| §1–5 | Pfaffian微分・共変量・消滅イデアル・横断射影：[現行の対応節](https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/sections/pfaffian_contact_low_order.tex) と [現行の対応節](https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/sections/pfaffian_contact_high_order.tex)。通常像と勾配イデアル、全次数分裂射影を保持 |
+| §6–9 | 判別式torsion・頂点支持・有限性・巨大だが明示的な補助上界・Hessian socleとその微分：[現行の対応節](https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/sections/pfaffian_contact_high_order.tex)。全頂点加群と指定された対角成分を区別 |
+| §10 | Pfaffian係数環上のSchur分解・長さ二の自由分解・Bott二行・Čech–Koszul・16生成元と乗法・全次数頂点核：[現行の対応節](https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/sections/pfaffian_vertex_structure.tex)。Hの非零性はB直和因子とFermat特殊化でも証明し、大型有限rankへの依存を除去 |
 | §11–13 | 普遍勾配height3・固定三元正則列・高次Koszul homology消滅・Hessian作用の全次数簡約・normal変換則：既存高次節 |
 | §14–15 | 普遍共変量と低次類、Tate再帰・評価束・incidenceのscheme同定・定数block・十次係数1/96・全滑らかFでのJacobian障害：既存低次節。実際の再帰から四blockを新コードで再構成 |
 | §16–18 | 有限Tate方程式・4929補助変数・étale/収束模型・Clifford反転・偶化：既存低次/高次節。補助空間5890/4929/20330も独立に再計算 |
 | §19–20 | Picard族とHesseのjによる全次数normal消滅・normal零での有限決定性：既存高次節と全次数頂点核の定理 |
-| §21 | 同変近似・中心重み・零切断に沿う普遍代数化/収束・単元なし十次右同値・Plücker錐と平面ラベル・固定パラメータのArtin補論：`pfaffian_equivariant_algebraization.tex` |
-| §22 | 全普遍形式接触分類・normal比・安定化元・一意主イデアル切片・有限決定性の必要十分条件・一変数moduli・低係数・normal曲線のjが忘れるH係数：`pfaffian_contact_classification.tex` |
-| §23–24 | 五変数Hessian摂動のMilnor/Tjurina、Pfaffian graphのstrict transformと二次ファイブレーション：`pfaffian_hessian_geometry.tex` |
+| §21 | 同変近似・中心重み・零切断に沿う普遍代数化/収束・単元なし十次右同値・Plücker錐と平面ラベル・固定パラメータのArtin補論：[現行の対応節](https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/sections/pfaffian_equivariant_algebraization.tex) |
+| §22 | 全普遍形式接触分類・normal比・安定化元・一意主イデアル切片・有限決定性の必要十分条件・一変数moduli・低係数・normal曲線のjが忘れるH係数：[現行の対応節](https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/sections/pfaffian_contact_classification.tex) |
+| §23–24 | 五変数Hessian摂動のMilnor/Tjurina、Pfaffian graphのstrict transformと二次ファイブレーション：[現行の対応節](https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/sections/pfaffian_hessian_geometry.tex) |
 | §25・書誌 | 固定Fの全座標分類・一般無限代表の収束・低normal次数の全頂点加群などの未解決範囲は現行本文/ノート。必要書誌は親TeX |
 
 `verify_pfaffian_vertex_and_tate.py`は、全記号r,cのSchur Hilbert恒等式を確認し、有限Tate空間の次元5890/4929/20330を計算した。さらに旧コードをimportせず、外積/Clifford bitmaskと有理多項式で実際のTate再帰を6次まで再構成した。全MC恒等式、四つの掲載block、三次/五次blockの零性、行列式の十次係数−648、Hessian係数1/96が一致した。全次数頂点核と非線形分類は本文の構造的証明による。旧大型rankや未取得の旧JSONを実行済みとはしない。

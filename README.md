@@ -1,6 +1,8 @@
 # nc-cubic2：非可換cubicの独立境界・モジュライ研究
 
-> **現在の最優先Codex作業：** [Pfaffian–Brill–Noether移管指示](MIGRATE_PFAFFIAN_BRILL_NOETHER.md)。作成済みの別リポジトリ `uedakazushi/pfaffian-brill-noether` に自足した成果を保存・検証してから、当リポジトリ側の真の重複だけを削除する。移管完了後は相対復元統合稿の公表再構成へ戻る。
+Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
+
+
 
 
 ## Codexへの現在の研究指示
@@ -50,7 +52,7 @@
 
 ## 現在の研究内容
 
-- `papers/pfaffian_brill_noether_technical.tex`：境界・モジュライ・Pfaffian・Brill–Noether等の大部技術原稿。形式変形・接触分類・Hessian幾何を入力節へ整理し、全次数頂点核と非線形接触分類・同変代数化を追加した。親TeX全体277頁の組版と追加部分の表示、Tate再帰の有理数再構成を確認済み。全証明の外部査読とは区別する。
+- `https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/pfaffian_brill_noether_technical.tex`：境界・モジュライ・Pfaffian・Brill–Noether等の大部技術原稿。形式変形・接触分類・Hessian幾何を入力節へ整理し、全次数頂点核と非線形接触分類・同変代数化を追加した。親TeX全体277頁の組版と追加部分の表示、Tate再帰の有理数再構成を確認済み。全証明の外部査読とは区別する。
 - `papers/central_fiber_discriminant.tex`：中心三次曲面の必要十分判別式・特異点の解析。対応する正確な記号計算は `computations/verify_central_fiber_discriminant.py`。
 - `notes/research_notes.md`：現行の数学的状態、欠けている入力、研究再開手順。
 
@@ -61,7 +63,7 @@
 リポジトリルートから：
 
 ```sh
-latexmk papers/pfaffian_brill_noether_technical.tex
+latexmk https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/pfaffian_brill_noether_technical.tex
 latexmk papers/central_fiber_discriminant.tex
 python3 -m pip install sympy
 python3 computations/verify_central_fiber_discriminant.py

@@ -1,8 +1,11 @@
 # 論文と再生成
 
+Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
+
+
 一般次元のPoisson pair成分分類・量子化は `nc-cubic` の論文Aを正本とする。
 
-独立の主原稿：`pfaffian_brill_noether_technical.tex`。中心判別式の独立補論：`central_fiber_discriminant.tex`。ルートから `latexmk papers/pfaffian_brill_noether_technical.tex` と `latexmk papers/central_fiber_discriminant.tex` を実行する。生成PDFは `build/` にあり、Git追跡しない。大部の原稿には一次資料・適用仮定の再監査が残る。
+独立の主原稿：`pfaffian_brill_noether_technical.tex`。中心判別式の独立補論：`central_fiber_discriminant.tex`。ルートから `latexmk https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/pfaffian_brill_noether_technical.tex` と `latexmk papers/central_fiber_discriminant.tex` を実行する。生成PDFは `build/` にあり、Git追跡しない。大部の原稿には一次資料・適用仮定の再監査が残る。
 
 ## nc cubic threefoldの17次元モジュライ（現行の主題）
 
@@ -23,7 +26,7 @@
 - `sections/pfaffian_contact_high_order.tex`：20–26次、Koszul、横断Hessian、有限決定性（旧§42–74）。
 - `sections/pfaffian_computation_audit.tex`：検算の現行依存関係、整数証明書の状態、全次数構造定理と旧有限計算の依存の区別（旧§75–79を置換）。旧 `verification/` と `source_vNN/` は現行mainに存在せず、旧大型計算の全追試は未実施だが、Tateの六次再帰は新コードで厳密再構成した。
 
-親ファイルだけを `latexmk papers/pfaffian_brill_noether_technical.tex` で組版する。今回の検証は文字列単位の内容保持に限られ、LuaLaTeXの実行と証明の独立監査は行っていない。
+親ファイルだけを `latexmk https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/pfaffian_brill_noether_technical.tex` で組版する。今回の検証は文字列単位の内容保持に限られ、LuaLaTeXの実行と証明の独立監査は行っていない。
 
 - `sections/pfaffian_hessian_geometry.tex`：旧Pfaffian論文IIIの§23–24から復元した五変数Hessian摂動のMilnor/Tjurina、Pfaffian graphのstrict transform・quadric fibration。親の `pfaffian_brill_noether_technical.tex` へ入力済み。独立再監査未了。
 
@@ -50,5 +53,5 @@
 - `sections/pfaffian_vertex_structure.tex`：Schur分解・二行のBott/Čech–Koszul・16生成元・全次数頂点核。
 - `sections/pfaffian_contact_classification.tex`：全普遍形式接触類の一意切片、有限決定性の必要十分条件と残余moduli。
 - `sections/pfaffian_equivariant_algebraization.tex`：同変近似と中心重みでの代数化、実際の境界の単元なし十次右同値。
-- `computations/verify_pfaffian_vertex_and_tate.py`：全記号Schur恒等式と有限空間次元、Tate再帰の六次MC恒等式・四block・1/96。
+- `https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/computations/verify_pfaffian_vertex_and_tate.py`：全記号Schur恒等式と有限空間次元、Tate再帰の六次MC恒等式・四block・1/96。
 - `diagonal_cubic_point_geometry.tex`：長さ24因子・標準種数5曲線・全六分岐値での次数56判別・shift付き復元。`verify_diagonal_point_geometry.py` が多項式部分を検算。
