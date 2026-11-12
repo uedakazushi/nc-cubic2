@@ -1,7 +1,7 @@
 {
   "date": "2026-11-13",
-  "version": "v3",
-  "status": "PARTIAL overall: point-scheme unit integrated and locally validated; first-order/finite-recovery companion integration and remaining independent-source migration still pending",
+  "version": "v4",
+  "status": "PARTIAL overall: point-scheme unit integrated, validated, saved and deduplicated at source; other independent results still pending",
   "source_repository": "uedakazushi/nc-cubic",
   "destination_repository": "uedakazushi/nc-cubic2",
   "paper_A": "Remains unchanged in nc-cubic",
@@ -10,12 +10,21 @@
     "entry": "papers/mixed_cubic_point_schemes.tex",
     "notes": "notes/mixed_cubic_point_schemes.md",
     "validation": "validation_mixed_cubic_point_schemes.json",
+    "destination_content_commit": "62f50628a3a91f035020f3f774587e976db48ac4",
     "chapters": ["mixed_central_family.tex", "point_scheme_poisson_zero.tex", "point_scheme_thickening.tex", "point_scheme_lambda_family.tex", "point_scheme_discriminant_boundary.tex"],
     "required_reference_closure_verified": true,
     "lualatex_build_executed": true,
     "pages": 12,
     "all_four_calculation_scripts_executed": true,
-    "source_cleanup": "Pending destination-main verification; source scope note records subsequent completed cleanup."
+    "source_cleanup": {
+      "status": "COMPLETED for this unit only",
+      "source_commit": "da722ca8b7feec57ff73609154a7e2d27351e922",
+      "removed_duplicate_files": 17,
+      "source_notes_integrated": true,
+      "three_old_certificates_exactly_reproduced": true,
+      "paper_A_and_B_input_files_unchanged": true,
+      "mixed_family_remainder_and_its_script_retained_at_source": true
+    }
   },
   "text_preserved_but_companion_integration_pending": {
     "papers/reconstruction_extensions/first_order_poisson_kernel.tex": "f2875c5e7ed2312d8139dc4e9ca56960e04018f1",
