@@ -269,6 +269,52 @@ $a_0=a_2$、$a_1=2a_2$の二つであり、
 表示した形と13次元の上界を得る。
 \end{proof}
 
+\begin{proposition}[四つの三次元表現による補正空間の九次元化]
+\label{prop:quotient-representation-reduction}
+命題\ref{prop:quotient-abelianization-reduction}の仮定を置く。
+命題\ref{prop:local-two-axial}、
+\ref{prop:local-six-nonaxial}の三次元単純表現について、
+その中心指標が
+\[
+ p_*=(0,1/7,0,0),\qquad
+ p_k=(0,-1,-4\omega^{2k},4\omega^k)
+ \quad(k=0,1,2),\quad \omega^2+\omega+1=0
+\]
+であることを用いる。
+このとき、低次数補正$Q$にはさらに四つの
+独立な線形条件$Q(p_*)=Q(p_k)=0$が課される。
+可換化からの二条件と合わせて、
+$Q$は\emph{九次元}の線形部分空間に属する。
+\end{proposition}
+\begin{proof}
+$P_{18}$の各項は$U,V,W$の少なくとも一つを含むので、
+四つの表現上で$P_{18}=0$である。
+従って$P_{18}=Q$から$Q$も零になる。
+これらの中心指標は、前掲の三次元行列に
+中心生成元の非可換語表示を代入して
+$\mathbb Q[t]/(7t^6+21t^4+14t^2+1)$および
+$\mathbb Q[\omega]/(\omega^2+\omega+1)$上で
+厳密に確かめられる。再現コードは
+\texttt{computations/verify\_central\_quotient\_reps.py}にある。
+
+$Q$の係数のうち$U,U^2,V,W$に関する
+四つの評価条件の係数行列は
+\[
+ \begin{pmatrix}
+ 1/7&1/49&0&0\\
+ -1&1&-4&4\\
+ -1&1&-4\omega^2&4\omega\\
+ -1&1&-4\omega&4\omega^2
+ \end{pmatrix}.
+\]
+その行列式は
+$-384(2\omega+1)/49\ne0$である。
+一方、命題\ref{prop:quotient-abelianization-reduction}の
+二条件は純粋な$G$の単項式$1,G^2,G^4$の
+係数にしか作用しない。従って六条件は独立であり、
+補正空間の次元は$15-6=9$となる。
+\end{proof}
+
 \begin{remark}[明示関係$\Phi$の残る検証]
 \label{rem:quotient-parity-phi}
 旧稿の明示関係式の重み18部分は
@@ -286,7 +332,7 @@ $P_{18}$の最高次記号が斉次Sklyanin中心の関係であることと、
 一意な補正$Q$が実際に$Q_{\mathrm{old}}$に等しいことを
 \emph{特性零で}確認しなければならない。
 法101での$\Phi$の零判定はその代用ではない。
-15個の候補・可換化による二条件・符号の組合せ検査は
+15個の候補・可換化による二条件・四つの表現による追加四条件の検査は
 \texttt{computations/verify\_center\_parity\_candidates.py}
 で再現できるが、この検査自体は非可換恒等式を証明しない。
 \end{remark}

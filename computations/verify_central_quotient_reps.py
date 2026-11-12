@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Exact symbolic validation of the 3x3 representations from paper VI §§17–18.
 
-This checks relations and G1=0, not center V,W or the Ext rank certificates.
+Checks relations, G1=0, center U,V,W characters and an Ext-rigidity minor.
 """
 import sympy as sp
 
@@ -99,3 +99,53 @@ for k in range(len(rows)):
 assert determinant % prime == 15
 assert sp.Poly(q, t, modulus=3).is_irreducible
 print("PASS: axial rigidity certificate: 19x19 minor = 15 mod 29, q irreducible mod 3")
+
+
+# Exact central-character evaluations, including V and W.
+CENTER_V = {
+    "YZZYYY":1, "ZYZZYX":-1, "ZYZZZZ":-1,
+    "ZZYYZX":2, "ZZYZZZ":1, "ZZZYZZ":-3,
+    "YZZX":1, "ZYZX":1, "ZZYX":1, "ZZZZ":3,
+}
+CENTER_W = {
+    "YZZZZY":1, "ZYZZZY":1, "ZZYYZZ":1,
+    "ZZYZZY":2, "ZZZZYY":-1, "ZZZZZX":1,
+    "ZYZZ":-1, "ZZYZ":-2, "ZZZY":-2, "ZZ":1,
+}
+def eval_words(spec, xx, yy, zz, var, relation):
+    result = sp.zeros(3)
+    for word, coeff in spec.items():
+        term = I
+        for letter in word:
+            term = term * {"X":xx, "Y":yy, "Z":zz}[letter]
+        result += coeff*term
+    return result.applyfunc(lambda v: mod(v, var, relation))
+
+def center_chars(xx, yy, zz, var, relation):
+    gg = eval_words({"YYY":1, "ZYX":-1, "X":1},
+                    xx, yy, zz, var, relation)
+    uu = (zz**3 * (gg - zz**3)).applyfunc(
+        lambda v: mod(v, var, relation))
+    vv = eval_words(CENTER_V, xx, yy, zz, var, relation)
+    ww = eval_words(CENTER_W, xx, yy, zz, var, relation)
+    return gg, uu, vv, ww
+
+axial = center_chars(X,Y,Z,t,q)
+assert axial == (sp.zeros(3), I/7, sp.zeros(3), sp.zeros(3))
+print("PASS: axial central character (g,U,V,W)=(0,1/7,0,0) over Q[t]/q")
+for k in range(3):
+    nonaxial = center_chars(X0, w**k*Y0, w**(2*k)*Z0,
+                            w, w**2+w+1)
+    targets = (sp.zeros(3), -I, -4*w**(2*k)*I, 4*w**k*I)
+    assert all((a-b).applyfunc(lambda z: mod(z,w,w**2+w+1))
+               == sp.zeros(3) for a,b in zip(nonaxial,targets))
+print("PASS: all three nonaxial center characters over Q[omega]/(omega²+omega+1)")
+
+# Four point evaluations on U,U²,V,W are independent.
+eval_matrix = sp.Matrix([[sp.Rational(1,7),sp.Rational(1,49),0,0]] +
+    [[-1,1,-4*w**(2*k),4*w**k] for k in range(3)])
+det = mod(sp.expand(eval_matrix.det()),w,w**2+w+1)
+assert sp.expand(det + 384*(2*w+1)/49) == 0
+print("PASS: 4x4 evaluation determinant = -384(2omega+1)/49 != 0")
+print("NOTE: together with two independent abelianization constraints,")
+print("      the correction space has dimension at most 15-2-4=9")
