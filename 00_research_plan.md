@@ -88,8 +88,12 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 
 ## 中心商特異性PDFのTeX回収（2026-11-12）
 
-`papers/central_quotient_local_models.tex`に、旧論文VI§19の中心零ファイバー四つのA1点、conifold局所のrank-one corner・modifying generator、局所skew group algebra、中心値零の大域次元2と八つの三次元単純表現、Brauer指数6を、入力の仮定を明示して再構成した。旧§21の21中心特異点と3つのhomological singularityも条件付きで移した。`computations/verify_central_quotient_local_hessian.py`の厳密有理数Hessian・Gröbner検算をローカル実行してPASS。旧論文VIの全中心・Azumaya性・小単純表現排除の完全な独立監査、特異圏同値・球面twistの移植、LuaLaTeX組版は未完了。原PDFは削除しない。PDF削除が本研究の最優先である。
+`papers/central_quotient_local_models.tex`に、旧論文VI§19の中心零ファイバー四つのA1点、conifold局所のrank-one corner・modifying generator、局所skew group algebra、中心値零の大域次元2と八つの三次元単純表現、Brauer指数6を、入力の仮定を明示して再構成した。旧§21の21中心特異点と3つのhomological singularityも条件付きで移した。`computations/verify_central_quotient_local_hessian.py`の厳密有理数Hessian・Gröbner検算をローカル実行してPASS。旧論文VIの全中心・Azumaya性およびtails正則性の必要十分条件の完全な独立監査は未完了。特異圏同値・球面twistの条件付き証明は `papers/sections/central_quotient_categories_and_twist.tex` に移植し、三次元表現の剛性を法29の19次非零小行列式で独立検証した。LuaLaTeX実組版は未実施。原PDFは削除しない。PDF削除が本研究の最優先である。
 
 ## 旧論文VIの有限次元表現と六次分裂元（2026-11-12）
 
 旧論文VI§17–18の一次・二次元単純表現の不存在、軸上の多項式族の二つの三次元単純表現、非軸上の六表現、六次分裂元 `Z` の最小多項式 `T^6-gT^3+U` を `papers/sections/central_quotient_simple_representations.tex` に証明付きで収録し、`papers/central_quotient_local_models.tex` から入力した。`computations/verify_central_quotient_reps.py` の軸上 `Q[t]/(q)` と非軸上 `Q[ω]/(ω²+ω+1)` の正確な行列関係・`G1=0` 検算を独立に実行してPASS。これにより旧局所模型が仮定していた小次元単純表現排除・六次最小多項式を、中心正規性と中心恒等式 `U=Z³(g-Z³)`の入力の下で内部証明へ変更した。中心の生成元 `V,W` と全Azumaya locusの証明、Ext¹の27変数rank証明書はなお未回収。従ってPDF VIは保持し、これらのTeX化を優先する。
+
+### PDF VIの追加回収：特異圏・球面ツイスト
+
+中心二段局所化とIwanaga--Gorenstein完備化によるKaroubi特異圏の三分解、Knörrer周期性を通じた `Perf_{Z/2}(C)^⊕3`、剛体三次元表現のcoherent化と3-spherical twistを `papers/sections/central_quotient_categories_and_twist.tex` に再構成した。`computations/verify_central_quotient_reps.py` に軸上表現のJacobi行列の法29非零19次小行列式（値15）を追加しローカル実行PASS。`q(t)`の法3既約性も検算。これにより旧§17の自己Ext1消滅は独立の計算証明を持つ。残る障害は `R_1` とtailsの正則性判定、中心の有限生成・Azumaya同定、全非可換中心値での大域次元の証明。これらの未移管部分があるのでPDF VIはまだ追跡する。

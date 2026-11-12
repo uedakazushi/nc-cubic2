@@ -47,3 +47,5 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 - `central_quotient_local_models.tex`：旧論文VIの非可換A1局所模型、四つの中心特異点、局所skew group、Brauer指数、21中心点と三homological singularityの条件付き解析。LuaLaTeX独立入口。検算：`python3 computations/verify_central_quotient_local_hessian.py`（SymPy）。全中心表示・Azumaya locus・小表現排除は未移管の入力として明記。
 
 - `sections/central_quotient_simple_representations.tex`：旧論文VI§17–18から1/2次元単純表現排除、軸上2個と非軸上6個の三次元表現、六次分裂元の最小多項式を回収。親の `central_quotient_local_models.tex` から入力する。`python3 computations/verify_central_quotient_reps.py` は明示行列・三関係式・G1=0をQ[t]/(q)とQ[ω]/(ω²+ω+1)上で厳密検算する。全中心・Azumaya locus・Ext ranksは未完。
+
+- `sections/central_quotient_categories_and_twist.tex`：旧論文VI§21–22の射影特異圏の二段局所化と三つの通常二重点への完備化・Knörrer同値、および標識を保たない3-spherical twist。`central_quotient_local_models.tex`から入力。`sections/central_quotient_simple_representations.tex`は軸上3次元表現の無限小剛性の整数証明書を新設した。有限中心・tailsの正則性の完全証明はまだ未統合。

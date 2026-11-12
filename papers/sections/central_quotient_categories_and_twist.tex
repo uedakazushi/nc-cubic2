@@ -1,0 +1,374 @@
+% 現行研究資料：旧中心商特異性論文VI 第21--22節からの回収
+% 分類結果の固有の証明と外部入力（とりわけ有限中心・Azumaya・正則性）を区別する。
+\section{三つの特異点の射影特異圏}
+\label{sec:quotient-singcat}
+
+本節では$A_\alpha$を中心三次商の一混合項族
+\[
+ A_\alpha=\frac{\CC[u,v]\langle x,y,z\rangle}
+ {([x,y]-z^2,\,[y,z]-(x^2+\alpha uv),\,[z,x]-y^2,\,
+   \Omega_1+\alpha uvx+u^3+v^3)}
+\]
+とする。ただし
+\[
+ \Omega_1=\frac{x^3+y^3+z^3}{3}
+       -\frac{xyz+xzy+yxz+yzx+zxy+zyx}{9}
+\]
+であり、$u,v$は一次中心元である。
+以下の本質的な入力は旧原稿で証明されたと記載されているが、
+このTeXで独立に検証されたわけではない：
+$A_\alpha$のnoetherian性と中心正則性、
+$A_\alpha/(u)$および$u$-chartの$t=v/u=0$における正則性、
+中心有限な$Q_\alpha=A_\alpha[u^{-1},v^{-1}]_0$の
+Iwanaga--Gorenstein性である。
+さらに$28\alpha^3+243=0$では
+定理\ref{thm:three-homological}の三つの完備行列node模型と、
+それ以外の点での有限大域次元を入力する。
+本節の結論はそれらの仮定を伴うものである。
+
+\newcommand{\SingCat}{\operatorname{D}_{\mathrm{sg}}}
+\newcommand{\PerfCat}{\operatorname{Perf}}
+\newcommand{\thickcat}{\operatorname{thick}}
+\newcommand{\Kar}{\mathrm{Kar}}
+\newcommand{\Db}{\mathrm D^b}
+$\mathcal P_\alpha=\thickcat\{\pi A_\alpha(n):n\in\mathbb Z\}
+\subset\Db(\operatorname{qgr}A_\alpha)$と置き、
+\[
+ \mathcal S_\alpha=
+ \Db(\operatorname{qgr}A_\alpha)/\mathcal P_\alpha
+\]
+を射影的特異圏とする。上付き$\Kar$はKaroubi完備化を表す。
+
+\begin{lemma}[中心元に沿う特異圏の局所化]
+\label{lem:quotient-central-localization}
+$H$は左右noetherianな次数付き代数、
+$z\in Z(H)_1$は正則元とする。
+$\Db(\operatorname{qgr}(H/(z)))$が構造対象の全twistで
+厚く生成されるなら、中心局所化は
+\[
+ \left(\Db(\operatorname{qgr}H)/
+       \thickcat\{\pi H(n)\}\right)^\Kar
+   \simeq \SingCat(H[z^{-1}]_0)^\Kar
+\]
+を与える。次数なしの左右noetherian代数$\Lambda$と
+中心正則元$z$に対し、$\Lambda/(z)$の大域次元が有限なら
+同じ結論が成立する。
+\end{lemma}
+\begin{proof}
+中心局所化で零となる有限生成加群は
+$z$のある冪で殺される。$z$の冪による有限filtrationの
+各商は$H/(z)$上のcoherent加群なので、仮定と
+$0\to H(-1)\xrightarrow{z}H\to H/(z)\to0$
+によって局所化の導来核は$\thickcat\{\pi H(n)\}$に入る。
+局所化後の有限生成加群には有限個の生成元の
+$H$-spanというlatticeが存在する。
+有界複体の微分と射・homotopyの有限個の分母も
+$z$の冪で払えるので、有界導来圏の局所化は
+$z$-torsion cohomologyを零にするVerdier局所化となる。
+twistsは局所化後に自由加群となり、逆に有限自由複体は
+twistsの有限和とconeから得られる。
+局所化後のperfect対象はこれらの直和因子なので、
+直和因子の持上げを仮定せず両辺をKaroubi完備化すればよい。
+非次数付きの場合は有限次元torsionによる商を省く。
+\end{proof}
+
+\begin{corollary}[二つの中心chartの除去]
+\label{cor:quotient-two-chart}
+上述の$A_\alpha/(u)$の正則性、および$u$-chartの
+$t=0$での有限大域次元を仮定すると
+\[
+ \mathcal S_\alpha^\Kar\simeq\SingCat(Q_\alpha)^\Kar .
+\]
+\end{corollary}
+\begin{proof}
+$A_\alpha/(u)\simeq
+ S_1[v]/(\Omega_1+v^3)$は
+$v$の非零スカラー変換で既知の正則曲面のモデルに同型である。
+有限大域次元二とtwistsの厚い生成性を入力として、
+まず補題\ref{lem:quotient-central-localization}を$z=u$に適用する。
+$u$-chartにおける$t=0$の商は
+$S_1/(\Omega_1+1)$であり、
+Euler導分$\delta(\Omega_1)=3\Omega_1$を用いる
+既存の中心値判定により有限大域次元二を持つ。
+同補題のaffine版を$t$に適用して$Q_\alpha$に至る。
+共通境界$u=v=0$も最初のfiltrationに含まれる。
+\end{proof}
+
+\begin{lemma}[孤立行列nodeの完備化と直和分解]
+\label{lem:quotient-completion}
+$C$をaffine可換noetherian環、
+$\Lambda$を$C$上有限な左右noetherian Iwanaga--Gorenstein代数とする。
+有限個の極大イデアル$\mathfrak m_i$を除いて
+$\Lambda_{\mathfrak p}$が有限大域次元であり、
+各完備化が$\widehat\Lambda_{\mathfrak m_i}\simeq
+\operatorname{Mat}_{d_i}(N_i)$で、
+$N_i$は孤立通常二重点の完備局所環とする。
+さらに各局所nodeの単純剰余加群を与える
+$\Lambda/\mathfrak m_i\Lambda$の有限加群が存在するとする。
+このとき
+\[
+ \SingCat(\Lambda)^\Kar\simeq
+ \bigoplus_i\SingCat(N_i)^\Kar .
+\]
+\end{lemma}
+\begin{proof}
+Iwanaga--Gorenstein性に対するBuchweitz--Happel--Chenの同値
+\cite{ChenRelativeSingcat}により、
+左辺は有限生成Gorenstein-projective加群のstable圏で計算できる。
+$M,N$がそのような加群ならstable Homは
+\[
+ \underline{\operatorname{Hom}}_\Lambda(M,N)=
+ \operatorname{coker}\!\left(
+ N\otimes_\Lambda\operatorname{Hom}_\Lambda(M,\Lambda)
+ \longrightarrow\operatorname{Hom}_\Lambda(M,N)\right)
+\]
+で、有限$C$加群である。
+例外点以外では$M$はGorenstein-projectiveかつ
+有限射影次元なので射影的である。
+従ってstable Homは有限個の閉点だけに支持されて有限長。
+有限表示性、中心の平坦完備化、有限長加群の局所分解により、
+各Hom群は各完備化のstable Homの直和に同型となる。
+同じ議論はshiftにも適用でき、完備化は完全忠実である。
+
+本質的全射性をKaroubi完備化後に証明する。
+通常二重点$N_i=k[[z_1,\ldots,z_e]]/(q)$の
+maximal Cohen--Macaulay加群を行列因子化で表すと、
+$d^2=q$の微分から$\partial_{z_j}q$は特異圏で零作用となる。
+非退化二次式ならこれは$z_j$を零化するので、
+$z_j$のKoszul複体は元の対象を直和因子として含み、
+そのcohomologyは剰余体の有限直和である。
+従ってnodeの特異圏は剰余体で厚く生成される。
+仮定した有限$\Lambda$加群はその生成元を完備化の像として与え、
+直和因子まで閉じれば所望の圏全体になる。
+\end{proof}
+
+\begin{theorem}[三つの通常二重点に集中する射影特異圏]
+\label{thm:quotient-three-singcat}
+$28\alpha^3+243=0$とし、
+上記の中心局所化・Iwanaga--Gorenstein・
+定理\ref{thm:three-homological}の局所模型を仮定する。
+このとき
+\[
+ \mathcal S_\alpha^\Kar\simeq
+ \bigoplus_{\tau^3=1}
+  \SingCat\!\left(
+   \frac{\CC[[a,b,c,d]]}{a^2+b^2+c^2+d^2}
+  \right)^\Kar
+ \simeq \PerfCat_{\mathbb Z/2}(\CC)^{\oplus3}.
+\]
+従って$K_0(\mathcal S_\alpha^\Kar)\simeq\mathbb Z^3$で、
+非零直既約対象は同型を除いて六つである。
+$[1]$は各二つの直既約対象を交換し、$[2]\simeq\mathrm{id}$。
+\end{theorem}
+\begin{proof}
+系\ref{cor:quotient-two-chart}で$Q_\alpha$に局所化する。
+局所模型\ref{thm:three-homological}と
+補題\ref{lem:quotient-completion}から最初の圏同値を得る。
+各nodeのIwanaga--Gorenstein性と完備化の仮定を使用した。
+
+二次元node $N_0=k[[p,q]]/(pq)$のMCM加群は
+正規化$k[[p]]\oplus k[[q]]$上の飽和を取り、
+conductorと剰余体の線形部分空間を標準化することにより、
+直和因子として$N_0$, $k[[p]]$, $k[[q]]$からなる。
+stable圏では$N_0$は零、後の二つは相互直交で
+stable Endが$\CC$、shiftは二つを交換する。
+よって$\SingCat(N_0)^\Kar\simeq\PerfCat_{\mathbb Z/2}(\CC)$。
+OrlovのKn\"orrer周期性
+\cite[Theorem~2.1]{OrlovSingcat}により
+$N_0$と$k[[p,q,r,s]]/(pq+rs)$の
+Karoubi完備な特異圏は同値である。
+$\CC$上で後者の二次式は四変数の平方和と線形同型なので結論。
+二周期的な一因子の$K_0$は$\mathbb Z$で、
+三因子の直和が残りの主張を与える。
+\end{proof}
+\begin{remark}
+全ての同値はKaroubi完備化\emph{後}の主張である。
+$D^b(\operatorname{qgr}A_\alpha)$そのものや
+非可換cubicのKuznetsov成分と同値であるとは主張しない。
+中心の21個の特異点と、代数のホモロジー的特異点三個を区別する。
+\end{remark}
+
+\section{正則三次商の球面ツイストと構造対象の標識}
+\label{sec:quotient-spherical-twist}
+本節は$\alpha=1$の正則例を対象とする。
+$A=A_1$、$\mathcal O=\pi A$とし、
+次の旧原稿の入力を明示的に仮定する：
+\[
+ \operatorname{gldim}\operatorname{qgr}A=3,\qquad
+ \mathbb S_{\Db(\operatorname{qgr}A)}\simeq(-2)[3].
+\]
+さらにfiltered三変数代数
+\[
+ R_1=
+ \frac{\CC\langle X,Y,Z\rangle}
+ {([X,Y]-Z^2,\ [Y,Z]-(X^2+1),\ [Z,X]-Y^2)},
+ \quad G_1=\Omega_1(X,Y,Z)+X
+\]
+に、命題\ref{prop:local-two-axial}から得られる三次元単純左加群の線形双対である\emph{右}加群$V$を取る。この加群は
+\[
+ \dim_\CC V=3,\qquad VG_1=0,\qquad
+ \operatorname{End}_{R_1}(V)=\CC,\quad
+ \operatorname{Ext}^1_{R_1}(V,V)=0
+\tag{QS}
+\]
+を満たす。単純性と$VG_1=0$は命題\ref{prop:local-two-axial}、無限小剛性は命題\ref{prop:quotient-axial-rigidity}で証明される。後者の法$29$の厳密小行列式は現在の検算コードから再現できる。左加群から右加群への双対は有限次元自己拡大と単純性を保つ。
+
+$t=v/u$とし、
+$Q^\circ=A[u^{-1},v^{-1},(v^3-u^3)^{-1}]_0$と置く。
+$t=-1$、$(\bar x,\bar y,\bar z)=(iX,iY,iZ)$
+（$i^2=-1$）により$V$を$Q^\circ$-加群とする。
+次数付き右$A$-加群$N_V$を
+\[
+ (N_V)_n=
+ \begin{cases}V,&n\ge0,\\0,&n<0,\end{cases}
+ \qquad u=\mathrm{id},\ v=-\mathrm{id},\
+ x=iX,\ y=iY,\ z=iZ
+\]
+という次数一作用で定め、$\mathcal T=\pi N_V$と書く。
+$\mathcal T$は非零coherent対象で、
+$u$がtailで可逆なので$\mathcal T(1)\simeq\mathcal T$。
+
+\begin{lemma}[局所自己拡大の消滅]
+\label{lem:quotient-rigid-chart}
+(QS)を用いると
+\[
+ \operatorname{End}_{Q^\circ}(V)=\CC,\qquad
+ \operatorname{Ext}^1_{Q^\circ}(V,V)=0 .
+\]
+さらに$R_1$の大域次元三と
+旧論文VIの中心$g=3G_1/2$に関する有限
+\'etale比較を仮定すると
+$\operatorname{gldim}Q^\circ\le3$。
+\end{lemma}
+\begin{proof}
+自己拡大$0\to V\to E\to V\to0$に対し、
+中心作用$N=t+1$は$N^2=0$である。
+$s=i+N/(2i)$と置くと$s^2=t$。
+$X=\bar x/s$, $Y=\bar y/s$, $Z=\bar z/s$と置けば
+$E$は$R_1$-加群になり、
+\[
+ G_1=-b(s),\qquad b(s)=s^{-3}+s^3
+\]
+を満たす。
+(QS)により$R_1$-自己拡大は分裂するため
+$G_1$は$E$上でも零。
+$b(i)=0$、$b'(i)=-6$、$(s-i)^2=0$から
+$s=i$、$t=-1$を得る。
+分裂は$Q^\circ$-線形となり、Extが零である。
+大域次元については$s^2=t$を添加すると
+\[
+ g=-\frac32(s^3+s^{-3}),\quad
+ g^2-9=\frac{9(s^6-1)^2}{4s^6}
+\]
+となる。$t^3-1$を逆にした領域では
+$s\mapsto g$の微分は単元で、
+$R_1[(g^2-9)^{-1}]$からの有限\'etale中心基底変換となる。
+有限\'etale拡大での大域次元保存と忠実平坦降下から
+上界三を得る。
+\end{proof}
+
+\begin{lemma}[coherent対象への導来随伴]
+\label{lem:quotient-chart-ext}
+上記の仮定の下で
+\[
+ \mathbf R\operatorname{Hom}(\mathcal O,\mathcal T)
+   \simeq V[0],\quad
+ \operatorname{End}(\mathcal T)=\CC,\quad
+ \operatorname{Ext}^1(\mathcal T,\mathcal T)=0 .
+\]
+また$\mathcal T$は大きい$\operatorname{QGr}A$内で
+長さ高々三のinjective分解を持つ。
+\end{lemma}
+\begin{proof}
+$A^\circ=Q^\circ[u,u^{-1}]$と書ける。
+中心局所化から
+$j^*:\operatorname{QGr}A\to\operatorname{Mod}Q^\circ$
+を得る。その右随伴
+$j_*M=\pi(M\otimes_{Q^\circ}A^\circ)$は、
+$A^\circ$が左$Q^\circ$加群として自由なのでexactである。
+局所化済み加群の非負次数部分を取れば
+$j_*V\simeq\mathcal T$である。
+$j^*$もexactだから導来随伴
+\[
+ \mathbf R\operatorname{Hom}_{\operatorname{QGr}A}
+ (F,j_*V)\simeq
+ \mathbf R\operatorname{Hom}_{Q^\circ}(j^*F,V)
+\]
+が成立する。$j^*\mathcal O=Q^\circ$、
+$j^*\mathcal T=V$を代入して前半を得る。
+$\operatorname{QGr}A$は局所noetherianなGrothendieck圏で、
+coherent対象間のExtは$\operatorname{qgr}A$内と一致する。
+最後に$\operatorname{gldim}Q^\circ\le3$で
+$V$の長さ三以下のinjective分解を取り、
+exactな$j_*$で移せばよい。
+\end{proof}
+
+\begin{theorem}[構造対象をline objectのshiftに送らない自己同値]
+\label{thm:quotient-spherical-counterexample}
+上記の$\alpha=1$の正則性とSerre関手を仮定する。
+(QS)は命題\ref{prop:local-two-axial}、\ref{prop:quotient-axial-rigidity}により成立する。$\mathcal T$は3-spherical対象であり、
+Seidel--Thomasの球面ツイスト
+\cite[Definition~2.14, Proposition~2.10]{SeidelThomas}
+\[
+ \mathbb T_{\mathcal T}(F)=
+ \operatorname{Cone}\left(
+ \mathbf R\operatorname{Hom}(\mathcal T,F)
+    \otimes_\CC\mathcal T\longrightarrow F
+ \right)
+\]
+は$\Db(\operatorname{qgr}A)$の自己同値を与える。
+標準$t$構造に関して
+\[
+ \mathcal H^j(\mathbb T_{\mathcal T}(\mathcal O))=
+ \begin{cases}
+ \mathcal O,&j=0,\\
+ \mathcal T^{\oplus3},&j=2,\\
+ 0,&j\ne0,2.
+ \end{cases}
+\]
+従って全ての$m,r\in\mathbb Z$について
+$\mathbb T_{\mathcal T}(\mathcal O)\not\simeq\mathcal O(m)[r]$。
+\end{theorem}
+\begin{proof}
+$\mathcal T(1)\simeq\mathcal T$だから
+$\mathbb S\mathcal T\simeq\mathcal T[3]$。
+補題\ref{lem:quotient-chart-ext}とSerre双対から
+\[
+ \operatorname{Ext}^j(\mathcal T,\mathcal T)=
+ \begin{cases}\CC,&j=0,3,\\0,&j\ne0,3.\end{cases}
+\]
+負次数はheartの二対象間のExtで消え、
+高次数は$\operatorname{gldim}=3$により消える。
+Serre双対性は必要な合成対の非退化性を与える。
+補題の有限injective分解と
+coherent対象間の有限次元Extにより
+Seidel--Thomasの球面対象の条件を満たす。
+これは同論文の一般Abel圏での構成であり、
+可換スキーム上の対象に限定しない。
+
+さらにSerre双対と上記随伴から
+\[
+ \mathbf R\operatorname{Hom}(\mathcal T,\mathcal O)
+  \simeq
+  \mathbf R\operatorname{Hom}
+     (\mathcal O,\mathbb S\mathcal T)^*
+  \simeq V^*[-3].
+\]
+よってツイストの三角形は
+$\mathcal T^{\oplus3}[-3]\to\mathcal O
+\to\mathbb T_{\mathcal T}(\mathcal O)
+\to\mathcal T^{\oplus3}[-2]$となり、
+cohomology長完全列から表示が従う。
+$\mathcal O$と$\mathcal T$はどちらも非零なので、
+二つの異なる次数に非零cohomologyを持ち、
+単一coherent対象のshiftである$\mathcal O(m)[r]$とは同型でない。
+\end{proof}
+\begin{remark}[標識なし復元とは異なる]
+\label{rem:quotient-unmarked-reconstruction}
+この自己同値は「任意の導来同値が構造対象のtwist/shiftを
+保つ」という自動性を否定する。
+異なる二つの代数の標識なし導来圏が同値なら
+次数付き同型かどうか、また球面ツイスト等を合成すれば
+標識を戻せるかどうかまでは決定しない。
+従って構造対象を指定した復元定理とは矛盾しない。
+\end{remark}

@@ -46,3 +46,7 @@
 ## 中心商の小次元表現：現行証明と検算
 
 `papers/sections/central_quotient_simple_representations.tex` に旧論文VI§17–18からPauli分解による2次元単純表現不存在、q(t) の軸上二表現、ω 行列による非軸上六表現、6次分裂元の最小多項式を移植した。行列関係と `G1=0` を `computations/verify_central_quotient_reps.py` と同等のSymPy実装で標数零の正確な多項式剰余として再計算した。六次最小多項式の証明は全中心が正規で `U=Z³(g-Z³)` という既存の入力に依存する。`V,W`の中心指標とExt¹ rank19/16・内部微分rank8/9の完全証明書は未再計算、いずれも独立検証済みとは扱わない。旧論文VIの削除条件はこの残余の証明のTeX化である。
+
+## 中心商論文VIのカテゴリー的回収と有限検算（2026-11-12）
+
+旧§21–22の射影特異圏を中心uとt=v/uで二段局所化し、有限中心上のIwanaga–Gorenstein代数のstable Homの有限長性と完備化から三つの4変数nodeへ分解する議論を `papers/sections/central_quotient_categories_and_twist.tex` に収録。KnörrerによりKaroubi完備な特異圏は `Perf_{Z/2}(C)^⊕3`（K0=Z³）となる。旧§22の構造対象の標識を保たない3-spherical twistは、軸上の3次元単純表現の自己Ext1=0を用いて構成する。`verify_central_quotient_reps.py`に法29で19次minor=15という厳密な剛性証明書を追加し実行済み。正確なtails正則判別・Azumaya locus・有限中心の全証明は未移植であり、この部分を無条件の独立定理とは扱わない。
