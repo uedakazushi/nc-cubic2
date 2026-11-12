@@ -1,4 +1,4 @@
-# PDF-onlyの現行判定（2026-11-12 / v15）
+# PDF-onlyの現行判定（2026-11-12 / v17）
 
 **本リポジトリの現行mainで追跡するPDF原本は以下の論文5件だけ**。研究ノート2件と旧Brill--Noether論文1件は現行TeXに価値ある内容を整理してGit追跡解除済み。旧版PDFやZIPのためのアーカイブは作らない。
 
@@ -31,3 +31,7 @@ GitHub mainが正本。日本語LuaLaTeXの現行証明、必要最小限の計�
 `computations/verify_center_phi_exact.py` は自由代数の関係式から次数18までの有理数商を帰納的に構成し、最後に明示Phiを厳密に零判定する。1回の実行で1次数進め、状態をGit外の一時ディレクトリに置く。同じアルゴリズムの独立ローカル実装を実行して有理数の商構成を次数13まで確認（dim560）、次数14は約130秒の時間制約により未終了。GitHub保存スクリプト自体の全次数実行は未了。したがって`--verify`のPASSは未取得であり、**PDF VIは削除しない**。これは以前の法101での零判定と別の厳密証明を目指す再現コードである。
 
 再現計算の追加監査：現行の有理数帰納アルゴリズムをローカルで再構成して次数2–13のPBW次元を実行確認した。次数14は200秒で未完了。したがって旧VIの `Phi=0` の特性零証明は依然として未完成であり、PDFは保持する。
+
+## 関係式の対称性による削減
+
+`papers/sections/central_quotient_center_azumaya.tex`の`prop:quotient-parity-reduction`により、符号対称性を保つ斉次重み18関係の非斉次補正は15個の重み12以下の中心単項式に一意に限定される。標準ライブラリだけの`computations/verify_center_parity_candidates.py`で50個の重み18以下単項式、15個の偶補正、提案Phiの7個の最高次項と4個の低次項を実行確認。さらに可換化による二条件で13次元に削減した（`prop:quotient-abelianization-reduction`）。`verify_center_parity_candidates.py` は非可換中心元の可換化と `g²=-1+2yz` も整数演算で確認。**明示Phiの斉次最高記号の正確性と13係数の値は未検証**なのでPDF VIは保持する。
