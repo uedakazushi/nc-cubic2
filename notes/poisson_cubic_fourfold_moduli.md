@@ -32,7 +32,7 @@
 
 ## 文献入口
 
-- 主入力：<https://github.com/uedakazushi/nc-cubic/blob/main/papers/sections/poisson_geometry.tex>（未公表の本研究原稿）
+- 主入力：<https://github.com/uedakazushi/nc-cubic/blob/main/papers/support/papers/sections/poisson_geometry.tex>（未公表の本研究原稿）
 - Brent Pym, *Constructions and classifications of projective Poisson varieties*, Lett. Math. Phys. 108 (2018), 573–632, <https://doi.org/10.1007/s11005-017-0984-5>（概説、四次元の完全分類の根拠にはしない）
 - E. Mayanskiy, *Poisson cohomology of two Fano threefolds*, J. Algebra 424 (2015), 21–45, <https://arxiv.org/abs/1303.5916>（三次元）
 - H. Matsumura and P. Monsky, *On the automorphisms of hypersurfaces*, J. Math. Kyoto Univ. 3 (1964), 347–361（最終稿で原典の書誌・適用条件を再確認）
