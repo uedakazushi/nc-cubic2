@@ -56,3 +56,5 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 
 - `computations/verify_center_degree7.py`：非斉次中心のF7=120/F6=84、中心核6元のQ上厳密証明とmod101 rank78。標準ライブラリのみ。
 - `computations/verify_center_weight18_mod101.py`：独立のfiltered recursionでF18=1330、50単項式rank49とΦ=0をmod101で検査。特性零の中心関係式の完全証明ではない。長時間の再実行が必要な計算であり、GitHub Actionsは使わない。
+
+- `computations/verify_center_homogeneous_symbols.py`：斉次Sklyaninの次数6最高次記号のQ上rank4。既知の斉次中心定理を入力に全中心生成・重み18の特性零rank49を導く。明示Phiの特性零恒等式は別の未解決課題。

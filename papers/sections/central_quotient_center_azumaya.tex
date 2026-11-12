@@ -68,7 +68,7 @@ $\dim F_6R_1=84$となる。
 $Z(S_1)$は三次の中心元と三つの六次中心元で生成され、
 重み18のただ一つの関係を持つ。
 $g,U,V,W$の最高次symbolがそれらを張ることを
-有限計算(ii)で確認した後、
+命題\ref{prop:quotient-generators-graded}により確認した後、
 任意の中心元の最高次項を順に消す次数下降帰納法により
 $Z(R_1)$の生成とassociated gradedの等式を得る。
 
@@ -125,6 +125,56 @@ $1,g,g^2,U,V,W$が一次独立であることを
 rankは高々$84-6=78$なので等号である。
 計算コードはPython標準ライブラリの有理数演算と
 法$101$の整数演算のみで再現可能である。
+\end{proof}
+
+\begin{proposition}[全中心の生成と重み18の関係の次元]
+\label{prop:quotient-generators-graded}
+斉次Sklyanin中心の既知の生成・関係定理
+\cite[Proposition~2.31 and \S8.2]{WWYSklyanin}を入力とすると、
+\[
+ Z(R_1)=\CC[g,U,V,W],\qquad
+ \operatorname{gr}Z(R_1)=Z(S_1).
+\]
+また$\deg g=3$, $\deg U=\deg V=\deg W=6$の
+重み18以下の50個の中心単項式が張る空間は、
+\emph{特性零でも}次元49である。
+したがって重み18以下には1次元の関係空間がある。
+ただし、その関係式が上の明示的な$\Phi$と
+正確に一致することは、この命題の結論ではない。
+\end{proposition}
+\begin{proof}
+非斉次関係式から定数項を消した斉次Sklyanin代数を
+$S_1=\operatorname{gr}R_1$とする。
+$g$の三次最高次記号と
+$g^2,U,V,W$の六次最高次記号は中心元である。
+後の4元が$(S_1)_6$で一次独立であることを
+\texttt{computations/verify\_center\_homogeneous\_symbols.py}
+の有理数上の計算で確認した。
+既知の斉次中心定理では、次数三は一次元、
+次数六は四次元で、中心はこれらの元によって生成される。
+従って上記の記号は$Z(S_1)$の生成元を与える。
+
+任意の$z\in Z(R_1)$の最高次記号は
+$Z(S_1)$の上記生成元の多項式である。
+これに対応する$g,U,V,W$の多項式を$z$から引くと、
+語長filtrationの次数が下がる。これを有限回繰り返せば
+$z$は$g,U,V,W$の多項式となり、
+同時に$\operatorname{gr}Z(R_1)=Z(S_1)$を得る。
+
+既知の斉次中心のHilbert級数は
+\[
+ \operatorname{Hilb}_{Z(S_1)}(t)
+ =\frac{1-t^{18}}{(1-t^3)(1-t^6)^3}
+\]
+である。従って重み18以下の中心部分の次元は
+自由可換代数の同範囲の50単項式から、
+重み18の一つの関係を引いた49である。
+上記の全中心の生成性により、これら50単項式は
+$Z(R_1)\cap F_{18}R_1$を張り、
+filtered associated gradedの次元保存からrankは49。
+残る1次元の関係式の最高次記号は
+斉次中心の関係を生成する。しかしその
+\emph{非斉次の下位項}は有理数上でまだ同定していない。
 \end{proof}
 
 \begin{proposition}[Azumaya locusの同定：既知Sklyanin入力付き]
