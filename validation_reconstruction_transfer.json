@@ -1,21 +1,24 @@
 {
   "date": "2026-11-12",
-  "version": "v1",
-  "status": "PARTIAL: four complete TeX sections preserved; companion manuscript integration and remaining migration pending",
+  "version": "v2",
+  "status": "PARTIAL: six complete TeX sections preserved; companion integration, references, calculations and remaining migration pending",
   "source_repository": "uedakazushi/nc-cubic",
   "destination_repository": "uedakazushi/nc-cubic2",
-  "paper_A": "Must remain in nc-cubic, unchanged",
-  "general_main_theorem": "Proof stays self-contained in nc-cubic/papers/paper_b.tex",
+  "paper_A": "Remains unchanged in nc-cubic",
+  "focused_paper_B": "nc-cubic/papers/paper_b.tex B-v55; 27-page fully typeset general-dimensional theorem and required proofs",
   "verified_fulltext_blobs": {
     "papers/reconstruction_extensions/first_order_poisson_kernel.tex": "f2875c5e7ed2312d8139dc4e9ca56960e04018f1",
     "papers/reconstruction_extensions/explicit_jacobian_recovery.tex": "a08e2b1279ee265d27dd6231521e8fbae0edd15b",
     "papers/reconstruction_extensions/point_scheme_poisson_zero.tex": "75968f92ae40487c3c463f009aa1e0f27e339666",
-    "papers/reconstruction_extensions/point_scheme_thickening.tex": "345f768a3799660a87b1b0ad86f6f4b7ea9d1c2d"
+    "papers/reconstruction_extensions/point_scheme_thickening.tex": "345f768a3799660a87b1b0ad86f6f4b7ea9d1c2d",
+    "papers/reconstruction_extensions/point_scheme_lambda_family.tex": "6d631fc215bb99fbe397288425a48941d6097ee6",
+    "papers/reconstruction_extensions/point_scheme_discriminant_boundary.tex": "c4126dd91aeb64f94d3f700aed013491050234ed"
   },
   "source_files_deleted": false,
+  "all_independent_material_transferred": false,
   "companion_reference_closure_verified": false,
   "companion_lualatex_build": false,
-  "all_independent_material_transferred": false,
   "independent_math_proof_audit": false,
-  "policy": "Keep unverified or untransferred source text available on current main; do not substitute a pointer to historical commits for proof preservation."
+  "concurrent_destination_work": "Preserved main's independent central-quotient PBW/CY and Ext updates; this change touches reconstruction_extensions and this transfer record only.",
+  "policy": "Keep unverified or untransferred source text available on current main; do not substitute historical-commit pointers for current mathematical proof preservation."
 }
