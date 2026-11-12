@@ -5,7 +5,7 @@
 ## 最重要の構造結果：全次元のPoisson cubic pairの既約成分
 
 - **新定理（既存Poisson正規形定理を入力とする）**：滑らかなcubic $n$-fold（$n\ge3$）の非零Poisson pairを同時に変形させると、基礎位相空間の既約成分は一般rank $2k$（$1\le k\le\lfloor(n+2)/3\rfloor$）について各一つ、合計 $\lfloor(n+2)/3\rfloor$ 個。各成分の次元は `papers/poisson_cubic_pair_components.tex` の閉公式で与える。$n=3,4,5,6,7$の次元は順に $(17)$、$(30,4)$、$(48,16)$、$(72,34)$、$(103,59,6)$。
-- **主張の確実性**：軌道次元、係数空間、層の既約性、閉包の非包含について原稿に証明を記載。深い正規形定理は `nc-cubic/papers/sections/poisson_geometry.tex` に既存証明があるが、今回その独立再監査は未完了。全次元のPoisson schemeのgeneric reducedness・交叉のscheme構造・初出確認は未解決。
+- **主張の確実性**：軌道次元、係数空間、層の既約性、閉包の非包含について原稿に証明を記載。深い正規形定理は `nc-cubic/papers/support/papers/sections/poisson_geometry.tex` に既存証明があるが、今回その独立再監査は未完了。全次元のPoisson schemeのgeneric reducedness・交叉のscheme構造・初出確認は未解決。
 - **最優先の研究手順**：正規形定理の独立監査→各成分の接空間／非被約性→成分交叉・零切断→先行研究に基づく公表稿の再編。詳細は `notes/poisson_cubic_all_dimensions.md`。
 - **保存と組版**：GitHub mainが正本、.vscodeでLaTeX Workshop + LuaLaTeX、PDFはbuildに生成してGit追跡しない。GitHub Actionsとforce pushは使わない。
 
@@ -45,7 +45,7 @@ embedded componentの長さの解明。
 滑らかなcubic fourfold $X\subset\mathbb P^5$と非零正則Poisson構造$\pi$の組を同時に動かす相対Poisson schemeを、まず基礎位相空間の既約成分、その次にscheme構造まで分類する。Poissonスカラーを保持する。
 
 - **現在の最重要の到達点（既存Poisson正規形定理を入力とする）**：成分数は2、rank2成分のモジュライ次元30、rank4成分の次元4。rank2は$\operatorname{Gr}(3,6)$の非零錐、rank4は二つの平面三次Jacobianブロックに由来する。証明は `papers/poisson_cubic_fourfold_moduli.tex`。
-- **依存**：主リポジトリ `nc-cubic/papers/sections/poisson_geometry.tex` のPoisson正規形定理（独立再監査は未実施）。そのため、公表完成定理であるとの主張はしない。数学的な帰結の証明と定理の独立監査を区別する。
+- **依存**：主リポジトリ `nc-cubic/papers/support/papers/sections/poisson_geometry.tex` のPoisson正規形定理（独立再監査は未実施）。そのため、公表完成定理であるとの主張はしない。数学的な帰結の証明と定理の独立監査を区別する。
 - **新たに確認した点**：rank4成分のgeneric reducednessをFermat点のJacobi微分の整数36次小行列式で証明。検算コードは `verify_poisson_cubic_fourfold_tangent.py`。
 - **未解決の核心**：rank2成分のgeneric reducedness、交叉のscheme構造、零Poissonの近傍、成分の境界、および新規性の一次文献照合。
 - **優先手順**：六変数で正規形の独立証明→generic tangent/obstruction計算→交叉の局所環→全scheme分類→最終稿の先行研究調査。
