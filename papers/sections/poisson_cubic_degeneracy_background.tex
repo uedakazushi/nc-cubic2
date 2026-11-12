@@ -1,0 +1,159 @@
+\section{全退化スキームの方程式}\label{sec:pg-degeneracy}
+\subsection{任意のブロック表示に対する生成元}
+$q_s=\iota_{df_s}(\partial_{x_{s1}}\wedge\partial_{x_{s2}}\wedge\partial_{x_{s3}})$ とし、
+\begin{equation}
+A_{s,i}=\frac{\partial f_s}{\partial x_{si}},\qquad
+p_s=\sum_i x_{si}A_{s,i}=3f_s-\sum_\alpha u_\alpha\frac{\partial f_s}{\partial u_\alpha}
+\end{equation}
+とおく。$D_{2j-2}(\pi)=Z(\pi^j)$ をスキームとして考える。
+\begin{proposition}\label{prop:pg-deg-ideal}
+$1\leq j\leq k$ に対し、$D_{2j-2}(\pi)$ のイデアル層は、全ての
+$I\subset\{1,\ldots,k\}$、$|I|=j$ について
+\begin{equation}
+ u_\alpha\prod_{s\in I}A_{s,i_s},\qquad
+ p_t\prod_{s\in I\setminus\{t\}}A_{s,i_s}\ (t\in I),\qquad
+ x_{t,l}\prod_{s\in I}A_{s,i_s}\ (t\notin I)\label{eq:pg-deg-generators}
+\end{equation}
+を生成元とする。各添字は可能な範囲を動く。
+$X$ 上のイデアルはさらに $F$ を加えて得られる。
+各生成元の次数は $2j+1$ である。
+\end{proposition}
+\begin{proof}
+錐の原点以外では $E$ の生成する直線を局所的な直和因子に選べる。
+その商束の外積から $E\wedge-$ は分裂単射となるので、
+射影化の零点イデアルは $E\wedge q^j$ の係数イデアルに等しい。
+$q_s^2=0$ より $q^j=j!\sum_{|I|=j}\bigwedge_{s\in I}q_s$。
+$E$ の中心成分は第一の型を与える。
+$t\in I$ では $(\sum_lx_{tl}\partial_{x_{tl}})\wedge q_t
+=p_t\partial_{x_{t1}}\wedge\partial_{x_{t2}}\wedge\partial_{x_{t3}}$ なので第二の型となる。
+$t\notin I$ は第三の型を与える。
+ブロック別外積次数は、中心に一、選択したブロックに三、選択しないブロックに一、という異なる型をもつ。
+残りの選択ブロックは二であるため、異なる型の間に相殺はない。
+最後に $T_X\subset T_{\PP(V)}|_X$ は局所的に分裂するので、外積への包含は切断の零点イデアルを変えない。
+\end{proof}
+
+\subsection{有限平坦 critical cover}
+本小節以降、特に断らない限り
+\begin{equation}
+f_{s,0}=f_s(x_s,0)\text{ が滑らかな平面三次曲線 }E_s\text{ を定める}\label{eq:pg-smooth-block}
+\end{equation}
+と仮定する。$E_s$ は $u=0$、$x_t=0$（$t\neq s$）により $X$ 内に入り、互いに交わらない。
+\begin{lemma}\label{lem:pg-critical-cover}
+$m>0$ なら
+\begin{equation}
+K_s=V(A_{s,1},A_{s,2},A_{s,3})\subset\PP(x_s,u)=\PP^{m+2},
+\qquad\Delta=V(A_{s,i}\mid s,i)
+\end{equation}
+は $u=0$ と交わらない。
+中心座標への射影は $K_s\to\PP_u^{m-1}$ を有限平坦八次被覆、
+$\Delta\to\PP_u^{m-1}$ を有限平坦 $8^k$ 次被覆とし、
+$\Delta\simeq K_1\times_{\PP_u^{m-1}}\cdots\times_{\PP_u^{m-1}}K_k$。
+$m\geq0$ の場合を含め、$\Gamma_I=V(A_{s,i}\mid s\in I,1\leq i\leq3)$ は
+非空なら型 $(2^{3|I|})$ の完全交叉で、
+\begin{equation}
+\dim\Gamma_I=N-1-3|I|,\qquad\deg\Gamma_I=8^{|I|}.
+\end{equation}
+特に $m>0$ では
+$\dim\Delta=m-1$、$\deg\Delta=8^k$、$\omega_\Delta\simeq\OO_\Delta(3k-m)$。
+$m=0$ では $\Delta=\varnothing$ とする。
+\end{lemma}
+\begin{proof}
+$R=\CC[u_1,\ldots,u_m]$、$Q_s=R[x_s]/(A_{s,1},A_{s,2},A_{s,3})$ とする。
+$Q_s/(u)$ は滑らかな三次式の Jacobian 環で、Hilbert 級数 $(1+t)^3$ をもつ。
+その八個の斉次基底を持ち上げれば、次数による帰納法から $Q_s$ は有限 $R$-加群となる。
+三方程式による次元下界と有限性より $\dim Q_s=m$。
+従って方程式は正則列で $Q_s$ は Cohen--Macaulay である。
+$u_1,\ldots,u_m$ は斉次パラメータ系なので $Q_s$-正則列である。
+持上げからの全射
+\begin{equation}
+R\oplus R(-1)^{\oplus3}\oplus R(-2)^{\oplus3}\oplus R(-3)\longrightarrow Q_s
+\end{equation}
+は同型である。実際、$u$ の Koszul 完全性により
+$\operatorname{Tor}_1^R(Q_s,R/(u))=0$ であり、全射の核を $(u)$ で割ると零となる。
+次数付き Nakayama が核を零にする。
+複数ブロックの環は $R$ 上のテンソル積なので階数 $8^{|I|}$ の有限自由加群である。
+残りの active 変数を加えれば、$\Gamma_I$ の高さと完全交叉性が従う。
+$m=0$ かつ $I$ が全体のときだけ射影スキームは空である。
+
+$u=0$ では各 gradient の共通零点は原点だけなので、$K_s$ と $\Delta$ は射影的にその部分と交わらない。
+$u_\alpha\neq0$ で全ブロックを同時に $u_\alpha=1$ と正規化すれば、有限自由性が被覆の有限平坦性と fiber product 表示を与える。
+重なりでも同時正規化するため貼り合わさる。次数と双対化層は Hilbert 級数および随伴公式から従う。
+\end{proof}
+
+\subsection{退化集合と零点スキーム}
+空でない $L\subset\{1,\ldots,k\}$ に対し
+\begin{equation}
+J_L=V(u,x_t\ (t\notin L),f_{s,0}\ (s\in L))
+\end{equation}
+を $E_s$（$s\in L$）の射影的 join とする。
+独立な錐の積の射影化なので、被約既約で次元 $2|L|-1$ である。
+\begin{proposition}\label{prop:pg-deg-support}
+$0\leq r<k$ について
+\begin{equation}
+|D_{2r}(\pi)|=\bigcup_{|I|=k-r}|\Gamma_I|\ \cup\ \bigcup_{|L|=r+1}J_L.
+\end{equation}
+$X$ 上では右辺を $X$ と交わらせる。
+零点についてはスキームとして
+\begin{equation}
+D_0(\pi)=\left(\coprod_sE_s\right)\sqcup\Delta,
+\qquad D_0(\pi_X)=\left(\coprod_sE_s\right)\sqcup Z,
+\qquad Z=\Delta\cap X.
+\end{equation}
+\end{proposition}
+\begin{proof}
+非零 active gradient をもつブロック数を $\ell$ とするとアフィン階数は $2\ell$。
+$u\neq0$ では Euler 方向が像に入らず、射影化で階数は変わらない。
+$u=0$ では\eqref{eq:pg-smooth-block}により gradient が零であることと $x_s=0$ が同値である。
+非零ブロックの像は $\ker df_{s,0}$ なので、Euler 方向が像に入る条件は各 $3f_{s,0}=0$。
+この場合に限り射影階数は $2\ell-2$ となる。これが台の表示を与える。
+
+スキーム構造には命題\ref{prop:pg-deg-ideal}を用いる。
+$u_\alpha\neq0$ では $u_\alpha A_{s,i}$ が全 active 偏微分を生成するので零点は $\Delta$ である。
+$E_s$ の点ではある $A_{s,i}$ が単元となり、生成元は局所的に $u,x_t$（$t\neq s$）および $p_s$ を生成する。
+これらを法として $p_s=3f_{s,0}$ で、他の生成元は消える。
+従って零点イデアルは厳密に $(u,x_t\ (t\neq s),f_{s,0})$。
+各 $E_s$ は被約であり、$\Delta$ と交わらないので所要の分解となる。
+\end{proof}
+\begin{remark}
+台の表示を高次の退化スキームの被約分解と取り違えてはならない。
+例えば $m=0$ の $\Gamma_I$ は座標線形空間を台とするが、Jacobian イデアルは一般に非被約な厚みを定める。
+\end{remark}
+
+\subsection{完全交叉性と一般の滑らかさ}
+\begin{proposition}\label{prop:pg-zero-ci}
+$m=1$ なら $Z=\varnothing$。
+$m\geq2$ なら一般性を仮定せず $Z$ は型 $(2^{3k},3)$ の完全交叉で、
+\begin{equation}
+\dim Z=m-2,\qquad \deg Z=3\cdot8^k,\qquad
+\omega_Z\simeq\OO_Z(3k+3-m).
+\end{equation}
+滑らかな $f_{s,0}$ を固定して他の係数を一般に選ぶと、$K_s,\Delta$ および $m\geq2$ の場合の $Z$ は滑らかである。
+これらが正次元ならば、滑らかな場合には既約である。
+\end{proposition}
+\begin{proof}
+$\Delta$ の斉次環を $Q$ とする。
+$Q$ は $R=\CC[u]$ 上有限自由な Cohen--Macaulay 環で、各最小素イデアルは $R$ の零イデアルに縮約する。
+実際、各成分は純次元性により次元 $m$ であり、有限性から像も次元 $m$ である。
+ある成分上 $F=0$ とし、その関数体を $L$ とする。
+$L/\CC(u)$ は有限分離拡大なので、$du_1,\ldots,du_m$ は $\Omega^1_{L/\CC}$ の基底である。
+全 active 偏微分が零なので
+$0=dF=\sum_\alpha F_{u_\alpha}du_\alpha$、従って全中心偏微分も零となる。
+この成分は $u$-空間を支配し原点以外の点をもつため、$X$ の滑らかさに矛盾する。
+よって $F$ はどの最小素点にも入らず、Cohen--Macaulay 性により非零因子である。
+これが $m\geq2$ の完全交叉性と数値を与える。
+$m=1$ では交点があれば $u_1\neq0$ と $3F=u_1F_{u_1}$ により全偏微分が零となり矛盾する。
+
+一般性を確認する。$u$ を含む係数を動かすパラメータ空間では、
+$u_\alpha\neq0$ の点で項 $x_{si}u_\alpha^2$ の係数が $A_{s,i}$ の値を独立に変える。
+従って全 critical incidence は滑らかである。
+$u=0$ には解がなく、incidence はパラメータ空間と射影空間の積の閉部分なので、その射影は proper である。
+全 fiber は非空な有限被覆なので射影は支配的であり、標数零の generic smoothness から一般の $K_s,\Delta$ は滑らかとなる。
+そのような $\Delta$ を固定し $F$ に中心三次式 $c(u)$ を加えても active 偏微分は変わらない。
+切断 $c(u)|_\Delta$ は基点をもたず、Bertini から一般の $Z$ は滑らかとなる。
+$X$ の滑らかさも非空開条件である。
+実際 $\sum_sf_{s,0}+\sum_\alpha u_\alpha^3$ が滑らかな例を与える。
+従ってこれらの開条件を同時に課せる。
+正次元の射影完全交叉の Koszul resolution と線束の中間コホモロジー消滅から $H^0(\OO)=\CC$。
+よって連結であり、滑らかならば既約である。
+\end{proof}
+
