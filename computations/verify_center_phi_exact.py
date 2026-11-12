@@ -147,14 +147,15 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--state-dir", default="/tmp/nc-cubic2-center-phi")
     parser.add_argument("--verify", action="store_true")
-    parser.add_argument("--smoke", action="store_true", help="check the first three quotient degrees from scratch")
+    parser.add_argument("--smoke", action="store_true", help="check exact quotient dimensions in degrees 2 through 8")
     args = parser.parse_args()
     if args.smoke:
         algebra=Filtered()
-        for expected in (10,20):
+        for n_expected in range(2,9):
             n, dim=algebra.extend()
-            assert dim == expected, (n,dim)
-        print("PASS: exact-Q filtered quotient degrees 2 and 3")
+            assert n == n_expected
+            assert dim == (n+1)*(n+2)*(n+3)//6
+        print("PASS: exact-Q filtered quotient dimensions in degrees 2 through 8")
         return
     state_dir=Path(args.state_dir)
     state_dir.mkdir(parents=True,exist_ok=True)

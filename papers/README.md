@@ -60,3 +60,5 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 - `computations/verify_center_homogeneous_symbols.py`：斉次Sklyaninの次数6最高次記号のQ上rank4。既知の斉次中心定理を入力に全中心生成・重み18の特性零rank49を導く。明示Phiの特性零恒等式は別の未解決課題。
 
 - `computations/verify_center_phi_exact.py`：Phiの特性零恒等式を有理数上で検証するための増分型スクリプト。標準ライブラリのみ。1回に1次数の商を構成しGit外にcheckpoint。次数18後に`--verify`。**現時点でPASSは未取得**（有理数計算は次数13まで）。
+
+- `verify_center_phi_exact.py --smoke` は現在次数2–8の有理数商次元を検査する。同じ帰納アルゴリズムの独立ローカル実装では次数13（次元560）まで実行確認。GitHub版スクリプトの実行と次数18のPhi検証は未完了。
