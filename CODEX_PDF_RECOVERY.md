@@ -1,6 +1,6 @@
 # Codex 研究指示：pdf-only の数学的発展・論文化・追跡解除
 
-**日付：2026-11-12 / v2**
+**日付：2026-11-12 / v3**
 **適用対象：** `uedakazushi/nc-cubic2` の現行 `main`。本ファイルは履歴ではなく、今後の継続研究の指針である。  
 **着手順：** `00_research_plan.md` → 本ファイル → `PDF_SOURCES.md` → `notes/research_notes.md` → 対象の現行TeX・PDF・計算コード。
 
@@ -43,7 +43,9 @@
 
 **現在の到達点：** Φ=0は現行の `computations/verify_center_phi_exact.py` による厳密有理数検証で確定した。中心の正規性とAzumaya locusはRees退化・既知Sklyanin入力・一次文献の仮定照合から導き、二重étale被覆とrank6 monic式で中心降下と分岐位置を証明した。中心chartと導分によるperfect性の貼合せを現行TeXに収録し、15点のHessianも厳密検算した。
 
-**次の数学的ボトルネック：** 相対PBW・周囲のAS正則性・R1のCY性・Nakayama twistという基礎入力を監査し、全表現間のExt表と旧VI初期§1–13の固有結果（分離型三次式の必要十分条件、一般ambientの超越的中心値、有限位数境界の正則開集合）を現行資料と完全比較する。より概念的な証明・一般化が得られれば現行論文へ統合する。既存の重要な数学を失わない範囲で、原PDFの削除ゲートを引き続き判定する。
+相対PBW・周囲のKoszul AS正則性・R1のCY性・Nakayama twistは現行証明とQ[α]上の有限証明書で確定し、全表現間Ext表も構造的証明と代数体上の厳密行列計算で再現した。
+
+**次の数学的ボトルネック：** 旧VI初期§1–13の固有結果（分離型三次式の必要十分条件、一般ambientの超越的中心値、有限位数境界の正則開集合）を現行資料と完全比較する。より概念的な証明・一般化が得られれば現行論文へ統合する。既存の重要な数学を失わない範囲で、原PDFの削除ゲートを引き続き判定する。
 
 ### B. `papers/pdf-only/ambient/central_pair_formal_moduli.pdf`（旧V、60頁）
 

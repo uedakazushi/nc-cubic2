@@ -202,22 +202,67 @@ $m$をこの中心指標に特殊化すると六根を持つ。
 次数六のモニック多項式で$m$の倍数だから同じものとなる。
 \end{proof}
 
-\begin{remark}[一次拡大の検証範囲]
-元の旧論文VIでは、各中心点の二表現$S_+,S_-$について
+\begin{proposition}[八つの三次元単純表現の一次拡大]
+\label{prop:quotient-full-ext1}
+各四つの中心点の二つの三次元単純表現を$S_+,S_-$とする。
+命題\ref{prop:local-model}のPBW・既知Sklyanin入力の下で
 \[
- \dim\operatorname{Ext}^1_A(S_i,S_j)
- =\dim\operatorname{Ext}^1_{A/(g)}(S_i,S_j)
- =\begin{cases}0&i=j,\\2&i\ne j\end{cases}
+ \dim\operatorname{Ext}^1_{R_1}(S_\epsilon,S_\eta)
+ =\dim\operatorname{Ext}^1_{R_1/(g)}(S_\epsilon,S_\eta)
+ =\begin{cases}0&\epsilon=\eta,\\2&\epsilon\ne\eta.\end{cases}
 \]
-を報告し、原行列の一次微分のrankが自己拡大で19、
-相互拡大で16、内的微分のrankがそれぞれ8、9とする。
-この値から一次拡大箙は二頂点二方向二矢印を持つ
-四つの非連結成分となる。ただし\emph{現在のリポジトリには
-元の全27変数の行列証明書がなく、今回はrank再実行を
-行っていない}。従ってこのExt次元の計算は未再検証の
-計算結果として保持し、局所代数同型の証明の入力にしない。
-\end{remark}
+異なる中心点に属する単純表現の間では、全てのExt群が零である。
+従って一次拡大箙は、二頂点と各方向二矢印を持つ四つの非連結成分からなる。
+\end{proposition}
+\begin{proof}
+命題\ref{prop:local-model}の完備化でMorita同値を取り、
+$E=\operatorname{End}_R(R\oplus I)$、
+$R=\CC[[p,q,a,b]]/(pq-ab)$、$I=(p,a)$とする。
+ここで$\gamma=(b-a)/2$である。
+$R$の極大イデアルを$\mathfrak m$とすると
+\[
+ I^*=p^{-1}(p,b),\qquad II^*=(p,a,b,q)=\mathfrak m.
+\]
+$R$と$I$は非同型直既約で、両者の自己準同型環は$R$。
+従ってJacobson radicalは
+\[
+ J_E=\begin{pmatrix}\mathfrak m&I^*\\I&\mathfrak m\end{pmatrix},\qquad
+ J_E/J_E^2\simeq
+ \begin{pmatrix}0&I^*/\mathfrak m I^*\\I/\mathfrak m I&0\end{pmatrix}.
+\]
+$I$と$I^*$はそれぞれ二つの極小生成元を持つので、
+二つの非対角成分はともに$\CC^2$である。
+projective coverのradicalを使うExt$^1$の計算から、
+自己拡大は零、相互拡大は二次元となる。
 
+さらに$\gamma E\subset J_E^2$なので、$\gamma$で割っても
+$J_E/J_E^2$は変化しない。$(g)=(\gamma)$であるから
+中心切断$R_1/(g)$でも同じ一次拡大表を得る。
+中心上有限な代数の有限長加群間のExtは同じ中心閉点に支持され、
+忠実平坦完備化と可換なので、元の代数でのExtも同じである。
+異なる中心指標を持つ二加群では、ある中心元が異なるスカラーで作用する。
+Ext上の二つの中心作用は等しいため、その差の非零スカラーがExtを殺し、
+従って全Ext群が零となる。
+
+独立の有限計算でも同じ結果を確認した。
+上三角block表現の非対角三行列を27変数として関係式を線型化した行列を$J$、
+$g=Y^3-ZYX+X$の線型化を追加した行列を$J_g$とすると、
+軸上・非軸上の両方について
+\[
+\begin{array}{c|c|c|c|c}
+ &\operatorname{rank}J&\operatorname{rank}J_g
+ &\operatorname{rank}(\text{内的微分})&\dim\operatorname{Ext}^1\\\hline
+ \text{自己}&19&19&8&0\\
+ \text{相互}&16&16&9&2
+\end{array}
+\]
+となる。これは$\mathbb Q[t]/(q)$と
+$\mathbb Q[\omega]/(\omega^2+\omega+1)$上の厳密な行列階数である。
+再現コード\texttt{computations/verify\_central\_quotient\_extensions.py}は
+$J$と$J_g$が内的微分を殺すことも検査する。
+符号反転は各点の二表現を交換し、三乗根の対称性は非軸上三点を巡回するので、
+この計算は八つの全単純表現を扱っている。
+\end{proof}
 
 \begin{proposition}[軸上の三次元表現の無限小剛性と整数小行列式]
 \label{prop:quotient-axial-rigidity}

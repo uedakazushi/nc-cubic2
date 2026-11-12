@@ -7,8 +7,9 @@
 全21混合項の一般判別式や任意の量子パラメータ$h$の判別式を
 主張しない。有限中心・Azumaya locusは第\ref{sec:quotient-center-azumaya}節、
 中心chartの貼合せは第\ref{sec:quotient-chart-gluing}節の証明を用いる。
-PBW、周囲のAS正則性、$R_1$のCalabi--Yau性と楕円境界の記述は
-明示した既知入力として区別する。
+PBW、周囲のAS正則性、$R_1$のCalabi--Yau性は
+第\ref{sec:quotient-pbw-cy}節で証明した。
+斉次Sklyaninの楕円境界の記述は既知入力として区別する。
 
 $R_1=\CC\langle X,Y,Z\rangle/
 ([X,Y]-Z^2,[Y,Z]-(X^2+1),[Z,X]-Y^2)$、
@@ -83,9 +84,10 @@ $D^{\mathrm{op}}$と$D^e$も有限大域次元を持つ。
 
 \begin{theorem}[二つの真に悪いaffine中心値]
 \label{thm:tails-bad-affine}
-$R_1$が三次元Calabi--Yau、$G_1+\beta$が正則で、
-$D_\beta$が有限型可換中心上有限であるという旧論文VIの
-入力を仮定する。このとき
+命題\ref{prop:quotient-constant-cy}と
+第\ref{sec:quotient-center-azumaya}節により、
+$R_1$は三次元Calabi--Yauで中心上有限、$G_1+\beta$は中心正則元である。
+このとき
 \[
  \beta=\pm\frac{2i}{3}
  \quad\Longrightarrow\quad \operatorname{gldim}D_\beta=\infty.
@@ -181,7 +183,7 @@ separability idempotentによりperfect性が降下する。
 $C_\alpha=A_\alpha/(v-u)$とし、
 $B_\alpha,A_\alpha$の定義を
 第\ref{sec:quotient-exact-tails}節の後半の定理に置く。
-同定理のPBW・AS正則性・CY性の入力と、
+第\ref{sec:quotient-pbw-cy}節のPBW・AS正則性・CY性と、
 境界$\operatorname{qgr}(C_\alpha/(u))\simeq\operatorname{coh}E_1$
 の既知の記述（$E_1$は滑らかな楕円曲線）を用いる。
 貼合せ自体を追加仮定とはしない。
@@ -233,12 +235,14 @@ $P(-2)=-6\ne0$からchartの大域次元は高々2となる。
  -\frac{xyz+xzy+yxz+yzx+zxy+zyx}{9}
  +\alpha uvx+u^3+v^3,\quad C_\alpha=A_\alpha/(v-u)
 \]
-とする。既知入力を次の通り明示する：
-$B_\alpha$の相対PBW性とKoszul AS正則性（次元5、index 5）、
-$W_\alpha$の中心正則性、$A_\alpha$の$\CC[u,v]$上の自由性、
-$R_1$の三次元Calabi--Yau性、および
+とする。系\ref{cor:quotient-ambient-pbw}と
+命題\ref{prop:quotient-constant-cy}により、
+$B_\alpha$はKoszul AS正則（次元5、index 5）、
+$W_\alpha$は中心正則、$A_\alpha$は$\CC[u,v]$上自由で、
+$R_1$は三次元Calabi--Yauである。
+斉次Sklyaninの既知の記述
 $\operatorname{qgr}(S_1/(\Omega_1))\simeq\operatorname{coh}E_1$
-という滑らかな楕円境界の既知の記述を用いる。
+（$E_1$は滑らかな楕円曲線）を用いる。
 最後の境界の代数的表示は
 \cite[Lemma~2.19]{WWYSklyanin}のtwisted homogeneous coordinate ringである。
 中心chartの貼合せは第\ref{sec:quotient-chart-gluing}節で証明済みである。

@@ -13,7 +13,7 @@
 - **正則正規三次族からの1周期性**：一般$N,d$について最小周期が$\gcd(N,d)$を割る定理と5次元・三次の場合の系を、モジュライ原稿の [周期性節](papers/sections/ambient_periodicity.tex) に証明ごと統合。ambientの1周期性と、商イデアルを保つ周期性を区別する。後者と初出・新規性の確定は未了。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 
-**2026年11月12日・v14。独立した研究内容の正本は本リポジトリの `main`。**
+**2026年11月12日・v15。独立した研究内容の正本は本リポジトリの `main`。**
 
 ## 六・七次元Poisson cubicの独立なscheme幾何
 
@@ -80,12 +80,12 @@ GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗
 
 ### 中心商特異性・chart貼合せ・特異圏
 
-[中心商原稿](papers/central_quotient_local_models.tex)に、全中心、四つの非可換A1局所模型とBrauer指数6、二中心chartの21特異点と三つのホモロジー的特異点、Karoubi特異圏、球面twist、指定一混合族の正確なtails判別式を整理した。相対PBW・周囲のAS正則性・CY性・楕円境界は既知入力として明示する。
+[中心商原稿](papers/central_quotient_local_models.tex)に、全中心、四つの非可換A1局所模型とBrauer指数6、二中心chartの21特異点と三つのホモロジー的特異点、Karoubi特異圏、球面twist、指定一混合族の正確なtails判別式を整理した。[PBW/CY節](papers/sections/central_quotient_pbw_cy.tex)に定数項変形と周囲の基礎性質も証明した。斉次Sklyaninの標準的性質と楕円境界は既知入力として明示する。
 
 [全中心とAzumaya locus](papers/sections/central_quotient_center_azumaya.tex)では、Rees退化の一般補題と一次文献の仮定を照合した。`computations/verify_center_degree7.py` はQ上の6中心元と交換子rank78、`computations/verify_center_phi_exact.py` は次数18・dim1330・Φ=0を厳密有理数演算で実行確認済み。再現：`python computations/verify_center_phi_exact.py --backend flint --run-all --verify`（python-flintが必要）。
 
 [chart貼合せの証明](papers/sections/central_quotient_chart_gluing.tex)は、行列因子化の分母払いと導分による三切断への帰着を与える。二重étale中心降下、rank6 monic比較、分岐位置、15通常二重点のHessianも明示計算した。検算：`computations/verify_central_quotient_local_hessian.py` と `computations/verify_quotient_exact_tails.py`。
 
-[三次元表現](papers/sections/central_quotient_simple_representations.tex)と[特異圏・twist](papers/sections/central_quotient_categories_and_twist.tex)では、軸上剛性の法29の19次minor、境界正則性、chartのIwanaga–Gorenstein性を現行証明に保持する。球面性のNakayama twistと全表現間Ext表の監査は残る。
+[三次元表現](papers/sections/central_quotient_simple_representations.tex)と[特異圏・twist](papers/sections/central_quotient_categories_and_twist.tex)では、軸上剛性の法29の19次minor、境界正則性、chartのIwanaga–Gorenstein性を現行証明に保持する。全8単純表現のExt表も構造的に証明し、`computations/verify_central_quotient_extensions.py`で代数体上の厳密rankを再実行した。Nakayama twist恒等性は`computations/verify_central_quotient_koszul.py`の全αで有効なFrobenius証明書から従う。
 
 [正確なtails判別](papers/sections/central_quotient_exact_tails.tex)の原稿をLuaLaTeXで組版済み。原PDF VIの初期諸節にある分離型三次式・一般ambient正則性・開性等の固有内容の全照合が終わるまでは、原PDFを保持する。

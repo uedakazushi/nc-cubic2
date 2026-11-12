@@ -12,7 +12,7 @@
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 - **可換点の全Artin形式局所構造をTeX化**：`papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。ただし有限位数境界と非可換Bertiniに依存する正則な四次元開集合の存在は独立再監査前なので条件付き。原PDFの全係数Hesse中心元・有限証明書・周囲37次元成分の細部は未完全照合で保持する。
 
-**2026-11-12 / v32。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v33。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -96,7 +96,7 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 - `central_quotient_exact_tails.tex`：一次元表現の長さ3非被約局所環、真に悪い中心値、有限射影行列因子化と二重分岐、曲面・三様体のtails正則性の必要十分判別
   `(alpha^3+9)(28alpha^3+243)`。有限中心・PBW/CY・中心chart貼合せの仮定付き。小計算は `computations/verify_quotient_exact_tails.py`、BGVの一次論文（JNCG 10 (2016), Theorems 6.3, 6.6, 6.7, Corollary 6.8）を確認した。
 
-**次の具体的着手：** 全中心表示、Rees/Azumaya比較、二重étale被覆による中心降下、中心chartと導分によるperfect性の貼合せを現行証明に整理した。次は相対PBW・CY・Nakayama twistの基礎入力、全表現間Ext表、旧VI初期§1–13の分離型三次式と一般ambientの正則性・開性の固有結果を照合する。中心商原稿のLuaLaTeX組版は実行済み。
+**次の具体的着手：** 全中心表示、Rees/Azumaya比較、二重étale被覆による中心降下、中心chartと導分によるperfect性の貼合せを現行証明に整理した。定数項変形のPBW/3-CY性、指定混合族の相対PBW/Koszul AS正則性とNakayama twist恒等性、全表現間Ext表も証明・厳密検証した。次は旧VI初期§1–13の分離型三次式と一般ambientの正則性・開性の固有結果を照合する。中心商原稿のLuaLaTeX組版は実行済み。
 
 ### 2. その他の4論文PDF
 
@@ -115,4 +115,4 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 
 Rees退化による非Azumaya locusの次元上界を一般補題にし、WWY Theorem 1.3/Lemma 5.4、Levasseur Proposition 3.2(ii)、Brown–Macleod Theorems 3.13/4.8の本文と仮定を照合した。PBWと既知Sklyanin入力からR1の大域次元3、中心の正規性、Azumaya locus同定を導く。二重étale被覆とrank6 monic式から中心降下と分岐位置を証明し、21特異点中15点の非零Hessianを厳密検算した。IW Theorem 5.1(1)の二素因子のflag分類から四点の局所模型を得る。
 
-`papers/sections/central_quotient_chart_gluing.tex`に、CCKMの行列因子化同値、分母払い、導分の中心因子、Chen/Yekutieli–Zhangの双対性による正確な次元を収録した。指定混合族の判別式の貼合せは追加仮定から除いた。chartのIwanaga–Gorenstein性も中心正則商と忠実平坦降下から証明する。次は相対PBW・CY・Nakayama twistの基礎入力と旧VI初期諸節の固有結果を照合する。PDF5件は保持し、生成物は追跡しない。
+`papers/sections/central_quotient_chart_gluing.tex`に、CCKMの行列因子化同値、分母払い、導分の中心因子、Chen/Yekutieli–Zhangの双対性による正確な次元を収録した。指定混合族の判別式の貼合せは追加仮定から除いた。chartのIwanaga–Gorenstein性も中心正則商と忠実平坦降下から証明する。`papers/sections/central_quotient_pbw_cy.tex`にBGの三次syzygy条件、被約基底での相対PBW、自己双対な双加群解消、周囲のKoszul AS正則性を証明した。Koszul双対をQ[α]上で計算し、全pivotが非零有理定数、Frobenius対合のdetが±1であることから全αでNakayama twistが恒等と確定した（`computations/verify_central_quotient_koszul.py`）。全8三次元単純表現のExt1表は構造的に証明し、代数体上のrank19/16・内的微分rank8/9も厳密再実行した（`computations/verify_central_quotient_extensions.py`）。次は旧VI初期諸節の固有結果を照合する。PDF5件は保持し、生成物は追跡しない。

@@ -1,6 +1,6 @@
 # 研究ノート：境界研究の現在の知識と障害
 
-**2026-11-12 / v13**
+**2026-11-12 / v14**
 
 - 独立の大部原稿は `papers/pfaffian_brill_noether_technical.tex` にTeXソースで存在する。旧79節を一字も削らず5個の `papers/sections/` ファイルへ分割した。主論文A・Cから直接入力されない一方、内容上の引用・既知結果への依存は今後も監査する。
 - 中心三次曲面
@@ -47,10 +47,10 @@
 
 `papers/sections/central_quotient_chart_gluing.tex` に、行列因子化の縮約、中心chartの分母払い、導分による三切断への帰着、perfect性とSerre双対性による正確な次元を整理した。境界正則性とchartのIwanaga–Gorenstein性も証明し、特異圏の三因子分解への余分な条件を除いた。有限大域次元のaffine PI代数のsmoothnessにはRSV Lemmas 3.4–3.5の適用条件を明示した。
 
+`papers/sections/central_quotient_pbw_cy.tex`にBGのPBW条件、被約基底上の相対PBW性、R1の自己双対な3-CY解消、指定混合族のKoszul AS正則性を証明した。Koszul双対の有限証明書は全pivotが非零有理定数で、全αへの特殊化が可能。全Frobenius対合detが±1となり、Nakayama twist恒等性を確定した。一次Ext表も局所模型のrad/rad²で説明し、独立にQQ[t]/qとQQ[ω]上でrankを再実行した。対角0・非対角2、中心切断前後で同じである。
+
 残る重要な監査・回収対象：
 
-- 相対PBWと周囲のKoszul AS正則性、R1の3-CY性、球面twistのNakayama twist恒等性という基礎入力。
-- 各中心点の二表現間のExt表（対角0・非対角2）の完全な厳密再計算。軸上自己Ext1の消滅は既存minorで確認済み。
 - 旧VI初期§1–13の分離型二変数三次式の必要十分条件、一般ambientの超越的中心値、有限位数境界での正則開集合。これらの固有証明と他の現行原稿・ノートとの全照合。
 
 原PDF VIは上記の固有内容を失わずに現行資料で置換できるまで保持する。他の4PDFも削除ゲートを満たしていない。中心商原稿はLuaLaTeXで組版済みで、PDF・計算状態・文献のダウンロードは追跡しない。

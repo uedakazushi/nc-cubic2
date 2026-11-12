@@ -18,22 +18,26 @@
 \newcommand{\gldim}{\operatorname{gldim}}
 \newcommand{\Frac}{\operatorname{Frac}}
 \newcommand{\CM}{\operatorname{CM}}
-\title{中心三次商の零ファイバーと非可換$A_1$局所模型\\
-\large 中心の四特異点、局所分裂、Brauer障害}
-\date{2026年11月12日・v6}
+\title{中心三次商の正則性と非可換$A_1$局所模型\\
+\large PBW変形、全中心、量子的判別式とBrauer障害}
+\date{2026年11月12日・v7}
 \begin{document}
 \maketitle
 \begin{abstract}
-中心三次商の旧論文VI第19節から、中心値零における四つの$A_1$点、局所非可換crepant resolution、射影的特異圏の三因子分解、球面ツイストを現在の日本語LuaLaTeXに再構成する。
-特に中心上の一般Brauer指数6と局所分裂の両立を説明する。
-全中心表示の具体的な非斉次関係式を有理数上で厳密に検証し、
-既知の斉次Sklyanin中心定理を入力として全中心表示を確定した。
-三次元表現と一次・二次元単純表現の排除も現行TeXに復元し、
-明示行列関係式を厳密検算した。Rees退化の一般補題と一次文献の定理により
-Azumaya locusを同定し、中心chartの有限平坦比較と射影的perfect性の貼合せも証明する。
-相対PBW性、周囲のAS正則性、CY性と楕円境界の記述は既知の入力として明示する。
-中心多項式とHessianの有限検算は別途実行した。
+三変数Sklyanin代数の定数項変形について、PBW性と自己双対な双加群解消を示し、
+三次元Calabi--Yau性を導く。指定した一混合項族の周囲の代数は
+全係数値でKoszul AS正則かつNakayama twistが恒等であることを、
+相対PBW性と$\mathbb Q[\alpha]$上の有限証明書で確認する。
+非斉次全中心の関係式を有理数上で厳密に検証し、Rees退化でAzumaya locusを同定する。
+零中心ファイバーの四つの非可換$A_1$模型と一般Brauer指数6、
+二中心chartの21中心特異点と三つのホモロジー的特異点、
+射影特異圏の三因子分解および球面twistを説明する。
+中心chartと導分によるperfect性の貼合せから、指定混合族の
+正確なtails判別式$(\alpha^3+9)(28\alpha^3+243)$を得る。
+基礎となる斉次Sklyaninの性質、既知の分類・双対性と本稿の具体的な証明・計算を区別する。
 \end{abstract}
+
+\input{papers/sections/central_quotient_pbw_cy.tex}
 
 \input{papers/sections/central_quotient_center_azumaya.tex}
 
@@ -208,7 +212,7 @@ $\End_S(T)\simeq T\rtimes\{\pm1\}$となる。
 命題\ref{prop:quotient-azumaya}のPBW・既知Sklyanin入力と
 上記の局所模型を用いる（小単純表現排除は命題\ref{prop:local-no-small-simples}で証明した）。
 $D_0=A/(g)$の中心は$C/(g)$であり、
-$\gldim D_0=2$である。
+$\gldim D_0=2$であり、$D_0$はhomologically smoothな二次元Calabi--Yau代数である。
 各四つの$A_1$中心点には三次元単純表現が二つ、
 それ以外の中心閉点には六次元単純表現が一つ存在する。
 従って$D_0$の三次元単純表現は全部で8同型類となる。
@@ -228,6 +232,9 @@ $Z(D_0)=C/(g)$を得る。
 有限生成加群の第二syzygyの射影性を忠実平坦降下して
 $\gldim D_0\le2$を得る。
 滑らかな中心点の単純加群の第二Extは非零であるから等号成立。
+命題\ref{prop:quotient-constant-cy}と
+補題\ref{lem:tails-central-cy}により、有限大域次元と中心有限性から
+homological smoothnessと二次元CY性も従う。
 剰余半単純代数は特異点で
 $\Mat_3(\CC)\oplus\Mat_3(\CC)$、
 滑らかな中心点で$\Mat_6(\CC)$であり、
@@ -273,7 +280,7 @@ $t=v/u\in\CC^\times$とする。
 \end{equation}
 \begin{proposition}[二重\'etale被覆による中心の忠実平坦降下]
 \label{prop:chart-descent}
-$Q$の定義に用いる相対PBW性・中心正則性を仮定する。
+系\ref{cor:quotient-ambient-pbw}の相対PBW性・中心正則性を用いる。
 中心表示\ref{prop:quotient-full-center}の下で
 \begin{equation}\label{eq:chart-center}
  Z(Q)\simeq
@@ -446,18 +453,20 @@ Rees退化、中心の忠実平坦降下、15点のHessian、
 三つのホモロジー的特異点の行列node模型、境界とchartのGorenstein性、
 中心chartおよび導分によるperfect性の貼合せは現行の証明に含まれる。
 
-一方、相対PBW性と周囲のAS正則性、$R_1$のCY性、
-楕円境界の記述は既知入力であり、ここで全ての基礎定理を再証明したわけではない。
+相対PBW性、周囲のAS正則性、$R_1$の3-CY性と周囲のNakayama twistの恒等性は
+第\ref{sec:quotient-pbw-cy}節に証明・有限証明書を収録した。
+斉次Sklyaninの標準的性質と楕円境界の記述、一般のPBW・分類・双対性定理は既知入力である。
 非Azumayaな四点でのrank-one cornerとmodifying generatorは、
 六次分裂元と\cite[Theorem~5.1(1)]{IW}の仮定を照合して導いた。
-小単純表現の行列と軸上剛性は再現コードを持つが、
-全表現間のExt表の再計算と球面性のNakayama twistの入力には監査が残る。
+小単純表現の行列と全表現間の一次Ext表は再現コードを持ち、
+命題\ref{prop:quotient-full-ext1}にはExt表の構造的証明も与えた。
 また旧PDFの分離型二変数三次式の必要十分条件、
 固定した一般ambientの超越的中心値と有限位数境界での開性など、
 初期諸節の固有結果と現行資料との完全比較は未了である。
+具体式・判別式・構成の初出と新規性は、先行研究との網羅的照合がなお必要である。
 本稿の進展だけをもって原PDFの追跡解除は行わない。
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 \bibitem{IW} O.~Iyama and M.~Wemyss,
 \emph{Reduction of triangulated categories and maximal modification
 algebras for cAn singularities},
@@ -486,6 +495,17 @@ A. Yekutieli and J. J. Zhang,
 \emph{Serre duality for noncommutative projective schemes},
 Proc. Amer. Math. Soc. 125 (1997), 697--707;
 \url{https://doi.org/10.1090/S0002-9939-97-03782-9}.
+\bibitem{RRZNakayama}
+M.~Reyes, D.~Rogalski and J.~J.~Zhang,
+\emph{Skew Calabi--Yau algebras and homological identities},
+Adv. Math. 264 (2014), 308--354;
+\url{https://arxiv.org/abs/1302.0437},
+Lemmas~1.2, 1.5 and proof of Theorem~6.3.
+\bibitem{BGPBW}
+A.~Braverman and D.~Gaitsgory,
+\emph{The Poincar\'e--Birkhoff--Witt theorem for quadratic algebras of Koszul type},
+J. Algebra 181 (1996), 315--328;
+\url{https://arxiv.org/abs/hep-th/9411113}, Main Theorem~0.5 and Lemma~3.3.
 \bibitem{RSVBertini}
 J.~V.~Rennemo, E.~Segal and M.~Van den Bergh,
 \emph{A non-commutative Bertini theorem},
