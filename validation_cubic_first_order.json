@@ -4,7 +4,7 @@
   "entry": "papers/cubic_first_order_deformations.tex",
   "source_repository": "uedakazushi/nc-cubic",
   "source_commit": "549c7e0aad8353daafe4c19c124401e2e02f2928",
-  "editorial_scope": "Integrate the existing Todd-corrected HKR alternative proof into the existing first-order/Plucker paper. No new mathematical result. Papers A and B-v55 unchanged.",
+  "editorial_scope": "Integrate the existing Todd-corrected HKR alternative proof into the first-order/Plucker paper. No new mathematical result. Papers A and B-v55 unchanged.",
   "preservation": {
     "existing_first_order_body_unchanged": "9b63fcd60612d504461eb9ee39babfcc8bf69b1d",
     "existing_dual_number_window_unchanged": "67d0728503eded03d70d25d4ccc88964ddd00343",
@@ -13,7 +13,7 @@
     "all_8_todd_labels_preserved": true,
     "all_9_todd_mathematical_environment_blocks_preserved_up_to_declared_tokens": true,
     "todd_environment_counts": {"lemma": 2, "proposition": 1, "corollary": 1, "proof": 4, "remark": 1},
-    "declared_changes": ["Expand CC/PP/OO/HH/Ku macros without changing mathematics", "Write the Jacobian quotient as Jac(F), reserving J(F) for the ideal in the first section", "Consolidate JLLZER citation key as JLLZ", "Correct author-version Theorem 3.11 citation to Theorem 3.10", "Normalize one mathematically inactive space before the Jac macro"],
+    "declared_changes": ["Expand CC/PP/OO/HH/Ku macros", "Use Jac(F) for the quotient, preserving J(F) for the ideal elsewhere", "Unify JLLZER citation key as JLLZ", "Correct cited author-version Theorem 3.11 to Theorem 3.10", "Normalize one mathematically inactive space before Jac"],
     "new_theorems_added": false
   },
   "build": {
@@ -27,8 +27,8 @@
     "overfull_boxes": 0,
     "missing_characters": 0,
     "multiply_defined_labels": 0,
-    "visual_review": "All 13 pages of the final source-matched PDF rendered with PyMuPDF and inspected in four contact sheets; no clipping or overlap observed.",
-    "other_warnings": "microtype font-size warnings for ltjsarticle; not missing characters",
+    "visual_review": "All 13 pages of final source-matched PDF rendered and inspected in four contact sheets; no clipping or overlap.",
+    "other_warnings": "microtype font-size warnings for ltjsarticle, not missing characters",
     "pdf_git_tracked": false
   },
   "source_check": {
@@ -66,21 +66,28 @@
       "joined_with_Plucker_span_ranks": [5, 5],
       "nondecomposable_Xi_negative_control": "PASS"
     },
-    "scope": "Existing finite examples are retained as previously executed; the new integration is cohomological and editorial, not a new arithmetic test or formal category-level proof.",
+    "scope": "Previously executed finite examples retained; no new arithmetic or category-level verification in Todd integration.",
     "code_blobs": {
       "computations/verify_first_order_curved_kernel.py": "18718f6c0eab8686f765101abde888a1f2f7ffc6",
       "computations/verify_second_order_plucker.py": "d113eeb317ef7b4bb2d1fc3e832dc9a6ecd2f816"
     }
   },
   "primary_sources_checked_this_revision": {
-    "CRVdB": "Annals 176 (2012), Theorem 1.4 printed p.872: text and page image inspected for Todd-corrected HKR/module compatibility.",
-    "JLLZ": "Author PDF dated 25 September 2022: Theorem 3.10 printed p.9 and Theorem 4.4(2) p.15 inspected as text and images. Lemma 3.13 on pp.10-11 read in parsed text; screenshot request for p.11 failed. Corrected reference 3.11 -> 3.10 to match the cited author version.",
-    "other_references": "Retained bibliography; previous Mayanskiy, Chen and window reference checks were not repeated in full."
+    "CRVdB": "Annals 176 (2012), Theorem 1.4 printed p.872: text and page image checked.",
+    "JLLZ": "Author PDF dated 25 September 2022: Theorem 3.10 p.9 and Theorem 4.4(2) p.15 checked as text and images. Lemma 3.13 pp.10-11 parsed text checked; p.11 screenshot failed. Corrected reference 3.11 to 3.10.",
+    "other_references": "Existing Mayanskiy, Chen and window bibliography retained; not all passages independently rechecked."
+  },
+  "source_cleanup": {
+    "status": "COMPLETED for Todd alternative-proof body",
+    "destination_content_commit_verified": "c98c57a511ad550954ae47ba776e57dff89f08bd",
+    "source_cleanup_commit": "ba01a766666c51eebf1bc1d382cafb20760363eb",
+    "removed": ["papers/support/papers/reconstruction/poisson_first_order.tex"],
+    "shared_bibliography_retained": "poisson_first_order_references.tex retained because the remaining source bibliography inputs it",
+    "paper_A_and_focused_B_unchanged": true
   },
   "independent_full_mathematical_audit": false,
   "formal_proof_verification": false,
   "comprehensive_novelty_audit": false,
-  "paper_A_and_focused_paper_B_modified": false,
-  "source_cleanup": "Pending confirmed destination main persistence; source scope note and transfer manifest carry the completed status.",
-  "persistence_policy": "Fast-forward main only, no Actions and no force push; preserve concurrent destination work; Library only after an actual push failure."
+  "concurrent_destination_work_preserved": "ab4da97348cc270d119e28f745b78c6ec0b228d1",
+  "persistence_policy": "Fast-forward main only, no Actions or force push; Library only after actual push failure."
 }

@@ -1,11 +1,11 @@
 {
   "date": "2026-11-13",
-  "version": "v7",
-  "status": "PARTIAL overall: point-scheme, finite Jacobian and first-order deformation units integrated, validated, saved and source-deduplicated; broader relative theory and explicit models still pending",
+  "version": "v8",
+  "status": "PARTIAL overall: point-scheme, finite Jacobian and first-order deformation units including Todd-HKR alternative proof integrated and source-deduplicated; broader relative theory and explicit models remain",
   "source_repository": "uedakazushi/nc-cubic",
   "destination_repository": "uedakazushi/nc-cubic2",
   "paper_A": "Remains unchanged in nc-cubic, A-v51",
-  "focused_paper_B": "nc-cubic/papers/paper_b.tex B-v55 unchanged; general-dimensional theorem and necessary proofs",
+  "focused_paper_B": "nc-cubic/papers/paper_b.tex B-v55 unchanged; general n>=3 theorem and required proofs",
   "completed_companion": {
     "entry": "papers/mixed_cubic_point_schemes.tex",
     "notes": "notes/mixed_cubic_point_schemes.md",
@@ -17,7 +17,7 @@
     "pages": 12,
     "all_four_calculation_scripts_executed": true,
     "source_cleanup": {
-      "status": "COMPLETED for this unit only",
+      "status": "COMPLETED for this unit",
       "source_commit": "da722ca8b7feec57ff73609154a7e2d27351e922",
       "removed_duplicate_files": 17,
       "source_notes_integrated": true,
@@ -42,36 +42,41 @@
       "status": "COMPLETED for the dedicated unit",
       "source_commit": "ea228b7958045bbc72c77c3319d82863baf33277",
       "removed_files": ["papers/support/papers/reconstruction/explicit_jacobian_recovery.tex", "computations/verify_explicit_jacobian_recovery.py", "computations/explicit_jacobian_certificate.json"],
-      "shared_bibliography_retained": "explicit_jacobian_references.tex remains in source bibliography used by pending support chapters",
-      "necessary_main_theorem_proofs_retained": "nc-cubic/papers/generic_recovery/gradient_recovery.tex; paper A/B inputs unchanged"
+      "shared_bibliography_retained": "explicit_jacobian_references.tex remains for pending support chapters",
+      "necessary_main_theorem_proofs_retained": "nc-cubic/papers/generic_recovery/gradient_recovery.tex"
     }
   },
   "first_order_companion": {
     "entry": "papers/cubic_first_order_deformations.tex",
+    "version": "v2",
     "notes": "notes/cubic_first_order_deformations.md",
     "validation": "validation_cubic_first_order.json",
-    "destination_content_commit": "880b648df35fe4a52e80c03eec3d5e811bc20a66",
+    "destination_content_commit": "c98c57a511ad550954ae47ba776e57dff89f08bd",
     "main_results_and_original_labels_preserved": true,
     "dual_number_window_appendix_included": true,
     "general_Artin_comparison_fully_transferred": false,
+    "Todd_HKR_alternative_proof_included": true,
     "lualatex_and_visual_review_executed": true,
-    "pages": 10,
+    "pages": 13,
     "reference_closure_verified": true,
-    "two_original_scripts_byte_identical_and_executed": true,
+    "two_original_scripts_byte_identical_and_previously_executed": true,
+    "scripts_rerun_during_Todd_integration": false,
     "source_cleanup": {
-      "status": "COMPLETED for dedicated first-order unit",
-      "source_commit": "549c7e0aad8353daafe4c19c124401e2e02f2928",
-      "removed_files": ["papers/support/papers/reconstruction/first_order_poisson_kernel.tex", "computations/verify_first_order_curved_kernel.py", "computations/verify_second_order_plucker.py"],
-      "retained_source_comparison": "artin_residual_mf_comparison.tex contains broader independent Artin/base-change results and remains at source",
-      "source_cross_reference_repaired": "Todd-corrected poisson_first_order.tex introduction no longer uses the removed fpk label; its proof body is retained",
+      "status": "COMPLETED for dedicated first-order unit and Todd alternative proof",
+      "first_order_cleanup_commit": "549c7e0aad8353daafe4c19c124401e2e02f2928",
+      "Todd_cleanup_commit": "ba01a766666c51eebf1bc1d382cafb20760363eb",
+      "removed_files": ["papers/support/papers/reconstruction/first_order_poisson_kernel.tex", "computations/verify_first_order_curved_kernel.py", "computations/verify_second_order_plucker.py", "papers/support/papers/reconstruction/poisson_first_order.tex"],
+      "shared_Todd_reference_fragment_retained": true,
+      "retained_source_comparison": "artin_residual_mf_comparison.tex contains broader independent Artin/base-change results",
+      "source_scope_note_and_plan_updated": true,
       "paper_A_and_focused_B_unchanged": true
     },
-    "scope": "First-order MF cancellation for N>=5; Plucker and categorical tangent conclusions at N=5; does not establish generic seven-dimensional forgetful kernel or full formal moduli"
+    "scope": "First-order MF comparison for N>=5; Plucker, categorical tangent and Todd-HKR results for N=5. No general seven-dimensional forgetful kernel, full formal moduli or new reconstruction existence claim."
   },
   "text_preserved_but_companion_integration_pending": {},
-  "remaining_groups": ["General Artin and etale relative theory", "Sklyanin and multiblock finite models", "relative diagonal, bar, Morita and alternate constructions", "mixed-family jets and equivariant reconstruction", "Todd-corrected first-order argument and other independent generalizations, literature and computation assets"],
+  "remaining_groups": ["General Artin and etale relative theory", "Sklyanin and multiblock finite models", "relative diagonal, bar, Morita and alternate constructions", "mixed-family jets and equivariant reconstruction", "other independent generalizations, literature and computation assets"],
   "all_independent_material_transferred": false,
   "independent_full_math_proof_audit": false,
-  "concurrent_destination_work_preserved": ["83c787d231b1e0ce5929a897626a17c72185c1e5", "e10e980f5fba6e8d238b9ac777a7b513aee661fa", "47cc55e6e0a7191d0af5fba3b3bd73c41620c3c4"],
-  "policy": "Delete source duplicates only after current destination manuscript, proofs, inputs and computations are verified and saved. No GitHub Actions or force push."
+  "concurrent_destination_work_preserved": ["83c787d231b1e0ce5929a897626a17c72185c1e5", "e10e980f5fba6e8d238b9ac777a7b513aee661fa", "47cc55e6e0a7191d0af5fba3b3bd73c41620c3c4", "ab4da97348cc270d119e28f745b78c6ec0b228d1"],
+  "policy": "Remove source duplicates only after current destination manuscript, proofs, inputs and necessary validation are saved. No Actions or force push."
 }
