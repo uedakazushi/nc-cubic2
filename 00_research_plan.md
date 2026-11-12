@@ -1,6 +1,14 @@
 # 研究方針：独立境界・モジュライ研究
 
-**2026-11-12 / v4。再開時は最初に本ファイルを読む。**
+## nc cubic threefoldの17次元モジュライ（現行の主題）
+
+- [現行草稿](papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。
+- [研究ノート](notes/nc_cubic_threefold_moduli.md)：仮定・未解決の既約成分性・再現手順。
+- 再現コード：`computations/independent/verify_generic17_slice.py`、`verify_generic17_center.py`、`computations/verify_split_codimension.py`。
+- 一般次元ambient復元の定理と証明は `nc-cubic/papers/paper_a.tex`、本稿には同型類判定に必要な証明も保持する。
+- 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
+
+**2026-11-12 / v5。再開時は最初に本ファイルを読む。**
 
 ## 最重要の構造結果：全次元のPoisson cubic pairの既約成分
 
@@ -53,7 +61,7 @@ embedded componentの長さの解明。
 
 ## 目的と優先順位
 
-本リポジトリは `nc-cubic` のPoisson構造・量子化・可換復元という三主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。研究全体の当面の最優先は**主リポジトリの可換復元**であり、この分離作業のためにそのSM証明を遅らせない。
+本リポジトリは `nc-cubic` のPoisson構造・量子化・ambient復元・可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。研究全体の当面の最優先は**主リポジトリの可換復元**であり、この分離作業のためにそのSM証明を遅らせない。
 
 本体：`papers/pfaffian_brill_noether_technical.tex` は独立した完成度・新規性をまだ外部査読していない大部原稿であり、重要な結果・仮定・証明を削除せず保存する。判別式は `papers/central_fiber_discriminant.tex` に証明と検算を収録した。
 
