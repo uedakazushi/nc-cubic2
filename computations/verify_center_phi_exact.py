@@ -72,13 +72,13 @@ class Filtered:
         n = len(self.B)
         d = len(self.B[n-1])
         pivots = {}
-        for j, word in enumerate(self.B[n-2]):
+        for basis_idx, word in enumerate(self.B[n-2]):
             for ridx, terms in enumerate(REL):
                 row = {}
                 for x, y, c in terms:
-                    for k, v in self.L[n-2][y][j].items():
-                        j = 1+x*d+k
-                        row[j] = row.get(j, 0) + c*v
+                    for k, v in self.L[n-2][y][basis_idx].items():
+                        coordinate = 1+x*d+k
+                        row[coordinate] = row.get(coordinate, 0) + c*v
                 if ridx == 1: add(row, self.candidate(word, n), -1)
                 eliminate(row, pivots, True)
         kept = [j for j in range(1+3*d) if j not in pivots]
@@ -147,7 +147,15 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--state-dir", default="/tmp/nc-cubic2-center-phi")
     parser.add_argument("--verify", action="store_true")
+    parser.add_argument("--smoke", action="store_true", help="check the first three quotient degrees from scratch")
     args = parser.parse_args()
+    if args.smoke:
+        algebra=Filtered()
+        for expected in (10,20):
+            n, dim=algebra.extend()
+            assert dim == expected, (n,dim)
+        print("PASS: exact-Q filtered quotient degrees 2 and 3")
+        return
     state_dir=Path(args.state_dir)
     state_dir.mkdir(parents=True,exist_ok=True)
     path=state_dir/"rational-filtered-state.pkl"
