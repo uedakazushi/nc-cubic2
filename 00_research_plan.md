@@ -2,9 +2,13 @@
 
 > **全研究原PDFの現行TeXへの移管とGit追跡解除が完了し、追跡PDFは0件。** 今後は論文・証明・再生成可能な計算を正本として、正確性、先行研究、新規性、公表価値を高める。削除判定と全対応は [PDF_SOURCES.md](PDF_SOURCES.md)、恒久原則は [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)。
 
-## nc-cubic論文Bからの独立成果移管（Codexの並行担当）
+## nc-cubic論文Bからの独立成果：公表用再構成（Codex最優先）
 
-2026-11-13現在、`nc-cubic` 論文A・Bの数学的独立監査と先行研究調査はChat側に分離する。本リポジトリを実行環境とする移管担当Codexは、`nc-cubic/AGENTS.md`・`notes/paper_b_scope_and_transfer.md` と本リポジトリの `AGENTS.md` を先に読み、元の独立成果をここに統合する。既存の点スキーム・Jacobian・一次変形・Artin・étaleの独立稿を正本とし、残存する形式復元・Sklyanin・対角/bar/Morita・混合jet等を保存済み本文と照合する。必要証明の自足性、仮定の強さ、参照閉包、再生成可能性、移管先main保存を確認し、元側の保護対象と残存参照を精査してから重複を削除する。この担当作業は下記の17次元モジュライ等の既存研究目標を放棄するものではない。
+**移管そのものは完了した。** 現行の `papers/relative_reconstruction_models.tex`（244頁）と独立五稿を、数学的中心結果・論理のまとまり・公表価値に照らし、必要なら分割・統合して自足した日本語LuaLaTeX論文へ改稿する。固定の論文数や頁数に合わせず、公表価値のある定理・証明・反例を削らない。まず移管時に文脈調整されたArtin比較・smoothness反例・Hochschild障害の9環境と共有証明を、現行 `validation_reconstruction_manifest.json` と元ソースに照らして監査する。未確認の新規性を断定しない。
+
+実行の詳細と削除ゲートは `AGENTS.md`、主張の所在と未解決条件は `notes/relative_reconstruction_models.md`。各論文の完全証明、文献一次資料の適用条件、引用/TeX入力閉包、LuaLaTeX組版・必要計算、保存を確認してから旧統合稿の真の重複を整理する。現行bundleだけで再開できる正本を維持し、旧版アーカイブを作らない。
+
+**分業：** Chatはnc-cubic論文Aの正規形・量子化、論文Bの形式MF比較・一般点への代数的降下、およびA/Bの先行研究・新規性の独立監査を行う。CodexはA/Bと再帰入力を触らず、疑義は正確な仮定・反例候補・証明箇所を明記して伝える。
 
 ## 論文Bから独立した相対復元・明示模型
 
@@ -74,7 +78,7 @@ embedded componentの長さの解明。
 
 ## 目的と優先順位
 
-本リポジトリは `nc-cubic` のPoisson構造・量子化・ambient復元・可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。**本リポジトリのCodex作業の最優先はPDF-onlyの数学的発展・現行TeX統合と、証明を失わない追跡解除**である。主リポジトリ `nc-cubic` の可換復元（特にSM証明）は独立の優先研究として尊重し、その証明を壊したり不用意に移転・重複収録したりしない。
+本リポジトリは `nc-cubic` のPoisson構造・量子化・ambient復元・可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。**現行のCodex最優先は相対復元統合稿の公表向け再構成と証明の保全監査**である。PDF-only資料のTeX統合と追跡解除は既に完了しており、繰り返さない。主リポジトリ `nc-cubic` の可換復元（特にSM証明）は独立の優先研究として尊重し、その証明を壊したり不用意に移転・重複収録したりしない。
 
 本体：`papers/pfaffian_brill_noether_technical.tex` の79節を形式変形・Brill–Noether境界・低次/高次接触計算・検証範囲の5節ファイルへ、証明本文を失わずに分割した。独立した完成度・新規性はまだ外部査読していない。旧版別5節の計算履歴を現行の検証範囲・再現不能箇所の1節へ整理し、本文の主定理・証明は保持する。旧検算コードと整数入力は現行treeに欠落するため計算的証明の独立追試は未了。判別式は `papers/central_fiber_discriminant.tex` に証明と検算を収録した。
 

@@ -1,26 +1,28 @@
 # Codex / AGENTS.md — nc-cubic2
 
-**2026-11-13 / v7。Codexは最初に `00_research_plan.md`、続いて `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を読む。** 研究の現行詳細は `notes/research_notes.md` と各論文のTeXにある。古い会話や旧PDFだけを再開の前提にしない。
+**2026-11-13 / v8。再開時は `00_research_plan.md`、本 `AGENTS.md`、`notes/relative_reconstruction_models.md`、関連する現行TeXを最初に読む。** PDF由来の独立研究に取り組む場合だけ `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を参照する。旧PDFや旧版の記録を再開の前提にしない。
 
 ## 独立成果の所在
 
 論文Bから分離した相対理論・有限模型は `papers/relative_reconstruction_models.tex` と既存五稿に統合した。共有証明を複製せず、再現と移管の対応は `validation_reconstruction_manifest.json`・専用validation・`notes/relative_reconstruction_models.md` で確認する。
 
-## 現在の最優先タスク
+## 現在の最優先タスク：公表向けの独立成果再構成
 
-原PDFの全移管は完了し、Git追跡PDFは0件。今後は現行TeXと再生成可能な計算を正本として、**必要なら新しい研究成果を加え、より重要で厳密かつ理解しやすい論文へ発展させる**こと。**単純なPDF→TeXの逐語変換、ページ数合わせ、PDF削除数の最大化は目的ではない。**
+**移管は既に完了している。** `papers/relative_reconstruction_models.tex`（現行244頁）、独立五稿、`notes/relative_reconstruction_models.md`、`validation_reconstruction_manifest.json` を基礎として、**数学的重要性・新規性・理解・正確性・公表価値を最大化するように論文構成を再検討し、実際に改稿・検証・pushする**。固定の論文数・頁数は設定しない。機械的分割も244頁維持も目的ではない。
 
-完全な具体的手順、研究主題ごとの数学的課題、検証と削除の条件は **`CODEX_PDF_RECOVERY.md`** に定める。短い計画だけで止まらず、可能な限り証明・計算・執筆・実際のpushまで進める。数学的重要性、先行研究、新規性、理解の深化、応用可能性、正確性、実現可能性を考えて研究方針を柔軟に調整する。
+### 作業の順序と確認点
 
-中心商特異性（旧VI）の全22節は現行TeXと厳密検算へ統合済み。原PDFは追跡解除済み。中心三次対（旧V）の全21節もTeXと厳密検算に統合済み。Pfaffian接触境界と中心三次技術稿も固有証明を回収して追跡解除済み。全混合量子化（旧II、195頁）も有限gauge・四次計算・平面切断幾何を回収して追跡解除済み。削除判定の全対応表は `PDF_SOURCES.md` にある。
+1. **重要な数学的監査を先に行う。** 移管時に文脈調整された9個の数学的環境を現行原稿とmanifestで特定し、元ソースコミット `ba7ec3422e53efc0f64f6d8280734296b98aacfe` と比較する。Artin比較、smoothness反例、Hochschild障害について、仮定・量化・証明・結論が弱化・強化・欠落していないか確かめる。特に全次数MF比較の存在と、同値を入力する条件付き移送、Artin上の完備化と代数化、相対smooth proper性を区別する。元コミットは証拠照合にのみ使い、旧版アーカイブを作らない。
+2. **主結果の論理的なまとまりを判定する。** 41支持節と既存の点スキーム・Jacobian復元・一次変形・有限Artin・étale独立五稿の中心定理を照合する。候補の研究軸は、Artin/étale局所実現、Sklyanin/楕円多ブロック、MF/有限対角/bar/Morita、混合jet・相対proper模型・反例。これらは分割の義務ではない。重複定理の主張や同じ証明の二重全文掲載を避ける。必要なら独立した補助技術稿を維持する。
+3. **公表用論文を執筆する。** 各論文の中心定理・必要仮定・従属結果を明確化し、日本語LuaLaTeXで、適切にdescriptiveな英語ファイル名を付ける。Introductionに関連一次文献、既知入力の適用条件と本研究の貢献を具体的に書く。出典や新規性の未確認点を推測で補わない。未解決の主張を完成定理として発表しない。研究ノートには現在有効な着想・反例・障害だけを残し、経緯・旧版対応表・重複の履歴を蓄積しない。
+4. **完全性・再現性を検証する。** 公表価値のある定理・完全な証明・例・反例・再取得困難な入力・証明書を落とさない。各新稿の `\\input`・参照・引用を閉じ、`latexmk` で全文組版し、必要な厳密計算を再実行して出力を検証し、PDFを実際に表示確認する。完了前には現行統合稿や共有ソースを削除しない。最終的に正本を明確にし、検証済みの真の重複を整理する。
+5. **現行の再開資料を更新してpushする。** `00_research_plan.md`、`notes/relative_reconstruction_models.md` と各稿の必要なvalidationを新しい正本・主張の状態・着手点へ更新する。成果ごとにGitHub `main` へ通常のfast-forward pushを行い、遠隔HEADとblobを確認する。計画を書くところで止まらない。
 
-## nc-cubicからの独立成果移管：並行作業の優先境界
+### 他担当との境界
 
-**2026-11-13 の移管担当Codexセッションでは、上記の一般的な新研究課題に先立ち、`uedakazushi/nc-cubic/AGENTS.md` と `notes/paper_b_scope_and_transfer.md` を読み、論文Bから分離した独立成果の移管・統合を優先する。** これは既存の17次元モジュライ研究などを廃止する意味ではない。Chat側が `nc-cubic` 論文A・Bの独立監査・改良・先行研究調査を進めているので、Codexはそれらの本文・依存ファイルに手を付けない。
+**Chatは `uedakazushi/nc-cubic` の論文AのPoisson正規形・量子化、論文Bの完備MF比較・一般点降下、および両論文の一次文献・新規性の独立監査を担当する。** Codexは論文A/B、その再帰TeX入力・共通設定をこの担当で編集しない。問題を発見したら、正確な主張・仮定・反例候補・証明箇所を現行ノートに残し、Chat側へ引き継ぐ。移管済み142ファイルの再導入、PDF削除の再実施、単なる大規模ファイル移動はしない。既存の17次元モジュライやPoisson fourfold・六七次元・Pfaffian研究の内容と独立稿を保護する。
 
-現行の受け皿は `papers/mixed_cubic_point_schemes.tex`、`papers/cubic_jacobian_recovery.tex`、`papers/cubic_first_order_deformations.tex`、`papers/cubic_artin_windows.tex`、`papers/relative_cubic_realization.tex` である。すでに移管・整理済みの成果を重複生成しない。未完了なのは形式・étale・Artinの残存参照閉包、Sklyanin/多ブロック、対角/bar/Morita、混合・jetなど。既存の独立稿に統合できるものは統合し、別稿にすべきものは中心結果・論理のまとまり・投稿価値から判断する。
-
-**引き継ぎの完了条件：** 主張の仮定・証明・反例・文献・検算資産を保持し、TeX入力/参照/引用閉包と必要なLuaLaTeX組版・有限検算を実行して成否を明記した上で、まず本リポジトリ `main` へ通常pushし遠隔HEAD/blobを確認する。これが完了する前に移管元のソースを消してはいけない。移管元のA/Bが読むファイルや別の未移管原稿が参照するファイルも消してはいけない。旧版ZIP・移管対応一覧・作業ログを増やさず、現行原稿、研究ノート、簡潔な検証情報を更新する。両repoとも他作業者の変更を上書きせず、force push・Actionsを禁止する。
+現行統合稿の検証記録は244頁、54TeX入力、708ラベル、29有限検算だが、**全数学的証明の独立監査・新規性の確定ではない**。旧PDFのTeX移管とGit追跡解除は完了しており、`CODEX_PDF_RECOVERY.md` は必要な場合の参考指示であって現在の最優先業務ではない。
 
 ## 研究の守るべき原則
 

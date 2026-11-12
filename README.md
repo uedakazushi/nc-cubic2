@@ -2,7 +2,7 @@
 
 ## Codexへの現在の研究指示
 
-**[CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)** に、研究・TeX統合・独立検証・Git追跡解除の原則を定めた。**全原PDFの移管が完了し、Git追跡PDFは0件。**単なるPDFの転記ではなく、重要な定理を強め、証明を洗練し、必要なら新しい結果・一般化・応用を加える。実行前に [研究方針](00_research_plan.md)、[AGENTS.md](AGENTS.md)、[現行のPDF別状態](PDF_SOURCES.md) を読む。数学的成果と再現性を犠牲にしてPDFを削除しない。
+**現在の最優先は、相対復元・有限対角・明示模型の244頁統合稿を、公表価値と中心結果に基づいて再構成することです。** 移管時に調整された9数学的環境と共有証明を監査し、既存五稿との重複を避けます。まず [研究方針](00_research_plan.md)、[Codex指示](AGENTS.md)、[専用ノート](notes/relative_reconstruction_models.md) を読んでください。[旧PDF関連の補助指示](CODEX_PDF_RECOVERY.md) と [PDFの所在](PDF_SOURCES.md) は必要な場合のみ参照します。原PDFは全てTeXへ移管済み、Git追跡PDFは0件です。
 
 ## 論文Bから分離した独立成果の統合
 
