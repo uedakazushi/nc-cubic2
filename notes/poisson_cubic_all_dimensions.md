@@ -37,6 +37,6 @@ d_{n,k}=k(3N-8)+{m+2\choose3}
 
 ## 文献
 
-- 現行正規形定理：<https://github.com/uedakazushi/nc-cubic/blob/main/papers/sections/poisson_geometry.tex>
+- 現行正規形定理：<https://github.com/uedakazushi/nc-cubic/blob/main/papers/support/papers/sections/poisson_geometry.tex>
 - B. Pym, *Constructions and classifications of projective Poisson varieties*, Lett. Math. Phys. 108 (2018), 573–632, <https://doi.org/10.1007/s11005-017-0984-5>（概説）
 - H. Matsumura, P. Monsky, *On the automorphisms of hypersurfaces*, J. Math. Kyoto Univ. 3 (1964), 347–361（書誌・適用条件の一次再確認未実施）
