@@ -1,5 +1,8 @@
 # 研究方針：独立境界・モジュライ研究
 
+> **Codexの直近優先作業：** [Cayley–Sklyanin独立移管指示](MIGRATE_CAYLEY_SKLYANIN.md)。`uedakazushi/cayley-sklyanin` に `papers/cayley-sklyanin.tex` と自足する証明・再現コードを保存・検証した後でのみ、`nc-cubic2` 側の真の重複を整理する。Pfaffianの移管は完了済み。移管完了後は相対復元統合稿の公表再構成へ戻る。
+
+
 Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
 
 
@@ -7,7 +10,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 > **全研究原PDFの現行TeXへの移管とGit追跡解除が完了し、追跡PDFは0件。** 今後は論文・証明・再生成可能な計算を正本として、正確性、先行研究、新規性、公表価値を高める。削除判定と全対応は [PDF_SOURCES.md](PDF_SOURCES.md)、恒久原則は [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)。
 
-## nc-cubic論文Bからの独立成果：公表用再構成（Codex最優先）
+## nc-cubic論文Bからの独立成果：公表用再構成（Cayley移管完了後の優先課題）
 
 **移管そのものは完了した。** 現行の `papers/relative_reconstruction_models.tex`（244頁）と独立五稿を、数学的中心結果・論理のまとまり・公表価値に照らし、必要なら分割・統合して自足した日本語LuaLaTeX論文へ改稿する。固定の論文数や頁数に合わせず、公表価値のある定理・証明・反例を削らない。まず移管時に文脈調整されたArtin比較・smoothness反例・Hochschild障害の9環境と共有証明を、現行 `validation_reconstruction_manifest.json` と元ソースに照らして監査する。未確認の新規性を断定しない。
 

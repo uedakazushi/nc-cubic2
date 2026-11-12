@@ -1,17 +1,20 @@
 # Codex / AGENTS.md — nc-cubic2
 
+> **Codexの直近優先作業：** [Cayley–Sklyanin独立移管指示](MIGRATE_CAYLEY_SKLYANIN.md)。`uedakazushi/cayley-sklyanin` に `papers/cayley-sklyanin.tex` と自足する証明・再現コードを保存・検証した後でのみ、`nc-cubic2` 側の真の重複を整理する。Pfaffianの移管は完了済み。移管完了後は相対復元統合稿の公表再構成へ戻る。
+
+
 Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
 
 
 
 
-**2026-11-13 / v9。再開時は `00_research_plan.md`、本 `AGENTS.md`、`notes/relative_reconstruction_models.md`、関連する現行TeXを最初に読む。** PDF由来の独立研究に取り組む場合だけ `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を参照する。旧PDFや旧版の記録を再開の前提にしない。
+**2026-11-13 / v9。再開時は `00_research_plan.md`、本 `AGENTS.md`、`MIGRATE_CAYLEY_SKLYANIN.md`（移管完了まで）、`notes/relative_reconstruction_models.md`、関連する現行TeXを最初に読む。** PDF由来の独立研究に取り組む場合だけ `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を参照する。旧PDFや旧版の記録を再開の前提にしない。
 
 ## 独立成果の所在
 
 論文Bから分離した相対理論・有限模型は `papers/relative_reconstruction_models.tex` と既存五稿に統合した。共有証明を複製せず、再現と移管の対応は `validation_reconstruction_manifest.json`・専用validation・`notes/relative_reconstruction_models.md` で確認する。
 
-## 移管完了後の最優先タスク：公表向けの独立成果再構成
+## Cayley移管完了後の最優先タスク：公表向けの独立成果再構成
 
 **移管は既に完了している。** `papers/relative_reconstruction_models.tex`（現行244頁）、独立五稿、`notes/relative_reconstruction_models.md`、`validation_reconstruction_manifest.json` を基礎として、**数学的重要性・新規性・理解・正確性・公表価値を最大化するように論文構成を再検討し、実際に改稿・検証・pushする**。固定の論文数・頁数は設定しない。機械的分割も244頁維持も目的ではない。
 

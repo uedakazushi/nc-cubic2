@@ -1,5 +1,8 @@
 # nc-cubic2：非可換cubicの独立境界・モジュライ研究
 
+> **Codexの直近優先作業：** [Cayley–Sklyanin独立移管指示](MIGRATE_CAYLEY_SKLYANIN.md)。`uedakazushi/cayley-sklyanin` に `papers/cayley-sklyanin.tex` と自足する証明・再現コードを保存・検証した後でのみ、`nc-cubic2` 側の真の重複を整理する。Pfaffianの移管は完了済み。移管完了後は相対復元統合稿の公表再構成へ戻る。
+
+
 Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
 
 
