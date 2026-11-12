@@ -1,5 +1,8 @@
 # nc-cubic2：非可換cubicの独立境界・モジュライ研究
 
+> **現在の最優先Codex作業：** [Pfaffian–Brill–Noether移管指示](MIGRATE_PFAFFIAN_BRILL_NOETHER.md)。作成済みの別リポジトリ `uedakazushi/pfaffian-brill-noether` に自足した成果を保存・検証してから、当リポジトリ側の真の重複だけを削除する。移管完了後は相対復元統合稿の公表再構成へ戻る。
+
+
 ## Codexへの現在の研究指示
 
 **現在の最優先は、相対復元・有限対角・明示模型の244頁統合稿を、公表価値と中心結果に基づいて再構成することです。** 移管時に調整された9数学的環境と共有証明を監査し、既存五稿との重複を避けます。まず [研究方針](00_research_plan.md)、[Codex指示](AGENTS.md)、[専用ノート](notes/relative_reconstruction_models.md) を読んでください。[旧PDF関連の補助指示](CODEX_PDF_RECOVERY.md) と [PDFの所在](PDF_SOURCES.md) は必要な場合のみ参照します。原PDFは全てTeXへ移管済み、Git追跡PDFは0件です。

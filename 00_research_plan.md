@@ -1,5 +1,8 @@
 # 研究方針：独立境界・モジュライ研究
 
+> **現在の最優先Codex作業：** [Pfaffian–Brill–Noether移管指示](MIGRATE_PFAFFIAN_BRILL_NOETHER.md)。作成済みの別リポジトリ `uedakazushi/pfaffian-brill-noether` に自足した成果を保存・検証してから、当リポジトリ側の真の重複だけを削除する。移管完了後は相対復元統合稿の公表再構成へ戻る。
+
+
 > **全研究原PDFの現行TeXへの移管とGit追跡解除が完了し、追跡PDFは0件。** 今後は論文・証明・再生成可能な計算を正本として、正確性、先行研究、新規性、公表価値を高める。削除判定と全対応は [PDF_SOURCES.md](PDF_SOURCES.md)、恒久原則は [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)。
 
 ## nc-cubic論文Bからの独立成果：公表用再構成（Codex最優先）
@@ -42,7 +45,7 @@
 
 ## 目的と優先順位
 
-本リポジトリは `nc-cubic` のPoisson構造・量子化・ambient復元・可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。**現行のCodex最優先は相対復元統合稿の公表向け再構成と証明の保全監査**である。PDF-only資料のTeX統合と追跡解除は既に完了しており、繰り返さない。主リポジトリ `nc-cubic` の可換復元（特にSM証明）は独立の優先研究として尊重し、その証明を壊したり不用意に移転・重複収録したりしない。
+本リポジトリは `nc-cubic` のPoisson構造・量子化・ambient復元・可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。**Pfaffian–Brill–Noether移管完了後のCodex最優先は相対復元統合稿の公表向け再構成と証明の保全監査**である。PDF-only資料のTeX統合と追跡解除は既に完了しており、繰り返さない。主リポジトリ `nc-cubic` の可換復元（特にSM証明）は独立の優先研究として尊重し、その証明を壊したり不用意に移転・重複収録したりしない。
 
 本体：`papers/pfaffian_brill_noether_technical.tex` の79節を形式変形・Brill–Noether境界・低次/高次接触計算・検証範囲の5節ファイルへ、証明本文を失わずに分割した。独立した完成度・新規性はまだ外部査読していない。旧版別5節の計算履歴を現行の検証範囲・再現不能箇所の1節へ整理し、本文の主定理・証明は保持する。旧検算コードと整数入力は現行treeに欠落するため計算的証明の独立追試は未了。判別式は `papers/central_fiber_discriminant.tex` に証明と検算を収録した。
 

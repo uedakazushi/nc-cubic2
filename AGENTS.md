@@ -1,12 +1,15 @@
 # Codex / AGENTS.md — nc-cubic2
 
-**2026-11-13 / v8。再開時は `00_research_plan.md`、本 `AGENTS.md`、`notes/relative_reconstruction_models.md`、関連する現行TeXを最初に読む。** PDF由来の独立研究に取り組む場合だけ `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を参照する。旧PDFや旧版の記録を再開の前提にしない。
+> **現在の最優先Codex作業：** [Pfaffian–Brill–Noether移管指示](MIGRATE_PFAFFIAN_BRILL_NOETHER.md)。作成済みの別リポジトリ `uedakazushi/pfaffian-brill-noether` に自足した成果を保存・検証してから、当リポジトリ側の真の重複だけを削除する。移管完了後は相対復元統合稿の公表再構成へ戻る。
+
+
+**2026-11-13 / v9。再開時は `00_research_plan.md`、本 `AGENTS.md`、`MIGRATE_PFAFFIAN_BRILL_NOETHER.md`（移管完了まで）、`notes/relative_reconstruction_models.md`、関連する現行TeXを最初に読む。** PDF由来の独立研究に取り組む場合だけ `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を参照する。旧PDFや旧版の記録を再開の前提にしない。
 
 ## 独立成果の所在
 
 論文Bから分離した相対理論・有限模型は `papers/relative_reconstruction_models.tex` と既存五稿に統合した。共有証明を複製せず、再現と移管の対応は `validation_reconstruction_manifest.json`・専用validation・`notes/relative_reconstruction_models.md` で確認する。
 
-## 現在の最優先タスク：公表向けの独立成果再構成
+## 移管完了後の最優先タスク：公表向けの独立成果再構成
 
 **移管は既に完了している。** `papers/relative_reconstruction_models.tex`（現行244頁）、独立五稿、`notes/relative_reconstruction_models.md`、`validation_reconstruction_manifest.json` を基礎として、**数学的重要性・新規性・理解・正確性・公表価値を最大化するように論文構成を再検討し、実際に改稿・検証・pushする**。固定の論文数・頁数は設定しない。機械的分割も244頁維持も目的ではない。
 
@@ -20,7 +23,7 @@
 
 ### 他担当との境界
 
-**Chatは `uedakazushi/nc-cubic` の論文AのPoisson正規形・量子化、論文Bの完備MF比較・一般点降下、および両論文の一次文献・新規性の独立監査を担当する。** Codexは論文A/B、その再帰TeX入力・共通設定をこの担当で編集しない。問題を発見したら、正確な主張・仮定・反例候補・証明箇所を現行ノートに残し、Chat側へ引き継ぐ。移管済み142ファイルの再導入、PDF削除の再実施、単なる大規模ファイル移動はしない。既存の17次元モジュライやPoisson fourfold・六七次元・Pfaffian研究の内容と独立稿を保護する。
+**Chatは `uedakazushi/nc-cubic` の論文AのPoisson正規形・量子化、論文Bの完備MF比較・一般点降下、および両論文の一次文献・新規性の独立監査を担当する。** Codexは論文A/B、その再帰TeX入力・共通設定をこの担当で編集しない。問題を発見したら、正確な主張・仮定・反例候補・証明箇所を現行ノートに残し、Chat側へ引き継ぐ。移管済み142ファイルの再導入、PDF削除の再実施、単なる大規模ファイル移動はしない。既存の17次元モジュライと独立稿を保護する。Pfaffian専用成果は移管指示に従い、移管先の検証後にのみ移管元の真の重複を整理する。
 
 現行統合稿の検証記録は244頁、54TeX入力、708ラベル、29有限検算だが、**全数学的証明の独立監査・新規性の確定ではない**。旧PDFのTeX移管とGit追跡解除は完了しており、`CODEX_PDF_RECOVERY.md` は必要な場合の参考指示であって現在の最優先業務ではない。
 
