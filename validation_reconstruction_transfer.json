@@ -1,11 +1,11 @@
 {
   "date": "2026-11-13",
-  "version": "v4",
-  "status": "PARTIAL overall: point-scheme unit integrated, validated, saved and deduplicated at source; other independent results still pending",
+  "version": "v5",
+  "status": "PARTIAL overall: point-scheme unit complete; finite Jacobian unit integrated and validated, source cleanup pending destination-save confirmation; first-order and remaining material pending",
   "source_repository": "uedakazushi/nc-cubic",
   "destination_repository": "uedakazushi/nc-cubic2",
   "paper_A": "Remains unchanged in nc-cubic",
-  "focused_paper_B": "nc-cubic/papers/paper_b.tex B-v55 unchanged; general-dimensional theorem and required proofs",
+  "focused_paper_B": "nc-cubic/papers/paper_b.tex B-v55 unchanged; general-dimensional theorem and necessary proofs",
   "completed_companion": {
     "entry": "papers/mixed_cubic_point_schemes.tex",
     "notes": "notes/mixed_cubic_point_schemes.md",
@@ -26,12 +26,25 @@
       "mixed_family_remainder_and_its_script_retained_at_source": true
     }
   },
-  "text_preserved_but_companion_integration_pending": {
-    "papers/reconstruction_extensions/first_order_poisson_kernel.tex": "f2875c5e7ed2312d8139dc4e9ca56960e04018f1",
-    "papers/reconstruction_extensions/explicit_jacobian_recovery.tex": "a08e2b1279ee265d27dd6231521e8fbae0edd15b"
+  "finite_jacobian_companion": {
+    "entry": "papers/cubic_jacobian_recovery.tex",
+    "notes": "notes/cubic_jacobian_recovery.md",
+    "validation": "validation_cubic_jacobian_recovery.json",
+    "all_14_math_environment_blocks_preserved": true,
+    "research_roadmap_retained_in_notes": true,
+    "lualatex_and_visual_review_executed": true,
+    "pages": 6,
+    "reference_closure_verified": true,
+    "rational_checker_executed": true,
+    "original_certificate_exactly_reproduced": "84f51d6c288c7c2c202e01173ee7c4363a8e3c41",
+    "source_cleanup": "Pending verification of destination main; keep shared bibliography and necessary main-theorem proofs in source."
   },
-  "remaining_groups": ["Artin and etale relative theory", "Sklyanin and multiblock finite models", "relative diagonal, bar, Morita and alternate constructions", "mixed-family jets and equivariant reconstruction", "independent generalizations, literature and computation assets"],
+  "text_preserved_but_companion_integration_pending": {
+    "papers/reconstruction_extensions/first_order_poisson_kernel.tex": "f2875c5e7ed2312d8139dc4e9ca56960e04018f1"
+  },
+  "remaining_groups": ["First-order and Plucker deformation results", "Artin and etale relative theory", "Sklyanin and multiblock finite models", "relative diagonal, bar, Morita and alternate constructions", "mixed-family jets and equivariant reconstruction", "independent generalizations, literature and computation assets"],
   "all_independent_material_transferred": false,
   "independent_full_math_proof_audit": false,
-  "policy": "Delete source duplicates only after the current destination manuscript, proofs, inputs and computations are verified and saved. Preserve other concurrent research. No GitHub Actions or force push."
+  "concurrent_destination_work_preserved": "83c787d231b1e0ce5929a897626a17c72185c1e5 central-quotient updates and source-PDF deletion",
+  "policy": "Delete source duplicates only after current destination manuscript, proofs, inputs and computations are verified and saved. No GitHub Actions or force push."
 }

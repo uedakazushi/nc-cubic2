@@ -1,0 +1,41 @@
+% !TEX root = cubic_jacobian_recovery.tex
+\input{papers/reconstruction_extensions/jacobian_preamble}
+\hypersetup{pdftitle={低次数積からの三次方程式の有限復元}}
+\title{低次数積からの三次方程式の有限復元}
+\author{}
+\date{2026年11月13日／研究草稿 v1}
+\begin{document}
+\maketitle
+\begin{abstract}
+二次式の部分空間が滑らかな三次式の勾配空間となるための条件を、
+有限の線形方程式、行列式の非消滅、および共通零点の判定として記述する。
+条件を満たす場合には三次式を明示的に積分でき、
+複素数体上の射影同型を除いて候補は一意である。
+一方、三次式のJacobian環と同じHilbert級数を持ちながら
+積分不可能な五変数完全交差を与える。
+任意の$n\ge3$の滑らかな三次超曲面について、
+既知のrotation積の計算を介してこの判定を適用する。
+これは方程式候補を抽出する有限手順であり、
+与えられた非可換圏とその候補のKuznetsov成分の同値を証明するものではない。
+\end{abstract}
+
+\paragraph{記法と読み方.}
+以下では$N=n+2\ge5$とし、$S=\CC[x_0,\ldots,x_{N-1}]$とする。
+滑らかな三次超曲面$X\subset\PP^{n+1}$について
+\[
+ \Ku(X)=\langle\OO_X,\ldots,\OO_X(n-2)\rangle^\perp,
+ \qquad \rho_X=L_{\OO_X}\circ(-\otimes\OO_X(1))
+\]
+を用いる。圏と関手にはdg enhancementを伴わせる。
+多項式の復元だけを目的とする場合は、
+定理\ref{thm:ej-effective-recovery}と系\ref{cor:ej-finite-algorithm}から読める。
+射影的一意性は命題\ref{prop:ej-projective-uniqueness}、
+積分不可能な完全交差は命題\ref{prop:ej-nonintegrable-ci}で証明する。
+最後の系\ref{cor:ej-candidate}は、圏論的な入力を既に計算できた場合の
+必要条件と候補の抽出をまとめる。
+
+\input{papers/reconstruction_extensions/explicit_jacobian_recovery}
+\begin{thebibliography}{9}
+\input{papers/reconstruction_extensions/jacobian_references}
+\end{thebibliography}
+\end{document}

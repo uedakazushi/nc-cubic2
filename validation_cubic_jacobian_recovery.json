@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-13",
+  "version": "v1",
+  "entry": "papers/cubic_jacobian_recovery.tex",
+  "source_repository": "uedakazushi/nc-cubic",
+  "source_commit": "da722ca8b7feec57ff73609154a7e2d27351e922",
+  "preservation": {
+    "original_section_blob": "a08e2b1279ee265d27dd6231521e8fbae0edd15b",
+    "all_14_mathematical_environment_blocks_byte_identical": true,
+    "only_body_change": "Replace research-roadmap paragraph referring to mt:sec:family with a self-contained applicability paragraph; concrete roadmap is retained in current notes.",
+    "original_script_blob": "4b0fb61cca1d6ace470484e7014b8284e70abe33",
+    "code_changes": "Only source path, default output under build, date and version. Arithmetic unchanged.",
+    "original_certificate_regenerated_blob": "84f51d6c288c7c2c202e01173ee7c4363a8e3c41"
+  },
+  "build": {
+    "executed": true,
+    "command": "latexmk -g -r .latexmkrc papers/cubic_jacobian_recovery.tex",
+    "engine": "LuaLaTeX",
+    "latexmkrc_blob": "e91814c24c952db2ee886837d0c827cd64498f3d",
+    "pages": 6,
+    "undefined_refs_and_citations": 0,
+    "overfull_boxes": 0,
+    "missing_characters": 0,
+    "multiply_defined_labels": 0,
+    "visual_review": "All 6 pages rendered with PyMuPDF and inspected in three paired-page images. No clipping or overlap observed.",
+    "pdf_sha256": "1ae148d0cf12390e8c8fd7cd05ec1b3721d8df82524f9d8e91d967e08b7a7c03",
+    "pdf_git_tracked": false
+  },
+  "source_check": {
+    "status": "PASS",
+    "checker": "scripts/check_cubic_jacobian_recovery.py",
+    "checker_with_calculations_executed": true,
+    "tex_files": 4,
+    "labels": 17,
+    "references": 19,
+    "citations": 7,
+    "bibliography_entries": 4,
+    "duplicate_labels": 0,
+    "duplicate_bibitems": 0,
+    "undefined_references": 0,
+    "undefined_citations": 0,
+    "source_blobs": {
+      "papers/cubic_jacobian_recovery.tex": "f84fe05200e6c98525b1f6de7ca54455023bdba9",
+      "papers/reconstruction_extensions/jacobian_preamble.tex": "5c812602c6fa4e32f1e6f6d85f1d03bcead2bc48",
+      "papers/reconstruction_extensions/explicit_jacobian_recovery.tex": "88f58ed10a9cfda6a4a71ded3f3c171a2e95d867",
+      "papers/reconstruction_extensions/jacobian_references.tex": "956b62021f7dc46e83dcb31a14266a86a40d22a0"
+    }
+  },
+  "calculations": {
+    "python": "3.13.5",
+    "sympy": "1.14.0",
+    "exact_rational_arithmetic": true,
+    "integrability_matrix_ranks": [20, 24, 25],
+    "kernel_dimensions": [5, 1, 0],
+    "negative_control_minor": "15872",
+    "common_hilbert_function": [1, 5, 10, 10, 5, 1, 0],
+    "asymmetric_product_rejected": true,
+    "scope": "Commutative polynomial quotients only; no noncommutative dg Hom, Morita-equivalence or general proof verification."
+  },
+  "code_blobs": {
+    "computations/verify_explicit_jacobian_recovery.py": "6dcbba3b489be924d93b6da465d3065999c4efee",
+    "scripts/check_cubic_jacobian_recovery.py": "13f67493d70da6809d86a5d5c0e9397b4a122b4f"
+  },
+  "primary_sources_checked": {
+    "LZ": "arXiv:2310.09927v2 HTML: Theorem 2.2, Theorem 3.5, Remark 3.6, Proposition 3.7 and Section 5.",
+    "Hwang": "arXiv:2501.08633v1 HTML: Theorems 1.5-1.6, Proposition 2.2; official JMSJ volume index for 78 (2026), 55-62.",
+    "Ueda_Yoshinaga": "arXiv:0802.2133 parsed PDF Lemma 3; screenshot request failed.",
+    "Huybrechts_Rennemo": "Published PDF 2019-1-005: abstract and Theorem 1.1 scope; screenshot request failed."
+  },
+  "new_theorems_added": false,
+  "independent_full_mathematical_audit": false,
+  "comprehensive_novelty_audit": false,
+  "concurrent_destination_work": "Built on central-quotient recovery commit 83c787d231b1e0ce5929a897626a17c72185c1e5; those edits and PDF deletion preserved."
+}

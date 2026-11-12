@@ -317,18 +317,12 @@ pair間の同値双加群やその逆を構成していない。
 従って圏同値の存在は独立に証明すべき事項として残る。
 \end{proof}
 
-この検査器により、今後の具体的作業は明確になる。
-まず第\ref{mt:sec:family}節の最小混合試験族について、
-続いて非楕円二成分について残余dg代数とrotation双加群を明示し、
-$\RHom_{\Gamma^e}(\Gamma,P)$と
-$\RHom_{\Gamma^e}(\Gamma,P\otimes_\Gamma^{\mathbf L}P)$の
-次数零コホモロジーおよび合成を求める。
-これは線束Homの階数表、Poissonの一次項、ambientの二次関係を
-そのまま代入する操作ではない。
-得られた$K$を積分して候補方程式を抽出した後、
-実際の同値双加群の構成、または必要なsmoothnessを確認した上での
-\'etale実現定理との比較を行う。
-相対対角perfect性(SM)も、この低次数検査だけでは証明されない。
+具体的な非可換圏への適用では、残余dg代数とrotation双加群から
+導来自然変換の次数零コホモロジーと合成を求める必要がある。
+線束Homの階数表、Poissonの一次項、ambientの二次関係を
+そのまま低次数積に代入することはできない。
+また、この有限判定は実際の同値双加群や相対対角のperfect性を構成しない。
+これらは方程式候補の抽出とは独立の入力である。
 
 \paragraph{計算の再現範囲.}
 \texttt{computations/verify\_explicit\_jacobian\_recovery.py}は有理数上で、
