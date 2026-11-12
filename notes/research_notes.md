@@ -9,7 +9,7 @@
   \]
   の滑らかさの必要十分条件が \(H(H+1)(27H+28)\neq0\) であることは `papers/central_fiber_discriminant.tex` に証明されている。追加の変数変換で \((\alpha^3+9)(28\alpha^3+243)\) が現れる。記号計算は `computations/verify_central_fiber_discriminant.py` に保持する。**中心曲面の判別式から非可換tailsの正則性・Azumaya性までは自動的に導かない。**
 - Brill–Noetherの形式変形・gluing object・相対Picard・六次境界・Torelliおよび二段階解消は `papers/pfaffian_brill_noether_technical.tex` に現行の証明を置く。旧`brill_noether.pdf`は章見出しの大部分がこれに対応するため追跡解除した（PDF本文との定理ごとの同値性を監査したものではない）。
-- PDF-onlyの残る独立候補：`sklyanin_mixed_quantization.pdf`の量子化。原資料の本文全体は検査できていないため、未移管の重要な証明がないとは判定しない。
+- 原PDF移管は全件完了。全混合形式比較・平面切断幾何・点因子の現行稿と厳密再生成器を入口とし、原PDFへ戻らない。
 - `finite_smoothness_notes.pdf`のdg perfectness反例に関する独立TeX再構成は `nc-cubic/notes/source_recovery/dg_perfectness_counterexamples.tex` に存在するが、有用な残部も現行ノートへ統合してPDF追跡を解除した。全主張を独立監査したという意味ではない。
 - 先行研究の新規性・各証明の外部監査は未完了。未確認の内容を定理として拡張しない。
 
@@ -31,7 +31,7 @@ Schur分解と二行のBott/Čech–Koszul比較で全次数頂点核 `K^nor=C[H
 
 `notes/ambient_finite_smoothness_and_recovery.tex` に、全21混合方向の一様PBWの適用範囲、超越的な中心値での有限大域次元の補題、良い中心chartと滑らかな量子的境界からのtails大域次元3、具体的な `(h,α)=(1,π)` の混合例（非被約な長さ24の点加群スキーム）、偏極付き圏からの二次ambientと中心三次元の復元、対角混合族のnormalizer、Artin perfectnessから完備smoothnessへの誤った推論をまとめた。一般Poisson・PBWとdg反例の十分な証明は `nc-cubic` 論文Aと独立ノートを正本とする。原PDF研究ノートは長大な公表用論文としての価値が低いため追跡を解除した。本文の全主張を独立監査したという意味ではない。
 
-残る1本のPDFは論文資料であり、未移管の固有証明を回収するまで保持する。旧VIの非可換A1局所模型・Brauer指数6・三因子特異圏だけでなく、初期の一般正則性定理とCayley幾何も現行論文へ回収し、原PDFを追跡解除した。判定は `PDF_SOURCES.md` に集約する。
+追跡PDFは0件。旧VIの非可換A1局所模型・Brauer指数6・三因子特異圏だけでなく、初期の一般正則性定理とCayley幾何も現行論文へ回収し、原PDFを追跡解除した。判定は `PDF_SOURCES.md` に集約する。
 
 ## Pfaffian旧論文IIIの現行回復の状態
 
@@ -51,7 +51,7 @@ Schur分解と二行のBott/Čech–Koszul比較で全次数頂点核 `K^nor=C[H
 
 初期§1–13の中心零化元、分離型判別式、超越的中心値、良い一般ambient、有限位数境界の正則開集合を `central_quotient_global_regularity.tex` に証明付きで統合した。Rainsの体上の中心定理を被約基底へ持ち上げる有限行列の議論と、RSVの相対smoothnessの仮定を明示する。`central_quotient_cayley_geometry.tex` には明示Cayley変換、反標準楕円境界、twisted NCCR、古典resultantと非被約定常点を収録した。
 
-一般hの中心性と5-CY性は有理関数体上の厳密有限証明書と例外値の対称性で確認した。旧VI全22節の固有内容を現行論文で置換できたため原PDFを追跡解除した。残る研究課題は一般混合の有効判別式、Brauer類のsymbol/stack表示、標識なし復元、具体式の初出照合である。残る1PDFは削除ゲート未達。生成PDF・計算状態・ダウンロード文献は追跡しない。
+一般hの中心性と5-CY性は有理関数体上の厳密有限証明書と例外値の対称性で確認した。旧VI全22節の固有内容を現行論文で置換できたため原PDFを追跡解除した。残る研究課題は一般混合の有効判別式、Brauer類のsymbol/stack表示、標識なし復元、具体式の初出照合である。全原PDFの削除ゲートは達成済み。生成PDF・計算状態・ダウンロード文献は追跡しない。
 
 ## 中心三次対の現行到達点
 
@@ -61,6 +61,8 @@ Schur分解と二行のBott/Čech–Koszul比較で全次数頂点核 `K^nor=C[H
 
 `papers/diagonal_cubic_point_geometry.tex` に、次数24の点因子・標準種数5曲線・全点スキームのshift付き分解を整理した。衝突判別式の既約性と次数56は六分岐値が相異なる全範囲で証明した。抽象点スキームの無標識復元やtails判別式との一致は主張しない。旧技術稿全34節も置換して原PDF追跡を解除した。
 
-## 混合形式比較で残る障害
+## 混合形式比較の継続課題
 
-可換平面incidenceの幾何は `papers/marked_hesse_plane_incidence.tex` に整理した。有限cochain縮約・相対window・積/trace・全21方向六級数は `sklyanin_mixed_formal_comparison.tex` に回収した。旧155項原始のJSONは使わず、有限線形系から155型・473係数を再生成し全入力恒等式を確認した。残る削除障害は四次係数の大型有限BCH計算と、有限模型・全節の最終照合。九次分岐jetは新しいFLINT再帰で厳密に再生成済みで、その計算自体は失われた証明書に依存しない。計算の成功と圏論的比較の成立は別の監査事項である。
+有限cochain縮約・相対window・積/trace・全21方向六級数は `papers/sklyanin_mixed_formal_comparison.tex` に、可換平面incidenceは `papers/marked_hesse_plane_incidence.tex` に整理した。155型/473係数の二次原始、170131型の四次BCHと1/9・1/18、32768結合律、固定源の九次分岐式を旧入力ファイルなしで厳密再生成した。全節照合と組版・表示確認を経て最後の原PDFも追跡解除した。
+
+未解決なのは、有限hでの比較核の代数化・収束、未決定六級数の高次値、大域臨界値像・導手、より高い特異層、無標識の圏分類と新規性の一次調査である。原PDF固有の証明の欠落ではない。一般formalityや再構成入力の全面的な独立再監査・外部査読を完了したとはしない。

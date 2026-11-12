@@ -1,12 +1,8 @@
-# PDF-onlyの現行判定（2026-11-13 / v26）
+# PDF-onlyの現行判定（2026-11-13 / v27）
 
 **研究・TeX化・削除に関するCodexの恒久指示：** [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)。単純転記ではなく、証明を洗練し、重要な新しい結果の追加も目指す。以下は現行の残存PDFと削除障害の一覧であり、作業履歴のアーカイブではない。
 
-**本リポジトリの現行mainで追跡するPDF原本は以下の論文1件だけ**。中心商特異性（旧VI、61頁）は全22節の固有内容を現行TeXへ統合した。研究ノート2件と旧Brill--Noether論文1件も現行TeXに価値ある内容を整理してGit追跡解除済み。旧版PDFやZIPのためのアーカイブは作らない。
-
-| 現行PDF | TeXへの移管ができた中心結果 | 残る削除障害 |
-| --- | --- | --- |
-| `papers/pdf-only/quantization/sklyanin_mixed_quantization.pdf` (195頁) | nc-cubic論文AのSklyanin中心と全混合量子化、nc-cubic2の既存境界研究への関連部分 | §9.32の四次係数の大型有限計算の再構成、残りの有限模型・全節の最終照合（主要な形式比較と幾何は下記現行稿へ回収） |
+**Git追跡PDFは0件。** 旧原PDFの固有内容は、下記の現行TeX・証明・再生成可能な計算へ統合済み。生成PDFや原PDFの別形式アーカイブは追跡しない。以後の再開に原PDFは不要である。
 
 ## 中心商特異性（旧VI、61頁）の削除判定
 
@@ -40,7 +36,7 @@
 - `verify_central_quotient_global_geometry.py`：一般hの重み4中心性（91語・rank69）、二変数判別式、古典resultantのnorm行列、Cayley変換、無限遠の滑らかさ、位数6、定常点の判別を厳密確認。
 - LuaLaTeXで親TeXを組版し、追加部分をPDF表示で確認。未定義の論理参照・書誌参照とoverfull boxを解消。生成物・計算状態・ダウンロード文献は追跡しない。
 
-この範囲で旧VIにしか残る有用な証明・入力はなくなったため、原PDFをGit追跡から解除する。一般h/全混合方向の有効判別式、Brauer類の大域的symbol、標識なし復元、具体式の初出・網羅的新規性は現行原稿の研究課題として残し、解決済みとしない。残る全混合量子化PDFは固有証明を回収するまで保持する。
+この範囲で旧VIにしか残る有用な証明・入力はなくなったため、原PDFをGit追跡から解除する。一般h/全混合方向の有効判別式、Brauer類の大域的symbol、標識なし復元、具体式の初出・網羅的新規性は現行原稿の研究課題として残し、解決済みとしない。全混合量子化の固有証明も下記の現行稿に回収した。
 
 ## 中心三次対（旧V、60頁）の削除判定
 
@@ -52,7 +48,7 @@
 | §7–9 | 全混合相対PBW、CY5、中心の多項式持上げ、可換点近傍の平坦族：親TeXのPBW/CY/中心補題と `central_pair_explicit_centers.tex`。低次数中心の可換点での跳躍を区別 |
 | §10–11 | 37次元graph成分、相対Poisson全中心、形式量子化から一般点への単射、重み(1,1,3)の一般中心、41次元incidence：`central_pair_generic_component.tex`。Pymの形式比較とPoisson成分性は既知入力 |
 | §12–13 | 全Artinの自動中心性・Plückerイデアル・完備局所環・Ore局所化・偏極・二次cover：`central_pair_artin_formal_moduli.tex`。通常の標識付き変形関手でありderived stackや大域分類とは同一視しない |
-| §14 | 全Hesse有限中心式・整列語minor・全六二次係数のFermat中心式・41項の自由代数恒等式・形式PBW・有限微分性・正則商・中央スカラー差：`central_pair_explicit_centers.tex`。有限gaugeや可換対応の高次幾何への参照は旧IIの回収課題として保持 |
+| §14 | 全Hesse有限中心式・整列語minor・全六二次係数のFermat中心式・41項の自由代数恒等式・形式PBW・有限微分性・正則商・中央スカラー差：`central_pair_explicit_centers.tex`。有限gaugeと可換対応の高次幾何は下記の混合形式比較稿と平面incidence稿へ回収 |
 | §15–17 | 対角族の定義・section algebraと二次包絡の復元・完全同型条件・h^6不変量・反対代数：親TeXと `central_pair_diagonal_classification.tex` |
 | §18 | 一般軌道24次元、商13/17次元、忘却4次元、対角飽和余次元7：`central_pair_generic_component.tex` と `central_pair_diagonal_classification.tex` |
 | §19–20 | 中心二次曲線と二重被覆による偶数Veronese復元、全混合低次数中心、構造対象付き導来復元、有限同型条件：`central_pair_mixed_derived_rigid.tex` |
@@ -107,18 +103,53 @@ LuaLaTeXで親TeX全体を組版し、追加した数式をPDF表示で確認。
 
 GitHub mainが正本。現行の日本語LuaLaTeX証明と必要最小限の計算ソースを保ち、生成PDF・計算状態・旧ZIPは追跡しない。固有の有用な数学を失わずに置換できた原PDFだけを追跡解除する。
 
-## 残る旧IIの回収済み部分と削除障害
+## 全混合量子化（旧II、195頁）の削除判定
 
-- §15–19の点因子・種数5曲線・shiftは `diagonal_cubic_point_geometry.tex` とその入力節へ回収済み（上の中心三次技術稿の判定も参照）。
-- §8、§9.37–50、§9.54–56の可換幾何は `marked_hesse_plane_incidence.tex` へ整理した。六次Hessian因子の絶対既約性・正規性・有理性、核上三次の四成分と次数27/6/6/6、全A2/A3点の標的versality、cusp/swallowtailの導手、A4弧・D4点・主成分の三枝と非正規性、二退化因子の積模型、非孤立点での二次jetとversalityの限界、固定源座標の六/九次分岐jetを証明付きで保持する。
-- 分岐jetの量子化への適用は、全混合可換代表の存在・二次係数・選択則を明示した入力としている。その入力は `sklyanin_mixed_formal_comparison.tex` に有限gauge・相対window・六級数として回収した。残る四次係数計算と全節照合が終わるまで旧IIは削除不可。形式比較を有限hの圏同値へ拡張したとは主張しない。
-- `verify_marked_hesse_geometry.py`、`verify_marked_hesse_higher_strata.py`、`verify_mixed_candidate_discriminant.py` が有理数/有理関数で有限恒等式を確認する。`verify_mixed_fibre_branch_jets.py` はFLINTの厳密有理数多項式で二十五軌道方程式を次数七まで解き、六変数全体の古典/量子補正済み九次分岐式と24単項式を独立に再生成した。失われたJSONや旧コードは入力に使わない。
+全19節、第9節の57小節を証明・数式・例まで照合した。既存の分離族と重なる証明は大部稿に保ち、固有の形式比較と可換幾何は二つの独立稿へ整理した。
 
-### 混合形式比較の現行回収
+- **形式比較の入口：** `papers/sklyanin_mixed_formal_comparison.tex`（21頁）。
+- **平面切断の入口：** `papers/marked_hesse_plane_incidence.tex`（16頁）。
+- **点因子の入口：** `papers/diagonal_cubic_point_geometry.tex`（5頁）。
+- **分離族・評価核・五生成元分類：** 大部稿の `papers/sections/pfaffian_formal_deformations_gluing.tex`。既に実組版済みの本文の証明を保持する。
 
-`papers/sklyanin_mixed_formal_comparison.tex` は独立稿として、点イデアルMF・評価射・積のhomotopy、混合欠損からの八行MF、係数複体とA2因子のcoherence、有限arity gaugeの実際のMFへの移送、全係数縮約、相対Artin windowと生成子の基底変換、楕円rotation剛性、積/Serre traceによる b(h)^3=1+h^6/27、二次曲率の155型原始、全21方向の六級数、六自由方向、h固定の平面incidence同定を保持する。
+以下の短いファイル名は `papers/sections/` 以下を指す。
 
-- `verify_mixed_second_order_gauge.py` は失われたJSONを入力せず、有理数cobar行列から155微分型・473多項式係数の原始を生成し、別の通常微分Leibniz挿入で全係数恒等式を確認した。源の二次結合律・Casimir・対称性も全入力記号で確認。
-- `verify_mixed_point_matrices.py` は全hの有理関数体上で混合欠損・整合式・評価cocycle・二乗の境界の全成分を確認。`verify_mixed_trace_scalars.py` は可換側射、二乗係数、二residue、scalar消去と剛性行列を確認する。traceの幾何学的解釈は本文の評価列の証明による。
-- 旧六次gauge数値入力への依存は、全次数の積/trace公式で置換した。Burke–Stevensonの一次資料1507.00830を確認し、原Theorem 6.4が次数零の有限大域次元を仮定することを再確認した。Artin基底ではその原定理を直接引用せず相対windowの証明を保持する。
-- 残る重要な計算は旧§9.32の [h^4]V_e=1/9、[h^4]T_e=1/18。再生成可能な二次原始は得たが、四次BCH・係数射影・降順縮約の計算をまだ実行していない。この二数値を検証済みとせず、PDFを保持する。
+| 旧節 | 有用な数学と現行の証明所在 |
+| --- | --- |
+| §1–2 | 対象・標識・既知の再構成入力：形式比較稿の導入・分離Hesse比較への明示参照。一般次元の再構成はnc-cubic論文Bを正本として重複しない |
+| §3–7 | Fermat明示族、中心とPBW、射影正則性、楕円block、Picard共役、Hesse比較、固定残余圏補正：既存の `pfaffian_formal_deformations_gluing.tex` の各証明 |
+| §8 | 実際のabelianizationの長さ24は点因子稿。一混合Hesse候補の全パラメータresultant、三/九node、c=0退化、hによる候補と規格化：`mixed_candidate_discriminant.tex`。有限hの圏同値と区別 |
+| §9.1–5 | marked Fermat切片、有限群/細分次数、係数付き変形複体：`mixed_coefficient_complexes.tex`、`mixed_six_series_and_incidence.tex`。標準形式対応は分離Hesseと既知再構成を明示入力とする |
+| §9.6–8 | 二行点イデアルMF、評価射、二対象生成、混合欠損・整合式と八行持上げ：`mixed_point_matrices.tex` |
+| §9.9–10 | 階数32二次双対と全積、全入力の停止PBW正規化、積/曲率cocycle、Koszul制限：`mixed_quadratic_dual_and_cocycle.tex`。周囲の双対とMFの全高次模型を区別 |
+| §9.11–12 | 楕円係数複体の三次元模型、グラフ核の基底直線とframe、負二回転の単元、一変数A2のcoherenceと混合sector：`mixed_coefficient_complexes.tex` |
+| §9.13–16 | 二次類のgauge不変な定式化、有限arityの実MFへの移送、Artin相対window、生成子一つによる基底変換：`mixed_quadratic_dual_and_cocycle.tex`、`mixed_finite_gauge_transport.tex`、`mixed_relative_window.tex` |
+| §9.17–19 | 全入力の二次積と原始、有限poset縮約、全h次数の係数線形純曲率化と一変数性：`mixed_second_order_curvature.tex`、`mixed_finite_gauge_transport.tex`、`mixed_elliptic_trace_comparison.tex` |
+| §9.20–22 | 旧六次数値入力は、全次数の積/Serre traceによる b(h)^3=1+h^6/27 の証明で置換。rotation剛性、実際のcharacteristic類、二乗境界、二residue、periodicity scalarの消去：`mixed_elliptic_trace_comparison.tex`。U=1/81の独立な数値入力は不要 |
+| §9.23–26 | 三中央係数/九混合係数の共通b、canonical二次jetと反例、九/十次minor、古典的優勢性と35行列：`mixed_six_series_and_incidence.tex`、`mixed_diagonal_subfamily.tex` |
+| §9.27–30 | 165/56係数補空間、平行移動のPBW加法cocycleと中心規格化台帳、Weyl共変縮約、全21方向の六級数と選択則：`mixed_finite_gauge_transport.tex`、`mixed_six_series_and_incidence.tex`。未知級数の全値は求めたとしない |
+| §9.31 | 155微分型/473係数の全係数二次原始、余因子公式、U_e[h²]=−1/12、S_e[h²]=1/4：`mixed_second_order_curvature.tex`。旧JSONなしで再生成 |
+| §9.32 | 四次BCH縮小代表、係数射影の正当化、三次原始の不要性、全十七Jacobian列による二係数1/9・1/18：`mixed_fourth_order_curvature.tex`。170131型の全閉性と降順原始を再構成 |
+| §9.33–38 | 十五係数の明示代表、全21方向の接階数、六自由方向、h固定の平面incidence同型、正確な臨界イデアル：`mixed_six_series_and_incidence.tex`、`mixed_fibre_branch_geometry.tex`、`marked_hesse_critical_geometry.tex` |
+| §9.39 | 六次Hessian因子の絶対既約性・正規性・有理性、完備整域性、特異集合次元六：`marked_hesse_critical_geometry.tex` |
+| §9.40–41 | 古典分岐零スキームと臨界値、元の源での相対三次jet、T一般点のMorse模型：`marked_hesse_relative_models.tex` |
+| §9.42–46 | 全A2/A3点の標的versality、明示例と四次残余、cusp/swallowtailの有限正規化・導手・二稜線、核上三次の四成分と次数27/6/6/6、一ブロック核の非孤立極限：`marked_hesse_critical_geometry.tex`、`marked_hesse_discriminant_normalization.tex` |
+| §9.47–48 | A4形式弧、二パラメータ内のA5障害、五次判別の正規化、D4模型と三つのA3枝、主成分の三軸局所環・非正規性・導手：`marked_hesse_higher_strata.tex` |
+| §9.49–50 | 二退化因子を保つ積模型、相対/全空間の被約特異スキーム、非孤立点で二次jetは全射だが全変形はversalでないこと：`marked_hesse_relative_models.tex` |
+| §9.51–56 | 同変Jacobian包含による全高次項除去、六自由方向、Fermat形式ファイバーの正規性/九成分、固定源の六/九次jetと量子寄与、忠実平坦性とArtin点非全射：`mixed_fibre_branch_geometry.tex`、`marked_hesse_relative_models.tex`、形式比較稿 |
+| §9.57 | 失われたコード名の羅列は現行の下記再生成器と実行範囲へ置換。有限計算と圏論/全次数の証明の区別を各本文で保持 |
+| §10–12 | 六例外ファイバー、非被約点、associated form、四つの同型類、3-isogeny：既存大部稿の射影正則性・点加群・非被約点復元の各節 |
+| §13–14 | 五生成元の内在的復元、完全同型判定・自己同型群とDVRの限界、評価核の安定性・特異部分・Picard接写像・明示gluing層：既存大部稿の五生成元分類節と評価核節 |
+| §15–19 | 点因子の24基底・三局所型・係数検出の反例、標準種数5曲線と次数56衝突判別、全点schemeとshift復元：点因子稿の二入力節。次数56は六分岐値が相異なる全範囲へ一般化 |
+
+### 独立に実行した再構成
+
+- `verify_mixed_second_order_gauge.py`：有限cobar行列から155微分型・473多項式係数の原始を毎回生成し、通常微分Leibniz挿入で全恒等式を確認。二次結合律・Casimir・対称性も全入力記号で確認。
+- `verify_mixed_fourth_order_gauge.py`：実際のPBW/Weyl積からC3の90型・C4の24型を復元し、低記号を全二次積と照合。170131型のBCHを生成し閉性確認。arity6の86332型原始を除いて3443型、arity4の1607型原始を除いて46型とし、純曲率 −5(e1 x²+e2 y²)/144+e1 e2 z/24+e1 m1/48 を得た。全十七列で分解し1/9・1/18を厳密確認。外部JSON・補間・有限体の零判定は使わない。
+- `verify_mixed_point_matrices.py`、`verify_mixed_trace_scalars.py`：全hの自由語商における混合欠損・整合式・評価cocycle・二乗境界、可換側射と二乗係数、二residue、scalar消去と剛性行列を確認。Serre traceの意味は本文の評価列の証明による。
+- `verify_mixed_quadratic_dual.py`：Q[α,h]上で全32768結合律とHilbert級数を確認。`verify_mixed_diagonal_dominance.py`：35次行列式 −20736 と九係数minorを再生成。
+- `verify_marked_hesse_geometry.py`、`verify_marked_hesse_higher_strata.py`、`verify_mixed_candidate_discriminant.py`：Hessian恒等式、明示A2/A3/A4/D4例、導手とJacobian引戻し、resultantの定数・重複度、非孤立点の二次jet行列式を厳密確認。
+- `verify_mixed_fibre_branch_jets.py`：FLINTの有理数多項式で二十五軌道方程式を次数七まで解き、六変数全体の古典/量子補正済み九次分岐式と24単項式を、旧行列・旧証明書を入力せず再生成。
+- 二新稿をLuaLaTeXで組版し、未定義参照・引用・欠字・overfullを解消。原PDFの可視数式と新稿の主要頁も表示確認。Burke–Stevenson一次資料の有限大域次元仮定を確認し、Artin基底では直接引用せず相対証明を保持する。既知分類・一般再構成・formalityの再証明や網羅的新規性は主張しない。
+
+この範囲で旧IIだけに必要な数学・入力を残さず置換できたため、最後の原PDFをGit追跡解除する。原PDF/ZIPの別アーカイブは作らない。残る数学的課題は、比較核の有限hでの代数化・収束、未決定の六級数の高次値、より高い特異層と大域臨界値像・導手、無標識の圏分類、および新規性の一次文献調査である。これらは旧PDF固有の証明の欠落とは異なる。

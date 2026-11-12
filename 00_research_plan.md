@@ -1,6 +1,6 @@
 # 研究方針：独立境界・モジュライ研究
 
-> **nc-cubic2の現行最優先は、残る1本のpdf-only研究原稿から数学的に重要な定理・証明を回収し、必要に応じて新しい結果・概念的証明・一般化・応用を加え、公表価値の高い現行論文を完成させてからGit追跡PDFを解除すること。** 単純なPDF→TeX転記や削除本数の最大化ではない。Codexの具体的な研究指示、優先順位の変更基準、検証と削除のゲートは [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md) に記した。
+> **全研究原PDFの現行TeXへの移管とGit追跡解除が完了し、追跡PDFは0件。** 今後は論文・証明・再生成可能な計算を正本として、正確性、先行研究、新規性、公表価値を高める。削除判定と全対応は [PDF_SOURCES.md](PDF_SOURCES.md)、恒久原則は [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)。
 
 ## nc cubic threefoldの17次元モジュライ（現行の主題）
 
@@ -12,7 +12,7 @@
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 - **可換点の全Artin形式局所構造をTeX化**：`papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。全係数Hesse中心元・有限証明書・37次元graph成分と一般中心・剛体例の正則開集合も現行稿へ回収し、旧V全21節を照合した。原PDFは追跡解除済み。
 
-**2026-11-13 / v38。再開時は最初に本ファイルを読む。**
+**2026-11-13 / v39。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -72,7 +72,7 @@ embedded componentの長さの解明。
 
 ## 未解決
 
-pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な数学的内容を `notes/ambient_finite_smoothness_and_recovery.tex` と `nc-cubic` の対応原稿へ統合したため、当該PDFの追跡を解除する。残るPDF原資料は1件で、各論文に未収録の重要な結果があるため本文照合・TeX化が済むまで保持する（`PDF_SOURCES.md`）。主リポジトリの定理に引用・依存する補題は、移管元に自立した証明を保持してから移す。文献の一次資料照合も追加監査が必要。
+全原PDFの有用内容を現行論文・計算へ統合し、追跡PDFは0件となった。有限正則性ノートも `notes/ambient_finite_smoothness_and_recovery.tex` と `nc-cubic` の対応原稿へ統合済み（`PDF_SOURCES.md`）。主リポジトリの定理に引用・依存する補題は、移管元に自立した証明を保持してから移す。文献の一次資料照合も追加監査が必要。
 
 ## 一般研究原則と保存許可
 
@@ -82,9 +82,9 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 
 正本はGitHubのmain。研究ノートには現在有効な着想・反例・障害を、論文には十分な証明を保持する。証明記載、今回の照合・計算実行、未確認の新規性を区別する。日付・版番号を付けて更新し、旧ZIP・旧稿の複製・キャッシュを蓄積しない。LuaLaTeXのソースと依存物を優先し、生成PDFはGit追跡しない。明示されたGitHub push失敗時以外にLibraryへ保存しない。
 
-## 最優先：PDF原本1件のTeX移管とGit追跡解除
+## 原PDF移管の完了と現行資産
 
-**現行状態：** `papers/pdf-only/`に論文PDFが1件。原PDFそのものを過去資料としてアーカイブしない。現行論文に公表価値のある成果・証明・反例・計算入力を統合し、再現可能になったPDFからGit追跡を解除する。見出し一致だけで証明を失わせない。GitHub mainを正本とし、GitHub Actionsは使わない。
+**現行状態：** Git追跡PDFは0件。証明・反例・計算入力・書誌は現行TeXと再生成器に置く。原PDFの別アーカイブは作らず、生成物は `build/` に出力して追跡しない。GitHub mainを正本とする。
 
 ### 1. 中心商特異性（旧論文VI、PDF追跡解除済み）
 
@@ -98,14 +98,14 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 
 **削除ゲート達成：** 全22節を本文の証明・数式まで照合し、初期の一般正則性諸定理とCayley幾何を現行論文へ統合した。一般hの中心性・5-CY性、古典判別式、Cayley変換、定常点の長さ24も厳密検算し、LuaLaTeX組版を確認した。原PDFを追跡解除し、対応表は `PDF_SOURCES.md` に保持する。未解決の一般有効判別式・Brauer symbol・標識なし復元を解決済みとはしない。
 
-**次の具体的着手：** 残る `sklyanin_mixed_quantization.pdf`（195頁）の全内容を回収する。点因子・genus5曲線部分は新稿で置換済みだが、第9節の57小節にある有限gauge、全21混合の形式対応、Hesse平面incidence、A2/A3/A4/D4臨界層、導手・分岐式の固有証明が残る。証明を失わず整理して最後のPDFを解除する。
+**全混合量子化の移管も完了：** 旧II全19節と§9の57小節を照合し、形式比較・平面切断幾何・点因子の三稿と既存大部稿へ配置した。四次量子係数1/9・1/18も実際のPBW/Weyl積と170131型BCHから再生成した。
 
-### 2. 残る全混合量子化PDF
+### 2. 全混合量子化の現行資産
 
 - 中心三次対（旧V）は全21節の固有内容を現行モジュライ論文に統合してPDF追跡解除済み。
 - Pfaffian接触境界は全25節を回収してPDF追跡解除済み。全次数頂点核・非線形分類・同変代数化を現行稿で証明した。
 - 中心三次技術稿は全34節をモジュライ論文・中心商論文・点因子の新稿に統合してPDF追跡解除済み。
-- `sklyanin_mixed_quantization.pdf`：全混合量子化、臨界層、点スキーム、種数5曲線などの固有結果を精査する。195頁の長大な原稿を丸ごと複製せず、公表価値のある証明ごとに整理する。
+- 旧IIの全混合量子化・臨界層・点スキーム・種数5曲線は `sklyanin_mixed_formal_comparison.tex`、`marked_hesse_plane_incidence.tex`、`diagonal_cubic_point_geometry.tex` と既存大部稿へ整理し、PDF追跡解除済み。
 
 詳細な証明と未解決箇所は各現行論文・`notes/research_notes.md`、PDF固有の対応は`PDF_SOURCES.md`に置く。**主張の証明が原稿にあること、独立に監査されたこと、有限計算が実行されたこと、組版が成功したことを区別する。**
 
@@ -117,8 +117,10 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 
 Rees退化による非Azumaya locusの次元上界を一般補題にし、WWY Theorem 1.3/Lemma 5.4、Levasseur Proposition 3.2(ii)、Brown–Macleod Theorems 3.13/4.8の本文と仮定を照合した。PBWと既知Sklyanin入力からR1の大域次元3、中心の正規性、Azumaya locus同定を導く。二重étale被覆とrank6 monic式から中心降下と分岐位置を証明し、21特異点中15点の非零Hessianを厳密検算した。IW Theorem 5.1(1)の二素因子のflag分類から四点の局所模型を得る。
 
-`papers/sections/central_quotient_chart_gluing.tex`に、CCKMの行列因子化同値、分母払い、導分の中心因子、Chen/Yekutieli–Zhangの双対性による正確な次元を収録した。指定混合族の判別式の貼合せは追加仮定から除いた。chartのIwanaga–Gorenstein性も中心正則商と忠実平坦降下から証明する。`papers/sections/central_quotient_pbw_cy.tex`にBGの三次syzygy条件、被約基底での相対PBW、自己双対な双加群解消、周囲のKoszul AS正則性を証明した。Koszul双対をQ[α]上で計算し、全pivotが非零有理定数、Frobenius対合のdetが±1であることから全αでNakayama twistが恒等と確定した（`computations/verify_central_quotient_koszul.py`）。全8三次元単純表現のExt1表は構造的に証明し、代数体上のrank19/16・内的微分rank8/9も厳密再実行した（`computations/verify_central_quotient_extensions.py`）。初期諸節とCayley幾何も全照合して現行TeXへ統合した。旧VIのPDFは追跡解除し、残る1件は保持する。生成物は追跡しない。
+`papers/sections/central_quotient_chart_gluing.tex`に、CCKMの行列因子化同値、分母払い、導分の中心因子、Chen/Yekutieli–Zhangの双対性による正確な次元を収録した。指定混合族の判別式の貼合せは追加仮定から除いた。chartのIwanaga–Gorenstein性も中心正則商と忠実平坦降下から証明する。`papers/sections/central_quotient_pbw_cy.tex`にBGの三次syzygy条件、被約基底での相対PBW、自己双対な双加群解消、周囲のKoszul AS正則性を証明した。Koszul双対をQ[α]上で計算し、全pivotが非零有理定数、Frobenius対合のdetが±1であることから全αでNakayama twistが恒等と確定した（`computations/verify_central_quotient_koszul.py`）。全8三次元単純表現のExt1表は構造的に証明し、代数体上のrank19/16・内的微分rank8/9も厳密再実行した（`computations/verify_central_quotient_extensions.py`）。初期諸節とCayley幾何も全照合して現行TeXへ統合した。全原PDFは有用内容を置換して追跡解除済み。生成物は追跡しない。
 
-## 残る旧IIの次の着手
+## 混合研究の到達点と次の数学
 
-平面切断の可換幾何を `papers/marked_hesse_plane_incidence.tex` へ分離した。A2/A3の導手、四成分、A4/D4、積模型と固定源の九次分岐式まで証明と新しい厳密検算を保持する。§9.6–31の主要形式比較は `papers/sklyanin_mixed_formal_comparison.tex` に回収した。155型・473係数の二次原始を入力なしで再生成し全恒等式を確認した。次は§9.32の四次量子係数1/9・1/18を有限BCHと実際のPBW/Weyl積から再構成し、階数32模型・源cocycle等の残りの有用内容と全節を照合する。PDF削除ゲートは未達である。
+形式比較稿（21頁）、平面incidence稿（16頁）、点因子稿（5頁）を組版済み。二次原始155型/473係数、四次BCH170131型と閉性・二段の原始、階数32双対の32768結合律、固定源の九次分岐式を厳密再構成した。全原PDFの削除ゲートは達成した。
+
+今後の研究課題は、比較核の有限hでの代数化・収束、未決定の六級数の高次値、A5以上の層、大域臨界値像と導手、無標識分類と新規性の一次調査である。各証明の独立査読・一般再構成/formalityの再監査の範囲は引き続き区別する。

@@ -101,6 +101,13 @@ def main():
     print('PASS: swallowtail resultant, conductor generators and Jacobian pullbacks')
     assert 3*s.binomial(6, 4)-3*6 == 27
     print('PASS: four component degrees 27, 6, 6, 6')
+    aa, bb = s.symbols('A B', nonzero=True)
+    jet = s.Matrix([[1,0,0,0,0,0], [0,aa,-bb,0,0,0],
+                    [0,0,0,aa,-bb,0], [0,0,0,0,6*bb,0],
+                    [-(aa**3+bb**3),0,0,0,0,-2*aa*bb],
+                    [0,0,6*bb,0,0,0]])
+    check_zero(jet.det()-72*aa**3*bb**3)
+    print('PASS: nonisolated target deformations span the full binary quadratic jet')
 
 
 if __name__ == '__main__':

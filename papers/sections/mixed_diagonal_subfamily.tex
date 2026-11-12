@@ -1,0 +1,61 @@
+\section{九混合係数だけの二次応答と優勢性}
+全混合のうち$e=0$の九係数部分族を考える。
+$s=h^2/3,\kappa=b(h)$、$A=\sum a_ix_i,B=\sum d_ix_i,C=\sum c_ix_i$とすると代表は
+$H_s+u^3+v^3+\kappa(Au^2+Buv+Cv^2)$である。
+中央shear $u\mapsto u-\kappa A/3,v\mapsto v-\kappa C/3$は行列式一であり、厳密に
+\[
+ H_s+u^3+v^3+\kappa Buv-\kappa^2(A^2+BC)u/3-\kappa^2(C^2+AB)v/3
+ +\kappa^3\{2(A^3+C^3)/27+ABC/9\}
+\]
+へ移す。
+\begin{proposition}
+$J=(a,d,c)$としてcanonical Fermat切片の係数は、$h$を打ち切らず$J^3$を法として
+\begin{align*}
+ S&=s,\qquad T_i=\kappa d_i,\\
+ P_i&=-\kappa^2\{2a_ja_k+d_jc_k+d_kc_j-s(a_i^2+d_ic_i)\}/3,\\
+ Q_i&=-\kappa^2\{2c_jc_k+a_jd_k+a_kd_j-s(c_i^2+a_id_i)\}/3
+\end{align*}
+となる。原点で混合接階数は三だが、九係数の形式分数体上では九である。
+$h$も動かせば十個の標的係数への微分階数は十となる。
+\end{proposition}
+\begin{proof}
+上の厳密shearの後、$x_i\mapsto x_i+\kappa^2\{(a_i^2+d_ic_i)u+(c_i^2+a_id_i)v\}/3$とする。
+$\partial_iH_s=x_i^2+sx_jx_k$なので平方混合項を消し、表示のsquarefree係数を得る。
+その他の作用は全て$J^3$以上であり、marked切片の一意性が結論を与える。
+$d=0,a_i=a,c_i=c$における九次minorの最初の$J$次数六部分は
+\[
+ \frac{64}{729}\kappa^{15}a^3c^3(s-2)^2(s+1)^4.
+\]
+実際$d$列のblockは$\kappa I_3$、二つの残る対角blockは
+$(2\kappa^2a/3)M_s,(2\kappa^2c/3)M_s$で、
+$M_s=(s+1)I_3-\mathbf1\mathbf1^t$、$\det M_s=(s-2)(s+1)^2$である。
+未知の三次以上の係数の微分は次数二以上なので先頭次数六へ寄与しない。
+$S=s+O(J^3)$と$ds/dh=2h/3$を加えると十次minorの先頭項は
+$128h\kappa^{15}a^3c^3(s-2)^2(s+1)^4/2187$である。
+いずれも非零なので分数体上の階数を得る。
+\end{proof}
+例えば$A=a(x+y),B=C=0$では
+$F^{\rm can}=F_0+sxyz-2\kappa^2a^2uxy/3+s\kappa^2a^2u(yz+xz)/3\pmod{a^3}$である。
+一次の軌道方向も二次には非零のcanonical応答を作るため、代表の係数をcanonical係数と同一視してはならない。
+
+\begin{proposition}[古典的な十係数表示の優勢性]
+$P_{\tau,a,d,c}=D/3+\tau xyz+u^3+v^3+\sum x_i(a_iu^2+d_iuv+c_iv^2)$とすると、
+$\mathrm{GL}_5\times\mathbb A^{10}\to\Sym^3(\CC^5)^*$、$(g,p)\mapsto g\cdot P_p$は優勢である。
+滑らかな三次三様体の非空開集合はこの形の方程式を持つ。
+\end{proposition}
+\begin{proof}
+$\tau=d=0,a_i=c_i=1$の点$P_*=D/3+u^3+v^3+(x+y+z)(u^2+v^2)$を取る。
+勾配零なら$x_i^2+u^2+v^2=0$、$u(3u+2\ell)=v(3v+2\ell)=0$である。
+全$x_i=\epsilon_it$、$\epsilon_i\in\{\pm1\}$と書き、
+$e=\sum\epsilon_i\in\{\pm1,\pm3\}$、非零な$u,v$の数を$r$とすると
+$t^2(1+4e^2r/9)=0$で、括弧は非零だから射影的特異点はない。
+
+十係数方向で割ると、二十五軌道方向$w_j\partial_iP_*$はまず九つの$x_i^2x_j$、
+次に四つの二元三次単項式、次に六つの$x_i^2u,x_i^2v$を与える。
+残る$xyu,xzu,yzu$および$v$版は、それぞれ
+$\left(\begin{smallmatrix}2&2&0\\2&0&2\\0&2&2\end{smallmatrix}\right)$、行列式$-16$の行列で張られる。
+従って全三十五方向が独立で、この点で微分は同型である。
+源・標的は滑らか三十五次元なので写像はここでétale、像は非空開集合を含む。
+全行列の行列式の絶対値は$3^4\cdot16^2=20736$であり、現行検証器も三十五行列を再生成して確認する。
+この表示の一意性や全ての滑らかな三次式での存在は主張しない。
+\end{proof}

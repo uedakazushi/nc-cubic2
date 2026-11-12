@@ -131,6 +131,7 @@ def main():
     assert not rem, rem
     assert not add(bracket(curv,w1),{():-hh.det()/8},-1)
     print('PASS: all finite second-order curved gauge identities with all e_i,m_i independent')
+    return mu,curv,c1,c2,v,w1,w3
 
 
 if __name__=='__main__':main()

@@ -1,0 +1,92 @@
+\section{周囲二次双対と実際の源cocycle}
+\subsection{階数32の有限双対}
+$K=\mathbb Q[\alpha,h]$上の周囲二次代数
+\[
+ B=K[u,v]\langle x,y,z\rangle/([x,y]-hz^2,[y,z]-h(x^2+\alpha uv),[z,x]-hy^2)
+\]
+を取る。自然なtensor pairingによる二次双対は
+\begin{gather*}
+ X^2=-hYZ,\quad Y^2=hXZ,\quad Z^2=-hXY,\\
+ XY+YX=XZ+ZX=YZ+ZY=0,\quad U^2=V^2=0,\quad UV+VU=-\alpha hYZ
+\end{gather*}
+および$U,V$と$X,Y,Z$の六つの反交換関係で定義される。
+十五関係は五つの平方と十個の逆順語に単元pivotを持ち、残る十個の二文字語が商の基底となる。
+従って直交する関係の一部ではなく直交補空間全体である。
+
+\begin{proposition}
+三生成元部分$E$は$1,X,Y,Z,XY,XZ,YZ,XYZ$を基底とする階数八の自由代数である。
+相異なる文字の積は外積の符号、平方は上式、二種類の文字を持つ反復三次語と四次以上は零、
+$X^3=Y^3=Z^3=-hXYZ$である。
+全二次双対の基底は$eU^aV^b$、$e\in E$、$a,b\in\{0,1\}$で、
+階数32、Hilbert級数$(1+t)^5$である。
+\end{proposition}
+\begin{proof}
+例えば$X^2Y=YX^2$である一方、平方と反交換を使うと
+$X^2Y=hY^2Z$、$YX^2=-hY^2Z$なので二が可逆であることから反復語が零となる。
+他も同様で、$h$の逆元は不要である。
+表示基底上にこの積を定義すると、三次の三項積は三文字相異なる場合、全て同じ場合、二種類の場合に分かれ、
+両括弧付けがそれぞれ符号付き$XYZ,-hXYZ,0$で一致する。
+四次以上の両側は零なので結合代数が構成でき、基底の独立性も得られる。
+$c=-\alpha hYZ$は偶中心元である。
+$W=UV$と置くと$U,V$部分の非自明積は
+\[
+ UV=W,\quad VU=c-W,\quad VW=cV,\quad WU=cU,\quad W^2=cW,
+\]
+残り$U^2,V^2,UW,WV$は零である。
+$U,V$が$E$の奇元と反交換することと$c$の偶中心性から、全ての重なりが解消される。
+従って表示基底の積が定まり自由性が従う。
+\end{proof}
+この模型は周囲二次代数の双対であり、中心三次商のMF圏の全高次演算を既に計算したことにはならない。
+自由語の三次係数を$m_3$へ入れるだけで全ての$A_\infty$恒等式が成立するとは仮定しない。
+
+\subsection{PBW固定化における全入力の源cocycle}
+$R_N=\mathbb Q[h]/(h^N)$、$\epsilon^2=0$とし、混合係数を$\epsilon$とする。
+順序$x<y<z<u<v$で、最初の逆順対を
+\[
+ yx\mapsto xy-hz^2,\quad zx\mapsto xz+hy^2,\quad
+ zy\mapsto yz-hx^2-\epsilon huv
+\]
+で還元する。中央$u,v$は通常交換する。
+先頭交換項は転倒数を下げ、補正項は$h$次数を上げるので、各$h^N=0$で再帰は停止する。
+形式PBW基底の一意性からその正規形は実際の積の座標である。
+任意の順序単項式$a,b$に対し$\nu(a,b)=[\epsilon]\operatorname{NF}_N(ab)$と置けば、
+全入力上に定義された積の一次変分となり、$N$の増大と両立する。
+中心曲率を同じ座標で$W+\epsilon w$と書くと
+\begin{align*}
+ W&=(1+h^3)x^3/3+(1-h^3)y^3/3+(1+h^3)z^3/3-2h^2xyz/3+u^3+v^3,\\
+ w&=(1+h^3/3)xuv.
+\end{align*}
+これは$T=6xyz-3hx^3+3hy^3-3hz^3-3h\epsilon uvx$を中心式へ代入して得られる。
+実際の結合律と中心性を$\epsilon$で微分すると、全入力について
+\begin{align*}
+ \mu(a,\nu(b,c))-\nu(\mu(a,b),c)+\nu(a,\mu(b,c))-\mu(\nu(a,b),c)&=0,\\
+ \nu(W,a)-\nu(a,W)+\mu(w,a)-\mu(a,w)&=0
+\end{align*}
+となる。
+生成元対では$\nu(z,y)=-huv$だけが非零で、
+曲率挿入は$y$上$-(h+h^4/3)uvz^2$、$z$上$(h+h^4/3)uvy^2$、他は零である。
+固定化を$1+\epsilon s$に変えると
+$\nu' =\nu+d_{\rm Hoch}s,w'=w-s(W)$となるので、$1+h^3/3$をcanonical混合係数$b(h)$と呼んではならない。
+
+通常のKoszul複体$E\otimes B$の微分\cite{Negron}は
+\[
+ d_K(e\otimes a)=\sum_i(X_ie\otimes x_ia-(-1)^{|e|}eX_i\otimes ax_i).
+\]
+両側Koszul分解は、各内部次数で特殊ファイバーの通常Koszul分解の単元pivotを持ち上げて相対的にも完全である。
+bar分解への包含による$\nu$の制限は$c_2=YZ\otimes huv$である。
+実際$yz-zy-hx^2$上の値が$huv$で、他の九二次関係上は零となる。
+$YZ$は偶中心元、$uv$は中心元なので$d_Kc_2=0$。
+曲率挿入の一次制限は
+\[
+ d_K(1\otimes w)=-Y\otimes(h+h^4/3)uvz^2+Z\otimes(h+h^4/3)uvy^2.
+\]
+これらは実際の源とその通常Koszul成分であり、曲率を含む全高次小模型の構成とは区別する。
+
+\subsection{二次変形類のgauge不変な定式化}
+残余圏へ移したdg Lie模型で$\mu=ha+h^2b\pmod{h^3}$、$dv=a$とする。
+このとき$[b+[v,a]/2]$は閉で、$v$の選択に依存しない二次変形類である。
+実際$da=0,db+[a,a]/2=0$より閉性が従い、
+$\exp(hv)$で一次項を消すと二次項が表示式となる。
+$v\mapsto v+w,dw=0$の差は$[w,dv]/2=d[w,v]/2$という境界である。
+源の積や中心だけの微分を、移送済みの$a,b$と無条件に同一視することはできない。
+本稿では実際の有限gaugeと相対windowでこの移送を行う。

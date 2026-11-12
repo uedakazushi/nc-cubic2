@@ -133,3 +133,37 @@ $A[[z]]$は$A$上忠実平坦で、$B$はその上基底$1,h$の有限自由加�
 $h,z$の全像が$(\epsilon)$に入る一方、$3\sigma=3s+O(2)$なので関係式を満たせない。
 自由変数の追加はこの障害を消さない。忠実平坦性は同一基底上の点の全射性を意味しない。
 \end{proof}
+
+\begin{proposition}[元の源係数での相対三次jet]
+実際の源で$e_i=p_iu+q_iv,m_i=a_iu^2+d_iuv+c_iv^2$とし、
+九つのcanonical座標$r=(P,Q,T)$を解いた後の二重被覆を$h^2=\Phi_A(s,r,a,c)$と書く。
+$P_a=\prod a_i,P_c=\prod c_i$、
+$Z(a,T,c)=\sum_{\{i,j,k\}=\{1,2,3\}}a_iT_jc_k$と置けば
+\begin{align*}
+ S_{\rm cl}&=-(a\cdot P+c\cdot Q)/3-2(P_a+P_c)/9-Z(a,T,c)/9+O(4),\\
+ \Phi_A&=3s+a\cdot P+c\cdot Q+2(P_a+P_c)/3+Z(a,T,c)/3+O(4).
+\end{align*}
+臨界源の座標$(T,a,c)$における臨界値写像の初期項は
+\begin{align*}
+ P_i&=-2a_ja_k/3-(T_jc_k+T_kc_j)/3+O(3),\\
+ Q_i&=-2c_jc_k/3-(T_ja_k+T_ka_j)/3+O(3),\\
+ s&=4(P_a+P_c)/9+Z(a,T,c)/9+O(4).
+\end{align*}
+\end{proposition}
+\begin{proof}
+$A=\sum a_ix_i,B=\sum d_ix_i,C=\sum c_ix_i$とし、
+$E=\sum p_ix_jx_k,K=\sum q_ix_jx_k$とする。
+古典三次式へ$u\mapsto u-A/3,v\mapsto v-C/3$を施すと純三変数追加項は
+$2(A^3+C^3)/27+ABC/9-(AE+CK)/3$である。
+平方項を除く二次補正$\delta x_i=((a_i^2+d_ic_i)u+(c_i^2+a_id_i)v)/3$は、三次以下の純$xyz$係数を変えない。
+九座標の二次jetは
+$P_i=p_i-(2a_ja_k+d_jc_k+d_kc_j)/3$、
+$Q_i=q_i-(2c_jc_k+a_jd_k+a_kd_j)/3$、$T_i=d_i$である。
+これを反転して上の純三変数式へ戻すと$S_{\rm cl}$の表示を得る。
+$t=h^2$を次数一とした実際の代表の追加三次項は
+$-t\sum(p_iu+q_iv)^2x_i/12$だけであり、純三変数$xyz$を持たない。
+先のshearは$txyz/3$に作用せず、二次純三変数補正の対角成分は零なので、その項にも寄与しない。
+従って$s=t/3-(a\cdot P+c\cdot Q)/3-2(P_a+P_c)/9-Z/9+O(4)$となり、
+$t$について反転すれば$\Phi_A$を得る。
+最後に$\partial_{a,c}S_{\rm cl}=0$を解き、$S_{\rm cl}$へ戻せば臨界値の式となる。
+\end{proof}
