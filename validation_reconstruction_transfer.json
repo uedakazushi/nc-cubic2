@@ -1,7 +1,7 @@
 {
   "date": "2026-11-13",
-  "version": "v8",
-  "status": "PARTIAL overall: point-scheme, finite Jacobian and first-order deformation units including Todd-HKR alternative proof integrated and source-deduplicated; broader relative theory and explicit models remain",
+  "version": "v9",
+  "status": "PARTIAL overall: three previous units source-deduplicated; finite Artin window/base-change and smoothness obstruction integrated as a fourth standalone manuscript, with original Artin sources deliberately retained pending formal/etale and mixed dependencies",
   "source_repository": "uedakazushi/nc-cubic",
   "destination_repository": "uedakazushi/nc-cubic2",
   "paper_A": "Remains unchanged in nc-cubic, A-v51",
@@ -73,10 +73,31 @@
     },
     "scope": "First-order MF comparison for N>=5; Plucker, categorical tangent and Todd-HKR results for N=5. No general seven-dimensional forgetful kernel, full formal moduli or new reconstruction existence claim."
   },
+  "finite_artin_window_companion": {
+    "entry": "papers/cubic_artin_windows.tex",
+    "notes": "notes/cubic_artin_windows.md",
+    "validation": "validation_cubic_artin_windows.json",
+    "version": "v1",
+    "scope": "All one-parameter finite Artin truncations R_N=C[h]/h^(N+1), d>=5; not arbitrary local Artin rings",
+    "core_comparison_and_regular_basechange_integrated": true,
+    "smoothness_counterexample_byte_identical": "00b88867ab30b64e751160bbb8207b0f405b66da",
+    "conditional_application": "ar:cor:conditional assumes compatible MF equivalences; it does not replace original am:cor:formal-residual or prove formal MF existence",
+    "lualatex_and_visual_review_executed": true,
+    "pages": 13,
+    "reference_closure_verified": true,
+    "exact_finite_dg_checks_executed": true,
+    "source_cleanup": {
+      "status": "PENDING; originals retained",
+      "reason": "Pending formal, mixed and other support chapters cite am:*; original full formal-recovery corollary and its all-orders existence input remain at source",
+      "source_files_deleted": 0
+    },
+    "all_Artin_etale_results_transferred": false,
+    "paper_A_and_focused_B_unchanged": true
+  },
   "text_preserved_but_companion_integration_pending": {},
-  "remaining_groups": ["General Artin and etale relative theory", "Sklyanin and multiblock finite models", "relative diagonal, bar, Morita and alternate constructions", "mixed-family jets and equivariant reconstruction", "other independent generalizations, literature and computation assets"],
+  "remaining_groups": ["Formal/etale relative existence theory and finite-Artin source deduplication", "Sklyanin and multiblock finite models", "relative diagonal, bar, Morita and alternate constructions", "mixed-family jets and equivariant reconstruction", "other independent generalizations, literature and computation assets"],
   "all_independent_material_transferred": false,
   "independent_full_math_proof_audit": false,
-  "concurrent_destination_work_preserved": ["83c787d231b1e0ce5929a897626a17c72185c1e5", "e10e980f5fba6e8d238b9ac777a7b513aee661fa", "47cc55e6e0a7191d0af5fba3b3bd73c41620c3c4", "ab4da97348cc270d119e28f745b78c6ec0b228d1"],
-  "policy": "Remove source duplicates only after current destination manuscript, proofs, inputs and necessary validation are saved. No Actions or force push."
+  "concurrent_destination_work_preserved": ["83c787d231b1e0ce5929a897626a17c72185c1e5", "e10e980f5fba6e8d238b9ac777a7b513aee661fa", "47cc55e6e0a7191d0af5fba3b3bd73c41620c3c4", "ab4da97348cc270d119e28f745b78c6ec0b228d1", "79b4dd643a5e3ed4fac5eec0ed0e9445f8025965"],
+  "policy": "Remove source duplicates only after current destination manuscript, proofs, inputs and necessary validation are saved and remaining dependents reconciled. No Actions or force push."
 }

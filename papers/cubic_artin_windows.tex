@@ -1,0 +1,51 @@
+% !TEX root = cubic_artin_windows.tex
+\input{papers/artin_windows/preamble}
+\hypersetup{pdftitle={有限Artin基底上の残余圏と行列因子分解}}
+\title{有限Artin基底上の残余圏と行列因子分解\\
+\large 相対window、底変更、完備化における生成性の障害}
+\author{}
+\date{2026年11月13日／研究草稿 v1}
+\begin{document}
+\maketitle
+\begin{abstract}
+$\mathbb C[h]/(h^{N+1})$上の次数別有限自由な中心三次対で、
+特殊ファイバーが多項式環と滑らかな三次式となるものを考える。
+任意の$N\ge0$と変数数$d\ge5$について、線束生成残余圏を
+graded matrix factorizationと比較し、底変更・rotation・指定三次周期との両立を示す。
+正則局所基底からのArtin底変更も記述する。
+他方、全Artin切断が相対smoothであっても、完備基底でのsmoothnessは従わないことを、
+射影直線上の生成対象の変形と四次元strict dg代数により示す。
+MF同値から可換残余圏へ移す際には、MF同値そのものの存在を別の入力として区別する。
+\end{abstract}
+
+\section*{問題設定と証明の構成}
+本稿は任意の局所Artin環への一般化ではなく、一変数の全有限切断
+$R_N=\mathbb C[h]/(h^{N+1})$を扱う。
+$d$は変数数、超曲面の次元は$d-2\ge3$である。
+線束で生成される部分を扱い、非正則な基底上で全coherent圏を
+通常の絶対特異圏と比較することはしない。
+
+中心結果は定理\ref{am:thm:comparison}の
+$\mathcal K_B^{\rm lin}\simeq\MF^{\ZZ}(A,\Omega)$である。
+余核による相対stabilization、線束とMFのHomの有限性・底変更、
+Ind圏での生成子の持上げを順に用いる。
+この構成の加群論的入力はChen\cite{AMChen}、射影化の入力は
+Artin--Zhang\cite{LP-AZ}とBurke--Stevenson\cite{LP-BS}である。
+既知の三角圏同値をそのままdg同値と呼ばず、exact圏とdg商による比較を記す。
+この組合せの先行研究上の初出・包括的新規性は未確認である。
+
+第\ref{ar:sec:regular}節は正則局所模型からの底変更に必要な証明を収める。
+第\ref{ar:sec:application}節では、可換MFとの同値を別途仮定して残余圏へ移す。
+可換三次式やそのMF同値を構成する定理ではない。
+第\ref{as:sec:obstruction}節は、有限Artin基底での生成性と
+完備基底での生成性を同一視できない理由を示す。
+その出発点となる生成対象の変形例は既知である\cite{AMSasha}。
+
+\input{papers/artin_windows/comparison}
+\input{papers/artin_windows/regular_basechange}
+\input{papers/artin_windows/application}
+\input{papers/artin_windows/artin_smoothness_obstruction}
+\begin{thebibliography}{99}
+\input{papers/artin_windows/references}
+\end{thebibliography}
+\end{document}

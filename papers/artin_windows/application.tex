@@ -1,0 +1,45 @@
+\section{別途与えられたMF同値の残余圏への移送}\label{ar:sec:application}
+
+本節では、非可換MF圏と可換MF圏の比較そのものを構成しない。
+その比較を明示的な入力にして、前節までの結果の適用を述べる。
+
+\begin{corollary}[互換なMF比較が与えられた場合]\label{ar:cor:conditional}
+$d\ge5$とし、各$N$で第\ref{am:sec:comparison}節の入力$(A_N,\Omega_N)$を取る。
+滑らかな特殊ファイバーを持つ形式三次式$W_h\in\mathbb C[[h]][z_1,\ldots,z_d]_3$と、
+内部shift・三次周期・Artin商への底変更を保つ同値
+\[
+ \MF^{\ZZ}(A_N,\Omega_N)\simeq
+ \MF^{\ZZ}(R_N[z_1,\ldots,z_d],W_h\bmod h^{N+1})
+\]
+が各$N$について与えられ、それらが互換であると仮定する。
+$B_N=A_N/(\Omega_N)$、$Y_N=V(W_h\bmod h^{N+1})$とすると、互換なpair同値
+\[
+ (\mathcal K_{B_N}^{\rm lin},\rho)\simeq
+ (\Ku_{\rm perf}(Y_N/R_N),\rho_{Y_N})
+\]
+を得る。ここで右辺は$\operatorname{Perf}(Y_N)$から
+$\mathcal O,\ldots,\mathcal O(d-4)$を除いた右直交である。
+\end{corollary}
+\begin{proof}
+定理\ref{am:thm:comparison}を両側に適用し、その間に仮定したMF同値を挟む。
+可換側では、線束$\mathcal O(-j)$（$0\le j\le d-1$）の直和が
+$D_{\rm QCoh}(Y_N)$をcompactに生成する\cite[Tag~0BQT]{AMStacks}。
+これは射影空間の相対対角分解と、閉埋込みのpushforwardの保守性・随伴による。
+qcqsスキームではcompact対象とperfect対象が一致する\cite[Tag~09M1]{AMStacks}ので、
+全線束の厚い閉包は$\operatorname{Perf}(Y_N)$である。
+各比較のrotationと底変更の両立性が、所要の互換性を与える。
+\end{proof}
+
+この系は、$W_h$やMF同値の存在証明を代用しない。
+非零の複素パラメータへの代数化、完備底での生成性、
+全coherent圏との同定についても別の議論が必要である。
+
+\begin{example}[絶対特異圏を代用できない理由]\label{cg:ex:artin-singularity}
+$D=\mathbb C[\varepsilon]/(\varepsilon^2)$、$A=D[x]$、$W=x$とする。
+有限自由$\mathbb Z/2$-graded MF行列$Q$について$Q^2=xI$を微分すると
+$Q(\partial_xQ)+(\partial_xQ)Q=I$となるので、このMF圏は可縮である。
+他方、$A/(W)=D$の剰余体は$\varepsilon$による無限周期自由分解を持ち、
+その自己Extは任意の非負次数で非零である。
+従って剰余体はperfectでなく、絶対特異圏$D_{\rm sg}(D)$は零でない。
+周囲でperfectという条件を外した比較は、この例で既に成立しない。
+\end{example}

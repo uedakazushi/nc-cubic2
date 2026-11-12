@@ -1,0 +1,110 @@
+\section{正則局所基底からのArtin底変更}\label{ar:sec:regular}
+
+$(R,\mathfrak m,\mathbb C)$を有限生成複素代数の局所化である正則局所環とする。
+$A_R=\bigoplus_{j\ge0}(A_R)_j$は中央$R$-代数、$(A_R)_0=R$、
+各次数有限自由、剰余が$d\ge5$変数の多項式環であるとする。
+$\Omega_R\in Z(A_R)_3$の剰余は滑らかな三次式とし、
+$B_R=A_R/(\Omega_R)$、$a=d-3$と置く。
+$E_R=\bigoplus_{j=0}^{d-1}\mathcal O(j)$の例外線束成分を除く射影を$G_R$とし、
+$\Gamma_R=\operatorname{REnd}(G_R)$と定める。
+以下ではこの定義が可能になる有限性と、必要な底変更だけを確認する。
+
+\subsection{局所模型の線束Hom}
+
+\begin{lemma}[正則局所模型に必要な有限性]\label{ar:lem:regular-hom}
+$A_R,B_R$は左右noetherianで、$(B_R)_j$は有限自由である。
+線束のHomは$R$-perfectであり、
+\[
+ \operatorname{Ext}^q(\mathcal O(r),\mathcal O(s))=
+ \begin{cases}(B_R)_{s-r}&q=0,\\
+ (B_R)_{r-s-a}^{\vee}&q=d-2,\\
+ 0&\text{その他}
+ \end{cases}
+\]
+となる。例外列$\mathcal O,\ldots,\mathcal O(a-1)$による射影が存在し、
+$G_R$は線束生成残余部分を生成する。
+固定次数のtorsion計算に現れる自由Hom複体は有限自由cohomologyに
+homotopy同値であり、任意の通常のtensorで導来tensorを計算できる。
+\end{lemma}
+\begin{proof}
+まずnoetherian性を次数別に確認する。
+$A_R$の$\mathfrak m$進随伴次数環は、内部次数ごとの自由性より
+$\operatorname{gr}_{\mathfrak m}R\otimes_{\mathbb C}(A_R/\mathfrak m A_R)$であり、
+noetherianである。斉次右イデアル$I$の初期形式イデアルの有限生成元を持ち上げ、
+それらが生成する右イデアルを$J$とする。
+最低$\mathfrak m$次数を順に消すことで、各内部次数$j$と各$q$について
+$I_j\subset J_j+\mathfrak m^q(A_R)_j$を得る。
+$(A_R)_j/J_j$は有限$R$-加群なので、Krull交叉定理より$I_j=J_j$である。
+一般の右イデアルには内部次数filtrationを用い、最高次数の有限降下を行う。
+左側も同じであり、$B_R$は商なのでnoetherianである。
+
+第\ref{am:sec:comparison}節の次数別分裂する持上げを、
+$R$の$A_R$-加群としてのKoszul分解と、$A_R$の対角Koszul分解に適用する。
+前者は項$A_R(-j)^{\binom dj}$、後者は項$(A_R^e)(-j)^{\binom dj}$を持つ。
+対角分解を任意の加群へtensorし、$R$の有限大域次元を使えば
+$A_R$も有限大域次元を持つ。
+また$\Omega_R$による次数別の行列は剰余上単射なので、
+単元小行列式により分裂単射であり、各$(B_R)_j$は自由である。
+
+Koszul分解の双対に単元行列成分の消去を適用し、正則中心元のchange-of-ringsを用いると
+\[
+ \mathbf R\underline{\operatorname{Hom}}_{A_R}(R,A_R)=R(d)[-d],\qquad
+ \mathbf R\underline{\operatorname{Hom}}_{B_R}(R,B_R)=R(a)[-(d-1)]
+\]
+を得る。左右のGorenstein型と$R$-flatnessにより、section--torsion三角に必要な
+$\chi$と有限cohomological dimensionを使える
+\cite[Section~4, Lemmas~6.1--6.2]{LP-BS}。
+$M_\ell=B_R/(B_R)_{\ge\ell}$のfiltrationの商は$(B_R)_j\otimes_R R(-j)$である。
+上の双対性から固定内部次数$t$では$j=-t-a$だけが寄与し、
+$\ell>j$で安定する。従って
+$H^{d-1}(\mathbf R\tau B_R)_t=(B_R)_{-t-a}^{\vee}$、他は零となる。
+section--torsion三角から表示した線束Hom公式を得る。
+$a>0$なので、固定した内部次数で二つのcohomology群が同時に非零になることはない。
+
+底変更については、$M_\ell$の自由分解を各次数のsyzygyが$R$-自由となるように取る。
+固定次数の自由Hom複体は下に有界で、cohomologyは有限自由加群の一つの次数に集中する。
+$R$の有限大域次元を用い、完全な射影複体のcycleにdimension shiftingを行うと、
+全cycleが射影となり、その複体は分裂する。
+従ってcohomology複体へのhomotopy同値があり、通常のtensorが導来tensorを計算する。
+項別Hom、filtered colimit、section三角を通じて自然な底変更を得る。
+
+最後にKoszul型の線束完全複体の両端は階数一なので、
+連続した$d$本から全twistを前後に生成できる。
+Hom公式は例外列とその左右随伴を与え、有限evaluation coneによる射影$p_R$が存在する。
+この射影を$E_R$へ適用した$G_R$が線束生成残余部分を生成する。
+\end{proof}
+
+\subsection{残余dg代数の底変更}
+
+\begin{proposition}[既存の$\Gamma_R$模型のArtin底変更]\label{am:prop:Gamma-basechange}
+この節の正則局所基底$R$上の入力から、
+剰余体が$\CC$である局所準同型$R\to R_N$によって$A,B$を底変更したとする。
+このとき自然に
+\[
+ \operatorname{Perf}(\Gamma_R\otimes_R^{\mathbf L}R_N)
+ \simeq\mathcal K_{B\otimes_RR_N}^{\rm lin}
+ \simeq\MF^{\ZZ}(A\otimes_RR_N,\Omega\otimes1)
+\]
+であり、mutationで定めたrotation候補はMFの内部shiftへ移る。
+\end{proposition}
+
+\begin{proof}
+正則な変更先についての底変更だけでは十分でないため、
+線束に必要な底変更をArtin基底上で確認する。
+正則$R$上で$M_\ell=B/B_{\ge\ell}$の自由分解から作った、固定内部次数のHom複体は、
+補題\ref{ar:lem:regular-hom}の証明により有限自由cohomologyへhomotopy同値である。
+従って$R_N$への通常のtensorが導来tensorを計算する。
+syzygyの次数別$R$-分裂により、底変更後の自由分解も完全である。
+そのHom、filtered colimit、section三角を用いると、
+変更先について補題\ref{am:lem:line-bundles}で計算したHomと自然に一致する。
+よって線束間のHomとその積について必要な底変更を得る。
+
+$R$は正則なので、$-\otimes_R^{\mathbf L}R_N$は有界複体に対して有限Tor振幅を持ち、
+射影商への関手が定義される。
+線束間のHomの底変更を有限cone・直和因子・evaluationへ延長すれば、
+$E_R,G_R$とそのendomorphism dg代数の底変更を得る。
+これが第一の同値である。第二の同値とrotationの記述は
+定理\ref{am:thm:comparison}による。
+この証明は、$D^b(\operatorname{qgr}B)$全体の任意の底変更についての主張を含まない。
+\end{proof}
+

@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-13",
+  "version": "v1",
+  "entry": "papers/cubic_artin_windows.tex",
+  "source_repository": "uedakazushi/nc-cubic",
+  "source_commit": "ba01a766666c51eebf1bc1d382cafb20760363eb",
+  "scope": "One-parameter finite Artin truncations C[h]/h^(N+1), d>=5 variables; line-generated residual/MF comparison, regular-to-Artin base change, conditional transport of separately given MF equivalences, and existing non-smooth complete-base counterexample. Not arbitrary Artin bases or a new formal reconstruction existence theorem.",
+  "preservation": {
+    "source_artin_comparison_blob": "5710b613913ef99996e945b554c59d80e264a4b5",
+    "core_labels_preserved": 17,
+    "core_mathematical_environments": {"definition": 1, "lemma": 5, "theorem": 1, "proof": 6},
+    "core_editorial_changes": "Replace external local-resolution/cohomology and bidegree references by their necessary proof text; distinguish residual/MF comparison from NC-to-commutative MF existence.",
+    "regular_basechange_proposition": "am:prop:Gamma-basechange retained with necessary regular-local proof made internal from existing local_projective_model arguments; not a new research theorem.",
+    "smoothness_counterexample_byte_identical": true,
+    "smoothness_counterexample_blob": "00b88867ab30b64e751160bbb8207b0f405b66da",
+    "smoothness_counterexample_labels": 8,
+    "smoothness_counterexample_environments": {"lemma": 3, "proposition": 1, "theorem": 1, "proof": 5, "remark": 1},
+    "original_formal_recovery_corollary": "am:cor:formal-residual and its all-orders MF existence input remain at source. New ar:cor:conditional does not replace or silently weaken that result.",
+    "papers_A_and_B_modified": false,
+    "new_research_theorems": false
+  },
+  "source_check": {
+    "executed": true,
+    "command": "python scripts/check_cubic_artin_windows.py --calculations --build",
+    "tex_files": 7,
+    "labels": 31,
+    "references": 36,
+    "citation_occurrences": 11,
+    "bibliography_entries": 5,
+    "undefined_references": 0,
+    "undefined_citations": 0,
+    "duplicate_labels": 0,
+    "duplicate_bibitems": 0,
+    "source_blobs": {
+      "papers/cubic_artin_windows.tex": "59f301fc594f1e7fa70be8201190bcc99fa5ce20",
+      "papers/artin_windows/preamble.tex": "05e1aa89f77395de67fd5d915c3e05b9286b2bf3",
+      "papers/artin_windows/comparison.tex": "4c6cd9ce4f75a4fab99d07776038ec1b3e4c9d25",
+      "papers/artin_windows/regular_basechange.tex": "737455f4a126b102d16838e980b4dce1e5ca286e",
+      "papers/artin_windows/application.tex": "3f2bf07afdd76012a837f9892733eb4a1df6e6cb",
+      "papers/artin_windows/artin_smoothness_obstruction.tex": "00b88867ab30b64e751160bbb8207b0f405b66da",
+      "papers/artin_windows/references.tex": "9401c8c41a148c57b1468c269587d94af53eaf56"
+    }
+  },
+  "build": {
+    "executed": true,
+    "command": "latexmk -g -r .latexmkrc papers/cubic_artin_windows.tex",
+    "engine": "LuaLaTeX",
+    "latexmkrc_blob": "e91814c24c952db2ee886837d0c827cd64498f3d",
+    "pages": 13,
+    "pdf_sha256": "0833dd280be2b03f79e817287f4db97d206cdcca2383204302b72f5a9784d66e",
+    "undefined_references_and_citations": 0,
+    "missing_characters": 0,
+    "overfull_boxes": 0,
+    "multiply_defined_labels": 0,
+    "visual_review": "All 13 final pages rendered with PyMuPDF and inspected in four contact sheets; no clipping or overlap observed.",
+    "pdf_git_tracked": false
+  },
+  "calculations": {
+    "executed": true,
+    "python": "3.13.5",
+    "sympy": "1.14.0",
+    "coefficient_ring": "QQ[h] and QQ",
+    "associativity_triples": 64,
+    "Leibniz_pairs": 16,
+    "unit_checks": 8,
+    "d_squared_zero": true,
+    "generic_cohomology_dimensions": [1, 1],
+    "special_cohomology_dimensions": [2, 2],
+    "exterior_map_checked": true,
+    "Artin_truncations_N": [0, 1, 2, 3, 5, 8],
+    "truncated_differential_rank": "N",
+    "truncated_H0_H1_rational_dimensions": "N+2 each",
+    "code_blobs": {
+      "computations/verify_artin_dg_model.py": "6a2a9b20f78e677bbc70a202818c89dfa1e3aaf1",
+      "scripts/check_cubic_artin_windows.py": "80c820654928e1b7288d4920652255b1bea35936"
+    },
+    "not_verified_by_code": ["dg Morita equivalence", "generation for all N", "infinite semifree resolution", "homological smoothness", "relative MF comparison"]
+  },
+  "literature": {
+    "Stacks_primary_passages_checked": ["0BQT finite line-bundle generator", "09M1 compact equals perfect for qcqs schemes"],
+    "retained_inputs_not_fully_reaudited": ["Chen arXiv:2402.11613v3", "Artin-Zhang", "Burke-Stevenson", "Sasha MathOverflow generator deformation example"]
+  },
+  "source_cleanup": {
+    "status": "PENDING: original files deliberately retained",
+    "reason": "Other not-yet-migrated formal, mixed and relative chapters cite am:*; original final formal-recovery corollary has not been migrated with its all-orders existence input.",
+    "all_Artin_etale_material_transferred": false
+  },
+  "independent_full_mathematical_audit": false,
+  "formal_proof_verification": false,
+  "comprehensive_novelty_audit": false,
+  "concurrent_destination_base": "79b4dd643a5e3ed4fac5eec0ed0e9445f8025965",
+  "persistence_policy": "Expected-SHA fast-forward main; no Actions or force push; preserve concurrent work. Library only after actual push failure."
+}
