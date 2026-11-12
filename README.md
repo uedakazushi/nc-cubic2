@@ -8,7 +8,7 @@
 
 [相対復元・有限対角・明示模型の現行稿](papers/relative_reconstruction_models.tex)へ、残る41支持節とノート固有の証明を統合した。既存の点スキーム・Jacobian・一次変形・Artin・étale稿と証明ソースを共用する。全次数MF存在と有限Artin残余復元の系も必要証明付きで保持する。
 
-再開は [専用研究方針](notes/relative_reconstruction_models.md)、全対応は [移管manifest](validation_reconstruction_manifest.json)、組版・有限検算の実行範囲は [validation](validation_relative_reconstruction_models.json)。`python3 scripts/check_relative_reconstruction_models.py --calculations --build` で再現する。数学的な未解決条件・新規性・全独立監査と、ファイル移管の完了を区別する。元側の重複整理は保存確認後に行う。
+再開は [専用研究方針](notes/relative_reconstruction_models.md)、全対応は [移管manifest](validation_reconstruction_manifest.json)、組版・有限検算の実行範囲は [validation](validation_relative_reconstruction_models.json)。`python3 scripts/check_relative_reconstruction_models.py --calculations --build` で再現する。数学的な未解決条件・新規性・全独立監査と、ファイル移管の完了を区別する。移管先保存確認後に元側の専用142ファイルを整理し、移管を完了した。
 
 ## 論文Bから分離した点スキームの現行原稿
 
@@ -92,7 +92,7 @@ LuaLaTeX、LuaTeX-ja、HaranoAji日本語フォント、標準数学パッケー
 
 [uedakazushi/nc-cubic](https://github.com/uedakazushi/nc-cubic) には、論文A（一般次元Poisson構造・代数的量子化）と、論文B（一般次元の中心三次変形の一般点可換復元および必要証明）を保持する。一般点での同値と、特殊点を含む相対smoothness・相対同値の問題は区別する。
 
-主定理に必要な証明は移管先だけへの参照で代用せず、nc-cubicに自立的に保持する。独立した境界・変形論・具体模型は本リポジトリへ、数学的内容と再現性を保って整理する。現行の独立成果は上記統合稿と既存五稿に揃えた。元の重複は移管先保存・入力閉包の確認後に整理する。
+主定理に必要な証明は移管先だけへの参照で代用せず、nc-cubicに自立的に保持する。独立した境界・変形論・具体模型は本リポジトリへ、数学的内容と再現性を保って整理する。現行の独立成果は上記統合稿と既存五稿に揃えた。元の専用重複142ファイルは、移管先保存とA・B入力閉包の確認後に整理済み。
 
 GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗時の緊急避難に限る。
 

@@ -382,8 +382,15 @@
   ],
   "all_29_finite_scripts_passed": true,
   "additional_finite_scripts": [
-    "computations/verify_hochschild_sectors.py",
-    "computations/independent/verify_2jet.py"
+    {
+      "name": "hochschild_sectors",
+      "exit_code": 0,
+      "certificate_equal": true
+    },
+    {
+      "name": "poisson_second_jet",
+      "exit_code": 0
+    }
   ],
   "artin_companion_current_build_and_finite_model_rerun": true,
   "visual_review": {
@@ -395,6 +402,14 @@
   "math_environments_verbatim_up_to_whitespace_and_local_namespace": 612,
   "contextually_reconciled_environments": 9,
   "independent_mathematical_proof_audit": false,
-  "source_cleanup": "pending destination remote save",
-  "novelty": "not independently determined"
+  "source_cleanup": {
+    "status": "COMPLETED",
+    "source_commit": "1def3bd8f94963a277676e6cf302c58d507a0cfe",
+    "source_files_removed_in_final_pass": 142,
+    "protected_A_B_inputs_unchanged": 26,
+    "source_closure_checks_passed": true
+  },
+  "novelty": "not independently determined",
+  "date": "2026-11-13",
+  "status": "COMPLETED"
 }

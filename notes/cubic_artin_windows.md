@@ -39,9 +39,9 @@ REnd(P_h)のstrict模型はdegree0がRe_-⊕Re_+、degree1がRs⊕Rt、d(e_-)=hs
 
 ## 移管と重複の現在の状態
 
-この独立稿の組版・参照・有限検算は完了したが、**元ソースの重複除去は未完了**。元のArtin比較はmixed_test_family、curved_gauge_comparison、kontsevich_second_jet、formal_cubic_mf_reconstruction、three_object_window等から参照される。元の最後の形式復元系も未移管であるため、元ファイルを削除しない。一般Artin・étale理論全体の移管完了ではない。
+現行ソースで全文組版・参照検査・有限dg検算を再実行した。全次数形式MF存在と `am:cor:formal-residual`、一般Artin形式理論、étale理論、およびam/er/ho/asを使う支持節を `papers/relative_reconstruction_models.tex` に統合した。移管先保存確認後に元の比較・反例と専用依存を整理済み。論文A・Bの26入力は変更していない。
 
-次の具体的作業は、元のrelative_formal_models.texとrelative_etale_models.texの定理の依存を抽出し、形式的持上げ・同値スタック・smoothnessの入力を明示した現行原稿へ統合すること。併せて上記のam参照を現在の比較へ接続してから、元の比較・反例の重複を整理する。論文A・一般次元の論文Bの入力を移動しない。既存の双対数稿は独立に読める状態を保つ。
+短い本稿の `ar:cor:conditional` の仮定はそのまま保持し、全次数存在の主張は統合稿で完全な入力とともに読む。
 
 ## 文献と確認範囲
 

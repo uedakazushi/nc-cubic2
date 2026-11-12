@@ -1,6 +1,6 @@
 {
   "date": "2026-11-13",
-  "validation_revision": "v2",
+  "validation_revision": "v3",
   "manuscript_version": "v1 with shared-counterexample reference normalization",
   "entry": "papers/cubic_artin_windows.tex",
   "scope": "One-parameter Artin truncations C[h]/h^(N+1), d>=5 variables; line-generated residual/MF comparison, regular-to-Artin base change, conditional transport of given MF equivalences, and complete-base smoothness counterexample. Not arbitrary Artin bases or a new formal reconstruction existence theorem.",
@@ -9,7 +9,12 @@
     "source_commit": "ba01a766666c51eebf1bc1d382cafb20760363eb",
     "source_artin_comparison_blob": "5710b613913ef99996e945b554c59d80e264a4b5",
     "core_labels_preserved": 17,
-    "core_mathematical_environments": {"definition": 1, "lemma": 5, "theorem": 1, "proof": 6},
+    "core_mathematical_environments": {
+      "definition": 1,
+      "lemma": 5,
+      "theorem": 1,
+      "proof": 6
+    },
     "core_editorial_changes": "Make degreewise lifting, local cohomology and period grading explicit; distinguish residual/MF comparison from commutative MF existence.",
     "regular_basechange": "am:prop:Gamma-basechange retained with necessary regular-local proof.",
     "shared_counterexample_path": "papers/artin_windows/artin_smoothness_obstruction.tex",
@@ -19,18 +24,50 @@
     "counterexample_math_content_preserved": true,
     "counterexample_editorial_change": "Remove two context references to am:lem:generator and cg:ex:artin-singularity; direct proof and scope remain. Both the Artin and etale papers input this one source.",
     "counterexample_labels_preserved": 8,
-    "counterexample_environments": {"lemma": 3, "proposition": 1, "theorem": 1, "proof": 5, "remark": 1},
-    "original_formal_recovery_corollary": "am:cor:formal-residual and its all-orders MF input remain at source; ar:cor:conditional does not replace or weaken that result.",
+    "counterexample_environments": {
+      "lemma": 3,
+      "proposition": 1,
+      "theorem": 1,
+      "proof": 5,
+      "remark": 1
+    },
+    "original_formal_recovery_corollary": "am:cor:formal-residual with full existence input preserved in papers/relative_reconstruction_models.tex; short ar:cor:conditional remains a distinct conditional application.",
     "papers_A_and_B_modified": false,
     "new_research_theorems": false
   },
   "current_revision_validation": {
-    "full_Artin_paper_source_checker_rerun": false,
-    "full_Artin_paper_lualatex_rerun": false,
-    "Artin_dg_calculations_rerun": false,
-    "checked_delta": "Shared-file mathematical environments and labels retained; two external references removed, no new macro or citation introduced.",
-    "shared_file_compiled_elsewhere": "Current shared file included in the completely rebuilt and visually reviewed 10-page relative_cubic_realization.tex; see validation_relative_cubic_realization.json.",
-    "limitation": "The prior 13-page Artin PDF receipt does not certify the current shared-file bytes. Full Artin rebuild remains to be rerun."
+    "full_Artin_paper_source_checker_rerun": true,
+    "full_Artin_paper_lualatex_rerun": true,
+    "Artin_dg_calculations_rerun": true,
+    "command": "python3 scripts/check_cubic_artin_windows.py --calculations --build",
+    "record": {
+      "status": "PASS",
+      "entry": "papers/cubic_artin_windows.tex",
+      "tex_files": 7,
+      "labels": 31,
+      "references": 34,
+      "citations": 11,
+      "bibliography_entries": 5,
+      "errors": {
+        "duplicate_labels": [],
+        "duplicate_bibitems": [],
+        "undefined_references": [],
+        "undefined_citations": []
+      },
+      "source_blobs": {
+        "papers/cubic_artin_windows.tex": "59f301fc594f1e7fa70be8201190bcc99fa5ce20",
+        "papers/artin_windows/preamble.tex": "05e1aa89f77395de67fd5d915c3e05b9286b2bf3",
+        "papers/artin_windows/comparison.tex": "4c6cd9ce4f75a4fab99d07776038ec1b3e4c9d25",
+        "papers/artin_windows/regular_basechange.tex": "737455f4a126b102d16838e980b4dce1e5ca286e",
+        "papers/artin_windows/application.tex": "3f2bf07afdd76012a837f9892733eb4a1df6e6cb",
+        "papers/artin_windows/artin_smoothness_obstruction.tex": "fe52bb222fdc9a1d2678a10b29bfa9b97ef8f228",
+        "papers/artin_windows/references.tex": "9401c8c41a148c57b1468c269587d94af53eaf56"
+      },
+      "calculations_run": true,
+      "latexmk_run": true,
+      "mathematical_proof_verification": false
+    },
+    "limitation": "Finite dg checks and typesetting, not mathematical proof audit."
   },
   "last_completed_full_validation": {
     "source_commit": "8b9d77c57094ed3578cdac3d2120b7168303d6a8",
@@ -69,26 +106,55 @@
     "Leibniz_pairs": 16,
     "unit_checks": 8,
     "d_squared_zero": true,
-    "generic_cohomology_dimensions": [1, 1],
-    "special_cohomology_dimensions": [2, 2],
+    "generic_cohomology_dimensions": [
+      1,
+      1
+    ],
+    "special_cohomology_dimensions": [
+      2,
+      2
+    ],
     "exterior_map_checked": true,
-    "Artin_truncations_N": [0, 1, 2, 3, 5, 8],
+    "Artin_truncations_N": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      8
+    ],
     "truncated_differential_rank": "N",
     "truncated_H0_H1_rational_dimensions": "N+2 each",
     "code_blobs": {
       "computations/verify_artin_dg_model.py": "6a2a9b20f78e677bbc70a202818c89dfa1e3aaf1",
       "scripts/check_cubic_artin_windows.py": "80c820654928e1b7288d4920652255b1bea35936"
     },
-    "not_verified_by_code": ["dg Morita equivalence", "generation for all N", "infinite semifree resolution", "homological smoothness", "relative MF comparison"]
+    "not_verified_by_code": [
+      "dg Morita equivalence",
+      "generation for all N",
+      "infinite semifree resolution",
+      "homological smoothness",
+      "relative MF comparison"
+    ]
   },
   "literature": {
-    "previous_Stacks_passages_checked": ["0BQT", "09M1"],
-    "retained_inputs_not_fully_reaudited": ["Chen arXiv:2402.11613v3", "Artin-Zhang", "Burke-Stevenson", "Sasha generator deformation example"]
+    "previous_Stacks_passages_checked": [
+      "0BQT",
+      "09M1"
+    ],
+    "retained_inputs_not_fully_reaudited": [
+      "Chen arXiv:2402.11613v3",
+      "Artin-Zhang",
+      "Burke-Stevenson",
+      "Sasha generator deformation example"
+    ]
   },
   "source_cleanup": {
-    "status": "PENDING; original files retained",
-    "reason": "Other source chapters cite am:*; original full formal-recovery corollary and its all-orders input remain at source.",
-    "all_Artin_etale_material_transferred": false
+    "status": "COMPLETED",
+    "source_commit": "1def3bd8f94963a277676e6cf302c58d507a0cfe",
+    "source_files_removed_in_final_pass": 142,
+    "protected_A_B_inputs_unchanged": 26,
+    "source_closure_checks_passed": true
   },
   "independent_full_mathematical_audit": false,
   "formal_proof_verification": false,

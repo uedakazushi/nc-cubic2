@@ -10,6 +10,6 @@ Hochschildのsector計算と、全Artin切断がsmoothでも完備底ではそ�
 python3 scripts/check_relative_cubic_realization.py --calculations --build
 ```
 
-現行6TeX入力・29ラベル・24参照・16引用・9文献で未解決・重複0。全文10頁を組版・全頁表示確認し、文字欠落・overfullも0。N=5,...,60の整数次数検算で元の証明書を再生成した。有限検算と全文組版は数学的証明の独立監査ではない。共用反例を用いる既存Artin稿全文は今回再組版していない。
+現行6TeX入力・29ラベル・24参照・16引用・9文献で未解決・重複0。全文10頁を組版・全頁表示確認し、文字欠落・overfullも0。N=5,...,60の整数次数検算で元の証明書を再生成した。有限検算と全文組版は数学的証明の独立監査ではない。共用反例を用いる既存Artin稿全文も再組版・有限dg検算を実行済み。
 
-移管元の別原稿からの依存が残るため、元の本文・コードは削除していない。広いArtin・étale理論の移管全体の完了とは区別する。GitHub mainが正本、Actions・force pushなし、PDF・中間物はbuild/で非追跡。
+元の参照元も統合稿 `papers/relative_reconstruction_models.tex` に統合し、移管先保存後に元の専用重複を整理済み。GitHub mainが正本、Actions・force pushなし、PDF・中間物はbuild/で非追跡。全数学的監査と新規性確認は移管の完了とは別である。

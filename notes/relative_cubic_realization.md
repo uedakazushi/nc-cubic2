@@ -27,7 +27,7 @@
 
 `as:prop:dg-model` は次数0にe_-,e_+、次数1にs,t、d(e_-)=hs、d(e_+)=-hsを持つ階数四のstrict dg模型。一般点は次数1の外積代数K[epsilon]/epsilon^2に準同型であり、無限semifree resolutionから非smooth。各Artin切断は相対P^1のperfect圏とMorita同値でsmooth。H^0=R、H^1=Rt⊕(R/hR)sなので、cohomologyの底上flatnessを満たす反例ではない。中心三次商の特別な残余模型が非smoothだという主張でもない。
 
-共有ファイルの変更により、有限Artin稿の過去の全文ビルドのソースハッシュは現行と異なる。この更新では有限Artin稿全文とその検算を再実行していない。その過去の検証と今回の文脈参照だけの差分を `validation_cubic_artin_windows.json` で分ける。本稿の全文は現行の共有ファイルを使って再組版した。
+共有反例を用いるArtin稿も現行ソースで全文組版・有限dg検算を再実行した。統合稿でも同じ反例を共用し、今回の状態は専用validationに記録する。
 
 ## 一次文献と確認範囲
 
@@ -53,6 +53,6 @@ Python3.10以上の標準ライブラリ、LuaLaTeX、LuaTeX-ja、latexmkを用�
 
 ## 移管の状態と一般的運用
 
-本文、現行ノート、検算、参照検査、組版入口をnc-cubic2の現行一式として保存する。元側のrotation_saturation_reduction.tex等にはer/ho/asへの依存が残るため、元の三本文とコードを今回削除しない。より広いrelative_formal_models、relative_etale_models、Artin比較の全移管が完了したとは扱わない。
+一般Artin形式理論とétaleスタックの証明、rotation_saturation等の参照元を `papers/relative_reconstruction_models.tex` に統合済み。移管先main保存後に元の専用本文・コードを整理し、現行独立成果の移管を完了した。A・Bの26入力は保護した。
 
 数学的重要性・新規性・理解・正確性・実現可能性を総合して方針を更新するが、現作業では推敲と移管を優先する。証明済み・仮定付き・未完成・予想・計算的観察を区別し、誤りなら依存する本文と方針も訂正する。有効な証明を軽量化の名目で削らず、旧ZIP・会話・過去コミットなしで現行一式から再開できるようにする。区切りで承諾を求めずmainへfast-forward保存する許可を保持する。Actions・force pushは禁止、Libraryは実際のpush失敗時だけの緊急退避とし、既存項目を無断削除しない。生成・検算・組版・独立監査・保存を分けて記録する。

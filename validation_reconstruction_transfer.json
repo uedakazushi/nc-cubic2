@@ -1,7 +1,7 @@
 {
   "date": "2026-11-13",
-  "version": "v11",
-  "status": "All current independent content integrated and verified; source deduplication pending destination remote save",
+  "version": "v12",
+  "status": "COMPLETED: current independent results integrated, verified and saved; dedicated source duplicates retired after destination persistence",
   "source_repository": "uedakazushi/nc-cubic",
   "destination_repository": "uedakazushi/nc-cubic2",
   "paper_A": "Unchanged in nc-cubic, A-v51",
@@ -70,11 +70,15 @@
     "counterexample_current_blob": "fe52bb222fdc9a1d2678a10b29bfa9b97ef8f228",
     "counterexample_reference_normalization": "Two external context references removed; mathematical proof retained and shared with the etale paper.",
     "prior_full_build_pages": 13,
-    "full_build_rerun_after_shared_reference_change": false,
+    "full_build_rerun_after_shared_reference_change": true,
     "exact_finite_dg_checks_previously_executed": true,
-    "conditional_application": "ar:cor:conditional assumes compatible MF equivalences; original am:cor:formal-residual and full existence input still remain at source.",
+    "conditional_application": "Short companion ar:cor:conditional remains conditional; integrated manuscript preserves am:cor:formal-residual with the full all-orders MF existence proof.",
     "source_cleanup": {
-      "status": "pending remote save; all dependents now integrated"
+      "status": "COMPLETED",
+      "source_commit": "1def3bd8f94963a277676e6cf302c58d507a0cfe",
+      "source_files_removed_in_final_pass": 142,
+      "protected_A_B_inputs_unchanged": 26,
+      "source_closure_checks_passed": true
     }
   },
   "relative_etale_companion": {
@@ -98,9 +102,11 @@
     ],
     "source_certificate_exactly_reproduced": "8e7a35337e43b45fc26b04c11414554732213ea4",
     "source_cleanup": {
-      "status": "PENDING; originals retained",
-      "reason": "rotation_saturation_reduction and other unmigrated chapters retain er/ho/as dependencies",
-      "source_files_deleted": 0
+      "status": "COMPLETED",
+      "source_commit": "1def3bd8f94963a277676e6cf302c58d507a0cfe",
+      "source_files_removed_in_final_pass": 142,
+      "protected_A_B_inputs_unchanged": 26,
+      "source_closure_checks_passed": true
     },
     "new_mathematical_results_added": false
   },
@@ -119,6 +125,20 @@
     "full_reference_closure": true,
     "all_29_finite_scripts_passed": true,
     "all_orders_MF_existence_and_formal_residual_corollary_preserved": true,
-    "source_cleanup": "pending remote save"
-  }
+    "source_cleanup": {
+      "status": "COMPLETED",
+      "source_commit": "1def3bd8f94963a277676e6cf302c58d507a0cfe",
+      "source_files_removed_in_final_pass": 142,
+      "protected_A_B_inputs_unchanged": 26,
+      "source_closure_checks_passed": true
+    }
+  },
+  "source_cleanup": {
+    "status": "COMPLETED",
+    "source_commit": "1def3bd8f94963a277676e6cf302c58d507a0cfe",
+    "source_files_removed_in_final_pass": 142,
+    "protected_A_B_inputs_unchanged": 26,
+    "source_closure_checks_passed": true
+  },
+  "destination_content_commit": "8ca6ccae84413d88fcaa4fc7062f0b23750ddfc5"
 }

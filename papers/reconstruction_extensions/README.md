@@ -13,4 +13,4 @@
 
 共通の証明は既存のTeXを直接inputする。統合稿では `am:cor:formal-residual` とその全次数存在入力を保持し、条件付き移送だけでは代用しない。最小混合中心式とArtin PBWも点スキーム稿のソースを共用する。再開は `notes/relative_reconstruction_models.md`、再現は `python3 scripts/check_relative_reconstruction_models.py --calculations --build`。
 
-移管対象・原稿と共有ファイルの対応は `validation_reconstruction_manifest.json`、今回の検証範囲は `validation_relative_reconstruction_models.json`。移管元の重複整理は移管先mainの保存確認後に行う。一般点の論文Bと必要証明、論文Aと入力はnc-cubicで保護する。新規性と全証明の独立監査は別の未了課題である。
+移管対象・原稿と共有ファイルの対応は `validation_reconstruction_manifest.json`、今回の検証範囲は `validation_relative_reconstruction_models.json`。移管元の専用重複142ファイルは移管先main保存後に整理済み。一般点の論文Bと必要証明、論文Aと入力はnc-cubicで保護する。新規性と全証明の独立監査は別の未了課題である。

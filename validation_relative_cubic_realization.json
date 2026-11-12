@@ -17,7 +17,13 @@
       "previous_blob": "00b88867ab30b64e751160bbb8207b0f405b66da",
       "current_blob": "fe52bb222fdc9a1d2678a10b29bfa9b97ef8f228",
       "labels_preserved": 8,
-      "environments": {"lemma": 3, "proposition": 1, "theorem": 1, "proof": 5, "remark": 1},
+      "environments": {
+        "lemma": 3,
+        "proposition": 1,
+        "theorem": 1,
+        "proof": 5,
+        "remark": 1
+      },
       "change": "Remove two external contextual references; retain all direct proof text. One shared source is used by the Artin and etale papers.",
       "finite_Artin_full_paper_rebuilt_this_revision": false
     }
@@ -61,7 +67,10 @@
     "executed_this_revision": true,
     "script": "computations/verify_hochschild_sectors.py",
     "script_blob": "9b97c8932b221258a98384115c7fcf378a3920c0",
-    "range_N": [5, 60],
+    "range_N": [
+      5,
+      60
+    ],
     "certificate_blob": "8e7a35337e43b45fc26b04c11414554732213ea4",
     "original_certificate_exactly_reproduced": true,
     "scope": "Exact integer bookkeeping of the quoted BFK formula, not verification of that theorem or categorical arguments.",
@@ -72,14 +81,21 @@
     "retained_confirmation_scope": "Previous primary-text checks of Toën-Vaquie, Lowen, Stacks and Sasha recorded in notes. Lin-Zhang metadata was checked but full text was not retrieved; related-work citation only. The previous limitations remain."
   },
   "source_cleanup": {
-    "status": "PENDING; original source files deliberately retained",
-    "reason": "Other unmigrated source chapters, including rotation_saturation_reduction.tex, still cite er/ho/as results. Independent manuscript integration does not resolve those dependencies.",
-    "source_files_deleted": 0,
-    "paper_A_and_focused_B_modified": false,
-    "all_Artin_etale_material_transferred": false
+    "status": "COMPLETED",
+    "source_commit": "1def3bd8f94963a277676e6cf302c58d507a0cfe",
+    "source_files_removed_in_final_pass": 142,
+    "protected_A_B_inputs_unchanged": 26,
+    "source_closure_checks_passed": true,
+    "all_Artin_etale_material_transferred": true
   },
   "independent_full_mathematical_audit": false,
   "formal_proof_verification": false,
   "comprehensive_novelty_audit": false,
-  "persistence_policy": "Expected-SHA fast-forward main only; no Actions, force push or tracked PDF. Library only after actual push failure."
+  "persistence_policy": "Expected-SHA fast-forward main only; no Actions, force push or tracked PDF. Library only after actual push failure.",
+  "completion_followup": {
+    "finite_Artin_full_paper_rebuilt_with_current_shared_source": true,
+    "Artin_dg_calculations_rerun": true,
+    "sector_arithmetic_rerun": true,
+    "scope": "Current follow-up; previous revision validation record retained as historical evidence, not current pending work."
+  }
 }
