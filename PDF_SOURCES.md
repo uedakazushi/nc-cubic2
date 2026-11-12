@@ -1,11 +1,11 @@
-# 現行PDF原資料と保持の基準（2026-11-12 / v4）
+# 現行PDF原資料と保持の基準（2026-11-12 / v5）
 
 Libraryに保全されている同名・同バイトサイズのPDF原本から本文を抽出して確認した。これはGitHub上のblobそのもののバイト一致を検証したという意味ではない。原本の全定理・証明と現行TeXの完全同値性はまだ立証していない。特に旧論文III・V・VIおよび195頁のIIは、独自の結果が多数含まれる。
 
 ## 現行mainに保持する原資料（5件）
 
 - `papers/pdf-only/ambient/central_cubic_technical.pdf`：61頁。中心三次式、点加群、有限PI中心、正則性、混合量子化等。nc-cubic論文Aや現行モジュライ原稿と重なるが、全内容の移管は未確認。
-- `papers/pdf-only/ambient/central_pair_formal_moduli.pdf`：60頁。§12–13・§21にある中心三次対の全Artin形式局所構造（41次元・接空間44、商は17・20）、Ore局所化、斉次環/偏極の復元と固定周囲の四係数ファイバーを `papers/sections/central_pair_artin_formal_moduli.tex` に定理と証明構造を持たせて復元した。ただし、同じPDFの全混合中心元の有限公式、37次元量子成分の詳細、特定剛体周囲の四次元正則族、付属検算証明書などは未完全照合。全内容の照合が済むまで保持する。
+- `papers/pdf-only/ambient/central_pair_formal_moduli.pdf`：60頁。§12–13・§21にある中心三次対の全Artin形式局所構造（41次元・接空間44、商は17・20）、Ore局所化、斉次環/偏極の復元と固定周囲の四係数ファイバーを `papers/sections/central_pair_artin_formal_moduli.tex` に定理と証明構造を持たせて復元した。さらに§19–21の低次数中心、偶数Veronese、構造対象付き導来復元、全混合族の有限同型条件、明示的剛体ambientの四次元非同型族を `papers/sections/central_pair_mixed_derived_rigid.tex` に回収した。全Hesse混合係数の中心元の有限公式、量子周囲37次元成分の詳細、四次元正則開部分の非可換Bertini入力・整数証明書がまだ完全に整わないため保持する。
 - `papers/pdf-only/boundary/central_quotient_singularities.pdf`：61頁。中心商の正則性・判別式、A1局所模型、Cayley cubic、非可換特異圏。現行TeX `papers/central_fiber_discriminant.tex` は判別式の一部のみで、全面代替ではない。
 - `papers/pdf-only/boundary/pfaffian_contact.pdf`：89頁。旧論文III。普遍同変摂動の非線形接触分類と全次数頂点核の明示結果は未移管。Hessian五変数模型（Milnor数32、Tjurina数31）・Pfaffian graph上のstrict transformと相対二次ファイブレーションは `papers/sections/pfaffian_hessian_geometry.tex` に命題・証明を復元済み。残りの主結果を移管・監査するまで削除不可。
 - `papers/pdf-only/quantization/sklyanin_mixed_quantization.pdf`：195頁、旧論文II。全21混合方向の形式可換対応、臨界層とA2/A3/A4/D4型退化、点加群・種数5曲線を含む。現行TeXにない証明が多いため、現時点で最も注意して移管すべき原資料の一つ。
@@ -33,3 +33,7 @@ Pfaffian・Brill--Noether大部原稿の79節を、既存内容を移動する�
 ## 旧論文Vの全Artin形式比較を現行モジュライ論文に統合
 
 旧論文Vの第12–13節（pp.19–30）と第21節（pp.51–58）を読んで、平坦正規三次商の中心性、相対CasimirのKoszul表示、Jacobiイデアルと五つのPlückerイデアルの一致、Kontsevich中心写像と形式局所環、Ore局所化による構造代数層、偏極の一意性、二次包絡の全Artin復元、固定ambientの射影四次元fiberを `papers/sections/central_pair_artin_formal_moduli.tex` に組み込んだ。外部formality、Ore変形比較、De Deken–Lowenの適用は独立に一次資料監査したものではない。旧§21の剛体周囲 `B_*` の有限整数証明書は現行GitHubで再現できず、実在を今回証明済みと扱っていない。PDF自体は残す。
+
+## 旧論文Vの追加回収（第19–21節）
+
+偶数Veroneseからの環復元、全混合族における二次中心の非増大、構造対象付き導来同値の適用範囲、potentialのblock座標変換判定、具体的剛体ambient `B_*` と相互に非同型な四係数中心商を `papers/sections/central_pair_mixed_derived_rigid.tex` に回収した。有限計算の数値証明書がGitHubにない箇所は既知の普遍中心式に帰着させた。`B_*`の中心の一次係数は普遍式への代入を独立にSymPyで確認した。ただしTHCR平行移動の位数6の一次資料監査、generic smoothnessの非可換Bertiniの適用、一般Hesse中心元の全21方向の有限式の移管は未完了。従ってこのPDFは依然として唯一の証明の所在となる可能性があり、まだ削除しない。

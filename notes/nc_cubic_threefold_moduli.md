@@ -26,3 +26,7 @@ Poisson cubic pairの17次元成分との局所比較を行い、まず中心三
 ## 可換点における全Artin局所構造と未解決の大域化（2026-11-12）
 
 旧中心三次対PDFの主要な§12–13・§21を `papers/sections/central_pair_artin_formal_moduli.tex` として現行モジュライ原稿に統合。滑らかな三次Fの標識付き対では、中心三次直線とArtin形式量子化の比較から形式局所環 `k[[s_1..s_34,a_{01}..a_{34}]]/(five Plücker quadrics)`、局所次元41/接空間44を得る。PGL5の24方向を除いたsliceでは17/20であり、**17次元の滑らかな変形空間を得たという意味ではない**。一次非分解可能なaは二次で障害を持つ。Ore局所化・偏極の一意性・二次coverの全Artin復元を通じ、偏極付き古典的変形関手の比較を条件付きで論じる。Yekutieli/De Deken–Lowen/Kontsevichの適用の独立監査、Kuznetsov側から定める可換対応との一致は未解決。元PDFの全成果を代替できていないため原資料は保留する。
+
+## 全混合族の二次中心と固定剛体ambientの例
+
+`papers/sections/central_pair_mixed_derived_rigid.tex` へ、旧論文V§19–21の低次数中心、偶数Veronese復元、構造対象を固定した導来復元（Serre functor=(-2)[3]）、一般混合potentialのblock同型判定を移植した。具体例 `F_*=(x^3+y^3+z^3)/3+uxy+vyz+(u+v)zx` の周囲 `B_*` に対し、全三次中心元 `G_*` の多項式公式をnc-cubic論文Aの普遍公式と係数ごとに照合した。その上で境界THCRの平行移動の位数6を入力とする条件下で `Aut_gr(B_*)=k^×` と固定周囲内の四係数非同型族を示す。正則なtailsを持つ非空開集合の存在はRSVdB/Rainsの一次資料と有限中心性の独立監査が未了なので追加条件付きであり、既に証明された無条件の定理とは扱わない。
