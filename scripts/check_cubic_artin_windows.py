@@ -21,6 +21,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--calculations', action='store_true')
     ap.add_argument('--build', action='store_true')
+    ap.add_argument('--entry', choices=[ENTRY, 'papers/proper_dg_smoothness_and_artin_limits.tex'], default=ENTRY)
     args = ap.parse_args()
     sources: dict[str, str] = {}
     blobs: dict[str, str] = {}
@@ -38,7 +39,7 @@ def main() -> None:
         for name in re.findall(r'\\input\{([^}]+)\}', sources[key]):
             visit(name if name.endswith('.tex') else name+'.tex')
 
-    visit(ENTRY)
+    visit(args.entry)
     text = '\n'.join(sources.values())
     labels = re.findall(r'\\label\{([^}]+)\}', text)
     refs = re.findall(r'\\(?:ref|eqref|pageref|autoref)\{([^}]+)\}', text)
@@ -57,15 +58,15 @@ def main() -> None:
         subprocess.run([sys.executable, str(ROOT/'computations/verify_artin_dg_model.py'),
                         '--output', str(ROOT/'build/artin_dg_model_check.json')], cwd=ROOT, check=True)
     if args.build:
-        subprocess.run(['latexmk', '-g', '-r', '.latexmkrc', ENTRY], cwd=ROOT, check=True)
+        subprocess.run(['latexmk', '-g', '-r', '.latexmkrc', args.entry], cwd=ROOT, check=True)
     report = {
-        'status': 'PASS', 'entry': ENTRY, 'tex_files': len(sources),
+        'status': 'PASS', 'entry': args.entry, 'tex_files': len(sources),
         'labels': len(labels), 'references': len(refs), 'citations': len(cites),
         'bibliography_entries': len(bib), 'errors': errors, 'source_blobs': blobs,
         'calculations_run': args.calculations, 'latexmk_run': args.build,
         'mathematical_proof_verification': False,
     }
-    out = ROOT/'build/cubic_artin_windows_check.json'
+    out = ROOT/'build'/(Path(args.entry).stem+'_check.json')
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     print(json.dumps(report, ensure_ascii=False, indent=2))

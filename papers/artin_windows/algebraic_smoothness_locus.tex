@@ -1,0 +1,86 @@
+\section{代数的なsmooth locusと零次cohomologyの底変更}
+\label{asl:sec:algebraic}
+
+完備化を行う前から同じ障害が存在することを示す。
+$A=\mathbb C[h]$とし、式\eqref{as:eq:dg-algebra}と同じ積・微分を持つ
+$A$上階数四のdg代数を$\Lambda$と書く。
+$\Lambda$は$A$上有界有限自由であり、任意の底変更は通常のtensorで計算できる。
+
+\begin{theorem}[代数的族の非開なsmooth locus]\label{asl:thm:locus}
+$\operatorname{Spec}A$の点$x$で
+$\Lambda\otimes_A\kappa(x)$が$\kappa(x)$上homologically smoothとなる点の集合は、
+ちょうど$V(h)=\{0\}$である。特にこれは開でない。
+一方、剰余体が$\mathbb C$の任意の可換局所Artin代数$T$と
+局所準同型$A_{(h)}\to T$について、$\Lambda\otimes_A T$は$T$上smoothである。
+完備化$\Lambda\otimes_A\mathbb C[[h]]$は相対smoothでない。
+\end{theorem}
+\begin{proof}
+$\mathbb P^1_A$上の複体
+$[\mathcal O(-1)\xrightarrow{hs}\mathcal O]$のderived endomorphismは、
+命題\ref{as:prop:dg-model}と同じline bundle cohomologyの消滅によって$\Lambda$となる。
+この計算は任意の可換$A$-代数への底変更と両立する。
+$h=0$では二つの例外線束のshiftの直和が生成子となり、
+射影直線の対角分解とMorita不変性からsmoothである。
+$h\ne0$の任意の剰余体上では、補題\ref{as:lem:generic}と同じ写像
+$\kappa(x)[\epsilon]/\epsilon^2\to\Lambda\otimes_A\kappa(x)$が
+quasi-isomorphismとなる。補題\ref{as:lem:exterior-not-smooth}のsemifree分解は
+任意の体で有効なので、これらのfiberはsmoothでない。
+
+$T$については$\mathfrak m_T$の冪零性から
+$T\in\operatorname{thick}_{D(T)}(\mathbb C)$である。
+$P_T=[\mathcal O(-1)\xrightarrow{hs}\mathcal O]$に右直交する
+$D_{\rm QCoh}(\mathbb P^1_T)$の対象$M$を取る。
+$P_T$はperfectで、射影直線の有限相対Beilinson模型から、そのHomと
+導来剰余は任意の$M$について両立する。
+従って$M\otimes_T^{\mathbf L}\mathbb C$は$P_0$に直交し、零となる。
+上の有限filtrationで$M=0$を得るので$P_T$はcompact generatorである。
+$\operatorname{Perf}(\Lambda\otimes_A T)\simeq\operatorname{Perf}(\mathbb P^1_T)$
+と相対対角の二項分解から主張を得る。
+完備化については定理\ref{as:thm:obstruction}を用いる。
+\end{proof}
+
+\begin{remark}
+この反例は、任意の底上properなdg代数の族に対するsmooth locusの開性や、
+Artin試験だけによる完備底のsmoothness検出を否定する。
+追加の有限性・変形問題の仮定を備えたmoduli定理を反証するものではない。
+特にstrict dg代数の有限個の生成元と関係式を、
+導来Morita理論で要求されるhomotopicalな有限表示性と同一視しない。
+\end{remark}
+
+\begin{proposition}[底変更で生じる一つのTor方向]\label{asl:prop:tor}
+$R=\mathbb C[[h]]$、$m\ge1$、$T_m=R/(h^m)$、
+$\Gamma=\Lambda\otimes_A R$、$u=e_-+e_+$とする。
+$\Gamma_m=\Gamma\otimes_R T_m$について
+\[
+ H^0(\Gamma)=Ru,\qquad H^1(\Gamma)=Rt\oplus(R/hR)s,
+\]
+\[
+ H^0(\Gamma_m)=T_m u\oplus\mathbb C\,h^{m-1}e_-,\qquad
+ H^1(\Gamma_m)=T_m t\oplus\mathbb C s.
+\]
+特に自然な写像$H^0(\Gamma)\otimes_R T_m\to H^0(\Gamma_m)$は単射だが全射でない。
+その余核は$\operatorname{Tor}_1^R(H^1(\Gamma),T_m)\simeq\mathbb C$である。
+さらに$m\ge2$では$H^0(\Gamma_m)\cong T_m[v]/(hv,v^2)$、
+$m=1$では$H^0(\Gamma_1)\cong\mathbb C\times\mathbb C$である。
+\end{proposition}
+\begin{proof}
+微分は$(a,b)\mapsto h(a-b)s$である。
+$R$上では$h$は非零因子なので核は$Ru$、余核は表示した$H^1$となる。
+$T_m$上の核の条件は$a-b\in\operatorname{ann}_{T_m}(h)=\mathbb C h^{m-1}$であり、
+$(a,b)=b(1,1)+(a-b,0)$と書けば表示した直和が得られる。
+余核も$s$成分を$h$の像で割って計算できる。
+
+自由な二項複体の底変更に対する普遍係数完全列は
+\[
+0\longrightarrow H^0(\Gamma)\otimes_R T_m
+\longrightarrow H^0(\Gamma_m)
+\longrightarrow\operatorname{Tor}_1^R(H^1(\Gamma),T_m)
+\longrightarrow0
+\]
+である。実際$R/hR$の分解$[R\xrightarrow{h}R]$から右端は
+$\operatorname{ann}_{T_m}(h)$となり、直前の核計算がこの完全列を直接与える。
+最後に$v=h^{m-1}e_-$と置くと、$hv=0$であり、$m\ge2$では
+$v^2=h^{2m-2}e_-=0$である。$m=1$では$e_-,e_+$が直交冪等元となる。
+これで環構造も得られる。
+従ってHom複体の導来底変更が成立していても、$H^0$の底変更は破綻し得る。
+\end{proof}

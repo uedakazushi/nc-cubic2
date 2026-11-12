@@ -18,3 +18,11 @@ Artin比較、étale、Hochschild、smoothness反例、一次変形とJacobian�
 `notes/relative_reconstruction/` の各主題ノートと `finite_models_and_obstacles.md` に、具体的な有限模型の条件、非可換積との未証明比較、同変高次係数、Artinから完備底への障害、有限対角証明書の課題を保持する。これらはファイル移管の残件ではない。新規性の一次資料全面調査と全証明の独立監査は未了。
 
 `python3 scripts/check_relative_reconstruction_models.py --calculations --build` で参照閉包・組版・有限検算を再現する。生成物はbuild/に置きGit追跡しない。検算は圏論的な同値の形式検証ではない。
+
+## 現行の公表準備単位と重点監査
+
+`papers/proper_dg_smoothness_and_artin_limits.tex` は、反例と底変更誤差を中心に自足した6頁稿。新しい主張と完全証明は `papers/artin_windows/algebraic_smoothness_locus.tex`、基礎反例は既存TeXを共用する。検証は `validation_proper_dg_smoothness_and_artin_limits.json`。
+
+9環境の重点照合・独立稿の位置づけ・未確認の外部入力は `notes/artin_comparison_context_audit.md`。次の数学的課題はrelative stabilizationからwindow同値へ進むdg関手の検証。統合稿を残し、全体の再構成と新規性確認を完了扱いしない。
+
+再現：`python3 scripts/check_cubic_artin_windows.py --entry papers/proper_dg_smoothness_and_artin_limits.tex --calculations --build`。

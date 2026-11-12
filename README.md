@@ -4,6 +4,10 @@
 
 **現在の最優先は、相対復元・有限対角・明示模型の244頁統合稿を、公表価値と中心結果に基づいて再構成することです。** 移管時に調整された9数学的環境と共有証明を監査し、既存五稿との重複を避けます。まず [研究方針](00_research_plan.md)、[Codex指示](AGENTS.md)、[専用ノート](notes/relative_reconstruction_models.md) を読んでください。[旧PDF関連の補助指示](CODEX_PDF_RECOVERY.md) と [PDFの所在](PDF_SOURCES.md) は必要な場合のみ参照します。原PDFは全てTeXへ移管済み、Git追跡PDFは0件です。
 
+## proper dg代数のsmoothnessとArtin試験
+
+[独立稿](papers/proper_dg_smoothness_and_artin_limits.tex)（6頁）は、代数的族の非開なsmooth locus、全局所Artin試験でのsmoothness、H⁰底変更のTor誤差を証明する。既知の生成性喪失例を明記し、反例のTeXを既存稿と共用する。[重点監査](notes/artin_comparison_context_audit.md)と[検証記録](validation_proper_dg_smoothness_and_artin_limits.json)を参照。全体の再構成・新規性の確認は継続課題である。
+
 ## 論文Bから分離した独立成果の統合
 
 [相対復元・有限対角・明示模型の現行稿](papers/relative_reconstruction_models.tex)へ、残る41支持節とノート固有の証明を統合した。既存の点スキーム・Jacobian・一次変形・Artin・étale稿と証明ソースを共用する。全次数MF存在と有限Artin残余復元の系も必要証明付きで保持する。

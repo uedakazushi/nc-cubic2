@@ -1,0 +1,40 @@
+% !TEX root = proper_dg_smoothness_and_artin_limits.tex
+\input{papers/artin_windows/preamble}
+\fancyhead[L]{\small proper dg代数のsmoothnessとArtin試験の限界}
+\hypersetup{pdftitle={proper dg代数のsmoothnessとArtin試験の限界}}
+\title{proper dg代数のsmoothnessとArtin試験の限界}
+\author{}
+\date{2026年11月13日・研究草稿 v1}
+\begin{document}
+\maketitle
+\begin{abstract}
+射影直線上の生成対象の既知の変形例から、アフィン直線上階数四の
+strict dg代数を構成する。そのsmoothなfiberの集合は原点だけで開でないが、
+原点を経由する任意の局所Artin基底変更は相対smoothである。
+完備化と一般fiberはsmoothでない。
+さらに零次cohomologyの底変更の余核を一つのTor方向として計算し、
+導来底変更とcohomologyの底変更の相違を明示する。
+\end{abstract}
+\section*{問題と寄与の範囲}
+底上properとはHomが底上perfectであること、homologically smoothとは
+対角が包絡dg代数上perfectであることをいう。
+圏はdg Morita同値と冪等完備化を保って扱い、tensorは導来的に取る。
+Sasha\cite{AMSasha}は射影直線上で生成性が開でない例を与えた。
+本稿はこの既知の幾何的例を入力として、有限自由dg模型、全Artin試験、
+完備化、非開なsmooth locus、cohomologyのTor誤差を同じ例で比較する。
+幾何的反例の新規性は主張せず、この整理全体の初出も未確定である。
+
+中心結果は定理\ref{asl:thm:locus}と命題\ref{asl:prop:tor}である。
+前者に必要な生成性・Morita・無限semifree分解を先に完全に示す。
+有限計算が保証するのは積・微分・有限切断の行列恒等式であり、
+smoothness自体の証明は本文による。
+三次超曲面、MF存在、一般点可換復元を本稿の入力としない。
+\input{papers/artin_windows/artin_smoothness_obstruction}
+\input{papers/artin_windows/algebraic_smoothness_locus}
+\begin{thebibliography}{9}
+\bibitem{AMSasha} Sasha,
+Answer to \emph{Is the property of being a dg generator open?},
+MathOverflow, 5 December 2016.
+\url{https://mathoverflow.net/questions/256391/is-the-property-of-being-a-dg-generator-open}.
+\end{thebibliography}
+\end{document}

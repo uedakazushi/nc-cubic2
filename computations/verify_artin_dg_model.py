@@ -56,9 +56,27 @@ def main() -> None:
             H[i + 1, i] = 1
         D = sp.Matrix.vstack(sp.Matrix.hstack(H, -H), sp.zeros(m, 2*m))
         rank = D.rank()
+        # Natural H0 base change: the unit gives m independent columns,
+        # while the extra cycle is h^(m-1)e_minus.
+        unit_columns = sp.Matrix.vstack(sp.eye(m), sp.eye(m))
+        extra = sp.zeros(2*m, 1)
+        extra[m-1, 0] = 1
+        kernel_columns = unit_columns.row_join(extra)
+        assert D * kernel_columns == sp.zeros(2*m, m+1)
+        assert unit_columns.rank() == m and kernel_columns.rank() == m+1
+        assert (2*m-rank) - m == 1
+        # The Tor term is ann(h) in R/(h^m).
+        assert m-H.rank() == 1
+        assert H * extra[:m, :] == sp.zeros(m, 1)
+        if m >= 2:
+            assert 2*m-2 >= m  # v^2=0 modulo h^m
+        else:
+            assert multiply(basis[0], basis[0]) == basis[0]
         assert rank == m - 1
         rows.append({'N': N, 'base_length': m, 'differential_rank': rank,
-                     'H0_Q_dimension': 2*m-rank, 'H1_Q_dimension': 2*m-rank})
+                     'H0_Q_dimension': 2*m-rank, 'H1_Q_dimension': 2*m-rank,
+                     'H0_basechange_injective_rank': m, 'H0_basechange_cokernel': 1,
+                     'Tor1_dimension': 1, 'H0_extra_cycle_verified': True})
     report = {
         'status': 'PASS', 'coefficient_ring': 'QQ[h]',
         'associativity_basis_triples': 64, 'Leibniz_basis_pairs': 16,

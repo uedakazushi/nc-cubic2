@@ -10,6 +10,12 @@
 
 **分業：** Chatはnc-cubic論文Aの正規形・量子化、論文Bの形式MF比較・一般点への代数的降下、およびA/Bの先行研究・新規性の独立監査を行う。CodexはA/Bと再帰入力を触らず、疑義は正確な仮定・反例候補・証明箇所を明記して伝える。
 
+## 重点監査から得た独立稿と次の着手
+
+`papers/proper_dg_smoothness_and_artin_limits.tex`（6頁）で、既知の生成性喪失例を基に、代数的A1族の非開なsmooth locus、全局所Artin試験のsmoothness、H^0底変更のTor誤差と環構造を証明した。反例の証明は既存稿と同じTeXを共用する。全文組版・全頁表示・有限dg恒等式とTor方向の検算を実行済み。既知例と新たな整理を区別し、初出・新規性の全面調査は未了。
+
+9文脈差分の照合は `notes/artin_comparison_context_audit.md`。次はArtin比較のrelative stabilization、windowの全忠実性・本質的全射性とdg enhancementを重点監査する。文脈差分の照合を外部入力を含む全証明の監査と数えない。他の公表単位の構成判断はこの数学的監査に合わせて進め、統合稿をまだ削除しない。
+
 ## 論文Bから独立した相対復元・明示模型
 
 `papers/relative_reconstruction_models.tex` に残る41支持節とノート固有の証明を統合した。一般Artin・étale、楕円/多ブロック、全次数MF存在、Artin残余復元、混合jet、有限対角/bar/Morita、相対proper模型を扱う。既存五稿の証明を同じTeXから共用し、A・Bの正本と必要入力はnc-cubicに保持する。再開は `notes/relative_reconstruction_models.md`、範囲は `validation_relative_reconstruction_models.json`。新規性・全独立監査、各具体模型の未証明比較は移管作業と分けて扱う。

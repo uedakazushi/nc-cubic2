@@ -1,0 +1,144 @@
+{
+  "status": "PASS",
+  "entry": "papers/proper_dg_smoothness_and_artin_limits.tex",
+  "tex_files": 4,
+  "labels": 11,
+  "references": 13,
+  "citations": 2,
+  "bibliography_entries": 1,
+  "errors": {
+    "duplicate_labels": [],
+    "duplicate_bibitems": [],
+    "undefined_references": [],
+    "undefined_citations": []
+  },
+  "source_blobs": {
+    "papers/proper_dg_smoothness_and_artin_limits.tex": "3972869d7fd981b90c45af71e93dd9ff773141fb",
+    "papers/artin_windows/preamble.tex": "05e1aa89f77395de67fd5d915c3e05b9286b2bf3",
+    "papers/artin_windows/artin_smoothness_obstruction.tex": "fe52bb222fdc9a1d2678a10b29bfa9b97ef8f228",
+    "papers/artin_windows/algebraic_smoothness_locus.tex": "c9a9f87b52e2357a040a0712432215dfd754d7a9"
+  },
+  "calculations_run": true,
+  "latexmk_run": true,
+  "mathematical_proof_verification": false,
+  "date_jst": "2026-11-13",
+  "pages": 6,
+  "visual_all_six_pages_checked": true,
+  "typesetting": {
+    "undefined": false,
+    "duplicate_labels": false,
+    "overfull": false,
+    "missing_glyphs": false
+  },
+  "calculation_record": {
+    "status": "PASS",
+    "coefficient_ring": "QQ[h]",
+    "associativity_basis_triples": 64,
+    "Leibniz_basis_pairs": 16,
+    "unit_checks": 8,
+    "d_squared_zero": true,
+    "generic_cohomology_dimensions": [
+      1,
+      1
+    ],
+    "special_cohomology_dimensions": [
+      2,
+      2
+    ],
+    "exterior_map_unit_product_and_cohomology": true,
+    "Artin_truncations": [
+      {
+        "N": 0,
+        "base_length": 1,
+        "differential_rank": 0,
+        "H0_Q_dimension": 2,
+        "H1_Q_dimension": 2,
+        "H0_basechange_injective_rank": 1,
+        "H0_basechange_cokernel": 1,
+        "Tor1_dimension": 1,
+        "H0_extra_cycle_verified": true
+      },
+      {
+        "N": 1,
+        "base_length": 2,
+        "differential_rank": 1,
+        "H0_Q_dimension": 3,
+        "H1_Q_dimension": 3,
+        "H0_basechange_injective_rank": 2,
+        "H0_basechange_cokernel": 1,
+        "Tor1_dimension": 1,
+        "H0_extra_cycle_verified": true
+      },
+      {
+        "N": 2,
+        "base_length": 3,
+        "differential_rank": 2,
+        "H0_Q_dimension": 4,
+        "H1_Q_dimension": 4,
+        "H0_basechange_injective_rank": 3,
+        "H0_basechange_cokernel": 1,
+        "Tor1_dimension": 1,
+        "H0_extra_cycle_verified": true
+      },
+      {
+        "N": 3,
+        "base_length": 4,
+        "differential_rank": 3,
+        "H0_Q_dimension": 5,
+        "H1_Q_dimension": 5,
+        "H0_basechange_injective_rank": 4,
+        "H0_basechange_cokernel": 1,
+        "Tor1_dimension": 1,
+        "H0_extra_cycle_verified": true
+      },
+      {
+        "N": 5,
+        "base_length": 6,
+        "differential_rank": 5,
+        "H0_Q_dimension": 7,
+        "H1_Q_dimension": 7,
+        "H0_basechange_injective_rank": 6,
+        "H0_basechange_cokernel": 1,
+        "Tor1_dimension": 1,
+        "H0_extra_cycle_verified": true
+      },
+      {
+        "N": 8,
+        "base_length": 9,
+        "differential_rank": 8,
+        "H0_Q_dimension": 10,
+        "H1_Q_dimension": 10,
+        "H0_basechange_injective_rank": 9,
+        "H0_basechange_cokernel": 1,
+        "Tor1_dimension": 1,
+        "H0_extra_cycle_verified": true
+      }
+    ],
+    "not_verified": [
+      "dg Morita equivalence",
+      "generation for all N",
+      "infinite semifree resolution",
+      "homological smoothness",
+      "Artin residual/MF comparison"
+    ]
+  },
+  "context_audit": {
+    "note": "notes/artin_comparison_context_audit.md",
+    "original_commit": "ba7ec3422e53efc0f64f6d8280734296b98aacfe",
+    "original_evidence_sha256": {
+      "papers/support/papers/reconstruction/artin_residual_mf_comparison.tex": "4f8c06b178b08dbc76643399a9e3aac99568e7de3abc13db92e29f6acedcc11e",
+      "papers/support/papers/reconstruction/artin_smoothness_obstruction.tex": "44e27b7466f6cf92aadd5a449f29fa966cbfe66969907c961bbcbde203e7e8b0",
+      "papers/support/papers/reconstruction/hochschild_obstructions.tex": "6786ef7b684ae6cfeaeabb6c9b5eefb46ac72e0689cb87a2f2e7ed895daa75a8"
+    },
+    "nine_context_changes_compared": true,
+    "full_external_input_audit_completed": false
+  },
+  "new_results": [
+    "Algebraic A1 family with smooth locus exactly the origin",
+    "Smoothness after every local Artin test centered at the origin",
+    "Explicit Tor1 error in H0 base change and the H0 algebra"
+  ],
+  "novelty": "Underlying geometric example is Sasha 2016; comprehensive novelty assessment of the dg/Artin formulation remains open.",
+  "protected_nc_cubic_A_B_modified": false,
+  "pdf_sha256": "5e4121935a284fbb3839d764785cb2567d145762a96e562d8a679527795e2e42"
+}
