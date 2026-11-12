@@ -1,6 +1,6 @@
 # nc-cubic2 AGENTS.md
 
-**最初に `00_research_plan.md` を読む。Poisson cubicの全次元分類は次に `notes/poisson_cubic_all_dimensions.md` と `papers/poisson_cubic_pair_components.tex`、fourfoldのscheme構造は `notes/poisson_cubic_fourfold_moduli.md`、それ以外は `notes/research_notes.md` を読む。**
+**最初に `00_research_plan.md` を読む。Poisson cubicの全次元分類は次に `notes/poisson_cubic_all_dimensions.md` と `papers/poisson_cubic_pair_components.tex`、fourfoldのscheme構造は `notes/poisson_cubic_fourfold_moduli.md`、非可換三次三様体の17次元モジュライは `notes/nc_cubic_threefold_moduli.md` と `papers/nc_cubic_threefold_moduli.tex` を読む。それ以外は `notes/research_notes.md` を読む。**
 
 - **6/7次元Poisson cubic幾何**：`notes/poisson_cubic_six_seven_geometry.md`、
   `papers/poisson_cubic_six_seven_geometry.tex`、
@@ -11,7 +11,8 @@
   一般rank/成分数より独立な価値の候補は七次元rank6の
   primary分解とembedded componentsの長さ。
   独立監査と新規性確認は未完成。
-- このリポジトリは独立境界研究の正本。三つの主目標と可換復元の最優先研究は `uedakazushi/nc-cubic` で行う。
+- 本リポジトリは独立モジュライ・境界研究の正本。17次元nc cubic moduli研究を統合し、構成族の既約成分性・接空間と障害理論を未解決の主課題とする。Poisson構造・代数量子化・一般次元ambient復元・rotation付き可換復元の主論文A/Cは `uedakazushi/nc-cubic` にある。
+- 17次元nc cubicの41次元incidence、31次行列式、分離型余次元15、忘却核7、Picard障害は現行 `papers/nc_cubic_threefold_moduli.tex` と `papers/sections/mixed_center_picard.tex` に収録した。横断性・中心・分離型の計算ソースは `computations/independent/` と `computations/verify_split_codimension.py`。独立監査・LuaLaTeX実組版・本移管後のスクリプト再実行は未了。一般次元ambient復元は主リポジトリAに統合し、旧Bに依存しない。
 - 研究内容を移す際は、原稿の証明全文・入力・再現コード・文献情報を含める。移管先のblob/hash/組版/計算確認を済ませるまでは移管元の唯一の原本を削除しない。
 - 論文は `papers/`、ノートは `notes/`、コードは `computations/`。日本語LuaLaTeXで `.latexmkrc` を用いて再生成する。
 - 原PDFは完全なTeX置換の検証前に廃棄しない。Git管理のPDF例外は本当に原本が唯一の情報源である場合だけ。
