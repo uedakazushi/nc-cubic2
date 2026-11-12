@@ -4,13 +4,19 @@
 
 **[CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)** に、研究・TeX統合・独立検証・Git追跡解除の原則を定めた。**全原PDFの移管が完了し、Git追跡PDFは0件。**単なるPDFの転記ではなく、重要な定理を強め、証明を洗練し、必要なら新しい結果・一般化・応用を加える。実行前に [研究方針](00_research_plan.md)、[AGENTS.md](AGENTS.md)、[現行のPDF別状態](PDF_SOURCES.md) を読む。数学的成果と再現性を犠牲にしてPDFを削除しない。
 
+## 論文Bから分離した独立成果の統合
+
+[相対復元・有限対角・明示模型の現行稿](papers/relative_reconstruction_models.tex)へ、残る41支持節とノート固有の証明を統合した。既存の点スキーム・Jacobian・一次変形・Artin・étale稿と証明ソースを共用する。全次数MF存在と有限Artin残余復元の系も必要証明付きで保持する。
+
+再開は [専用研究方針](notes/relative_reconstruction_models.md)、全対応は [移管manifest](validation_reconstruction_manifest.json)、組版・有限検算の実行範囲は [validation](validation_relative_reconstruction_models.json)。`python3 scripts/check_relative_reconstruction_models.py --calculations --build` で再現する。数学的な未解決条件・新規性・全独立監査と、ファイル移管の完了を区別する。元側の重複整理は保存確認後に行う。
+
 ## 論文Bから分離した点スキームの現行原稿
 
 [混合三次非可換超曲面の点スキームとPoisson零点](papers/mixed_cubic_point_schemes.tex) は、中心三次元の閉公式・証明、点加群の台と非被約構造、平坦閉包、混合係数の衝突と判別式上の局所型をまとめた独立稿である。一般次元の可換復元定理は入力としない。研究再開は [専用ノート・方針](notes/mixed_cubic_point_schemes.md) から。
 
 全文12頁をLuaLaTeXで組版・全頁表示確認し、8TeXファイル、47ラベル、22参照、6引用、2文献項目に未解決・重複はない。4本の有限計算スクリプトを実行し、元の3証明書を正確に再生成した。数学的な全証明の独立監査ではない。検証範囲は [validation_mixed_cubic_point_schemes.json](validation_mixed_cubic_point_schemes.json)。再現は `latexmk papers/mixed_cubic_point_schemes.tex` と `python scripts/check_mixed_point_schemes.py --calculations`。
 
-この移管単位の保存確認後、nc-cubic側の17専用重複ファイルを除外した。論文Aと一般次元の論文Bはnc-cubicに保持し、本文を変更しない。[移管全体の現在の状態](validation_reconstruction_transfer.json) と [独立成果の入力案内](papers/reconstruction_extensions/README.md) は、点スキーム単位の完了と、一次変形・相対理論・明示模型等の残件を区別する。
+この移管単位の保存確認後、nc-cubic側の17専用重複ファイルを除外した。論文Aと一般次元の論文Bはnc-cubicに保持し、本文を変更しない。[移管全体の現在の状態](validation_reconstruction_transfer.json) と [独立成果の入力案内](papers/reconstruction_extensions/README.md) は、各独立稿の検証範囲と全体の移管状態を区別する。
 
 ## 標識付き平面切断の臨界幾何
 
@@ -86,7 +92,7 @@ LuaLaTeX、LuaTeX-ja、HaranoAji日本語フォント、標準数学パッケー
 
 [uedakazushi/nc-cubic](https://github.com/uedakazushi/nc-cubic) には、論文A（一般次元Poisson構造・代数的量子化）と、論文B（一般次元の中心三次変形の一般点可換復元および必要証明）を保持する。一般点での同値と、特殊点を含む相対smoothness・相対同値の問題は区別する。
 
-主定理に必要な証明は移管先だけへの参照で代用せず、nc-cubicに自立的に保持する。独立した境界・変形論・具体模型は本リポジトリへ、数学的内容と再現性を保って整理する。移管全体は未完了であり、保存・組版確認済みの単位から元の重複を除外する。
+主定理に必要な証明は移管先だけへの参照で代用せず、nc-cubicに自立的に保持する。独立した境界・変形論・具体模型は本リポジトリへ、数学的内容と再現性を保って整理する。現行の独立成果は上記統合稿と既存五稿に揃えた。元の重複は移管先保存・入力閉包の確認後に整理する。
 
 GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗時の緊急避難に限る。
 

@@ -6,6 +6,10 @@
 
 2026-11-13現在、`nc-cubic` 論文A・Bの数学的独立監査と先行研究調査はChat側に分離する。本リポジトリを実行環境とする移管担当Codexは、`nc-cubic/AGENTS.md`・`notes/paper_b_scope_and_transfer.md` と本リポジトリの `AGENTS.md` を先に読み、元の独立成果をここに統合する。既存の点スキーム・Jacobian・一次変形・Artin・étaleの独立稿を正本とし、残存する形式復元・Sklyanin・対角/bar/Morita・混合jet等を保存済み本文と照合する。必要証明の自足性、仮定の強さ、参照閉包、再生成可能性、移管先main保存を確認し、元側の保護対象と残存参照を精査してから重複を削除する。この担当作業は下記の17次元モジュライ等の既存研究目標を放棄するものではない。
 
+## 論文Bから独立した相対復元・明示模型
+
+`papers/relative_reconstruction_models.tex` に残る41支持節とノート固有の証明を統合した。一般Artin・étale、楕円/多ブロック、全次数MF存在、Artin残余復元、混合jet、有限対角/bar/Morita、相対proper模型を扱う。既存五稿の証明を同じTeXから共用し、A・Bの正本と必要入力はnc-cubicに保持する。再開は `notes/relative_reconstruction_models.md`、範囲は `validation_relative_reconstruction_models.json`。新規性・全独立監査、各具体模型の未証明比較は移管作業と分けて扱う。
+
 ## nc cubic threefoldの17次元モジュライ（現行の主題）
 
 - [現行草稿](papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。

@@ -1,0 +1,400 @@
+{
+  "source": {
+    "tex_inputs": 54,
+    "labels": 708,
+    "references": 724,
+    "citations": 266,
+    "bibliography_entries": 143,
+    "input_sha256": {
+      "papers/artin_windows/artin_smoothness_obstruction.tex": "5262d42a0d3e77153bd028ed20ce0cbb53958c4d21b96d81f4d1696f990b7653",
+      "papers/artin_windows/comparison.tex": "63bb590b053adeabc5d94077bcb2e082f74e19c5829fe820d0ba55ef8242cebe",
+      "papers/artin_windows/regular_basechange.tex": "d6d4bcd35ea85753f15a287daeeff5ea5b019bb3ed8e2e651a0aee302964b0ed",
+      "papers/reconstruction_extensions/explicit_jacobian_recovery.tex": "4142ceaf5beba21639e79a6870a9df1f5b4b62cc448beba5ed91192f3da658c3",
+      "papers/reconstruction_extensions/first_order_poisson_kernel.tex": "fda6c2cc63c95a3d49b9a022c19f37dd115ee53db534fe9bb8721d0e5751ba2f",
+      "papers/reconstruction_extensions/mixed_central_family.tex": "b5f472ae719cc3f1081814a1fab20350b8053386eb99f0e6e5791a5b5bc03cd1",
+      "papers/reconstruction_extensions/poisson_first_order.tex": "9378282ab9d053b2be2a1608d5b34ffeb6ea2a70ad00eaf80b23ddab72ae6dd3",
+      "papers/relative_realization/etale_realization.tex": "47c5d36df270a46064bed8d4903f01dcb5a23a7bd2625592a8cb58d5447e776f",
+      "papers/relative_realization/hochschild_obstructions.tex": "3cf2df1498cb5577b04b4be8f904a08dbef82f27b1ea2eb4768684b696245403",
+      "papers/relative_reconstruction/all_poisson_components.tex": "897199370e33f5e3131ed773fca4b2c3f9c5e79084db84d4f380ac1be43f450b",
+      "papers/relative_reconstruction/artin_rotation_obstructions.tex": "2001558f16e67921077113e8bd9a641be9ee76e438146249581bde27abaa03a4",
+      "papers/relative_reconstruction/central_symmetry_lifting.tex": "aa03e1e7a83c7138fad9ecf6ac1deae7d5e0ef65b89b2ab0a547d4e22bb7ab01",
+      "papers/relative_reconstruction/coherent_residual_saturation.tex": "21c2f031cbf8ffcc1c9999dac54e3df5f599f254c6e60516bbdc7eb84250357b",
+      "papers/relative_reconstruction/complete_curved_transport.tex": "ee71e04eb40ce94880e650f8dd255c286103a1486493a044e8424cabaa9676f2",
+      "papers/relative_reconstruction/curved_diagonal_recovery.tex": "a3c677241ca67ccf0daae1b884eeb4106497848c266f2d9b26eb459a30ea43f3",
+      "papers/relative_reconstruction/curved_gauge_comparison.tex": "4bffc40e342fe29cf73b95a13e28d0276b2a69a63ac91af1f1d3adbd6009c13a",
+      "papers/relative_reconstruction/dg_perfectness_counterexamples.tex": "94070176400534f0a76795d6742f16aa70824cec56d37aebb191d611346f60d1",
+      "papers/relative_reconstruction/diagonal_kernel_identity.tex": "c79d4d99d6808bc4a1fb5d63c57862c6d6587964bbc01108b2ad6b32fe991a21",
+      "papers/relative_reconstruction/elliptic_reconstruction.tex": "97cbb6c4cc4164871233d626a235ea60c4365eb5708a4605c5035b1ff7b16ffc",
+      "papers/relative_reconstruction/explicit_model_comparison.tex": "49f5c6766692f5f0457779b819051254b95f41c9d9957cb591f1c365912c03f8",
+      "papers/relative_reconstruction/finite_algebraic_recovery.tex": "a525a34a19d4695725d491b2c423e6755d2a5a689fbb94a565d78e485717cbfb",
+      "papers/relative_reconstruction/finite_bar_spreading.tex": "276bfee60860f0e569625bdf46be2e93e22ecf0698608cefde5796e15b1c855e",
+      "papers/relative_reconstruction/formal_cubic_mf_reconstruction.tex": "51112ce6e782dace6cf5cd7ea0fd1f18ce8358c14fe801fad5d7f252bdcfbcde",
+      "papers/relative_reconstruction/formal_residual_application.tex": "8049ed071211c9ea59e119e190bde1b3dc0e7a214d1b8af98d042763e4903ff4",
+      "papers/relative_reconstruction/general_dimension_recovery.tex": "587acec9716d22b3edb07a894e0044132fab16219725f187417a5e5c302b8eb6",
+      "papers/relative_reconstruction/generic_cubic_descent.tex": "81d35d60383ac50ba13d2642a006bafbc152e96c0f9a4328872f66db0268cba2",
+      "papers/relative_reconstruction/geometric_rotation_basechange.tex": "5645f785b6df5900ac2a6a573f3603eaf109dae7b59c1a06af3bd862cd76b09f",
+      "papers/relative_reconstruction/kontsevich_second_jet.tex": "abc789dbbd89276d189e4d95656ee2305e6fcb716f95faf3c7fa9b990d341e90",
+      "papers/relative_reconstruction/local_projective_model.tex": "f223a861f00c0b93e74ff67c86e37a48e8e9a09537782eedbca242e80a7ce4e3",
+      "papers/relative_reconstruction/minimal_ainfty_arity.tex": "5a7bf4bf88bfda13db8d15403476f66dd94f6ed3720fbd2b68da2c63f1877881",
+      "papers/relative_reconstruction/mixed_center_picard.tex": "4da259b31ecfb3d55efca5ca1b0d87db98c5f917e29ad188ac6ccddba77bdbe5",
+      "papers/relative_reconstruction/mixed_equivariant_normal_form.tex": "a2049cc0c8f293d5f0cc1a1d1569a4d9431546b9231652734a319ee012aac09e",
+      "papers/relative_reconstruction/mixed_test_family.tex": "273ae19df8f8a91af33bbd53dda52482320832bc8ddf6fb852064d54cf1e173d",
+      "papers/relative_reconstruction/multiblock_generation.tex": "9f48b471d06b0a8947f5ac528030851fab10d2c973ddf4c4b576d345274b0dde",
+      "papers/relative_reconstruction/multiplicative_bar_comparison.tex": "0541880e68ac471c011aeb1181322938e1c9b58fd8fa5c5151ca1bfc5eff20a7",
+      "papers/relative_reconstruction/one_sided_morita_algebraization.tex": "38b5ec8909f70a62977c900e317b31ef0e353bfe9569ccc8be030b8887c46947",
+      "papers/relative_reconstruction/pi_residue_generators.tex": "4462ff6db654bf5059de32eb2d61e822e6138453cbbfcb3e3d74f236af73e1dd",
+      "papers/relative_reconstruction/poisson_second_jet.tex": "4723578dd39ef6f3b7f5a4248191577ed5630239ab8c24e803955ab6865139ab",
+      "papers/relative_reconstruction/preamble.tex": "bda075920ffb739298ae5206082379d6e3a83712e289418e83aa40fbc2fe616d",
+      "papers/relative_reconstruction/references.tex": "f57f363fb1548ed1f8dc4248310ec8ead2ff783790f3220ab40510fa88b4e82e",
+      "papers/relative_reconstruction/regular_diagonal_recovery.tex": "67a1ba81cc6c34f0862eb9a0f30829d27691b17ec059afc113deb2ae6a34bca9",
+      "papers/relative_reconstruction/relative_artin_sector.tex": "3d684e629ba646bdf2e31b49f4f0d05968344c59ab0486370335e4ae4c933b75",
+      "papers/relative_reconstruction/relative_etale_models.tex": "21751b1ae492d6aaaca066151e925b3963775358e202cdb9a36a54e18c3871ea",
+      "papers/relative_reconstruction/relative_formal_models.tex": "9648fe26c56bacea84a9b913437a5ca2457b0f892b82ff33e2da588545cc1421",
+      "papers/relative_reconstruction/relative_parameter_boundary.tex": "be2231c63691dca8c480a265ec9d855810d27f83eb34286108741f4e4fc181a6",
+      "papers/relative_reconstruction/relative_proper_models.tex": "335dc85b3c59fbfc944f38b9d05d553140fb10043c7026c2b2c0c5d21ed4af24",
+      "papers/relative_reconstruction/relative_saturation.tex": "bccffce4acf984b0d0e4f8321af0c094c443703e0c5818d54526e91eedc7ad43",
+      "papers/relative_reconstruction/rotation_obstruction.tex": "83d13265ddc6c66cdbbcb73602ff6d3eb45569e489411a978de74f6be27a532f",
+      "papers/relative_reconstruction/rotation_orbit_generic_reconstruction.tex": "ecd3bef49eb6dbfbc572128edde848413115b5fec35f4d6c1349e3cfc52bfabc",
+      "papers/relative_reconstruction/rotation_saturation_reduction.tex": "113d13b9f73f30c79f6fff48f2c4b019b2dcaa12b57e94d0d60b0031bbf8e02c",
+      "papers/relative_reconstruction/sklyanin_block_models.tex": "537c6382f18e834f4cd58da8e378b17a940608d61ca6cba606d15824cc27d3d4",
+      "papers/relative_reconstruction/sklyanin_model_theorems.tex": "e4f5e235072798721ec72624c826ba839f71306f9413e493e75116fadb107daa",
+      "papers/relative_reconstruction/three_object_window.tex": "dd86c1fae6fbbe2aa563b1a6269c5d31b9dac7bcd60aa0e473c72043e2658274",
+      "papers/relative_reconstruction_models.tex": "8ce37603a710a93ebb10929ba3b1b2fa7facf70cd27a21443807a5b5b653ecf4"
+    }
+  },
+  "typesetting": {
+    "pages": 244,
+    "failures": {
+      "unresolved": false,
+      "duplicates": false,
+      "missing_glyphs": false,
+      "overfull": false
+    },
+    "pdf_sha256": "b329ecd73801656d7e0a0a50098d06bff54deee13f8d1bcd6cca539d4011f380"
+  },
+  "limit": "Source consistency, typesetting and finite checks; not an independent mathematical proof audit.",
+  "date_jst": "2026-11-13",
+  "source_repository": "uedakazushi/nc-cubic",
+  "source_head": "ba7ec3422e53efc0f64f6d8280734296b98aacfe",
+  "calculations": [
+    {
+      "name": "finite_recovery",
+      "command": [
+        "python",
+        "computations/verify_finite_recovery.py",
+        "--output",
+        "build/relative_reconstruction_checks/finite_recovery.json"
+      ],
+      "exit_code": 0,
+      "seconds": 3.5,
+      "certificate_equal": true
+    },
+    {
+      "name": "curved_diagonal",
+      "command": [
+        "python",
+        "computations/verify_curved_diagonal.py",
+        "--output",
+        "build/relative_reconstruction_checks/curved_diagonal.json"
+      ],
+      "exit_code": 0,
+      "seconds": 188.56,
+      "certificate_equal": true
+    },
+    {
+      "name": "regular_diagonal",
+      "command": [
+        "python",
+        "computations/verify_regular_diagonal.py",
+        "--output",
+        "build/relative_reconstruction_checks/regular_diagonal.json"
+      ],
+      "exit_code": 0,
+      "seconds": 100.66,
+      "certificate_equal": true
+    },
+    {
+      "name": "bar_comparison",
+      "command": [
+        "python",
+        "computations/verify_bar_comparison.py",
+        "--output",
+        "build/relative_reconstruction_checks/bar_comparison.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.13,
+      "certificate_equal": true
+    },
+    {
+      "name": "artin_sectors",
+      "command": [
+        "python",
+        "computations/verify_artin_sectors.py",
+        "--output",
+        "build/relative_reconstruction_checks/artin_sectors.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.62,
+      "certificate_equal": true
+    },
+    {
+      "name": "diagonal_identity",
+      "command": [
+        "python",
+        "computations/verify_diagonal_identity.py",
+        "--output",
+        "build/relative_reconstruction_checks/diagonal_identity.json"
+      ],
+      "exit_code": 0,
+      "seconds": 12.5,
+      "certificate_equal": true
+    },
+    {
+      "name": "artin_rotation_obstructions",
+      "command": [
+        "python",
+        "computations/verify_artin_rotation_obstructions.py",
+        "--output",
+        "build/relative_reconstruction_checks/artin_rotation_obstructions.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.48,
+      "certificate_equal": true
+    },
+    {
+      "name": "central_symmetry",
+      "command": [
+        "python",
+        "computations/verify_central_symmetry.py",
+        "--output",
+        "build/relative_reconstruction_checks/central_symmetry.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5,
+      "certificate_equal": true
+    },
+    {
+      "name": "geometric_rotation",
+      "command": [
+        "python",
+        "computations/verify_geometric_rotation.py",
+        "--output",
+        "build/relative_reconstruction_checks/geometric_rotation.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.8,
+      "certificate_equal": true
+    },
+    {
+      "name": "one_sided_morita",
+      "command": [
+        "python",
+        "computations/verify_one_sided_morita.py",
+        "--output",
+        "build/relative_reconstruction_checks/one_sided_morita.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.55,
+      "certificate_equal": true
+    },
+    {
+      "name": "rotation_orbit",
+      "command": [
+        "python",
+        "computations/verify_rotation_orbit.py",
+        "--output",
+        "build/relative_reconstruction_checks/rotation_orbit.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.57,
+      "certificate_equal": true
+    },
+    {
+      "name": "explicit_model_comparison",
+      "command": [
+        "python",
+        "computations/verify_explicit_model_comparison.py",
+        "--output",
+        "build/relative_reconstruction_checks/explicit_model_comparison.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.98,
+      "certificate_equal": true
+    },
+    {
+      "name": "kontsevich_second_jet",
+      "command": [
+        "python",
+        "computations/verify_kontsevich_second_jet.py",
+        "--output",
+        "build/relative_reconstruction_checks/kontsevich_second_jet.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.4
+    },
+    {
+      "name": "mixed_test_family",
+      "command": [
+        "python",
+        "computations/verify_mixed_test_family.py",
+        "--output",
+        "build/relative_reconstruction_checks/mixed_test_family.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.13,
+      "certificate_equal": true,
+      "normalization": "proof_formulas_source updated to canonical shared chapter; mathematical data identical."
+    },
+    {
+      "name": "minimal_ainfty_arity",
+      "command": [
+        "python",
+        "computations/verify_minimal_ainfty_arity.py",
+        "--output",
+        "build/relative_reconstruction_checks/minimal_ainfty_arity.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.08,
+      "certificate_equal": true
+    },
+    {
+      "name": "complete_curved_transport",
+      "command": [
+        "python",
+        "computations/verify_complete_curved_transport.py",
+        "--output",
+        "build/relative_reconstruction_checks/complete_curved_transport.json"
+      ],
+      "exit_code": 0,
+      "seconds": 2.95
+    },
+    {
+      "name": "generic_cubic_descent",
+      "command": [
+        "python",
+        "computations/verify_generic_cubic_descent.py",
+        "--output",
+        "build/relative_reconstruction_checks/generic_cubic_descent.json"
+      ],
+      "exit_code": 0,
+      "seconds": 40.53
+    },
+    {
+      "name": "three_object_window",
+      "command": [
+        "python",
+        "computations/verify_three_object_window.py",
+        "--output",
+        "build/relative_reconstruction_checks/three_object_window.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.19
+    },
+    {
+      "name": "etale_inputs",
+      "command": [
+        "python",
+        "computations/verify_etale_inputs.py",
+        "--output",
+        "build/relative_reconstruction_checks/etale_inputs.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.87,
+      "certificate_equal": true
+    },
+    {
+      "name": "nonelliptic_inputs",
+      "command": [
+        "python",
+        "computations/verify_nonelliptic_inputs.py",
+        "--output",
+        "build/relative_reconstruction_checks/nonelliptic_inputs.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.83,
+      "certificate_equal": true
+    },
+    {
+      "name": "general_dimension_multiblock",
+      "command": [
+        "python",
+        "computations/verify_general_dimension_multiblock.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.47
+    },
+    {
+      "name": "local_projective_model",
+      "command": [
+        "python",
+        "computations/verify_local_projective_model.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06
+    },
+    {
+      "name": "reconstruction",
+      "command": [
+        "python",
+        "computations/verify_reconstruction.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.72,
+      "rerun_after_fix": true,
+      "fix": "Preserved JSON data; restored missing terminal newline required by original byte comparison."
+    },
+    {
+      "name": "rotation_obstructions",
+      "command": [
+        "python",
+        "computations/verify_rotation_obstructions.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.03
+    },
+    {
+      "name": "componentwise_reconstruction",
+      "command": [
+        "python",
+        "computations/verify_componentwise_reconstruction.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.63
+    },
+    {
+      "name": "mixed_characters",
+      "command": [
+        "python",
+        "computations/verify_mixed_characters.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.38
+    },
+    {
+      "name": "algebra",
+      "command": [
+        "python",
+        "computations/verify_algebra.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.03
+    }
+  ],
+  "all_29_finite_scripts_passed": true,
+  "additional_finite_scripts": [
+    "computations/verify_hochschild_sectors.py",
+    "computations/independent/verify_2jet.py"
+  ],
+  "artin_companion_current_build_and_finite_model_rerun": true,
+  "visual_review": {
+    "all_pages_rendered": true,
+    "layout_overview_inspected": true,
+    "scope": "241-page full layout overview, then final 230-244 pages after adding universal 2-jet; not mathematical audit of each formula."
+  },
+  "source_math_environments": 621,
+  "math_environments_verbatim_up_to_whitespace_and_local_namespace": 612,
+  "contextually_reconciled_environments": 9,
+  "independent_mathematical_proof_audit": false,
+  "source_cleanup": "pending destination remote save",
+  "novelty": "not independently determined"
+}

@@ -1,7 +1,7 @@
 {
   "date": "2026-11-13",
-  "version": "v10",
-  "status": "PARTIAL overall: three units source-deduplicated; finite Artin and etale realization companions integrated, with remaining source dependencies deliberately retained",
+  "version": "v11",
+  "status": "All current independent content integrated and verified; source deduplication pending destination remote save",
   "source_repository": "uedakazushi/nc-cubic",
   "destination_repository": "uedakazushi/nc-cubic2",
   "paper_A": "Unchanged in nc-cubic, A-v51",
@@ -73,7 +73,9 @@
     "full_build_rerun_after_shared_reference_change": false,
     "exact_finite_dg_checks_previously_executed": true,
     "conditional_application": "ar:cor:conditional assumes compatible MF equivalences; original am:cor:formal-residual and full existence input still remain at source.",
-    "source_cleanup": {"status": "PENDING", "reason": "Mixed/formal/window support chapters still cite am:*", "deleted_this_revision": 0}
+    "source_cleanup": {
+      "status": "pending remote save; all dependents now integrated"
+    }
   },
   "relative_etale_companion": {
     "entry": "papers/relative_cubic_realization.tex",
@@ -90,7 +92,10 @@
     "bibliography_entries": 9,
     "current_full_build_and_visual_review": true,
     "pages": 10,
-    "sector_arithmetic_rerun_N": [5, 60],
+    "sector_arithmetic_rerun_N": [
+      5,
+      60
+    ],
     "source_certificate_exactly_reproduced": "8e7a35337e43b45fc26b04c11414554732213ea4",
     "source_cleanup": {
       "status": "PENDING; originals retained",
@@ -99,9 +104,21 @@
     },
     "new_mathematical_results_added": false
   },
-  "remaining_groups": ["Broader formal relative existence and Artin/etale source dependency cleanup", "Sklyanin and multiblock finite models", "relative diagonal, bar and Morita alternate constructions", "mixed-family jets and equivariant reconstruction", "other independent results and computation assets"],
-  "all_independent_material_transferred": false,
+  "remaining_groups": [],
+  "all_independent_material_transferred": true,
   "independent_full_mathematical_audit": false,
   "current_destination_base_preserved": "8b9d77c57094ed3578cdac3d2120b7168303d6a8",
-  "policy": "Delete originals only after destination persistence and dependent-source reconciliation; preserve A and B; no Actions or force push."
+  "policy": "Delete originals only after destination persistence and dependent-source reconciliation; preserve A and B; no Actions or force push.",
+  "integrated_companion": {
+    "entry": "papers/relative_reconstruction_models.tex",
+    "notes": "notes/relative_reconstruction_models.md",
+    "validation": "validation_relative_reconstruction_models.json",
+    "manifest": "validation_reconstruction_manifest.json",
+    "source_chapters": 41,
+    "pages": 244,
+    "full_reference_closure": true,
+    "all_29_finite_scripts_passed": true,
+    "all_orders_MF_existence_and_formal_residual_corollary_preserved": true,
+    "source_cleanup": "pending remote save"
+  }
 }

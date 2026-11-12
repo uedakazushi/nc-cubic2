@@ -1,0 +1,216 @@
+\section{PIの中心幾何から得られる有限生成子}
+\label{sec:notes-pi-residue-generator}
+
+有限位数のSklyaninブロックでは、本文の外部積生成定理とは別に、
+中心の零sliceのAzumaya幾何から全MF圏のpropernessと有限生成子を直接得られる。
+この証明は \(\gcd(|\sigma_i|,3)=1\) を仮定しない。
+
+\paragraph{設定.}
+\(r\ge1\)、\(m\ge0\)、\(h_i^6\ne-27\) とし、
+\[
+ \begin{aligned}
+ A&=\bigotimes_{i=1}^rS_{h_i}\otimes_\CC T,
+ &T&=\CC[u_1,\ldots,u_m],\\
+ W&=\sum_{i=1}^r g_i+P,
+ &R&=A/(W)
+ \end{aligned}
+\]
+と置く。ここで \(g_i=G_{h_i}\)、\(P\in T_3\) であり、
+\(m>0\) の場合は \(T/(\partial_1P,\ldots,\partial_mP)\) が有限次元、
+\(m=0\) の場合は \(T=\CC,P=0\) とする。
+全ての \(\sigma_i\) は有限位数 \(q_i\) を持つものとする。
+\(h_i=0\) は多項式環のfactorで、\(q_i=1\) と解釈する。
+周囲の代数 \(A\) はnoetherian AS-regularであり、\(W\) は中心正則元である
+（本文のテンソル積の正則性の命題）。
+従ってMFと特異圏の比較 \cite[Theorem 5.8]{CCKM} を用いられる。
+以下ではこれらの圏を冪等完備化し、\(k=R/R_{>0}\) は特異圏での像、
+またはその有限自由stabilizationも表す。
+
+\(s=r\) (\(m=0\))、\(s=r+1\) (\(m>0\)) と置き、
+\[
+ \Gamma_s=\ZZ^s/\langle3e_i-3e_1:2\le i\le s\rangle,
+ \qquad w=3e_i
+\]
+とする。各 \(S_{h_i}\) の生成元の次数を \(e_i\) とし、
+中心変数があれば全ての \(u_a\) の次数を \(e_s\) とする。
+通常次数は \(\Gamma_s\to\ZZ,\ e_i\mapsto1\) による粗化であり、このとき \(w=3\) である。
+この写像は有限の核を持ち、正の通常次数を与えるため、
+\(\Gamma_s\)-斉次自由分解と斉次射を用いる同じMF--特異圏比較が適用できる。
+
+\begin{proposition}[PIの場合のpropernessと残余体生成]
+\label{prop:notes-pi-residue-generator}
+上の仮定の下で \(\MF^{\Gamma_s}(A,W)\) と \(\MF^\ZZ(A,W)\) はproperである。
+特異圏において
+\[
+ \begin{aligned}
+ \Dsg^{\Gamma_s}(R)&=\thick(K_{\Gamma_s}),\\
+ K_{\Gamma_s}&=
+ \bigoplus_{(a_1,\ldots,a_s)\in\{0,1,2\}^s}
+ k(a_1e_1+\cdots+a_se_s)
+ \end{aligned}
+ \tag{N1}\label{eq:notes-pi-gamma-generator}
+\]
+および
+\[
+ \Dsg^\ZZ(R)=\thick(K_{\ZZ}),\qquad
+ K_{\ZZ}=k\oplus k(1)\oplus k(2)
+ \tag{N2}\label{eq:notes-pi-z-generator}
+\]
+が成立する。
+\end{proposition}
+
+\begin{proof}
+\paragraph{一次資料から用いる中心の事実.}
+\(Z_i=Z(S_{h_i})\)、\(Y_i=\Spec Z_i\) とし、\(o_i\) を斉次頂点とする。
+\(h_i\ne0\) のとき、\(S_{h_i}\) が有限生成可換中心 \(Z_i\) 上有限であることは
+\cite[Theorem 3.7(c), p.~38]{SmithTate} による。
+さらに \cite[Theorem 1.3(1),(2a)]{WWY3} は
+\[
+ V(g_i)\setminus\{o_i\}\subset Y_i^{\mathrm{sm}}
+       =\operatorname{Az}(S_{h_i}),\qquad
+ V(g_i)\setminus\{o_i\}\ \text{は滑らか}
+ \tag{N3}\label{eq:notes-pi-zero-slice}
+\]
+を与える。原論文の三次中心元 \(g\) と \(g_i\) は非零定数倍なので、
+零sliceについて同じ主張になる。
+従って \(y_i\in V(g_i)\setminus\{o_i\}\) において
+\[
+ \widehat{(Z_i)_{y_i}}\simeq\CC[[g_i,a,b]],\qquad
+ S_{h_i}\otimes_{Z_i}\widehat{(Z_i)_{y_i}}
+       \simeq M_{q_i}(\CC[[g_i,a,b]]).
+ \tag{N4}\label{eq:notes-pi-matrix-completion}
+\]
+実際、滑らかな三次元中心と滑らかな零sliceから \(dg_i\ne0\) が従い、
+\(g_i\) を正則パラメータに選べる。
+完全局所環上のAzumaya代数は、剰余体 \(\CC\) 上でsplitし、
+行列冪等元の持ち上げによって行列環になる。
+\(h_i=0\) でも、行列sizeを一とし、Fermat三次式の勾配を用いれば
+\eqref{eq:notes-pi-zero-slice}--\eqref{eq:notes-pi-matrix-completion} が成立する。
+
+\paragraph{行列Homの支持.}
+\(Z=\bigotimes_i Z_i\otimes T\) は有限型可換代数であり、\(A\) は \(Z\) 上有限である。
+有限自由factorization \(Q,Q'\) の次数を忘れた二周期行列Hom複体を
+\[
+ \overline C=\Hom_A^{\ZZ/2}(Q,Q'),\qquad
+ \partial(f)=d_{Q'}f-(-1)^{|f|}fd_Q
+\]
+と書く。その二つの項は有限生成 \(Z\)-加群なので、
+\(\overline H^\epsilon=H^{\bar\epsilon}(\overline C)\) も有限生成である。
+ブロックEuler導分と中心偏微分により
+\[
+ d_Q\delta_i(d_Q)+\delta_i(d_Q)d_Q=3g_i\Id_Q,\qquad
+ d_Q\partial_{u_a}(d_Q)+\partial_{u_a}(d_Q)d_Q
+       =(\partial_aP)\Id_Q.
+\]
+これらをHomへ合成することで、\(g_i\) と \(\partial_aP\) は
+\(\overline H^\epsilon\) を殺す。
+Jacobian idealのradicalは \((u_1,\ldots,u_m)\) なので
+\[
+ \operatorname{Supp}_Z\overline H^\epsilon
+ \subset V(g_1,\ldots,g_r,u_1,\ldots,u_m).
+ \tag{N5}\label{eq:notes-pi-support}
+\]
+
+右辺の閉点 \(y=(y_1,\ldots,y_r,0)\) で、ある \(y_i\ne o_i\) とする。
+他のSklyanin factorのテンソル積をその中心点で完備化した代数を \(B\) とすると、
+\eqref{eq:notes-pi-matrix-completion} と中心上の完備テンソル積により
+\[
+ \widehat A_y\simeq
+ M_{q_i}\!\left(B[[g_i,a,b,u_1,\ldots,u_m]]\right),
+ \qquad W=g_i+\sum_{j\ne i}g_j+P(u).
+ \tag{N6}\label{eq:notes-pi-local-matrix}
+\]
+ここでは次数を忘れてよい。
+右辺の形式変数 \(g_i\) に関する成分ごとの導分を \(\partial_{g_i}\) とすれば、
+\(\partial_{g_i}W=1\) である。
+任意の完備化したfactorizationの微分 \(d\) に対して
+\[
+ h=\partial_{g_i}(d),\qquad dh+hd=\Id
+ \tag{N7}\label{eq:notes-pi-contraction}
+\]
+となる。従って局所的なungraded MFは実際にcontractibleである。
+行列Homにも \(\mathcal H(f)=h_{Q'}f\) による
+\(\partial\mathcal H+\mathcal H\partial=\Id\) がある。
+中心完備化はflatなのでHom cohomologyと可換であり、
+局所環上ではfaithfully flatなので
+\((\overline H^\epsilon)_y=0\) が従う。
+
+こうして \(\overline H^\epsilon\) の支持は唯一の頂点
+\(o=(o_1,\ldots,o_r,0)\) に含まれる。
+\(Z\) は有限型可換 \(\CC\)-代数であるから、
+\(\overline H^0\oplus\overline H^1\) は有限次元 \(\CC\)-ベクトル空間である。
+この議論には、完備化した他のfactorのglobal dimensionを求める必要はない。
+
+\paragraph{周期性とproperness.}
+二周期Homを、偶数部分の微分が内部次数零、奇数部分の微分が内部次数 \(w\)
+となるように次数付ける。
+具体的に \(Q=(Q_1\to Q_0\to Q_1(w))\) の規約では
+\[
+ \begin{aligned}
+ \overline C^0&=\underline{\Hom}_A(Q_0,Q'_0)
+       \oplus\underline{\Hom}_A(Q_1,Q'_1),\\
+ \overline C^1&=\underline{\Hom}_A(Q_0,Q'_1(w))
+       \oplus\underline{\Hom}_A(Q_1,Q'_0).
+ \end{aligned}
+\]
+とする。ここで \(\underline{\Hom}\) は全ての内部次数のHomの直和である。
+\(\overline H^\epsilon\) はこの内部次数を継承し、\(\Lambda=\Gamma_s,\ZZ\) のいずれでも
+\[
+ \begin{aligned}
+ H^{2n}\Hom_{\MF^\Lambda}(Q,Q')
+      &=(\overline H^0)_{nw},\\
+ H^{2n+1}\Hom_{\MF^\Lambda}(Q,Q')
+      &=(\overline H^1)_{nw}.
+ \end{aligned}
+ \tag{N8}\label{eq:notes-pi-hom-periodicity}
+\]
+\(w\) は無限位数であり、有限次元の \(\overline H^\epsilon\) は有限個の内部次数しか持たない。
+従ってMFのHomの全cohomologyの直和は有限次元である。
+有限個のconeと直和因子にもこの結論は保たれるので、冪等完備化したMF圏はproperである。
+
+\paragraph{残余体による生成.}
+任意の有限自由factorization \(Q\) を取る。
+中心の正次数斉次生成元を \(z_1,\ldots,z_t\) とすると、
+全内部次数を含むstable endomorphism加群が頂点に支持されることから、十分大きい \(d\) に対して
+\(z_j^d\Id_Q\) は全て零ホモトピックである。
+このclassの内部次数は \(d\deg z_j\) であり、
+Homの対応する斉次成分を取ることで、
+\[
+ z_j^d:Q(-d\deg z_j)\longrightarrow Q
+\]
+のnull-homotopyを次数を保った形に選べる。
+中心Koszul複体とのtensor積はこれらのhomotopyを保つので、
+これらの乗法のconeを順次取った対象には \(Q\) が直和因子として入る。
+
+\(\Dsg^\Lambda(R)\) で \(Q\) を表す有限生成moduleを \(M\) とする。
+今のconeの反復は、boundedな中心Koszul複体
+\(K_R(z_1^d,\ldots,z_t^d)\otimes_R M\) の特異圏での像である。
+そのcohomologyは \((z_1^d,\ldots,z_t^d)\) に殺される。
+\(R\) は \(Z\) 上有限で、\(Z/(z_1^d,\ldots,z_t^d)\) は有限次元なので、
+これらのcohomologyも有限次元である。
+有限次元の次数付き \(R\)-moduleは正の通常次数によるfiltrationを持ち、
+各商は有限個の \(k(\lambda)\) の直和である。
+従って全ての \(Q\) は \(\{k(\lambda)\}_{\lambda\in\Lambda}\) で生成される。
+冪等完備化についても同じ結論になる。
+
+最後に \((w)=[2]\) であり、
+\[
+ \Gamma_s/\ZZ w\simeq(\ZZ/3)^s,\qquad \ZZ/3\ZZ\simeq\ZZ/3
+\]
+なので、それぞれの剰余類の代表だけで十分である。
+これが \eqref{eq:notes-pi-gamma-generator} と \eqref{eq:notes-pi-z-generator} を与える。
+\end{proof}
+
+\paragraph{次の計算への使い方.}
+細分次数では \(3^s\) 個、通常次数では \(k,k(1),k(2)\) の三つのstabilizationを用意すればよい。
+その直和 \(K_\Lambda\) に対して
+\[
+ B_\Lambda=\REnd_{\Dsg^\Lambda(R)}(K_\Lambda),\qquad
+ \MF^\Lambda(A,W)\simeq_{\mathrm{Morita}}\Perf(B_\Lambda)
+\]
+となる。自己Homはstabilization後のMFのdg模型で取り、\(H^*(B_\Lambda)\) は有限次元である。
+本文の有限位数多ブロック比較と組み合わせると、この模型はsmooth properでもある。
+この生成子の記述は、外部積による全生成性の証明とは独立に、
+全MF圏を具体的な有限個の対象の自己Homから調べる入口を与える。
+既知の中心幾何からの上の帰結について、先行研究上の新規性は未確認である。
+

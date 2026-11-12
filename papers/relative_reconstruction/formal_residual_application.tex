@@ -1,0 +1,33 @@
+\section{形式MF存在から全有限切断の残余復元へ}
+\begin{corollary}[全有限Artin切断における可換残余復元]
+\label{am:cor:formal-residual}
+$d\ge5$とし、定理\ref{fo:thm:formal-reconstruction}の入力を取る。
+$B_N=A_N/(\Omega_N)$、
+$Y_N=V(W_h\bmod h^{N+1})\subset\PP^{d-1}_{R_N}$と置く。
+このとき同じ形式三次式$W_h$を用いて、全ての$N$で
+\[
+ (\mathcal K_{B_N}^{\rm lin},\rho)
+ \simeq
+ (\Ku_{\rm perf}(Y_N/R_N),\rho_{Y_N})
+\]
+を得る。これは指定された内部shift、三次周期性、Artin商への底変更と両立する。
+ここで$\Ku_{\rm perf}$は$\operatorname{Perf}(Y_N)$内で
+$\mathcal O,\ldots,\mathcal O(d-4)$を除いた右直交である。
+既存の正則局所模型からの入力には、命題\ref{am:prop:Gamma-basechange}も適用できる。
+\end{corollary}
+\begin{proof}
+定理\ref{am:thm:comparison}を非可換側と可換側に適用し、
+その間に定理\ref{fo:thm:formal-reconstruction}のMF同値を挟む。
+
+可換側では、$\mathcal O,\mathcal O(-1),\ldots,\mathcal O(-(d-1))$の直和が
+$D_{\rm QCoh}(Y_N)$をcompactに生成する
+\cite[Tag 0BQT, Remark 36.16.4]{AMStacks}。
+具体的には、周囲の射影空間の相対対角分解がその線束生成子を与え、
+閉埋込みのpushforwardがconservativeであることと随伴により、
+そのpullbackが$Y_N$の生成子となる。
+qcqs schemeでcompact対象はperfect対象である
+\cite[Tag 09M1, Proposition 36.17.1]{AMStacks}から、
+これらの線束の厚い閉包は$\operatorname{Perf}(Y_N)$である。
+補題\ref{am:lem:linear-category}で用いた全twistの厚い閉包と一致する。
+各関手のrotationと底変更の両立から、主張するpairの同値を得る。
+\end{proof}

@@ -1,0 +1,142 @@
+\input{papers/reconstruction_extensions/mixed_central_family}
+\section{混合試験族のjetと同変制約}
+\subsection{二次jetと基底表示の区別}
+
+sorted PBW表示に直すと\eqref{mt:eq:center}は
+\begin{align}\label{mt:eq:second-jet}
+ \Omega_{h,\lambda}\equiv{}&
+ \frac{x^3+y^3+z^3}{3}+a\,yx+u^3+v^3
+ +\frac{ha}{2}z^2\notag\\
+ &+h^2\left(-\frac23zyx+\frac{a^2}{6}z\right)
+ \pmod{h^3}.
+\end{align}
+対称表示では偶数冪だけに見える式が、sorted表示では一次項を持つ。
+これは積と基底表示の違いであり、可換復元先の一次変形が非零だという意味ではない。
+$h^2a^2z/6$の補正は必要であり、これを省いた元の$x$との交換子は
+\[
+ -\frac{h^3a^2}{6}(y^2+ax)\pmod{h^4}
+\]
+となる。従って古典混合項を対称化して加えるだけでは中心にならない。
+
+$\lambda=0$では既存の分離型に戻る。
+一方、古典式の混合方向$uxy$は
+\[
+ J(F_0)_3=\bigl(\CC[x,y,z,u,v]/(x^2,y^2,z^2,u^2,v^2)\bigr)_3
+\]
+で非零であり、
+active変数の中心シフトが作る$u\langle x^2,y^2,z^2\rangle$にも属さない。
+従って中心部分空間を固定したactive変数の線形シフトだけで、
+この混合方向を分離型へ戻すことはできない。
+
+\subsection{対角対称性による二次復元候補の一方向への制限}
+
+固定した$\lambda$について、有限対角群
+\[
+ H=\{(\alpha,\beta,\gamma,\delta,\varepsilon)\in\mu_3^5:
+       \alpha\beta\gamma=1\},\qquad
+ \chi(\alpha,\beta,\gamma,\delta,\varepsilon)=\alpha\beta\delta
+\]
+を考える。作用は
+\[
+ (x,y,u,z,v,h)\longmapsto
+ (\alpha x,\beta y,\gamma u,\delta z,\varepsilon v,\chi h)
+\]
+で与える。$\lambda$は固定する。
+
+\begin{lemma}[量子族の同変性とJacobian固有空間]
+\label{mt:lem:character-space}
+この作用は\eqref{mt:eq:relations}の関係式イデアルを保ち、
+$\Omega_{h,\lambda}$および$F_\lambda$を固定する。
+$J_\lambda=\CC[x,y,u,z,v]/(\partial F_\lambda)$とすると、
+次数三の固有空間は
+\begin{equation}\label{mt:eq:character-spaces}
+ (J_\lambda)_3^\chi=\CC\cdot[xyz],\qquad
+ (J_\lambda)_3^{\chi^2}=0.
+\end{equation}
+ここで固有空間の計算は、$\lambda^3=-3$を含む全ての$\lambda$について成り立つ。
+\end{lemma}
+\begin{proof}
+例えば最初の関係式は全体が$\beta\delta$倍になる。
+実際、$\chi\alpha^2=\beta\delta$、
+$\chi\gamma\beta=\beta\delta$である。
+他の二関係式も同様である。
+中心式の各項の重みはそれぞれ一である。
+特に$h^2T$の重みは$\chi^3=1$、
+$h^2a^2z$の重みは$\chi^2\gamma^2\delta=1$、
+$h^4az^2$の重みは$\chi^4\gamma\delta^2=1$となる。
+
+固有空間は単項式の列挙で求まる。
+$\gamma=(\alpha\beta)^{-1}$を消去し、独立な文字を
+$(\alpha,\beta,\delta,\varepsilon)$とすると、
+$(x,y,u,z,v)$の重みはそれぞれ
+\[
+ (1,0,0,0),\ (0,1,0,0),\ (2,2,0,0),\
+ (0,0,1,0),\ (0,0,0,1)
+ \quad\text{in }(\ZZ/3)^4
+\]
+である。多項式環の次数三の$\chi=(1,1,1,0)$固有空間は
+$\langle xyz,u^2z\rangle$だけであり、
+Jacobianイデアルの同じ固有空間は
+\[
+ \langle z\partial_uF_\lambda\rangle
+ =\langle\lambda xyz+3u^2z\rangle
+\]
+だけである。後者の$u^2z$の係数は非零なので、
+商は$[xyz]$で生成される一次元空間となる。
+同様に$\chi^2=(2,2,2,0)$固有空間は
+多項式環では$\langle uz^2\rangle$だけであり、
+$u\partial_zF_\lambda=uz^2$がこれを消す。
+有限群の標数零の表現は半単純なので、この計算は商の固有空間を正確に与える。
+\end{proof}
+
+\begin{corollary}[marked同変復元を仮定した二次係数の制約]
+\label{mt:cor:second-character}
+$\lambda^3\ne-3$とする。
+非可換族に対するmarkedな可換復元が$\CC[h]/(h^3)$上に存在し、
+上記の$H$作用が復元先の偏極付きcubic族に持ち上がって、
+超平面束の特殊ファイバー上の所定の線形化も持ち上がり、
+底の$h\mapsto\chi h$と両立すると仮定する。
+その場合、復元先の一次変形類は零であり、
+一次項を除去した後の二次変形類は
+\begin{equation}\label{mt:eq:unknown-scalar}
+ [G_2]=c(\lambda)[xyz]\in (J_\lambda)_3
+\end{equation}
+という一つの係数で表される。
+本系は復元の存在や、その同変性を証明するものではない。
+\end{corollary}
+\begin{proof}
+有限群について平均を取ることにより、
+超平面束の切断加群の基底を、特殊ファイバーの上記の対角表現を保つように持ち上げられる。
+方程式の生成元も、$F_\lambda$への留数を保って$H$不変に選べる。
+従って方程式を
+$F_\lambda+hG_1+h^2G_2$と書いたとき、
+$G_i$の重みは$\chi^{-i}$である。
+補題\ref{mt:lem:character-space}より$[G_1]=0$である。
+実際、同変座標では$G_1$は$uz^2$のスカラー倍であり、
+$z\mapsto z-hc u$という同変な座標変換で取り除ける。
+この変換の同変性は$\chi\gamma=\delta$による。
+その後も$G_2$の重みは$\chi^{-2}=\chi$なので、
+同じ補題により\eqref{mt:eq:unknown-scalar}を得る。
+\end{proof}
+
+量子代数側の同変性は補題で直接確認したが、
+可換復元への同変性の持上げは系の明示的な仮定である。
+この区別を保ったうえで、残余圏の計算が求める二次変形類を
+一つの係数$c(\lambda)$に絞れる。
+
+第\ref{kj:sec:second-jet}節では星積・指定中心元・曲率を照合し、
+$G_2=xyz/3-\lambda^2u^2z/12$、$c(\lambda)=1/3+\lambda^3/36$を実際に求める。
+同節の積表はMF比較によって得られ、
+第\ref{am:sec:comparison}節の相対windowにより線束生成残余pairにも移る。
+本節の中心式の$h^2$係数をそのまま$G_2$と同一視するものではない。
+一般の非零パラメータへの代数化と残余対角のperfect性は、別の未解決問題である。
+
+証明書の再現は
+\texttt{python3 computations/verify\_mixed\_test\_family.py}
+で行う。同コードは
+\eqref{mt:eq:certificate-x}--\eqref{mt:eq:certificate-z}を
+自由代数内の係数ごとに厳密検算する。
+別に$h^3,h^4,h^5,h^9$を法とするsorted還元、唯一の重なり、
+二次補正を省いた負例も確認し、
+\texttt{mixed\_test\_family\_certificate.json}を生成する。
+自由代数恒等式による全パラメータの中心性と、有限jetの独立検算を区別して記録する。

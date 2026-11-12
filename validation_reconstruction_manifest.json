@@ -1,0 +1,982 @@
+{
+  "source_repository": "uedakazushi/nc-cubic",
+  "source_head": "ba7ec3422e53efc0f64f6d8280734296b98aacfe",
+  "chapters": [
+    {
+      "source": "papers/support/papers/sections/relative_formal_models.tex",
+      "destination": "papers/relative_reconstruction/relative_formal_models.tex",
+      "source_sha256": "9648fe26c56bacea84a9b913437a5ca2457b0f892b82ff33e2da588545cc1421",
+      "shared_existing": false,
+      "math_environment_count": 29,
+      "byte_preserved_math_environment_count": 29,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "9648fe26c56bacea84a9b913437a5ca2457b0f892b82ff33e2da588545cc1421"
+    },
+    {
+      "source": "papers/support/papers/sections/sklyanin_model_theorems.tex",
+      "destination": "papers/relative_reconstruction/sklyanin_model_theorems.tex",
+      "source_sha256": "e4f5e235072798721ec72624c826ba839f71306f9413e493e75116fadb107daa",
+      "shared_existing": false,
+      "math_environment_count": 3,
+      "byte_preserved_math_environment_count": 3,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "e4f5e235072798721ec72624c826ba839f71306f9413e493e75116fadb107daa"
+    },
+    {
+      "source": "papers/support/papers/sections/relative_parameter_boundary.tex",
+      "destination": "papers/relative_reconstruction/relative_parameter_boundary.tex",
+      "source_sha256": "be2231c63691dca8c480a265ec9d855810d27f83eb34286108741f4e4fc181a6",
+      "shared_existing": false,
+      "math_environment_count": 1,
+      "byte_preserved_math_environment_count": 1,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "be2231c63691dca8c480a265ec9d855810d27f83eb34286108741f4e4fc181a6"
+    },
+    {
+      "source": "papers/support/papers/sections/relative_saturation.tex",
+      "destination": "papers/relative_reconstruction/relative_saturation.tex",
+      "source_sha256": "bccffce4acf984b0d0e4f8321af0c094c443703e0c5818d54526e91eedc7ad43",
+      "shared_existing": false,
+      "math_environment_count": 9,
+      "byte_preserved_math_environment_count": 9,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "bccffce4acf984b0d0e4f8321af0c094c443703e0c5818d54526e91eedc7ad43"
+    },
+    {
+      "source": "papers/support/papers/sections/all_poisson_components.tex",
+      "destination": "papers/relative_reconstruction/all_poisson_components.tex",
+      "source_sha256": "897199370e33f5e3131ed773fca4b2c3f9c5e79084db84d4f380ac1be43f450b",
+      "shared_existing": false,
+      "math_environment_count": 28,
+      "byte_preserved_math_environment_count": 28,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "897199370e33f5e3131ed773fca4b2c3f9c5e79084db84d4f380ac1be43f450b"
+    },
+    {
+      "source": "papers/support/papers/sections/minimal_ainfty_arity.tex",
+      "destination": "papers/relative_reconstruction/minimal_ainfty_arity.tex",
+      "source_sha256": "5a7bf4bf88bfda13db8d15403476f66dd94f6ed3720fbd2b68da2c63f1877881",
+      "shared_existing": false,
+      "math_environment_count": 11,
+      "byte_preserved_math_environment_count": 11,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "5a7bf4bf88bfda13db8d15403476f66dd94f6ed3720fbd2b68da2c63f1877881"
+    },
+    {
+      "source": "papers/support/papers/sections/multiblock_generation.tex",
+      "destination": "papers/relative_reconstruction/multiblock_generation.tex",
+      "source_sha256": "9f48b471d06b0a8947f5ac528030851fab10d2c973ddf4c4b576d345274b0dde",
+      "shared_existing": false,
+      "math_environment_count": 42,
+      "byte_preserved_math_environment_count": 42,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "9f48b471d06b0a8947f5ac528030851fab10d2c973ddf4c4b576d345274b0dde"
+    },
+    {
+      "source": "papers/support/papers/sections/rotation_obstruction.tex",
+      "destination": "papers/relative_reconstruction/rotation_obstruction.tex",
+      "source_sha256": "83d13265ddc6c66cdbbcb73602ff6d3eb45569e489411a978de74f6be27a532f",
+      "shared_existing": false,
+      "math_environment_count": 20,
+      "byte_preserved_math_environment_count": 20,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "83d13265ddc6c66cdbbcb73602ff6d3eb45569e489411a978de74f6be27a532f"
+    },
+    {
+      "source": "papers/support/papers/sections/relative_etale_models.tex",
+      "destination": "papers/relative_reconstruction/relative_etale_models.tex",
+      "source_sha256": "21751b1ae492d6aaaca066151e925b3963775358e202cdb9a36a54e18c3871ea",
+      "shared_existing": false,
+      "math_environment_count": 12,
+      "byte_preserved_math_environment_count": 12,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "21751b1ae492d6aaaca066151e925b3963775358e202cdb9a36a54e18c3871ea"
+    },
+    {
+      "source": "papers/support/papers/sections/sklyanin_block_models.tex",
+      "destination": "papers/relative_reconstruction/sklyanin_block_models.tex",
+      "source_sha256": "537c6382f18e834f4cd58da8e378b17a940608d61ca6cba606d15824cc27d3d4",
+      "shared_existing": false,
+      "math_environment_count": 13,
+      "byte_preserved_math_environment_count": 13,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "537c6382f18e834f4cd58da8e378b17a940608d61ca6cba606d15824cc27d3d4"
+    },
+    {
+      "source": "papers/support/papers/sections/local_projective_model.tex",
+      "destination": "papers/relative_reconstruction/local_projective_model.tex",
+      "source_sha256": "f223a861f00c0b93e74ff67c86e37a48e8e9a09537782eedbca242e80a7ce4e3",
+      "shared_existing": false,
+      "math_environment_count": 33,
+      "byte_preserved_math_environment_count": 33,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "f223a861f00c0b93e74ff67c86e37a48e8e9a09537782eedbca242e80a7ce4e3"
+    },
+    {
+      "source": "papers/support/papers/sections/elliptic_reconstruction.tex",
+      "destination": "papers/relative_reconstruction/elliptic_reconstruction.tex",
+      "source_sha256": "97cbb6c4cc4164871233d626a235ea60c4365eb5708a4605c5035b1ff7b16ffc",
+      "shared_existing": false,
+      "math_environment_count": 28,
+      "byte_preserved_math_environment_count": 28,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "97cbb6c4cc4164871233d626a235ea60c4365eb5708a4605c5035b1ff7b16ffc"
+    },
+    {
+      "source": "papers/support/papers/sections/mixed_center_picard.tex",
+      "destination": "papers/relative_reconstruction/mixed_center_picard.tex",
+      "source_sha256": "8d850213441a3dd73b536951793238c7945efd20cd072ae884581a49d8a7e1f7",
+      "shared_existing": false,
+      "math_environment_count": 7,
+      "byte_preserved_math_environment_count": 7,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "4da259b31ecfb3d55efca5ca1b0d87db98c5f917e29ad188ac6ccddba77bdbe5"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/mixed_test_family.tex",
+      "destination": "papers/relative_reconstruction/mixed_test_family.tex",
+      "source_sha256": "2784ba52fd31d9b062a07fde2e56faa2ddaad8517935c4a6060b21dcb54577ab",
+      "shared_existing": false,
+      "additional_shared_inputs": [
+        "papers/reconstruction_extensions/mixed_central_family.tex"
+      ],
+      "math_environment_count": 10,
+      "byte_preserved_math_environment_count": 10,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "273ae19df8f8a91af33bbd53dda52482320832bc8ddf6fb852064d54cf1e173d"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/one_sided_morita_algebraization.tex",
+      "destination": "papers/relative_reconstruction/one_sided_morita_algebraization.tex",
+      "source_sha256": "38b5ec8909f70a62977c900e317b31ef0e353bfe9569ccc8be030b8887c46947",
+      "shared_existing": false,
+      "math_environment_count": 12,
+      "byte_preserved_math_environment_count": 12,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "38b5ec8909f70a62977c900e317b31ef0e353bfe9569ccc8be030b8887c46947"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/complete_curved_transport.tex",
+      "destination": "papers/relative_reconstruction/complete_curved_transport.tex",
+      "source_sha256": "ee71e04eb40ce94880e650f8dd255c286103a1486493a044e8424cabaa9676f2",
+      "shared_existing": false,
+      "math_environment_count": 15,
+      "byte_preserved_math_environment_count": 15,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "ee71e04eb40ce94880e650f8dd255c286103a1486493a044e8424cabaa9676f2"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/curved_gauge_comparison.tex",
+      "destination": "papers/relative_reconstruction/curved_gauge_comparison.tex",
+      "source_sha256": "4bffc40e342fe29cf73b95a13e28d0276b2a69a63ac91af1f1d3adbd6009c13a",
+      "shared_existing": false,
+      "math_environment_count": 12,
+      "byte_preserved_math_environment_count": 12,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "4bffc40e342fe29cf73b95a13e28d0276b2a69a63ac91af1f1d3adbd6009c13a"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/generic_cubic_descent.tex",
+      "destination": "papers/relative_reconstruction/generic_cubic_descent.tex",
+      "source_sha256": "81d35d60383ac50ba13d2642a006bafbc152e96c0f9a4328872f66db0268cba2",
+      "shared_existing": false,
+      "math_environment_count": 16,
+      "byte_preserved_math_environment_count": 16,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "81d35d60383ac50ba13d2642a006bafbc152e96c0f9a4328872f66db0268cba2"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/kontsevich_second_jet.tex",
+      "destination": "papers/relative_reconstruction/kontsevich_second_jet.tex",
+      "source_sha256": "abc789dbbd89276d189e4d95656ee2305e6fcb716f95faf3c7fa9b990d341e90",
+      "shared_existing": false,
+      "math_environment_count": 14,
+      "byte_preserved_math_environment_count": 14,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "abc789dbbd89276d189e4d95656ee2305e6fcb716f95faf3c7fa9b990d341e90"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/artin_residual_mf_comparison.tex",
+      "destination": "papers/artin_windows/comparison.tex",
+      "source_sha256": "4f8c06b178b08dbc76643399a9e3aac99568e7de3abc13db92e29f6acedcc11e",
+      "shared_existing": true,
+      "additional_shared_inputs": [
+        "papers/artin_windows/regular_basechange.tex",
+        "papers/relative_reconstruction/formal_residual_application.tex"
+      ],
+      "math_environment_count": 18,
+      "byte_preserved_math_environment_count": 13,
+      "contextually_adjusted_math_environments": [
+        {
+          "environment": "proof",
+          "labels": [],
+          "prefix": " 式\\eqref{am:eq:relative-koszul}を$A$で双対化する。 各内部次数は有界有限自由$R_N$-複体であり、剰余は通常のKoszul双対性を満たす。 単元"
+        },
+        {
+          "environment": "proof",
+          "labels": [],
+          "prefix": " 式\\eqref{cg:eq:bidegree}のbigradingでHomを書けば、 各cohomological degreeは有限個の$A_j$の直和であり、有限自由$R_N"
+        },
+        {
+          "environment": "proposition",
+          "labels": [
+            "am:prop:Gamma-basechange"
+          ],
+          "prefix": "[既存の$\\Gamma_R$模型のArtin底変更]\\label{am:prop:Gamma-basechange} 第\\ref{lp:sec:main}節の正則局所基底$R$上の"
+        },
+        {
+          "environment": "proof",
+          "labels": [],
+          "prefix": " 既存の命題\\ref{lp:prop:basechange}の結論を、変更先が非正則である場合へ無断で適用しない。 線束だけに必要な底変更を改めて確認する。 正則$R$上で$M_\\"
+        },
+        {
+          "environment": "remark",
+          "labels": [],
+          "prefix": "[結論の位置づけ] 第\\ref{fo:sec:formal-cubic}節と本節を合成すると、上の入力を満たす全有限Artin切断において、 線束生成残余pairは同じ可換形式三次"
+        }
+      ],
+      "destination_sha256": "63bb590b053adeabc5d94077bcb2e082f74e19c5829fe820d0ba55ef8242cebe"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/diagonal_kernel_identity.tex",
+      "destination": "papers/relative_reconstruction/diagonal_kernel_identity.tex",
+      "source_sha256": "c79d4d99d6808bc4a1fb5d63c57862c6d6587964bbc01108b2ad6b32fe991a21",
+      "shared_existing": false,
+      "math_environment_count": 6,
+      "byte_preserved_math_environment_count": 6,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "c79d4d99d6808bc4a1fb5d63c57862c6d6587964bbc01108b2ad6b32fe991a21"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/explicit_model_comparison.tex",
+      "destination": "papers/relative_reconstruction/explicit_model_comparison.tex",
+      "source_sha256": "49f5c6766692f5f0457779b819051254b95f41c9d9957cb591f1c365912c03f8",
+      "shared_existing": false,
+      "math_environment_count": 13,
+      "byte_preserved_math_environment_count": 13,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "49f5c6766692f5f0457779b819051254b95f41c9d9957cb591f1c365912c03f8"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/multiplicative_bar_comparison.tex",
+      "destination": "papers/relative_reconstruction/multiplicative_bar_comparison.tex",
+      "source_sha256": "0541880e68ac471c011aeb1181322938e1c9b58fd8fa5c5151ca1bfc5eff20a7",
+      "shared_existing": false,
+      "math_environment_count": 18,
+      "byte_preserved_math_environment_count": 18,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "0541880e68ac471c011aeb1181322938e1c9b58fd8fa5c5151ca1bfc5eff20a7"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/geometric_rotation_basechange.tex",
+      "destination": "papers/relative_reconstruction/geometric_rotation_basechange.tex",
+      "source_sha256": "5645f785b6df5900ac2a6a573f3603eaf109dae7b59c1a06af3bd862cd76b09f",
+      "shared_existing": false,
+      "math_environment_count": 16,
+      "byte_preserved_math_environment_count": 16,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "5645f785b6df5900ac2a6a573f3603eaf109dae7b59c1a06af3bd862cd76b09f"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/regular_diagonal_recovery.tex",
+      "destination": "papers/relative_reconstruction/regular_diagonal_recovery.tex",
+      "source_sha256": "67a1ba81cc6c34f0862eb9a0f30829d27691b17ec059afc113deb2ae6a34bca9",
+      "shared_existing": false,
+      "math_environment_count": 11,
+      "byte_preserved_math_environment_count": 11,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "67a1ba81cc6c34f0862eb9a0f30829d27691b17ec059afc113deb2ae6a34bca9"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/artin_smoothness_obstruction.tex",
+      "destination": "papers/artin_windows/artin_smoothness_obstruction.tex",
+      "source_sha256": "44e27b7466f6cf92aadd5a449f29fa966cbfe66969907c961bbcbde203e7e8b0",
+      "shared_existing": true,
+      "math_environment_count": 11,
+      "byte_preserved_math_environment_count": 9,
+      "contextually_adjusted_math_environments": [
+        {
+          "environment": "proof",
+          "labels": [],
+          "prefix": " 射影直線の相対Beilinson分解により、perfect圏の底変更と perfect対象間のHomの導来底変更は$R_N\\to\\CC$と両立する。 従って補題\\ref{am:l"
+        },
+        {
+          "environment": "remark",
+          "labels": [],
+          "prefix": "[この反例の適用範囲] $R_N\\in\\operatorname{thick}_{D(R_N)}(\\CC)$はArtin基底での生成子の持上げを支える。 しかし$R=\\CC[[h]"
+        }
+      ],
+      "destination_sha256": "5262d42a0d3e77153bd028ed20ce0cbb53958c4d21b96d81f4d1696f990b7653"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/central_symmetry_lifting.tex",
+      "destination": "papers/relative_reconstruction/central_symmetry_lifting.tex",
+      "source_sha256": "aa03e1e7a83c7138fad9ecf6ac1deae7d5e0ef65b89b2ab0a547d4e22bb7ab01",
+      "shared_existing": false,
+      "math_environment_count": 7,
+      "byte_preserved_math_environment_count": 7,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "aa03e1e7a83c7138fad9ecf6ac1deae7d5e0ef65b89b2ab0a547d4e22bb7ab01"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/finite_algebraic_recovery.tex",
+      "destination": "papers/relative_reconstruction/finite_algebraic_recovery.tex",
+      "source_sha256": "a525a34a19d4695725d491b2c423e6755d2a5a689fbb94a565d78e485717cbfb",
+      "shared_existing": false,
+      "math_environment_count": 18,
+      "byte_preserved_math_environment_count": 18,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "a525a34a19d4695725d491b2c423e6755d2a5a689fbb94a565d78e485717cbfb"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/curved_diagonal_recovery.tex",
+      "destination": "papers/relative_reconstruction/curved_diagonal_recovery.tex",
+      "source_sha256": "a3c677241ca67ccf0daae1b884eeb4106497848c266f2d9b26eb459a30ea43f3",
+      "shared_existing": false,
+      "math_environment_count": 13,
+      "byte_preserved_math_environment_count": 13,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "a3c677241ca67ccf0daae1b884eeb4106497848c266f2d9b26eb459a30ea43f3"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/rotation_orbit_generic_reconstruction.tex",
+      "destination": "papers/relative_reconstruction/rotation_orbit_generic_reconstruction.tex",
+      "source_sha256": "ecd3bef49eb6dbfbc572128edde848413115b5fec35f4d6c1349e3cfc52bfabc",
+      "shared_existing": false,
+      "math_environment_count": 17,
+      "byte_preserved_math_environment_count": 17,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "ecd3bef49eb6dbfbc572128edde848413115b5fec35f4d6c1349e3cfc52bfabc"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/etale_realization.tex",
+      "destination": "papers/relative_realization/etale_realization.tex",
+      "source_sha256": "47c5d36df270a46064bed8d4903f01dcb5a23a7bd2625592a8cb58d5447e776f",
+      "shared_existing": true,
+      "math_environment_count": 13,
+      "byte_preserved_math_environment_count": 13,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "47c5d36df270a46064bed8d4903f01dcb5a23a7bd2625592a8cb58d5447e776f"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/hochschild_obstructions.tex",
+      "destination": "papers/relative_realization/hochschild_obstructions.tex",
+      "source_sha256": "6786ef7b684ae6cfeaeabb6c9b5eefb46ac72e0689cb87a2f2e7ed895daa75a8",
+      "shared_existing": true,
+      "math_environment_count": 5,
+      "byte_preserved_math_environment_count": 3,
+      "contextually_adjusted_math_environments": [
+        {
+          "environment": "corollary",
+          "labels": [
+            "ho:cor:fivefold",
+            "ho:eq:fivefold"
+          ],
+          "prefix": "[非楕円cubic fivefoldの変形障害の所在]\\label{ho:cor:fivefold} 本研究の節点型・尖点型の二つの滑らかな可換特殊ファイバー $X^5$について、"
+        },
+        {
+          "environment": "remark",
+          "labels": [
+            "ho:rem:barrier"
+          ],
+          "prefix": "[残余対角との論理的境界]\\label{ho:rem:barrier} $\\operatorname{HH}^3(\\Ku(X))^\\rho=0$は重要な形式的情報であるが、 この不"
+        }
+      ],
+      "destination_sha256": "3cf2df1498cb5577b04b4be8f904a08dbef82f27b1ea2eb4768684b696245403"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/general_dimension_recovery.tex",
+      "destination": "papers/relative_reconstruction/general_dimension_recovery.tex",
+      "source_sha256": "587acec9716d22b3edb07a894e0044132fab16219725f187417a5e5c302b8eb6",
+      "shared_existing": false,
+      "math_environment_count": 8,
+      "byte_preserved_math_environment_count": 8,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "587acec9716d22b3edb07a894e0044132fab16219725f187417a5e5c302b8eb6"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/mixed_equivariant_normal_form.tex",
+      "destination": "papers/relative_reconstruction/mixed_equivariant_normal_form.tex",
+      "source_sha256": "a2049cc0c8f293d5f0cc1a1d1569a4d9431546b9231652734a319ee012aac09e",
+      "shared_existing": false,
+      "math_environment_count": 9,
+      "byte_preserved_math_environment_count": 9,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "a2049cc0c8f293d5f0cc1a1d1569a4d9431546b9231652734a319ee012aac09e"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/rotation_saturation_reduction.tex",
+      "destination": "papers/relative_reconstruction/rotation_saturation_reduction.tex",
+      "source_sha256": "a4efe41ba2edec0f59ae9d2284551a6ac6a71cdb5829b0f839ef140225dd1516",
+      "shared_existing": false,
+      "normalization": "Removed standalone preamble and duplicate embedded etale/Hochschild inputs; local references and bibliography keys prefixed RSR to distinguish different works.",
+      "math_environment_count": 47,
+      "byte_preserved_math_environment_count": 47,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "113d13b9f73f30c79f6fff48f2c4b019b2dcaa12b57e94d0d60b0031bbf8e02c"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/three_object_window.tex",
+      "destination": "papers/relative_reconstruction/three_object_window.tex",
+      "source_sha256": "dd86c1fae6fbbe2aa563b1a6269c5d31b9dac7bcd60aa0e473c72043e2658274",
+      "shared_existing": false,
+      "math_environment_count": 12,
+      "byte_preserved_math_environment_count": 12,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "dd86c1fae6fbbe2aa563b1a6269c5d31b9dac7bcd60aa0e473c72043e2658274"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/relative_artin_sector.tex",
+      "destination": "papers/relative_reconstruction/relative_artin_sector.tex",
+      "source_sha256": "3d684e629ba646bdf2e31b49f4f0d05968344c59ab0486370335e4ae4c933b75",
+      "shared_existing": false,
+      "math_environment_count": 17,
+      "byte_preserved_math_environment_count": 17,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "3d684e629ba646bdf2e31b49f4f0d05968344c59ab0486370335e4ae4c933b75"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/artin_rotation_obstructions.tex",
+      "destination": "papers/relative_reconstruction/artin_rotation_obstructions.tex",
+      "source_sha256": "2001558f16e67921077113e8bd9a641be9ee76e438146249581bde27abaa03a4",
+      "shared_existing": false,
+      "math_environment_count": 10,
+      "byte_preserved_math_environment_count": 10,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "2001558f16e67921077113e8bd9a641be9ee76e438146249581bde27abaa03a4"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/coherent_residual_saturation.tex",
+      "destination": "papers/relative_reconstruction/coherent_residual_saturation.tex",
+      "source_sha256": "21c2f031cbf8ffcc1c9999dac54e3df5f599f254c6e60516bbdc7eb84250357b",
+      "shared_existing": false,
+      "math_environment_count": 18,
+      "byte_preserved_math_environment_count": 18,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "21c2f031cbf8ffcc1c9999dac54e3df5f599f254c6e60516bbdc7eb84250357b"
+    },
+    {
+      "source": "papers/support/papers/reconstruction/formal_cubic_mf_reconstruction.tex",
+      "destination": "papers/relative_reconstruction/formal_cubic_mf_reconstruction.tex",
+      "source_sha256": "51112ce6e782dace6cf5cd7ea0fd1f18ce8358c14fe801fad5d7f252bdcfbcde",
+      "shared_existing": false,
+      "math_environment_count": 14,
+      "byte_preserved_math_environment_count": 14,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "51112ce6e782dace6cf5cd7ea0fd1f18ce8358c14fe801fad5d7f252bdcfbcde"
+    },
+    {
+      "source": "papers/support/papers/independent/poisson_second_jet.tex",
+      "destination": "papers/relative_reconstruction/poisson_second_jet.tex",
+      "source_sha256": "53ef938c2f4d9639cbc338b48d9ffd38a60f7853461ecb46d6a9aef1be265a62",
+      "normalization": "Removed standalone preamble, bibliography namespaced P2; corrected current ambient manuscript locations.",
+      "math_environment_count": 5,
+      "byte_preserved_math_environment_count": 5,
+      "contextually_adjusted_math_environments": [],
+      "destination_sha256": "4723578dd39ef6f3b7f5a4248191577ed5630239ab8c24e803955ab6865139ab"
+    }
+  ],
+  "scope": "Current integrated proofs, not an archive; shared companion chapters have one canonical source. Mathematical audit and novelty not implied.",
+  "assets": [
+    {
+      "source": "computations/absolute_diagonal.py",
+      "destination": "computations/absolute_diagonal.py",
+      "sha256": "7e14c7f207f8a11384814420c5bd29a7d1bd2471a1d2f41e8692d1a9419faf0e",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "7e14c7f207f8a11384814420c5bd29a7d1bd2471a1d2f41e8692d1a9419faf0e"
+    },
+    {
+      "source": "computations/curved_diagonal.py",
+      "destination": "computations/curved_diagonal.py",
+      "sha256": "f223cce710f85d03757fcf642ab93006ebe220ecf60a203fafd1894cc1437d0e",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "f223cce710f85d03757fcf642ab93006ebe220ecf60a203fafd1894cc1437d0e"
+    },
+    {
+      "source": "computations/regular_diagonal.py",
+      "destination": "computations/regular_diagonal.py",
+      "sha256": "60e95ccf6fcded4f4798afdaa1ea7738ee21c785feafc2ef2c60877ba8bc0e41",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "60e95ccf6fcded4f4798afdaa1ea7738ee21c785feafc2ef2c60877ba8bc0e41"
+    },
+    {
+      "source": "computations/finite_recovery.py",
+      "destination": "computations/finite_recovery.py",
+      "sha256": "185cba1a20b758b74eb8c40cb1dae343d07ddb02c5a54501faecab0cb1d133ca",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "185cba1a20b758b74eb8c40cb1dae343d07ddb02c5a54501faecab0cb1d133ca"
+    },
+    {
+      "source": "computations/verify_finite_recovery.py",
+      "destination": "computations/verify_finite_recovery.py",
+      "sha256": "cb2aaf89db8ed171355ea1cb039836b348fd5b987618230df4cf6972e528f531",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "cb2aaf89db8ed171355ea1cb039836b348fd5b987618230df4cf6972e528f531"
+    },
+    {
+      "source": "computations/verify_curved_diagonal.py",
+      "destination": "computations/verify_curved_diagonal.py",
+      "sha256": "d3bff5d1f5ef95295f3dbc519b6b973c33ef48176485946bf0c12eed19dd3598",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "d3bff5d1f5ef95295f3dbc519b6b973c33ef48176485946bf0c12eed19dd3598"
+    },
+    {
+      "source": "computations/verify_regular_diagonal.py",
+      "destination": "computations/verify_regular_diagonal.py",
+      "sha256": "6432bb54356c7940c173ecc9b73c5d38b46c7306a16a498f577745f8ddf7f188",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "6432bb54356c7940c173ecc9b73c5d38b46c7306a16a498f577745f8ddf7f188"
+    },
+    {
+      "source": "computations/verify_bar_comparison.py",
+      "destination": "computations/verify_bar_comparison.py",
+      "sha256": "2db58317cd808db55908ad522f6bb8512d2bb478b3f9a325f6d8da8f38b34037",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "2db58317cd808db55908ad522f6bb8512d2bb478b3f9a325f6d8da8f38b34037"
+    },
+    {
+      "source": "computations/verify_artin_sectors.py",
+      "destination": "computations/verify_artin_sectors.py",
+      "sha256": "7a91ce8985054e3958bba1a3bcbd66bc821bbc9b2fe9866eeda781f42ec1c84f",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "7a91ce8985054e3958bba1a3bcbd66bc821bbc9b2fe9866eeda781f42ec1c84f"
+    },
+    {
+      "source": "computations/verify_diagonal_identity.py",
+      "destination": "computations/verify_diagonal_identity.py",
+      "sha256": "e2963b6ed98d859bc132d086591474e7faaeb66004fdc20f642dc7cf21be9ba9",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "e2963b6ed98d859bc132d086591474e7faaeb66004fdc20f642dc7cf21be9ba9"
+    },
+    {
+      "source": "computations/verify_artin_rotation_obstructions.py",
+      "destination": "computations/verify_artin_rotation_obstructions.py",
+      "sha256": "8a50896a8763d1984587f13a7f7d90d4dcc8cb14d75875cefd0591541707e9e5",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "8a50896a8763d1984587f13a7f7d90d4dcc8cb14d75875cefd0591541707e9e5"
+    },
+    {
+      "source": "computations/verify_central_symmetry.py",
+      "destination": "computations/verify_central_symmetry.py",
+      "sha256": "e648b6e3b09f3d07b30ec07cd0688b62cae45f698e85111e55a24d8bf808177e",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "e648b6e3b09f3d07b30ec07cd0688b62cae45f698e85111e55a24d8bf808177e"
+    },
+    {
+      "source": "computations/verify_geometric_rotation.py",
+      "destination": "computations/verify_geometric_rotation.py",
+      "sha256": "d2c7466a9ff0790f7d024199964ce1eebfe18c23713fecaf7b001c655d141d07",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "d2c7466a9ff0790f7d024199964ce1eebfe18c23713fecaf7b001c655d141d07"
+    },
+    {
+      "source": "computations/verify_one_sided_morita.py",
+      "destination": "computations/verify_one_sided_morita.py",
+      "sha256": "9ede695dfa92d47039e81e41fd1a979b18f4019234d16fc59ef15d360c5c4acb",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "9ede695dfa92d47039e81e41fd1a979b18f4019234d16fc59ef15d360c5c4acb"
+    },
+    {
+      "source": "computations/verify_rotation_orbit.py",
+      "destination": "computations/verify_rotation_orbit.py",
+      "sha256": "a77f70604ce4c2a0ebcda64f6f2217c91c0f5f00fbae42ec051fce649b7dfdb5",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "a77f70604ce4c2a0ebcda64f6f2217c91c0f5f00fbae42ec051fce649b7dfdb5"
+    },
+    {
+      "source": "computations/verify_componentwise_reconstruction.py",
+      "destination": "computations/verify_componentwise_reconstruction.py",
+      "sha256": "685765b3b493c721294bcb904e76af028e470695ebd0ec2360621ef0693e1e88",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "685765b3b493c721294bcb904e76af028e470695ebd0ec2360621ef0693e1e88"
+    },
+    {
+      "source": "computations/verify_explicit_model_comparison.py",
+      "destination": "computations/verify_explicit_model_comparison.py",
+      "sha256": "64458f676ba81b8d45d0d849d36c4cdb8642d039509d26061069c24c1ef27107",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "64458f676ba81b8d45d0d849d36c4cdb8642d039509d26061069c24c1ef27107"
+    },
+    {
+      "source": "computations/verify_kontsevich_second_jet.py",
+      "destination": "computations/verify_kontsevich_second_jet.py",
+      "sha256": "b4aec38cf32078dead4306db38796cb2129954e0fab0702c6d1f86e3c609b308",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "b4aec38cf32078dead4306db38796cb2129954e0fab0702c6d1f86e3c609b308"
+    },
+    {
+      "source": "computations/verify_general_dimension_multiblock.py",
+      "destination": "computations/verify_general_dimension_multiblock.py",
+      "sha256": "f4a382350f1e80ff8ae3c7afcdf7591b090a999b3256bdf7e34249ebb4387741",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "f4a382350f1e80ff8ae3c7afcdf7591b090a999b3256bdf7e34249ebb4387741"
+    },
+    {
+      "source": "computations/verify_local_projective_model.py",
+      "destination": "computations/verify_local_projective_model.py",
+      "sha256": "ef65366671aa38fb46aa4387f6adf6d9e2bbf8999b3f19a7a831037c9d32a5c7",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "ef65366671aa38fb46aa4387f6adf6d9e2bbf8999b3f19a7a831037c9d32a5c7"
+    },
+    {
+      "source": "computations/verify_minimal_ainfty_arity.py",
+      "destination": "computations/verify_minimal_ainfty_arity.py",
+      "sha256": "8883f4b7acd144ce28fc21f9cef18d785d66d9be8e4c6eb0c1e397bd6afd598a",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "8883f4b7acd144ce28fc21f9cef18d785d66d9be8e4c6eb0c1e397bd6afd598a"
+    },
+    {
+      "source": "computations/verify_complete_curved_transport.py",
+      "destination": "computations/verify_complete_curved_transport.py",
+      "sha256": "cf95171f6c049d1eff40bea5d68d519922947c78e5a818f9175021707537c9bf",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "cf95171f6c049d1eff40bea5d68d519922947c78e5a818f9175021707537c9bf"
+    },
+    {
+      "source": "computations/verify_generic_cubic_descent.py",
+      "destination": "computations/verify_generic_cubic_descent.py",
+      "sha256": "af0152bcd0f67e55c721458164cbd56b77fefbfc388b846c55a2fdadbb3d7ef7",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "af0152bcd0f67e55c721458164cbd56b77fefbfc388b846c55a2fdadbb3d7ef7"
+    },
+    {
+      "source": "computations/verify_three_object_window.py",
+      "destination": "computations/verify_three_object_window.py",
+      "sha256": "5b642e79e43e50fc305b9958d3b816409387b0e1138563b31e0415c54ba936e4",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "5b642e79e43e50fc305b9958d3b816409387b0e1138563b31e0415c54ba936e4"
+    },
+    {
+      "source": "computations/verify_reconstruction.py",
+      "destination": "computations/verify_reconstruction.py",
+      "sha256": "314cc7a230c03fb3a6c6ee93919acff0b83af4514eabb3c59b364a1e3b6b8fcd",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "314cc7a230c03fb3a6c6ee93919acff0b83af4514eabb3c59b364a1e3b6b8fcd"
+    },
+    {
+      "source": "computations/verify_rotation_obstructions.py",
+      "destination": "computations/verify_rotation_obstructions.py",
+      "sha256": "f69061b161e62196774bd2d7fe24aca67af1e7bb81151955f73b6bcff75bf20d",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "f69061b161e62196774bd2d7fe24aca67af1e7bb81151955f73b6bcff75bf20d"
+    },
+    {
+      "source": "computations/verify_mixed_center.py",
+      "destination": "computations/verify_mixed_center.py",
+      "sha256": "5cf5db99b76ddc3577f434a0035fd8f5088fbab25247ff0e9244140690af103c",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "5cf5db99b76ddc3577f434a0035fd8f5088fbab25247ff0e9244140690af103c"
+    },
+    {
+      "source": "computations/verify_mixed_characters.py",
+      "destination": "computations/verify_mixed_characters.py",
+      "sha256": "44889f3339d73dfe52fe04fd0b7583ce3167dc6d2f5c70260e8c1fadb2b5a621",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "44889f3339d73dfe52fe04fd0b7583ce3167dc6d2f5c70260e8c1fadb2b5a621"
+    },
+    {
+      "source": "computations/verify_universal_fermat_mixed_center.py",
+      "destination": "computations/verify_universal_fermat_mixed_center.py",
+      "sha256": "e62ee8eb554da97e4cc7e97d568a49604a495a3abcf3e87de1e0f4f4f0396517",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "e62ee8eb554da97e4cc7e97d568a49604a495a3abcf3e87de1e0f4f4f0396517"
+    },
+    {
+      "source": "computations/verify_algebra.py",
+      "destination": "computations/verify_algebra.py",
+      "sha256": "8a2fc1107b3e2ae6093492f1cafb6c45bd676d232b35f88249a319f0d40a6ad3",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "8a2fc1107b3e2ae6093492f1cafb6c45bd676d232b35f88249a319f0d40a6ad3"
+    },
+    {
+      "source": "computations/artin_rotation_obstructions_certificate.json",
+      "destination": "computations/artin_rotation_obstructions_certificate.json",
+      "sha256": "3bb76d56fe0976c2bde6414ca32c1eff725f7cf30f4fe721557a2ad8352b13ed",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "3bb76d56fe0976c2bde6414ca32c1eff725f7cf30f4fe721557a2ad8352b13ed"
+    },
+    {
+      "source": "computations/artin_sector_certificate.json",
+      "destination": "computations/artin_sector_certificate.json",
+      "sha256": "bba2a6af07a0161eb8456df63709659764b235c08ef16fc44384f4805c448973",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "bba2a6af07a0161eb8456df63709659764b235c08ef16fc44384f4805c448973"
+    },
+    {
+      "source": "computations/bar_comparison_certificate.json",
+      "destination": "computations/bar_comparison_certificate.json",
+      "sha256": "ff20ce14168f77a343e522243fdd127def255b625623bff19bb4677c75b13be6",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "ff20ce14168f77a343e522243fdd127def255b625623bff19bb4677c75b13be6"
+    },
+    {
+      "source": "computations/central_symmetry_certificate.json",
+      "destination": "computations/central_symmetry_certificate.json",
+      "sha256": "86d3c717e5282c7e45b98dddf9451299078afdce69cbc61b7778c7180eb4fdfd",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "86d3c717e5282c7e45b98dddf9451299078afdce69cbc61b7778c7180eb4fdfd"
+    },
+    {
+      "source": "computations/componentwise_checks.json",
+      "destination": "computations/componentwise_checks.json",
+      "sha256": "eb59f4c654c9e0861e8e28fdba75a97830ed9ec9c2724536c8e0416ed6331b4d",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "eb59f4c654c9e0861e8e28fdba75a97830ed9ec9c2724536c8e0416ed6331b4d"
+    },
+    {
+      "source": "computations/curved_diagonal_certificate.json",
+      "destination": "computations/curved_diagonal_certificate.json",
+      "sha256": "8a5f756cb74afa7820262533a7f2361a3d73c517115dffe7afc23d4228ee0bb9",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "8a5f756cb74afa7820262533a7f2361a3d73c517115dffe7afc23d4228ee0bb9"
+    },
+    {
+      "source": "computations/diagonal_identity_certificate.json",
+      "destination": "computations/diagonal_identity_certificate.json",
+      "sha256": "ea31b89df010ac45e06a5374fba0bf5bacabd16dc633c06fe143058ab9a53453",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "ea31b89df010ac45e06a5374fba0bf5bacabd16dc633c06fe143058ab9a53453"
+    },
+    {
+      "source": "computations/explicit_model_comparison_certificate.json",
+      "destination": "computations/explicit_model_comparison_certificate.json",
+      "sha256": "359a1dca15497bebff38f10533657928e68b87329f2f0cd07f9d326a3973e207",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "359a1dca15497bebff38f10533657928e68b87329f2f0cd07f9d326a3973e207"
+    },
+    {
+      "source": "computations/fermat_center_certificate.json",
+      "destination": "computations/fermat_center_certificate.json",
+      "sha256": "16004f364f0ec69dc19fb31137b9e3ced7c6617630a0b50f5f50851811c655d3",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "16004f364f0ec69dc19fb31137b9e3ced7c6617630a0b50f5f50851811c655d3"
+    },
+    {
+      "source": "computations/finite_recovery_certificate.json",
+      "destination": "computations/finite_recovery_certificate.json",
+      "sha256": "c17a7b4bcf1feb8f955fda8e70b2f0dca8f75b93faf12692e0faa2d291e59c05",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "c17a7b4bcf1feb8f955fda8e70b2f0dca8f75b93faf12692e0faa2d291e59c05"
+    },
+    {
+      "source": "computations/geometric_rotation_certificate.json",
+      "destination": "computations/geometric_rotation_certificate.json",
+      "sha256": "1e8b9226d72df00451ba524e8db92274fa22ec41becb122011c86051cc86f7df",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "1e8b9226d72df00451ba524e8db92274fa22ec41becb122011c86051cc86f7df"
+    },
+    {
+      "source": "computations/local_projective_certificate.json",
+      "destination": "computations/local_projective_certificate.json",
+      "sha256": "25e0394c36a1d96077feab621152514e3165e9dbda165931c26ca2bda88c33b8",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "25e0394c36a1d96077feab621152514e3165e9dbda165931c26ca2bda88c33b8"
+    },
+    {
+      "source": "computations/minimal_ainfty_arity_certificate.json",
+      "destination": "computations/minimal_ainfty_arity_certificate.json",
+      "sha256": "697d6d5b9a7edf5629ed0b358080b315a95f7a213f09a92e8ced165548e1ef4a",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "697d6d5b9a7edf5629ed0b358080b315a95f7a213f09a92e8ced165548e1ef4a"
+    },
+    {
+      "source": "computations/mixed_test_family_certificate.json",
+      "destination": "computations/mixed_test_family_certificate.json",
+      "sha256": "c8a13f3d922888a7d1ccb7446a41914b6cb0f7fccaf75be5ac5a98e7fac96e73",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "1c3592dd39a17e6635d30c5e24302a0ae971b033e3376826f7b67a735c67f44b"
+    },
+    {
+      "source": "computations/one_sided_morita_certificate.json",
+      "destination": "computations/one_sided_morita_certificate.json",
+      "sha256": "7f47442aa1b064abf4af024c08497f196b9c516fb5746b4d2dd410968139f6b7",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "7f47442aa1b064abf4af024c08497f196b9c516fb5746b4d2dd410968139f6b7"
+    },
+    {
+      "source": "computations/reconstruction_certificate.json",
+      "destination": "computations/reconstruction_certificate.json",
+      "sha256": "bbd520c32be04b87458e85c03943b1ebbf6a3b789f059f176c8d36a14a5f752e",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "003a55344b7b3dc73ce9e01842cd5bcf8123547e2157164578e880a4ed3854a0"
+    },
+    {
+      "source": "computations/regular_diagonal_certificate.json",
+      "destination": "computations/regular_diagonal_certificate.json",
+      "sha256": "8b16ca199880404c2405e229165167b7ddc28bacdc386d5ee76c10d6052f214c",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "8b16ca199880404c2405e229165167b7ddc28bacdc386d5ee76c10d6052f214c"
+    },
+    {
+      "source": "computations/rotation_obstructions.json",
+      "destination": "computations/rotation_obstructions.json",
+      "sha256": "aa21242f212d9af542491a86e65208f25df150d766df3122a77ac1c76e4c4670",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "aa21242f212d9af542491a86e65208f25df150d766df3122a77ac1c76e4c4670"
+    },
+    {
+      "source": "computations/rotation_orbit_certificate.json",
+      "destination": "computations/rotation_orbit_certificate.json",
+      "sha256": "a06dfd4f667f29703c0bbe7a417c73db788bc42b7a0c4facc535cc5e97497260",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "a06dfd4f667f29703c0bbe7a417c73db788bc42b7a0c4facc535cc5e97497260"
+    },
+    {
+      "source": "reconstruction/computations/verify_etale_inputs.py",
+      "destination": "computations/verify_etale_inputs.py",
+      "sha256": "8eb27e95c1fe317cf97a155f1d6bfa68feff1d6c32443be4e65adb3ae0f5525f",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "8eb27e95c1fe317cf97a155f1d6bfa68feff1d6c32443be4e65adb3ae0f5525f"
+    },
+    {
+      "source": "reconstruction/computations/etale_input_checks.json",
+      "destination": "computations/etale_input_checks.json",
+      "sha256": "a3e0a5ba55b43703c76e2e8701193295384abd00056ec0e87e36f12b4476ef7d",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "a3e0a5ba55b43703c76e2e8701193295384abd00056ec0e87e36f12b4476ef7d"
+    },
+    {
+      "source": "reconstruction/computations/verify_nonelliptic_inputs.py",
+      "destination": "computations/verify_nonelliptic_inputs.py",
+      "sha256": "83b796ccab7de048d6e4f4ce69ee9af6863ec0f16987c1768dccc3698750969e",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "83b796ccab7de048d6e4f4ce69ee9af6863ec0f16987c1768dccc3698750969e"
+    },
+    {
+      "source": "reconstruction/computations/input_checks.json",
+      "destination": "computations/input_checks.json",
+      "sha256": "2e7db379fc3e7a67bdefc1e277174e59c95992752bfacda88fb27796b0c1d4fc",
+      "source_retention": "Shared A/B verification may remain; no blanket script deletion.",
+      "destination_sha256": "2e7db379fc3e7a67bdefc1e277174e59c95992752bfacda88fb27796b0c1d4fc"
+    },
+    {
+      "source": "computations/verify_mixed_test_family.py",
+      "destination": "computations/verify_mixed_test_family.py",
+      "normalization": "Existing destination differs only in proof_formulas_source path, already points to canonical shared proof.",
+      "destination_sha256": "9446be20ff91d009408b222c26f9d1469fb2891ffc74f6b03d6fad8f142e312d"
+    },
+    {
+      "source": "computations/independent/verify_2jet.py",
+      "destination": "computations/independent/verify_2jet.py",
+      "sha256": "d6a0495930004c7d981196b4ce6286f339af3b62f159f6454af706609bf9e052",
+      "destination_sha256": "d6a0495930004c7d981196b4ce6286f339af3b62f159f6454af706609bf9e052"
+    },
+    {
+      "source": "reconstruction/computations/hochschild_sector_checks.json",
+      "destination": "computations/hochschild_sector_checks.json",
+      "sha256": "9bfe139151e2001d020b0c2c2508166416df4eb5e291deff5ffc68f0002ba1e7",
+      "destination_sha256": "9bfe139151e2001d020b0c2c2508166416df4eb5e291deff5ffc68f0002ba1e7"
+    }
+  ],
+  "notes": [
+    {
+      "source": "notes/artin_rotation_obstructions.md",
+      "destination": "notes/relative_reconstruction/artin_rotation_obstructions.md"
+    },
+    {
+      "source": "notes/bar_comparison.md",
+      "destination": "notes/relative_reconstruction/bar_comparison.md"
+    },
+    {
+      "source": "notes/central_symmetry_lifting.md",
+      "destination": "notes/relative_reconstruction/central_symmetry_lifting.md"
+    },
+    {
+      "source": "notes/coherent_residual_saturation.md",
+      "destination": "notes/relative_reconstruction/coherent_residual_saturation.md"
+    },
+    {
+      "source": "notes/curved_diagonal.md",
+      "destination": "notes/relative_reconstruction/curved_diagonal.md"
+    },
+    {
+      "source": "notes/diagonal_kernel_identity.md",
+      "destination": "notes/relative_reconstruction/diagonal_kernel_identity.md"
+    },
+    {
+      "source": "notes/finite_algebraic_recovery.md",
+      "destination": "notes/relative_reconstruction/finite_algebraic_recovery.md"
+    },
+    {
+      "source": "notes/geometric_rotation_basechange.md",
+      "destination": "notes/relative_reconstruction/geometric_rotation_basechange.md"
+    },
+    {
+      "source": "notes/one_sided_morita.md",
+      "destination": "notes/relative_reconstruction/one_sided_morita.md"
+    },
+    {
+      "source": "notes/relative_artin_sector.md",
+      "destination": "notes/relative_reconstruction/relative_artin_sector.md"
+    },
+    {
+      "source": "notes/rotation_orbit_generic_reconstruction.md",
+      "destination": "notes/relative_reconstruction/rotation_orbit_generic_reconstruction.md"
+    },
+    {
+      "source": "notes/rotation_saturation_reduction_v14.md",
+      "destination": "notes/relative_reconstruction/rotation_saturation_reduction_v14.md"
+    },
+    {
+      "source": "notes/reconstruction.md",
+      "destination": "notes/relative_reconstruction/reconstruction.md"
+    },
+    {
+      "source": "notes/research_notes.md",
+      "destination": "notes/relative_reconstruction/finite_models_and_obstacles.md",
+      "scope": "Current independent finite-model material; obsolete packaging and A/B status excluded."
+    },
+    {
+      "source": "notes/reconstruction_notes.tex",
+      "destination": "notes/relative_reconstruction/elliptic_conventions.md",
+      "scope": "Current normalization/coherence, relative obstacles and exact computation description; obsolete packaging removed."
+    }
+  ],
+  "additional_proofs": [
+    {
+      "source": "notes/research_notes.tex",
+      "destinations": [
+        "papers/relative_reconstruction/relative_proper_models.tex",
+        "papers/relative_reconstruction/pi_residue_generators.tex"
+      ],
+      "scope": "Unique complete proofs; duplicate expository summaries stay in topic notes."
+    },
+    {
+      "source": "notes/sm_bar_and_spreading.tex",
+      "destination": "papers/relative_reconstruction/finite_bar_spreading.tex"
+    },
+    {
+      "source": "notes/source_recovery/dg_perfectness_counterexamples.tex",
+      "destination": "papers/relative_reconstruction/dg_perfectness_counterexamples.tex"
+    }
+  ],
+  "protected_source_inputs": {
+    "papers/support/papers/sections/poisson_geometry.tex": "29f89ee5d4b60ff82f6e33499ef48de9e311396b2f7eeb326070f84a2867b2bd",
+    "papers/support/papers/common.tex": "0933403982627adcb2f0c70849a86a618c5410961f7cdd65e17d24edaf616580",
+    "papers/support/papers/sections/poisson_moduli_stacks.tex": "2e9d25ace745e04900e775f1d08d23dcdd3b7642bc4b75b92b1434aeffea572d",
+    "papers/support/papers/sections/universal_casimir_determinant.tex": "bc3a3a87015e5483428cbc1539f75e2a01ad50248b27015d24283c3e2f2e7c44",
+    "papers/support/papers/sections/ambient_recovery_general.tex": "fb3a172151f896fadc96d73b1663dca8349e18b9fe07655da5d2ad773ce13377",
+    "papers/support/papers/sections/fermat_mixed_universal_center.tex": "60b6afb94529454ff03da9c8c6f33d92bcca53cf8896b1d7354a273a06eeecb0",
+    "papers/support/papers/sections/nonelliptic_poisson_components.tex": "166b2ec055a9335c4e8ee1f9b7f0c35e9c14f6764b0fbbdd5e6d1ad85a43a75e",
+    "papers/support/papers/sections/nonelliptic_quantization.tex": "9900392bb66a1ab09c75dca4006edfa7888f382837c2c7891dd914ae45ac2def",
+    "papers/support/papers/references_poisson_cubic.tex": "8d483ce77ed0d2a81c45cbd349f17a2fe0c59bf7bd6a91f3c0eda75815e4288a",
+    "papers/support/papers/sections/general_dimension_universal_quantization.tex": "e1cb91127c03eae9b26a86c31dd9b7839d7f5dcd6cdcc7a3b3ba4be4f9d7e8e8",
+    "papers/support/papers/sections/fermat_relative_poisson_components.tex": "9164f91735b811607a71ba8997979a6e6b9dd67263d1d9779bc0411eb5f9762c",
+    "papers/support/papers/sections/hesse_mixed_universal_center.tex": "7768ff8f1134819549c76c220c00080900453985769773168e5c265fa0f66d38",
+    "papers/support/papers/sections/complete_intersections.tex": "f439d20b6f5bd81581b7e6e512b73d388d10dcfbd47653478f6a32c8bb38c9bc",
+    "papers/support/papers/sections/bondal_cubic.tex": "b5405ce59f6b5d61a1fc667f0d6b8399b758629469d644da25ac667e898162ba",
+    "papers/paper_a.tex": "108cbe6c70b221976983adddda40d0a8112db55cadee922e3f9e8e08be0a5fcc",
+    "papers/support/papers/sections/explicit_hesse_center.tex": "499e1c51e7422fae96fd5028fc15e5bb329c86cd990beb98e07727dc8ccc7f59",
+    "papers/generic_recovery/main_result.tex": "4719a7abb0fcdfbce311d143ec2850b2998310ce735984017f9d16245a3b38ea",
+    "papers/generic_recovery/curved_transport.tex": "dd1965fe08b6f5ee6e5747fa59b53ce53229abae03d2cab1e11248a2063a54ab",
+    "papers/generic_recovery/gradient_recovery.tex": "9a95af42acddf0d902a45f1f5d5a015047493283dbb6a2cd58830dda18913e57",
+    "papers/paper_b.tex": "673f574cf300154403c62600a3d35fa4d94c1f1614e405e2d56fdd9e73317dbe",
+    "papers/generic_recovery/field_model.tex": "da3f16c1093beccc0eded02487ca9906df36291324710820aa49b3e23287f52f",
+    "papers/generic_recovery/coherent_saturation.tex": "5e3a3f5e2e7611cb8ffedf6a9c870f09001d94dd51c314fc3b5d4cb80490d186",
+    "papers/generic_recovery/local_model.tex": "a3b78938d45fee442eebbf915176f4ae7d845f09efbd872a9b62f49b965f3603",
+    "papers/generic_recovery/generic_descent.tex": "0ef4d2f34a792440f284ce968a60c9379f509c84f88d8478d9b4d1309e66f87a",
+    "papers/generic_recovery/references.tex": "b6f548693ef817a16f4549804e0bec896a39177a2ad0629b783d89c491cafe9d",
+    "papers/generic_recovery/window.tex": "b16cd69d00debf5c9b6f6a87a64ca723f057566ff3b8a4840f443bb818112475"
+  },
+  "status": "Destination integrated and verified; source cleanup follows remote save."
+}

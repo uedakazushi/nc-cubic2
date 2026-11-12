@@ -2,6 +2,10 @@
 
 **2026-11-13 / v7。Codexは最初に `00_research_plan.md`、続いて `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を読む。** 研究の現行詳細は `notes/research_notes.md` と各論文のTeXにある。古い会話や旧PDFだけを再開の前提にしない。
 
+## 独立成果の所在
+
+論文Bから分離した相対理論・有限模型は `papers/relative_reconstruction_models.tex` と既存五稿に統合した。共有証明を複製せず、再現と移管の対応は `validation_reconstruction_manifest.json`・専用validation・`notes/relative_reconstruction_models.md` で確認する。
+
 ## 現在の最優先タスク
 
 原PDFの全移管は完了し、Git追跡PDFは0件。今後は現行TeXと再生成可能な計算を正本として、**必要なら新しい研究成果を加え、より重要で厳密かつ理解しやすい論文へ発展させる**こと。**単純なPDF→TeXの逐語変換、ページ数合わせ、PDF削除数の最大化は目的ではない。**

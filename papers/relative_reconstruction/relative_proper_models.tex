@@ -1,0 +1,350 @@
+\section{相対Beilinson模型から得られるproperな族}
+\label{sec:relative-proper-model}
+
+本節は、一般の量子化族の相対saturationに向けた部分結果である。
+以下の相対Beilinson仮定のもとで、超曲面圏と残余圏を
+実在する基底上のproper dg代数で表す。
+この結論にsmoothness、homotopical finite presentation、
+または一般の有限パラメータでの可換復元を含めない。
+相対Beilinson仮定そのものと、最後に残る対角加群の有限性は別の問題である。
+
+\subsection{仮定と基底変更の意味}
+
+\(R\) をNoetherな可換 \(\CC\)-代数、\(N=n+2\ge5\) とする。
+\(A=\bigoplus_{d\ge0}A_d\) は \(A_0=R\) を満たす次数付き代数で、
+有限生成の \(A_1\) により生成され、各 \(A_d\) は有限射影 \(R\)-加群とする。
+中心元 \(\Omega\in A_3\) は非零因子で、
+\(B=A/(\Omega)\) の各次数成分も有限射影 \(R\)-加群とする。
+したがって
+\[
+ 0\longrightarrow A(-3)\xrightarrow{\Omega}A
+   \longrightarrow B\longrightarrow0
+ \tag{Q}\label{eq:relative-quotient-sequence}
+\]
+は任意の可換環への底変更後にも完全である。
+\(\QGr\) は全次数付き右加群の圏をtorsion加群で割ったGrothendieck圏、
+\(\OO_A(i)\), \(\OO_B(i)\) は構造加群のシフトの像を表す。
+
+\begin{definition}[本節の相対Beilinson仮定]\label{def:relative-beilinson-hyp}
+ 必要とする各Noetherな底変更 \(R\to R'\) に対し、次を仮定する。
+ \begin{enumerate}[label=(RB\arabic*)]
+ \item 次数付き加群の導来局所化は
+ \[
+ D(\QGr A_{R'})\simeq
+ D(\operatorname{Gr}A_{R'})/
+ D_{\operatorname{Tors}}(\operatorname{Gr}A_{R'}),
+ \]
+ および \(B_{R'}\) に対する同じ表示を持つ。
+ これらのdg enhancementを用い、次数シフトと導来係数拡大が
+ 局所化へ降りるものとする。
+ \item \(G_{R'}=\bigoplus_{i=0}^{N-1}\OO_{A_{R'}}(i)\) はcompact generatorで、
+ \[
+ \REnd(G_{R'})\simeq T_{R'},\qquad
+ e_jTe_i=A_{j-i}\quad(0\le i,j\le N-1),
+ \tag{B}\label{eq:relative-beilinson-algebra}
+ \]
+ である。ただし \(A_d=0\) for \(d<0\) とし、右辺は次数零の三角代数である。
+ 積はHomの合成によるものとし、この側のBeilinson代数を \(T=\nabla A\) と書く。
+ oppositeに関する行列の規約はこの等式で固定する。
+ 同値は自然な \(T\otimes_RR'\to\REnd(G_{R'})\) によって与えられる。
+ \end{enumerate}
+\end{definition}
+
+ここで(RB2)は、体上のAS-regular性を述べる条件より強い。
+各fiberにおけるBeilinson型定理を引用するだけでは、
+この普遍的な底変更を含む条件を検証したことにはならない。
+通常の相対構成では、有限長の線形Koszul分解、
+その双対複体、torsion局所化の計算を用いて(RB2)を検証する。
+本節ではこの検証を、任意の量子化族について完了したとは主張しない。
+
+\subsection{超曲面圏のproper模型}
+
+\begin{proposition}[相対proper模型]\label{prop:relative-proper-model}
+ 定義\ref{def:relative-beilinson-hyp}の条件のもとで
+ \[
+ E=\bigoplus_{i=0}^{N-1}\OO_B(i),\qquad
+ \Lambda=\REnd_{\QGr B}(E)
+ \]
+ とおくと、\(E\) は \(D(\QGr B)\) のcompact generatorであり、
+ \[
+ D(\QGr B)^c\simeq\Perf(\Lambda)
+ \]
+ を得る。\(\Lambda\) は \(R\)-perfectなdg代数である。
+ また、仮定の範囲の各底変更に対して、dg代数として
+ \[
+ \Lambda\otL_RR'\simeq
+ \REnd_{\QGr B_{R'}}(E_{R'})
+ \tag{BC}\label{eq:relative-proper-basechange}
+ \]
+ が成り立つ。
+\end{proposition}
+
+\begin{proof}
+ 次数付き加群のrestrictionはtorsion加群をtorsion加群へ送り、
+ \(B\)-加群について \(A\)-torsionと \(B\)-torsionは一致する。
+ よってrestrictionはexact、conservativeかつ直和を保つ関手
+ \[
+ j_*:D(\QGr B)\longrightarrow D(\QGr A)
+ \]
+ を誘導する。その左随伴 \(j^*\) は導来係数拡大である。
+ 実際、\eqref{eq:relative-quotient-sequence}によって
+ \(-\otL_A B\) はtorsion cohomologyを持つ複体を同種の複体へ送り、
+ 導来局所化へ降りる。随伴のunitとcounitも降りる。
+ また、restriction後の \(j_*j^*\) には自然なtriangle
+ \[
+ X(-3)\xrightarrow{\Omega}X\longrightarrow j_*j^*X
+ \tag{M}\label{eq:relative-quotient-monad}
+ \]
+ がある。\(j_*\) の直和保存とconservativityから、
+ \(j^*G=E\) はcompact generatorとなる。
+
+ \(T=\nabla A\) は有限射影 \(R\)-加群である。
+ さらに \(S=R^{\oplus N}\subset T\) とすると、
+ augmentation \(T\to S\) の核 \(J\) は狭義三角行列からなる。
+ \(J^{\otimes_S q}=0\) for \(q\ge N\) であり、
+ normalized relative bar resolution
+ \[
+ \cdots\longrightarrow
+ T\otimes_SJ^{\otimes_S2}\otimes_ST
+ \longrightarrow T\otimes_SJ\otimes_ST
+ \longrightarrow T\otimes_ST\longrightarrow T
+ \]
+ は有限長で、各項は有限射影 \(T\)-bimoduleである。
+ したがって \(T\) は \(R\) 上smooth properである。
+
+ \(D(\QGr A)\simeq D(T)\) のもとで次数シフト \((-3)\) を表す
+ invertible \(T\)-bimoduleを \(M_{-3}\) と書く。
+ これは \(T\) のsmoothnessとMorita自己同値により
+ \(\Perf(T^{\mathrm{op}}\otL_RT)\) に属し、特に \(R\)-perfectである。
+ \eqref{eq:relative-quotient-monad}を \(G\) に適用すると、基底上の複体として
+ \[
+ \Lambda\simeq
+ \operatorname{cofib}\bigl(M_{-3}\xrightarrow{\Omega}T\bigr).
+ \tag{C}\label{eq:relative-perfect-cone}
+ \]
+ よって \(\Lambda\) は \(R\)-perfectである。
+
+ このcofiberの表示だけから積を定義してはいけない。
+ \(\Lambda\) の積と単位は実際の \(\REnd_B(E)\) のものを用いる。
+ 同じ内容をMorita模型で述べると、\(j_*j^*\) は
+ unitとmultiplicationを備えたmonadであり、
+ \eqref{eq:relative-perfect-cone}のcofiberはそのmonadを表す
+ \(T\)-bimoduleの代数対象である。
+ この代数構造が、随伴による
+ \(\REnd_B(j^*G)\simeq\RHom_A(G,j_*j^*G)\) の合成と一致する。
+
+ 最後に、(RB2)により周囲のMorita同値は底変更と両立する。
+ 次数シフト、中心元 \(\Omega\)、随伴のunitとmultiplicationも
+ 導来係数拡大から作られるので底変更と両立する。
+ したがって、monadの代数対象としての底変更から
+ \eqref{eq:relative-proper-basechange}が得られる。
+ これは基底複体だけの同一視より強い主張である。
+\end{proof}
+
+\begin{remark}[有限性の範囲]\label{rem:relative-model-finiteness}
+ 命題\ref{prop:relative-proper-model}は、各Artin切断を別々に構成して
+ 逆極限を取る主張ではない。\(R\) 上に存在するadjunctionとmonadから、
+ \(R\)-perfectな実際のdg代数を与える。
+ ただし、基底上のperfect複体に移した \(A_\infty\) 積が
+ 有限個の高次演算だけで記述できることや、\(\Lambda\) が
+ homotopically finitely presentedであることは従わない。
+ 特に、この命題をsmoothnessの証明と読み替えることはできない。
+\end{remark}
+
+\subsection{局所cohomologyによる確認可能な数値条件}
+
+(RB2)を検証する際の具体的な目標は、ある可逆 \(R\)-加群 \(L\) に対する
+次の構造層cohomologyである：
+\[
+ H^pR\Gamma(\OO_A(d))\simeq
+ \begin{cases}
+ A_d,&p=0,\ d\ge0,\\
+ A_{-N-d}^{\vee}\otimes_RL,&p=N-1,\ d\le-N,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+ \tag{H}\label{eq:relative-ambient-cohomology}
+\]
+この式そのものにも底変更との両立を要求する。
+有限線形Koszul分解の存在はshiftの有限生成性を、
+\eqref{eq:relative-ambient-cohomology}はtiltingのExt消滅を与える。
+一方、compact性と全生成性を得るには、torsion局所化の導来関手が
+必要な直和を保つこと、または同等のcompact generationの証明が別途必要である。
+
+\eqref{eq:relative-ambient-cohomology}が分かれば、
+\(0\le i,j\le N-1\), \(d=j-i\) に対して
+\[
+ H^p\RHom_B(\OO_B(i),\OO_B(j))\simeq
+ \begin{cases}
+ B_d,&p=0,\ d\ge0,\\
+ A_{3-N-d}^{\vee}\otimes_RL,
+     &p=N-2,\ 0\le3-N-d\le2,\\
+ 0,&\text{otherwise}
+ \end{cases}
+ \tag{H$_B$}\label{eq:relative-hypersurface-cohomology}
+\]
+が \eqref{eq:relative-quotient-monad}から従う。
+特にこの窓のHomは基底上有限射影cohomologyを持ち、その振幅は
+\([0,N-2]=[0,n]\) に含まれる。
+この式は積の全情報を代替しない。
+
+\begin{lemma}[fiberwise Koszul性から得られる有限分解]
+\label{lem:relative-koszul-resolution}
+ 上の次数別有限射影性を仮定し、各幾何学的fiber \(A_s\) が
+ Koszulで、augmentation加群 \(k(s)\) の射影次元が \(N\)、
+ Hilbert級数が \((1-t)^{-N}\) であるとする。
+ このとき有限射影 \(R\)-加群 \(W_p\) を用いる普遍的に完全な線形分解
+ \[
+ 0\to W_N\otimes_RA(-N)\to\cdots\to
+ W_1\otimes_RA(-1)\to A\to R\to0
+ \tag{K}\label{eq:relative-linear-resolution}
+ \]
+ が存在し、\(\rank W_p=\binom Np\) である。
+\end{lemma}
+
+\begin{proof}
+ \(A_+\) の次数別成分は有限射影である。
+ \(W_1=A_1\) として、射影加群 \(W_1\otimes_RA(-1)\) から \(A_+\) への射を取る。
+ 各fiberで全射なので、各次数でNakayamaの補題により全射である。
+ 像の次数別成分が射影であるため、核も次数別有限射影であり、
+ 核の形成は任意の底変更と両立する。
+ 同じ操作をsyzygyに反復し、\(p\) 次syzygyを生成する次数 \(p\) の成分を
+ \(W_p\) とする。fiberのKoszul性により、この成分がsyzygy全体を生成する。
+ したがって各段階で同じ射影性と底変更の主張が成り立つ。
+ 第 \(N\) 段階の次の核はすべてのfiberで零なので、次数ごとのNakayamaにより零である。
+ fiberのKoszul Betti数はHilbert級数から \(\binom Np\) となる。
+ 各次数の短完全列は \(R\)-加群として分裂するので、分解は普遍的に完全である。
+\end{proof}
+
+この補題は有限なKoszul分解を構成するが、
+各fiberのAS-regular性だけからrelative tailsの性質をすべて得たという主張ではない。
+双対Koszul複体と導来torsion局所化を含めて
+\eqref{eq:relative-ambient-cohomology}および(RB2)を検証する必要が残る。
+
+\subsection{残余圏のpropernessとrotationの開性}
+
+さらに \(\OO_B,\ldots,\OO_B(N-4)\) が相対例外列で、
+そのHomと底変更が両立すると仮定する。
+例えば \eqref{eq:relative-hypersurface-cohomology}はこの条件を与える。
+\[
+ \cK_R=\langle\OO_B,\ldots,\OO_B(N-4)\rangle^\perp
+ \subset\Perf(\Lambda)
+\]
+とおく。
+
+\begin{proposition}\label{prop:relative-residual-proper}
+ \(\cK_R\) のinclusionは左随伴 \(p\) を持ち、
+ \(G_{\cK}=p(E)\) はcompact generatorである。
+ \(\Gamma_R=\REnd(G_{\cK})\) は \(R\)-perfectで、
+ \(\cK_R\simeq\Perf(\Gamma_R)\) は底変更と両立する。
+ また \(\rho=L_{\OO_B}\circ(1)\) は \(\cK_R\) の自己関手を与え、
+ 底変更と両立する。
+\end{proposition}
+
+\begin{proof}
+ propernessにより各相対例外対象 \(F\) に対し、
+ \(\Perf(R)\to\Perf(\Lambda)\), \(V\mapsto V\otimes_RF\) は
+ 左右随伴 \(\RHom(-,F)^\vee\), \(\RHom(F,-)\) を持つ。
+ その左mutationは \(F^\perp\) への左projectionを与える。
+ \(a=N-3\), \(F_i=\OO_B(i)\) とおくと
+ \[
+ p=L_{F_0}\circ L_{F_1}\circ\cdots\circ L_{F_{a-1}}
+ \]
+ は \(\cK_R\) への左projectionである。
+ 実際、右側から順に適用し、\(j>i\) に対する
+ \(\RHom(F_j,F_i)=0\) を用いると、既に得た直交性が保存される。
+ 各evaluation triangleはcompact対象の有限なtriangleであり、
+ \(p|_{\cK_R}=\Id\) なので、\(p(E)\) は残余圏を生成する。
+ そのEnd複体のpropernessおよび底変更は、
+ 元のproper dg模型とこれらのevaluation triangleから従う。
+
+ \(F\in\cK_R\) とする。\(1\le j\le a-1\) なら
+ \(\RHom(\OO_B(j),F(1))=\RHom(\OO_B(j-1),F)=0\) であり、
+ \(\RHom(\OO_B(j),\OO_B)=0\) である。
+ \(L_{\OO_B}\) のevaluation triangleから \(\rho(F)\in\cK_R\) が従う。
+ 同じtriangleから底変更との両立も従う。
+\end{proof}
+
+\begin{remark}[両側admissibilityは追加条件]
+ proper性だけから \(\cK_R\) のinclusionが右随伴も持つとは結論しない。
+ 同様に、\(L_{\OO_B}\) または \(\rho\) が右随伴を持つことも、
+ 上の証明だけからは従わない。
+ 例外対象への関手の左右随伴が存在することと、
+ その右直交圏の両側admissibilityは別の主張である。
+\end{remark}
+
+\begin{lemma}[随伴が与えられた場合のrotationの開性]
+\label{lem:relative-rotation-open-conditional}
+ 上の状況で、さらに \(\rho\) がcompact対象上の \(R\)-linear右随伴
+ \(\rho^R\) を持ち、そのunitとcounitを含めて底変更と両立すると仮定する。
+ ある点 \(s\in\Spec R\) で \(\rho_s\) が自己同値ならば、
+ \(s\) のZariski近傍へ制限することで \(\rho\) は自己同値となる。
+\end{lemma}
+
+\begin{proof}
+ unitとcounitを生成子 \(G_{\cK}\) 上で評価した二つのconeはcompact対象である。
+ これらからの \(\RHom(G_{\cK},-)\) は \(R\)-perfectで、
+ fiber \(s\) で零になる。
+ perfect複体のsupportの閉性により、両方が零となる \(s\) の開近傍がある。
+ そこで生成子性を用いると二つのconeは零であり、
+ unitとcounitが生成子上、従ってそのthick閉包全体で同型となる。
+\end{proof}
+
+上の右随伴の追加仮定は、例えば底変更と両立するrelative Serre dualityを
+周囲の圏に別途与えれば検討できるが、本節のproper模型からは導かない。
+またrotationの可逆性が分かった場合でも、そのkernelが
+\(\Gamma_R^{\mathrm{op}}\otL_R\Gamma_R\) 上perfectであることは別の条件である。
+対角加群のperfect性が未証明なら、恒等関手についてさえこの条件は未証明である。
+
+\subsection{smoothnessに十分な有限の証明書と残る問題}
+
+\begin{lemma}[対角の有限証明書]\label{lem:relative-diagonal-certificate}
+ \(\Gamma\) を \(R\)-perfectなdg代数とし、\(\Gamma^e=\Gamma^{\mathrm{op}}\otL_R\Gamma\)
+ と書く。ある \(P\in\Perf(\Gamma^e)\) と射 \(P\to\Gamma\) が存在し、
+ 点 \(s\) での導来fiberがquasi-isomorphismならば、\(s\) の開近傍で \(\Gamma\) はsmoothとなる。
+\end{lemma}
+
+\begin{proof}
+ \(\Gamma^e\) は \(R\)-perfectなので、有限cellと直和因子で作られる \(P\) も
+ \(R\)-perfectである。\(\Cone(P\to\Gamma)\) も \(R\)-perfectであり、
+ \(s\) でのfiberが零なので、ある開近傍で零である。
+ 従ってその近傍では対角 \(\Gamma\simeq P\) が \(\Gamma^e\) 上perfectである。
+\end{proof}
+
+\begin{remark}[現時点で未解決の点]\label{rem:relative-saturation-gap}
+ fiber \(\Gamma_s\) のsmoothnessは、そのfiber上での有限cell対角分解を与える。
+ しかし、その有限cell、微分、retract、および対角への射を
+ \(R\) の近傍へ同時に持ち上げた証明書はまだ構成していない。
+ 各Artin切断でのsmoothnessだけではこの構成を代替できない。
+ Toën \cite[Lemma 3.14]{ToenFinitude} が述べるのは、properなdg代数の
+ 「smoothかつcohomological dimension \(\le d\)」という部分前層の
+ quasi-compactnessであり、一般の開性ではない。
+ この補題をsmoothnessの開性として使わない。
+
+ また、Toën--Vaquié \cite[Theorem 3.6]{TV} の有限型dg圏のobject moduli定理を、
+ proper性だけが分かっている \(\Gamma\) に適用することはできない。
+ 特にpseudo-perfect加群とcompactなperfect加群の同一視にはsmoothnessが必要である。
+ 既知の飽和圏内で生成子を動かして比較する方法にも、
+ 生成性の開性および比較moduliの有限表示性の証明が別途必要となる。
+ これらのmoduliによる迂回を完成した代数化定理として扱わない。
+\end{remark}
+
+
+\subsection{有限例外列による相対smoothnessの還元}
+現行論文の「相対saturationへの二つの還元」節の命題により、
+相対properなdg圏$\mathcal C_R=\Perf(\Lambda_R)$が
+有限個の相対例外対象と残余圏$\mathcal K_R$に分解するとき、
+$\mathcal C_R$と$\mathcal K_R$の相対smoothnessは同値となる。
+gluing bimoduleは$R$-perfectで、残余圏がsmoothなら
+対角のperfect性により実際にperfect bimoduleとなる。
+従って求める証明書は$\Lambda_R$の対角について一つあればよい。
+これは(RB1)--(RB2)を仮定する還元であって、相対smoothnessそのものの
+証明ではない。閉ファイバーのBeilinson対角分解を全族へ
+持ち上げる問題が残る。詳細な証明は現行論文
+の同節に置く。
+
+graded matrix factorizationの内部シフトは
+中心元の次数が三ならば常に$(1)^3\simeq[2]$を満たす。
+これは相対Orlov同値が与えられればrotationの自己同値性と
+相対三次周期性を保証する。ただし相対Orlov同値自体は
+依然として未構成であり、形式的周期性からその存在は導けない。
+
