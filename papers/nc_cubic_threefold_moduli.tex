@@ -1,4 +1,4 @@
-% !TEX root = paper_b.tex
+% !TEX root = nc_cubic_threefold_moduli.tex
 % Supporting source files live in papers/support/papers/.
 \makeatletter
 \def\input@path{{papers/support/}}
@@ -61,7 +61,7 @@
 \newcommand{\Symm}{\operatorname{sym}}
 \title{非可換三次三様体の17次元モジュライ族\\中心三次対と変形幾何}
 \author{公表準備用研究原稿（著者情報未記入）}
-\date{2026年11月12日・nc cubic moduli研究草稿 v1}
+\date{2026年11月12日・nc cubic moduli研究草稿 v2}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -72,6 +72,9 @@
 次数付き同型類が17次元分だけ変動することを示す。
 さらに分離型の余次元15、可換cubicへの忘却核7次元の幾何学的分解、
 混合中心元と相対Picardの障害を扱う。
+また、正則正規$d$次超曲面を持つKoszul AS正則$\mathbb Z$-代数の
+最小周期が$\gcd(N,d)$を割ることを示し、5次元・三次の場合の1周期性を導く。
+この結論はambientの周期性であり、商イデアルを保つ1周期構造は主張しない。
 一般次元のambient復元とその証明はnc-cubicの論文Aにも収録する。
 構成した族が全nc cubic moduliの既約成分をなすことは未証明である。
 \end{abstract}
@@ -132,6 +135,15 @@ ambient の quadratic envelope が得られる．一方，構造対象だけを�
 分離した一楕円ブロックは中心対の有理商で余次元15を占めるため、
 その明示的可換復元を一般17次元族へ無条件に延長することはできない
 （命題\ref{prop:split-codimension}）。
+
+\paragraph{一般のAS正則$\mathbb Z$-代数との関係.}
+正則正規な三次超曲面を持つ標準5次元Koszul AS正則$\mathbb Z$-代数は、
+AS双対性の5周期と正規族の3周期により1周期的である
+（系\ref{cor:moduli-cubic-ambient-periodic}）。
+これは通常の次数付きambientを仮定しない場合の結論であるが、
+1周期同型が超曲面イデアルを保つことは別問題である。
+既知のKoszul--Frobenius双対性\cite{PBondalPolishchukHelices}と
+正規族\cite{PChanNymanNormalFamily}に基づき、初出の網羅的調査は未完了である。
 
 \paragraph{主定理.}
 第\ref{sec:construction}節で中心三次対の41次元族、
@@ -720,6 +732,7 @@ Poisson中心三次対の\emph{有理商}についての結論であり、
 
 \input{papers/sections/mixed_center_picard}
 
+\input{papers/sections/ambient_periodicity}
 
 \section{二次包絡によるモジュライ同型類の判定}\label{sec:moduli-iso}
 \begin{theorem}[三次商からのambient復元]\label{thm:moduli-iso}
@@ -760,6 +773,8 @@ Artin--Zhangのsection algebraの自然写像は
 忘却核7次元の主張には本文に証明がある。
 全nc cubicモジュライの既約成分性、全変形・障害理論、
 一般次元nc cubic moduliの完全分類は未解決。
+正規族を持つAS正則$\mathbb Z$-代数のambient周期性は第\ref{sec:moduli-ambient-periodicity}節で証明するが、
+その1周期同型が三次イデアルを保つことや、全nc cubicの超曲面表示は未証明。
 一次文献の初出調査と既存証明の独立監査は未完了。
 31次行列式、中心の次数別計算、分離型の検算は
 \texttt{computations/independent/verify\_generic17\_slice.py}、
@@ -902,5 +917,19 @@ J.~J.~Zhang,
 \textit{Twisted graded algebras and equivalences of graded categories},
 Proc. London Math. Soc. \textbf{72} (1996), 281--311,
 \href{https://doi.org/10.1112/plms/s3-72.2.281}{doi:10.1112/plms/s3-72.2.281}.
+\bibitem{PBondalPolishchukHelices}
+A.~I.~Bondal and A.~E.~Polishchuk,
+\emph{Homological properties of associative algebras: the method of helices},
+Russian Acad. Sci. Izv. Math. \textbf{42} (1994), no.~2, 219--260.
+Proposition~4.1 and \S5 (Koszul--Frobenius duality and periodicity).
+\href{https://doi.org/10.1070/IM1994v042n02ABEH001536}
+{doi:10.1070/IM1994v042n02ABEH001536}.
+
+\bibitem{PChanNymanNormalFamily}
+D.~Chan and A.~Nyman,
+\emph{Noncommutative linear systems and noncommutative elliptic curves},
+\href{https://arxiv.org/abs/2211.12465}{arXiv:2211.12465} (2022).
+Definition~8.6 (normal families of elements in indexed algebras).
+
 \end{thebibliography}
 \end{document}
