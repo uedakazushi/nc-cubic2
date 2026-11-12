@@ -2,6 +2,10 @@
 
 > **全研究原PDFの現行TeXへの移管とGit追跡解除が完了し、追跡PDFは0件。** 今後は論文・証明・再生成可能な計算を正本として、正確性、先行研究、新規性、公表価値を高める。削除判定と全対応は [PDF_SOURCES.md](PDF_SOURCES.md)、恒久原則は [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)。
 
+## nc-cubic論文Bからの独立成果移管（Codexの並行担当）
+
+2026-11-13現在、`nc-cubic` 論文A・Bの数学的独立監査と先行研究調査はChat側に分離する。本リポジトリを実行環境とする移管担当Codexは、`nc-cubic/AGENTS.md`・`notes/paper_b_scope_and_transfer.md` と本リポジトリの `AGENTS.md` を先に読み、元の独立成果をここに統合する。既存の点スキーム・Jacobian・一次変形・Artin・étaleの独立稿を正本とし、残存する形式復元・Sklyanin・対角/bar/Morita・混合jet等を保存済み本文と照合する。必要証明の自足性、仮定の強さ、参照閉包、再生成可能性、移管先main保存を確認し、元側の保護対象と残存参照を精査してから重複を削除する。この担当作業は下記の17次元モジュライ等の既存研究目標を放棄するものではない。
+
 ## nc cubic threefoldの17次元モジュライ（現行の主題）
 
 - [現行草稿](papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。

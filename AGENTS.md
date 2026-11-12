@@ -1,6 +1,6 @@
 # Codex / AGENTS.md — nc-cubic2
 
-**2026-11-13 / v6。Codexは最初に `00_research_plan.md`、続いて `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を読む。** 研究の現行詳細は `notes/research_notes.md` と各論文のTeXにある。古い会話や旧PDFだけを再開の前提にしない。
+**2026-11-13 / v7。Codexは最初に `00_research_plan.md`、続いて `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を読む。** 研究の現行詳細は `notes/research_notes.md` と各論文のTeXにある。古い会話や旧PDFだけを再開の前提にしない。
 
 ## 現在の最優先タスク
 
@@ -9,6 +9,14 @@
 完全な具体的手順、研究主題ごとの数学的課題、検証と削除の条件は **`CODEX_PDF_RECOVERY.md`** に定める。短い計画だけで止まらず、可能な限り証明・計算・執筆・実際のpushまで進める。数学的重要性、先行研究、新規性、理解の深化、応用可能性、正確性、実現可能性を考えて研究方針を柔軟に調整する。
 
 中心商特異性（旧VI）の全22節は現行TeXと厳密検算へ統合済み。原PDFは追跡解除済み。中心三次対（旧V）の全21節もTeXと厳密検算に統合済み。Pfaffian接触境界と中心三次技術稿も固有証明を回収して追跡解除済み。全混合量子化（旧II、195頁）も有限gauge・四次計算・平面切断幾何を回収して追跡解除済み。削除判定の全対応表は `PDF_SOURCES.md` にある。
+
+## nc-cubicからの独立成果移管：並行作業の優先境界
+
+**2026-11-13 の移管担当Codexセッションでは、上記の一般的な新研究課題に先立ち、`uedakazushi/nc-cubic/AGENTS.md` と `notes/paper_b_scope_and_transfer.md` を読み、論文Bから分離した独立成果の移管・統合を優先する。** これは既存の17次元モジュライ研究などを廃止する意味ではない。Chat側が `nc-cubic` 論文A・Bの独立監査・改良・先行研究調査を進めているので、Codexはそれらの本文・依存ファイルに手を付けない。
+
+現行の受け皿は `papers/mixed_cubic_point_schemes.tex`、`papers/cubic_jacobian_recovery.tex`、`papers/cubic_first_order_deformations.tex`、`papers/cubic_artin_windows.tex`、`papers/relative_cubic_realization.tex` である。すでに移管・整理済みの成果を重複生成しない。未完了なのは形式・étale・Artinの残存参照閉包、Sklyanin/多ブロック、対角/bar/Morita、混合・jetなど。既存の独立稿に統合できるものは統合し、別稿にすべきものは中心結果・論理のまとまり・投稿価値から判断する。
+
+**引き継ぎの完了条件：** 主張の仮定・証明・反例・文献・検算資産を保持し、TeX入力/参照/引用閉包と必要なLuaLaTeX組版・有限検算を実行して成否を明記した上で、まず本リポジトリ `main` へ通常pushし遠隔HEAD/blobを確認する。これが完了する前に移管元のソースを消してはいけない。移管元のA/Bが読むファイルや別の未移管原稿が参照するファイルも消してはいけない。旧版ZIP・移管対応一覧・作業ログを増やさず、現行原稿、研究ノート、簡潔な検証情報を更新する。両repoとも他作業者の変更を上書きせず、force push・Actionsを禁止する。
 
 ## 研究の守るべき原則
 
@@ -23,7 +31,7 @@
 
 - **PDF研究**：中心商特異性、中心三次対の形式モジュライ、Pfaffian/Brill--Noether接触境界、中心三次の技術論、Sklyanin全混合量子化。詳細は `CODEX_PDF_RECOVERY.md`。
 - **17次元非可換cubic threefoldモジュライ**：`papers/nc_cubic_threefold_moduli.tex` と `notes/nc_cubic_threefold_moduli.md`。ambient周期性と商イデアル保存を混同せず、有限係数17次元族とArtin局所の接空間次元20を混同しない。
-- **Poisson cubic fourfoldのscheme構造・6/7次元固有の退化幾何**：各対応原稿と研究ノートを参照。一般次元のPoisson成分分類・量子化・ambient復元・rotation付き可換復元の正本は別リポジトリ `uedakazushi/nc-cubic` の論文A/Cである。既存証明を壊したり同じ一般定理を無用に重複収録したりしない。
+- **Poisson cubic fourfoldのscheme構造・6/7次元固有の退化幾何**：各対応原稿と研究ノートを参照。一般次元のPoisson成分分類・量子化・ambient復元・rotation付き可換復元の正本は別リポジトリ `uedakazushi/nc-cubic` の論文A/Bである。既存証明を壊したり同じ一般定理を無用に重複収録したりしない。
 - **実務**：VS Code LaTeX Workshopは `.vscode/settings.json` でリポジトリrootを作業ディレクトリとして使用し、PDFと補助生成物は `build/` に出力。全てのTeXは必要に応じて親ファイルから入力する。
 
 ## 完了の意味
