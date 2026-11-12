@@ -10,7 +10,7 @@
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 - **可換点の全Artin形式局所構造をTeX化**：`papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。ただし有限位数境界と非可換Bertiniに依存する正則な四次元開集合の存在は独立再監査前なので条件付き。原PDFの全係数Hesse中心元・有限証明書・周囲37次元成分の細部は未完全照合で保持する。
 
-**2026-11-12 / v22。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v23。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -114,3 +114,9 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 ### 斉次中心を用いる全次数生成とrank49の特性零への昇格
 
 `computations/verify_center_homogeneous_symbols.py` を有理数上で実行し、斉次Sklyanin特殊化の次数6で `gr(g²),gr(U),gr(V),gr(W)` のrankが4であることを確認。既知のSklyanin中心定理（次数3の1元、次数6の3追加元、重み18の単一関係）を入力すると、filtrationの最高次数項を消去する帰納法で `Z(R1)=C[g,U,V,W]` を示せる。中心Hilbert級数 `(1-t^18)/((1-t^3)(1-t^6)^3)` より、重み18以下の50単項式はQ上でも正確にrank49。残るのは**唯一の特性零関係の非斉次係数が明示Φと一致すること**の証明。有限語の特性零行簡約または同値な代数恒等式が必要。法101のPhi=0だけで代用しない。
+
+### 明示中心関係Phiの特性零検証：実行中の方法
+
+`computations/verify_center_phi_exact.py` を現行正本に追加した。次数別商 `F_nR1` を有理数演算で帰納構成し、各次数のPBW次元を検査、次数18に達した後に明示Phiの自由語展開を正規形へ写して**有理数上で厳密に零か否か**を判定する。計算は1回の実行につき1次数だけ進め、`/tmp/nc-cubic2-center-phi/`に中間状態を保存する（Gitには含めない）。
+
+実行：`python3 computations/verify_center_phi_exact.py`を必要回数繰り返し、degree18到達後に`python3 computations/verify_center_phi_exact.py --verify`。今回の作業環境では同じ有理数帰納法により次数13（dim560）まで確認。次数14の有理数消去は120秒以内に終了しなかった。したがって**Phiの特性零恒等式の検証はまだ未完了**。大規模な有理数消去が律速であり、後続ではモジュラー先行ピボット・有理数証明書の局所復元による高速化を検討する。未実行の検証を証明済みとは記さない。
