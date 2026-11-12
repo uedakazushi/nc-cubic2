@@ -21,3 +21,7 @@ Git追跡解除後も旧Git commitにはこれらのblobが存在するが、復
 ## 次に移すべき重要な内容
 
 (1) `central_pair_formal_moduli.pdf`の全Artin形式局所比較・忘却射の幾何を `papers/nc_cubic_threefold_moduli.tex` の既存の主張と重複照合する。(2) `central_quotient_singularities.pdf`の非可換A1特異点の局所模型と特異圏を `papers/pfaffian_brill_noether_technical.tex` と照合する。(3) 未読のPfaffian/SklyaninのPDFを全文抽出して独自の定理・証明を判定する。内容の未検証な再構成はしない。
+
+## 現行TeXの照合先（2026-11-12）
+
+Pfaffian・Brill--Noether大部原稿の79節を、既存内容を移動するだけで5個の主題別入力に分割した。これにより`central_pair_formal_moduli.pdf`は`papers/nc_cubic_threefold_moduli.tex`と`papers/sections/pfaffian_formal_deformations_gluing.tex`、`central_quotient_singularities.pdf`は`papers/central_fiber_discriminant.tex`と比較する対象が明確になった。PDFとの完全同一性を証明したわけではないため、残る6件のPDFはすべて保持する。

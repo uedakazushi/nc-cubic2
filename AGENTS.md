@@ -23,3 +23,5 @@
 
 - 一般次元Poisson成分分類・次元公式はnc-cubic論文Aを正本とし、本リポジトリでは重複させない。fourfold稿には追加的scheme smoothnessを保持する。
 - VS Code LaTeX Workshopは `.vscode/settings.json` の明示的なcwdとルート `.latexmkrc` を使用する。TeXはLuaLaTeX、出力はbuild、生成PDFは追跡しない。
+
+- The 79 sections of `papers/pfaffian_brill_noether_technical.tex` have been divided losslessly among five thematic `papers/sections/` inputs; the parent `.tex` is the sole entry point. The final verification input contains legacy version records and may refer to missing computation files; audit before treating them as reproducible. See `papers/README.md`.

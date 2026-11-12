@@ -47,7 +47,7 @@ embedded primary componentsの横断長8・64、
 
 ## 現在の研究内容
 
-- `papers/pfaffian_brill_noether_technical.tex`：独立した大部の境界・モジュライ・Pfaffian・Brill–Noether等の技術原稿。移管元と完全に同じGit blobで保存した。独立LuaLaTeX原稿（65件のbibliography項目を含む）。
+- `papers/pfaffian_brill_noether_technical.tex`：境界・モジュライ・Pfaffian・Brill–Noether等の大部技術原稿。79節の数学的内容を5個の`papers/sections/`入力へ分割。親TeXが唯一の組版入口。分割の静的内容一致は確認したが、組版・独立証明検証は未実施。
 - `papers/central_fiber_discriminant.tex`：中心三次曲面の必要十分判別式・特異点の解析。対応する正確な記号計算は `computations/verify_central_fiber_discriminant.py`。
 - `notes/research_notes.md`：現行の数学的状態、欠けている入力、研究再開手順。
 

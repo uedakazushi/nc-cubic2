@@ -9,7 +9,7 @@
 - **ambientの周期性**：`papers/nc_cubic_threefold_moduli.tex` の `papers/sections/ambient_periodicity.tex` に、正則正規次数$d$族を持つKoszul AS正則$\mathbb Z$-代数の最小周期が$\gcd(N,d)$を割る定理と証明を収録。標準5次元・三次なら1周期的。商イデアルを保存する1周期性は未証明。既知双対性からの帰結として新規性は未確認。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 
-**2026-11-12 / v8。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v9。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -65,7 +65,7 @@ embedded componentの長さの解明。
 
 本リポジトリは `nc-cubic` のPoisson構造・量子化・ambient復元・可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。研究全体の当面の最優先は**主リポジトリの可換復元**であり、この分離作業のためにそのSM証明を遅らせない。
 
-本体：`papers/pfaffian_brill_noether_technical.tex` は独立した完成度・新規性をまだ外部査読していない大部原稿であり、重要な結果・仮定・証明を削除せず保存する。判別式は `papers/central_fiber_discriminant.tex` に証明と検算を収録した。
+本体：`papers/pfaffian_brill_noether_technical.tex` の79節を形式変形・Brill–Noether境界・低次/高次接触計算・検証範囲の5節ファイルへ、証明本文を失わずに分割した。独立した完成度・新規性はまだ外部査読していない。重要な結果・仮定・証明を削除せず保持する。判別式は `papers/central_fiber_discriminant.tex` に証明と検算を収録した。
 
 ## 未解決
 
@@ -73,7 +73,7 @@ PDF資料のうち、内容目次の比較で既存TeXへ実質的に集約済�
 
 ## 次の作業
 
-1. `papers/pfaffian_brill_noether_technical.tex` を独立にLuaLaTeXで組版・検証し、主リポジトリ三目標に使う部分の依存を点検する。
+1. 主題別に分割した`papers/pfaffian_brill_noether_technical.tex`をLuaLaTeXで実組版し、旧版計算記録内の参照が現行コードで再現可能かを確認する。
 2. 残るPDF原資料の本文をTeXに照合し、独自の重要結果があれば証明とともに現行論文に統合する。大きなPDFのGitHub API上の本文抽出は今回未達で、名前だけで削除しない。
 3. 研究の現在有効な成果を分かりやすい公表用原稿へ再編する。単なる旧原稿の蓄積にしない。
 

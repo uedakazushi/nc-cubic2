@@ -1,8 +1,8 @@
 # 研究ノート：境界研究の現在の知識と障害
 
-**2026-11-12 / v3**
+**2026-11-12 / v4**
 
-- 独立の大部原稿は `papers/pfaffian_brill_noether_technical.tex` に完全なTeXソースで存在する。移管元の `papers/boundary/pfaffian_brill_noether_technical.tex` と**Git blob一致**を確認した。主論文A・Cから直接 `\\input` されない一方、内容上の引用・既知結果への依存は今後も監査する。
+- 独立の大部原稿は `papers/pfaffian_brill_noether_technical.tex` にTeXソースで存在する。旧79節を一字も削らず5個の `papers/sections/` ファイルへ分割した。主論文A・Cから直接入力されない一方、内容上の引用・既知結果への依存は今後も監査する。
 - 中心三次曲面
   \[
   F_H(U,V,W)=49U^3-(13H+14)U^2+(H+1)^2U+(11U-H-1)VW+V^3-W^3
