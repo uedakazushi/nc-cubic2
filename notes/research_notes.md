@@ -1,6 +1,6 @@
 # 研究ノート：境界研究の現在の知識と障害
 
-**2026-11-12 / v5**
+**2026-11-12 / v6**
 
 - 独立の大部原稿は `papers/pfaffian_brill_noether_technical.tex` にTeXソースで存在する。旧79節を一字も削らず5個の `papers/sections/` ファイルへ分割した。主論文A・Cから直接入力されない一方、内容上の引用・既知結果への依存は今後も監査する。
 - 中心三次曲面
@@ -26,3 +26,9 @@
 現行の高次接触正規形と横断Hessianの数学的証明は `papers/sections/pfaffian_contact_low_order.tex`、`papers/sections/pfaffian_contact_high_order.tex` にある。形式normal消滅・頂点支持・有限決定性の主張が証明本文にあることと、その計算証明書を独立に再実行したことは別であり、再実行は未了。旧版別の計算記録は現行の `papers/sections/pfaffian_computation_audit.tex` に必要な範囲のみ統合した。
 
 18次の94+60方向、20次の164接触方向と359 Koszul方向、22次の429方向、24次の1091方向という旧版記録の計算規模は、元の完全入力・整数証明書・driverが現行repoにないため`実行済みの再現可能な証明書`として扱わない。特に `E_vert=t^{10}`、`K_26^nor=0`、26次項の消去、無限形式変換の収束・代数化は未解決。今後の着手は現行本文の定義から整数行列と証明書を再構成して低次の非零minorから検証し、必要最小限の入力とコードのみGitHubに加える。
+
+## PDF整理のためにTeX化した有限正則性の有効な数学
+
+`notes/ambient_finite_smoothness_and_recovery.tex` に、全21混合方向の一様PBWの適用範囲、超越的な中心値での有限大域次元の補題、良い中心chartと滑らかな量子的境界からのtails大域次元3、具体的な `(h,α)=(1,π)` の混合例（非被約な長さ24の点加群スキーム）、偏極付き圏からの二次ambientと中心三次元の復元、対角混合族のnormalizer、Artin perfectnessから完備smoothnessへの誤った推論をまとめた。一般Poisson・PBWとdg反例の十分な証明は `nc-cubic` 論文Aと独立ノートを正本とする。原PDF研究ノートは長大な公表用論文としての価値が低いため追跡を解除した。本文の全主張を独立監査したという意味ではない。
+
+残る5本のPDFは論文資料である。特に旧論文IIIの後半（非線形接触分類、五変数HessianモデルのMilnor/Tjurina数、Pfaffian graphの相対二次ファイブレーション）は現行大部TeXに対応節を確認できず、未移管の重要結果候補。旧論文VIには中心値零の `Mat_3(C[[a,b]]⋊{±1})` 型局所模型とBrauer指数6、特異圏 `Perf_{Z/2}(C)^⊕3` などの結果があり、これらも単なる判別式TeXで代替できない。独立検証と原文のTeX移植を先行する。

@@ -1,0 +1,232 @@
+% !TEX program = lualatex
+\documentclass[11pt,a4paper]{ltjsarticle}
+\usepackage{amsmath,amssymb,amsthm,mathtools,hyperref}
+\usepackage{luatexja-fontspec}
+\setmainjfont{HaranoAjiMincho-Regular}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{remark}[theorem]{注意}
+\renewcommand{\proofname}{証明}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\qgr}{\operatorname{qgr}}
+\newcommand{\gldim}{\operatorname{gldim}}
+\newcommand{\gr}{\operatorname{gr}}
+\newcommand{\AS}{\mathrm{AS}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\title{非可換三次超曲面の有限中心値での正則性と偏極付き復元\\
+\large 現行研究ノート：仮定・証明要点・独立監査の限界}
+\date{2026年11月12日・v1}
+\begin{document}
+\maketitle
+\begin{abstract}
+非可換射影四空間の中心三次商について、有限中心値の正則性、
+二つの中心affine chartの貼合せ、偏極付き圏による二次ambient復元、
+対角混合族の同型判定を、現在有効な形でまとめる。
+以前の34頁の研究ノートに含まれていた有用な条件・反例を整理し、
+全21混合方向の一様PBWおよび量子化の一般定理は
+\href{https://github.com/uedakazushi/nc-cubic/blob/main/papers/paper_a.tex}{nc-cubic論文A}、
+dg perfectness反例とArtin上の対角障害は
+\href{https://github.com/uedakazushi/nc-cubic/blob/main/notes/source_recovery/dg_perfectness_counterexamples.tex}{対応する独立TeX}
+および\href{https://github.com/uedakazushi/nc-cubic/blob/main/notes/sm_bar_and_spreading.tex}{有限対角ノート}
+を正本とする。
+本稿の証明は旧研究ノートからの整理であって、今回の独立再監査ではない。
+\end{abstract}
+
+\section{一様PBWと中心正則族：既存成果の適用範囲}
+$u,v$を次数一の中心変数、$x,y,z$を次数一の主変数とする。
+滑らかな平面三次最高次部分を持つ斉次三次式
+\[
+ F=f_3(x,y,z)+Q(x,y,z;u,v)+L(x,y,z;u,v)+g_3(u,v)
+\]
+に対し、完全対称化を$\operatorname{sym}$として
+\[
+ B_h=\frac{\CC[u,v]\langle x,y,z\rangle}
+ {([x,y]-h\operatorname{sym}F_z,\,
+   [y,z]-h\operatorname{sym}F_x,\,
+   [z,x]-h\operatorname{sym}F_y)}
+\]
+とおく。全21混合係数を動かす一様PBW基底は、最高次数の三次元
+Sklyanin型Koszul代数の単語基底を係数環上で持ち上げることによって構成される。
+生成性は最高次関係式に関する帰納法、一次独立性は全複素特殊化と
+係数多項式の恒等的消滅による。この手順により
+\[
+ \gr_{x,y,z}B_h\simeq S_h\otimes_{\CC}\CC[u,v],
+ \qquad H_{B_h}(t)=(1-t)^{-5}
+\]
+を得る。左右noetherian、Koszul、$\AS$正則次元五、Calabi--Yau性を
+主張するには、三次元最高次代数の既知結果、中心次数一の正則拡大、
+中山自己同型の各fiberでの自明性を別々に使う。
+これらの一般定理と普遍的中心性の完全な証明の正本はnc-cubic論文Aである。
+任意の中心三次表示の存在・任意の特殊化での商の正則性は、ここからは従わない。
+
+\section{超越的な中心値と二つのaffine chart}
+\begin{lemma}[原稿から整理した超越的中心値の判定]\label{lem:transcendental}
+$k_0\subset\CC$を部分体、$D_0$をその上の代数、
+$z\in Z(D_0)$を$k_0$上超越的な中心元とする。
+$D=D_0\otimes_{k_0}\CC$が左右noetherianで
+$\gldim D\le n$であり、必要な代数的分離拡大に対する
+有限大域次元の保存の仮定が成立するとする。
+$\lambda\in\CC$が$k_0$上超越的なら
+\[
+ \gldim D/(z-\lambda)\le n.
+\]
+\end{lemma}
+\begin{proof}
+$\lambda$を含む$\CC/k_0$の超越基底$T$を選び、
+$K=k_0(T\setminus\{\lambda\})$とおく。
+$D_K=D_0\otimes_{k_0}K$から$\CC$への忠実平坦拡大と、
+ベクトル空間としての分裂によって有限射影次元の上界を降下させる。
+さらに中心的な$K[z]\setminus\{0\}$で局所化し、
+$D_K\otimes_{K[z]}K(z)$の大域次元を高々$n$とする。
+$K(z)\simeq K(\lambda)$とみなした後の
+$\CC/K(\lambda)$は代数的分離拡大である。
+ここでRennemo--Segal--Van den Berghの
+\cite[Lemmas 3.2--3.3]{RSV}の適用仮定を確認して結論する。
+この最終段階は非可換Bertiniの主定理を非PI代数に
+無条件に適用するものではない。
+\end{proof}
+\begin{proposition}[良い中心chartと量子的境界を仮定した十分条件]
+$B$は中心一次元$u,v$を持つconnected graded左右noetherian
+$\AS$正則五次元代数とする。$G\in Z(B)_3$は正則、
+$\gr_{x,y,z}B=S\otimes\CC[u,v]$で$S$は整域、
+$G$の最高主変数成分は非零とする。
+良い中心chart上で$B/(G+f)$が$\CC[u,v]$上自由であり、
+$\qgr B/(u,v,G)$は滑らかな楕円曲線のcoherent圏であると仮定する。
+$f=au^3+bu^2v+cuv^2+dv^3$とする。
+有限表示を定義する可算体$k_0$に関し
+$a,d$が$k_0(b,c)$上代数的独立なら、
+\[
+ \gldim\qgr B/(G+f)=3.
+\]
+\end{proposition}
+\begin{proof}[証明の要点と必要な別入力]
+中心一次元を逆にした二つの次数零代数を
+$D_u=B[u^{-1}]_0,\ D_v=B[v^{-1}]_0$とする。
+相対ambientの有限大域次元とLaurent拡大の直和因子の議論により
+$\gldim D_u,\gldim D_v\le5$である。
+$t=v/u,\ r=u/v$と書くと二つの商chartは
+\[
+ D_u/(G/u^3+bt+ct^2+dt^3+a),\qquad
+ D_v/(G/v^3+ar^3+br^2+cr+d)
+\]
+となる。最高symbolの整域性から、それぞれ括弧内の
+中心元が係数体上超越的であり、上の補題を適用して
+両chartの有限大域次元を得る。
+
+射影的貼合せは、中心正則元に関するtwisted matrix factorizationの
+二周期性を用いて行う。両chartでperfectになる対象は、
+元の射影的特異圏で$u^N,v^M$により零化される。
+二重Koszul coneの四つのsummandは同圏で元の対象のtwistに分裂し、
+一方coneのcohomologyは$(u,v)$に支持され、
+仮定した滑らかな量子的境界からperfectとなる。
+従って射影的特異圏が消える。
+AS Gorenstein双対性から大域次元は正確に三となる。
+この証明は、通常のgraded singularity categoryが消えると
+述べるものではない。twisted MFおよび双対性に関する
+原典\cite{CCKM,YZ}の仮定を保つことが必要である。
+\end{proof}
+
+\begin{remark}[具体的な混合族と正則性・点加群の区別]
+$D=x^3+y^3+z^3,\ T=xyz+xzy+yxz+yzx+zxy+zyx$、
+$\Omega_h=D/3-h^2T/9$と置く。
+中心三次商
+\[
+ A_{\alpha,h}=
+ \frac{\CC[u,v]\langle x,y,z\rangle}
+ {([x,y]-hz^2,\ [y,z]-h(x^2+\alpha uv),\
+ [z,x]-hy^2,\ \Omega_h+\alpha uvx+u^3+v^3)}
+\]
+は、$h^6\ne-27$かつ$\alpha$が$\mathbb Q(h)$上
+超越的という十分条件の下で
+$\gldim\qgr A_{\alpha,h}=3$を満たす。
+従って$(h,\alpha)=(1,\pi)$は具体例である。
+対応する定常点加群スキームは六点を台とし、
+各局所代数は$\CC[Y,Z]/(Y^2,Z^2)$で長さ四である。
+非被約な点加群スキームとtails正則性を同一視しない。
+一般$\alpha$の正確な判別式については
+中心商特異性の現行研究原資料との照合が必要である。
+\end{remark}
+
+\section{偏極付き圏と周囲の二次代数の復元}
+\begin{proposition}[既知のsection algebra復元]
+$A=B/(W)$をconnected graded左右noetherian AS Gorenstein代数とし、
+injective dimensionが二以上とする。
+$B$は二次関係で定義され、$W\in Z(B)_3$は
+正則元であると仮定する。
+偏極付き三つ組$(\qgr A,\mathcal O_A,(1))$から
+\[
+ A\simeq\bigoplus_{n\ge0}
+ \operatorname{Hom}_{\qgr A}(\mathcal O_A,\mathcal O_A(n))
+\]
+を積とともに復元できる。
+さらに$V=A_1$、
+$R_2=\ker(V\otimes V\to A_2)$とすると、
+\[
+ B\simeq T(V)/(R_2),\qquad
+ \CC W=\ker(B_3\to A_3).
+\]
+\end{proposition}
+\begin{proof}
+最初の同型はAS Gorensteinの
+$\operatorname{Ext}_A^0(k,A)=
+ \operatorname{Ext}_A^1(k,A)=0$と
+Serre quotientのHomの直極限から得る。
+射の積は$a\cdot b=a(j)\circ b$とする。
+次数三の商では二次関係は増えないので
+$R_2$から二次ambientが復元され、
+$B\to A$の三次核は中心三次元の直線となる。
+\end{proof}
+\begin{remark}[対角混合族の同型と反対代数]
+三つの二元二次式$q_i$と二元三次式$f$を持つ
+対角混合族$A(h,q,f)$について、$h\ne0$のとき
+次数付き同型の候補は
+$s' \mapsto Ns,\ x_i'\mapsto\lambda_i x_{p(i)}$
+（$p\in S_3$, $N\in\mathrm{GL}_2$）であり、
+\[
+ \lambda_1^3=\lambda_2^3=\lambda_3^3=\kappa,\quad
+ h'=\operatorname{sgn}(p)h\frac{\lambda_1\lambda_2\lambda_3}{\kappa},
+ \quad q'_i(Ns)=\lambda_i^2q_{p(i)}(s),
+ \quad f'(Ns)=\kappa f(s)
+\]
+が必要十分条件と原稿には記載される。
+ここではこの全係数比較の独立監査を終えていない。
+六つの零点が相異なる一般の対角族の商次元は十、
+$h$固定なら九という旧研究ノートの到達点を保持する。
+偏極付き圏の同値と構造対象を忘れた導来同値は
+同じ同値関係ではない。
+\end{remark}
+
+\section{有限Artin基底のsmoothness：使用できない推論}
+$\Lambda_R$を完備基底上のproper dg代数とする。
+全ての有限Artin切断でperfect/smoothであることから、
+完備底上の相対対角がperfectであることは一般には従わない。
+反例の完全なTeXと証明は
+\href{https://github.com/uedakazushi/nc-cubic/blob/main/notes/source_recovery/dg_perfectness_counterexamples.tex}{dg perfectness反例ノート}、
+有限bar対角・Artin検出・generic spreadingの適用範囲は
+\href{https://github.com/uedakazushi/nc-cubic/blob/main/notes/sm_bar_and_spreading.tex}{対応する現行ノート}
+に保持する。
+可換な特殊ファイバーがsmoothなことは
+任意の完備変形の相対対角のcompactnessを保証しない。
+論文の主結果が必要とするSM（相対smoothness）は
+この議論から証明済みとはしない。
+
+\section{文献と検証範囲}
+本稿は、2026年11月1日付の旧研究ノートにあった有効な
+一般性の区別、数式、有限中心値正則性、偏極付き復元、
+dg障害を現行の再開可能な範囲に再構成した。
+組版・主定理の独立検証・完全な先行研究調査は別工程である。
+\begin{thebibliography}{9}
+\bibitem{RSV} J.\ V.\ Rennemo, E.\ Segal and M.\ Van den Bergh,
+\emph{A non-commutative Bertini theorem}, arXiv:1705.01366,
+Lemmas 3.2--3.3, \url{https://arxiv.org/abs/1705.01366}.
+\bibitem{CCKM} T.\ Cassidy, A.\ Conner, E.\ Kirkman and W.\ F.\ Moore,
+\emph{Periodic free resolutions from twisted matrix factorizations},
+arXiv:1307.8415, Theorems 4.7 and 5.5,
+\url{https://arxiv.org/abs/1307.8415}.
+\bibitem{YZ} A.\ Yekutieli and J.\ J.\ Zhang,
+\emph{Serre duality for noncommutative projective schemes},
+Proc.\ Amer.\ Math.\ Soc.\ \textbf{125} (1997), 697--707.
+\end{thebibliography}
+\end{document}

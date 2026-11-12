@@ -9,7 +9,7 @@
 - **正則正規三次族からの1周期性**：一般$N,d$について最小周期が$\gcd(N,d)$を割る定理と5次元・三次の場合の系を、モジュライ原稿の [周期性節](papers/sections/ambient_periodicity.tex) に証明ごと統合。ambientの1周期性と、商イデアルを保つ周期性を区別する。後者と初出・新規性の確定は未了。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 
-**2026年11月12日・v8。独立した研究内容の正本は本リポジトリの `main`。**
+**2026年11月12日・v9。独立した研究内容の正本は本リポジトリの `main`。**
 
 ## 六・七次元Poisson cubicの独立なscheme幾何
 
@@ -51,7 +51,7 @@ embedded primary componentsの横断長8・64、
 - `papers/central_fiber_discriminant.tex`：中心三次曲面の必要十分判別式・特異点の解析。対応する正確な記号計算は `computations/verify_central_fiber_discriminant.py`。
 - `notes/research_notes.md`：現行の数学的状態、欠けている入力、研究再開手順。
 
-初期移管の対象は**完全なTeXソースがGitHub APIで転送・blob一致検証できた部分のみ**。PDF原資料は6点保持する。2点は既存TeX・方針との重複が強いためGit追跡を解除した。現行の所在と判断の制約は `PDF_SOURCES.md`。
+初期移管の対象は**完全なTeXソースがGitHub APIで転送・blob一致検証できた部分のみ**。PDF原資料は5点保持する。有限smoothnessの研究ノートは重要な内容を [現行LuaLaTeXノート](notes/ambient_finite_smoothness_and_recovery.tex) と `nc-cubic` の対応原稿へ整理し、PDF追跡を解除した。残る論文PDFについては、未収録の結果・証明があるため保全し、順にTeX化する。詳細は `PDF_SOURCES.md`。
 
 ## 再現
 

@@ -9,7 +9,7 @@
 - **ambientの周期性**：`papers/nc_cubic_threefold_moduli.tex` の `papers/sections/ambient_periodicity.tex` に、正則正規次数$d$族を持つKoszul AS正則$\mathbb Z$-代数の最小周期が$\gcd(N,d)$を割る定理と証明を収録。標準5次元・三次なら1周期的。商イデアルを保存する1周期性は未証明。既知双対性からの帰結として新規性は未確認。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 
-**2026-11-12 / v10。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v11。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -69,12 +69,12 @@ embedded componentの長さの解明。
 
 ## 未解決
 
-PDF資料のうち、内容目次の比較で既存TeXへ実質的に集約済みと判定した2点の追跡を解除した。残る6点は独自の結果が存在する可能性があり、本文全体の照合まで保持する（`PDF_SOURCES.md`）。主リポジトリの定理に引用・依存する補題は、移管元に自立した証明を保持してから移す。文献の一次資料照合も追加監査が必要。
+pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な数学的内容を `notes/ambient_finite_smoothness_and_recovery.tex` と `nc-cubic` の対応原稿へ統合したため、当該PDFの追跡を解除する。残るPDF原資料は5件で、各論文に未収録の重要な結果があるため本文照合・TeX化が済むまで保持する（`PDF_SOURCES.md`）。主リポジトリの定理に引用・依存する補題は、移管元に自立した証明を保持してから移す。文献の一次資料照合も追加監査が必要。
 
-## 次の作業
+## 次の作業：PDFの追跡解除を最優先
 
 1. 主題別に分割した`papers/pfaffian_brill_noether_technical.tex`をLuaLaTeXで実組版し、本稿をLuaLaTeXで実組版し、接触計算の必要な整数入力・証明書を現行repoから自立的に再構成する。
-2. 残るPDF原資料の本文をTeXに照合し、独自の重要結果があれば証明とともに現行論文に統合する。大きなPDFのGitHub API上の本文抽出は今回未達で、名前だけで削除しない。
+2. LibraryにあるPDF原本をコンテナで本文抽出できることを確認した。特に `pfaffian_contact.pdf` の旧論文III後半（普遍同変非線形接触分類・Milnor/Tjurina・Pfaffian graph）、`central_quotient_singularities.pdf` のA1局所模型・Brauer指数・特異圏、`central_pair_formal_moduli.pdf` の全Artin比較をそれぞれ現行TeXに証明付きで統合し、原PDFの追跡解除を判定する。
 3. 研究の現在有効な成果を分かりやすい公表用原稿へ再編する。単なる旧原稿の蓄積にしない。
 
 ## 一般研究原則と保存許可
