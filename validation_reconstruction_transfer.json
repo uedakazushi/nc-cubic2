@@ -1,29 +1,25 @@
 {
   "date": "2026-11-13",
-  "version": "v9",
-  "status": "PARTIAL overall: three previous units source-deduplicated; finite Artin window/base-change and smoothness obstruction integrated as a fourth standalone manuscript, with original Artin sources deliberately retained pending formal/etale and mixed dependencies",
+  "version": "v10",
+  "status": "PARTIAL overall: three units source-deduplicated; finite Artin and etale realization companions integrated, with remaining source dependencies deliberately retained",
   "source_repository": "uedakazushi/nc-cubic",
   "destination_repository": "uedakazushi/nc-cubic2",
-  "paper_A": "Remains unchanged in nc-cubic, A-v51",
-  "focused_paper_B": "nc-cubic/papers/paper_b.tex B-v55 unchanged; general n>=3 theorem and required proofs",
+  "paper_A": "Unchanged in nc-cubic, A-v51",
+  "focused_paper_B": "Unchanged in nc-cubic, B-v55; general n>=3 theorem and necessary proofs",
   "completed_companion": {
     "entry": "papers/mixed_cubic_point_schemes.tex",
     "notes": "notes/mixed_cubic_point_schemes.md",
     "validation": "validation_mixed_cubic_point_schemes.json",
     "destination_content_commit": "62f50628a3a91f035020f3f774587e976db48ac4",
-    "chapters": ["mixed_central_family.tex", "point_scheme_poisson_zero.tex", "point_scheme_thickening.tex", "point_scheme_lambda_family.tex", "point_scheme_discriminant_boundary.tex"],
-    "required_reference_closure_verified": true,
-    "lualatex_build_executed": true,
     "pages": 12,
-    "all_four_calculation_scripts_executed": true,
+    "four_calculation_scripts_executed": true,
     "source_cleanup": {
       "status": "COMPLETED for this unit",
       "source_commit": "da722ca8b7feec57ff73609154a7e2d27351e922",
       "removed_duplicate_files": 17,
       "source_notes_integrated": true,
-      "three_old_certificates_exactly_reproduced": true,
-      "paper_A_and_B_input_files_unchanged": true,
-      "mixed_family_remainder_and_its_script_retained_at_source": true
+      "three_certificates_exactly_reproduced": true,
+      "mixed_family_remainder_retained_at_source": true
     }
   },
   "finite_jacobian_companion": {
@@ -32,18 +28,15 @@
     "validation": "validation_cubic_jacobian_recovery.json",
     "destination_content_commit": "c84789460fa89a02f4b37fac1d60e893967e4f52",
     "all_14_math_environment_blocks_preserved": true,
-    "research_roadmap_retained_in_notes": true,
-    "lualatex_and_visual_review_executed": true,
     "pages": 6,
-    "reference_closure_verified": true,
     "rational_checker_executed": true,
-    "original_certificate_exactly_reproduced": "84f51d6c288c7c2c202e01173ee7c4363a8e3c41",
+    "source_certificate_reproduced": "84f51d6c288c7c2c202e01173ee7c4363a8e3c41",
     "source_cleanup": {
       "status": "COMPLETED for the dedicated unit",
       "source_commit": "ea228b7958045bbc72c77c3319d82863baf33277",
-      "removed_files": ["papers/support/papers/reconstruction/explicit_jacobian_recovery.tex", "computations/verify_explicit_jacobian_recovery.py", "computations/explicit_jacobian_certificate.json"],
-      "shared_bibliography_retained": "explicit_jacobian_references.tex remains for pending support chapters",
-      "necessary_main_theorem_proofs_retained": "nc-cubic/papers/generic_recovery/gradient_recovery.tex"
+      "removed_files": 3,
+      "shared_bibliography_retained": true,
+      "necessary_main_proof_retained": "nc-cubic/papers/generic_recovery/gradient_recovery.tex"
     }
   },
   "first_order_companion": {
@@ -52,52 +45,63 @@
     "notes": "notes/cubic_first_order_deformations.md",
     "validation": "validation_cubic_first_order.json",
     "destination_content_commit": "c98c57a511ad550954ae47ba776e57dff89f08bd",
-    "main_results_and_original_labels_preserved": true,
+    "original_results_and_labels_preserved": true,
     "dual_number_window_appendix_included": true,
-    "general_Artin_comparison_fully_transferred": false,
     "Todd_HKR_alternative_proof_included": true,
-    "lualatex_and_visual_review_executed": true,
     "pages": 13,
-    "reference_closure_verified": true,
-    "two_original_scripts_byte_identical_and_previously_executed": true,
+    "two_original_scripts_previously_executed": true,
     "scripts_rerun_during_Todd_integration": false,
     "source_cleanup": {
-      "status": "COMPLETED for dedicated first-order unit and Todd alternative proof",
-      "first_order_cleanup_commit": "549c7e0aad8353daafe4c19c124401e2e02f2928",
-      "Todd_cleanup_commit": "ba01a766666c51eebf1bc1d382cafb20760363eb",
-      "removed_files": ["papers/support/papers/reconstruction/first_order_poisson_kernel.tex", "computations/verify_first_order_curved_kernel.py", "computations/verify_second_order_plucker.py", "papers/support/papers/reconstruction/poisson_first_order.tex"],
-      "shared_Todd_reference_fragment_retained": true,
-      "retained_source_comparison": "artin_residual_mf_comparison.tex contains broader independent Artin/base-change results",
-      "source_scope_note_and_plan_updated": true,
-      "paper_A_and_focused_B_unchanged": true
+      "status": "COMPLETED for the dedicated unit",
+      "direct_comparison_commit": "549c7e0aad8353daafe4c19c124401e2e02f2928",
+      "Todd_commit": "ba01a766666c51eebf1bc1d382cafb20760363eb",
+      "removed_files": 4,
+      "shared_bibliography_and_broader_Artin_comparison_retained": true
     },
-    "scope": "First-order MF comparison for N>=5; Plucker, categorical tangent and Todd-HKR results for N=5. No general seven-dimensional forgetful kernel, full formal moduli or new reconstruction existence claim."
+    "scope": "First-order MF for N>=5; Plucker/categorical tangent/Todd for N=5; not a generic seven-dimensional forgetful kernel or full formal moduli theorem."
   },
   "finite_artin_window_companion": {
     "entry": "papers/cubic_artin_windows.tex",
     "notes": "notes/cubic_artin_windows.md",
     "validation": "validation_cubic_artin_windows.json",
-    "version": "v1",
-    "scope": "All one-parameter finite Artin truncations R_N=C[h]/h^(N+1), d>=5; not arbitrary local Artin rings",
+    "scope": "All one-parameter C[h]/h^(N+1) truncations, d>=5; not arbitrary local Artin rings",
     "core_comparison_and_regular_basechange_integrated": true,
-    "smoothness_counterexample_byte_identical": "00b88867ab30b64e751160bbb8207b0f405b66da",
-    "conditional_application": "ar:cor:conditional assumes compatible MF equivalences; it does not replace original am:cor:formal-residual or prove formal MF existence",
-    "lualatex_and_visual_review_executed": true,
-    "pages": 13,
-    "reference_closure_verified": true,
-    "exact_finite_dg_checks_executed": true,
+    "shared_counterexample": "papers/artin_windows/artin_smoothness_obstruction.tex",
+    "counterexample_current_blob": "fe52bb222fdc9a1d2678a10b29bfa9b97ef8f228",
+    "counterexample_reference_normalization": "Two external context references removed; mathematical proof retained and shared with the etale paper.",
+    "prior_full_build_pages": 13,
+    "full_build_rerun_after_shared_reference_change": false,
+    "exact_finite_dg_checks_previously_executed": true,
+    "conditional_application": "ar:cor:conditional assumes compatible MF equivalences; original am:cor:formal-residual and full existence input still remain at source.",
+    "source_cleanup": {"status": "PENDING", "reason": "Mixed/formal/window support chapters still cite am:*", "deleted_this_revision": 0}
+  },
+  "relative_etale_companion": {
+    "entry": "papers/relative_cubic_realization.tex",
+    "notes": "notes/relative_cubic_realization.md",
+    "validation": "validation_relative_cubic_realization.json",
+    "version": "v2",
+    "scope": "Actual smooth proper families with one autoequivalence; cubic application n>=3. Does not add a chosen cubic-period isomorphism or group-action coherence.",
+    "etale_body_byte_identical": "746fb290813c5ebad864e8398c07604e8db9a446",
+    "shared_counterexample_not_duplicated": true,
+    "tex_files": 6,
+    "labels": 29,
+    "references": 24,
+    "citation_occurrences": 16,
+    "bibliography_entries": 9,
+    "current_full_build_and_visual_review": true,
+    "pages": 10,
+    "sector_arithmetic_rerun_N": [5, 60],
+    "source_certificate_exactly_reproduced": "8e7a35337e43b45fc26b04c11414554732213ea4",
     "source_cleanup": {
       "status": "PENDING; originals retained",
-      "reason": "Pending formal, mixed and other support chapters cite am:*; original full formal-recovery corollary and its all-orders existence input remain at source",
+      "reason": "rotation_saturation_reduction and other unmigrated chapters retain er/ho/as dependencies",
       "source_files_deleted": 0
     },
-    "all_Artin_etale_results_transferred": false,
-    "paper_A_and_focused_B_unchanged": true
+    "new_mathematical_results_added": false
   },
-  "text_preserved_but_companion_integration_pending": {},
-  "remaining_groups": ["Formal/etale relative existence theory and finite-Artin source deduplication", "Sklyanin and multiblock finite models", "relative diagonal, bar, Morita and alternate constructions", "mixed-family jets and equivariant reconstruction", "other independent generalizations, literature and computation assets"],
+  "remaining_groups": ["Broader formal relative existence and Artin/etale source dependency cleanup", "Sklyanin and multiblock finite models", "relative diagonal, bar and Morita alternate constructions", "mixed-family jets and equivariant reconstruction", "other independent results and computation assets"],
   "all_independent_material_transferred": false,
-  "independent_full_math_proof_audit": false,
-  "concurrent_destination_work_preserved": ["83c787d231b1e0ce5929a897626a17c72185c1e5", "e10e980f5fba6e8d238b9ac777a7b513aee661fa", "47cc55e6e0a7191d0af5fba3b3bd73c41620c3c4", "ab4da97348cc270d119e28f745b78c6ec0b228d1", "79b4dd643a5e3ed4fac5eec0ed0e9445f8025965"],
-  "policy": "Remove source duplicates only after current destination manuscript, proofs, inputs and necessary validation are saved and remaining dependents reconciled. No Actions or force push."
+  "independent_full_mathematical_audit": false,
+  "current_destination_base_preserved": "8b9d77c57094ed3578cdac3d2120b7168303d6a8",
+  "policy": "Delete originals only after destination persistence and dependent-source reconciliation; preserve A and B; no Actions or force push."
 }

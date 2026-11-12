@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-13",
+  "version": "v2",
+  "entry": "papers/relative_cubic_realization.tex",
+  "source_repository": "uedakazushi/nc-cubic",
+  "source_commit": "7521283a6e2cf691a72c3df6bf47a3cd75067ef1",
+  "destination_base_commit": "8b9d77c57094ed3578cdac3d2120b7168303d6a8",
+  "scope": "Edit and integrate existing etale realization criterion, cubic Hochschild sector bookkeeping, and complete-base counterexample. No new mathematical theorem; source papers A and B unchanged.",
+  "preservation": {
+    "etale_body_byte_identical": "746fb290813c5ebad864e8398c07604e8db9a446",
+    "etale_labels_preserved": 14,
+    "sector_body_original_blob": "742196a1e56c07e8c0238a2c29a87af1f9ad8b67",
+    "sector_labels_preserved": 7,
+    "sector_changes": "Context and scope prose only; all mathematical environments preserved.",
+    "shared_counterexample": {
+      "path": "papers/artin_windows/artin_smoothness_obstruction.tex",
+      "previous_blob": "00b88867ab30b64e751160bbb8207b0f405b66da",
+      "current_blob": "fe52bb222fdc9a1d2678a10b29bfa9b97ef8f228",
+      "labels_preserved": 8,
+      "environments": {"lemma": 3, "proposition": 1, "theorem": 1, "proof": 5, "remark": 1},
+      "change": "Remove two external contextual references; retain all direct proof text. One shared source is used by the Artin and etale papers.",
+      "finite_Artin_full_paper_rebuilt_this_revision": false
+    }
+  },
+  "source_check": {
+    "executed": true,
+    "command": "python3 scripts/check_relative_cubic_realization.py --calculations --build",
+    "tex_files": 6,
+    "labels": 29,
+    "references": 24,
+    "citation_occurrences": 16,
+    "bibliography_entries": 9,
+    "undefined_references": 0,
+    "undefined_citations": 0,
+    "duplicate_labels": 0,
+    "duplicate_bibitems": 0,
+    "source_blobs": {
+      "papers/relative_cubic_realization.tex": "82512285c61624ac880201743e417774ef1ea717",
+      "papers/relative_realization/preamble.tex": "45bebfafbbab87b1386fef1851b48c177cf86d3b",
+      "papers/relative_realization/etale_realization.tex": "746fb290813c5ebad864e8398c07604e8db9a446",
+      "papers/relative_realization/hochschild_obstructions.tex": "caecb6a21bebfeb897c6334080756d63671b7db2",
+      "papers/artin_windows/artin_smoothness_obstruction.tex": "fe52bb222fdc9a1d2678a10b29bfa9b97ef8f228",
+      "papers/relative_realization/references.tex": "52a518baffb14f8dbf8677d1853dbb5e02c8a17a"
+    }
+  },
+  "build": {
+    "executed": true,
+    "command": "latexmk -g -r .latexmkrc papers/relative_cubic_realization.tex",
+    "engine": "LuaLaTeX",
+    "latexmkrc_blob": "e91814c24c952db2ee886837d0c827cd64498f3d",
+    "pages": 10,
+    "undefined_references_and_citations": 0,
+    "multiply_defined_labels": 0,
+    "missing_characters": 0,
+    "overfull_boxes": 0,
+    "pdf_sha256": "919c02682a1c927bef331a4050e242e6283bdaf7f88aff6d96549cd8a9ec859b",
+    "visual_review": "All 10 final source-matched pages rendered with PyMuPDF and inspected in three contact sheets; no clipping or overlap observed.",
+    "pdf_git_tracked": false
+  },
+  "calculations": {
+    "executed_this_revision": true,
+    "script": "computations/verify_hochschild_sectors.py",
+    "script_blob": "9b97c8932b221258a98384115c7fcf378a3920c0",
+    "range_N": [5, 60],
+    "certificate_blob": "8e7a35337e43b45fc26b04c11414554732213ea4",
+    "original_certificate_exactly_reproduced": true,
+    "scope": "Exact integer bookkeeping of the quoted BFK formula, not verification of that theorem or categorical arguments.",
+    "Artin_dg_model_calculation_rerun": false
+  },
+  "literature": {
+    "new_independent_primary_audit_this_revision": false,
+    "retained_confirmation_scope": "Previous primary-text checks of Toën-Vaquie, Lowen, Stacks and Sasha recorded in notes. Lin-Zhang metadata was checked but full text was not retrieved; related-work citation only. The previous limitations remain."
+  },
+  "source_cleanup": {
+    "status": "PENDING; original source files deliberately retained",
+    "reason": "Other unmigrated source chapters, including rotation_saturation_reduction.tex, still cite er/ho/as results. Independent manuscript integration does not resolve those dependencies.",
+    "source_files_deleted": 0,
+    "paper_A_and_focused_B_modified": false,
+    "all_Artin_etale_material_transferred": false
+  },
+  "independent_full_mathematical_audit": false,
+  "formal_proof_verification": false,
+  "comprehensive_novelty_audit": false,
+  "persistence_policy": "Expected-SHA fast-forward main only; no Actions, force push or tracked PDF. Library only after actual push failure."
+}

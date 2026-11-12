@@ -1,0 +1,50 @@
+% !TEX root = relative_cubic_realization.tex
+\input{papers/relative_realization/preamble}
+\hypersetup{pdftitle={自己同値付きdg圏のétale局所実現とArtin切断の限界}}
+\title{自己同値付きdg圏のétale局所実現とArtin切断の限界}
+\author{}
+\date{2026年11月13日／研究草稿 v2}
+\begin{document}
+\maketitle
+\begin{abstract}
+自己同値を指定したsmooth properな代数的dg圏の族について、
+同値双加群の障害をHochschild cohomologyの不変部分で消去し、
+指定された特殊ファイバーの同値をétale局所的に延長する判定法を述べる。
+滑らかな三次超曲面のKuznetsov成分への適用では、
+幾何的Kodaira--Spencer写像とrotation不変部分の同定を用いる。
+また、すべての有限Artin切断が相対smoothであっても、
+完備基底上の相対smoothnessは従わないことを、階数四のstrict dg模型で示す。
+形式的な障害の消滅、実在する族の相対smoothness、étale局所実現を区別する。
+\end{abstract}
+
+\section*{問題設定と結果の射程}
+有限型複素スキーム$S$上のsmooth properな代数的dg圏の族とは、
+局所的に$\Perf(A)$で表され、$A$が底上perfect、
+対角$A$が$A^{\mathrm{op}}\otL A$上perfectとなるものをいう。
+自己同値は可逆perfect双加群として与え、圏はpretriangulatedかつ冪等完備とする。
+底変更は導来的に取り、同値はdg Morita同値を意味する。
+自己同値一つとそのintertwinerを指定するが、三次周期性の選択や
+群作用のcoherenceは別のデータとして扱う。
+
+第\ref{er:sec:etale}節では、perfect対象の導来moduli\cite{TV}と
+特徴作用による障害\cite{ERLowen}を使い、
+自己同値付きの局所実現を定理\ref{er:thm:criterion}で示す。
+三次超曲面への適用は定理\ref{er:thm:ER}であり、任意の次元$n\ge3$を対象とする。
+ここでは\emph{相対smooth proper性を仮定}する。
+次数別flatな量子化からその仮定が自動的に従うとは述べない。
+一般点での可換復元定理の証明とは、この入力の水準が異なる。
+
+第\ref{ho:sec:parity}節ではBFKの既知公式\cite{BFKER}から
+Hochschildの次数とrotation固有値を整理する。
+第\ref{as:sec:obstruction}節では射影直線上の既知の生成性喪失の例\cite{AMSasha}を
+strict dg代数として記述し、Artin切断と完備基底の相違を証明する。
+この反例のcohomologyは底上flatではないことも明記する。
+これらの組合せと一般定式化の先行研究上の初出は未確認である。
+
+\input{papers/relative_realization/etale_realization}
+\input{papers/relative_realization/hochschild_obstructions}
+\input{papers/artin_windows/artin_smoothness_obstruction}
+\begin{thebibliography}{99}
+\input{papers/relative_realization/references}
+\end{thebibliography}
+\end{document}

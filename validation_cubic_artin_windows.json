@@ -1,26 +1,39 @@
 {
   "date": "2026-11-13",
-  "version": "v1",
+  "validation_revision": "v2",
+  "manuscript_version": "v1 with shared-counterexample reference normalization",
   "entry": "papers/cubic_artin_windows.tex",
-  "source_repository": "uedakazushi/nc-cubic",
-  "source_commit": "ba01a766666c51eebf1bc1d382cafb20760363eb",
-  "scope": "One-parameter finite Artin truncations C[h]/h^(N+1), d>=5 variables; line-generated residual/MF comparison, regular-to-Artin base change, conditional transport of separately given MF equivalences, and existing non-smooth complete-base counterexample. Not arbitrary Artin bases or a new formal reconstruction existence theorem.",
+  "scope": "One-parameter Artin truncations C[h]/h^(N+1), d>=5 variables; line-generated residual/MF comparison, regular-to-Artin base change, conditional transport of given MF equivalences, and complete-base smoothness counterexample. Not arbitrary Artin bases or a new formal reconstruction existence theorem.",
   "preservation": {
+    "source_repository": "uedakazushi/nc-cubic",
+    "source_commit": "ba01a766666c51eebf1bc1d382cafb20760363eb",
     "source_artin_comparison_blob": "5710b613913ef99996e945b554c59d80e264a4b5",
     "core_labels_preserved": 17,
     "core_mathematical_environments": {"definition": 1, "lemma": 5, "theorem": 1, "proof": 6},
-    "core_editorial_changes": "Replace external local-resolution/cohomology and bidegree references by their necessary proof text; distinguish residual/MF comparison from NC-to-commutative MF existence.",
-    "regular_basechange_proposition": "am:prop:Gamma-basechange retained with necessary regular-local proof made internal from existing local_projective_model arguments; not a new research theorem.",
-    "smoothness_counterexample_byte_identical": true,
-    "smoothness_counterexample_blob": "00b88867ab30b64e751160bbb8207b0f405b66da",
-    "smoothness_counterexample_labels": 8,
-    "smoothness_counterexample_environments": {"lemma": 3, "proposition": 1, "theorem": 1, "proof": 5, "remark": 1},
-    "original_formal_recovery_corollary": "am:cor:formal-residual and its all-orders MF existence input remain at source. New ar:cor:conditional does not replace or silently weaken that result.",
+    "core_editorial_changes": "Make degreewise lifting, local cohomology and period grading explicit; distinguish residual/MF comparison from commutative MF existence.",
+    "regular_basechange": "am:prop:Gamma-basechange retained with necessary regular-local proof.",
+    "shared_counterexample_path": "papers/artin_windows/artin_smoothness_obstruction.tex",
+    "shared_counterexample_current_blob": "fe52bb222fdc9a1d2678a10b29bfa9b97ef8f228",
+    "counterexample_original_blob": "00b88867ab30b64e751160bbb8207b0f405b66da",
+    "counterexample_byte_identical_to_original": false,
+    "counterexample_math_content_preserved": true,
+    "counterexample_editorial_change": "Remove two context references to am:lem:generator and cg:ex:artin-singularity; direct proof and scope remain. Both the Artin and etale papers input this one source.",
+    "counterexample_labels_preserved": 8,
+    "counterexample_environments": {"lemma": 3, "proposition": 1, "theorem": 1, "proof": 5, "remark": 1},
+    "original_formal_recovery_corollary": "am:cor:formal-residual and its all-orders MF input remain at source; ar:cor:conditional does not replace or weaken that result.",
     "papers_A_and_B_modified": false,
     "new_research_theorems": false
   },
-  "source_check": {
-    "executed": true,
+  "current_revision_validation": {
+    "full_Artin_paper_source_checker_rerun": false,
+    "full_Artin_paper_lualatex_rerun": false,
+    "Artin_dg_calculations_rerun": false,
+    "checked_delta": "Shared-file mathematical environments and labels retained; two external references removed, no new macro or citation introduced.",
+    "shared_file_compiled_elsewhere": "Current shared file included in the completely rebuilt and visually reviewed 10-page relative_cubic_realization.tex; see validation_relative_cubic_realization.json.",
+    "limitation": "The prior 13-page Artin PDF receipt does not certify the current shared-file bytes. Full Artin rebuild remains to be rerun."
+  },
+  "last_completed_full_validation": {
+    "source_commit": "8b9d77c57094ed3578cdac3d2120b7168303d6a8",
     "command": "python scripts/check_cubic_artin_windows.py --calculations --build",
     "tex_files": 7,
     "labels": 31,
@@ -31,6 +44,12 @@
     "undefined_citations": 0,
     "duplicate_labels": 0,
     "duplicate_bibitems": 0,
+    "pages": 13,
+    "pdf_sha256": "0833dd280be2b03f79e817287f4db97d206cdcca2383204302b72f5a9784d66e",
+    "latexmkrc_blob": "e91814c24c952db2ee886837d0c827cd64498f3d",
+    "missing_characters": 0,
+    "overfull_boxes": 0,
+    "visual_review": "All 13 pages of that source version inspected; current shared-file normalization not included in this receipt.",
     "source_blobs": {
       "papers/cubic_artin_windows.tex": "59f301fc594f1e7fa70be8201190bcc99fa5ce20",
       "papers/artin_windows/preamble.tex": "05e1aa89f77395de67fd5d915c3e05b9286b2bf3",
@@ -41,22 +60,8 @@
       "papers/artin_windows/references.tex": "9401c8c41a148c57b1468c269587d94af53eaf56"
     }
   },
-  "build": {
-    "executed": true,
-    "command": "latexmk -g -r .latexmkrc papers/cubic_artin_windows.tex",
-    "engine": "LuaLaTeX",
-    "latexmkrc_blob": "e91814c24c952db2ee886837d0c827cd64498f3d",
-    "pages": 13,
-    "pdf_sha256": "0833dd280be2b03f79e817287f4db97d206cdcca2383204302b72f5a9784d66e",
-    "undefined_references_and_citations": 0,
-    "missing_characters": 0,
-    "overfull_boxes": 0,
-    "multiply_defined_labels": 0,
-    "visual_review": "All 13 final pages rendered with PyMuPDF and inspected in four contact sheets; no clipping or overlap observed.",
-    "pdf_git_tracked": false
-  },
-  "calculations": {
-    "executed": true,
+  "retained_calculation_results": {
+    "executed_in_last_full_validation": true,
     "python": "3.13.5",
     "sympy": "1.14.0",
     "coefficient_ring": "QQ[h] and QQ",
@@ -77,17 +82,16 @@
     "not_verified_by_code": ["dg Morita equivalence", "generation for all N", "infinite semifree resolution", "homological smoothness", "relative MF comparison"]
   },
   "literature": {
-    "Stacks_primary_passages_checked": ["0BQT finite line-bundle generator", "09M1 compact equals perfect for qcqs schemes"],
-    "retained_inputs_not_fully_reaudited": ["Chen arXiv:2402.11613v3", "Artin-Zhang", "Burke-Stevenson", "Sasha MathOverflow generator deformation example"]
+    "previous_Stacks_passages_checked": ["0BQT", "09M1"],
+    "retained_inputs_not_fully_reaudited": ["Chen arXiv:2402.11613v3", "Artin-Zhang", "Burke-Stevenson", "Sasha generator deformation example"]
   },
   "source_cleanup": {
-    "status": "PENDING: original files deliberately retained",
-    "reason": "Other not-yet-migrated formal, mixed and relative chapters cite am:*; original final formal-recovery corollary has not been migrated with its all-orders existence input.",
+    "status": "PENDING; original files retained",
+    "reason": "Other source chapters cite am:*; original full formal-recovery corollary and its all-orders input remain at source.",
     "all_Artin_etale_material_transferred": false
   },
   "independent_full_mathematical_audit": false,
   "formal_proof_verification": false,
   "comprehensive_novelty_audit": false,
-  "concurrent_destination_base": "79b4dd643a5e3ed4fac5eec0ed0e9445f8025965",
-  "persistence_policy": "Expected-SHA fast-forward main; no Actions or force push; preserve concurrent work. Library only after actual push failure."
+  "persistence_policy": "Expected-SHA fast-forward main; no Actions, force push or tracked PDF; preserve concurrent work."
 }
