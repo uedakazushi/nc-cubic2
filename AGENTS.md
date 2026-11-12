@@ -25,3 +25,5 @@
 - VS Code LaTeX Workshopは `.vscode/settings.json` の明示的なcwdとルート `.latexmkrc` を使用する。TeXはLuaLaTeX、出力はbuild、生成PDFは追跡しない。
 
 - The 79 sections of `papers/pfaffian_brill_noether_technical.tex` have been divided losslessly among five thematic `papers/sections/` inputs; the parent `.tex` is the sole entry point. The final verification input contains legacy version records and may refer to missing computation files; audit before treating them as reproducible. See `papers/README.md`.
+
+- The former five version-specific verification-history sections have been replaced by one current proof-dependency and reproducibility section. Missing `verification/` and `source_vNN/` are NOT valid current reproduction commands. Preserve actual theorems in the two contact-normal-form inputs; rebuild only essential certificates. No GitHub Actions.

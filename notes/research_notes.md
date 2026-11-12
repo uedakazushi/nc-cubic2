@@ -1,6 +1,6 @@
 # 研究ノート：境界研究の現在の知識と障害
 
-**2026-11-12 / v4**
+**2026-11-12 / v5**
 
 - 独立の大部原稿は `papers/pfaffian_brill_noether_technical.tex` にTeXソースで存在する。旧79節を一字も削らず5個の `papers/sections/` ファイルへ分割した。主論文A・Cから直接入力されない一方、内容上の引用・既知結果への依存は今後も監査する。
 - 中心三次曲面
@@ -20,3 +20,9 @@
 ## 同時Poisson cubic fourfold の現行知識
 
 専用の研究方針・正規形依存の2成分分類・未解決事項は `notes/poisson_cubic_fourfold_moduli.md` と `papers/poisson_cubic_fourfold_moduli.tex` にまとめた。証明や研究課題は専用ファイルに集約し、ここで重複しない。
+
+## Pfaffian接触計算の現在有効な制約
+
+現行の高次接触正規形と横断Hessianの数学的証明は `papers/sections/pfaffian_contact_low_order.tex`、`papers/sections/pfaffian_contact_high_order.tex` にある。形式normal消滅・頂点支持・有限決定性の主張が証明本文にあることと、その計算証明書を独立に再実行したことは別であり、再実行は未了。旧版別の計算記録は現行の `papers/sections/pfaffian_computation_audit.tex` に必要な範囲のみ統合した。
+
+18次の94+60方向、20次の164接触方向と359 Koszul方向、22次の429方向、24次の1091方向という旧版記録の計算規模は、元の完全入力・整数証明書・driverが現行repoにないため`実行済みの再現可能な証明書`として扱わない。特に `E_vert=t^{10}`、`K_26^nor=0`、26次項の消去、無限形式変換の収束・代数化は未解決。今後の着手は現行本文の定義から整数行列と証明書を再構成して低次の非零minorから検証し、必要最小限の入力とコードのみGitHubに加える。

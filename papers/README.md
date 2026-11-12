@@ -28,12 +28,12 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 
 ## Pfaffian・Brill--Noether大部原稿の入力構成（2026-11-12）
 
-親ファイルは`pfaffian_brill_noether_technical.tex`であり、以下のファイルを順番に`\\input`する。旧79節の数学的本文は連続する範囲ごとに**字句上無損失で移動**し、ラベル・引用とその順序を維持した。
+親ファイルは`pfaffian_brill_noether_technical.tex`であり、以下のファイルを順番に`\\input`する。旧79節のうち主定理・証明に当たる§1–74は字句上無損失で移動し、ラベル・引用と順序を維持した。旧版別検証記録§75–79は、現行の検証状態と未解決事項を記す一節に置換した。
 
 - `sections/pfaffian_formal_deformations_gluing.tex`：形式変形、Kuznetsov、gluing、点加群、Picard（旧§1–20）。
 - `sections/brill_noether_boundary_geometry.tex`：境界の三次錐、六次Torelli、二段階解消（旧§21–24）。
 - `sections/pfaffian_contact_low_order.tex`：普遍共変量とTate、低次から20次の接触正規形（旧§25–41）。
 - `sections/pfaffian_contact_high_order.tex`：20–26次、Koszul、横断Hessian、有限決定性（旧§42–74）。
-- `sections/pfaffian_computation_audit.tex`：検算の適用範囲、旧版ごとの記録（旧§75–79）。公表用本文としては未整理。過去の計算ファイルの一部は現行mainに存在しない可能性があり、再現を保証しない。
+- `sections/pfaffian_computation_audit.tex`：検算の現行依存関係、整数証明書の状態、未解決の26次問題（旧§75–79を置換）。旧 `verification/` と `source_vNN/` は現行mainに存在せず、独立追試は未実施。
 
 親ファイルだけを `latexmk papers/pfaffian_brill_noether_technical.tex` で組版する。今回の検証は文字列単位の内容保持に限られ、LuaLaTeXの実行と証明の独立監査は行っていない。
