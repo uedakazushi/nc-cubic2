@@ -1,6 +1,6 @@
 # 論文と再生成
 
-全次元の集合論的Poisson pair成分分類：`poisson_cubic_pair_components.tex`（正規形定理依存）。`latexmk papers/poisson_cubic_pair_components.tex`。四次元の`poisson_cubic_fourfold_moduli.tex`にはgeneric rank4 smoothnessの厳密小行列式計算も残す。両稿の検証状態を混同しない。
+全次元の集合論的Poisson pair成分分類：一般次元Poisson成分分類の正本はnc-cubicの論文Aにある。四次元の`poisson_cubic_fourfold_moduli.tex`にはgeneric rank4 smoothnessの厳密小行列式計算も残す。両稿の検証状態を混同しない。
 
 
 Poisson cubic fourfoldの追加的scheme論：`poisson_cubic_fourfold_moduli.tex`。集合論的分類はnc-cubic論文Aに一元化し、rank4のgeneric smoothnessを扱う。ルートから `latexmk papers/poisson_cubic_fourfold_moduli.tex` を実行する。
