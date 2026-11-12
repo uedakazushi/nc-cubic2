@@ -1,0 +1,130 @@
+% !TEX root = poisson_cubic_six_seven_geometry.tex
+% !TEX program = lualatex
+\documentclass[11pt,a4paper]{ltjsarticle}
+\usepackage[margin=25mm,headheight=16pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,bm,booktabs,array}
+\usepackage{luatexja-fontspec}
+\setmainjfont{HaranoAjiMincho-Regular}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{corollary}[theorem]{系}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{remark}[theorem]{注意}
+\renewcommand{\proofname}{証明}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\ZZ}{\mathbb Z}
+\title{滑らかな三次六・七次元超曲面のPoisson退化スキーム\\
+\large primary分解・Calabi--Yau完全交叉・数値不変量}
+\author{研究草稿（著者情報未記入）}
+\date{2026年11月12日・v1}
+\begin{document}
+\maketitle
+\begin{abstract}
+滑らかな三次六次元および七次元超曲面のPoisson双ベクトルについて、
+一般的なPoisson正規形を既知入力として、階数二・四・六の
+零点スキームと階数退化軌跡を具体的に記述する。
+階数二では型$(2,2,2,3)$の完全交叉に現れる一般型三次元多様体と
+Calabi--Yau四次元多様体のChern数とHodge数を計算する。
+階数四では中心座標上の有限平坦critical coverと三次曲面族を調べる。
+七次元の階数六では、退化スキームのprimary分解を与え、
+横断長八・六十四、被約化との間に現れる長さ四十九の厚みを計算する。
+主定理の正規形・一般の退化スキーム公式への依存は明示し、
+移管した各命題と証明は省略せず本稿へ収録した。
+計算の新規性・全依存証明の独立監査は未完了である。
+\end{abstract}
+\tableofcontents
+
+\section{目的と正規形の入力}\label{sec:geometry-input}
+本稿は任意次元のPoisson cubicの正規形・量子化・モジュライを
+中心とする論文Aから、特定次元の詳細な退化スキーム論と
+数値幾何を分離して扱う独立の研究草稿である。
+単なる数値表にとどまらず、退化イデアルの
+primary分解とembedded componentsの証明を保持する。
+
+\begin{theorem}[一般次元のPoisson正規形：既存結果を入力とする]
+\label{thm:pg-normal}
+$n\ge3$、$N=n+2$、$V=\CC^N$とし、
+$X=V(F)\subset\PP(V)$を滑らかな射影三次超曲面とする。
+$0\ne\pi_X\in H^0(X,\bigwedge^2T_X)$が
+Jacobi恒等式を満たすなら、
+ある一意の定数三重ベクトル$P\in\bigwedge^3V$から
+得られる射影空間上のPoisson構造$\pi=\iota_{dF}P$の
+$X$への制限として表される。
+さらに適当な線形座標で
+\begin{equation}
+ V=W_1\oplus\cdots\oplus W_k\oplus U,\quad
+ \dim W_s=3,\quad \dim U=m,\quad
+ N=3k+m,\quad
+ P=\sum_{s=1}^k P_s,\quad
+ F=\sum_{s=1}^k f_s(x_s,u)
+ \label{eq:input-normal-form}
+\end{equation}
+と表せる。$P_s$は$W_s$の非零体積元で、
+Poisson構造の一般階数は$2k$である。
+$F$の純中心三次部分は一度だけ数え、
+複数の$f_s$に重複して含めない。
+\end{theorem}
+この正規形定理は
+\cite{ncCubicA}の
+\texttt{thm:pg-normal}, \texttt{prop:pg-represent}および
+\texttt{lem:pg-quadratic-lie}にある。
+本稿ではその\emph{入力}とし、再証明したとは主張しない。
+その定理の全証明の独立監査と本稿の新規性の一次文献比較は
+今後の課題である。
+
+以降、$x_s=(x_{s1},x_{s2},x_{s3})$、
+$u=(u_1,\ldots,u_m)$とし、
+$\pi$は射影空間上のPoisson双ベクトル、
+$\pi_X$は$X$への制限とする。
+退化スキームは
+\begin{equation}
+ D_{2r}(\pi)=Z(\pi^{r+1}),\qquad
+ D_{2r}(\pi_X)=Z(\pi_X^{r+1})
+ \label{eq:input-degeneracy}
+\end{equation}
+という外積の零スキーム（非被約構造も保つ）で定義する。
+以下で必要な任意次元の退化イデアル・critical coverの
+基本補題は、研究を本稿から再開できるよう、
+証明を含めて次節に収録した。
+これらは論文Aと共通の既知入力・導出である。
+
+\input{papers/sections/poisson_cubic_degeneracy_background}
+\input{papers/sections/poisson_cubic_six_seven_geometry}
+\input{papers/sections/poisson_cubic_six_seven_numerical}
+
+\section{結論と未解決の課題}
+本稿の六次元・七次元の数値不変量の多くは、
+既知の完全交叉公式の適用である。
+公表価値を主張するなら、特に七次元の階数六における
+\texttt{prop:pg-D4-primary}、
+\texttt{prop:pg-D2-primary}、
+\texttt{rem:pg-length49}のscheme論的意味と一般化可能性を
+中心に据える必要がある。
+他の次元の類似したembedded primary成分や
+scheme-theoreticな最大退化軌跡の理解へ応用できるかは未解決である。
+
+主な独立監査事項は、primary分解で使う
+平坦基底変更とイデアル交叉の同一性、
+embedded componentのprimary性、
+数値的不変量のChern類・Hodge数計算と
+既知研究との新規性比較である。
+証明が書かれていること、計算の確認、
+先行文献と完全に照合したことは区別する。
+
+\begin{thebibliography}{9}
+\bibitem{ncCubicA}
+Noncommutative cubic研究プロジェクト，
+\emph{滑らかな三次超曲面のPoisson構造：
+正規形・退化軌跡・代数的量子化}，
+論文Aの現行LuaLaTeX原稿，
+\url{https://github.com/uedakazushi/nc-cubic/blob/main/papers/paper_a.tex}，
+正規形の証明は
+\url{https://github.com/uedakazushi/nc-cubic/blob/main/papers/support/papers/sections/poisson_geometry.tex}。
+書誌情報と公表状態は未確定。
+\end{thebibliography}
+\end{document}
