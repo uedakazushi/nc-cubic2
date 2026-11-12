@@ -1,10 +1,10 @@
-# PDF-onlyの現行判定（2026-11-12 / v10）
+# PDF-onlyの現行判定（2026-11-12 / v11）
 
 **本リポジトリの現行mainで追跡するPDF原本は以下の論文5件だけ**。研究ノート2件と旧Brill--Noether論文1件は現行TeXに価値ある内容を整理してGit追跡解除済み。旧版PDFやZIPのためのアーカイブは作らない。
 
 | 現行PDF | TeXへの移管ができた中心結果 | 残る削除障害 |
 | --- | --- | --- |
-| `papers/pdf-only/boundary/central_quotient_singularities.pdf` (61頁) | 中心判別式、全中心の生成元とRees/Azumaya証明構造、A1局所模型、三次元単純表現、特異圏、球面twist、指定一混合族の正確なtails判別 | 旧有限語計算の中心核・関係式rank証明書、中心/貼合せの入力の独立監査、TeX実組版 |
+| `papers/pdf-only/boundary/central_quotient_singularities.pdf` (61頁) | 中心判別式、全中心の生成元とRees/Azumaya証明構造、A1局所模型、三次元単純表現、特異圏、球面twist、指定一混合族の正確なtails判別 | 次数6中心核はQ上で独立検証済み。重み18のrank49とΦ=0はmod101で確認したが、Q上でのΦ=0の証明、中心/貼合せの入力の独立監査、TeX実組版 |
 | `papers/pdf-only/ambient/central_pair_formal_moduli.pdf` (60頁) | 全Artin形式局所環、Ore局所化、偏極と二次cover、偶数Veronese・剛体ambient | 一般Hesse中心公式と37次元ambientの有限検証、非可換Bertiniの正則開集合 |
 | `papers/pdf-only/boundary/pfaffian_contact.pdf` (89頁) | Hessian摂動のMilnor/Tjurina、Pfaffian graphのstrict transform・二次ファイブレーション、高次接触計算の既存大部TeX | 普遍非線形接触分類、全次数頂点核、計算証明書の整合 |
 | `papers/pdf-only/ambient/central_cubic_technical.pdf` (61頁) | nc-cubic論文Aの量子化/Poissonと本repoの17次元モジュライ、中心チャートのgeneric smoothness補題 | 点加群・有限PI中心・一般混合量子族・正則性の固有結果の完全比較 |
@@ -13,7 +13,7 @@
 ## 検証と再生成の現在有効な情報
 
 - 旧VIのTeX入口は `papers/central_quotient_local_models.tex`。新しい量子的判別の証明は `papers/sections/central_quotient_exact_tails.tex`、対応する限定的な厳密記号検算は `computations/verify_quotient_exact_tails.py`。
-- 旧VIの全中心の有限計算（次数6中心核rank78、次数18中心rank49）は**旧PDFの記述**であり、現行コード・入力・証明書による再実行は未了。中心表示とそれに依存するAzumaya結論の全面独立監査も未了。
+- 旧VIの中心核について、新規 `computations/verify_center_degree7.py` と同等の有理数/法101計算を独立に実行し、次数6の中心核が厳密に6次元・`1,g,g²,U,V,W`の基底であることを確認した。`computations/verify_center_weight18_mod101.py` と同等の再帰的商空間計算で、次数18のPBW次元1330、重み18以下の50単項式の法101 rank49、Φの法101消滅を確認した。特性零での関係式の零判定と唯一性は未確立である。Azumaya結論の全面独立監査も未了。
 - 旧IIIのHessian幾何は `papers/sections/pfaffian_hessian_geometry.tex`、旧Vのモジュライは `papers/sections/central_pair_artin_formal_moduli.tex` と `central_pair_mixed_derived_rigid.tex`。
 - PDFの本文の比較に使用したLibraryの原資料は同名・同バイトサイズであるが、GitHubのPDFとバイト単位で一致することまでは今回検証していない。
 - LuaLaTeXの実組版、全計算・全証明の独立監査、五PDFの数学的完全置換は未完了。追加削除の前に必要な証明と再現資産を現行Gitに統合する。

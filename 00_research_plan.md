@@ -10,7 +10,7 @@
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 - **可換点の全Artin形式局所構造をTeX化**：`papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。ただし有限位数境界と非可換Bertiniに依存する正則な四次元開集合の存在は独立再監査前なので条件付き。原PDFの全係数Hesse中心元・有限証明書・周囲37次元成分の細部は未完全照合で保持する。
 
-**2026-11-12 / v19。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v20。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -88,13 +88,13 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 
 現行原稿：`papers/central_quotient_local_models.tex`。以下の現在有効な証明を `papers/sections/` に保持する。
 
-- `central_quotient_center_azumaya.tex`：非斉次四中心元、中心超曲面、Rees退化・Azumaya locus。**中心核の行簡約（次数6 rank78、重み18 rank49）の入力・証明書は未回収**。この検算に依存する部分は条件付き。
+- `central_quotient_center_azumaya.tex`：非斉次四中心元、中心超曲面、Rees退化・Azumaya locus。**次数6の全中心核を独立に厳密検証済み**（`computations/verify_center_degree7.py`、Q上で6中心元が独立・中心、F7=120, F6=84、mod101の交換子rank78ゆえQ上もrank78）。重み18は`computations/verify_center_weight18_mod101.py`でF18=1330、50中心単項式rank49、指定Φ=0をmod101で検査した。ただしΦ=0の**特性零の厳密証明は未完成**。
 - `central_quotient_simple_representations.tex`：低次元単純表現の排除、二種の三次元単純表現、六次分裂元、軸上表現の一次剛性。法29非零19次小行列式は `computations/verify_central_quotient_reps.py` に保存。
 - `central_quotient_categories_and_twist.tex`：Karoubi完備な特異圏の3因子分解と構造対象の標識を保たない球面ツイスト。有限中心・Azumaya・正則性の入力に依存する。
 - `central_quotient_exact_tails.tex`：一次元表現の長さ3非被約局所環、真に悪い中心値、有限射影行列因子化と二重分岐、曲面・三様体のtails正則性の必要十分判別
   `(alpha^3+9)(28alpha^3+243)`。有限中心・PBW/CY・中心chart貼合せの仮定付き。小計算は `computations/verify_quotient_exact_tails.py`、BGVの一次論文（JNCG 10 (2016), Theorems 6.3, 6.6, 6.7, Corollary 6.8）を確認した。
 
-**次の具体的着手：** (i) `g,U,V,W` の交換子を関係式で厳密に零化、(ii) 次数6の中心核と重み18の49次元rank証明書を現行実装で作り、(iii) 非可換Bertiniと二中心chartの貼合せの依存を独立監査、(iv) TeX組版と計算を実行し、PDF VIから追跡解除する。
+**次の具体的着手：** (i) 既に証明した次数6中心核の特性零検算を論文VI本文と整合させる。(ii) 重み18の唯一の関係Φを有理数上で厳密零判定し、単項式rank49との組合せで全関係を確定する。(iii) 非可換Bertiniと二中心chartの貼合せの入力を独立監査する。(iv) LuaLaTeX組版と計算コードの再実行を確認し、PDF VIの追跡解除を判定する。
 
 ### 2. その他の4論文PDF
 
@@ -104,3 +104,9 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 - `sklyanin_mixed_quantization.pdf`：全混合量子化、臨界層、点スキーム、種数5曲線などの固有結果を精査する。195頁の長大な原稿を丸ごと複製せず、公表価値のある証明ごとに整理する。
 
 詳細な証明と未解決箇所は各現行論文・`notes/research_notes.md`、PDF固有の対応は`PDF_SOURCES.md`に置く。**主張の証明が原稿にあること、独立に監査されたこと、有限計算が実行されたこと、組版が成功したことを区別する。**
+
+### 中心核の新規独立計算（現行研究資産）
+
+`computations/verify_center_degree7.py`：次数7以下の全3280語と6015個の関係式倍を有理数で消去し、`dim F7=120, dim F6=84`を確認する。`g,U,V,W`がQ上で中心、`1,g,g²,U,V,W`が独立であることもQ上で厳密検証する。mod101の全84方向の交換子線形写像のrankは78。Q上のrank≥78と6中心元からrank≤78を組み合わせれば、Q上の中心核が正確に6次元であり、表示した6元が基底であると証明できる。
+
+`computations/verify_center_weight18_mod101.py`：別の帰納的語基底アルゴリズムで`dim F18=1330`、重み18以下の50中心単項式のmod101 rank49、指定の重み18関係Φがmod101で零であることを再現。**mod101での零判定だけからQ上の恒等式Φ=0は導かない**。Q上で少なくともrank49という下界は得られるが、唯一の特性零関係の証明書は未完了。前回の小計算は実行確認済み、今回GitHubへ入れた統合スクリプトそのものの再実行とLuaLaTeX組版は未実施。PDF VIは保持する。

@@ -53,3 +53,6 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 - `sections/central_quotient_center_azumaya.tex`：旧VI§14–15。全中心四生成元・唯一の関係とRees退化を用いるAzumaya locus、中心ファイバーによる大域次元の条件付き判定。旧有限語証明書を独立再実行していない。
 
 - `sections/central_quotient_exact_tails.tex`：旧VI§16の一次元表現の非被約スキーム、悪い中心値、有限射影MFの二重分岐、曲面/三foldの正確な量子的判別。親 `central_quotient_local_models.tex` より入力。`computations/verify_quotient_exact_tails.py` を再現コードとし、中心・貼合せの未監査入力に注意する。
+
+- `computations/verify_center_degree7.py`：非斉次中心のF7=120/F6=84、中心核6元のQ上厳密証明とmod101 rank78。標準ライブラリのみ。
+- `computations/verify_center_weight18_mod101.py`：独立のfiltered recursionでF18=1330、50単項式rank49とΦ=0をmod101で検査。特性零の中心関係式の完全証明ではない。長時間の再実行が必要な計算であり、GitHub Actionsは使わない。

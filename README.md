@@ -83,3 +83,5 @@ GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗
 中心商原稿には、[非斉次四中心元・Azumaya locusの証明構造](papers/sections/central_quotient_center_azumaya.tex)も回収した。有限語計算の元証明書は未回収であり、中心完全表示の独立再実行とは区別する。
 
 旧論文VI§16の正確な量子的tails判別と二重分岐の有限射影行列因子化の証明は [central_quotient_exact_tails.tex](papers/sections/central_quotient_exact_tails.tex) に回収。可換化・分岐・判別式の厳密検算は `python3 computations/verify_quotient_exact_tails.py`。非可換中心の旧大規模計算証明書は未回収のため原PDFは保持。
+
+中心商の有限中心計算として、`computations/verify_center_degree7.py`（Q上の6中心元・交換子rank78）と `computations/verify_center_weight18_mod101.py`（法101の重み18中心単項式rank49・Φの消滅）を追加。特性零のΦ恒等式の完全証明は未完で、原PDF VIは維持。
