@@ -1,4 +1,4 @@
-# 現行PDF原資料と保持の基準（2026-11-12 / v7）
+# 現行PDF原資料と保持の基準（2026-11-12 / v8）
 
 Libraryに保全されている同名・同バイトサイズのPDF原本から本文を抽出して確認した。これはGitHub上のblobそのもののバイト一致を検証したという意味ではない。原本の全定理・証明と現行TeXの完全同値性はまだ立証していない。特に旧論文III・V・VIおよび195頁のIIは、独自の結果が多数含まれる。
 
@@ -49,3 +49,7 @@ Pfaffian・Brill--Noether大部原稿の79節を、既存内容を移動する�
 ## VIのカテゴリー論的結果の追加回収（2026-11-12）
 
 旧論文VIの第21・22節（中心二段局所化、孤立した完備行列nodeでの特異圏分解、Knörrer周期性、3-spherical twist）を `papers/sections/central_quotient_categories_and_twist.tex` に移した。3次元単純表現の自己Ext1の消滅は `papers/sections/central_quotient_simple_representations.tex` と `computations/verify_central_quotient_reps.py` の法29の非零19次行列式（15 mod29）により証明と計算を追加した。旧PDFの独立の正則性判定（§14–16）とAzumaya locusの証明がまだ回収できていないのでGit追跡は解除しない。Karoubi完備化なしの圏同値やKuznetsov成分との同値は主張しない。
+
+## VIの中心とAzumaya locusの回収
+
+旧論文VI§14–15を `papers/sections/central_quotient_center_azumaya.tex` にまとめた： `g,U,V,W` の非可換語による表示、重み18の中心方程式、Rees退化と Brown–Macleod の高さ1 Azumaya論証、中心曲面からの大域次元の十分条件と非正則値。ただし中心恒等式と次元・rankには旧稿で有理行簡約した有限計算の証明書が必要で、現行Gitにまだ無く再実行できない。旧§16の全混合族のtails必要十分判別を完全に回収することがPDF削除前の最優先。PDFは引き続き保持する。

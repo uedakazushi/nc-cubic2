@@ -50,3 +50,7 @@
 ## 中心商論文VIのカテゴリー的回収と有限検算（2026-11-12）
 
 旧§21–22の射影特異圏を中心uとt=v/uで二段局所化し、有限中心上のIwanaga–Gorenstein代数のstable Homの有限長性と完備化から三つの4変数nodeへ分解する議論を `papers/sections/central_quotient_categories_and_twist.tex` に収録。KnörrerによりKaroubi完備な特異圏は `Perf_{Z/2}(C)^⊕3`（K0=Z³）となる。旧§22の構造対象の標識を保たない3-spherical twistは、軸上の3次元単純表現の自己Ext1=0を用いて構成する。`verify_central_quotient_reps.py`に法29で19次minor=15という厳密な剛性証明書を追加し実行済み。正確なtails正則判別・Azumaya locus・有限中心の全証明は未移植であり、この部分を無条件の独立定理とは扱わない。
+
+## 論文VIの中心全表示・Azumaya locusの依存
+
+`papers/sections/central_quotient_center_azumaya.tex` に、`R_1`の完全中心 `Z(R_1)=C[g,U,V,W]/(Φ)` の具体的な非可換単語による `U,V,W` の表示と、Rees環・GK/Cohen–Macaulay/height-one Azumayaによる中心smooth locus同定の証明構造を復元した。旧稿では次数7以下の3280語・6015本の関係、次数6中心核の84変数rank78、次数18の50単項式rank49の有理行簡約を行っている。この再現コード・入力・証明書はまだ現行GitHubに存在しないため、有限計算を今回行ったとは報告しない。これらを再構成して中心完全表示を確立し、旧論文VIの§16の正確なtails正則性判別と結びつけることが最重要。

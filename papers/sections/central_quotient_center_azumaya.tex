@@ -1,0 +1,212 @@
+% 旧中心商論文VI の第14--15節：中心元の有限表示とAzumaya locusの証明依存
+% このファイルは papers/central_quotient_local_models.tex から入力する。
+\section{全中心の明示生成元とRees退化によるAzumaya locus}
+\label{sec:quotient-center-azumaya}
+$R_1$を
+\[
+ \CC\langle X,Y,Z\rangle/
+ ([X,Y]-Z^2,\,[Y,Z]-(X^2+1),\,[Z,X]-Y^2)
+\]
+とする。語長filtrationを$F_\bullet R_1$と書く。
+旧中心商原稿の第14節では$\operatorname{gr}R_1=S_1$、
+$\dim F_nR_1=\binom{n+3}{3}$を用いて、
+次の非斉次中心元を明示する。
+
+\begin{proposition}[四つの中心生成元：有限計算に依存する結果]
+\label{prop:quotient-full-center}
+$\Omega_1=(X^3+Y^3+Z^3)/3-
+ (XYZ+XZY+YXZ+YZX+ZXY+ZYX)/9$と置き、
+$g=\frac32(\Omega_1+X)=Y^3-ZYX+X$とする。
+以下の語を定義する：
+\[
+ U=Z^3(g-Z^3)=Y^3(g-Y^3),
+\]
+\[
+\begin{aligned}
+ V={}&YZ^2Y^3-ZYZ^2YX-ZYZ^4
+   +2Z^2Y^2ZX+Z^2YZ^3-3Z^3YZ^2\\
+  &+YZ^2X+ZYZX+Z^2YX+3Z^4,\\
+ W={}&YZ^4Y+ZYZ^3Y+Z^2Y^2Z^2+2Z^2YZ^2Y
+      -Z^4Y^2+Z^5X\\
+  &-ZYZ^2-2Z^2YZ-2Z^3Y+Z^2 .
+\end{aligned}
+\]
+旧原稿に示された次の有限有理線形代数計算を入力とする：
+(i) $g,U,V,W$の三生成元との交換子が零、
+(ii) $F_6R_1$での中心核が
+$1,g,g^2,U,V,W$により生成される六次元空間、
+(iii) 重み$18$以下の$50$中心単項式の像のrankが$49$で、
+唯一の関係が後の$\Phi$となる。
+さらに斉次楕円Sklyanin代数$S_1$の中心構造定理
+\cite{WWYSklyanin}を用いる。
+この条件の下で
+\[
+ Z(R_1)\cong
+ \frac{\CC[g,U,V,W]}{(\Phi)},\quad
+ \Phi=49U^3-(13g^2+14)U^2+(g^2+1)^2U
+ +(11U-g^2-1)VW+V^3-W^3
+\]
+であり、
+$\operatorname{gr}Z(R_1)=Z(S_1)$となる。
+\end{proposition}
+\begin{proof}[旧原稿の証明と現行の検証範囲]
+旧原稿の有限語空間検査は次数7までの自由語3280個、
+関係式倍6015本の有理行簡約により
+$\dim F_7R_1=120$を示し、
+異なる語空間商の実装とも照合する。
+中心の$F_6$交換子行列は定義域次元84、rank78であり、
+上記6元を核の基底とする。
+斉次中心定理\cite{WWYSklyanin}によれば、
+$Z(S_1)$は三次の中心元と三つの六次中心元で生成され、
+重み18のただ一つの関係を持つ。
+$g,U,V,W$の最高次symbolがそれらを張ることを
+有限計算(ii)で確認した後、
+任意の中心元の最高次項を順に消す次数下降帰納法により
+$Z(R_1)$の生成とassociated gradedの等式を得る。
+
+重み18の$50$単項式の像は、旧原稿の整数・有理数計算(iii)に
+よりrank49で核は$\Phi$。
+その最高次symbolは斉次中心の唯一の関係を生成するので、
+任意の関係式の最高次項から$\Phi$の倍数を減じる
+filtration帰納法により全関係イデアルが$(\Phi)$となる。
+\textbf{重要な検証制約：} 本研究の現行Git treeには
+この元の行簡約の入力・証明書とプログラムがなく、
+今回の独立再実行は未実施である。
+従ってこれは有限計算(i)--(iii)を仮定した証明であって、
+未実行の数値検算を今回証明済みと報告しない。
+\end{proof}
+
+\begin{proposition}[Azumaya locusの同定：既知Sklyanin入力付き]
+\label{prop:quotient-azumaya}
+命題\ref{prop:quotient-full-center}の中心表示と
+$\operatorname{gr}Z(R_1)=Z(S_1)$を仮定し、
+$S_1$がPI次数6の三次元AS正則Sklyanin代数で、
+その非Azumaya locusが三本の曲線からなること
+\cite{WWYSklyanin}、
+また$R_1$がfiltered deformationとして
+左右大域次元3のprime noetherian整域であることを入力とする。
+このとき
+\[
+ \operatorname{Az}(R_1)
+ =\operatorname{Sm}(\operatorname{Spec}Z(R_1)).
+\]
+特に$R_1$は中心上有限な最大Cohen--Macaulay加群で、
+中心上の一般rankは$36$であり、
+高さ1ではAzumayaである。
+\end{proposition}
+\begin{proof}
+$Z=Z(R_1)$、$S_1=\operatorname{gr}R_1$とし、
+Rees環と中心のRees環を
+\[
+ \mathcal T=\bigoplus_{d\ge0}F_dR_1\,t^d,\qquad
+ \mathcal C=\bigoplus_{d\ge0}(Z\cap F_dR_1)t^d
+\]
+と書く。元の中心のassociated gradedが
+$Z(S_1)$に等しいことから、有限個の斉次中心生成元を
+次数を下げつつ持ち上げられる。
+従って$\mathcal T$は$\mathcal C$上有限で、
+\[
+ \mathcal T/(t)=S_1,\quad
+ \mathcal C/(t)=Z(S_1),\quad
+ \mathcal T[t^{-1}]=R_1[t,t^{-1}],\quad
+ \mathcal C[t^{-1}]=Z[t,t^{-1}]
+\]
+が成り立つ。
+$\mathcal C_{(t)}$は一次元noetherian局所整域で
+極大イデアルが$t$で生成されるためDVR。
+$\mathcal T_{(t)}$は有限torsion-freeゆえ自由で、
+そのrankは特殊ファイバー$S_1$の中心上の一般rank
+$6^2=36$に一致する。
+従って$R_1$の$Z$上の一般rankも$36$。
+
+Zariskian filtrationのgrade/GK次元比較
+\cite{LevasseurNoncomm}により、
+有限生成$R_1$加群$M$について
+\[
+ j_{R_1}(M)=j_{S_1}(\operatorname{gr}M),\quad
+ \operatorname{GKdim}M=\operatorname{GKdim}\operatorname{gr}M.
+\]
+$S_1$はAuslander-regularかつGK-Cohen--Macaulay
+なので$j_{R_1}(M)+\operatorname{GKdim}M=3$。
+中心上有限であるからKrull次元とGK次元が一致し、
+Brown--Macleodの基準\cite[Theorem~4.8]{BrownMacleod}
+によって$R_1$は$Z$-Macaulayである。
+
+$\mathcal C$の$(t)$を含む閉点で$S_1$がAzumayaなら、
+$\mathcal T/\mathfrak m\mathcal T\simeq\operatorname{Mat}_6(\CC)$。
+Nakayamaと一般rank36から
+$\mathcal T_{\mathfrak m}$は$\mathcal C_{\mathfrak m}$上自由rank36で、
+剰余体で同型となる
+$\mathcal T_{\mathfrak m}\otimes_{\mathcal C_{\mathfrak m}}
+ \mathcal T_{\mathfrak m}^{\mathrm{op}}
+\to\operatorname{End}_{\mathcal C_{\mathfrak m}}(\mathcal T_{\mathfrak m})$
+はNakayamaにより同型。
+従って特殊中心のAzumaya点はRees族でもAzumayaである。
+
+$\mathcal T$の非Azumaya locusを$D$とする。
+次数からの$\mathbb G_m$作用で$D$は不変。
+$D\cap V(t)$は$S_1$の非Azumaya locusの三曲線で次元1。
+$t\ne0$と交わる$D$の既約成分の閉包は
+$V(t)$にも交わり、次元公式によりその次元は高々2。
+$t\ne0$で$D$は
+$(\operatorname{Spec}Z\setminus\operatorname{Az}(R_1))
+\times\mathbb G_m$なので、
+$R_1$の非Azumaya locusは中心3次元において
+次元高々1、すなわちheight one Azumaya。
+Brown--Macleod\cite[Theorem~3.13]{BrownMacleod}の
+prime、中心有限、有限大域次元、$Z$-Macaulay、
+height one Azumayaの条件が揃い、
+Azumaya locusと中心のsmooth locusが一致する。
+\end{proof}
+
+\begin{lemma}[Azumaya環と中心の大域次元]
+\label{lem:quotient-azumaya-gldim}
+$C$を可換noetherian環、$B$を$C$上定数正rankの
+Azumaya代数とする。このとき左右大域次元は
+$\operatorname{gldim}B=\operatorname{gldim}C$であり、
+無限大の場合も含む。
+\end{lemma}
+\begin{proof}
+separability idempotentにより
+任意の$B$加群$M$は$B\otimes_CM$の$B$直和因子。
+$B$は$C$上射影的なので
+$C$-射影分解を誘導して
+$\operatorname{gldim}B\le\operatorname{gldim}C$を得る。
+逆向きには中心への正規化traceで$C\hookrightarrow B$が
+$C$加群として分裂する。
+任意の$C$加群$N$は$B\otimes_CN$の
+$C$直和因子となり、$B$-射影加群を制限すれば
+$C$-射影的なので逆の不等式も得る。
+\end{proof}
+
+\begin{corollary}[可換中心ファイバーからの十分条件と一つの非正則値]
+\label{cor:quotient-azumaya-fibers}
+命題\ref{prop:quotient-azumaya}の仮定の下で、
+$D_\gamma=R_1/(g-\gamma)$と置く。
+$\gamma^2\notin\{0,-1,-28/27\}$なら
+$\operatorname{gldim}D_\gamma=2$。
+一方、$\gamma^2=-28/27$では
+$\operatorname{gldim}D_\gamma=\infty$。
+$\gamma=0$での正則性は別途
+命題\ref{prop:local-model}の非可換$A_1$局所模型を用いる。
+\end{corollary}
+\begin{proof}
+可換中心ファイバーの必要十分判別式
+$H(H+1)(27H+28)$は
+\href{https://github.com/uedakazushi/nc-cubic2/blob/main/papers/central_fiber_discriminant.tex}
+{別の現行TeX}に証明がある。
+$H=\gamma^2$が指定三値以外なら中心曲面は滑らか。
+中心の正則元で割った商が正則局所環なら
+元の中心局所環も正則なので、
+各点で$R_1$はAzumayaであり、
+$D_\gamma$は滑らかな二次元中心上Azumaya。
+補題\ref{lem:quotient-azumaya-gldim}から結論する。
+
+$\gamma^2=-28/27$では中心曲面の
+$(U,V,W)=(1/189,0,0)$は通常二重点だが、
+全中心の方程式の$\partial_g$は
+$2\gamma\,\partial_HF_H\ne0$なので全中心は滑らか。
+従ってこの点で$D_\gamma$は
+特異な可換局所曲面上Azumayaとなり、
+補題\ref{lem:quotient-azumaya-gldim}から無限大域次元。
+\end{proof}

@@ -10,7 +10,7 @@
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 - **可換点の全Artin形式局所構造をTeX化**：`papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。ただし有限位数境界と非可換Bertiniに依存する正則な四次元開集合の存在は独立再監査前なので条件付き。原PDFの全係数Hesse中心元・有限証明書・周囲37次元成分の細部は未完全照合で保持する。
 
-**2026-11-12 / v16。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v17。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -97,3 +97,7 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 ### PDF VIの追加回収：特異圏・球面ツイスト
 
 中心二段局所化とIwanaga--Gorenstein完備化によるKaroubi特異圏の三分解、Knörrer周期性を通じた `Perf_{Z/2}(C)^⊕3`、剛体三次元表現のcoherent化と3-spherical twistを `papers/sections/central_quotient_categories_and_twist.tex` に再構成した。`computations/verify_central_quotient_reps.py` に軸上表現のJacobi行列の法29非零19次小行列式（値15）を追加しローカル実行PASS。`q(t)`の法3既約性も検算。これにより旧§17の自己Ext1消滅は独立の計算証明を持つ。残る障害は `R_1` とtailsの正則性判定、中心の有限生成・Azumaya同定、全非可換中心値での大域次元の証明。これらの未移管部分があるのでPDF VIはまだ追跡する。
+
+### PDF VIの全中心・Azumaya構造の追加回収
+
+旧論文VI§14–15の中心元 `g,U,V,W` の完全な非可換多項式表示、唯一の中心方程式、Rees環によるcenter有限性・一般rank36・高さ1 Azumaya・Brown–Macleodによるsmooth locus一致、および中心ファイバーの正則性判定の帰結を `papers/sections/central_quotient_center_azumaya.tex` に証明構造付きで復元した。斉次Sklyaninの中心定理、Levasseurのfiltered grade、Brown–MacleodのAzumaya基準の一次資料を照合した。旧計算証明書（次数7の3280語・6015関係、次数6の84x rank78、次数18の50単項式rank49）は現行GitHubで独立再実行していないので、中心完全表示にはその計算を条件として明示した。残る最重要対象は旧§16の正確なtails判別と全中心有限検算で、PDF VIは未削除。
