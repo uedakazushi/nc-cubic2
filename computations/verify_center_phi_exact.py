@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 """Characteristic-zero verification of the nonhomogeneous central equation.
 
-Exact Fraction arithmetic; no modular inference. Incremental filtered
-quotient construction; state stored outside Git (default /tmp/nc-cubic2-phi).
-Each invocation builds at most one new degree. Repeat until degree 18.
+Exact rational arithmetic; no modular inference. Incremental filtered
+quotient construction; state stored outside Git (default /tmp/nc-cubic2-center-phi).
+Without --run-all, each invocation builds at most one new degree.
 Then run --verify. A PASS at degree 18 proves Phi=0 in R1 over Q.
-This is a verification program, NOT a claim that the full run has passed.
+Use --backend flint --run-all --verify for an accelerated full run
+(requires python-flint). The default backend uses only the standard library.
 """
 import argparse
 import pickle
 from fractions import Fraction as Q
 from itertools import product
 from pathlib import Path
+from functools import lru_cache
+from time import monotonic
 
 REL = (
     ((0, 1, 1), (1, 0, -1), (2, 2, -1)),
@@ -143,12 +146,42 @@ def phi():
     assert max(map(len, result)) <= 18
     return result
 
+def evaluate_polynomial(algebra, polynomial, degree):
+    """Noncommutative Horner evaluation, grouping words by first letter.
+
+    p = c + X*p_X + Y*p_Y + Z*p_Z. Recursing on p_x at
+    degree-1 shares the expensive final multiplication across all words
+    with the same first letter. Only exact linear maps are used.
+    """
+    assert all(len(word) <= degree for word in polynomial)
+    @lru_cache(maxsize=20000)
+    def evaluate(terms, n):
+        out = {}
+        groups = [{}, {}, {}]
+        for word, coefficient in terms:
+            if not word:
+                add(out, {0: coefficient})
+            else:
+                groups[word[0]][word[1:]] = coefficient
+        for x, group in enumerate(groups):
+            if group:
+                vector = evaluate(tuple(sorted(group.items())), n-1)
+                add(out, linmap(algebra.L[n-1][x], vector))
+        return out
+    return evaluate(tuple(sorted(polynomial.items())), degree)
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--state-dir", default="/tmp/nc-cubic2-center-phi")
     parser.add_argument("--verify", action="store_true")
-    parser.add_argument("--smoke", action="store_true", help="check exact quotient dimensions in degrees 2 through 8")
+    parser.add_argument("--backend", choices=("fraction", "flint"), default="fraction")
+    parser.add_argument("--run-all", action="store_true", help="build all remaining degrees in this invocation")
+    parser.add_argument("--smoke", action="store_true", help="check exact dimensions and Horner evaluation through degree 8")
     args = parser.parse_args()
+    global Q
+    if args.backend == "flint":
+        from flint import fmpq
+        Q = fmpq
     if args.smoke:
         algebra=Filtered()
         for n_expected in range(2,9):
@@ -156,26 +189,42 @@ def main():
             assert n == n_expected
             assert dim == (n+1)*(n+2)*(n+3)//6
         print("PASS: exact-Q filtered quotient dimensions in degrees 2 through 8")
+        for degree in range(9):
+            polynomial = {
+                word: Q(sum((j+1)*(x+1) for j, x in enumerate(word)) % 11 - 5, 7)
+                for d in range(degree+1) for word in product(range(3), repeat=d)
+            }
+            direct = {}
+            for word, coefficient in polynomial.items():
+                add(direct, algebra.word(word, degree), coefficient)
+            assert evaluate_polynomial(algebra, polynomial, degree) == direct
+        print("PASS: exact Horner and word-by-word evaluation agree through degree 8")
         return
     state_dir=Path(args.state_dir)
     state_dir.mkdir(parents=True,exist_ok=True)
-    path=state_dir/"rational-filtered-state.pkl"
+    path=state_dir/("rational-filtered-state.pkl" if args.backend == "fraction"
+                    else "flint-rational-filtered-state.pkl")
     if path.exists():
         with path.open("rb") as f: algebra=pickle.load(f)
         assert isinstance(algebra, Filtered)
     else: algebra=Filtered()
-    if len(algebra.B)-1 < 18:
+    while len(algebra.B)-1 < 18:
+        started = monotonic()
         n, dim=algebra.extend()
-        with path.open("wb") as f: pickle.dump(algebra,f,pickle.HIGHEST_PROTOCOL)
-        print(f"EXACT Q quotient: degree={n}, dimension={dim}; rerun")
-        return
+        temporary_path = path.with_suffix(".tmp")
+        with temporary_path.open("wb") as f:
+            pickle.dump(algebra,f,pickle.HIGHEST_PROTOCOL)
+        temporary_path.replace(path)
+        print(f"EXACT Q quotient: degree={n}, dimension={dim}; "
+              f"{monotonic()-started:.2f}s", flush=True)
+        if not args.run_all:
+            return
     if not args.verify:
         print("Ready. Run with --verify to check Phi exactly over Q.")
         return
-    residue={}
-    for i,(word, coeff) in enumerate(phi().items()):
-        add(residue, algebra.word(word,18), coeff)
-        if (i+1)%250 == 0: print("reduced",i+1,"words",flush=True)
+    polynomial = phi()
+    print(f"Reducing {len(polynomial)} free words by exact Horner evaluation", flush=True)
+    residue = evaluate_polynomial(algebra, polynomial, 18)
     if residue:
         print("FAIL: Phi nonzero in the exact quotient:",len(residue),"terms")
         raise SystemExit(1)

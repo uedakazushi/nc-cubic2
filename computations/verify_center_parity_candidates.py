@@ -8,6 +8,7 @@ of weight <=12 even central monomials.
 This script does NOT prove Phi=0 in R1 or the leading relation.
 """
 from itertools import product
+from fractions import Fraction
 
 WEIGHTS = (3, 6, 6, 6)  # g,U,V,W
 
@@ -78,6 +79,24 @@ def main():
     assert not u and not v and not w
     assert abelian_product(g,g) == {(0,0,0):-1, (0,1,1):2}
     assert len(corrections)-2 == 13
+    # At the axial character the top part is 1/7, not zero. The
+    # correction constraints are affine: Q(p)=P18(p). For the three
+    # nonaxial characters, VW=-16 and (V^3,W^3)=(-64,64).
+    axial = (0, Fraction(1,7), 0, 0)
+    def evaluate(spec, point):
+        result = 0
+        for powers, coeff in spec.items():
+            term = coeff
+            for value, exponent in zip(point, powers):
+                term *= value**exponent
+            result += term
+        return result
+    assert evaluate(top, axial) == Fraction(1,7)
+    assert -evaluate(lower, axial) == Fraction(1,7)
+    # Dependence on omega disappears in the cubic powers and VW.
+    assert 49*(-1)**3 + 11*(-1)*(-16) - 64 - 64 == -1
+    assert 14*(-1)**2 - (-1) - 16 == -1
+    print("PASS: affine correction values 1/7 (axial), -1 (three nonaxial)")
     print("PASS: abelianization imposes two independent conditions; 13 free coefficients")
     print("PASS: 50 monomials of weight <=18")
     print("PASS: even correction space dimension 15 = 1+4+10")

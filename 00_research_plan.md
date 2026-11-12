@@ -12,7 +12,7 @@
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 - **可換点の全Artin形式局所構造をTeX化**：`papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。ただし有限位数境界と非可換Bertiniに依存する正則な四次元開集合の存在は独立再監査前なので条件付き。原PDFの全係数Hesse中心元・有限証明書・周囲37次元成分の細部は未完全照合で保持する。
 
-**2026-11-12 / v30。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v31。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -90,13 +90,13 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 
 現行原稿：`papers/central_quotient_local_models.tex`。以下の現在有効な証明を `papers/sections/` に保持する。
 
-- `central_quotient_center_azumaya.tex`：非斉次四中心元、中心超曲面、Rees退化・Azumaya locus。**次数6の全中心核を独立に厳密検証済み**（`computations/verify_center_degree7.py`、Q上で6中心元が独立・中心、F7=120, F6=84、mod101の交換子rank78ゆえQ上もrank78）。重み18は`computations/verify_center_weight18_mod101.py`でF18=1330、50中心単項式rank49、指定Φ=0をmod101で検査した。ただしΦ=0の**特性零の厳密証明は未完成**。
+- `central_quotient_center_azumaya.tex`：非斉次四中心元、中心超曲面、Rees退化・Azumaya locus。**次数6の全中心核を独立に厳密検証済み**（`computations/verify_center_degree7.py`、Q上で6中心元が独立・中心、F7=120, F6=84、mod101の交換子rank78ゆえQ上もrank78）。重み18はF18=1330を有理数上で構成し、`computations/verify_center_phi_exact.py`のFLINT厳密有理数演算で**Φ=0を実行確認した**。中心単項式rank49は既知の斉次中心定理と最高記号rank4から特性零で従う。
 - `central_quotient_simple_representations.tex`：低次元単純表現の排除、二種の三次元単純表現、六次分裂元、軸上表現の一次剛性。法29非零19次小行列式は `computations/verify_central_quotient_reps.py` に保存。
 - `central_quotient_categories_and_twist.tex`：Karoubi完備な特異圏の3因子分解と構造対象の標識を保たない球面ツイスト。有限中心・Azumaya・正則性の入力に依存する。
 - `central_quotient_exact_tails.tex`：一次元表現の長さ3非被約局所環、真に悪い中心値、有限射影行列因子化と二重分岐、曲面・三様体のtails正則性の必要十分判別
   `(alpha^3+9)(28alpha^3+243)`。有限中心・PBW/CY・中心chart貼合せの仮定付き。小計算は `computations/verify_quotient_exact_tails.py`、BGVの一次論文（JNCG 10 (2016), Theorems 6.3, 6.6, 6.7, Corollary 6.8）を確認した。
 
-**次の具体的着手：** (i) 既に証明した次数6中心核の特性零検算を論文VI本文と整合させる。(ii) 重み18の唯一の関係Φを有理数上で厳密零判定し、単項式rank49との組合せで全関係を確定する。(iii) 非可換Bertiniと二中心chartの貼合せの入力を独立監査する。(iv) LuaLaTeX組版と計算コードの再実行を確認し、PDF VIの追跡解除を判定する。
+**次の具体的着手：** 全中心表示の有限計算は特性零で確定した。次はRees/Azumaya論証に用いる文献の仮定、非可換Bertiniと二中心chartの貼合せの入力を独立監査し、PDF VIに固有の数学的内容が残らないか確認する。中心商原稿のLuaLaTeX組版は実行済み。
 
 ### 2. その他の4論文PDF
 
@@ -107,12 +107,10 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 
 詳細な証明と未解決箇所は各現行論文・`notes/research_notes.md`、PDF固有の対応は`PDF_SOURCES.md`に置く。**主張の証明が原稿にあること、独立に監査されたこと、有限計算が実行されたこと、組版が成功したことを区別する。**
 
-### 非斉次中心関係の現行課題と最短経路
+### 非斉次中心関係の確定と次の監査
 
-既に確立した部分：`F_7R_1`の次元120、`F_6R_1`の次元84、中心核`1,g,g²,U,V,W`の独立性と完全性（法101の非零rank78と有理数上の中心性を併用）。斉次Sklyanin中心定理と次数6最高記号の有理数rank4から`Z(R_1)=C[g,U,V,W]`、重み18以下の50中心単項式の特性零rank49が従う。
+`computations/verify_center_phi_exact.py`で次数2–18の有理数商を構成し、dim F18=1330と、自由語3751項に展開したΦの剰余が厳密に零であることを確認した。python-flint 0.9.0のfmpqを任意の高速backendとし、標準Fraction版を維持する。次数8までの全基底・包含・左乗法行列は両backendで一致し、Horner評価と語ごとの評価も比較した。有限体での零から特性零へ推論していない。
 
-**核心は明示関係 `Phi=0` の特性零での検証。** 法101の消滅は観察であり証明ではない。新たな命題 `prop:quotient-parity-reduction`（`papers/sections/central_quotient_center_azumaya.tex`）は、同時符号反転`(X,Y,Z)→(-X,-Y,-Z)`により`g`が奇、`U,V,W`が偶であることを利用する。斉次の最高次関係`P18`が正しく、偶であるなら、その特性零での非斉次補正は重み12以下の**15係数**だけで一意に決まる。候補は`1`、`g²,U,V,W`、それらの二次単項式10個。さらに可換化 `C[x,y,z]/(x²+1,y²,z²)` で `U=V=W=0`、`g²=-1+2yz` となる。元PDFの最高次候補はすべてU,V,Wを含むので、補正の純粋なg部分は `c(g²+1)²` に限られ、**独立な二条件で候補は13次元に減る**。さらに中心値零の三次元単純表現から4つの中心指標を有理数・Q(ω)上の明示行列計算で検証した。`(0,1/7,0,0)` と `(0,-1,-4ω^{2k},4ω^k)`（k=0,1,2）での評価は4条件を与え、`U,U²,V,W`への評価行列式は `-384(2ω+1)/49 ≠0`。可換化の2条件と独立なので、**補正候補は9次元**。元PDFの提案補正は`14U²-2g²U-U+VW`。最高次関係の同定とこの9係数の確定は**未証明**。
+次数6中心核・最高次記号rank4・三次元表現の中心指標も再実行済み。既知の斉次Sklyanin中心定理を入力として、全中心生成と唯一の関係Φを確定した。証明は `papers/sections/central_quotient_center_azumaya.tex` に集約する。表現評価による9自由係数への削減は、零条件ではなく **Q(p)=P18(p)** というアフィン条件に訂正した。具体的な評価値は軸上1/7、非軸上−1である。
 
-**次の作業：** (1) 斉次中心関係の明示係数を有理数上で確定する。(2) 可換化と四つの三次元表現の六条件を課した9個の補正係数を、中心の低次数成分への射影または有理数の有限証明書で決定する。(3) 非可換中心chart貼合せ・Azumaya入力を監査し、LuaLaTeX実組版を確認してPDF VIの追跡解除を判定する。重み18の全商を愚直に有理数で構成する方法は次数14で200秒以上を要し律速である。再現資産は`computations/verify_center_degree7.py`、`verify_center_homogeneous_symbols.py`、`verify_center_weight18_mod101.py`、`verify_center_phi_exact.py`、`verify_center_parity_candidates.py`、`verify_central_quotient_reps.py`。前者は組合せ・可換化の検査、後者は三次元表現の中心指標の有理数・Q(ω)行列計算を追加した。どちらもPhi=0自体を証明しない。
-
-計算の状態：次数2–13の有理数PBW次元は同じ再帰アルゴリズムのローカル実装で実行確認。次数14以降の完全計算、現行GitHub版`verify_center_phi_exact.py`の全実行、`Phi=0`の特性零証明は未了。PDFは5件保持。新たな関係式の検証と無関係な進捗記録は追加しない。
+次の核心は、Rees/Azumaya議論の外部定理の適用監査と二中心chartの貼合せ・正則性である。Φの証明だけで全PDFの置換完了とは判定しない。原PDF5件は保持する。中心商原稿のLuaLaTeX組版を実行し、生成PDFは追跡しない。

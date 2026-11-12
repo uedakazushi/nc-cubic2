@@ -1,6 +1,6 @@
 # 研究ノート：境界研究の現在の知識と障害
 
-**2026-11-12 / v11**
+**2026-11-12 / v12**
 
 - 独立の大部原稿は `papers/pfaffian_brill_noether_technical.tex` にTeXソースで存在する。旧79節を一字も削らず5個の `papers/sections/` ファイルへ分割した。主論文A・Cから直接入力されない一方、内容上の引用・既知結果への依存は今後も監査する。
 - 中心三次曲面
@@ -41,28 +41,28 @@
 
 ## 旧論文VI：中心商非可換A1とBrauer障害（2026-11-12）
 
-現行の`papers/central_quotient_local_models.tex`で、中心`C=ℂ[g,U,V,W]/(Φ)`の`g=0`上の四特異点、Hessian非退化とconifold局所模型を明示した。元の代数の六次分裂元`Z`の最小多項式、中心有限性・Azumaya locus、1・2次元単純表現不存在を条件付き入力とし、`Mat_3 End_R(R⊕I)`、切断の`Mat_3(ℂ[[a,b]]⋊{±1})`、八つの三次元単純表現と一般Brauer指数6の導出を収録した。二中心chartの中心21特異点（12+6+3）の有限計算と、三つのhomological singularityも条件付きで復元。正確な中心のHessianとH=0,-1,-28/27のGröbner基底は独立に計算済み。局所分裂と大域Brauer分裂は異なる。特異圏のKaroubi完備化と球面twistは別途証明移植が必要。原PDFは保持する。
+現行の`papers/central_quotient_local_models.tex`で、中心`C=ℂ[g,U,V,W]/(Φ)`の`g=0`上の四特異点、Hessian非退化とconifold局所模型を明示した。元の代数の六次分裂元`Z`の最小多項式、中心有限性・Azumaya locus、1・2次元単純表現不存在を条件付き入力とし、`Mat_3 End_R(R⊕I)`、切断の`Mat_3(ℂ[[a,b]]⋊{±1})`、八つの三次元単純表現と一般Brauer指数6の導出を収録した。二中心chartの中心21特異点（12+6+3）の有限計算と、三つのhomological singularityも条件付きで復元。正確な中心のHessianとH=0,-1,-28/27のGröbner基底は独立に計算済み。局所分裂と大域Brauer分裂は異なる。特異圏のKaroubi完備化と球面twistの証明は後掲の現行節に移植済みだが、依存する局所模型の監査は残る。原PDFは保持する。
 
 ## 中心商の小次元表現：現行証明と検算
 
-`papers/sections/central_quotient_simple_representations.tex` に旧論文VI§17–18からPauli分解による2次元単純表現不存在、q(t) の軸上二表現、ω 行列による非軸上六表現、6次分裂元の最小多項式を移植した。行列関係と `G1=0` を `computations/verify_central_quotient_reps.py` と同等のSymPy実装で標数零の正確な多項式剰余として再計算した。六次最小多項式の証明は全中心が正規で `U=Z³(g-Z³)` という既存の入力に依存する。`V,W`の中心指標とExt¹ rank19/16・内部微分rank8/9の完全証明書は未再計算、いずれも独立検証済みとは扱わない。旧論文VIの削除条件はこの残余の証明のTeX化である。
+`papers/sections/central_quotient_simple_representations.tex` に旧論文VI§17–18からPauli分解による2次元単純表現不存在、q(t) の軸上二表現、ω 行列による非軸上六表現、6次分裂元の最小多項式を移植した。行列関係と `G1=0` を `computations/verify_central_quotient_reps.py` と同等のSymPy実装で標数零の正確な多項式剰余として再計算した。六次最小多項式の証明は全中心が正規で `U=Z³(g-Z³)` という既存の入力に依存する。`V,W`の中心指標と軸上剛性のrank19証明書は現行コードで再実行した。一方、全表現間のExt¹ rank19/16・内部微分rank8/9の完全証明書は未再計算である。旧論文VIの削除条件はこの残余の証明のTeX化である。
 
 ## 中心商論文VIのカテゴリー的回収と有限検算（2026-11-12）
 
-旧§21–22の射影特異圏を中心uとt=v/uで二段局所化し、有限中心上のIwanaga–Gorenstein代数のstable Homの有限長性と完備化から三つの4変数nodeへ分解する議論を `papers/sections/central_quotient_categories_and_twist.tex` に収録。KnörrerによりKaroubi完備な特異圏は `Perf_{Z/2}(C)^⊕3`（K0=Z³）となる。旧§22の構造対象の標識を保たない3-spherical twistは、軸上の3次元単純表現の自己Ext1=0を用いて構成する。`verify_central_quotient_reps.py`に法29で19次minor=15という厳密な剛性証明書を追加し実行済み。正確なtails正則判別・Azumaya locus・有限中心の全証明は未移植であり、この部分を無条件の独立定理とは扱わない。
+旧§21–22の射影特異圏を中心uとt=v/uで二段局所化し、有限中心上のIwanaga–Gorenstein代数のstable Homの有限長性と完備化から三つの4変数nodeへ分解する議論を `papers/sections/central_quotient_categories_and_twist.tex` に収録。KnörrerによりKaroubi完備な特異圏は `Perf_{Z/2}(C)^⊕3`（K0=Z³）となる。旧§22の構造対象の標識を保たない3-spherical twistは、軸上の3次元単純表現の自己Ext1=0を用いて構成する。`verify_central_quotient_reps.py`に法29で19次minor=15という厳密な剛性証明書を追加し実行済み。有限中心表示は現行証明と厳密計算に回収したが、tails正則判別・Azumaya locusの外部入力の監査が残り、カテゴリー的結論を無条件の独立定理とは扱わない。
 
 ## 論文VIの中心全表示・Azumaya locusの依存
 
-`papers/sections/central_quotient_center_azumaya.tex` に、`R_1`の完全中心 `Z(R_1)=C[g,U,V,W]/(Φ)` の具体的な非可換単語による `U,V,W` の表示と、Rees環・GK/Cohen–Macaulay/height-one Azumayaによる中心smooth locus同定の証明構造を復元した。旧稿では次数7以下の3280語・6015本の関係、次数6中心核の84変数rank78、次数18の50単項式rank49の有理行簡約を行っている。この再現コード・入力・証明書はまだ現行GitHubに存在しないため、有限計算を今回行ったとは報告しない。これらを再構成して中心完全表示を確立し、旧論文VIの§16の正確なtails正則性判別と結びつけることが最重要。
+`papers/sections/central_quotient_center_azumaya.tex` に、`R_1`の完全中心 `Z(R_1)=C[g,U,V,W]/(Φ)` の具体的な非可換単語による `U,V,W` の表示と、Rees環・GK/Cohen–Macaulay/height-one Azumayaによる中心smooth locus同定の証明構造を復元した。旧稿では次数7以下の3280語・6015本の関係、次数6中心核の84変数rank78、次数18の50単項式rank49の有理行簡約を行っている。現在は次数6中心核と次数18関係の再現コードを保持し、厳密有理数計算も実行済みである。証明の所在と残る課題は本ノート末尾に示す。次は旧論文VIの§16の正確なtails正則性判別に必要な外部入力を監査する。
 
 ## 指定混合族の量子的判別式（2026-11-12）
 
-旧論文VI§16の正確なtails判別 `(α³+9)(28α³+243)` を `papers/sections/central_quotient_exact_tails.tex` に条件付き定理として移植。悪い中心値の一次元表現環は `C[y,z]/(y²,yz,z²)`（長さ3、接空間2）で、単純表現の滑らかさに関するBGVの一次文献を使用。三foldの非正則性は、`b(s)-β0=(s³-s0³)²/(s0⁶s³)` の二重分岐と非縮約行列因子化に依存する。局所恒等式はSymPyで検証済み。これらは形式的な中心判別だけからtails判別が従うという主張ではなく、有限中心と貼合せの仮定を必要とする。旧PDF VIの行簡約証明書、Azumaya比較、中心chart十分条件の全監査は未完成。
+旧論文VI§16の正確なtails判別 `(α³+9)(28α³+243)` を `papers/sections/central_quotient_exact_tails.tex` に条件付き定理として移植。悪い中心値の一次元表現環は `C[y,z]/(y²,yz,z²)`（長さ3、接空間2）で、単純表現の滑らかさに関するBGVの一次文献を使用。三foldの非正則性は、`b(s)-β0=(s³-s0³)²/(s0⁶s³)` の二重分岐と非縮約行列因子化に依存する。局所恒等式はSymPyで検証済み。これらは形式的な中心判別だけからtails判別が従うという主張ではなく、有限中心と貼合せの仮定を必要とする。中心表示の行簡約は再構成・実行済みだが、Azumaya比較と中心chart十分条件の全監査は未完成。
 
-## 非斉次中心の証明と残る関係式の同定
+## 非斉次中心の現行到達点と監査課題
 
-**検証済みの有限次数：** 定義関係の3280語・6015倍を有理数上で消去すると`dim F7=120`、`dim F6=84`。中心性と独立性を有理数上で確認した`1,g,g²,U,V,W`により交換子rankは高々78、法101でrank78だから特性零でもrank78。斉次Sklyanin中心定理と最高記号rank4により全中心生成`Z(R1)=C[g,U,V,W]`が従い、重み18以下の50単項式の特性零rankは49。
+Φ=0は `computations/verify_center_phi_exact.py` による次数18までの厳密有理数商とHorner評価で実行確認した。既知の斉次中心定理を入力とする全中心表示の証明・再帰商の正当化は `papers/sections/central_quotient_center_azumaya.tex` に集約した。次数6中心核、最高次記号rank4、三次元表現の中心指標も再実行済み。
 
-**新しい数学的簡約：** 同時符号反転は代数自己同型で、`g`は奇、`U,V,W`は偶。斉次中心の重み18の関係`P18`をこの対称性に沿って持ち上げると、その像は最高次記号が消えた後、重み17以下の偶中心となる。既知の中心Hilbert級数では次数18未満の偶中心のgraded部分は0,6,12だけなので、像は`F12`に入る。補正候補は`1,g²,U,V,W`と`g²,U,V,W`の二次単項式10個の計15個。これらは重み18未満で一次独立なので補正は一意。さらに可換化は `R1^ab=C[x,y,z]/(x²+1,y²,z²)` で `g²=-1+2yz`、`U=V=W=0`。最高次候補がU,V,Wを含む場合、補正の純粋なg部分は `c(g²+1)²` に限られる。二つの独立な条件から補正候補は13次元に減る。さらに三次元単純表現の中心指標 `(0,1/7,0,0)` と `(0,-1,-4ω^{2k},4ω^k)` を厳密行列計算で確認し、四点での評価行列式 `-384(2ω+1)/49` を得た。これら四条件は可換化の二条件と独立なので、補正候補は**9次元**に減る。原稿の命題 `prop:quotient-representation-reduction` と `computations/verify_central_quotient_reps.py` を参照。原稿の命題 `prop:quotient-abelianization-reduction` を参照。元の候補`Phi=P18-(14U²-2g²U-U+VW)`が正しいかは、`P18`の斉次同定と補正係数の特性零検証に依存する。命題・証明は`papers/sections/central_quotient_center_azumaya.tex`。組合せチェックは`computations/verify_center_parity_candidates.py`で実行済み（50候補、15補正、内訳1+4+10、提案Phiの偶性）。**これだけではPhi=0を証明しない。**
+表現評価による補正候補削減では、旧証明の「各項がU,V,Wを含むので四表現上でP18=0」という推論は誤りだった。軸上ではP18=1/7、三つの非軸上ではP18=−1である。正しい条件Q(p)=P18(p)はアフィンで、6条件の独立性と9自由係数という数は維持される。誤った零条件を今後の係数同定に用いない。
 
-**計算上の障害：** `verify_center_phi_exact.py`は有理数の全filtered商を構成するが、同じ再帰アルゴリズムのローカル実行では次数13（次元560）まで確認、次数14は200秒で未終了。GitHubにあるコードそのものの全次数実行とLuaLaTeX組版は未了。今後は重み18全商の構築ではなく六条件を課した9補正係数の厳密確定を目指す。旧PDFの元有理数証明書は未発見。PDF VIは保持する。
+残る核心はRees/Azumayaの文献適用、二中心chartの貼合せ、非可換Bertiniの入力監査である。これらを全中心表示の有限計算の成功と混同しない。原PDF VIの削除判断には固有証明の全照合が必要で、5件とも保持している。中心商原稿のLuaLaTeX組版は実行済み。

@@ -20,15 +20,17 @@
 \newcommand{\CM}{\operatorname{CM}}
 \title{中心三次商の零ファイバーと非可換$A_1$局所模型\\
 \large 中心の四特異点、局所分裂、Brauer障害}
-\date{2026年11月12日・v4}
+\date{2026年11月12日・v5}
 \begin{document}
 \maketitle
 \begin{abstract}
 中心三次商の旧論文VI第19節から、中心値零における四つの$A_1$点、局所非可換crepant resolution、射影的特異圏の三因子分解、球面ツイストを現在の日本語LuaLaTeXに再構成する。
 特に中心上の一般Brauer指数6と局所分裂の両立を説明する。
-元の代数の全中心表示・Azumaya locus・小次元単純表現の排除は
-旧論文VIの別節を入力とする。二つの三次元表現と一次・二次元単純表現の排除は現行TeXに復元し、
-その明示行列関係式を厳密検算したが、中心全生成元・Azumayaの証明は未完全収録である。
+全中心表示の具体的な非斉次関係式を有理数上で厳密に検証し、
+既知の斉次Sklyanin中心定理を入力として全中心表示を確定した。
+三次元表現と一次・二次元単純表現の排除も現行TeXに復元し、
+明示行列関係式を厳密検算した。Azumaya locusと中心chartの貼合せの
+外部入力については独立監査が残る。
 中心多項式とHessianの有限検算は別途実行した。
 \end{abstract}
 
@@ -37,7 +39,7 @@
 \section{中心の四つの通常二重点}
 $k=\CC$とする。$A=R_1$を旧中心三次商のfiltered三変数代数、
 $g=3G_1/2$を中心正則元とし、$C=Z(A)$と書く。
-次の全中心表示を、命題\ref{prop:quotient-full-center}（有限語空間の証明書は独立再実行が未完了）に基づいて用いる：
+次の全中心表示を、命題\ref{prop:quotient-full-center}（有限語空間の有理数計算を実行確認済み、斉次中心定理は既知の入力）に基づいて用いる：
 \begin{equation}\label{eq:center}
  C\simeq
  \CC[g,U,V,W]/(\Phi),\quad

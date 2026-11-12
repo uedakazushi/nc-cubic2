@@ -147,5 +147,17 @@ eval_matrix = sp.Matrix([[sp.Rational(1,7),sp.Rational(1,49),0,0]] +
 det = mod(sp.expand(eval_matrix.det()),w,w**2+w+1)
 assert sp.expand(det + 384*(2*w+1)/49) == 0
 print("PASS: 4x4 evaluation determinant = -384(2omega+1)/49 != 0")
+def top_relation(g, u, v, z):
+    return 49*u**3 - 13*g**2*u**2 + g**4*u + 11*u*v*z - g**2*v*z + v**3-z**3
+
+def proposed_correction(g, u, v, z):
+    return 14*u**2 - 2*g**2*u - u + v*z
+
+points = [(0,sp.Rational(1,7),0,0)] + [
+    (0,-1,-4*w**(2*k),4*w**k) for k in range(3)]
+for point, target in zip(points, [sp.Rational(1,7),-1,-1,-1]):
+    assert mod(top_relation(*point)-target,w,w**2+w+1) == 0
+    assert mod(proposed_correction(*point)-target,w,w**2+w+1) == 0
+print("PASS: correction constraints Q(p)=P18(p) have nonzero values 1/7,-1,-1,-1")
 print("NOTE: together with two independent abelianization constraints,")
-print("      the correction space has dimension at most 15-2-4=9")
+print("      the affine correction space has dimension at most 15-2-4=9")
