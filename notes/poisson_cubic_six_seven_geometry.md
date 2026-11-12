@@ -63,6 +63,21 @@ n=7,k=2,m=3では中心P²のFermat楕円曲線に
 被約性と滑らかさは異なる。
 本稿の数値計算節に独立の説明を収録した。
 
+## 関連する一次文献と新規性の未確認点
+
+Gualtieri--Pym, *Poisson modules and degeneracy loci*,
+Proceedings of the London Mathematical Society 107 (2013), 627–654,
+DOI 10.1112/plms/pds090 は、Poisson退化軌跡と
+Bondal予想に関する重要な既知理論を扱う。
+Pym, *Constructions and classifications of projective Poisson varieties*,
+Letters in Mathematical Physics 108 (2018), 573–632,
+DOI 10.1007/s11005-017-0984-5 は射影Poisson幾何の分類と
+退化軌跡の概説を与える。
+今回、出版社の紹介・本文を点検したが、
+六・七次元cubicの特定のprimary理想分解や
+横断長8・64・49が既知かどうかまで逐語照合したわけではない。
+公表価値を判断するには、この点を一次資料と比較する必要がある。
+
 ## 証明への依存と検証状態
 
 1. 一般Poisson正規形 `thm:pg-normal` は
