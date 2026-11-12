@@ -81,3 +81,5 @@ GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗
 旧論文VIの§21–22を `papers/sections/central_quotient_categories_and_twist.tex` に移植した。三中心nodeのKaroubi特異圏と3-spherical twistの証明は、中心有限性・Azumaya locusと正則性の既存入力を明示している。三次元表現の剛性は `computations/verify_central_quotient_reps.py` の法29の非零19次小行列式で再現可能。
 
 中心商原稿には、[非斉次四中心元・Azumaya locusの証明構造](papers/sections/central_quotient_center_azumaya.tex)も回収した。有限語計算の元証明書は未回収であり、中心完全表示の独立再実行とは区別する。
+
+旧論文VI§16の正確な量子的tails判別と二重分岐の有限射影行列因子化の証明は [central_quotient_exact_tails.tex](papers/sections/central_quotient_exact_tails.tex) に回収。可換化・分岐・判別式の厳密検算は `python3 computations/verify_quotient_exact_tails.py`。非可換中心の旧大規模計算証明書は未回収のため原PDFは保持。

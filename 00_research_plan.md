@@ -10,7 +10,7 @@
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 - **可換点の全Artin形式局所構造をTeX化**：`papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。ただし有限位数境界と非可換Bertiniに依存する正則な四次元開集合の存在は独立再監査前なので条件付き。原PDFの全係数Hesse中心元・有限証明書・周囲37次元成分の細部は未完全照合で保持する。
 
-**2026-11-12 / v17。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v18。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -100,4 +100,8 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 
 ### PDF VIの全中心・Azumaya構造の追加回収
 
-旧論文VI§14–15の中心元 `g,U,V,W` の完全な非可換多項式表示、唯一の中心方程式、Rees環によるcenter有限性・一般rank36・高さ1 Azumaya・Brown–Macleodによるsmooth locus一致、および中心ファイバーの正則性判定の帰結を `papers/sections/central_quotient_center_azumaya.tex` に証明構造付きで復元した。斉次Sklyaninの中心定理、Levasseurのfiltered grade、Brown–MacleodのAzumaya基準の一次資料を照合した。旧計算証明書（次数7の3280語・6015関係、次数6の84x rank78、次数18の50単項式rank49）は現行GitHubで独立再実行していないので、中心完全表示にはその計算を条件として明示した。残る最重要対象は旧§16の正確なtails判別と全中心有限検算で、PDF VIは未削除。
+旧論文VI§14–15の中心元 `g,U,V,W` の完全な非可換多項式表示、唯一の中心方程式、Rees環によるcenter有限性・一般rank36・高さ1 Azumaya・Brown–Macleodによるsmooth locus一致、および中心ファイバーの正則性判定の帰結を `papers/sections/central_quotient_center_azumaya.tex` に証明構造付きで復元した。斉次Sklyaninの中心定理、Levasseurのfiltered grade、Brown–MacleodのAzumaya基準の一次資料を照合した。旧計算証明書（次数7の3280語・6015関係、次数6の84x rank78、次数18の50単項式rank49）は現行GitHubで独立再実行していないので、中心完全表示にはその計算を条件として明示した。旧§16の正確なtails判別を `papers/sections/central_quotient_exact_tails.tex` に必要十分の条件付き定理・有限行列因子化・二重分岐の証明付きで移植した。有限中心・Rees--Azumaya比較の旧整数証明書の独立再実行は未了で、PDF VIは未削除。
+
+### 現行最優先のPDF VI削除条件
+
+旧§16の一次元表現スキーム `C[y,z]/(y²,yz,z²)`、真に悪いaffine値 `β=±2i/3`、有限射影MFの二重分岐による三foldの非正則性、曲面・三様体の共通判別 `(α³+9)(28α³+243)` を `papers/sections/central_quotient_exact_tails.tex` に収録し、命題の依存を区別した。一次元表現・分岐恒等式・判別因子のSymPy厳密計算は `computations/verify_quotient_exact_tails.py` で再現できる。Bocklandt–Galluzzi–Vaccarinoの一次論文のTheorems 6.3, 6.6, 6.7 とCorollary 6.8 を照合した。残る障害は全中心の有限行簡約と原入力の検証、量子中心chartの貼合せ、tails正則性の正確な有限証明書である。PDF VIはこれらのTeX/計算回復が済むまで保持する。

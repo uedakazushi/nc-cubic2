@@ -1,4 +1,4 @@
-# 現行PDF原資料と保持の基準（2026-11-12 / v8）
+# 現行PDF原資料と保持の基準（2026-11-12 / v9）
 
 Libraryに保全されている同名・同バイトサイズのPDF原本から本文を抽出して確認した。これはGitHub上のblobそのもののバイト一致を検証したという意味ではない。原本の全定理・証明と現行TeXの完全同値性はまだ立証していない。特に旧論文III・V・VIおよび195頁のIIは、独自の結果が多数含まれる。
 
@@ -52,4 +52,8 @@ Pfaffian・Brill--Noether大部原稿の79節を、既存内容を移動する�
 
 ## VIの中心とAzumaya locusの回収
 
-旧論文VI§14–15を `papers/sections/central_quotient_center_azumaya.tex` にまとめた： `g,U,V,W` の非可換語による表示、重み18の中心方程式、Rees退化と Brown–Macleod の高さ1 Azumaya論証、中心曲面からの大域次元の十分条件と非正則値。ただし中心恒等式と次元・rankには旧稿で有理行簡約した有限計算の証明書が必要で、現行Gitにまだ無く再実行できない。旧§16の全混合族のtails必要十分判別を完全に回収することがPDF削除前の最優先。PDFは引き続き保持する。
+旧論文VI§14–15を `papers/sections/central_quotient_center_azumaya.tex` にまとめた： `g,U,V,W` の非可換語による表示、重み18の中心方程式、Rees退化と Brown–Macleod の高さ1 Azumaya論証、中心曲面からの大域次元の十分条件と非正則値。ただし中心恒等式と次元・rankには旧稿で有理行簡約した有限計算の証明書が必要で、現行Gitにまだ無く再実行できない。旧§16の指定一混合族のtails必要十分判別は `papers/sections/central_quotient_exact_tails.tex` に移植した。旧計算証明書の回復と中心chart貼合せの入力検証がPDF削除前の最優先。PDFは引き続き保持する。
+
+## VIの指定一混合族の正確なtails判別（現行）
+
+`papers/sections/central_quotient_exact_tails.tex` に旧§15.3–16.6の主要な証明を移植。一次元表現の非被約局所環、2-CY表現スキームからの悪い中心値、非縮約有限射影行列因子化の二重分岐、tailsから中心chartと有限étale拡大へのperfect性伝播、曲面/三foldの共通判別を区別する。`computations/verify_quotient_exact_tails.py` に可換化/二重分岐/判別式のSymPy検算を保存。外部入力のfinite center・PBW/Calabi--Yau・中心chartの貼合せ・旧有限線形代数証明書は未監査/未完全回復なので、原PDF VIはまだ削除しない。初出・新規性も未確定。

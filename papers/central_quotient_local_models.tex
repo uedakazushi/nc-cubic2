@@ -20,7 +20,7 @@
 \newcommand{\CM}{\operatorname{CM}}
 \title{中心三次商の零ファイバーと非可換$A_1$局所模型\\
 \large 中心の四特異点、局所分裂、Brauer障害}
-\date{2026年11月12日・v3}
+\date{2026年11月12日・v4}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -350,6 +350,8 @@ Iwanaga--Gorenstein完備化によって証明する。
 
 \input{papers/sections/central_quotient_categories_and_twist.tex}
 
+\input{papers/sections/central_quotient_exact_tails.tex}
+
 \section{今後の照合対象と正確性}
 本稿で証明したのは、明記した既存の中心有限性、
 Azumaya locusと中心の全生成元を\emph{入力として}得られる局所的・表現論的帰結である。
@@ -357,11 +359,11 @@ Azumaya locusと中心の全生成元を\emph{入力として}得られる局所
 それら入力の具体的証明と全次数の検算は旧論文VIを参照し、
 今回の独立検証範囲には含めない。
 中心商の正確なtails判別式
-$(\alpha^3+9)(28\alpha^3+243)$、
+$(\alpha^3+9)(28\alpha^3+243)$は第\ref{sec:quotient-exact-tails}節で条件付き証明とする。
 21個の中心特異点と3つのhomological singularityの条件付き同定、
 $\operatorname{Perf}_{\mathbb Z/2}(\CC)^{\oplus3}$型のKaroubi完備特異圏、
 球面twistの標識非保存の証明構造は現行TeXに収録した。
-ただしtailsの正則性の必要十分条件とその一般化、
+ただしtailsの正則性の必要十分条件の外部入力の独立監査とその一般化、
 中心の完全表示の有限整数・有理数証明書、
 Azumaya locusの根拠となるfiltered中心・特殊ファイバー比較の
 独立再実行、局所中心の有限平坦比較の一部は未完了である。
@@ -413,5 +415,11 @@ K.~A.~Brown and M.~J.~Macleod,
 Algebr. Represent. Theory 20 (2017), 1433--1465,
 \url{https://doi.org/10.1007/s10468-017-9694-z};
 Theorems~3.13 and 4.8.
+\bibitem{BGV}
+R.~Bocklandt, F.~Galluzzi and F.~Vaccarino,
+\emph{The Nori--Hilbert scheme is not smooth for 2-Calabi--Yau algebras},
+J. Noncommut. Geom. \textbf{10} (2016), 745--774,
+\url{https://doi.org/10.4171/JNCG/247};
+Theorems~6.3, 6.6, 6.7 and Corollary~6.8.
 \end{thebibliography}
 \end{document}

@@ -51,3 +51,5 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 - `sections/central_quotient_categories_and_twist.tex`：旧論文VI§21–22の射影特異圏の二段局所化と三つの通常二重点への完備化・Knörrer同値、および標識を保たない3-spherical twist。`central_quotient_local_models.tex`から入力。`sections/central_quotient_simple_representations.tex`は軸上3次元表現の無限小剛性の整数証明書を新設した。有限中心・tailsの正則性の完全証明はまだ未統合。
 
 - `sections/central_quotient_center_azumaya.tex`：旧VI§14–15。全中心四生成元・唯一の関係とRees退化を用いるAzumaya locus、中心ファイバーによる大域次元の条件付き判定。旧有限語証明書を独立再実行していない。
+
+- `sections/central_quotient_exact_tails.tex`：旧VI§16の一次元表現の非被約スキーム、悪い中心値、有限射影MFの二重分岐、曲面/三foldの正確な量子的判別。親 `central_quotient_local_models.tex` より入力。`computations/verify_quotient_exact_tails.py` を再現コードとし、中心・貼合せの未監査入力に注意する。
