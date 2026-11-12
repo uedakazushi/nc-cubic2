@@ -1,0 +1,108 @@
+\section{Artin基底の相対window}
+局所Artin環$R$上、$B$は五変数多項式環の次数別有限自由二次変形、
+$W\in Z(B)_3$は滑らかな三次式へ還元するとする。
+相対対角が長さ五の有限自由Koszul分解を持ち、左右で
+$\operatorname{RHom}_B(R,B)=R(5)[-5]$と仮定する。
+混合族では相対PBW性と有限自由Frobenius二次双対がこの仮定を与える。
+$W$は左右正則で、$A=B/(W)$も次数別有限自由とする。
+冪零filtrationと特殊ファイバーのNoether性から$A,B$は左右Noetherである。
+\begin{theorem}\label{mix:window}
+\[
+ D_{\rm rel}(\operatorname{gr}A)
+ =\{M\in D^b(\operatorname{gr}A):M|_B\in\Perf(\operatorname{gr}B)\},\qquad
+ D_{\rm sg,rel}(A)=D_{\rm rel}/\Perf(\operatorname{gr}A)
+\]
+と置く。有限自由graded MFの冪等完備化は$D_{\rm sg,rel}(A)$と$R$線形Morita同値である。
+実際の斉次Ore局所化による構造代数層を$\mathcal A$とすると、同じwindowと二つのmutationにより
+\[
+ D_{\rm sg,rel}(A)\simeq
+ \mathcal K(\mathcal A)=\langle\mathcal O_{\mathcal A},\mathcal O_{\mathcal A}(1)\rangle^\perp
+ \subset\Perf(\mathcal A)
+\]
+となる。比較は特殊ファイバーの標識およびArtin基底間の導来基底変換と両立する。
+基底自身の特異性を含む絶対特異圏との同一視ではない。
+\end{theorem}
+\begin{proof}
+相対対象は、$R$上一様な有限Tor振幅を持ち、各内部次数が$R$上perfectな対象に等しい。
+一方向は有限$B$自由分解から従う。
+逆に有限$A$自由分解を十分下で切ると、有限Tor振幅から高いsyzygyは$R$平坦となる。
+$B$の有限相対対角分解をtensorして長さ五の$B$射影分解を得る。
+ここで全内部次数の直和が有限階数であることは要求しない。
+
+MFの$P$は特殊ファイバーで単射であり、各内部次数の単元minorから余核は$R$自由、$B$射影次元高々一となる。
+逆に$R$平坦な有限生成$A$加群$M$は$\operatorname{pd}_BM\le5$であり、
+$A$自由加群の$B$射影次元が一なので
+$\operatorname{pd}_B\Omega_AM\le\max\{1,\operatorname{pd}_BM-1\}$である。
+十分高いsyzygy$M'$の分解$0\to P_1\xrightarrow P P_0\to M'\to0$を取る。
+$WM'=0$から$W:P_0(-3)\to P_0$は一意に$P$を通り$Q$を与える。
+$PQ=W$と$P$の単射性から$QP=W$も従う。
+有限graded射影は局所基底上の冪等元持上げにより自由なshiftの直和因子として扱える。
+一般の相対複体も有限$A$自由複体を除けばこの状況になる。
+二周期完全分解とその双対の完全性は$B$へ持ち上げて$W$の正則性を使えば得られ、
+安定射、MFのhomotopy類、相対特異圏の射を同一視する。
+これが完全忠実性と本質的全射性を与える。
+
+windowに必要な内部cutoffを確かめる。
+高い自由分解は上の二周期tailに一致し、二段ごとに生成次数が三増すので、
+任意の$i$より小さい生成次数は十分左には現れない。
+内部切断$M_{\ge i}$とその商は各次数の直和因子で有限Tor振幅を保つ。
+有限内部次数の相対対象は$R(j)\otimes_R\Perf(R)$で生成される。
+通常のcohomological truncationで相対部分圏が閉じることは仮定しない。
+中心元の長さ一分解から
+\[
+ \operatorname{RHom}_B(M,B)=\operatorname{RHom}_A(M,A)(3)[-1],\qquad
+ \operatorname{RHom}_A(R,A)=R(2)[-4]
+\]
+となる。従って$D_A=\operatorname{RHom}_A(-,A)$は相対部分圏を保ち$D_A^2=1$、
+$D_A(R(j))=R(2-j)[-4]$, $D_A(A(j))=A(-j)$である。
+これは相対Gorenstein parameter二の式であり、Artin環の絶対有限大域次元を用いない。
+
+Ore chartの代数$C$と$C^e$は$R$平坦である。
+特殊ファイバーの滑らかなaffine対角の有限射影分解を有限自由部分分解として持ち上げる。
+各核は$R$平坦で、最後の核の剰余体還元は射影である。
+冪零イデアルを越えた冪等元持上げと
+$\operatorname{Tor}^{C^e}_1(C^e/\mathfrak m_RC^e,K)
+=\operatorname{Tor}^R_1(R/\mathfrak m_R,K)=0$
+から最後の核も射影となる。
+よってchartは相対smoothで、$R$上有限Tor振幅のcoherent複体は正確にchart上perfectである。
+有限affine coverのČech複体は平坦な項と一様有限振幅を持つ。
+proper特殊ファイバーの有限cohomologyと冪零摂動の有限和を用いて、各twistの導来切断は$R$上perfectで基底変換と両立する。
+Serre消滅と冪零filtrationにより$\operatorname{R\Gamma}_{\ge i}$は有限生成かつ一様有限振幅で、相対部分圏に入る。
+
+Burke--Stevenson\cite{BS}の原定理は次数零部分の有限大域次元を仮定するため、Artin基底へ直接適用しない。
+以上の内部cutoff、torsion局所化、perfect双対性、$R(j),A(j)$の像を用いて内部次数分解の直交補を比較する。
+parameter二なので二つの$A$-shiftが残り、window $i=-1$は
+\[
+ \Perf(\mathcal A)=\langle\mathcal O_{\mathcal A},\mathcal O_{\mathcal A}(1),\mathcal B_{-1}\rangle,
+ \qquad\mathcal B_{-1}\simeq D_{\rm sg,rel}(A)
+\]
+を与える。この順序の最後の成分をそのまま$\mathcal K$と呼ばず、
+$L_{\mathcal O}L_{\mathcal O(1)}$で左へ移して
+$\Perf(\mathcal A)=\langle\mathcal K,\mathcal O,\mathcal O(1)\rangle$とする。
+評価複体はperfectなのでmutationも有限である。
+全構成は自由分解、導来随伴、cone、dg quotient上で行われ、Morita同値へ上がる。
+有限$B$分解、Ore局所化、perfect評価複体を用いるので導来基底変換と両立する。
+両側で同じwindowとmutationを用いれば標識も一致する。
+\end{proof}
+
+\begin{lemma}[生成子一つの持上げによる基底変換]
+$Q$は有限大域次元の可換Noether局所環、$R$はその局所Artin商とする。
+次数別有限自由な$(B_Q,W_Q)$について、有限自由MFの有限直和$G_Q$があり、
+$G_k$が剰余体MF圏を生成し、$A_Q=\operatorname{RHom}(G_Q,G_Q)$が$Q$上smooth properであるとする。
+剰余体MF圏もproperとする。このとき
+\[
+ \Perf(A_Q\otimes_Q^{\mathbf L}R)\simeq\MF(B_R,W_R)^{\rm perf}.
+\]
+任意のArtin対象そのものの$Q$への持上げは必要ない。
+\end{lemma}
+\begin{proof}
+有限自由graded MFの射複体は各cohomological次数が有限自由で、剰余体還元は実際の射複体である。
+その剰余体複体を有限cohomologyとcontractibleな二項複体へ分け、基底を$R$へ持ち上げる。
+微分の冪零摂動は有限幾何級数で消去できるので、射複体は$R$上perfectとなる。
+各次数は有限自由で、摂動合成は基底の冪零次数で止まるため、一方向無限の複体でもこの操作は定義される。
+$Q$上の$R$の有限射影分解により$A_Q\otimes_Q^{\mathbf L}R=A_R$を得る。
+任意の$M$に対して$P=\operatorname{RHom}(G_R,M)$は$R$上perfectであり、
+$A_R$のsmooth対角の有限cell分解をtensorすると$P$は$A_R$上perfectになる。
+従って評価$P\otimes_{A_R}^{\mathbf L}G_R\to M$のcone $Z$は$G_R$と直交する。
+導来基底変換と剰余体生成性から$Z_k=0$、perfect複体のNakayamaから$\operatorname{RHom}(Z,Z)=0$、従って$Z=0$である。
+\end{proof}

@@ -1,0 +1,123 @@
+\section{全混合代表の六級数と中央平行移動}
+preferred中心は前節の$\Psi_{e,m,h}$に固定する。
+$\lambda_i^3=1,\Lambda=\prod\lambda_i$に対し
+\[
+ x_i\mapsto\lambda_i x_i,\quad e_i\mapsto\Lambda^{-1}\lambda_i e_i,\quad
+ m_i\mapsto\lambda_i^{-1}m_i,\quad h\mapsto\Lambda h
+\]
+とし、置換は添字を同時置換して$h$に符号を掛ける。
+Weyl対称化はこの有限群作用と可換である。
+命題\ref{mix:pure}の各段の原始と曲率を有限群で平均すれば、
+係数線形性、有限arity、内部次数、特殊ファイバーの標識を保った共変gaugeを得る。
+有理係数性もGalois不変な平均から保たれる。
+
+\begin{theorem}\label{mix:six}
+全六非対角一次係数と九二次係数に対して、純曲率代表を
+\begin{align*}
+ H_h={}&D/3+h^2xyz/3+b(h)\sum_i m_ix_i+\gamma(h)\sum_i e_ix_jx_k\\
+ &+U_e(h)\sum_i e_i^2x_i+V_e(h)\sum_i e_je_kx_i
+   +R_e(h)\sum_i e_i^3+S_e(h)e_1e_2e_3+T_e(h)\sum_i e_im_i
+\end{align*}
+と選べる。ここで$b^3=1+h^6/27,b(0)=1$であり、
+\begin{gather*}
+ \gamma\in1+h^6\mathbb Q[[h^6]],\quad
+ U_e,S_e\in h^2\mathbb Q[[h^6]],\quad
+ V_e,T_e\in h^4\mathbb Q[[h^6]],\quad R_e\in h^6\mathbb Q[[h^6]],\\
+ U_e=-h^2/12+O(h^8),\qquad S_e=h^2/4+O(h^8).
+\end{gather*}
+六つの未知級数の全値や、この代表の無標識での一意性は主張しない。
+\end{theorem}
+\begin{proof}
+$\Lambda=1$の対角群と巡回群の不変な重み三単項式を列挙すると、
+\begin{gather*}
+ D,\ xyz,\ \sum e_ix_jx_k,\ \sum e_ix_i^2,\ \sum e_i^2x_i,\\
+ \sum e_je_kx_i,\ \sum e_i^3,\ e_1e_2e_3,\ \sum m_ix_i,\ \sum e_im_i
+\end{gather*}
+の十型となる。
+全て置換対称なので係数は$h$の偶級数である。
+$D/3$係数を$A$、$\sum e_ix_i^2$係数を$E$とすると
+$x_i=A^{-1/3}X_i-(E/A)e_i$で前者を一、後者を零にできる。
+$e=0$で三つの独立$m_i$の指標方向はそれぞれ$x_i$のみで、巡回対称性から共通係数となる。
+一混合項で定理\ref{mix:b}を用いるとその係数は$b$、純$xyz$は$h^2/3$である。
+重みからこれらの係数がさらに$e,m$に依存する余地はない。
+残る対角群の$h\mapsto\Lambda h$と置換偶性を合わせると表示の合同条件を得る。
+二次初期gaugeを定理\ref{mix:secondcurve}のものに固定すれば、最終線形規格化は
+共通拡大$1+O(h^6)$と平行移動$O(h^4)$なので二つの二次係数を変えない。
+\end{proof}
+
+\begin{proposition}[全二十一係数と六自由方向]\label{mix:translation}
+$x_i$の対角線形項を$L_i$、非対角項を$e_i$、二次項を$m_i$とする。
+$X_i=x_i+L_i/2$とし、
+\[
+ n_i=m_i-L_i^2/4-(e_jL_k+e_kL_j)/2,\qquad
+ C_{\rm cl}=\sum_i L_i^3/12+\sum_i e_iL_jL_k/4-\sum_i m_iL_i/2
+\]
+と置く。共変規格化中心を用いた全混合の代表は
+$H_h(X;e,n)+u^3+v^3+C_{\rm cl}$である。
+$e=0$の十五係数部分族では追加六級数を用いず
+$D(X)/3+h^2X_1X_2X_3/3+b\sum n_iX_i+u^3+v^3+C_{\rm cl}$となる。
+全二十二変数源は、$h$を固定する接写像恒等の形式基底変換により、
+$L=0$の十六変数源と六次元自由円板との積に分解する。
+\end{proposition}
+\begin{proof}
+中央平行移動は交換子を変えず、実際の中心の共変性により表示の$n,C_{\rm cl}$を与える。
+全gaugeは係数を微分せず正規化されているので、追加中央曲率をそのまま残す。
+$g=u^3+v^3+C_{\rm cl}$は一意な$M\equiv I_2$により$g\circ M=U^3+V^3$へ移る。
+実際$\mathfrak{gl}_2$の軌道微分は
+$(\alpha,\beta,\gamma,\delta)\mapsto3\alpha u^3+3\beta u^2v+3\gamma uv^2+3\delta v^3$で可逆である。
+混合係数イデアルを$J$とすると$C_{\rm cl}\in J^2$なので$M-I\in J^2$。
+従って$(L,e,m,h)\mapsto(L,e\circ M,n\circ M,h)$の接写像は恒等で、形式自己同型となる。
+新座標の中心対に$L$は現れず、それを自由座標として残せる。
+二座標置換は次数付き、特殊ファイバーで恒等、中心の式そのものを保つので指定周期性も保つ。
+PBW定数零など別の中心規格化を用いる場合には、その中央scalar差を同じ向きで二元三次式へ移す必要がある。
+\end{proof}
+
+\section{標識付き平面incidenceへの同定}
+標的のsquarefree Fermat切片を
+\[
+ F_{s,r}=F_0+sxyz+\sum_i(P_iu+Q_iv)x_jx_k+\sum_iT_ix_iuv,
+ \qquad r=(P,Q,T)
+\]
+とする。$u=\sum\lambda_ix_i,v=\sum\mu_ix_i$で制限し、三変数marked Hesse規格化した係数を$\sigma$と書く。
+\begin{theorem}\label{mix:incidence}
+$L=0$の実際の全形式対応は、$h$を固定する$A=\CC[[s,r]]$代数同型により
+\[
+ B_{16}\simeq A[[\lambda,\mu,h]]/(\sigma(s,r,\lambda,\mu)-h^2/3)
+\]
+と表示される。全族はこの源に六つの自由変数を加えたものとなる。
+原点で$\lambda_i=a_i/3+O(2),\mu_i=c_i/3+O(2)$、$r=(p,q,d)+O(2)$である。
+従って平面incidence稿の臨界幾何を実際の形式対応へ適用できる。
+\end{theorem}
+\begin{proof}
+定理\ref{mix:six}の可換代表を$G\equiv I_5$でcanonical Fermat切片へ移す。
+元の平面$W_0=(u=v=0)$上の制限は正確に$D/3+h^2xyz/3$である。
+新座標の平面は$G^{-1}W_0$であり、切片の制限式はこのHesse式に近恒等三変数線形変換を施したものとなる。
+marked Hesse規格化の一意性から$\sigma=h^2/3$を得る。
+一次shearは$u\mapsto u-\sum a_ix_i/3,v\mapsto v-\sum c_ix_i/3$なので、表示の接写像となる。
+$\partial_s\sigma(0)=1$より右辺は正則十六次元環であり、
+$(r,\lambda,\mu,h)$の接写像は可逆である。
+形式逆関数定理で同型を得る。全族は命題\ref{mix:translation}から従う。
+この同型は形式座標のもので、比較核の有限$h$での代数化を述べていない。
+\end{proof}
+
+\begin{corollary}[接階数と正確な臨界イデアル]
+分離軸上のcanonical接写像は
+$\partial_{p_i}\mapsto\gamma[ux_jx_k]$、
+$\partial_{q_i}\mapsto\gamma[vx_jx_k]$、$\partial_{d_i}\mapsto b[x_iuv]$であり、
+$L,a,c$の十二方向は零である。従って混合接階数は九、
+量子方向も含めた十次minorは$(2h/3)b^3\gamma^6$である。
+原点では階数九、分離軸の形式分数体上では十となる。
+$L=0$の実際の源における相対臨界イデアルは正確に
+$(h,p_1,p_2,p_3,q_1,q_2,q_3)$である。
+全族では六つの自由な$L$方向が加わる。
+\end{corollary}
+\begin{proof}
+分離Jacobian環の次数三基底は$xyz,x_iuv,ux_jx_k,vx_jx_k$である。
+定理\ref{mix:six}を係数の一次まで取れば接写像とminorを得る。
+定理\ref{mix:incidence}で相対臨界イデアルは$(h,\partial_\lambda\sigma,\partial_\mu\sigma)$である。
+$h=0$では源の可換代表は古典三次式そのもので、$W_0$上の制限はFermat式、
+二つの正規二次類は$\sum p_ix_jx_k,\sum q_ix_jx_k$となる。
+内在的臨界条件の証明の完全対合は、これら六係数に対して可逆な線形写像なので、
+零スキームのイデアルは$(p,q)$そのものである。
+形式座標変更のJacobianは可逆だから、このイデアル同定は集合論だけでなくスキーム論的に成立する。
+\end{proof}

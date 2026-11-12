@@ -63,4 +63,4 @@ Schur分解と二行のBott/Čech–Koszul比較で全次数頂点核 `K^nor=C[H
 
 ## 混合形式比較で残る障害
 
-可換平面incidenceの幾何は `papers/marked_hesse_plane_incidence.tex` に整理した。残る旧IIの削除には有限cochain縮約と標識付き相対window、積/Serre traceによる b(h) の全次数公式、全21混合方向の六級数表示の固有証明が必要。旧124/155項原始のJSONは現treeにないため、再構成可能な有限線形系または構造的証明へ置き換える。九次分岐jetは新しいFLINT再帰で厳密に再生成済みで、その計算自体は失われた証明書に依存しない。計算の成功と圏論的比較の成立は別の監査事項である。
+可換平面incidenceの幾何は `papers/marked_hesse_plane_incidence.tex` に整理した。有限cochain縮約・相対window・積/trace・全21方向六級数は `sklyanin_mixed_formal_comparison.tex` に回収した。旧155項原始のJSONは使わず、有限線形系から155型・473係数を再生成し全入力恒等式を確認した。残る削除障害は四次係数の大型有限BCH計算と、有限模型・全節の最終照合。九次分岐jetは新しいFLINT再帰で厳密に再生成済みで、その計算自体は失われた証明書に依存しない。計算の成功と圏論的比較の成立は別の監査事項である。

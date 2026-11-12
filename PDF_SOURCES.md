@@ -1,4 +1,4 @@
-# PDF-onlyの現行判定（2026-11-13 / v25）
+# PDF-onlyの現行判定（2026-11-13 / v26）
 
 **研究・TeX化・削除に関するCodexの恒久指示：** [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)。単純転記ではなく、証明を洗練し、重要な新しい結果の追加も目指す。以下は現行の残存PDFと削除障害の一覧であり、作業履歴のアーカイブではない。
 
@@ -6,7 +6,7 @@
 
 | 現行PDF | TeXへの移管ができた中心結果 | 残る削除障害 |
 | --- | --- | --- |
-| `papers/pdf-only/quantization/sklyanin_mixed_quantization.pdf` (195頁) | nc-cubic論文AのSklyanin中心と全混合量子化、nc-cubic2の既存境界研究への関連部分 | §9の有限curved gauge・相対window・積/Serre traceによる全次数比較と六級数の固有証明（幾何部分は下記の独立稿へ回収） |
+| `papers/pdf-only/quantization/sklyanin_mixed_quantization.pdf` (195頁) | nc-cubic論文AのSklyanin中心と全混合量子化、nc-cubic2の既存境界研究への関連部分 | §9.32の四次係数の大型有限計算の再構成、残りの有限模型・全節の最終照合（主要な形式比較と幾何は下記現行稿へ回収） |
 
 ## 中心商特異性（旧VI、61頁）の削除判定
 
@@ -111,5 +111,14 @@ GitHub mainが正本。現行の日本語LuaLaTeX証明と必要最小限の計�
 
 - §15–19の点因子・種数5曲線・shiftは `diagonal_cubic_point_geometry.tex` とその入力節へ回収済み（上の中心三次技術稿の判定も参照）。
 - §8、§9.37–50、§9.54–56の可換幾何は `marked_hesse_plane_incidence.tex` へ整理した。六次Hessian因子の絶対既約性・正規性・有理性、核上三次の四成分と次数27/6/6/6、全A2/A3点の標的versality、cusp/swallowtailの導手、A4弧・D4点・主成分の三枝と非正規性、二退化因子の積模型、非孤立点での二次jetとversalityの限界、固定源座標の六/九次分岐jetを証明付きで保持する。
-- 分岐jetの量子化への適用は、全混合可換代表の存在・二次係数・選択則を明示した入力としている。その入力の原PDF固有の証明を回収するまで、旧IIは削除不可。形式比較を有限hの圏同値へ拡張したとは主張しない。
+- 分岐jetの量子化への適用は、全混合可換代表の存在・二次係数・選択則を明示した入力としている。その入力は `sklyanin_mixed_formal_comparison.tex` に有限gauge・相対window・六級数として回収した。残る四次係数計算と全節照合が終わるまで旧IIは削除不可。形式比較を有限hの圏同値へ拡張したとは主張しない。
 - `verify_marked_hesse_geometry.py`、`verify_marked_hesse_higher_strata.py`、`verify_mixed_candidate_discriminant.py` が有理数/有理関数で有限恒等式を確認する。`verify_mixed_fibre_branch_jets.py` はFLINTの厳密有理数多項式で二十五軌道方程式を次数七まで解き、六変数全体の古典/量子補正済み九次分岐式と24単項式を独立に再生成した。失われたJSONや旧コードは入力に使わない。
+
+### 混合形式比較の現行回収
+
+`papers/sklyanin_mixed_formal_comparison.tex` は独立稿として、点イデアルMF・評価射・積のhomotopy、混合欠損からの八行MF、係数複体とA2因子のcoherence、有限arity gaugeの実際のMFへの移送、全係数縮約、相対Artin windowと生成子の基底変換、楕円rotation剛性、積/Serre traceによる b(h)^3=1+h^6/27、二次曲率の155型原始、全21方向の六級数、六自由方向、h固定の平面incidence同定を保持する。
+
+- `verify_mixed_second_order_gauge.py` は失われたJSONを入力せず、有理数cobar行列から155微分型・473多項式係数の原始を生成し、別の通常微分Leibniz挿入で全係数恒等式を確認した。源の二次結合律・Casimir・対称性も全入力記号で確認。
+- `verify_mixed_point_matrices.py` は全hの有理関数体上で混合欠損・整合式・評価cocycle・二乗の境界の全成分を確認。`verify_mixed_trace_scalars.py` は可換側射、二乗係数、二residue、scalar消去と剛性行列を確認する。traceの幾何学的解釈は本文の評価列の証明による。
+- 旧六次gauge数値入力への依存は、全次数の積/trace公式で置換した。Burke–Stevensonの一次資料1507.00830を確認し、原Theorem 6.4が次数零の有限大域次元を仮定することを再確認した。Artin基底ではその原定理を直接引用せず相対windowの証明を保持する。
+- 残る重要な計算は旧§9.32の [h^4]V_e=1/9、[h^4]T_e=1/18。再生成可能な二次原始は得たが、四次BCH・係数射影・降順縮約の計算をまだ実行していない。この二数値を検証済みとせず、PDFを保持する。

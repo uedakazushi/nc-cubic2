@@ -1,0 +1,80 @@
+\section{係数複体と対象評価で失われるcoherence}
+\subsection{楕円回転核}
+$f:E\to\operatorname{Spec}R$を上の楕円族、$i:\Delta\hookrightarrow E\times_RE$を対角とする。
+$A_P=-\otimes P$、$\rho_P=A_P\rho_0A_P^{-1}$と置く。
+Fourier--Mukaiの規約を$\Phi_K(F)=Rp_{2*}(p_1^*F\otimes^{\mathbf L}K)$とすると
+\[
+ K_P=(p_1^*P^{-1}\otimes p_2^*P)\otimes I_\Delta\otimes p_1^*L[1]
+\]
+が回転核である。$I_\Delta$はCartier因子の可逆イデアル層であり、二項分解そのものではない。
+\begin{proposition}
+自然な擬同型
+\[
+ \operatorname{RHom}_{E\times_RE}(\mathcal O_\Delta,K_P)
+ \simeq Rf_*L\simeq Rx\oplus Ry\oplus Rz
+\]
+があり、右辺は次数零に集中する。
+指定周期性$\rho_P^3\simeq[2]$で負二回転を読むと
+$HC_R^\bullet(\Perf(E),\rho_P^{-2})\simeq(Rx\oplus Ry\oplus Rz)[-2]$となる。
+全てのArtin基底変換と両立する。
+\end{proposition}
+\begin{proof}
+Cartier双対性$i^!M=Li^*M\otimes T_{E/R}[-1]$を用いる。
+対角上の$P^{-1}\otimes P$は標準評価で消え、
+$i^*I_\Delta=\Omega^1_{E/R}$なので$i^!K_P=L$である。
+これは局所自由なCartier分解でも計算でき、Artin基底の非平坦性は障害にならない。
+$0\to\mathcal O_{\PP^2_R}(-2)\to\mathcal O_{\PP^2_R}(1)\to i_{E*}L\to0$から
+$Rf_*L=R^3[0]$である。
+共役による正一回転の写像はこの基底上恒等だが、指定周期性の写像まで恒等になるとは限らない。
+\end{proof}
+
+グラフだけで核を書くと、基底上の直線を落とす危険がある。
+$\Gamma_p=\{y=x+p\}$、差写像$d(x,y)=y-x$なら$I_{\Gamma_p}=d^*\mathcal O_E(-p)$であり、
+裸のグラフ核による係数複体には
+\[
+ \Lambda_p=o^*\mathcal O_E(-p)\otimes_R\operatorname{Lie}(E/R)
+\]
+がtensorされる。局所環上で自明でも、そのframeには$1+hR$の単元差がある。
+本族の形式座標$t=z/x$で$p$のイデアルgeneratorは$t+h$であり、
+その$o$への制限と$\partial_t$のtensorが特殊ファイバーで一となるframeを与える。
+これは可逆層のgeneratorであって数値$h$そのものではない。
+
+正一回転比較を$\eta$、周期性defectを$\kappa$とし$c^3=\kappa^{-1}$とすると、
+文字通りの負二回転比較は$c^{-2}\eta^{(-2)}$となる。
+指定周期性で$\rho^{-2}=\rho[-2]$と読めば
+$\eta^{(-2)}=\kappa^{-1}\eta[-2]$なので係数は
+$c^{-2}\kappa^{-1}=c$である。
+従って正一回転基底で測る混合係数は$cq$であり、$q=1$を仮定してはならない。
+
+\subsection{一変数A2因子}
+定数族$\MF^{\mathbb Z}(R[u],u^3)$には、二頂点一矢$A_2$の固定dg模型を用いる。
+体上の同値とrotationの同定はTakahashi\cite{Takahashi}の既知入力であり、
+固定した生成子模型を$R$へ基底変換して用いる。
+$P_1=(R\xrightarrow1R),P_2=(0\to R)$、$f:P_2\hookrightarrow P_1$とすると、
+$\rho=S^{-1}[1]$は
+\[
+ \rho P_1=P_2[1],\quad\rho P_2=[P_2\xrightarrow fP_1],\quad
+ \rho f:[P_2\to P_1]\to P_2[1]
+\]
+で表される。最後の写像は次数$-1$で恒等、次数零で零である。
+path algebraの長さ一の対角分解を用いると
+\[
+ HC_R^\bullet(\MF^{\mathbb Z}(u^3),\rho)
+ \simeq[R\xrightarrow{c\mapsto(c,c)}R^2]\simeq R[0].
+\]
+二項の次数は$-1,0$であり、$\pi(a,b)=b-a,i(c)=(0,c),H(a,b)=a$は
+$dH+Hd=1-i\pi$を満たす整数係数の分裂を与える。
+Jacobian側の掛け算$u$の類でこの自由直線を規格化する\cite{BFK}。
+この模型は$h$に依存しないので未知の$h$単元を加える必要はない。
+
+ここで$H^0\operatorname{Hom}(P_i,\rho P_i)=0$だが$HC_R^0=R$である。
+生成元$(0,1)$の第二成分は矢$f$に対するcoherenceを表す。
+従って生成対象ごとの評価が境界であることからHochschild類を零と結論できない。
+
+三因子の分離Thom--Sebastiani模型とcoherentな$(\mathbb Z/3)^2$作用を固定すれば、
+$g=\rho_2\rho_3\rho_1^{-2}$の係数複体は、perfect対角と係数bimoduleのKünneth同型から
+$(Rx\oplus Ry\oplus Rz)[-2]$となる。
+特殊ファイバーでの三つの類は$uvx,uvy,uvz$であり、内部次数シフトと可換である。
+各群元の作用行列$M$は$M^3=I,M\equiv I\pmod h$を満たす。
+$M^2+M+I\equiv3I$は可逆なので$M=I$であり、不変部分を取っても階数三は変わらない。
+これは係数複体の計算であり、源の混合cocycleをこの空間へ移した具体的写像の計算とは区別する。

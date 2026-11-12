@@ -1,0 +1,105 @@
+\section{有限arity gaugeの行列因子化への移送}
+可換$\mathbb Q$代数$K$、$S=K[x,y,z,u,v]$、周期変数
+$\deg_{\rm coh}\beta=-2,\deg_{\rm int}\beta=3$を取る。
+$n$入力cochainに$\beta^j$を掛けたもののshift後次数を$n-1-2j$とする。
+正規化とは正arity成分が入力$1$を持つと零になることである。
+arity方向には直和を取り、無制限な積完備化は用いない。
+通常のMF $P:E_1\to E_0,Q:E_0(-3)\to E_1$は、$S[\beta,\beta^{-1}]$上の奇微分
+\[
+ d=\begin{pmatrix}0&P\\\beta^{-1}Q&0\end{pmatrix},\qquad d^2=F/\beta
+\]
+と等しい。
+\begin{lemma}[有限移送]\label{mix:finite}
+$I^N=0$となる基底イデアルを取り、二つの曲がった結合構造$M,M'$が$I$を法として一致するとする。
+正規化された有限arity cochainの有限和$\xi\in I\,CC^0_{\rm fin}(S[\beta,\beta^{-1}])[1]$が
+$K[\beta,\beta^{-1}]$線形、内部次数零で、$M'=e^{\operatorname{ad}\xi}M$を満たせば、
+有限自由graded MF圏の間に$I$を法として恒等な$A_\infty$同値がある。
+これはcone、有限直和、直和因子へ延長し、指定された三次周期性を保つ。
+\end{lemma}
+\begin{proof}
+bar coderivationの指数$\mathcal F=e^\xi$は$I^N=0$により有限和であり、
+各入力cochainも有限arityなのでTaylor成分は有限個である。
+共役式は$\mathcal F M=M'\mathcal F$、すなわち曲がった関手恒等式そのものである。
+各Taylor成分を行列成分へ拡張し、中間添字を和し、shiftにはKoszul符号を用いる。
+対象微分の像は$s d'=\sum_{n\ge0}\mathcal F_n(sd,\ldots,sd)$であり、
+射の像も両端と間へ$d$を挿入した有限和で定める。
+$s$の次数を$-1$とし、$b_0=s(F/\beta),b_2(sa,sb)=(-1)^{|a|}s(ab)$とすれば、
+零曲率twist条件は正確に$d^2=F/\beta$である。
+関手恒等式のarity零部分が$(d')^2=F'/\beta$を与える。
+$d$自身の冪零性は使わず、全ての和は基底冪零性とarityで止まる。
+$e^{-\xi}$にも同じ操作を行えばbraceの合成恒等式により互いに逆になる。
+正規化は厳密単位性を与え、$\beta$線形性から
+$\mathcal F_1(\beta\operatorname{id})=\beta\operatorname{id}$、
+その入力を持つ高次成分は零である。
+この式はtwist後も成立するので指定周期性を保つ。
+有限twisted complexと冪等完備化への延長は同じ有限行列公式で行う。
+\end{proof}
+
+\section{有限多重微分cochainの縮約}
+$S_0=K[x,y,z]$で係数を微分しないcochainを用いる。
+$D^a=\partial^a/a!$の入力型$D^{a_1}\otimes\cdots\otimes D^{a_n}$に対し、
+各$a_i\ne0$とし、全微分指数$A=\sum a_i$を固定する。
+Hochschild微分は入力の一つを二つの正多重指数に分ける有限写像
+\[
+ d_H=\sum_i(-1)^{n+i-1}\sum_{b+c=a_i,\ b,c\ne0}
+ (a_1,\ldots,a_{i-1},b,c,a_{i+1},\ldots,a_n)
+\]
+である。
+\begin{lemma}\label{mix:cobar}
+arity四以上の閉cochainには有限なarity一つ下の原始がある。
+閉二入力cochainは有限一入力境界とHKR双ベクトルの和になる。
+いずれの構成も係数に線形で、全微分指数と内部次数を保つ。
+\end{lemma}
+\begin{proof}
+固定$A$の入力分割は、正の真部分多重指数のposet
+$\mathcal P_A=\{s:0\le s\le A,\ s\ne0,A\}$の正規化単体鎖に等しい。
+ある$A_i\ge2$なら$c(s)=s\vee e_i$は依然このposetに属し、
+$s\le c(s),e_i\le c(s)$を満たす。
+prism homotopy $P$で$\partial P+P\partial=c_*-\operatorname{id}$、
+$c(\mathcal P_A)$を$e_i$へconeする$K$で$\partial K+K\partial=\operatorname{id}$となる。
+従って$H=Kc_*-P$は縮約であり、その双対にarity符号$(-1)^{p-1}$を掛ければ表示の微分の原始を得る。
+三方向でarity四以上なら$|A|\ge4$なので必ずこの場合に入る。
+全て有限posetの有限和で、係数多項式を変えない。
+
+二入力では閉性は正の三分割について$c(a+b,c)=c(a,b+c)$である。
+$|A|\ge3$の比較グラフは連結なので全係数が一つの値に等しく、一入力$-c_AD^A$の境界である。
+$A=2e_i$も同様で、$A=e_i+e_j$だけは二係数の平均を境界で除くと反対称部分が残る。
+これはHKR双ベクトルである。
+\end{proof}
+
+\begin{proposition}[全次数での純曲率代表]\label{mix:pure}
+$K=\mathbb Q[e_1,e_2,e_3,m_1,m_2,m_3]$、$\operatorname{wt}e_i=1,\operatorname{wt}m_i=2$とし、
+$F=D/3+\sum e_ix_jx_k+\sum m_ix_i$と置く。
+形式PBW積の各$h$係数が有限な$K$線形多重微分作用素であるとする。
+実際の中心曲率を持つ源$M_h$は、各$h^N=0$で有限arityの係数線形gaugeにより
+$\mu+P_h/\beta$という純曲率へ移せる。
+一つの補空間を固定して、
+\[
+ P_h=F+\sum_{r\ge1}h^rP_r(x,e),\qquad P_r\in\mathbb Q[x_1,x_2,x_3,e_1,e_2,e_3]_3
+\]
+と選べる。補正の補空間は五十六次元である。
+\end{proposition}
+\begin{proof}
+$D_0=[\mu+F/\beta,-]$に関して閉じる次数一・内部次数零の有限cochainを考える。
+最大arityが四以上なら補題\ref{mix:cobar}でその成分を除く。
+曲率とのbracketはarityを一つ下げるので、最高成分を取り直す有限降下でarity二以下になる。
+残る双ベクトル$\Pi$は$\iota_{dF}\Pi=0$を満たす。
+三勾配$F_i=x_i^2+e_jx_k+e_kx_j+m_i$は、$m_i$を消去できるため多項式環で正則列である。
+Koszul完全性から$\Pi=\iota_{dF}\Theta$であり、三ベクトルのHKR像を原始として除ける。
+残る零arityは$g/\beta$である。
+重み三の$g$を一次ベクトル場の像$\sum S_1F_i$で割ると$m_i$を消去でき、
+商は六つの重み一変数$x,e$の三次部分である。その次元は$\binom83=56$。
+各段階は有限で係数に線形である。
+
+$h$次数帰納で、低次が通常積と純曲率になっていれば次の誤差は$D_0$に関して閉じる。
+純曲率同士のbracketは零なので新たな障害はなく、上の原始を$h^r$倍して指数化すればよい。
+固定した補空間・縮約を全切断で用いるとArtin切断間に両立する系になる。
+PBW積の有限微分性は還元グラフ表示\cite{BW}から得る。
+各$h^r$には有限個の$r$頂点グラフだけが現れ、全入力微分次数は高々$2r$である。
+中央係数に向かう交換補正は零なので係数微分は現れない。
+\end{proof}
+
+\paragraph{現在の適用範囲.}
+純曲率の存在と有限移送の補題だけでは、標準的可換対応での座標や周期性単元の値は定まらない。
+相対Artin window、楕円側のrotation剛性、characteristic類とSerre traceの比較を別に確認する必要がある。
+有限$h$への収束・代数化は全て別問題である。

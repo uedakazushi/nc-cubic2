@@ -1,0 +1,158 @@
+\section{次数シフトを保つ楕円比較の剛性}
+$E/R$は原点$o$を持つ滑らかな楕円曲線族、$L=\mathcal O_E(3o)$、
+$\rho=T_{\mathcal O_E}\circ(-\otimes L)$とする。
+\begin{lemma}\label{mix:rigidity}
+各$R/(h^{N+1})$上で特殊ファイバーが恒等であるMorita自己同値$T$が$T\rho\simeq\rho T$を満たすなら、
+$T$の同型類は恒等であり、この同型を切断間で両立して選べる。
+指定された$\rho^3\simeq[2]$を保つ比較同型は、特殊ファイバーでの値を固定すれば一意である。
+これは自然自己同型としてのscalarを消す主張ではない。
+\end{lemma}
+\begin{proof}
+微小自己同値は$HH^1(E_0)=H^0(T_{E_0})\oplus H^1(\mathcal O_{E_0})$であり、
+平行移動$t_a^*$とPicard tensor $A_b=-\otimes\mathcal O(b-o)$が二方向を張る。
+$-\otimes L$の共役は$(a,b)\mapsto(a,b+3a)$、
+球面twistの共役は$(a,b)\mapsto(a-b,b)$である。
+前者は$t_a^*L=L\otimes P_{-3a}$から、後者は
+$A_bT_{\mathcal O}A_b^{-1}=t_b^*T_{\mathcal O}$から従う。
+よって$\rho$の接行列は
+$\left(\begin{smallmatrix}-2&-1\\3&1\end{smallmatrix}\right)$で、$\det(M-I)=3$、不変部分は零である。
+小拡大に沿って恒等bimoduleの持上げの差は$HH^1(E_0)\otimes I$に属し、
+$\rho$と可換という条件で不変部分に入るため零となる。
+$HH^0(E_0)$のscalarは同型の選択だけに残り、持上げの存在を妨げない。
+前段の比較同型のscalarを任意に持ち上げて割ることで帰納を両立させる。
+最後に同じfunctorの二つのrotation比較の差は$a(h)\in R^\times$で、周期性保存から$a^3=1$。
+$a(0)=1$と三の可逆性から$a=1$である。
+\end{proof}
+
+\section{積とSerre traceが決める混合単元}
+ここでは分離Sklyanin因子とHesse曲線の標識付き比較を入力とする。
+この分離比較の証明は、現行大部稿のHesse族・Picard共役の節にあり、
+一般次元の標識付き可換復元の正本はnc-cubic論文Bにある。
+有限gaugeから得た比較は補題\ref{mix:finite}の$\beta$線形性により指定周期性を保つ。
+分離比較をPicard tensor $J=-\otimes\mathcal O(p-o)$とし、
+そのrotation比較$\eta:J\rho_N\simeq\rho_CJ$の周期性defectを
+\[
+ (\iota_CJ)\eta^{(3)}=\kappa(J\iota_N),\qquad
+ c(0)=1,\quad c^3=\kappa^{-1}
+\]
+で定める。補題\ref{mix:rigidity}から有限gauge比較と$(J,c\eta)$は同型である。
+
+内部次数二の係数$m$の実際の変分は、積と曲率を同時に微分する。
+命題\ref{mix:defect}の$(R_0,R_1)$が、指定周期性を用いて読んだ
+$r:M\to\rho_NM$というcharacteristic類の対象成分である。
+持上げ行列を変えても境界しか変わらず、有限$A_\infty$関手のtwist恒等式を$m$で微分するとこの類の自然性が従う。
+この段階で一変数二因子のHochschild類を対象上の評価で代用してはいない。
+まず係数を微分しない$\mathbb Q[m]$上の比較を構成し、その後$m=\alpha uv$を代入する。
+
+\begin{proposition}[scalar消去]\label{mix:scalar}
+$f:M\to\rho_N^2M[-1]$と$r:M\to\rho_NM$について、指定周期性で
+$[f^2]=a_N[r]$、$\tau_N=\operatorname{Tr}_\omega(fr)$と定める。
+可換側にも$a_C,\tau_C$を同じ規約で定める。
+正のrotation比較で$f\mapsto\lambda f_C,r\mapsto q r_C$なら
+\[
+ \lambda^2a_C=\kappa a_Nq,\qquad \lambda q\tau_C=\kappa\tau_N.
+\]
+従って周期性を保つ比較での混合係数$b=cq$は
+\[
+ b^3=\frac{q^3}{\kappa}=\frac{a_C\tau_N^2}{a_N\tau_C^2}.
+\]
+\end{proposition}
+\begin{proof}
+$f^2$の終点は四回転であり、一回転へ戻す際に周期性defectが一度現れる。
+$fr$も三回転から次数一の自己射へ戻す際に同じdefectが一度現れる。
+Picard tensorは同じ曲線の自己拡大とSerre traceを保つので二式を得る。
+第二式から$\lambda$を消せば結論となる。
+$\eta$を$u\eta$に変えても$(\lambda,q,\kappa)\mapsto(u^2\lambda,uq,u^3\kappa)$なので不変である。
+必要な$h$の消去はまず$\CC((h))$で行い、最後に$R$へ戻す。
+\end{proof}
+
+\begin{lemma}[windowにおける奇射の第二行]
+点MFの$Q^{\rm MF}$の第二行$\epsilon$で余核を点イデアルへ同一視する。
+奇射の第一行列を$A$とし、評価列を
+$0\to K\to H^0(HN)\otimes\mathcal O_E\to HN\to0$とする。
+$\rho_N(f):K[1]\to N[1]$は$A$の第二行$A_2$を$K$へ制限した写像である。
+評価基底が$(s_1,s_2)$なら対応切断は$A_2(-s_2,s_1)^t$である。
+\end{lemma}
+\begin{proof}
+周期的自由分解を三つずらした二段拡張
+$0\to I_o\xrightarrow{Q(3)}C(1)\oplus C\xrightarrow{P(3)}C(2)^2\to I_o(3)\to0$
+の$C$成分は$\epsilon:I_o\hookrightarrow C$そのものであり、指定周期性に余分な単元を導入していない。
+closed条件の第二行は$\epsilon B=-A_2P$である。
+従って$A_2$は商に降りて$HN\to\mathcal O_o$を与え、
+評価列と$0\to N\to\mathcal O_E\to\mathcal O_o\to0$の間の図式の中段を定める。
+左端は$A_2|_K$となり、このpushout/pullbackが主張のdegree一射である。
+\end{proof}
+
+\begin{theorem}\label{mix:b}
+係数を微分しない純曲率比較の混合一次係数を、Hesse規格化後に$b(h)x$と書く。
+標識、次数シフト、指定三次周期性を保持する比較では
+\[
+ b(h)^3=1+h^6/27,\qquad b(0)=1.
+\]
+従って一混合族のcanonical代表は
+\[
+ D/3+u^3+v^3+h^2xyz/3+\alpha(1+h^6/27)^{1/3}uvx.
+\]
+$\alpha$の再パラメータ化を用いない。
+\end{theorem}
+\begin{proof}
+命題\ref{mix:product}から$a_N=-h$である。
+Homの座標は$\ell_N(U,V)=U_{11}(1,-1,2h)$で、境界を殺し$\ell_N(R_0,R_1)=1$となる。
+可換側の$r_C=x\operatorname{id}$の座標は$U_{11}(1,-1,h)$なので、
+\[
+ a_C=\det A_C(1,-1,h)=-\frac{9h}{(3+h^3)^2}(1+h^6/27).
+\]
+混合characteristic類の評価はこの一次元方向で単射である。
+実際$\operatorname{Hom}(M_C,\rho_CM_C)=H^0(L)/H^0(L(-q))$であり、$q$での評価が座標となる。
+$x(q)=1$なので$x\operatorname{id}$は単元生成元である。
+
+traceを実際のresidueで計算する。$x=1,t=z/x$のchartで
+\[
+ \omega=\frac{dt}{y^2+h^2t/3},\qquad\tau_0=3(x+y)-h^2z,
+ \qquad\operatorname{div}\tau_0=3o
+\]
+とする。評価列の基底$(s_1,s_2)$と切断$u:N\to HN,v:K\to N$に対し、
+二つの局所liftの差はkernel vectorの$-u/(s_1s_2)$倍となる。
+同じcone符号を選ぶとtraceは$(uv/(s_1s_2))\omega$の$s_1$の零点でのresidueの和である。
+この公式は評価列のČech接続写像と曲線のSerre双対のresidue表示\cite{Tate}による。
+
+源で$N=\mathcal O(-o)$、$HN=\mathcal O(2[p])$とし、評価基底を
+$s_1=(l/\tau_0)\circ t_{-p},s_2=(z/\tau_0)\circ t_{-p}$とする。
+$A_2=(0,1)$なので奇射の切断は$s_1$である。
+$r$の有理関数は右THCR積の規約から
+\[
+ r_N=\{s_1h(x-2y)/3+s_2(x+2h^2z/3)\}/z.
+\]
+従ってtraceは$s_1$の零因子$o+[2]p$での$(r_N/s_2)\omega$のresidueである。
+$o$では$s_1/s_2$が零、$\omega=dt+O(t)dt$なのでresidueは一である。
+$[2]p$では$z\ne0$なので正則で寄与は零となる。
+ここで形式群法から$t([2]p)=-2h+O(h^2)$であり、分数体上で非零である。
+よって$\tau_N=1$を得る。
+
+可換側は$N_C=\mathcal O(-q)$、評価基底は$l/\tau_0,k/\tau_0$であり、
+奇射の切断は$(l+rk)/\tau_0=\tau_q/((3+h^3)\tau_0)$、
+$\tau_q=(3-h^3)x+(3+h^3)y+2h^2z$である。
+$r_C$は$x/\tau_0$なのでtraceは
+$(x/k+rx/l)\omega$の$o,p$でのresidueの和である。
+曲線の陰関数微分から
+\[
+ l'(o)=h^2/3,\quad l'(p)=-2h^2/(3-h^3),\quad
+ (\omega/dt)(o)=1,\quad(\omega/dt)(p)=3/(3-h^3).
+\]
+$k(o)=-h,k(p)=-2h$なので$x/k$は寄与せず、
+二residueは$6/(3+h^3),-3/(3+h^3)$となる。
+従って$\tau_C=3/(3+h^3)$である。
+Picard tensorの同一視に用いる有理関数は自己射の共役で相殺されるため、この共通微分のtraceを保つ。
+命題\ref{mix:scalar}へ代入して$b^3=1+h^6/27$を得る。
+
+最後に一変数$m$の重み二から、全次数純曲率は$C_h(x)+mL_h(x)$である。
+$h$のみに依存するHesse規格化後、固定対角群と巡回対称性、標識付きsliceの一意性から
+一混合項の像は$\alpha b(h)uvx$に限られる。
+分離Hesse係数は$h^2/3$であり、相対windowと有限移送により実際の残余圏変形に一致する。
+定数項一の立方根は全Artin商と両立して一意である。
+\end{proof}
+
+\paragraph{六次計算への代替.}
+$b=1+h^6/81+O(h^{12})$は全次数の積・trace公式の系である。
+従って失われた六次gauge入力の数値をこの係数の証明として再利用する必要はない。
+候補三次式への中心二変数の代数的座標変更は可能でも、比較核の収束・代数化や有限非零$h$の圏同値を証明したことにはならない。

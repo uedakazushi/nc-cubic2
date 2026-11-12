@@ -1,0 +1,122 @@
+\section{点イデアルと混合欠損}
+$R=\CC[[h]]$、$S=R\langle x,y,z\rangle/([x,y]-hz^2,[y,z]-hx^2,[z,x]-hy^2)$とする。
+$D=x^3+y^3+z^3$、$T=\sum_{\pi\in S_3}\pi(xyz)$、$G=D-h^2T/3$、$\Omega=G/3$と置く。
+中心性と形式PBW性は現行の中心三次対論文\cite{Pair}の証明による。
+\begin{proposition}\label{mix:point}
+$l=x+y,Q=x^2-xy+y^2$とし、
+\begin{align*}
+ a&=z+h(y-x),&b&=-l-h^2z,\\
+ q_1&=Q+hz^2-h^2xz,&q_2&=z^2+hxz-2hyz+h^2Q,\\
+ r_1&=z^2-hxz-h^2y^2,&r_2&=-Q-hz^2
+\end{align*}
+と置く。次の行列は$G$および$\Omega$の行列因子化を与える：
+\[
+ \phi=\begin{pmatrix}a&q_1\\b&q_2\end{pmatrix},\quad
+ \psi=\begin{pmatrix}r_1&r_2\\l&z\end{pmatrix},\quad
+ P=\phi\operatorname{diag}(1,1/3),\quad
+ Q^{\rm MF}=\operatorname{diag}(1,3)\psi/3.
+\]
+$P_0=S(-1)^2,P_1=S(-2)\oplus S(-3)$として$P:P_1\to P_0$、
+$Q^{\rm MF}:P_0(-3)\to P_1$である。
+$C=S/(G)$上の余核は点$o=[1:-1:0]$のイデアル
+$I_o=\ker(C\to S/(lS+zS))$である。
+\end{proposition}
+\begin{proof}
+$la+zb=hr_{xy}+r_{yz}-r_{zx}=0$である。
+残る八成分は自由語として展開し、二次関係の左右倍の線形包で零になることを確認する。
+現行検証器は$\mathbb Q(h)$上で重み四以下の全関係倍を構成し、各成分を厳密に簡約する。
+$h$を打ち切らない恒等式である。
+複体$0\to S(-2)\xrightarrow{(a,b)^t}S(-1)^2\xrightarrow{(l,z)}S$は、
+$h=0$で通常のKoszul複体なので、各内部次数の単元pivotを持ち上げると完全性と余核の階数一の自由性を得る。
+$\phi\psi=\psi\phi=G$から$G$はその余核を零化する。
+$C$上の$(l,z)$の核元を$S^2$へ持ち上げ、その像$Gc$を$(q_1,q_2)^tc$で引けば、
+$S$上の核になり$(a,b)^td$と書ける。従って$\operatorname{coker}\phi=I_o$である。
+最後の基底変更は表示通りで、周期性の係数$1/3$を保持する。
+\end{proof}
+
+楕円曲線$E=V(D+h^2xyz)$、$o=[1:-1:0]$、$p=[1:-1:-h]$、$q=-p=[1:-1:h]$とする。
+右twisted homogeneous coordinate ringの規約では、window $i=1$で$I_o$は$\mathcal O_E(-o)$を表す。
+実際その次数$n\ge1$切断は$H^0(E,\mathcal O_E(-o)\otimes L_n)$であり、次数$3n-1>0$なので高次切断が消える。
+Picard tensor $-\otimes\mathcal O_E(p-o)$での像は$\mathcal O_E(-q)$である。
+$\tau=3(x+y)-h^2z$について$\operatorname{div}\tau=3o$、
+$\operatorname{div}(x+y)=o+p+q$なので、$3(x+y)/\tau$がこの線束同型を与える。
+可換側は$k=z-hx,Q_c=Q+h^2xz,R_c=z^2+hxz$と置き
+\[
+ \phi_c=\begin{pmatrix}k&Q_c\\-l&R_c\end{pmatrix},\qquad
+ \psi_c=\begin{pmatrix}R_c&-Q_c\\l&k\end{pmatrix}
+\]
+である。$lQ_c+kR_c=D+h^2xyz$が行列因子化を与える。
+$\Omega$と同じ規格化の$P_c,Q_c^{\rm MF}$には同じ対角基底変更と$1/3$を用いる。
+
+\begin{proposition}[混合欠損と八行模型]\label{mix:defect}
+関係$[y,z]=h(x^2+m)$、他の二関係はそのままとし、$m$を重み二の中央多項式変数とする。
+\begin{align*}
+ R_0&=\begin{pmatrix}x&h(x-2y)/3\\(h^2x+2hz)/3&x+2h^2z/3\end{pmatrix},\\
+ R_1&=\begin{pmatrix}x+2h^2z/3&-J\\-h&x\end{pmatrix},\\
+ 9J&=h^2x^2+2hxz-2h^2yx+4h^2y^2-2hyz-2hzy-2h^3z^2
+\end{align*}
+とすると
+\[
+ PQ^{\rm MF}=(\Omega+mx)I-mR_0,\quad Q^{\rm MF}P=(\Omega+mx)I-mR_1,
+ \quad R_0P=PR_1,\quad R_1Q^{\rm MF}=Q^{\rm MF}R_0.
+\]
+$m=\alpha uv$とし、$C_j=u^2I+\alpha vR_j$、
+\[
+ P_u=\begin{pmatrix}P&uI\\-C_1&Q^{\rm MF}\end{pmatrix},\quad
+ Q_u=\begin{pmatrix}Q^{\rm MF}&-uI\\C_0&P\end{pmatrix},\quad
+ \Phi=\begin{pmatrix}P_u&vI\\-v^2I&Q_u\end{pmatrix},\quad
+ \Psi=\begin{pmatrix}Q_u&-vI\\v^2I&P_u\end{pmatrix}
+\]
+とすると$\Phi\Psi=\Psi\Phi=(\Omega+\alpha uvx+u^3+v^3)I_8$である。
+\end{proposition}
+\begin{proof}
+四つの二行行列恒等式は自由語の関係空間で検証する。
+後半二式は前半、中心性、および形式PBWでの$m$の正則性からも従う。
+$PC_1=C_0P,Q^{\rm MF}C_0=C_1Q^{\rm MF}$なのでblock積の非対角項は零となり、
+対角は$PQ^{\rm MF}+uC_0$と$Q^{\rm MF}P+uC_1$である。
+$v$についてもう一度同じ二因子積を取れば八行模型を得る。
+自由加群は$u$追加後$E_0^u=E_0\oplus E_1(2),E_1^u=E_1\oplus E_0(-1)$、
+$v$追加後も同じ規則でshiftする。
+特殊ファイバーの$\Phi$は$F_0$の行列因子化として単射であり、各内部次数の単元minorを持ち上げると余核は基底上平坦になる。
+\end{proof}
+
+\section{評価方向と積の有限homotopy}
+分離した$m=0$へ戻る。上の点イデアルMFを$M$とする。
+\begin{proposition}
+$M\oplus M(2)$は楕円MF因子を生成する。
+次の行列対は$M\to M(2)$の次数$-1$の閉射で、そのHom群の自由階数一の生成元である：
+\[
+ A=\begin{pmatrix}(hy-z)/3&0\\0&1\end{pmatrix},\qquad
+ B=\begin{pmatrix}1&h^2x/3\\h^2&(-hx+2hy+(h^3-1)z)/3\end{pmatrix}.
+\]
+$\Delta_0=3+h^3$として可換側の生成元は
+\[
+ A_c=\begin{pmatrix}s&t\\-r&1\end{pmatrix},\quad B_c=\operatorname{adj}A_c,
+ \quad s=-z/3-2hx/\Delta_0,\ t=(4h^2x-2h^2y)/(3\Delta_0),\ r=2h^2/\Delta_0.
+\]
+\end{proposition}
+\begin{proof}
+楕円windowで$M=\mathcal O_E(-o)$であり、二回のrotationは点対象$\mathcal O_{-p}[1]$を与える。
+線束と一点のskyscraperは、点での完全列を繰り返して全ての整数twistを生成し、それらはample twistなので$\Perf(E/R)$を生成する。
+行列のclosed条件$PA+BQ^{\rm MF}=Q^{\rm MF}B+AP=0$は二次関係の左右倍として厳密に確認できる。
+次数$-2$の境界射の可能形は内部次数から$\left(\begin{smallmatrix}0&0\\0&c\end{smallmatrix}\right)$だけなので、
+その境界の$A$の右下成分は零である。
+表示射の右下成分は一であり、線束から点対象へのHomが自由階数一なので生成元である。
+可換側では$Q_c^{\rm MF}=\operatorname{adj}P_c$なのでclosed条件は$\operatorname{tr}(P_cA_c)=0$へ帰着し、直接展開で分かる。
+\end{proof}
+
+\begin{proposition}\label{mix:product}
+$A_* =\left(\begin{smallmatrix}-1/3&-2h/3\\0&0\end{smallmatrix}\right)$、
+$B_* =\left(\begin{smallmatrix}0&2h/3\\0&(h^3-1)/3\end{smallmatrix}\right)$とすると
+\[
+ PA_*+B_*Q^{\rm MF}=BA+hR_0,\qquad
+ Q^{\rm MF}B_*+A_*P=AB+hR_1.
+\]
+従って指定周期性を通して評価射を二回合成した類は$[f^2]=-h[r]$となる。
+\end{proposition}
+\begin{proof}
+両blockの自由語展開を二次関係の左右倍で簡約する。
+現行検証器は混合欠損・整合式・評価cocycle・この二境界式をすべて$\mathbb Q(h)$で独立に検証する。
+$[r]$は混合変分の積と曲率を同時に微分して得るcharacteristic類であり、単に乗法$x$を取った類ではない。
+この点は混合欠損を微分した式$\dot d\,d+d\dot d+\dot\mu(d,d)=\dot W I$にも現れる。
+\end{proof}

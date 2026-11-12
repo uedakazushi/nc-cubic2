@@ -1,0 +1,54 @@
+% !TEX program = lualatex
+\documentclass[11pt,a4paper]{ltjsarticle}
+\usepackage{amsmath,amssymb,amsthm,mathtools,luatexja-fontspec}
+\usepackage[margin=25mm]{geometry}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+\setmainjfont{HaranoAjiMincho-Regular}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{corollary}[theorem]{系}
+\newtheorem{remark}[theorem]{注意}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\MF}{\operatorname{MF}}
+\newcommand{\Perf}{\operatorname{Perf}}
+\renewcommand{\proofname}{証明}
+\title{Sklyanin混合族の有限模型と形式比較}
+\date{2026年11月13日}
+\begin{document}
+\maketitle
+\begin{abstract}
+混合Sklyanin族の点イデアル、評価射、積のhomotopyを有限行列で記述する。
+曲率付き有限arity gaugeを実際の次数付き行列因子化へ移す仕組みを明示し、
+非冪零な対象微分への無限和を用いない。
+係数を微分しない有限縮約と相対windowを組み合わせ、積とSerre traceから混合一次単元を全次数で決定する。
+全二十一混合方向を六級数へ縮め、標識付きHesse平面incidenceとの形式同定を得る。
+有限非零量子係数における圏比較の代数化は主張しない。
+\end{abstract}
+\input{papers/sections/mixed_point_matrices.tex}
+\input{papers/sections/mixed_coefficient_complexes.tex}
+\input{papers/sections/mixed_finite_gauge_transport.tex}
+\input{papers/sections/mixed_relative_window.tex}
+\input{papers/sections/mixed_elliptic_trace_comparison.tex}
+\input{papers/sections/mixed_second_order_curvature.tex}
+\input{papers/sections/mixed_six_series_and_incidence.tex}
+\begin{thebibliography}{9}
+\bibitem{Takahashi} A.~Takahashi, \emph{Matrix Factorizations and Representations of Quivers I},
+\url{https://arxiv.org/abs/math/0506347}, Theorem 3.1 and Remark 3.6.
+\bibitem{BFK} M.~Ballard, D.~Favero and L.~Katzarkov,
+\emph{A category of kernels for equivariant factorizations and its implications for Hodge theory},
+Publ. Math.\ IHES 120 (2014), 1--111, Theorem 5.39, Definition 6.24 and Lemma 6.25,
+\url{https://doi.org/10.1007/s10240-013-0059-9}.
+\bibitem{Pair} 中心三次対の現行論文、
+\href{https://github.com/uedakazushi/nc-cubic2/blob/main/papers/nc_cubic_threefold_moduli.tex}
+{非可換三次三様体の17次元モジュライ族}、全混合PBW性・中心式。
+\bibitem{BS} J.~Burke and G.~Stevenson, \emph{The derived category of a graded Gorenstein ring},
+\url{https://arxiv.org/abs/1507.00830}, Lemma 3.10, Propositions 4.18 and 5.8, Theorem 6.4.
+\bibitem{Tate} J.~Tate, \emph{Residues of differentials on curves}, Ann. Sci.\ ENS (4) 1 (1968), 149--159,
+\url{https://doi.org/10.24033/asens.1162}.
+\bibitem{BW} S.~Barmeier and Z.~Wang, \emph{Deformations of path algebras of quivers with relations}, \url{https://arxiv.org/abs/2002.10001},
+Theorem 10.3, Lemma 10.9 (v4).
+\end{thebibliography}
+\end{document}

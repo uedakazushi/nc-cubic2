@@ -12,7 +12,7 @@
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 - **可換点の全Artin形式局所構造をTeX化**：`papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。全係数Hesse中心元・有限証明書・37次元graph成分と一般中心・剛体例の正則開集合も現行稿へ回収し、旧V全21節を照合した。原PDFは追跡解除済み。
 
-**2026-11-13 / v37。再開時は最初に本ファイルを読む。**
+**2026-11-13 / v38。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -121,4 +121,4 @@ Rees退化による非Azumaya locusの次元上界を一般補題にし、WWY Th
 
 ## 残る旧IIの次の着手
 
-平面切断の可換幾何を `papers/marked_hesse_plane_incidence.tex` へ分離した。A2/A3の導手、四成分、A4/D4、積模型と固定源の九次分岐式まで証明と新しい厳密検算を保持する。次は§9.6–32の有限curved cochain縮約、相対Artin window、積とSerre traceによる b(h)^3=1+h^6/27、全混合の六級数の証明を独立に回収する。分岐jet原稿ではこの未回収の比較入力を仮定として明示しており、PDF削除ゲートは未達である。
+平面切断の可換幾何を `papers/marked_hesse_plane_incidence.tex` へ分離した。A2/A3の導手、四成分、A4/D4、積模型と固定源の九次分岐式まで証明と新しい厳密検算を保持する。§9.6–31の主要形式比較は `papers/sklyanin_mixed_formal_comparison.tex` に回収した。155型・473係数の二次原始を入力なしで再生成し全恒等式を確認した。次は§9.32の四次量子係数1/9・1/18を有限BCHと実際のPBW/Weyl積から再構成し、階数32模型・源cocycle等の残りの有用内容と全節を照合する。PDF削除ゲートは未達である。

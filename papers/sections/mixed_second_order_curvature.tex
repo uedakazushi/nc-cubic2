@@ -1,0 +1,92 @@
+\section{全係数を保持した二次曲率縮約}
+$K=\mathbb Q[e_1,e_2,e_3,m_1,m_2,m_3]$、
+$F=D/3+\sum e_ix_jx_k+\sum m_ix_i$とする。
+$\pi^{ij}=\epsilon^{ijk}F_k$と置き、反復添字は$x,y,z$を走る。
+\begin{lemma}\label{mix:weylsecond}
+実際の周囲の完全対称化による固定化は、$h^3=0$上で
+\begin{align*}
+ \mu_h&=\mu+hC_1+h^2C_2,\\
+ C_1(f,g)&=\tfrac12\pi^{ij}f_i g_j,\\
+ C_2(f,g)&=\tfrac18\pi^{ij}\pi^{kl}f_{ik}g_{jl}
+ +\tfrac1{12}\pi^{ij}(\partial_j\pi^{kl})(f_{ik}g_l-f_kg_{il})
+\end{align*}
+である。preferred中心の同じ固定化での像は
+$F+h^2w_2$、$w_2=-2xyz/3+\sum e_i^2x_i/6$となる。
+\end{lemma}
+\begin{proof}
+Jacobi恒等式とLeibniz則から
+$[\mu,C_1]=0$、$[\mu,C_2]+[C_1,C_1]/2=0$である。
+これらは多重微分作用素の全入力係数恒等式であり、現行検証器も全係数のまま確認する。
+積は厳密単位的で、生成元交換子は$h\pi^{ij}$である。
+$F_i$が二次以下なので所定の対称化関係式に一致する。
+$\theta=\sum t_ix_i$に対して$C_1(\theta,e^{\tau\theta})=C_2(\theta,e^{\tau\theta})=0$である。
+前者は反対称性、後者は$\theta$の二階微分が零で残る$\partial_j\pi^{kl}$と$t_kt_l$の縮約が零であることによる。
+従って星指数は通常の指数に一致し、全ての完全対称化単項式が通常単項式へ移る。
+形式PBW性からこれが実際のWeyl固定化である。
+中心は
+\[
+ \Psi=\Omega+\sum e_i\operatorname{sym}(x_jx_k)+\sum m_ix_i
+ +\frac{h^2}6\sum e_i^2x_i
+ +\frac{h^4}{18}\sum(e_ix_i^2-e_je_kx_i)
+\]
+という自由代数証明書を持つ実際の中心\cite{Pair}を読む。
+その二次までの完全対称化が表示式を与える。
+\end{proof}
+
+\begin{lemma}[再生成できる有限原始]\label{mix:w3}
+\[
+ v=-\frac\beta6\operatorname{Alt}(\partial_x,\partial_y,\partial_z),\qquad
+ w_1=\frac1{24}\sum_{i,j}\operatorname{adj}(\operatorname{Hess}F)_{ij}\partial_i\partial_j
+\]
+とする。有限正規化三入力cochain $w_3$を、有理数線形系から一意のpivot規則で選んで
+\begin{gather*}
+ [\mu,v]=0,\qquad[F/\beta,v]=C_1,\\
+ [\mu,w_3]=[v,C_1]/2,\qquad
+ C_2-[F/\beta,w_3]=[\mu,w_1],\qquad
+ [F/\beta,w_1]=-\det(\operatorname{Hess}F)/(8\beta)
+\end{gather*}
+とできる。全係数$e,m$は独立な多項式変数のままである。
+\end{lemma}
+\begin{proof}
+最初の二式は反対称化の展開である。
+$w_3$の生成手順を完全に指定する。
+$[v,C_1]/2$を全入力微分指数$A$ごとに分け、通常微分係数に入力階乗の積を掛けてdivided derivativeへ直す。
+三入力の正分割を辞書順の列、四入力の正分割を辞書順の行とし、
+補題\ref{mix:cobar}の微分を行列にする。
+左からのpivot列だけを使い、他列の係数を零に固定して有理数上の線形系を解く。
+得た係数を入力階乗で割れば通常微分表示となる。
+
+この手順を実装した現行検証器は原始のデータファイルを読まず、155入力微分型の$w_3$を毎回再生成する。
+生成とは別の通常微分のLeibniz挿入で、上の二つの中央恒等式を全多項式係数について確認する。
+具体的には$A\circ_iB$で外側微分指数$a_i$を内側の係数と各入力へ全て配分し、
+多項係数$a_i!/(\gamma_0!\cdots\gamma_q!)$を掛ける。
+括弧はarityからのGerstenhaber符号で取る。これにより任意入力に対する作用素恒等式を検証し、有限個の入力試験で代用しない。
+最後の式は
+$w_1(F)=\operatorname{tr}(\operatorname{adj}(\operatorname{Hess}F)\operatorname{Hess}F)/24
+=\det(\operatorname{Hess}F)/8$からも直接従う。
+$\beta$の冪と内部次数、入力ごとの正規化は生成過程で保たれる。
+\end{proof}
+
+\begin{theorem}\label{mix:secondcurve}
+$\xi=hv+h^2(w_1+w_3)$による有限gaugeは、全$e,m$を保持して源を
+\[
+ \mu+\frac1\beta\left(F+h^2\left\{\frac{xyz}3-
+ \frac1{12}\sum_i e_i^2x_i+\frac14e_1e_2e_3\right\}\right)
+ \pmod{h^3}
+\]
+へ移す。このgaugeを全次数構成の初期部分に選べる。
+\end{theorem}
+\begin{proof}
+源は$\mu+hC_1+h^2C_2+(F+h^2w_2)/\beta$である。
+指数を二次まで展開し補題\ref{mix:w3}を用いると、積と正arity項は消え、
+曲率は$F+h^2\{w_2+\det(\operatorname{Hess}F)/8\}$となる。
+\[
+ \det(\operatorname{Hess}F)=8xyz-2\sum_i e_i^2x_i+2e_1e_2e_3
+\]
+を代入すれば結論を得る。
+指数のTaylor成分はこの切断で高々五入力である。
+必要なら有限対称群で原始を平均でき、曲率を保ったまま全次数帰納を三次から再開できる。
+中央係数へ線形で正規化されているので、$e_i$を$u,v$の一次式、$m_i$を二次式へ代入し$u^3+v^3$を加えても同じ式が成立する。
+補題\ref{mix:finite}と定理\ref{mix:window}によりこれは実際の残余圏の標識付き可換代表である。
+一般に平方混合項を含むため、係数をそのまま五変数canonical Fermat sliceの係数とは呼ばない。
+\end{proof}
