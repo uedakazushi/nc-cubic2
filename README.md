@@ -73,3 +73,7 @@ LuaLaTeX、LuaTeX-ja、HaranoAji日本語フォント、標準数学パッケー
 三目標の定理に必要な証明・反例・検算は、移管先だけへの参照で代用せず `nc-cubic` の現行論文またはノートへ自立的に保持する。境界研究の完全な本体は本リポジトリへ整理する。構成の整理を可換復元の研究の妨げにしない。
 
 GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗時の緊急避難に限る。
+
+### 中心商特異性のTeX化
+
+旧論文VIの非可換A1局所模型とBrauer障害、二中心chartの21中心特異点を[独立LuaLaTeX原稿](papers/central_quotient_local_models.tex)へ部分回収した。対応する厳密有理数検算は`computations/verify_central_quotient_local_hessian.py`。元の全中心表示・Azumaya locus・小単純表現の分類は条件付き入力として明記し、独立再監査していない。特異圏・twistの回収が完了するまでは原PDFを残す。

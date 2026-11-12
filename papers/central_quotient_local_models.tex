@@ -1,0 +1,369 @@
+% !TEX program = lualatex
+\documentclass[11pt,a4paper]{ltjsarticle}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{luatexja-fontspec}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+\setmainjfont{HaranoAjiMincho-Regular}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{corollary}[theorem]{系}
+\newtheorem{remark}[theorem]{注意}
+\renewcommand{\proofname}{証明}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Mat}{\operatorname{Mat}}
+\newcommand{\gldim}{\operatorname{gldim}}
+\newcommand{\Frac}{\operatorname{Frac}}
+\newcommand{\CM}{\operatorname{CM}}
+\title{中心三次商の零ファイバーと非可換$A_1$局所模型\\
+\large 中心の四特異点、局所分裂、Brauer障害}
+\date{2026年11月12日・v1}
+\begin{document}
+\maketitle
+\begin{abstract}
+中心三次商の旧論文VI第19節から、中心値零における四つの$A_1$点と
+局所非可換crepant resolutionの構造を現在の日本語LuaLaTeXに再構成する。
+特に中心上の一般Brauer指数6と局所分裂の両立を説明する。
+元の代数の全中心表示・Azumaya locus・小次元単純表現の排除は
+旧論文VIの別節を入力とし、今回独立に検証した定理ではない。
+中心多項式とHessianの有限検算は別途実行した。
+\end{abstract}
+
+\section{中心の四つの通常二重点}
+$k=\CC$とする。$A=R_1$を旧中心三次商のfiltered三変数代数、
+$g=3G_1/2$を中心正則元とし、$C=Z(A)$と書く。
+次の全中心表示を\emph{既存の入力}として用いる：
+\begin{equation}\label{eq:center}
+ C\simeq
+ \CC[g,U,V,W]/(\Phi),\quad
+ \Phi=49U^3-(13g^2+14)U^2+(g^2+1)^2U
+ +(11U-g^2-1)VW+V^3-W^3 .
+\end{equation}
+また$A$が$C$上有限なCohen--Macaulay整域、中心的斜体の次数6、
+Azumaya locusが$\Spec C$のsmooth locusに一致することも入力とする。
+これらは本稿の多項式検算のみから従う主張ではない。
+
+\begin{lemma}\label{lem:four}
+$\Spec C$の$g=0$上にある特異点は
+\[
+ p_0=(g,U,V,W)=(0,1/7,0,0),\qquad
+ p_\zeta=(0,-1,-4\zeta,4\zeta^2)\quad(\zeta^3=1)
+\]
+の四点であり、各点の形式完備局所環は
+\begin{equation}\label{eq:conifold}
+ \widehat C_{p}\simeq
+ R:=\frac{\CC[[p,q,r,\gamma]]}
+ {pq-(r-\gamma)(r+\gamma)},\qquad (g)=(\gamma)
+\end{equation}
+という中心切断を保つ形式同型を持つ。
+$C/(g)$の四点はすべて$A_1$型曲面特異点である。
+\end{lemma}
+\begin{proof}
+$\Phi$およびその偏微分を$g=0$上で解くことにより
+表示した四点が得られる。これが全解であることは
+\eqref{eq:center}の$g=0$におけるGr\"obner消去、
+または元の中心ファイバー判別式の計算で確認できる。
+点$p_0$での$(g,U,V,W)$のHessian行列式は$-64/343$、
+$p_1$では$576$であり、両者は非零である。
+$\zeta$に関する$(V,W)\mapsto(\zeta V,\zeta^2W)$という
+対称性により$p_\zeta$でも非零となる。
+さらに$(U,V,W)$方向のHessianの行列式は
+それぞれ$-32/7$, $288$である。
+従って$g$を基底パラメータに固定した形式的陰関数定理と
+パラメータ付きMorse補題により、
+中心方程式は非退化三変数二次形式と
+非零係数を持つ$g^2$の和に変換できる。
+$g$の単元倍を$\gamma$と取り直し、三変数の二次形式を
+$pq-r^2$に変換すると\eqref{eq:conifold}を得る。
+$\gamma=0$は$pq-r^2=0$なので$A_1$である。
+\end{proof}
+\begin{remark}
+中心の全体の正規性には、\eqref{eq:center}が整域であることと
+特異locusが余次元2以上という$R_1$条件を用いる。
+超曲面の$S_2$条件だけで正規性は従わない。
+\end{remark}
+
+\section{完備局所代数の分裂とconifoldのmodifying generator}
+\begin{lemma}[既存の最大次数分裂元]\label{lem:splitting}
+中心的斜体$A\otimes_C\Frac C$内の$Z$の最小多項式が
+\begin{equation}\label{eq:degree-six}
+ P(T)=T^6-gT^3+U
+\end{equation}
+であり、被約特性多項式も同式であると仮定する。
+四点$p$において$\Lambda=A\otimes_C\widehat C_p$は
+rank-one corner $e\Lambda e=\widehat C_p$を持ち、
+\[
+ \Lambda\simeq\End_R(M),\quad
+ R\mid M,\quad M\in\CM(R),\quad \operatorname{rank}_R M=6.
+\]
+\end{lemma}
+\begin{proof}
+四点では$g=0$かつ$U\ne0$なので、$P(T)$の剰余は
+$T^6+U(p)$であり、六つの根は相異なる。
+Henselの補題によって$\widehat C_p$上の六つの根
+$\lambda_i$に持ち上がり、全ての差が単元となる。
+従って
+\[
+ e_i=\prod_{j\ne i}\frac{Z-\lambda_j}{\lambda_i-\lambda_j},
+ \qquad 1=\sum_{i=1}^6e_i
+\]
+が直交冪等元の分解を与える。
+被約特性多項式の次数が6なので、各$e_i$の一般行列rankは1。
+$e=e_1$とし$M=\Lambda e$と置けば、
+$\Lambda$のMCM性により$M$と$e\Lambda e$は反射的である。
+高さ1ではAzumaya性から$e\Lambda e=R$、また
+$\Lambda\to\End_R(M)$は同型であり、
+反射性によってそれぞれ全体へ延長される。
+$e\Lambda e=R$が$M$の直和因子であることと
+rankの等式も従う。
+\end{proof}
+\begin{remark}[分裂元に必要な実証]
+旧論文VIでは$U=Z^3(g-Z^3)$と二つの三次元単純表現の
+相異なる$Z$固有値を用いて、\eqref{eq:degree-six}の
+最小次数が6であることを証明している。
+その明示表現の全行列と有限検算は本稿では再構成していないので、
+補題\ref{lem:splitting}では多項式の等式を仮定として明示する。
+\end{remark}
+\begin{proposition}[非可換$A_1$局所模型]\label{prop:local-model}
+補題\ref{lem:splitting}の仮定に加え、
+旧論文VIの小次元単純表現の分類、すなわち
+$g=0$で一次元および二次元単純表現が存在しないことを仮定する。
+このとき、\eqref{eq:conifold}の座標を選んで
+\begin{equation}\label{eq:endR}
+ \widehat A_p\simeq\Mat_3\bigl(\End_R(R\oplus I)\bigr),
+ \qquad I=(p,r-\gamma)
+\end{equation}
+が成り立つ。$I=(p,r+\gamma)$としても同型の記述が得られる。
+\end{proposition}
+\begin{proof}
+$R$はconifold型の三次元完備局所超曲面である。
+$M$は$R$を直和因子に持ち、$\End_R(M)$はMCMなので
+modifying generatorである。
+Iyama--WemyssのcAn型局所分類
+\cite[Theorem~5.1(1)]{IW}を
+$pq=(r-\gamma)(r+\gamma)$へ適用すると、
+基本generatorは$R$または
+$R\oplus(p,r\pm\gamma)$に限る。
+よって$M\simeq R^a\oplus I^b$、$a\ge1$と書ける。
+$b=0$なら$\End_R(M)$はAzumayaとなり、
+中心特異点でAzumayaでないという入力に矛盾するので$b\ge1$。
+二つの非同型直和因子のend環の半単純剰余は
+$\Mat_a(\CC)\oplus\Mat_b(\CC)$である。
+低次元単純表現の不存在から$a,b\ge3$。
+一方$\operatorname{rank}_R M=6$より$a+b=6$なので
+$a=b=3$となり、\eqref{eq:endR}を得る。
+\end{proof}
+
+\section{中心切断とBrauer指数}
+\begin{proposition}[局所切断のskew group表示]\label{prop:skew}
+$S=R/(\gamma)=\CC[[p,q,r]]/(pq-r^2)$、
+$J=(p,r)\subset S$と置くと
+\[
+ \End_R(R\oplus I)/(\gamma)
+ \simeq\End_S(S\oplus J)
+ \simeq\CC[[a,b]]\rtimes\{\pm1\},
+\]
+ただし非自明な元は$(a,b)\mapsto(-a,-b)$と作用する。
+従って\eqref{eq:endR}の中心切断は
+\[
+ \widehat{(A/(g))}_{p}\simeq
+ \Mat_3\bigl(\CC[[a,b]]\rtimes\{\pm1\}\bigr)
+\]
+であり、大域次元は2である。
+\end{proposition}
+\begin{proof}
+$I^\vee=\Hom_R(I,R)=p^{-1}(p,r+\gamma)$であり、
+$\End_R(R\oplus I)$は
+$\begin{psmallmatrix}R&I^\vee\\ I&R\end{psmallmatrix}$である。
+$R/I\simeq\CC[[q,\gamma]]$なので
+$I\cap\gamma R=\gamma I$、従って$I/\gamma I\simeq J$。
+$I^\vee$についても同様であり、行列積を保ったまま
+$\End_S(S\oplus J)$を得る。
+$T=\CC[[a,b]]$の符号反転作用に対し
+$S=T^{\{\pm1\}}$であり、
+$(p,q,r)=(a^2,b^2,ab)$と置ける。
+偶奇分解$T=S\oplus T^{-}$において
+$T^{-}\simeq J$であるため
+$\End_S(T)\simeq T\rtimes\{\pm1\}$となる。
+有限群の位数は可逆なので、このskew group algebraの
+大域次元は$T$と同じ2である。
+\end{proof}
+
+\begin{corollary}[零ファイバーの局所正則性と単純表現]\label{cor:zero}
+旧論文VIの中心有限性・Azumaya locusと
+上記局所模型を入力とする。
+$D_0=A/(g)$の中心は$C/(g)$であり、
+$\gldim D_0=2$である。
+各四つの$A_1$中心点には三次元単純表現が二つ、
+それ以外の中心閉点には六次元単純表現が一つ存在する。
+従って$D_0$の三次元単純表現は全部で8同型類となる。
+\end{corollary}
+\begin{proof}
+中心の滑らかな点ではAzumaya性により
+完備化は$\Mat_6(\CC[[a,b]])$となる。
+四特異点では命題\ref{prop:skew}の模型がある。
+両方の模型の中心は$C/(g)$の対応する完備局所環に等しい。
+中心の形成を有限個の交換子写像の核として表し、
+中心基底への忠実平坦完備化と有限生成性を使って
+$Z(D_0)=C/(g)$を得る。
+各閉点の完備局所代数の大域次元は2なので、
+有限生成加群の第二syzygyの射影性を忠実平坦降下して
+$\gldim D_0\le2$を得る。
+滑らかな中心点の単純加群の第二Extは非零であるから等号成立。
+剰余半単純代数は特異点で
+$\Mat_3(\CC)\oplus\Mat_3(\CC)$、
+滑らかな中心点で$\Mat_6(\CC)$であり、
+単純表現の分類が従う。
+\end{proof}
+
+\begin{corollary}[局所分裂と大域Brauer障害]\label{cor:brauer}
+さらに旧論文VIのfiltered presentationについて
+\[
+ \operatorname{gr}D_0\simeq S_1/(\Omega_1)
+\]
+が整域となることを仮定する。
+このとき$D_0$は整域で、一般中心分数体$K_0$上で
+$D_0\otimes_{Z(D_0)}K_0$は次数6の中心的斜体となり、
+Brauer指数は6である。
+特に$D_0$は大域的な$\End_{Z(D_0)}(N)$型に分裂しない。
+一方、四つの中心特異点の完備化では
+命題\ref{prop:skew}の行列模型へ分裂する。
+\end{corollary}
+\begin{proof}
+filtered代数のassociated gradedが整域なら元の代数も整域。
+中心有限な$D_0$の一般中心局所化は
+次数6、次元36の有限次元中心的単純代数であり、
+整域性から斜体となる。そのBrauer指数は次数と等しく6。
+$\End(N)$なら一般点では行列環となって矛盾する。
+局所完備化での分裂は一般中心分数体のBrauer類を
+零にするものではない。
+\end{proof}
+
+\section{二中心変数を逆にしたchartの21個の中心特異点}
+\label{sec:quantum-boundary-center}
+$\alpha^3=-243/28$とし、旧論文VIの二つの中心変数$u,v$を逆にした
+次数零chartを$Q=A_{\alpha,1}[u^{-1},v^{-1}]_0$、
+$t=v/u\in\CC^\times$とする。
+\begin{equation}\label{eq:Ht}
+ H(t)=-\frac7{27}(t^3+2+t^{-3}),\qquad
+ F_H=49U^3-(13H+14)U^2+(H+1)^2U
+ +(11U-H-1)VW+V^3-W^3 .
+\end{equation}
+以下の全中心表示は旧論文VIの有限平坦降下の結果を
+\emph{入力}として用いる：
+\begin{equation}\label{eq:chart-center}
+ Z(Q)\simeq
+ \CC[t,t^{-1},U,V,W]/(F_{H(t)}).
+\end{equation}
+\begin{proposition}[中心の21個の特異閉点]\label{prop:21}
+\eqref{eq:chart-center}の中心特異点は21個に尽き、次の通りである：
+\[
+\begin{array}{c|c|c|c}
+t\text{の条件}&H(t)&(U,V,W)&\text{点数}\\ \hline
+t^3=-1&0&(1/7,0,0),\,(-1,-4\zeta,4\zeta^2),\ \zeta^3=1&12\\
+7t^6-13t^3+7=0&-1&(0,0,0)&6\\
+t^3=1&-28/27&(1/189,0,0)&3
+\end{array}
+\]
+$H=0$と$H=-28/27$に対応する15点は三次元通常二重点である。
+\end{proposition}
+\begin{proof}
+$F_H$の三つの偏微分を同時に零とする
+中心ファイバーは$H=0,-1,-28/27$に限る。
+各ファイバーの特異点は表の通りである。
+これらは$F_H$と$\partial_UF_H,\partial_VF_H,\partial_WF_H$の
+Gr\"obner基底で検算できる。全中心の$t$微分は
+$(\partial_HF_H)H'(t)$であるが
+\[
+ H'(t)=-\frac79(t^2-t^{-4}).
+\]
+$H=0$と$H=-28/27$では$t^6=1$、
+$H=-1$の点$(U,V,W)=(0,0,0)$では
+$\partial_HF_H=0$なので、表の全点が全中心でも特異である。
+それ以外に候補はなく、$t$の各方程式は相互に共通根を持たない。
+$7s^2-13s+7$の判別式は$-27$であり、$s=0$の根を持たないので
+それぞれの根は三つの$t$を与え、点数は$12+6+3=21$である。
+通常二重点性は旧論文VIの対応する四変数Hessianの
+非退化性から得られる。ここではその全15点の
+Hessian行列を独立に再計算したとは主張しない。
+\end{proof}
+
+\begin{theorem}[ホモロジー的特異点の条件付き同定]
+\label{thm:three-homological}
+旧論文VIの有限中心上のAzumaya locusの同定、
+$R_1$の大域次元3と$\alpha$に関する二中心chartの
+有限忠実平坦比較を仮定する。
+その比較が$t^3\ne1$で有限\'etaleであるとき、
+$Q$の有限大域次元を持たない中心閉点は
+\[
+ \mathfrak p_\tau=(t-\tau,U-1/189,V,W),\qquad \tau^3=1
+\]
+の三点に限る。各点の完備局所代数は
+\[
+ \widehat Q_{\mathfrak p_\tau}\simeq
+ \Mat_6\!\left(
+   \CC[[a,b,c,d]]/(a^2+b^2+c^2+d^2)
+ \right).
+\]
+従って中心の残りの18特異点は、
+中心環が非正則でも代数はホモロジー的に正則である。
+\end{theorem}
+\begin{proof}
+旧論文VIの\'etale比較は
+$s^2=\alpha t$の被覆での
+$\CC[g]\to\CC[s,s^{-1}]$という写像に基づく。
+この写像の分岐値は$g^2=-28/27$、逆像は$t^3=1$である。
+従って$t^3\ne1$では有限\'etale中心基底変換によって
+大域次元3の代数から$Q$を得る。
+有限\'etale基底変換で大域次元上界が保たれるのは、
+制限・誘導とseparability idempotentを用いればよい。
+逆向きは有限忠実平坦降下により
+有限生成加群の第3 syzygyの射影性を検出する。
+ゆえに$t^3\ne1$での局所代数の大域次元は高々3。
+
+$t^3=1$に対応する全中心上では、
+元の$R_1$は中心上Azumayaである（これは入力した
+Azumaya locusの定理による）。
+忠実平坦降下から$Q$もAzumayaである。
+$\mathfrak p_\tau$以外の中心点は滑らかなので
+局所大域次元は有限である。
+三点の中心は三次元通常二重点であり、完備局所Brauer群の
+分裂と元のAzumaya代数の次数6によって表示した
+$\Mat_6$模型を得る。通常二重点の剰余体は無限射影次元なので、
+この三点の局所代数は有限大域次元を持たない。
+\end{proof}
+\begin{remark}[特異圏への未完の部分]
+この三点への特異圏の局所化と
+$\operatorname{Perf}_{\mathbb Z/2}(\CC)^{\oplus3}$型の
+Karoubi完備化との同値には、
+旧論文VIの中心正則因子に沿った生成・二段の局所化と
+非可換Orlov型比較を別途検証する必要がある。
+定理\ref{thm:three-homological}だけでは得られない。
+\end{remark}
+
+\section{今後の照合対象と正確性}
+本稿で証明したのは、明記した既存の中心有限性、
+Azumaya locus、六次最小多項式、小単純表現排除を
+\emph{入力として}得られる局所的・表現論的帰結である。
+それら入力の具体的証明と全次数の検算は旧論文VIを参照し、
+今回の独立検証範囲には含めない。
+中心商の正確なtails判別式
+$(\alpha^3+9)(28\alpha^3+243)$、
+21個の中心特異点と3つのhomological singularity、
+$\operatorname{Perf}_{\mathbb Z/2}(\CC)^{\oplus3}$型特異圏、
+非可換spherical twistの幾何は引き続きTeX移管が必要である。
+従ってこの節だけをもって原PDFの追跡を解除しない。
+
+\begin{thebibliography}{9}
+\bibitem{IW} O.~Iyama and M.~Wemyss,
+\emph{Reduction of triangulated categories and maximal modification
+algebras for cAn singularities},
+J.\ Reine Angew.\ Math.\ \textbf{738} (2018), 149--202,
+\href{https://doi.org/10.1515/crelle-2015-0031}{doi:10.1515/crelle-2015-0031};
+\url{https://arxiv.org/abs/1304.5259}.
+Theorem~5.1(1)（適用条件の独立再監査は未完了）。
+\end{thebibliography}
+\end{document}

@@ -38,3 +38,7 @@
 旧論文III§23–24から、五変数Hessian摂動 `g_{F,c}=F+c det Hess(F)` の孤立特異点に対するMilnor数32、Tjurina数31（`c≠0`）、Milnor環の初期正則列とsocleによる証明、およびPfaffian graphを通したstrict transformと相対次元5の二次ファイブレーションを `papers/sections/pfaffian_hessian_geometry.tex` に証明付きで統合した。これは五変数モデルの数学であり、十変数境界との接触同値の証明とは別である。
 
 同じ旧論文IIIの§21–22には普遍同変形式摂動の非線形接触分類・代数的/収束的な十次正規形の独立した証明があり、§10・§25には頂点核 `K^nor=C[H]` と `E_vert=t^10` を決定したとの原稿主張がある。従来の現行高次TeXはこれらを未解決としている。したがって旧論文IIIの仮定・局所同値関係・全次数の証明を原文で照合し、矛盾を解消するまでは成果を証明済みと扱わない。優先度は高い。
+
+## 旧論文VI：中心商非可換A1とBrauer障害（2026-11-12）
+
+現行の`papers/central_quotient_local_models.tex`で、中心`C=ℂ[g,U,V,W]/(Φ)`の`g=0`上の四特異点、Hessian非退化とconifold局所模型を明示した。元の代数の六次分裂元`Z`の最小多項式、中心有限性・Azumaya locus、1・2次元単純表現不存在を条件付き入力とし、`Mat_3 End_R(R⊕I)`、切断の`Mat_3(ℂ[[a,b]]⋊{±1})`、八つの三次元単純表現と一般Brauer指数6の導出を収録した。二中心chartの中心21特異点（12+6+3）の有限計算と、三つのhomological singularityも条件付きで復元。正確な中心のHessianとH=0,-1,-28/27のGröbner基底は独立に計算済み。局所分裂と大域Brauer分裂は異なる。特異圏のKaroubi完備化と球面twistは別途証明移植が必要。原PDFは保持する。

@@ -43,3 +43,5 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 - `sections/central_pair_artin_formal_moduli.tex`：旧論文Vから、中心三次対の全Artin形式局所環・Ore局所化・偏極付き二次cover復元・固定ambientの四次元fiberを回収し、`nc_cubic_threefold_moduli.tex`から入力する。完成した外部定理の適用監査や全PDF置換はまだ未了。
 
 - `sections/central_pair_mixed_derived_rigid.tex`：旧論文V§19–21の全混合低次数中心、偶数Veronese復元、Serre関手を使うmarking付き導来復元、固定剛体ambientの四係数非同型族。`nc_cubic_threefold_moduli.tex`から入力。正則な四係数開集合は依存する非可換Bertiniの適用を未監査。
+
+- `central_quotient_local_models.tex`：旧論文VIの非可換A1局所模型、四つの中心特異点、局所skew group、Brauer指数、21中心点と三homological singularityの条件付き解析。LuaLaTeX独立入口。検算：`python3 computations/verify_central_quotient_local_hessian.py`（SymPy）。全中心表示・Azumaya locus・小表現排除は未移管の入力として明記。

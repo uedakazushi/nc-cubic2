@@ -1,4 +1,4 @@
-# 現行PDF原資料と保持の基準（2026-11-12 / v5）
+# 現行PDF原資料と保持の基準（2026-11-12 / v6）
 
 Libraryに保全されている同名・同バイトサイズのPDF原本から本文を抽出して確認した。これはGitHub上のblobそのもののバイト一致を検証したという意味ではない。原本の全定理・証明と現行TeXの完全同値性はまだ立証していない。特に旧論文III・V・VIおよび195頁のIIは、独自の結果が多数含まれる。
 
@@ -37,3 +37,7 @@ Pfaffian・Brill--Noether大部原稿の79節を、既存内容を移動する�
 ## 旧論文Vの追加回収（第19–21節）
 
 偶数Veroneseからの環復元、全混合族における二次中心の非増大、構造対象付き導来同値の適用範囲、potentialのblock座標変換判定、具体的剛体ambient `B_*` と相互に非同型な四係数中心商を `papers/sections/central_pair_mixed_derived_rigid.tex` に回収した。有限計算の数値証明書がGitHubにない箇所は既知の普遍中心式に帰着させた。`B_*`の中心の一次係数は普遍式への代入を独立にSymPyで確認した。ただしTHCR平行移動の位数6の一次資料監査、generic smoothnessの非可換Bertiniの適用、一般Hesse中心元の全21方向の有限式の移管は未完了。従ってこのPDFは依然として唯一の証明の所在となる可能性があり、まだ削除しない。
+
+## 旧論文VIからの局所模型回収（2026-11-12）
+
+`papers/central_quotient_local_models.tex`に旧論文VIの§19と§21の一部を命題と証明付きで回収：中心値零での四A1点、完備局所のconifold/非可換A1代数、skew groupの大域次元2、Brauer指数6、21個の中心特異点と条件付き三homological singularity。`computations/verify_central_quotient_local_hessian.py`に有理数Hessian・critical-fiberのGröbner基底検算を保持。従来の判別式論文は可換曲面の部分結果であり、今回の非可換局所模型と区別する。全中心の有限表示・Azumaya locus・小次元単純表現の不存在は旧論文VIの別節からの入力で、現行TeXの全証明としては未収録。特異圏の完全比較やspherical twistも未移管なので原PDFを保持する。局所数学の新規性は未確認。
