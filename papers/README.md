@@ -42,7 +42,7 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 
 - `sections/central_pair_artin_formal_moduli.tex`：旧論文Vから、中心三次対の全Artin形式局所環・Ore局所化・偏極付き二次cover復元・固定ambientの四次元fiberを回収し、`nc_cubic_threefold_moduli.tex`から入力する。完成した外部定理の適用監査や全PDF置換はまだ未了。
 
-- `sections/central_pair_mixed_derived_rigid.tex`：旧論文V§19–21の全混合低次数中心、偶数Veronese復元、Serre関手を使うmarking付き導来復元、固定剛体ambientの四係数非同型族。`nc_cubic_threefold_moduli.tex`から入力。正則な四係数開集合は依存する非可換Bertiniの適用を未監査。
+- `sections/central_pair_mixed_derived_rigid.tex`：旧論文V§19–21の全混合低次数中心、偶数Veronese復元、Serre関手を使うmarking付き導来復元、固定剛体ambientの四係数非同型族。`nc_cubic_threefold_moduli.tex`から入力。正則な四係数開集合も、中心商論文の中心持上げ・Bertiniの仮定を照合して証明した。
 
 - `central_quotient_local_models.tex`：中心商研究の独立LuaLaTeX入口。旧VIの全22節を証明付きで回収し、原PDFを追跡解除。対応表と検証範囲は `../PDF_SOURCES.md`。
 - `sections/central_quotient_pbw_cy.tex`：相対PBW・自己双対解消・Koszul AS正則性・Nakayama恒等性。既知のEG一般定理との関係も明示。
@@ -55,3 +55,7 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 - `sections/central_quotient_exact_tails.tex`：悪い中心値、MF二重分岐、曲面/三foldの有効な必要十分条件。`verify_quotient_exact_tails.py` で検算。
 - `computations/verify_central_quotient_global_geometry.py`：一般hの中心性、判別式、Cayley変換、位数6等の厳密検算。
 - `computations/verify_central_quotient_koszul.py`：全αのFrobenius証明書。`--general-h` で例外因子h(h³+1)と対合行列式を検証し、本文で例外値も処理する。
+
+- `sections/central_pair_explicit_centers.tex`：全Hesse有限中心式、Fermatの41項自由代数恒等式、形式PBW・有限微分性・平行移動と中央スカラー差。検算は `computations/verify_central_pair_centers.py`。
+- `sections/central_pair_generic_component.tex`：37次元graph成分、関数体上の重み(1,1,3)中心、41次元支配的incidence。
+- `sections/central_pair_diagonal_classification.tex`：対角族の完全同型条件、反対代数、軌道次元。`computations/verify_central_pair_orbits.py` は120射影変換と150×25微分を厳密検算。

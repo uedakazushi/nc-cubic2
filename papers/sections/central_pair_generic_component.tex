@@ -1,0 +1,98 @@
+\section{37次元の周囲成分とその一般中心}
+\label{sec:pair-generic-component}
+一般のPoisson成分分類の正本は
+\href{https://github.com/uedakazushi/nc-cubic/blob/main/papers/paper_a.tex}{論文A}である。
+本節で用いる入力は、五変数の標準divergence-free liftの錐
+$C_{113}^{\rm aff}$が37次元の被約既約成分であることと、
+Pym\cite[Proposition 2.9, Theorem 2.10]{Pym}の一次項が恒等な形式量子化比較である。
+ここではこの入力から中心三次対の一般点を具体的に記述する。
+
+$V=k^5$とし、$V^{\otimes2}=\wedge^2V\oplus\Sym^2V$で規格化して
+\[
+ R_\Pi=\langle a\otimes b-b\otimes a-\Symm(\Pi(a,b)):a,b\in V\rangle,
+ \qquad B_\Pi=T(V)/(R_\Pi)
+\]
+と置く。
+\begin{proposition}[graph成分の代数的表示]
+$\Pi\mapsto R_\Pi$は$C_{113}^{\rm aff}$を二次関係Grassmannianの
+標準アフィンchartへ閉埋込みする。その像$Q_{113}$は37次元で、
+可換点の規格化CY変形の被約芽において対応する既約成分をなす。
+\end{proposition}
+\begin{proof}
+$R_\Pi$は$\wedge^2V\to\Sym^2V$のgraphなので$\Pi$を一意に回復でき、
+標準liftが線形であることから閉埋込みとなる。
+最高次平面三次制限が滑らかな相対Jacobian点は稠密であり、
+その点では補題\ref{lem:pbw}と\ref{lem:CY}がKoszul CY代数を与える。
+CY変形の条件はこの変形芽では閉条件なので、閉包の芽も含まれる。
+それを含む被約既約成分の芽を$D$とする。
+一次項が恒等な形式比較の下で$D$の接錐の被約台はあるPoisson既約成分$C_D$である。
+graph像は斉次錐なので
+$C_{113}^{\rm aff}=TC_0Q_{113}\subset TC_0D=C_D$となる。
+Poisson成分の極大性から両者は等しく、次元も37である。
+従って$D$と$Q_{113}$の被約な既約芽は等しい。
+これはKontsevich級数自体がgraph式と一致するという主張ではない。
+\end{proof}
+
+\begin{lemma}[相対Jacobian括弧の全Poisson中心]
+$R=k[u,v]$とし、$F\in R[x,y,z]$の最高active次数部分$f_3$が既約とする。
+$R$を中心、$\{x,y\}=F_z$などと定めると$Z_{\rm Pois}(R[x,y,z])=R[F]$である。
+\end{lemma}
+\begin{proof}
+中心元の最高次部分$g_m$は$df_3\wedge dg_m=0$を満たす。
+Euler場との縮約から$3f_3dg_m=mg_mdf_3$。
+$f_3$は素元で、少なくとも一つの非零偏微分を割らないので$f_3\mid g_m$である。
+これを繰り返すと$m=3j$、$g_m=cf_3^j$ ($c\in R$)となる。
+$g-cF^j$へ次数帰納法を適用すればよい。逆包含はCasimir性による。
+\end{proof}
+\begin{theorem}[量子成分の関数体上の中心]
+\label{thm:pair-generic-center}
+$K=k(Q_{113})$とし、一般ファイバーを$B_\eta$とすると
+\[
+ Z(B_\eta)=K[a,b,c],\qquad\deg a=\deg b=1,\quad\deg c=3.
+\]
+$B_\eta$は整域で、中心の次数1,2,3の次元は2,3,5となる。
+全次数の中心が一つのZariski開部分で一定であるとは主張しない。
+\end{theorem}
+\begin{proof}
+中心変数を厳密に保つ相対Jacobian量子化と中心元$G_\hbar\equiv F\pmod\hbar$を取る。
+次数$d$の形式中心元を$\hbar$で還元すると前補題のPoisson中心に入り、
+$u,v,G_\hbar$の同じ重みの多項式を引けば差は$\hbar$で割れる。
+反復と完備性から
+\[
+ Z(B_\hbar)_d=\bigoplus_{i+j+3l=d}k[[\hbar]]u^iv^jG_\hbar^l.
+\]
+独立性は関係式の最小$\hbar$次数を取ることで従う。
+
+この計算を成分の一般点へ戻す。
+標準次数付き整域$A$の頂点完備化から、支配的パラメータ表示$T\to\Spec A$を用いて
+\[
+ \widehat A\longrightarrow k(T)[[\hbar]],\quad
+ \sum a_n\longmapsto\sum\hbar^n\phi^*a_n
+\]
+を作ると、最初の非零斉次係数が消えないので単射である。
+これをPoisson錐と形式量子化比較に適用し、$K$を含む体
+$L=k(T)((\hbar))$を得る。$T$はpencilの6座標と三次式の31係数で取れる。
+各次数の中心は有限自由空間の交換子行列の核なので体拡大と可換し、
+$Z(B_\eta)_d\otimes_K L=L[u,v,G_\hbar]_d$となる。
+$Z(B_\eta)_1$の基底$a,b$を取り、$c\in Z(B_\eta)_3\setminus\Sym^3\langle a,b\rangle$を選ぶと、
+$L$上では$c=\lambda G_\hbar+r(u,v)$ ($\lambda\ne0$)である。
+従って$K[a,b,c]\to Z(B_\eta)$は忠実平坦な体拡大後に同型、ゆえに元から同型である。
+整域性も形式PBW量子化への埋込みから従う。
+\end{proof}
+\begin{corollary}[支配的incidenceと有限次数の良い開部分]
+$Q_{113}$の次数三中心直線のincidenceには一般ファイバー$\PP^4_K$を持つ
+41次元の支配的既約成分$I_{113}$が一意に存在する。
+中心の次数1,3とHilbert関数の次数4以下が一般値を取る開部分では、
+これはrank5の中心核束の$\PP^4$束である。
+一般の有理商の次元は周囲で13、対で17、忘却の一般ファイバーは4次元である。
+\end{corollary}
+\begin{proof}
+中心の有限行列の非零minorを反転するとrank5の核束を得る。
+その射影束は既約で一般ファイバー$\PP^4_K$の閉包を与え、支配的成分は他にない。
+相対Jacobianパラメータ族の6+35=41次元の像がこれを支配する。
+六分岐値を持つ対角族の周囲は射影stabilizerが有限であることを
+第\ref{sec:pair-diagonal-classification}節で証明する。
+従って$\PGL_5$の一般軌道は24次元である。
+Rosenlichtの定理により37−24=13、41−24=17を得て、忘却の一般ファイバーは4次元となる。
+この計算は商多様体の有理性や一般stabilizerの自明性を含まない。
+\end{proof}

@@ -1,6 +1,6 @@
 # 研究ノート：境界研究の現在の知識と障害
 
-**2026-11-13 / v15**
+**2026-11-13 / v16**
 
 - 独立の大部原稿は `papers/pfaffian_brill_noether_technical.tex` にTeXソースで存在する。旧79節を一字も削らず5個の `papers/sections/` ファイルへ分割した。主論文A・Cから直接入力されない一方、内容上の引用・既知結果への依存は今後も監査する。
 - 中心三次曲面
@@ -9,7 +9,7 @@
   \]
   の滑らかさの必要十分条件が \(H(H+1)(27H+28)\neq0\) であることは `papers/central_fiber_discriminant.tex` に証明されている。追加の変数変換で \((\alpha^3+9)(28\alpha^3+243)\) が現れる。記号計算は `computations/verify_central_fiber_discriminant.py` に保持する。**中心曲面の判別式から非可換tailsの正則性・Azumaya性までは自動的に導かない。**
 - Brill–Noetherの形式変形・gluing object・相対Picard・六次境界・Torelliおよび二段階解消は `papers/pfaffian_brill_noether_technical.tex` に現行の証明を置く。旧`brill_noether.pdf`は章見出しの大部分がこれに対応するため追跡解除した（PDF本文との定理ごとの同値性を監査したものではない）。
-- PDF-onlyの残る独立候補：`central_pair_formal_moduli.pdf`の中心三次対の全Artin局所構造、`central_cubic_technical.pdf`の点加群・正則性、`pfaffian_contact.pdf`のcontact境界、`sklyanin_mixed_quantization.pdf`の量子化。原資料の本文全体は検査できていないため、未移管の重要な証明がないとは判定しない。
+- PDF-onlyの残る独立候補：`central_cubic_technical.pdf`の点加群・正則性、`pfaffian_contact.pdf`のcontact境界、`sklyanin_mixed_quantization.pdf`の量子化。原資料の本文全体は検査できていないため、未移管の重要な証明がないとは判定しない。
 - `finite_smoothness_notes.pdf`のdg perfectness反例に関する独立TeX再構成は `nc-cubic/notes/source_recovery/dg_perfectness_counterexamples.tex` に存在するが、有用な残部も現行ノートへ統合してPDF追跡を解除した。全主張を独立監査したという意味ではない。
 - 先行研究の新規性・各証明の外部監査は未完了。未確認の内容を定理として拡張しない。
 
@@ -31,7 +31,7 @@
 
 `notes/ambient_finite_smoothness_and_recovery.tex` に、全21混合方向の一様PBWの適用範囲、超越的な中心値での有限大域次元の補題、良い中心chartと滑らかな量子的境界からのtails大域次元3、具体的な `(h,α)=(1,π)` の混合例（非被約な長さ24の点加群スキーム）、偏極付き圏からの二次ambientと中心三次元の復元、対角混合族のnormalizer、Artin perfectnessから完備smoothnessへの誤った推論をまとめた。一般Poisson・PBWとdg反例の十分な証明は `nc-cubic` 論文Aと独立ノートを正本とする。原PDF研究ノートは長大な公表用論文としての価値が低いため追跡を解除した。本文の全主張を独立監査したという意味ではない。
 
-残る4本のPDFは論文資料であり、未移管の固有証明を回収するまで保持する。旧VIの非可換A1局所模型・Brauer指数6・三因子特異圏だけでなく、初期の一般正則性定理とCayley幾何も現行論文へ回収し、原PDFを追跡解除した。判定は `PDF_SOURCES.md` に集約する。
+残る3本のPDFは論文資料であり、未移管の固有証明を回収するまで保持する。旧VIの非可換A1局所模型・Brauer指数6・三因子特異圏だけでなく、初期の一般正則性定理とCayley幾何も現行論文へ回収し、原PDFを追跡解除した。判定は `PDF_SOURCES.md` に集約する。
 
 ## Pfaffian旧論文IIIの現行回復の状態
 
@@ -51,4 +51,8 @@
 
 初期§1–13の中心零化元、分離型判別式、超越的中心値、良い一般ambient、有限位数境界の正則開集合を `central_quotient_global_regularity.tex` に証明付きで統合した。Rainsの体上の中心定理を被約基底へ持ち上げる有限行列の議論と、RSVの相対smoothnessの仮定を明示する。`central_quotient_cayley_geometry.tex` には明示Cayley変換、反標準楕円境界、twisted NCCR、古典resultantと非被約定常点を収録した。
 
-一般hの中心性と5-CY性は有理関数体上の厳密有限証明書と例外値の対称性で確認した。旧VI全22節の固有内容を現行論文で置換できたため原PDFを追跡解除した。残る研究課題は一般混合の有効判別式、Brauer類のsymbol/stack表示、標識なし復元、具体式の初出照合である。他の4PDFは削除ゲート未達。生成PDF・計算状態・ダウンロード文献は追跡しない。
+一般hの中心性と5-CY性は有理関数体上の厳密有限証明書と例外値の対称性で確認した。旧VI全22節の固有内容を現行論文で置換できたため原PDFを追跡解除した。残る研究課題は一般混合の有効判別式、Brauer類のsymbol/stack表示、標識なし復元、具体式の初出照合である。残る3PDFは削除ゲート未達。生成PDF・計算状態・ダウンロード文献は追跡しない。
+
+## 中心三次対の現行到達点
+
+旧V全21節は現行モジュライ論文と三つの新しい入力節へ統合し、PDF追跡解除済み。全Hesse式と全六二次係数の中心恒等式、中央スカラー差、37次元graph成分と関数体上の全中心、対角族の完全同型条件、剛体周囲の正則四次元非同型族を保持する。計算と対応表は `PDF_SOURCES.md`。一般の無標識分類・可換対応の大域化・網羅的新規性は未解決である。

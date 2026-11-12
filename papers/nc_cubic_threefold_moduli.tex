@@ -1,8 +1,4 @@
 % !TEX root = nc_cubic_threefold_moduli.tex
-% Supporting source files live in papers/support/papers/.
-\makeatletter
-\def\input@path{{papers/support/}}
-\makeatother
 \documentclass[11pt,a4paper]{ltjsarticle}
 \usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
 \usepackage{luatexja-fontspec}
@@ -61,7 +57,7 @@
 \newcommand{\Symm}{\operatorname{sym}}
 \title{非可換三次三様体の17次元モジュライ族\\中心三次対と変形幾何}
 \author{公表準備用研究原稿（著者情報未記入）}
-\date{2026年11月12日・nc cubic moduli研究草稿 v4}
+\date{2026年11月13日・nc cubic moduli研究草稿 v5}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -264,7 +260,7 @@ $x,y,z$-次数１で $u,v$ に二次であり，$x,y,z$-次数０の部分を零
 $S_{f_3}=k\langle x,y,z\rangle/([x,y]-z^2,[y,z]-x^2,[z,x]-y^2)$ であり，
 自由語の次数１から４の関係行列を有理数上で消去すると，
 次数１，２，３の中心の次元は順に $0,0,1$ になる．
-この有限計算は付属 \texttt{computations/independent/verify\_generic17\_center.py} で再現できる．
+この有限計算は付属 \nolinkurl{computations/independent/verify_generic17_center.py} で再現できる．
 三変数 Sklyanin 代数の楕円曲線と translation の表示
 \cite{ATV,EG} において，$\tau,\tau^2\ne1$ となる一般の点では
 低次数中心が零であり，中心三次元の空間は一次元である．
@@ -455,7 +451,7 @@ $\Sym^3(W\oplus U)/\Sym^3U$ の31個の単項式に展開する．
 \end{equation}
 となる．行と列の取り方を付録\ref{app:rank}に固定した．
 この計算は有理数体上の厳密計算であり，
-付属 \texttt{computations/independent/verify\_generic17\_slice.py} で再現できる．
+付属 \nolinkurl{computations/independent/verify_generic17_slice.py} で再現できる．
 したがって ambient 二次代数の31方向において，
 $P$ の一般軌道は18次元で，13係数正規形は横断的である．
 
@@ -734,6 +730,9 @@ Poisson中心三次対の\emph{有理商}についての結論であり、
 読み替えてはいけない。
 \end{remark}
 
+\input{papers/sections/central_pair_explicit_centers.tex}
+\input{papers/sections/central_pair_generic_component.tex}
+\input{papers/sections/central_pair_diagonal_classification.tex}
 \input{papers/sections/mixed_center_picard}
 
 \input{papers/sections/ambient_periodicity}
@@ -782,11 +781,12 @@ Artin--Zhangのsection algebraの自然写像は
 一般次元nc cubic moduliの完全分類は未解決。
 正規族を持つAS正則$\mathbb Z$-代数のambient周期性は第\ref{sec:moduli-ambient-periodicity}節で証明するが、
 その1周期同型が三次イデアルを保つことや、全nc cubicの超曲面表示は未証明。
-一次文献の初出調査と既存証明の独立監査は未完了。
+規格化された37次元CY周囲の被約芽の成分性と一般中心は第\ref{sec:pair-generic-component}節で扱う。全nc cubicの大域成分性とは区別する。
+一次文献の初出調査と既存証明の全面独立監査は未完了。
 31次行列式、中心の次数別計算、分離型の検算は
-\texttt{computations/independent/verify\_generic17\_slice.py}、
-\texttt{computations/independent/verify\_generic17\_center.py}、
-\texttt{computations/verify\_split\_codimension.py}で再現する。
+\nolinkurl{computations/independent/verify_generic17_slice.py}、
+\nolinkurl{computations/independent/verify_generic17_center.py}、
+\nolinkurl{computations/verify_split_codimension.py}で再現する。
 
 \appendix
 \section{17係数正規形の正確な行列証明書}\label{app:rank}
@@ -809,7 +809,7 @@ $C_{ij}$（$1\le i\le3,1\le j\le2$）６個の順に
 \[
  -5538243375000=-2^3\cdot3^5\cdot5^6\cdot7^2\cdot61^2.
 \]
-付属の \texttt{computations/independent/verify\_generic17\_slice.py} は \eqref{eq:F0} に対して
+付属の \nolinkurl{computations/independent/verify_generic17_slice.py} は \eqref{eq:F0} に対して
 これを厳密整数計算で再現する．中心三次方向
 $u^3,u^2v,uv^2,v^3$ を最後に付け足すと，
 $35\times35$ 行列式も同じ非零値となる．
@@ -817,6 +817,11 @@ $35\times35$ 行列式も同じ非零値となる．
 横断性を結論できる．
 
 \begin{thebibliography}{99}
+\bibitem{PairBW} S.~Barmeier and Z.~Wang,
+\emph{Deformations of path algebras of quivers with relations},
+\url{https://arxiv.org/abs/2002.10001}, v4 (2021), Theorem 10.3 and Lemma 10.9.
+\bibitem{RainsMagma} E.~Rains, central-element computations in MAGMA form,
+\url{https://math.mit.edu/~etingof/delpezzocenter}; E6 data.
 \bibitem{AS}
 M.~Artin and W.~F.~Schelter,
 \textit{Graded algebras of global dimension 3},

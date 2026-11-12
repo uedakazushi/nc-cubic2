@@ -219,8 +219,7 @@ chain ruleで勾配の式を積分すると、差は$k[u,v]_3$に入る。
 
 \subsection{射影自己同型のない明示ambient}
 次の例は元の中心三次対原稿第21節にあったものであり、
-正則な中心商の開集合の存在にはさらに有限中心性と
-非可換generic smoothnessの適用監査が必要である。
+正則な中心商の開集合の存在は、中心商論文の有限位数境界に関する定理から従う。
 
 \begin{proposition}[明示的な剛体ambient：中心の入力を指定]
 \label{prop:moduli-rigid-example}
@@ -258,7 +257,7 @@ chain ruleで勾配の式を積分すると、差は$k[u,v]_3$に入る。
 \]
 従って$B_*/(G_*+f)$ ($f\in k[u,v]_3$)は、
 一つの周囲の中で相互に次数付き非同型な四次元代数族を与える。
-ここでは各商のtailsが正則であるとは結論しない。
+さらに、$f$の非空Zariski開部分ではtailsが正則で大域次元3となる。
 \end{proposition}
 \begin{proof}
 Fermat型の混合中心の普遍公式
@@ -305,16 +304,33 @@ $[G_*+f]=[G_*+f']$。
 $G_*$の係数を1と規格化したので$f=f'$である。
 \end{proof}
 
-\begin{remark}[正則な四係数開集合に残る検証]
+\begin{corollary}[剛体周囲の中の正則な四係数非同型族]
 \label{rem:moduli-rigid-generic-smoothness}
-元の原稿は、有限位数6の楕円境界に対して
-\href{https://arxiv.org/abs/2107.13540}{Rainsの中心持上げ}
-と
-\href{https://arxiv.org/abs/1705.01366}{Rennemo--Segal--Van den Berghの非可換Bertini}
-を用い、$f$の非空Zariski開集合で
-$\gldim\qgr B_*/(G_*+f)=3$と主張する。
-この適用に必要な有限中心性・両中心chartの平坦性と
-有限大域次元の検証、元の数値証明書の再取得は未完了である。
-従って正則な四次元非同型族という強い結論は、
-現段階では\emph{追加条件付き}の主張として保持する。
-\end{remark}
+ある非零多項式$P(f)$が存在し、$P(f)\ne0$では
+$\gldim\qgr B_*/(G_*+f)=3$である。
+同時に可換な$V(F_*+f)\subset\PP^4$も滑らかとなる$f$は非空開部分をなし、
+その中の有理係数点はZariski稠密である。
+\end{corollary}
+\begin{proof}
+周囲はnoetherian Koszul CY5、相対associated gradedは$S_1\otimes k[u,v]$である。
+第\ref{sec:pair-explicit-centers}節の中心式を代入すると$G_*$を得て、
+全ての$f$で商は$k[u,v]$上自由である。
+最高次中心元は非零正則、境界は位数6の滑らかな楕円THCRなので、
+\href{https://github.com/uedakazushi/nc-cubic2/blob/main/papers/sections/central_quotient_global_regularity.tex}
+{中心商論文の開な正則性定理}の全仮定を満たす。
+そこでは全係数chartの代数が$D_u[b,c,d]$となること、
+中心持上げにより可換有限型中心上有限となることを確認してからBertiniを適用する。
+
+可換な滑らかさについては$u=v=0$上に勾配の共通射影零点はない。
+$u=1,t=v/u$上のactive勾配は
+$x^2+y+(1+t)z$, $y^2+x+tz$, $z^2+(1+t)x+ty$であり、
+$x,y,z$全次数を先に比較すると互いに素な先頭項$x^2,y^2,z^2$を持つ
+monic Gr\"obner基底である。従って臨界スキームは$k[t]$上rank8の有限自由環を持ち、次元1である。
+各点が全三様体の特異点となる条件は$(F_*+f)(P)=\partial_t(F_*+f)(P)=0$で、
+$f(1,t)$の値と微分は四係数に対する独立な二条件である。
+従って特異点incidenceの次元は高々3である。$v=1$も同様。
+全incidenceは$\PP^4\times\A^4$内で閉で、その係数空間への像はproper性により閉である。
+ゆえに滑らかな係数は非空開をなし、tails正則開部分とも交わる。
+有理点の稠密性から最後の主張が従う。
+これは可換三様体との残余圏同値を主張するものではない。
+\end{proof}

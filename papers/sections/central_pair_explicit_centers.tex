@@ -1,0 +1,200 @@
+\section{全混合係数を保つ中心三次式と規格化}
+\label{sec:pair-explicit-centers}
+中心元を加える操作は同じ周囲の中でも三次対を変えるので、
+その中央スカラーを含む規格化を固定する。
+以下の有限公式はRainsの中心計算\cite[\S9.1]{EG}と
+\href{https://github.com/uedakazushi/nc-cubic/blob/main/papers/support/papers/sections/hesse_mixed_universal_center.tex}
+{論文Aの普遍Hesse中心公式}に関連する既知の入力である。
+ここでは対の復元に必要な全係数の表示と、関係イデアル内の直接の証明を与える。
+
+\subsection{相対Hesse chartの有限式}
+$R=k[u,v]$、$L_i\in R_1$、$M_i\in R_2$、$g\in R_3$として
+\[
+ F=\frac{x^3+y^3+z^3}{3}+\lambda xyz
+   +\frac12(L_1x^2+L_2y^2+L_3z^2)+M_1x+M_2y+M_3z+g
+\]
+を考える。$\lambda^3\ne-1$なら最高次平面三次式は滑らかである。
+任意の滑らかな最高次部分はHesse形へ移せる。
+$\lambda=0$でも、$\omega^3=1$, $\omega\ne1$, $c^3=1/3$として
+$(x,y,z)=c(X+Y+Z,X+\omega Y+\omega^2Z,X+\omega^2Y+\omega Z)$
+とすればHesse係数は2となるので、必要なら$\lambda\ne0$にできる。
+一般の二次混合項の交差係数を$C_{12},C_{23},C_{31}\in R_1$とすると、
+$x=X-C_{23}/\lambda$, $y=Y-C_{31}/\lambda$, $z=Z-C_{12}/\lambda$
+で交差三項を消せる。新たな対角係数は$L_i=\widetilde L_i+2a_i$、
+一次係数は$M_i=\widetilde M_i+a_i^2+\widetilde L_i a_i-\lambda a_ja_k$である。
+定数は$g$へ吸収する。従ってこのchartは全21混合方向を扱い、
+モジュライ上の一意な座標選択を主張しない。
+
+$q=1+\lambda t$と置き、$R$を中心として
+\[
+ xy-qyx=t(z^2+L_3z+M_3),\quad
+ yz-qzy=t(x^2+L_1x+M_1),\quad
+ zx-qxz=t(y^2+L_2y+M_2)
+\]
+で$B_t$を定める。略記を
+\begin{align*}
+ A&=q^3-t^3,& Q&=q^2+q+1,\\
+ K&=q^4+q^3+q^2-(2q+1)t^3,& J&=Q+(q+2)t^3,\\
+ H_1&=(q+1)(q^3+q^2+q-t^3),\\
+ H_2&=q^3+2q^2+2q+1+(q+1)t^3,\\
+ H_3&=q^4+2q^3+2q^2+q-(q+1)t^3
+\end{align*}
+とする。
+\begin{proposition}[可換点で正則なRains規格化]
+\label{prop:pair-rains-polynomial}
+次の有限式は$D(t)=q(q^3-t^3)(q+1)(1+t^3)\ne0$上で中心正則元となる：
+\begin{align*}
+ 6(G_t-g)={}&(q+1)\{A(x^3+z^3)+(1+t^3)y^3\}\\
+ &+q(q+1)(\lambda Q-2t^2)zyx\\
+ &+K(L_1x^2+L_3z^2)+JL_2y^2\\
+ &-(q+1)t^2(qL_1zy+L_2zx+qL_3yx)\\
+ &+(H_1M_1-qt^3L_1^2-qt^2L_2L_3)x\\
+ &+(H_2M_2+t^3L_2^2-qt^2L_1L_3)y\\
+ &+(H_3M_3-qt^3L_3^2-qt^2L_1L_2)z.
+\end{align*}
+$D(0)=2$、$G_0=F$であり、$B_t/(G_t)$はHilbert級数
+$(1-s^3)/(1-s)^5$を持つ平坦な次数付き族である。
+\end{proposition}
+\begin{proof}
+$L_i,M_i$を独立中心変数、重みをそれぞれ1,2として扱う。
+重み4の自由語339個に対する二次関係の全倍数162本を
+$\mathbb Q(q,t)$上で並べるとrank144となり、表示式の三交換子はその行空間に入る。
+\texttt{verify\_central\_pair\_centers.py}がこの関係行列と式を再生成して厳密還元する。
+係数を数値へ代入した補間ではない。
+$q+1\ne0$では関係式を$(q+1)/2$で割ると、
+量子係数$h=2t/(q+1)$、最高次Hesse係数$\lambda$の対称化potentialになる。
+補題\ref{lem:pbw}の一様PBWとCalabi--Yau証明をこの係数で適用できる。
+この平坦性により分数体上の中心性は$D\ne0$全体へ降下する。
+次数3の関係行列の17次小行列式は$-q^5(q^3-t^3)^2$であり、
+整列三次語の基底で最高次成分は
+\[
+ (q+1)(1+t^3)(x^3+z^3)+(q+1)(q^3-t^3)y^3
+ +(q+1)(\lambda Q-2t^2)xyz
+\]
+となる。これは非零なので、整域性から$G_t$は正則である。
+商のassociated gradedは最高次中心元による商と$R$のtensor積となり、
+その基底の持上げで自由性とHilbert級数を得る。
+\end{proof}
+\begin{remark}
+EG掲載のRains式の$y$係数の$q^3b_2$は$q^3$と読む必要がある。
+元のMAGMA資料\cite{RainsMagma}と上の独立な関係行列で照合する。
+中心性自体は既知入力の具体化であり、全特殊パラメータのtails正則性は含まない。
+\end{remark}
+
+\subsection{Fermatの六二次係数に対する自由代数恒等式}
+$(x_1,x_2,x_3)=(x,y,z)$とし、添字$(i,j,k)$を巡回させる。
+$L_i,e_i$の重みは1、$m_i$の重みは2とする。
+\[
+ F=\frac13\sum_i x_i^3+\frac12\sum_iL_ix_i^2
+       +\sum_i e_i\Symm(x_jx_k)+\sum_i m_ix_i,
+ \qquad g_i=x_i^2+L_ix_i+e_jx_k+e_kx_j+m_i.
+\]
+$[x,y]=hg_3$, $[y,z]=hg_1$, $[z,x]=hg_2$で関係を定める。
+\begin{lemma}[全Artin商での形式PBW]
+全ての$N\ge1$で、$h^N=0$上のこの代数は順序付き語$x^ay^bz^c$を
+係数環上の基底に持つ。
+\end{lemma}
+\begin{proof}
+$yx\mapsto xy-hg_3$, $zx\mapsto xz+hg_2$, $zy\mapsto yz-hg_1$を用いる。
+残る$h$次数と転倒数の辞書式順序で停止する。
+唯一のoverlap $zyx$の二経路の差は
+$h([x,g_1]+[y,g_2]+[z,g_3])=0$である。
+最後は自由代数恒等式で、交差係数の交換子が対で消える。
+停止・局所合流性から基底を得て、各$N$の商写像とも両立する。
+有限の非零$h$における整列基底を仮定していない。
+\end{proof}
+\begin{theorem}[四次補正で止まる全係数中心式]
+\label{thm:pair-full-fermat-center}
+$\Omega_h=\sum x_i^3/3-h^2\sum_{\sigma\in S_3}\sigma(xyz)/9$とする。
+$L_i=0$のとき
+\[
+ Z_h=\Omega_h+\sum_i e_i\Symm(x_jx_k)+\sum_i m_ix_i
+       +\frac{h^2}{6}\sum_i e_i^2x_i
+       +\frac{h^4}{18}\sum_i(e_ix_i^2-e_je_kx_i)
+\]
+は全有限$h$・全係数で中心的である。一般の$L_i$に対しては
+\begin{align*}
+ X_i&=x_i+L_i/2,\qquad
+ n_i=m_i-L_i^2/4-(e_jL_k+e_kL_j)/2,\\
+ c_{\rm cl}&=\sum_iL_i^3/12+\sum_ie_iL_jL_k/4-\sum_im_iL_i/2,\\
+ W_h(x;L,e,m)&=Z_h(X;e,n)+c_{\rm cl}
+\end{align*}
+が中心元で、$W_0=F$となる。
+\end{theorem}
+\begin{proof}
+$L=0$の自由代数で$r=[x,y]-hg_3$, $s=[y,z]-hg_1$, $t=[z,x]-hg_2$とする。
+次の四つの式を定める：
+\begin{align*}
+ C_0={}&-(ry^2+yry+y^2r)/3+(tz^2+ztz+z^2t)/3+m_3t-m_2r\\
+       &-e_3(rx+xr)/2+e_2(tx+xt)/2+e_1(yt-rz+[x,s]/2),\\
+ C_1={}&([yz+zy,s]+e_3[t,z]+e_2[r,y])/6,\\
+ C_2={}&(r[x,z]-sx^2-t(xy+yx)-xrz+xsx+xty\\
+       &\hspace{6em}+2ytx-yxt+zxr)/18,\\
+ C_3={}&([r,y^2]+[t,z^2]+e_1[s,x])/18.
+\end{align*}
+自由代数内で$[Z_h,x]=C_0+hC_1+h^2C_2+h^3C_3$である。
+右辺は41個の関係式倍であり、有理数係数の展開で直接検証できる。
+巡回置換が残る二つの交換子を与える。
+平行移動については$X_i^2+e_jX_k+e_kX_j+n_i=g_i$であり、
+$\sum X_i^3/3+\sum e_i\Symm(X_jX_k)+\sum n_iX_i+c_{\rm cl}=F$は
+自由代数の恒等式なので、全ての主張が従う。
+\end{proof}
+\begin{remark}[規格化と不可欠な四次項]
+$L=0$では$\det\operatorname{Hess}F=8xyz-2\sum e_i^2x_i+2e_1e_2e_3$である。
+従って$Z_h=\Symm(F-h^2\det\operatorname{Hess}F/12)+h^2e_1e_2e_3/6
++h^4\sum(e_ix_i^2-e_je_kx_i)/18$。
+最後の項は省けない。$F=\sum x_i^3/3+rxy$では省いた候補の$x$との交換子は
+$-h^5(ry^2z+r^2xz)/9\pmod{h^6}$で、形式PBWにより非零である。
+中央平行移動$x\mapsto x+a$に対し
+$L_i'=L_i+2a_i$, $m_i'=m_i+L_ia_i+a_i^2+e_ja_k+e_ka_j$とすると
+\[
+ W_h(x+a;L,e,m)=W_h(x;L',e,m')+F(a).
+\]
+対角Rains式（$\lambda=0,q=1,t=h$）とpreferred式の差は
+\[
+ G_h^{\rm R}-W_h(x;L,0,m)
+ =\frac{h^2}{12}L_1L_2L_3+
+   \frac{h^3}{6}(L_1m_1-L_2m_2+L_3m_3).
+\]
+この中央三次差を捨てると、同じ周囲の中心対を誤同定する。
+\end{remark}
+\begin{proposition}[有限微分性と形式正則商]
+順序付きPBW固定化の積$\mu_h$の$h^r$係数は、係数$L,e,m$を微分しない
+$x,y,z$の双微分作用素で、入力の全微分次数は高々$2r$である。
+また中心商は各$h^N=0$上で係数環上自由となる。
+\end{proposition}
+\begin{proof}
+Barmeier--Wang\cite[Theorem 10.3, Lemma 10.9]{PairBW}の還元グラフ表示では
+$h^r$に寄与する頂点数は$r$であり、各頂点から入力への微分は高々二つ。
+非零補正はactive三変数の三対だけなので、中央九係数の微分は現れない。
+PBWの合流性によりこの積は指定順序の実際の積である。
+中心性と結合性は同じ固定化の曲率付きMaurer--Cartan方程式を与える。
+商の自由性は、$F$が$x$のmonic三次の定数倍であることから直接示せる。
+$x$次数二以下の単項式空間を$V$とすると、$(a,v)\mapsto Fa+v$は線形同型。
+その変形$(a,v)\mapsto W_h*a+v$は元の同型と$1+hT$の合成であり、
+$h^N=0$では有限幾何級数で逆を持つ。
+この分裂は任意の中央係数代入後にも保たれ、$g(u,v)$を加えても同じである。
+\end{proof}
+
+\begin{corollary}[可換点を含む一様な有限係数量子化]
+滑らかな最高次平面三次式$f_3$を固定すると、$\Delta(0)\ne0$なる一変数多項式
+$\Delta(h)$が存在し、その非零範囲では全21混合係数を同時に保つ中心元$G_h$を代数的に取れる。
+$G_0=F$で、中心商は次数ごとに平坦である。
+さらに$h\ne0$なら$\dim Z(B_h)_1=2$, $\dim Z(B_h)_3=5$とできる。
+\end{corollary}
+\begin{proof}
+Hesse座標の選択後に$t=2h/(2-\lambda h)$, $q=(2+\lambda h)/(2-\lambda h)$を用いると、
+命題\ref{prop:pair-rains-polynomial}が対称化Jacobian関係の中心元を与える。
+その分母と$D(t)$の分子は$h=0$で非零で、混合係数に依存しない。
+中心の低次数は交換子行列を$h$で割って調べる。
+$h=0$でこれは$f_3$のJacobian Poisson中心を計算し、次数1,2,3のrankは3,6,9である。
+その非零minorをさらに反転する。三次の一般rankは中心元の存在から9を超えず、
+従って三次核はrank1である。
+低次補正の未知数9個の行列は、active次数の順に、上の次数2・1の
+divided-commutator行列を対角に持つ三角blockを含む。
+同じminorを反転すれば、全混合係数に関する唯一の補正を代数的に解ける。
+これら有限個の因子の積を$\Delta(h)$とする。
+相対PBWで最高次中心元を引く帰納法から中心の次数1,3の等式を得る。
+$h=0$ではdivided-commutatorの核はPoisson中心であり、実際の可換中心は
+次数1で5、次数3で35に跳ぶ。この二つを同一視していない。
+\end{proof}

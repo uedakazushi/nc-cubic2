@@ -1,6 +1,6 @@
 # Codex 研究指示：pdf-only の数学的発展・論文化・追跡解除
 
-**日付：2026-11-13 / v4**
+**日付：2026-11-13 / v5**
 **適用対象：** `uedakazushi/nc-cubic2` の現行 `main`。本ファイルは履歴ではなく、今後の継続研究の指針である。  
 **着手順：** `00_research_plan.md` → 本ファイル → `PDF_SOURCES.md` → `notes/research_notes.md` → 対象の現行TeX・PDF・計算コード。
 
@@ -31,7 +31,7 @@
 
 再監査で誤りが判明したら依存定理・abstract・Introduction・研究方針まで訂正する。過去の誤記録の時系列蓄積はしないが、再発防止に必要な反例・障害はノートに残す。
 
-## 研究主題と具体的な伸ばし方（残る原PDF4本）
+## 研究主題と具体的な伸ばし方（残る原PDF3本）
 
 以下は開始時点の優先案であり、数学的価値が高い道筋を見つけた場合は理由を簡潔に示して変更してよい。**1本ずつ順番に削除することを義務化しない。** 複数PDFにまたがる自然な定理は同じ現行原稿で扱ってよい。
 
@@ -39,13 +39,11 @@
 
 入口：`papers/central_quotient_local_models.tex`。全22節の固有内容・証明・例・書誌を回収し、分離型の必要十分判別式、一般ambientのvery-general正則性・有限位数境界での非空正則開集合、Cayley表示まで現行TeXへ統合した。PBW/CY・全中心・Rees/Azumaya・局所模型・表現/Ext・特異圏/twist・有効tails判別式も現行証明と厳密計算を持つ。削除ゲートの対応と実行範囲は `PDF_SOURCES.md`。
 
-継続する研究課題は一般h/全混合方向の有効判別式、Brauer類の具体表示と大域stack、標識なし復元の存在分類、具体式の網羅的な初出照合。原PDFは再開の前提ではない。他の4本の固有証明の回収を次の優先とする。
+継続する研究課題は一般h/全混合方向の有効判別式、Brauer類の具体表示と大域stack、標識なし復元の存在分類、具体式の網羅的な初出照合。原PDFは再開の前提ではない。残る3本の固有証明の回収を次の優先とする。
 
-### B. `papers/pdf-only/ambient/central_pair_formal_moduli.pdf`（旧V、60頁）
+### B. 中心三次対（旧V、60頁、PDF追跡解除済み）
 
-入口：`papers/nc_cubic_threefold_moduli.tex` と `papers/sections/central_pair_artin_formal_moduli.tex`、`central_pair_mixed_derived_rigid.tex`。
-
-全Artin形式局所比較、41次元incidenceと17次元商、接空間44/20と実際の二次障害、偏極付き復元、偶数Veronese、固定剛体ambientの結果を厳格に比較する。中心の全混合Hesse式、周囲37次元成分、有限中心と正則性の未回収の証明を特定する。得られるなら、変形障害の概念的説明、Kuranishi方程式のscheme構造、ambient忘却の幾何、より一般の中心対に対する正確な復元定理へ発展させる。形式局所の「次元17」と「接空間次元20」を取り違えない。有限パラメータ族と全Artin変形を同一視しない。
+全21節の固有証明を `nc_cubic_threefold_moduli.tex` と入力節へ統合した。全Hesse中心式とFermat自由代数恒等式、37次元graph成分と一般中心、完全な対角同型条件、剛体周囲の正則な四次元族を回収し、厳密計算・LuaLaTeX組版・表示確認後に原PDFを追跡解除した。全Artin形式比較は通常の標識付き関手の主張であり、大域分類ではない。対応表は `PDF_SOURCES.md`。一般の可換対応と無標識分類は継続課題。
 
 ### C. `papers/pdf-only/boundary/pfaffian_contact.pdf`（旧III、89頁）
 
