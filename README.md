@@ -1,6 +1,25 @@
 # nc-cubic2：非可換cubicの独立境界・モジュライ研究
 
-**2026年11月11日・v3。独立した研究内容の正本は本リポジトリの `main`。**
+**2026年11月12日・v4。独立した研究内容の正本は本リポジトリの `main`。**
+
+## 六・七次元Poisson cubicの独立なscheme幾何
+
+論文Aの一般次元の主定理に不要な、n=6,7の退化スキーム・
+primary分解・Calabi--Yau完全交叉の数値計算を、
+[独立LuaLaTeX草稿](papers/poisson_cubic_six_seven_geometry.tex)
+へ整理した。7次元rank6で、被約joinと非被約な
+embedded primary componentsの横断長8・64、
+被約化との差の横断長49が主要な独立研究課題。
+[研究ノート](notes/poisson_cubic_six_seven_geometry.md)に
+仮定・依存・計算・未解決事項を整理し、退化イデアルの
+一般補題・証明全文を同じリポジトリの`papers/sections/`に収録した。
+主リポジトリの論文Aには一般次元の結果と依存証明を保持している。
+
+組版：`latexmk papers/poisson_cubic_six_seven_geometry.tex`
+数値検算：`python3 computations/verify_poisson_cubic_six_seven_numerics.py`。
+移管本文の一致と参照の静的検査、同等のSymPy数値計算を確認。
+新稿のLuaLaTeX実組版・PDF目視は未確認。
+新規性・primary decompositionの独立監査は未完。
 
 ## Poisson cubic $n$-fold pair の全次元分類
 
