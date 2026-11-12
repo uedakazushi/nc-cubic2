@@ -3,7 +3,7 @@
 \hypersetup{pdftitle={中心三次対の一次変形とPlücker二次障害}}
 \title{中心三次対の一次変形とPl\"ucker二次障害}
 \author{}
-\date{2026年11月13日／研究草稿 v1}
+\date{2026年11月13日／研究草稿 v2}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -13,6 +13,9 @@
 五変数では、結合積の二次延長障害の係数イデアルがPl\"ucker二次式のイデアルと一致する。
 さらに双対数基底上の線束残余圏との比較を付録に収め、
 既知のinfinitesimal categorical Torelliから圏論的接空間への完全列を得る。
+さらに三次三様体では、Todd補正付きHKRを用いる幾何学的な別証明を収める。
+既に存在する可換復元族について一次係数が自明になることと、
+可換復元族そのものの存在は区別する。
 一次変形、二次障害の零スキーム、全高次の形式変形空間を区別する。
 \end{abstract}
 
@@ -38,7 +41,18 @@ Pl\"ucker表示および圏論的接空間の完全列は$N=5$に限定する。
 付録\ref{fdw:sec:window}で証明する。
 非正則な双対数基底で、全coherent圏の絶対特異圏へ通常のOrlov定理を適用することはない。
 
+\paragraph{二つの一次消滅の比較.}
+第\ref{fpk:sec:first-order}節では、次数付き中心対から実際のMF比較を構成し、
+内部次数シフトと指定三次周期を保つ。
+第\ref{pf:sec:first-order}節では、通常のHKRとTodd補正付きHKRを比較し、
+Hochschild作用による幾何側の別証明を与える\cite[Theorem~1.4]{PFCRVdB}。
+後者の結論は基礎dg圏の一次類の消滅であり、
+rotationを含む全データの自明化とは区別する。
+そこから方程式の一次係数について述べる系では、
+純Poisson方向という条件と可換復元族の存在を明示的に仮定する。
+
 \input{papers/reconstruction_extensions/first_order_poisson_kernel}
+\input{papers/reconstruction_extensions/poisson_first_order}
 \appendix
 \input{papers/reconstruction_extensions/dual_number_window}
 \begin{thebibliography}{99}
