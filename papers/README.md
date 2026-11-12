@@ -39,3 +39,5 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 親ファイルだけを `latexmk papers/pfaffian_brill_noether_technical.tex` で組版する。今回の検証は文字列単位の内容保持に限られ、LuaLaTeXの実行と証明の独立監査は行っていない。
 
 - `sections/pfaffian_hessian_geometry.tex`：旧Pfaffian論文IIIの§23–24から復元した五変数Hessian摂動のMilnor/Tjurina、Pfaffian graphのstrict transform・quadric fibration。親の `pfaffian_brill_noether_technical.tex` へ入力済み。独立再監査未了。
+
+- `sections/central_pair_artin_formal_moduli.tex`：旧論文Vから、中心三次対の全Artin形式局所環・Ore局所化・偏極付き二次cover復元・固定ambientの四次元fiberを回収し、`nc_cubic_threefold_moduli.tex`から入力する。完成した外部定理の適用監査や全PDF置換はまだ未了。

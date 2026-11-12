@@ -61,7 +61,7 @@
 \newcommand{\Symm}{\operatorname{sym}}
 \title{非可換三次三様体の17次元モジュライ族\\中心三次対と変形幾何}
 \author{公表準備用研究原稿（著者情報未記入）}
-\date{2026年11月12日・nc cubic moduli研究草稿 v2}
+\date{2026年11月12日・nc cubic moduli研究草稿 v3}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -76,6 +76,8 @@
 最小周期が$\gcd(N,d)$を割ることを示し、5次元・三次の場合の1周期性を導く。
 この結論はambientの周期性であり、商イデアルを保つ1周期構造は主張しない。
 一般次元のambient復元とその証明はnc-cubicの論文Aにも収録する。
+滑らかな可換三次点の全Artin形式局所環とOre局所化による
+中心三次対・構造代数層・斉次環の比較を、独立の証明依存を明示して収録する。
 構成した族が全nc cubic moduliの既約成分をなすことは未証明である。
 \end{abstract}
 \tableofcontents
@@ -768,10 +770,12 @@ Artin--Zhangのsection algebraの自然写像は
 同型を誘導する。
 \end{proof}
 
+\input{papers/sections/central_pair_artin_formal_moduli.tex}
+
 \section{結論と検証の状態}\label{sec:status}
 本稿の41次元incidence、17係数正規形、分離型余次元15と
 忘却核7次元の主張には本文に証明がある。
-全nc cubicモジュライの既約成分性、全変形・障害理論、
+全nc cubicモジュライの既約成分性、有限非可換パラメータ全域の変形・障害理論、
 一般次元nc cubic moduliの完全分類は未解決。
 正規族を持つAS正則$\mathbb Z$-代数のambient周期性は第\ref{sec:moduli-ambient-periodicity}節で証明するが、
 その1周期同型が三次イデアルを保つことや、全nc cubicの超曲面表示は未証明。

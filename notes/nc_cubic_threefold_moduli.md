@@ -22,3 +22,7 @@ Poisson cubic pairの17次元成分との局所比較を行い、まず中心三
 - `computations/verify_split_codimension.py`（分離型と忘却核の接空間計算）
 
 組版はrootから `latexmk papers/nc_cubic_threefold_moduli.tex`。検算はPython 3 + SymPyで各スクリプトを直接実行。今回GitHubのソース転送と参照検査を行ったが、新原稿のLuaLaTeX全組版と移管後コードの実行は未確認。
+
+## 可換点における全Artin局所構造と未解決の大域化（2026-11-12）
+
+旧中心三次対PDFの主要な§12–13・§21を `papers/sections/central_pair_artin_formal_moduli.tex` として現行モジュライ原稿に統合。滑らかな三次Fの標識付き対では、中心三次直線とArtin形式量子化の比較から形式局所環 `k[[s_1..s_34,a_{01}..a_{34}]]/(five Plücker quadrics)`、局所次元41/接空間44を得る。PGL5の24方向を除いたsliceでは17/20であり、**17次元の滑らかな変形空間を得たという意味ではない**。一次非分解可能なaは二次で障害を持つ。Ore局所化・偏極の一意性・二次coverの全Artin復元を通じ、偏極付き古典的変形関手の比較を条件付きで論じる。Yekutieli/De Deken–Lowen/Kontsevichの適用の独立監査、Kuznetsov側から定める可換対応との一致は未解決。元PDFの全成果を代替できていないため原資料は保留する。
