@@ -17,14 +17,15 @@
 \newcommand{\PGL}{\operatorname{PGL}}
 \newcommand{\GL}{\operatorname{GL}}
 \newcommand{\SL}{\operatorname{SL}}
-\title{滑らかな三次四次元多様体のPoisson対のモジュライ\\
-\large 既約成分と次元の分類（正規形定理に基づく草稿）}
-\author{研究草稿（著者情報未記入）}
-\date{2026年11月11日・v1}
+\title{Poisson cubic fourfoldのrank4成分のスキーム滑らかさ}\author{研究草稿（著者情報未記入）}
+\date{2026年11月12日・v2}
 \begin{document}
 \maketitle
 \begin{abstract}
-滑らかなcubic fourfoldと非零正則Poisson双ベクトルの組を、Poisson双ベクトルのスカラーを保って同時に変化させる。既存のPoisson正規形定理を入力として、幾何学的な既約成分は二つで、一般階数は二と四、$\PGL_6$による商スタックの次元はそれぞれ30と4であることを示す。階数四成分は二つの平面三次Jacobianブロックの直和により支配される。「既約成分」は基礎位相空間の意味であり、rank四成分のgeneric reducednessは厳密な整数行列式計算で確認するが、rank二成分の非被約性・成分交叉のscheme構造は未解決とする。正規形定理の独立再監査と先行研究の完全な新規性確認は未了である。
+cubic fourfoldの相対Poissonスキームの階数四成分について、
+Jacobi方程式の線形化の非零36次整数小行列式からgeneric smoothnessを証明する。
+集合論的成分分類と次元公式はnc-cubic論文Aにあるため再証明しない。
+rank2および成分交叉のscheme構造は未解決である。
 \end{abstract}
 \section{対象と既知の入力}\label{sec:input}
 $V$を6次元複素ベクトル空間、$S=\Sym(V^*)$とし、$U\subset\PP(S_3)$を滑らかな三次超曲面の開集合とする。$[F]\in U$に対し$X_F=V(F)\subset\PP(V)$と置く。相対Poissonスキーム$\mathfrak I\to U$の各ファイバーは
@@ -32,39 +33,16 @@ $V$を6次元複素ベクトル空間、$S=\Sym(V^*)$とし、$U\subset\PP(S_3)$
  \Pois(X_F)=\{\pi\in H^0(X_F,\wedge^2T_{X_F}):[\pi,\pi]=0\}.
 \]
 以下、その非零部分$\mathfrak I^\times$を考える。$F$のスカラー変更の際には$P$のスカラーを逆に変更し、$\pi=\iota_{dF}P$を不変にする。この局所的自明化の規約は次元と既約性に影響しない。
-\begin{theorem}[既存原稿の入力：Poisson正規形]\label{thm:normal-input}
-$F\in S_3$が滑らかで$0\ne\pi\in\Pois(X_F)$なら、$\pi$は一意の$P\in\wedge^3V$を用いて$\iota_{dF}P$と表される。さらにJacobi条件の下では、線形座標を選んで
-\[
- V=W_1\oplus\cdots\oplus W_k\oplus Z,\quad
- \dim W_s=3,\quad P=\sum_{s=1}^kP_s,\quad F=\sum_{s=1}^kf_s(W_s,Z)
-\]
-と書ける。$P_s\in\wedge^3W_s\setminus\{0\}$、$k\ge1$、$3k+\dim Z=6$であり、$\pi$のgeneric rankは$2k$である。したがって$k=1,2$に限る。
-\end{theorem}
-この定理の証明は\href{https://github.com/uedakazushi/nc-cubic/blob/main/papers/support/papers/sections/poisson_geometry.tex}{nc-cubicの現行原稿（Poisson正規形節）}に存在する。本稿では\emph{入力定理}とし、その全証明の独立監査が終了したとは主張しない。特に$k=2$なら$Z=0$、$F=f(W_1)+g(W_2)$である。
-\section{階数二と階数四のパラメータ空間}
-\begin{lemma}[階数二の既約性と次元]\label{lem:rank2}
-$\mathfrak I^\times_{(2)}$は既約で次元65である。$[F]\in U$上の階数二部分は$\Gr(3,V)\subset\PP(\wedge^3V)$の非零アフィン錐である。
-\end{lemma}
-\begin{proof}
-定理\ref{thm:normal-input}で$k=1$は$P$が非零の分解可能三重ベクトルであることと同値である。逆に分解可能$P$について三変数Jacobian括弧は任意の$F$でJacobi恒等式を満たし、他の三変数はCasimirになる。よって階数二部分は$U$上の$\Gr(3,6)$の非零アフィン錐（適切な直線束によるtwist）であり既約。$\dim U=\binom83-1=55$、$\dim\Gr(3,6)=9$より次元は$55+9+1=65$である。
-\end{proof}
-\begin{lemma}[階数四の既約性と次元]\label{lem:rank4}
-$\mathfrak I^\times_{(4)}$は既約で次元39である。その全点は線形座標変換の後
-\[
- P=e_1\wedge e_2\wedge e_3+e_4\wedge e_5\wedge e_6,\qquad
- F=f(x_1,x_2,x_3)+g(x_4,x_5,x_6)
-\]
-となり、$f,g$は滑らかな平面三次式である。
-\end{lemma}
-\begin{proof}
-定理\ref{thm:normal-input}から二つの非零三重ベクトルの直和分解が得られる。$P_0=e_{123}+e_{456}$の$\GL(V)$安定化群の単位成分は$\SL_3\times\SL_3$で、次元16である。実際、$\lambda\in V^*$に対して$(\iota_\lambda P_0)\wedge(\iota_\lambda P_0)=0$となる$\lambda$の射影的零点集合は二つの$\PP^2$の和であり、二つの三次元ブロックを置換を除いて復元する。従って軌道次元は$36-16=20=\dim\wedge^3V$で、この軌道は既約なZariski開集合である。
-$P=P_0$を固定すると、Jacobi条件によって$F$は二つの三変数三次式の和となる。ここは定理\ref{thm:normal-input}を使うが、直接には混合二階偏微分の消滅としても検証できる。許される三次形式は$\Sym^3W_1^*\oplus\Sym^3W_2^*$で20次元、射影化で19次元。滑らかさは非空開条件で、Fermat型が例を与える。従って$P$の20次元開軌道上の射影19次元の線形束の非空開集合として階数四部分は既約で次元39。分離型の滑らかさは$f,g$それぞれが滑らかなことと同値である。
-\end{proof}
-\begin{remark}[混合Hessian]
-$P_0$について二つの添字が第一ブロック、一つが第二ブロックに属するJacobiatorは混合Hessianを含む。滑らかな$F$の全偏微分は正則列であり一次係数syzygyがないから、Jacobi条件により混合Hessianは零である。この直接導出の独立検算は次の研究課題である。
-\end{remark}
+正規形と相対Poissonモジュライの集合論的分類はnc-cubic論文Aを入力とし、ここでは再証明しない。\n\section{階数四成分のスキーム構造}
+nc-cubic論文Aの
+\href{https://github.com/uedakazushi/nc-cubic/blob/main/papers/support/papers/sections/fermat_relative_poisson_components.tex}{相対Poisson分類}
+を入力とする。rank4 Poisson三重ベクトル$P_0=e_{123}+e_{456}$の$\GL_6$軌道は20次元開軌道、
+固定した$P_0$に対する三次式の空間は射影19次元である。
+従ってrank4層は39次元の既約局所閉集合である。
+この集合論的分類は論文Aに既に証明があり、本稿では繰り返さない。
+
 \begin{proposition}[階数四成分の一般点でのscheme滑らかさ]\label{prop:rank4-generically-smooth}
-定理\ref{thm:normal-input}を入力とすると、相対Poissonスキーム$\mathfrak I$は階数四成分の一般点で滑らか、したがってその成分はgeneric reducedである。特に分離Fermat点
+nc-cubic論文Aの正規形・成分分類を入力とすると、相対Poissonスキーム$\mathfrak I$は階数四成分の一般点で滑らか、したがってその成分はgeneric reducedである。特に分離Fermat点
 \[
  F_0=\sum_{i=1}^6x_i^3,\qquad P_0=e_{123}+e_{456}
 \]
@@ -87,30 +65,12 @@ $P=P_0$を固定して$F$の変形を考える。次数三の混合単項式（�
 \]
 である。よって$F$方向のJacobi線形化の階数は少なくとも36。分離型の二つの純三次成分は20次元の解族を与えるので階数は高々36、従って正確に36である。
 
-$P$の安定開軌道が20次元、$[F]$の全空間が55次元なので、相対ambientの次元は75。Jacobi方程式の接空間の次元は高々$75-36=39$。一方、補題\ref{lem:rank4}によりその点を通る既約なrank四stratumの次元は39。従って局所環のKrull次元と埋込次元はともに39であり、点は滑らかである。滑らかさの開性とrank四stratumの既約性からその一般点も滑らかとなる。
+$P$の安定開軌道が20次元、$[F]$の全空間が55次元なので、相対ambientの次元は75。Jacobi方程式の接空間の次元は高々$75-36=39$。一方、この既知の39次元既約性によりその点を通る既約なrank四stratumの次元は39。従って局所環のKrull次元と埋込次元はともに39であり、点は滑らかである。滑らかさの開性とrank四stratumの既約性からその一般点も滑らかとなる。
 \end{proof}
 
-\section{既約成分とモジュライ次元}
-\begin{theorem}[相対Poisson対の基礎位相空間の分類]\label{thm:two}
-定理\ref{thm:normal-input}を入力とすると、$\mathfrak I^\times$の基礎位相空間にはちょうど二つの既約成分があり、次元は65と39、一般rankは2と4である。商スタック
-\[
- \mathfrak M_4=[\mathfrak I^\times/\PGL(V)]
-\]
-の対応する既約成分の次元はそれぞれ$30$と$4$である。
-\end{theorem}
-\begin{proof}
-全点はrank 2または4である。rank 2 locusは分解可能三重ベクトルのPl\"ucker方程式で定まる閉集合で補題\ref{lem:rank2}により既約。補集合rank 4 locusは補題\ref{lem:rank4}により既約な非空開集合。従って成分候補はrank 2 locusとrank 4 locusの閉包のみ。rank 4 locusの閉包はrank 2 locusに含まれない。その次元は39なので65次元のrank 2 locus全体を含むこともない。これで正確に二成分を得る。
-滑らかなcubic fourfoldの射影自己同型群は有限である。従って各組の$\PGL_6$安定化群も有限。$\dim\PGL_6=35$を引いて$65-35=30$、$39-35=4$となる。有限安定化群のモジュライの次元も同じである。
-\end{proof}
-\begin{remark}[規約]
-零Poissonを許しても零切断はrank 2成分の閉包に含まれ、新しい位相的既約成分は生じない。非零$\pi$をさらに$\CC^*$で割って射影化したモジュライの成分次元は29と3である。本稿ではスカラーを保持する。
-\end{remark}
-\begin{remark}[固定Fermat fiber]
-固定Fermat cubicでは六変数を二つの三変数集合に分ける仕方が$\binom63/2=10$あり、rank 4の構造が現れる。しかし固定fiberの各成分数から全体の相対成分数は推定できない。
-\end{remark}
 \section{未解決問題と検証範囲}
-本稿の位相的分類は\emph{既存正規形定理を入力とする帰結}である。未解決事項は(a)その独立監査、(b)rank二成分のgeneric reducedness・交叉・embedded associated components、(c)商の境界、(d)新規性の徹底的な先行研究照合である。これらを証明済みとはしない。
-\texttt{computations/verify\_poisson\_cubic\_fourfold.py}は二ブロックFermat例のJacobi恒等式、混合摂動の非Jacobi性、次元算定を厳密検算する。全分類の計算証明ではない。
+位相的分類はnc-cubic論文Aを正本とする。未解決事項は(a)その独立監査、(b)rank二成分のgeneric reducedness・交叉・embedded associated components、(c)商の境界、(d)新規性の徹底的な先行研究照合である。これらを証明済みとはしない。
+\texttt{computations/verify\_poisson\_cubic\_fourfold\_tangent.py}に非零小行列式の厳密検算を収録。今回は再実行・実組版していない。
 \begin{thebibliography}{9}
 \bibitem{Pym} B.~Pym, \emph{Constructions and classifications of projective Poisson varieties}, Lett. Math. Phys. \textbf{108} (2018), 573--632, \url{https://doi.org/10.1007/s11005-017-0984-5}.
 \bibitem{Mayanskiy} E.~Mayanskiy, \emph{Poisson cohomology of two Fano threefolds}, J. Algebra \textbf{424} (2015), 21--45, \url{https://arxiv.org/abs/1303.5916}. 三次元の比較であり四次元の分類として引用しない。

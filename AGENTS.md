@@ -1,6 +1,6 @@
 # nc-cubic2 AGENTS.md
 
-**最初に `00_research_plan.md` を読む。Poisson cubicの全次元分類は次に `notes/poisson_cubic_all_dimensions.md` と `papers/poisson_cubic_pair_components.tex`、fourfoldのscheme構造は `notes/poisson_cubic_fourfold_moduli.md`、非可換三次三様体の17次元モジュライは `notes/nc_cubic_threefold_moduli.md` と `papers/nc_cubic_threefold_moduli.tex` を読む。それ以外は `notes/research_notes.md` を読む。**
+**最初に `00_research_plan.md` を読む。一般次元Poisson分類はnc-cubic論文Aを正本とする。fourfoldのscheme構造は `notes/poisson_cubic_fourfold_moduli.md`、非可換三次三様体の17次元モジュライは `notes/nc_cubic_threefold_moduli.md` と `papers/nc_cubic_threefold_moduli.tex` を読む。それ以外は `notes/research_notes.md` を読む。**
 
 - **6/7次元Poisson cubic幾何**：`notes/poisson_cubic_six_seven_geometry.md`、
   `papers/poisson_cubic_six_seven_geometry.tex`、
@@ -21,5 +21,5 @@
 
 - Poisson cubic fourfold の同時モジュライは、集合論的既約成分分類（正規形定理依存）と、未解決のscheme構造・新規性を厳密に区別する。Poissonスカラーを割るか保持するかを常に明記する。入力定理の独立監査を最優先し、既存のnc-cubicの可換復元作業は変更しない。
 
-- 全次元の基礎位相的成分数 `floor((n+2)/3)` は既存の Poisson 正規形定理を入力とする。新規性、Poisson schemeの被約性、成分の交叉、正規形定理の独立再監査は別課題。全次元の証明は `papers/poisson_cubic_pair_components.tex`、fourfoldの追加的scheme論は `papers/poisson_cubic_fourfold_moduli.tex` に保つ。
+- 一般次元Poisson成分分類・次元公式はnc-cubic論文Aを正本とし、本リポジトリでは重複させない。fourfold稿には追加的scheme smoothnessを保持する。
 - VS Code LaTeX Workshopは `.vscode/settings.json` の明示的なcwdとルート `.latexmkrc` を使用する。TeXはLuaLaTeX、出力はbuild、生成PDFは追跡しない。

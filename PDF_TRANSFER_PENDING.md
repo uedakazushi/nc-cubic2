@@ -1,14 +1,14 @@
-# 未移管のPDF原本と安全条件
+# 現行のPDF原本（2026-11-12）
 
-2026-11-10。GitHub APIのテキスト処理ではPDFの非UTF-8バイナリを取得できず、異なるリポジトリ間でblob SHAをそのまま利用する操作も失敗した。下記は**nc-cubic2へ未転送**であり、元リポジトリ `uedakazushi/nc-cubic` の `main` が引き続き原本の保管先である。
+旧版の「未移管」は現状と異なる。`nc-cubic2`の現行mainには次の8点が存在し、`nc-cubic`現行mainにはPDF追跡ファイルがない。Git treeとblobを確認したがPDFの本文・TeX代替性は未監査。
 
-| 原本（nc-cubic内） | Git blob SHA | 内容 |
-|---|---|---|
-| `papers/pdf-only/boundary/brill_noether.pdf` | `be40e4f4861a152e2e63f0d0e8f53dd536f644f1` | Brill–Noether境界 |
-| `papers/pdf-only/boundary/pfaffian_contact.pdf` | `bdc41bf0b01b4f4b0bbeefd77c85c2afc5a297a3` | Pfaffian/contact |
-| `papers/pdf-only/boundary/central_quotient_singularities.pdf` | `990fcfd2ff6890cb3317759252a1470bd6acdd97` | 中心商特異圏、Azumaya・Brauer |
-| `notes/pdf-only/categorical_boundary_notes.pdf` | `7f8dffabc6dcc72327d69ab427251491ebd5210f` | 圏論的境界とgluing |
+- `notes/pdf-only/categorical_boundary_notes.pdf`
+- `notes/pdf-only/finite_smoothness_notes.pdf`
+- `papers/pdf-only/ambient/central_cubic_technical.pdf`
+- `papers/pdf-only/ambient/central_pair_formal_moduli.pdf`
+- `papers/pdf-only/boundary/brill_noether.pdf`
+- `papers/pdf-only/boundary/central_quotient_singularities.pdf`
+- `papers/pdf-only/boundary/pfaffian_contact.pdf`
+- `papers/pdf-only/quantization/sklyanin_mixed_quantization.pdf`
 
-**転送手順：** 認証したGitクライアントで両リポジトリをcloneし、原本を移管先にコピーしてGit SHAを比較する。新しい場所からファイルが読み取れることを確認してから、旧側の追跡解除を検討する。なお可換復元に必要な部分を先に `nc-cubic` の研究ノートと原稿へ統合する。
-
-PDFを整理することより主リポジトリの残余smoothness (SM) と可換復元を優先する。PDFにしかない定理・証明はTeX化の完了前には失われないよう保持する。
+これらは生成PDFとは区別して保全し、完全なTeX移行と数学的内容の照合前に削除しない。

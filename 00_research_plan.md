@@ -9,18 +9,15 @@
 - **ambientの周期性**：`papers/nc_cubic_threefold_moduli.tex` の `papers/sections/ambient_periodicity.tex` に、正則正規次数$d$族を持つKoszul AS正則$\mathbb Z$-代数の最小周期が$\gcd(N,d)$を割る定理と証明を収録。標準5次元・三次なら1周期的。商イデアルを保存する1周期性は未証明。既知双対性からの帰結として新規性は未確認。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 
-**2026-11-12 / v6。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v7。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
 正規族の消去による$d$周期と、Koszul双対の局所Frobenius対合による$N$周期を合成する。$N=5,d=3$では$2\cdot3-5=1$。定理は左右AS条件、有限最小線型解消と正則正規族を仮定し、中心性を不要とする。周期同型が三次商イデアルを保存すること、全nc cubicの中心三次表示、既約成分性は結論しない。研究ノートは`notes/nc_cubic_threefold_moduli.md`、次の着手は一般の$\mathbb Z$-代数への適用に必要な正則族とAS条件の検証。詳細証明は現行論文の節にあり、旧単独稿は再開の前提にしない。
 
-## 最重要の構造結果：全次元のPoisson cubic pairの既約成分
+## 一般Poisson cubicモジュライの正本
 
-- **新定理（既存Poisson正規形定理を入力とする）**：滑らかなcubic $n$-fold（$n\ge3$）の非零Poisson pairを同時に変形させると、基礎位相空間の既約成分は一般rank $2k$（$1\le k\le\lfloor(n+2)/3\rfloor$）について各一つ、合計 $\lfloor(n+2)/3\rfloor$ 個。各成分の次元は `papers/poisson_cubic_pair_components.tex` の閉公式で与える。$n=3,4,5,6,7$の次元は順に $(17)$、$(30,4)$、$(48,16)$、$(72,34)$、$(103,59,6)$。
-- **主張の確実性**：軌道次元、係数空間、層の既約性、閉包の非包含について原稿に証明を記載。深い正規形定理は `nc-cubic/papers/support/papers/sections/poisson_geometry.tex` に既存証明があるが、今回その独立再監査は未完了。全次元のPoisson schemeのgeneric reducedness・交叉のscheme構造・初出確認は未解決。
-- **最優先の研究手順**：正規形定理の独立監査→各成分の接空間／非被約性→成分交叉・零切断→先行研究に基づく公表稿の再編。詳細は `notes/poisson_cubic_all_dimensions.md`。
-- **保存と組版**：GitHub mainが正本、.vscodeでLaTeX Workshop + LuaLaTeX、PDFはbuildに生成してGit追跡しない。GitHub Actionsとforce pushは使わない。
+一般次元Poisson正規形、固定・相対Poissonスタック、既約成分数と次元公式、量子化は `uedakazushi/nc-cubic` の論文Aに既に証明を収録。ここに同じ一般分類の単独論文・ノート・専用計算を再収録しない。これらの証明の全面独立監査・新規性の確認は未完成。本リポジトリにはfourfoldの追加的scheme論、6/7次元固有の退化schemeと非可換モジュライ研究を残す。
 
 ## 別の研究対象：六・七次元Poisson cubicの退化スキーム
 
@@ -55,9 +52,9 @@ embedded componentの長さの解明。
 
 ## 新しい重点課題：Poisson cubic fourfold pairモジュライ（独立研究）
 
-滑らかなcubic fourfold $X\subset\mathbb P^5$と非零正則Poisson構造$\pi$の組を同時に動かす相対Poisson schemeを、まず基礎位相空間の既約成分、その次にscheme構造まで分類する。Poissonスカラーを保持する。
+滑らかなcubic fourfold $X\subset\mathbb P^5$と非零正則Poisson構造$\pi$の組を同時に動かす相対Poisson schemeを、既知の集合論的分類の先のscheme構造を解析する。Poissonスカラーを保持する。
 
-- **現在の最重要の到達点（既存Poisson正規形定理を入力とする）**：成分数は2、rank2成分のモジュライ次元30、rank4成分の次元4。rank2は$\operatorname{Gr}(3,6)$の非零錐、rank4は二つの平面三次Jacobianブロックに由来する。証明は `papers/poisson_cubic_fourfold_moduli.tex`。
+- **既知入力**：rank2/rank4の2成分と商次元30/4はnc-cubic論文Aの結果であり、ここでは再証明しない。
 - **依存**：主リポジトリ `nc-cubic/papers/support/papers/sections/poisson_geometry.tex` のPoisson正規形定理（独立再監査は未実施）。そのため、公表完成定理であるとの主張はしない。数学的な帰結の証明と定理の独立監査を区別する。
 - **新たに確認した点**：rank4成分のgeneric reducednessをFermat点のJacobi微分の整数36次小行列式で証明。検算コードは `verify_poisson_cubic_fourfold_tangent.py`。
 - **未解決の核心**：rank2成分のgeneric reducedness、交叉のscheme構造、零Poissonの近傍、成分の境界、および新規性の一次文献照合。
@@ -72,13 +69,17 @@ embedded componentの長さの解明。
 
 ## 未解決
 
-関連するPDF原本の移管は未完了。原本の一覧と移管元のGit blob識別子は `PDF_TRANSFER_PENDING.md`。バイナリの転送を確認する前に唯一の原本を削除しない。主リポジトリの定理に引用・依存する補題は、移管元に自立した証明を保持してから移す。文献の一次資料照合も追加監査が必要。
+PDF原資料8点は現行nc-cubic2のGit treeに存在する。内容とTeX代替の検証前に原本は削除しない。主リポジトリの定理に引用・依存する補題は、移管元に自立した証明を保持してから移す。文献の一次資料照合も追加監査が必要。
 
 ## 次の作業
 
 1. `papers/pfaffian_brill_noether_technical.tex` を独立にLuaLaTeXで組版・検証し、主リポジトリ三目標に使う部分の依存を点検する。
-2. 境界PDF原本をバイナリ同一性を保って転送し、各定理・証明をTeXと照合する。TeXで完全に再生成できるまで元のPDFを保持する。
+2. 現存の原本PDFとTeXの内容を照合し、代替の十分性を検証する。TeXで完全に再生成できるまで元のPDFを保持する。
 3. 研究の現在有効な成果を分かりやすい公表用原稿へ再編する。単なる旧原稿の蓄積にしない。
+
+## 一般研究原則と保存許可
+
+数学的重要性・新規性・理解の深化・応用・正確性・実現可能性を総合して方針を更新する。証明済み、条件付き、未完成、予想、計算観察を区別し、主張の依存・証明・監査状態を明記する。一次資料を調べ、論文には完全な証明、研究ノートには有用な障害や未収録結果を残す。過去版の蓄積を避け現行資産から再開する。研究bundleは研究の区切りごとに承諾なしでLibraryに保存可能という一般許可があるが、本研究はGitHub mainを正本としpush失敗の場合だけLibraryへ緊急退避する具体運用を優先する。
 
 ## 保存原則
 
