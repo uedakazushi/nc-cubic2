@@ -1,24 +1,28 @@
 {
-  "date": "2026-11-12",
-  "version": "v2",
-  "status": "PARTIAL: six complete TeX sections preserved; companion integration, references, calculations and remaining migration pending",
+  "date": "2026-11-13",
+  "version": "v3",
+  "status": "PARTIAL overall: point-scheme unit integrated and locally validated; first-order/finite-recovery companion integration and remaining independent-source migration still pending",
   "source_repository": "uedakazushi/nc-cubic",
   "destination_repository": "uedakazushi/nc-cubic2",
   "paper_A": "Remains unchanged in nc-cubic",
-  "focused_paper_B": "nc-cubic/papers/paper_b.tex B-v55; 27-page fully typeset general-dimensional theorem and required proofs",
-  "verified_fulltext_blobs": {
-    "papers/reconstruction_extensions/first_order_poisson_kernel.tex": "f2875c5e7ed2312d8139dc4e9ca56960e04018f1",
-    "papers/reconstruction_extensions/explicit_jacobian_recovery.tex": "a08e2b1279ee265d27dd6231521e8fbae0edd15b",
-    "papers/reconstruction_extensions/point_scheme_poisson_zero.tex": "75968f92ae40487c3c463f009aa1e0f27e339666",
-    "papers/reconstruction_extensions/point_scheme_thickening.tex": "345f768a3799660a87b1b0ad86f6f4b7ea9d1c2d",
-    "papers/reconstruction_extensions/point_scheme_lambda_family.tex": "6d631fc215bb99fbe397288425a48941d6097ee6",
-    "papers/reconstruction_extensions/point_scheme_discriminant_boundary.tex": "c4126dd91aeb64f94d3f700aed013491050234ed"
+  "focused_paper_B": "nc-cubic/papers/paper_b.tex B-v55 unchanged; general-dimensional theorem and required proofs",
+  "completed_companion": {
+    "entry": "papers/mixed_cubic_point_schemes.tex",
+    "notes": "notes/mixed_cubic_point_schemes.md",
+    "validation": "validation_mixed_cubic_point_schemes.json",
+    "chapters": ["mixed_central_family.tex", "point_scheme_poisson_zero.tex", "point_scheme_thickening.tex", "point_scheme_lambda_family.tex", "point_scheme_discriminant_boundary.tex"],
+    "required_reference_closure_verified": true,
+    "lualatex_build_executed": true,
+    "pages": 12,
+    "all_four_calculation_scripts_executed": true,
+    "source_cleanup": "Pending destination-main verification; source scope note records subsequent completed cleanup."
   },
-  "source_files_deleted": false,
+  "text_preserved_but_companion_integration_pending": {
+    "papers/reconstruction_extensions/first_order_poisson_kernel.tex": "f2875c5e7ed2312d8139dc4e9ca56960e04018f1",
+    "papers/reconstruction_extensions/explicit_jacobian_recovery.tex": "a08e2b1279ee265d27dd6231521e8fbae0edd15b"
+  },
+  "remaining_groups": ["Artin and etale relative theory", "Sklyanin and multiblock finite models", "relative diagonal, bar, Morita and alternate constructions", "mixed-family jets and equivariant reconstruction", "independent generalizations, literature and computation assets"],
   "all_independent_material_transferred": false,
-  "companion_reference_closure_verified": false,
-  "companion_lualatex_build": false,
-  "independent_math_proof_audit": false,
-  "concurrent_destination_work": "Preserved main's independent central-quotient PBW/CY and Ext updates; this change touches reconstruction_extensions and this transfer record only.",
-  "policy": "Keep unverified or untransferred source text available on current main; do not substitute historical-commit pointers for current mathematical proof preservation."
+  "independent_full_math_proof_audit": false,
+  "policy": "Delete source duplicates only after the current destination manuscript, proofs, inputs and computations are verified and saved. Preserve other concurrent research. No GitHub Actions or force push."
 }
