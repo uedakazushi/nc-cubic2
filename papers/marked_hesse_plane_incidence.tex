@@ -1,0 +1,42 @@
+% !TEX program = lualatex
+\documentclass[11pt,a4paper]{ltjsarticle}
+\usepackage{amsmath,amssymb,amsthm,mathtools,luatexja-fontspec}
+\usepackage[margin=25mm]{geometry}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+\setmainjfont{HaranoAjiMincho-Regular}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{corollary}[theorem]{系}
+\newtheorem{remark}[theorem]{注意}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\GL}{\operatorname{GL}}
+\renewcommand{\proofname}{証明}
+\title{標識付きHesse平面切断の臨界幾何}
+\date{2026年11月13日}
+\begin{document}
+\maketitle
+\begin{abstract}
+三次三様体の平面切断を、三変数三次式の標識付きHesse切片を通して調べる。
+臨界平面の九係数模型から六次Hessian因子を得て、その絶対既約性、正規性、有理性を証明する。
+核上三次の消失集合は四つの有理的成分を持つ。
+孤立A2、A3点で十次元の三次式変形が与える局所unfoldingと、
+臨界値像の正規化・導手を具体的に計算する。
+幾何は形式的または指定点での完備局所的なものであり、有限量子係数の圏同値を前提にしない。
+\end{abstract}
+\input{papers/sections/marked_hesse_critical_geometry.tex}
+\input{papers/sections/marked_hesse_discriminant_normalization.tex}
+\input{papers/sections/marked_hesse_higher_strata.tex}
+\input{papers/sections/marked_hesse_relative_models.tex}
+\input{papers/sections/mixed_fibre_branch_geometry.tex}
+\input{papers/sections/mixed_candidate_discriminant.tex}
+\begin{thebibliography}{9}
+\bibitem{Stacks} The Stacks Project, Tags 031S (Serre's criterion), 07QS (excellent rings),
+\url{https://stacks.math.columbia.edu}.
+\bibitem{Arnold} V.~I.~Arnol'd, S.~M.~Gusein-Zade and A.~N.~Varchenko,
+\emph{Singularities of Differentiable Maps}, vol.~I, Birkh\"auser, 1985.
+\end{thebibliography}
+\end{document}

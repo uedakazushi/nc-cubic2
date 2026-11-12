@@ -1,0 +1,135 @@
+\section{相対二重被覆と古典臨界値}
+$A=\CC[[s,P,Q,T]]$、$z=(\lambda,\mu)$とし、平面incidenceを
+\[
+ B=A[[z,h]]/(h^2-3\sigma(s,P,Q,T,z))
+\]
+と書く。$\partial_s\sigma(0)=1$なので$B$は正則な十六次元形式環である。
+$A[[z]]$上は基底$1,h$の有限自由二重被覆であるが、
+$A$上の相対臨界スキームはその分岐点スキーム全体とは異なる。
+\begin{proposition}
+$A$上の相対臨界イデアルは$(h,\partial_z\sigma)$であり、
+その環は$\CC[[T,z]]$という正則九次元環となる。
+$\sigma=0$を$s=S_{\rm cl}(P,Q,T,z)$と解けば、この臨界環の別表示は
+\[
+ \CC[[P,Q,T,z]]/(\partial_zS_{\rm cl}),\qquad h=0,\quad s=S_{\rm cl}.
+\]
+元の源側の六座標を保持して二重被覆を$h^2=\Phi_A(s,r,a,c)$と表示した場合も、
+古典零点$s=S_{\rm cl}(r,a,c)$が同じなら、一意な単元$\upsilon$により
+$\Phi_A=\upsilon(s-S_{\rm cl})$となる。
+従って分岐零スキームと臨界値写像は古典族で決まり、未知量子級数に依存しない。
+\end{proposition}
+\begin{proof}
+連続相対微分は七生成元$dh,dz$と一関係を持つので、第六Fittingイデアルが表示式となる。
+$h=0,\sigma=0$から$s$を解き、さらに六つの微分を$P,Q$について解く。
+原点でそのJacobianは恒等行列だから臨界環は正則である。
+最後の因数分解は$\Phi_A(S_{\rm cl},r,a,c)=0$と$\partial_s\Phi_A(0)\ne0$から従う。
+基底$1,h$のtrace pairingは$\operatorname{diag}(2,2\Phi_A)$なので被覆の判別イデアルは$(\Phi_A)$であり、
+相対臨界イデアルを$h=0$で計算すると$\partial_z\Phi_A=-\upsilon\partial_zS_{\rm cl}$となる。
+\end{proof}
+
+\begin{proposition}[一般T方向のMorse模型]
+$K=\operatorname{Frac}\CC[[T_1,T_2,T_3]]$へ移り、$s=P=Q=0,z=0$で完備化する。
+$M(T)=\left(\begin{smallmatrix}0&T_3&T_2\\T_3&0&T_1\\T_2&T_1&0\end{smallmatrix}\right)$とすると
+\[
+ \sigma_{zz}=\begin{pmatrix}0&M(T)\\M(T)&0\end{pmatrix},\quad\det M=2T_1T_2T_3.
+\]
+一意な停留点とその値$d$は
+\[
+ \lambda_*=-M^{-1}Q+O((s,P,Q)^2),\quad
+ \mu_*=-M^{-1}P+O((s,P,Q)^2),\quad
+ d=s-P^tM^{-1}Q+O((s,P,Q)^3)
+\]
+を満たす。$h$を固定する相対形式座標で
+$h^2=3(\sum_iU_iV_i+d)$となる。
+臨界値因子$d=0$は滑らか被約で、臨界値写像はこの局所因子への同型である。
+\end{proposition}
+\begin{proof}
+制限式は$D/3+\ell^3+m^3+\ell m\sum T_ix_i$であり、平面二次項が正確に$\lambda^tM\mu$である。
+Hesse規格化の効果は平面四次以上なのでHessianに高い$T$補正はない。
+逆関数定理で停留点を解き、二次項へ代入すると表示の値を得る。
+$\partial_sd(0)=1$であり、相対Morse帰納が残余の非退化形式を三双曲対へ移す。
+\end{proof}
+
+\section{二つの退化因子の交点}
+\begin{theorem}
+$K_1=\operatorname{Frac}\CC[[T_1]]$, $R_1=K_1[[T_2,T_3]]$上の$T$軸族には、
+$T,h$を保つ形式座標で
+\[
+ \sigma=U_1V_1+U_2V_2+T_2T_3AB
+\]
+という正規形がある。相対特異スキームの環は
+$K_1[[T_2,T_3,A,B]]/(T_2T_3A,T_2T_3B)$であり、
+被約な三成分$(T_2),(T_3),(A,B)$を持つ。
+全空間は八次元の正規完備局所環で、その特異スキームは
+$h=U=V=0$と、四変数$T_2,T_3,A,B$の任意の三つの積が零という被約な六座標平面の和である。
+\end{theorem}
+\begin{proof}
+$a=\lambda_1,b=\mu_1$とし、他の四変数$w$のHessianは行列式$T_1^4$を持つ。
+$\partial_w\sigma=0$を解いてMorse分裂すると、$\sigma=U_1V_1+U_2V_2+g(a,b)$となる。
+$T_3=0,\lambda_3=\mu_3=0$上の制限式は二元三次式と$x_3^3/3$の和である。
+二元三次式を近恒等$\GL_2$でFermatへ戻せるのでHesse係数は恒等的に零である。
+残る二法微分を$\lambda_2,\mu_2$について解くと、そのJacobianは$T_1I$であり、二次元臨界曲面を得る。
+停留解の一意性から$g\bmod T_3=0$である。添字交換で$g\bmod T_2=0$も得る。
+従って$g=T_2T_3q$。
+二次停留解は$\lambda_2=-T_2a/T_1,\lambda_3=-T_3a/T_1$および同じ$\mu$式なので、
+$g_2=-2T_2T_3ab/T_1$となる。
+$q$のHessianは可逆で、二変数Morse補題により$q=AB$とできる。
+
+相対Jacobianと全Jacobianを取れば表示のスキームを得る。
+単項式イデアルの等式
+\[
+ (T_2T_3A,T_2T_3B)=(T_2)\cap(T_3)\cap(A,B),\qquad
+ (\text{四変数の三重積})=\bigcap_{i<j}(z_i,z_j)
+\]
+が被約性を与える。全空間は超曲面でCohen--Macaulay、特異集合の余次元は六なので正規である。
+\end{proof}
+
+\begin{proposition}[退化因子一般点の二次jet]
+$A=T_1,B=T_2$を係数体$K=\operatorname{Frac}\CC[[T_1,T_2]]$の単元とし、$\tau=T_3$と置く。
+標的イデアル$\mathfrak b=(s,P,Q,\tau)$に対し、残る二平面変数を$\lambda_1=A\alpha,\mu_1=A\beta$に選ぶと、
+四高速方向の消去後の関数は
+\begin{align*}
+ g\equiv{}&s+(AP_1-BP_2)\alpha+(AQ_1-BQ_2)\beta
+ +6BQ_2\alpha^2+6BP_2\beta^2\\
+ &-\{2AB\tau+(A^3+B^3)s\}\alpha\beta
+ \pmod{\mathfrak b^2+\mathfrak b(\alpha,\beta)^3}.
+\end{align*}
+$P_3,Q_3$方向の一次変形関数は全次数で零である。
+二変数二次jetへのKodaira--Spencer写像は全射で、列$s,P_1,P_2,Q_1,Q_2,\tau$の行列式は$72A^3B^3$である。
+しかし全変形の接空間は$K[[\alpha,\beta]]$なので、この有限次元標的は全形式変形に対してversalではない。
+\end{proposition}
+\begin{proof}
+中央の臨界曲面は$\lambda_3=\mu_3=0$、
+$\lambda_2=-B\alpha+6B\beta^2+O(3)$、
+$\mu_2=-B\beta+6B\alpha^2+O(3)$である。
+制限二元三次式の二次摂動は
+$\alpha\beta(Ax_1+Bx_2)(Ax_1-Bx_2)^2$なので二元規格化行列は
+\[
+ I+\alpha\beta\begin{pmatrix}-A^3&A^2B\\AB^2&-B^3\end{pmatrix}+O(3).
+\]
+摂動をこの行列で変換した後の$xyz$係数を取ると表示の八方向の変形関数を得る。
+$P_3,Q_3$摂動は二元三次式のままで$x_3$を生じないから全次数で消える。
+行列式は直接の係数比較による。
+中央ファイバーの方程式$h^2-3(U_1V_1+U_2V_2)$のJacobian商は$K[[\alpha,\beta]]$である。
+\end{proof}
+
+\paragraph{微分の階数.}
+$T$軸の原点平面section上で、普遍臨界値写像の微分は
+$(\delta T,\delta\lambda,\delta\mu)\mapsto
+(0,-M(T)\delta\mu,-M(T)\delta\lambda,\delta T)$である。
+従って階数は$T_1T_2T_3\ne0$なら九、$T\ne0,T_1T_2T_3=0$なら七、$T=0$なら三である。
+ここで$M$の非零二次小行列式$-T_i^2$により、可能階数が$3,2,0$であることを用いた。
+
+\begin{corollary}[忠実平坦性とArtin点の持上げの相違]
+平面incidenceの環準同型$A\to B$は忠実平坦で、閉ファイバーは六次元である。
+六つの自由な源変数を加えた場合も忠実平坦で、閉ファイバーは十二次元である。
+どちらも原点で形式的に滑らかではなく、同じArtin基底上の点の写像は一般に全射でない。
+\end{corollary}
+\begin{proof}
+$A[[z]]$は$A$上忠実平坦で、$B$はその上基底$1,h$の有限自由加群だから主張を得る。
+閉ファイバーは七変数正則環の非零一式による商なので六次元である。
+原点で$ds$方向は接写像の像に入らない。
+実際$A\to\CC[\epsilon]/(\epsilon^2)$を$s\mapsto\epsilon,r\mapsto0$とすると、
+$h,z$の全像が$(\epsilon)$に入る一方、$3\sigma=3s+O(2)$なので関係式を満たせない。
+自由変数の追加はこの障害を消さない。忠実平坦性は同一基底上の点の全射性を意味しない。
+\end{proof}

@@ -12,7 +12,7 @@
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 - **可換点の全Artin形式局所構造をTeX化**：`papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。全係数Hesse中心元・有限証明書・37次元graph成分と一般中心・剛体例の正則開集合も現行稿へ回収し、旧V全21節を照合した。原PDFは追跡解除済み。
 
-**2026-11-13 / v36。再開時は最初に本ファイルを読む。**
+**2026-11-13 / v37。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -118,3 +118,7 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 Rees退化による非Azumaya locusの次元上界を一般補題にし、WWY Theorem 1.3/Lemma 5.4、Levasseur Proposition 3.2(ii)、Brown–Macleod Theorems 3.13/4.8の本文と仮定を照合した。PBWと既知Sklyanin入力からR1の大域次元3、中心の正規性、Azumaya locus同定を導く。二重étale被覆とrank6 monic式から中心降下と分岐位置を証明し、21特異点中15点の非零Hessianを厳密検算した。IW Theorem 5.1(1)の二素因子のflag分類から四点の局所模型を得る。
 
 `papers/sections/central_quotient_chart_gluing.tex`に、CCKMの行列因子化同値、分母払い、導分の中心因子、Chen/Yekutieli–Zhangの双対性による正確な次元を収録した。指定混合族の判別式の貼合せは追加仮定から除いた。chartのIwanaga–Gorenstein性も中心正則商と忠実平坦降下から証明する。`papers/sections/central_quotient_pbw_cy.tex`にBGの三次syzygy条件、被約基底での相対PBW、自己双対な双加群解消、周囲のKoszul AS正則性を証明した。Koszul双対をQ[α]上で計算し、全pivotが非零有理定数、Frobenius対合のdetが±1であることから全αでNakayama twistが恒等と確定した（`computations/verify_central_quotient_koszul.py`）。全8三次元単純表現のExt1表は構造的に証明し、代数体上のrank19/16・内的微分rank8/9も厳密再実行した（`computations/verify_central_quotient_extensions.py`）。初期諸節とCayley幾何も全照合して現行TeXへ統合した。旧VIのPDFは追跡解除し、残る1件は保持する。生成物は追跡しない。
+
+## 残る旧IIの次の着手
+
+平面切断の可換幾何を `papers/marked_hesse_plane_incidence.tex` へ分離した。A2/A3の導手、四成分、A4/D4、積模型と固定源の九次分岐式まで証明と新しい厳密検算を保持する。次は§9.6–32の有限curved cochain縮約、相対Artin window、積とSerre traceによる b(h)^3=1+h^6/27、全混合の六級数の証明を独立に回収する。分岐jet原稿ではこの未回収の比較入力を仮定として明示しており、PDF削除ゲートは未達である。

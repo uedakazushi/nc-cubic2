@@ -1,0 +1,207 @@
+\section{孤立低次特異点と標的変形}
+全ての完備近傍は、指定した三次式と平面の点を中心に取る。
+$\rho$を可逆にした後でFermat原点の完備化をそのまま用いるのではない。
+\begin{theorem}\label{mh:versal}
+\eqref{mh:criticalfamily}が滑らかな三次三様体を与え、$H$が階数五であるとする。
+核方向三次が非零なら$A_2$型、三次が零でMorse消去後の四次係数が非零なら$A_3$型である。
+いずれも十次元の三次式の標的変形はminiversal基底を含む。
+正確には、$h$を固定する相対形式座標と標的座標により、それぞれ
+\[
+ h^2=3\{q_5(y)+\eta z^3+az+b\},\qquad
+ h^2=3\{q_5(y)+\kappa z^4+az^2+bz+c\}
+\]
+と書ける。ここで$\eta,\kappa\in K^\times$、$q_5$は非退化二次形式であり、
+それらの根の添加や二次形式の分裂を仮定しない。
+\end{theorem}
+\begin{proof}
+滑らかな五変数三次式の偏微分は二次正則列なので一次係数のsyzygyはない。
+従って二十五の$w_j\partial_{w_i}F$は独立で、その補空間が十次元形式sliceを与える。
+相対Morse消去で$\sigma=q_5(y)+g(t,z)$とする。
+中央の$g$は非零な三次または四次から始まるので、定数項一の単元の根で高次項を除ける。
+標的イデアルの各小拡大で生じる誤差を、三次の場合
+$e_0+e_1z+z^2R(z)$、四次の場合$e_0+e_1z+e_2z^2+z^3R(z)$と分ける。
+低次項を係数へ吸収し、残りを$z\mapsto z-R/(3\eta)$または$z-R/(4\kappa)$で除く。
+標的極大イデアルに属する定数項の平行移動も許し、全局所位相で帰納する。
+この操作は方程式の単元倍を必要とせず、$h$を固定する。
+
+係数の微分が独立であることを示す。核ベクトルを$k$とすると、
+$xyz$および$ux_jx_k,vx_jx_k$方向の残余Jacobian商での像は、定数項一、
+および一次係数$k_{\lambda_i},k_{\mu_i}$である。
+Hesse行列が$I+O(n^2)$、高速停留解が$O(z^2)$なので、この主係数は変わらない。
+核は非零なので三次の場合は二方向が独立である。
+四次の場合、命題\ref{mh:nonisolated}から二つ以上の非零ブロック$n_j,n_k$がある。
+二次形式$q(u,v)$を選び、その偏極$B_q(n_j,n_k)\ne0$とできる。
+方向$x_iq(u,v)$は純二次の非零類$B_q(n_j,n_k)z^2$を与える。
+従って三方向が下三角に独立である。
+周囲の座標軌道方向は反対向きの平面移動で相殺され、平面関数の偏微分の線形結合となるので残余Jacobian商で零である。
+よって独立な類は十次元sliceに降り、逆関数定理により係数を標的座標の一部にできる。
+\end{proof}
+
+\begin{proposition}[非空性と四成分の一般型]\label{mh:examples}
+$\mathcal D$の一般点は$A_2$型である。
+$\overline{\mathcal C}_5$の四成分はいずれも一般点で$A_3$型である。
+\end{proposition}
+\begin{proof}
+$K=\CC((\rho))$上で、$A_2$の例は
+\[
+ Q_1=\rho I,\quad Q_2=\rho\operatorname{diag}(1,4),\quad
+ Q_3=\rho\begin{pmatrix}5&4\\4&5\end{pmatrix},\quad
+ k=(-2,1,2,-4,6,3).
+\]
+最後の行列を除く五次小行列式は$-90\rho^5$、$\Gamma(k)=-216$である。
+$\rho=0$でFermat式に還元されるため$F_Q$は幾何学的に滑らかである。
+条件は開で、定理\ref{mh:delta}の既約性から稠密である。
+この弧は原点を通るので原点完備環の通常の$\Spec$でも非空稠密開集合を与える。
+
+主成分の$A_3$の例は
+\[
+ Q_1=\rho I,\quad Q_2=\rho\begin{pmatrix}0&-1\\-1&-1\end{pmatrix},\quad
+ Q_3=\rho\begin{pmatrix}-3&1\\1&0\end{pmatrix},\quad
+ k=(1,1,1,2,2,-1).
+\]
+$H=\rho H_0$の最初の五次小行列式は$2\rho^5$、$\Gamma(k)=0$である。
+核方向の一次式を$L=x_1+x_2+2x_3$, $M=x_1+2x_2-x_3$とする。
+\[
+ p_2=\tfrac12\sum_i x_i\{(Q_i/\rho)_{11}L^2+
+ 2(Q_i/\rho)_{12}LM+(Q_i/\rho)_{22}M^2\}.
+\]
+$N=I+\rho z^2 B+O(z^3)$による二次規格化は
+\[
+ B=\begin{pmatrix}-1&-3/2&-1/2\\5/2&4&1/2\\5/2&3/2&8\end{pmatrix},
+ \qquad p_2+\sum_i x_i^2(Bx)_i=0
+\]
+であり、核上四次のHesse係数は
+\[
+ \rho^2[xyz]\sum_i\{(\partial_i p_2)(Bx)_i+x_i(Bx)_i^2\}
+ =-23\rho^2/2.
+\]
+高速補空間を最初の五座標とすると三次勾配は
+$g=(12,-12,12,-6,6)^t$、$H_{0,\mathrm{fast}}\eta=-g$の解は
+$\eta=(6,12,6,6,-6)^t$である。
+停留消去の四次寄与は$g^t\eta/(2\rho)=-36/\rho$、従って
+\[
+ \kappa=-36/\rho-23\rho^2/2\ne0.
+\]
+ここではHesse規格化の寄与と停留消去の寄与を両方含めている。
+
+第三境界成分には定理\ref{mh:four}の境界例の全$Q_i$を$\rho$倍して用いる。
+核直線では$u=z(x_1+x_2),v=0$であり、制限式は二変数三次式と$x_3^3/3$の和なのでHesse係数は恒等的に零である。
+高速三次勾配は$g=(0,0,0,6,0)^t$で、四次停留寄与は
+$-g^tJ^{-1}g/(2\rho)=9/(4\rho)\ne0$である。
+残る境界成分は添字の置換で得られる。
+全例がFermat還元を持つので滑らかである。
+小行列式チャート上で四次残余係数は正則関数で、その非消失は開であるから、各既約成分上で稠密となる。
+\end{proof}
+
+\section{cuspの正規化と導手}
+\begin{proposition}\label{mh:cusp}
+$A_2$模型の相対臨界値写像は
+\[
+ (z,t)\longmapsto(a,b,t)=(-3\eta z^2,2\eta z^3,t).
+\]
+像は$4a^3+27\eta b^2=0$であり、写像は有限正規化である。
+$S=K[[t_1,\ldots,t_8]]$, $A=S[[z^2,z^3]]\subset B=S[[z]]$とすると
+\[
+ \mathfrak c_A=(a,b),\quad \mathfrak c_AB=(z^2),\quad
+ \Omega_{B/A}=B/(z)\,dz,\quad I_9(d\pi)=(z).
+\]
+被約特異稜線の逆像は$(z^2)$、Jacobian特異スキームの逆像は$(z^3)$であり、
+横断$\delta$不変量は一である。元の$\Delta$はこの近傍で単元を除いて$z$に一致する。
+\end{proposition}
+\begin{proof}
+$h=y=0$と$\partial_z\sigma=0$から表示の写像を得る。
+$b$に関するWeierstrass剰余$f(a)+bg(a)$の像は偶数次・奇数次が相殺しないので、核は表示の関係式だけである。
+$B=A+Az$、$z=-3b/(2a)$なので有限双有理で、$B$は正則ゆえ正規化である。
+$A$は$z$の一次係数が零の級数全体である。
+$f\in A$について$fz\in A$の条件は定数項も零であることで、導手と$B/A=S\cdot z$が従う。
+$d(z^2)=d(z^3)=0$は相対微分で$z\,dz=0$を与え、
+$f\mapsto f'(0)$という$A$線形導分が逆を与える。
+写像の微分の非自明列は$(-6\eta z,6\eta z^2)^t$である。
+また$\operatorname{Hess}\sigma$の行列式は単元倍の$z$なので$\Delta$も同じイデアルを生成する。
+$(a,b)B=(z^2)$、$(a^2,b)B=(z^3)$を代入すれば最後の主張を得る。
+\end{proof}
+
+\section{swallowtailの二つの稜線}
+\begin{theorem}\label{mh:swallowtail}
+$A_3$模型で$S_7=K[[t_1,\ldots,t_7]]$とする。
+相対臨界スキームは$B=S_7[[a,z]]$であり、その標的写像は
+\[
+ b=-4\kappa z^3-2az,\qquad c=3\kappa z^4+az^2.
+\]
+その像$A$は次の既約被約判別式で定義され、$B$は有限正規化である：
+\begin{align*}
+ D_\kappa={}&256\kappa^3c^3-128\kappa^2a^2c^2+144\kappa^2ab^2c
+ -27\kappa^2b^4+16\kappa a^4c-4\kappa a^3b^2.
+\end{align*}
+$R=a+6\kappa z^2$, $S=a+2\kappa z^2$, $p=SR^2$と置けば
+\[
+ \mathfrak c_B=(SR^2),\qquad \Omega_{B/A}=B/(R)\,dz,\qquad
+ I_9(d\pi)=(R),\qquad J_{\mathrm{sing}}(A)B=(SR^3).
+\]
+導手の$A$内での生成元は$p,pz,pz^2$で、具体的には
+\[
+ p=a^3-4\kappa ac+\tfrac92\kappa b^2,\quad
+ pz=-\tfrac b2(a^2+12\kappa c),\quad
+ pz^2=\tfrac34ab^2-2a^2c+8\kappa c^2.
+\]
+元の$\Delta$は単元を除いて$R$に一致する。
+\end{theorem}
+\begin{proof}
+臨界方程式を解くと表示の写像を得る。$z$は
+$z^3+az/(2\kappa)+b/(4\kappa)=0$を満たすので、Weierstrass除法で$B$は標的上有限である。
+重根を持つ四次多項式$\kappa z^4+az^2+bz+c$は全てこの表示を持つので判別集合は既約である。
+$(a,b,c)=(0,-4\kappa,3\kappa)$では一つだけの二重根を持ち、$\partial_cD_\kappa\ne0$なので被約である。
+重み$(2,3,4)$で準斉次な既約式なので形式的にも既約であり、像の核は$(D_\kappa)$である。
+分数体では
+\[
+ z=-\frac{b(a^2+12\kappa c)}{2a^3-8\kappa ac+9\kappa b^2}.
+\]
+分母の引戻しは$2SR^2$で非零だから双有理である。
+正則な$B$が正規化となる。
+
+表示の三つの多項式恒等式から$pB\subset A$である。
+逆に導手の元$q$について$q,zq\in A$であり、$a,t$を固定すると全$A$元の$z$微分は$(R)$に入る。
+$q_z,(zq)_z\in(R)$より$q\in(R)$、$q=Rf$と書けば
+$12\kappa zf+Rf_z\in(R)$より$f\in(R)$となる。
+ここで$B/(R)$は整域である。従って$q\in(R^2)$。
+$S=0$への$A$の像は$S_7[[z^2]]$であり、$q,zq$がともに偶数級数になるには$q\equiv0\pmod S$でなければならない。
+$R,S$は相異なる素元なので$q\in(R^2)\cap(S)=(SR^2)$を得る。
+$B=A+Az+Az^2$から導手の三生成元も従う。
+
+$db=-2R\,dz$, $dc=2zR\,dz$で、$\partial_z\bmod R$が逆の導分を与えるため相対微分の表示を得る。
+微分行列の二次小行列式は$-2R,2zR,-2z^2R$であり、自由な七方向を加えて$I_9=(R)$である。
+Hessianは合同変換で移り、新しい形の行列式は単元倍の$R$なので$\Delta$も一致する。
+直接代入で
+\[
+ (D_a,D_b,D_c)B=16\kappa SR^3(z^2,z,1)
+\]
+を得て、Jacobianイデアルの式が従う。
+\end{proof}
+
+\begin{corollary}
+被約特異集合は二つの既約稜線
+\[
+ E_{\mathrm{cusp}}:(a^2+12\kappa c,\ 8a^3+27\kappa b^2),\qquad
+ E_{\mathrm{double}}:(b,\ a^2-4\kappa c)
+\]
+の和であり、それぞれの逆像イデアルは$(R^2)$と$S(a,z)$である。
+前者の正規化は$R=0$で、後者は滑らかで$S=0$から一般に二対一で覆われる。
+二稜線の被約交わりは$a=b=c=0$、スキーム論的交わりは$S_7[[a]]/(a^2)$である。
+\end{corollary}
+\begin{proof}
+前定理のJacobianイデアルから被約特異集合の記述が従う。
+$R=0$では$(a,b,c)=(-6\kappa z^2,8\kappa z^3,-3\kappa z^4)$、
+$S=0$では$(-2\kappa z^2,0,\kappa z^4)$である。
+像の環はそれぞれ$S_7[[z^2,z^3]]$と$S_7[[z^2]]$なので核も表示の通りである。
+さらに
+\[
+ a^2+12\kappa c=R^2,\quad8a^3+27\kappa b^2=4R^2(2a+3\kappa z^2),
+\]
+$b=-2zS$, $a^2-4\kappa c=S(a-6\kappa z^2)$を用いると引戻しの式を得る。
+二イデアルの和は$(b,c,a^2)$である。
+\end{proof}
+
+\paragraph{範囲.}
+以上は指定完備近傍の正規化と導手の計算であり、全Grassmannian上の臨界値像やその写像次数の分類ではない。
+六つの自由な源変数との積を取った写像そのものは有限ではない。
+$A_k$標準形は既知の特異点論であり、本稿の個別incidenceへの適用の文献上の初出は未確認である。

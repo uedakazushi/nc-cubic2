@@ -1,4 +1,4 @@
-# PDF-onlyの現行判定（2026-11-13 / v24）
+# PDF-onlyの現行判定（2026-11-13 / v25）
 
 **研究・TeX化・削除に関するCodexの恒久指示：** [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)。単純転記ではなく、証明を洗練し、重要な新しい結果の追加も目指す。以下は現行の残存PDFと削除障害の一覧であり、作業履歴のアーカイブではない。
 
@@ -6,7 +6,7 @@
 
 | 現行PDF | TeXへの移管ができた中心結果 | 残る削除障害 |
 | --- | --- | --- |
-| `papers/pdf-only/quantization/sklyanin_mixed_quantization.pdf` (195頁) | nc-cubic論文AのSklyanin中心と全混合量子化、nc-cubic2の既存境界研究への関連部分 | 全21方向の有限式・点スキーム・臨界層・A2/A3/A4/D4型退化・種数5曲線等の固有証明 |
+| `papers/pdf-only/quantization/sklyanin_mixed_quantization.pdf` (195頁) | nc-cubic論文AのSklyanin中心と全混合量子化、nc-cubic2の既存境界研究への関連部分 | §9の有限curved gauge・相対window・積/Serre traceによる全次数比較と六級数の固有証明（幾何部分は下記の独立稿へ回収） |
 
 ## 中心商特異性（旧VI、61頁）の削除判定
 
@@ -106,3 +106,10 @@ LuaLaTeXで親TeX全体を組版し、追加した数式をPDF表示で確認。
 ## 保存原則
 
 GitHub mainが正本。現行の日本語LuaLaTeX証明と必要最小限の計算ソースを保ち、生成PDF・計算状態・旧ZIPは追跡しない。固有の有用な数学を失わずに置換できた原PDFだけを追跡解除する。
+
+## 残る旧IIの回収済み部分と削除障害
+
+- §15–19の点因子・種数5曲線・shiftは `diagonal_cubic_point_geometry.tex` とその入力節へ回収済み（上の中心三次技術稿の判定も参照）。
+- §8、§9.37–50、§9.54–56の可換幾何は `marked_hesse_plane_incidence.tex` へ整理した。六次Hessian因子の絶対既約性・正規性・有理性、核上三次の四成分と次数27/6/6/6、全A2/A3点の標的versality、cusp/swallowtailの導手、A4弧・D4点・主成分の三枝と非正規性、二退化因子の積模型、非孤立点での二次jetとversalityの限界、固定源座標の六/九次分岐jetを証明付きで保持する。
+- 分岐jetの量子化への適用は、全混合可換代表の存在・二次係数・選択則を明示した入力としている。その入力の原PDF固有の証明を回収するまで、旧IIは削除不可。形式比較を有限hの圏同値へ拡張したとは主張しない。
+- `verify_marked_hesse_geometry.py`、`verify_marked_hesse_higher_strata.py`、`verify_mixed_candidate_discriminant.py` が有理数/有理関数で有限恒等式を確認する。`verify_mixed_fibre_branch_jets.py` はFLINTの厳密有理数多項式で二十五軌道方程式を次数七まで解き、六変数全体の古典/量子補正済み九次分岐式と24単項式を独立に再生成した。失われたJSONや旧コードは入力に使わない。

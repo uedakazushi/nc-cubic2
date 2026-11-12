@@ -12,6 +12,10 @@
 
 この移管単位の保存確認後、nc-cubic側の17専用重複ファイルを除外した。論文Aと一般次元の論文Bはnc-cubicに保持し、本文を変更しない。[移管全体の現在の状態](validation_reconstruction_transfer.json) と [独立成果の入力案内](papers/reconstruction_extensions/README.md) は、点スキーム単位の完了と、一次変形・相対理論・明示模型等の残件を区別する。
 
+## 標識付き平面切断の臨界幾何
+
+[現行稿](papers/marked_hesse_plane_incidence.tex) は、六次Hessian因子、A3退化の四成分、A2/A3臨界値像の導手、A4/D4の明示層、固定源係数の九次分岐式をまとめる。通常の可換幾何の証明と、量子化からの比較入力を区別する。旧II PDFの残る削除障害は [PDF_SOURCES.md](PDF_SOURCES.md) に記す。
+
 ## nc cubic threefoldの17次元モジュライ（現行の主題）
 
 - [現行草稿](papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。

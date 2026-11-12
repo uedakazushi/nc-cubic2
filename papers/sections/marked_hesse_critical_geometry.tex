@@ -1,0 +1,191 @@
+\section{平面関数と臨界条件}
+標数零で考える。$D=x_1^3+x_2^3+x_3^3$とし、巡回する$i,j,k$に対して
+\begin{equation}\label{mh:family}
+ F_{s,P,Q,T}=D/3+u^3+v^3+s x_1x_2x_3+
+ \sum_i(P_i u+Q_i v)x_jx_k+\sum_i T_i x_iuv
+\end{equation}
+を取る。$u=\ell=\sum\lambda_i x_i$, $v=m=\sum\mu_i x_i$は平面の局所座標である。
+原点に合同な三変数三次式$f$には、一意な$N\equiv I$と$\sigma$が存在して
+$f(Nx)=D/3+\sigma x_1x_2x_3$となる。
+実際、九つの行列方向の微分は$x_i^2x_j$の九単項式であり、残る$xyz$方向と合わせて全三次式の基底をなす。
+形式逆関数定理を用いれば、全Artin基底に両立する一意な規格化を得る。
+この規格化を制限式へ適用した係数を$\sigma(s,P,Q,T,\lambda,\mu)$と書く。
+$\sigma(s,P,Q,T,0,0)=s$であり、全変数の通常次数で
+\begin{equation}\label{mh:jet}
+ \sigma=s+\sum_i(P_i\lambda_i+Q_i\mu_i)
+ +6(\lambda_1\lambda_2\lambda_3+\mu_1\mu_2\mu_3)
+ +\sum_{\{i,j,k\}=\{1,2,3\}}T_k\lambda_i\mu_j+O(4).
+\end{equation}
+二次の規格化は非対角行列であり、その$sxyz$への作用に$xyz$項はないので、この三次jetは規格化後にも成立する。
+
+\begin{proposition}[内在的臨界条件]\label{mh:intrinsic}
+滑らかな平面三次曲線$E=V(f)\subset W\subset X=V(F)$に対し、平面移動による曲線の変形が零となる条件は
+\[
+ F_u|_W,F_v|_W\in (\partial f)_2.
+\]
+これは極化写像$V\to\Sym^2 W^*$の階数が三であること、
+および$0\to T_E\to T_X|_E\to N_{E/X}\simeq\mathcal O_E(1)^2\to0$の分裂と同値である。
+このとき$V=W\oplus\ker DF_W$という標準補空間を取り、
+\[
+ F=f(x)+\sum_i x_iq_i(u,v)+g(u,v)
+\]
+と書ける。特に平方線形混合項を含まない。
+\end{proposition}
+\begin{proof}
+三つの偏微分は二次式の正則列であり、Jacobian環のHilbert関数は$(1,3,3,1)$である。
+その完全対合$R_1\otimes R_2\to R_3$から、任意の一次式$a,b$に対し
+$aF_u+bF_v$がJacobianイデアルに入る条件は、表示の二つの二次類の消滅と等しい。
+これは平面切断のKodaira--Spencer写像の消滅である。
+同じ写像は法束列の連結写像であり、$T_E\simeq\mathcal O_E$とSerre双対を用いると、
+その消滅は拡張類の消滅に等しい。三つの$x$偏微分は独立なので極化の階数は少なくとも三であり、
+残る二偏微分がその像に入ることが階数三と等しい。
+核は$W$と交わらず、核方向を$u,v$に選べば$x^2u,x^2v$項が消える。
+\end{proof}
+
+以後、臨界点での三次式を
+\begin{equation}\label{mh:criticalfamily}
+ F_Q=D/3+u^3+v^3+\sum_i x_i(a_i u^2+d_iuv+c_i v^2),\qquad
+ Q_i=\begin{pmatrix}2a_i&d_i\\d_i&2c_i\end{pmatrix}
+\end{equation}
+とする。平面変数を交互順序$n=(\lambda_1,\mu_1,\lambda_2,\mu_2,\lambda_3,\mu_3)$に並べると、
+$\sigma$のHessianおよび三次項は
+\begin{equation}\label{mh:hessian}
+ H=\begin{pmatrix}0&Q_3&Q_2\\Q_3&0&Q_1\\Q_2&Q_1&0\end{pmatrix},\qquad
+ \Gamma(n)=6(\lambda_1\lambda_2\lambda_3+\mu_1\mu_2\mu_3).
+\end{equation}
+入力の平面次数が二以上なので、Hesse規格化の非線形効果は四次以上であり、これは正確な二、三次項である。
+
+\section{六次Hessian因子}
+\begin{theorem}\label{mh:delta}
+九係数空間で$\Delta=\det H$と置くと
+\[
+ \Delta=4\prod_i(4a_ic_i-d_i^2)-16\det(a,d,c)^2.
+\]
+$\mathcal D=V(\Delta)\subset\mathbb A^9$は絶対既約な正規有理八次元超曲面で、
+特異集合の次元は六である。原点での完備局所環も正規整域である。
+階数五で$\ker H=\langle(n_1,n_2,n_3)\rangle$, $n_i\in K^2$と書けば、
+$\mathcal D$が特異である条件は非零な$n_i$が高々一つであることである。
+\end{theorem}
+\begin{proof}
+対称二行行列$A,B,C$について、直接Schur補元を取ると
+\[
+ \det\begin{pmatrix}0&C&B\\C&0&A\\B&A&0\end{pmatrix}
+ =4\det A\det B\det C-
+ \det\begin{pmatrix}A_{11}&A_{12}&A_{22}\\B_{11}&B_{12}&B_{22}\\C_{11}&C_{12}&C_{22}\end{pmatrix}^{\!2}.
+\]
+$C$可逆の稠密開集合で合同変換により$C=I$とし、さらに$A$を対角化すると、
+右辺は$\det(AB+BA)$の計算に帰着する。多項式恒等式なので全体に延長する。
+$Q_i$を代入すると表示式を得る。
+
+$A=\left(\begin{smallmatrix}x&y\\y&z\end{smallmatrix}\right)$,
+$B=\left(\begin{smallmatrix}u&v\\v&w\end{smallmatrix}\right)$,
+$C=\left(\begin{smallmatrix}r&s\\s&t\end{smallmatrix}\right)$とする。
+上式を$R=\CC[x,y,z,u,v,w]$上の$r,s,t$に関する二次式と見る。
+$r^2,t^2$係数はそれぞれ$-(yw-zv)^2,-(xv-yu)^2$であり、二つの一次原始既約式は非同伴なので二次式は原始的である。
+$A=I,B=\operatorname{diag}(1,2)$で二次式は$8rt-9s^2$となり、その行列式は$144$である。
+従って$\operatorname{Frac}R$の代数閉包上でも階数三で、一次式二つの積にはならない。
+Gaussの補題から絶対既約性を得る。
+
+$A$可逆の開集合では$\operatorname{rank}H=4+\operatorname{rank}(CA^{-1}B+BA^{-1}C)$。
+$A=I$に帰着し、$B=\left(\begin{smallmatrix}x&y\\y&z\end{smallmatrix}\right)$に対する
+$C\mapsto BC+CB$の行列は
+\[
+ \begin{pmatrix}2x&2y&0\\y&x+z&y\\0&2y&2z\end{pmatrix},\qquad
+ \det=4(xz-y^2)(x+z).
+\]
+その階数が一以下なら二次小行列式から$B=0$となる。
+よって階数三、二、零の層で$H$の階数四以下の集合の次元はいずれも高々六である。
+三行列とも特異な補集合も次元高々六である。
+階数五では$\operatorname{adj}H=\kappa kk^t$なので、$Q_i$方向の微分は
+$2\kappa n_j^t(\delta Q_i)n_k$である。
+任意の対称行列$S$について$e^tSf=0$となるのは$e=0$または$f=0$の場合だけであり、特異条件を得る。
+例えば$n_1\ne0,n_2=n_3=0$なら$Q_2n_1=Q_3n_1=0$であり、
+核直線の一次元、$Q_1$の三次元、$Q_2,Q_3$それぞれの一次元を足して六次元以下である。
+一方$Q_1=0$の六次元空間は階数四以下なので全体が特異である。
+従って特異集合の次元は正確に六であり、整超曲面の$(S_2)$と余次元二以上の特異集合から$(R_1)$を得て正規性が従う。
+$\Delta$は斉次既約なので完備環の随伴次数環も$\CC[Q]/(\Delta)$という整域である。
+分離的フィルトレーションから完備環も整域であり、excellent正規局所環の完備化の正規性を用いる。
+
+有理性には核incidenceを用いる。$[k]\in\PP^5$に対する
+$L_k:\Sym^2(K^2)^{\oplus3}\to K^6$, $Q\mapsto H(Q)k$の全射開集合上で、
+incidenceは階数三のベクトル束である。
+\[
+ k=(1,0,0,1,1,1)^t,\quad
+ Q_1=\begin{pmatrix}1&1\\1&-1\end{pmatrix},\quad
+ Q_2=\begin{pmatrix}-1&1\\1&2\end{pmatrix},\quad
+ Q_3=\begin{pmatrix}-2&0\\0&-3\end{pmatrix}
+\]
+では$L_k$の列$1,2,3,4,5,8$の行列式は$2$、$H$の第一行列を除く小行列式は$-12$である。
+階数五の上では核直線が一意なので、この有理八次元束は$\mathcal D$と双有理である。
+\end{proof}
+
+\section{核上三次の四成分}
+この節の行列成分は$Q_i=\left(\begin{smallmatrix}A_i&B_i\\B_i&C_i\end{smallmatrix}\right)$と記す。
+$\mathcal D_5=\{\Delta=0,\operatorname{rank}H=5\}$上で
+$\Gamma|_{\ker H}=0$の零スキームを$\mathcal C_5$、そのスキーム論的閉包を$\overline{\mathcal C}_5$とする。
+\begin{theorem}\label{mh:four}
+$\overline{\mathcal C}_5$は被約純七次元で、ちょうど四つの有理的既約成分
+$M,E_1,E_2,E_3$を持つ。$T=\det(A,B,C)$と置くと
+\[
+ E_i=V(\det Q_i,T),\qquad
+ \deg\PP(M)=27,\quad\deg\PP(E_i)=6.
+\]
+$M$は三ブロック全て非零な核を持つ部分の閉包である。
+随伴行列の第$j$列を$v_j$とすると全閉包の有限イデアル表示は
+\[
+ (\Delta,\Gamma(v_1),\ldots,\Gamma(v_6)):I_5(H)^\infty.
+\]
+\end{theorem}
+\begin{proof}
+核incidenceの階数をまず全て数える。非零ブロックが三つなら$\operatorname{rank}L_k=6$、
+二つで独立なら五、二つで比例なら四、一つなら四であり、対応する射影基底の次元は$5,3,2,1$である。
+例えば独立な二ブロックを$e_1,e_2$、第三を$(r,s)$にした六方程式では、六次小行列式に$-2r,-2s$が現れる。
+三つとも比例する場合は$n_i=t_ie_1$とすれば二組の三次行列式が$2t_1t_2t_3$である。
+ただしこのとき全ての$Q_i e_1=0$で$H$の階数は三以下である。
+二つで独立かつ第三零なら$Q_3=0$となり$H$の階数は四以下である。
+残る場合の核条件は$Q_3n=0,t_1Q_2n+t_2Q_1n=0$、
+または$Q_2n_1=Q_3n_1=0$であり、表示の階数が従う。
+
+$X=V(\lambda_1\lambda_2\lambda_3+\mu_1\mu_2\mu_3)\subset\PP^5$は原始一次式として既約であり、
+$\lambda_1\lambda_2\ne0$上で有理的である。特異集合は$\lambda_i$座標点と$\mu_j$座標点を結ぶ九本の直線である。
+従って正規で、三ブロック非零の開集合$U$上では滑らかである。
+$X\cap U$上の階数三束は七次元の有理的主成分を与える。
+核の一ブロックが零で他の二つが比例する各場合は、二次元の有理的基底上の階数五束を与え、七次元成分となる。
+一ブロックのみ非零の部分は六次元以下である。
+$\mathcal D_5$はCohen--Macaulayで、$\Gamma$は零でない切断なのでその零スキームは純七次元である。
+従って以上で成分を尽くす。
+
+例えば$Q_3$階数一なら合同変換で$Q_3=\operatorname{diag}(0,e)$とでき、
+$T=e(A_1B_2-B_1A_2)$である。これから$V(\det Q_3,T)$の$Q_3\ne0$部分は既約で一般点被約、
+$Q_3=0$部分は六次元である。二、三次式の完全交差なので埋込み成分はなく、全体が整で第三境界成分に一致する。
+他も同様である。
+主成分では滑らかな$X\cap U$により一般点の重複度は一である。
+境界では
+\[
+ Q_1=\begin{pmatrix}1&1\\1&2\end{pmatrix},\quad
+ Q_2=\begin{pmatrix}-1&-1\\-1&3\end{pmatrix},\quad
+ Q_3=\begin{pmatrix}0&0\\0&1\end{pmatrix},\quad k=(1,0,1,0,0,0)
+\]
+を用いる。第一行列を除く小行列$J$は$\det J=-8$、$(J^{-1})_{\lambda_3,\lambda_3}=-1/8$。
+$\delta A_1=1$は$T_Q\mathcal D$に属し、正規化した核の微分は$\delta\lambda_3=1/8$、
+従って$d\Gamma=3/4\ne0$である。Cohen--Macaulay性から全体が被約である。
+階数五チャート上では随伴行列の列が核の生成元を張るため、飽和イデアルの式も従う。
+
+次数は$\PP^8_Q\times\PP^5_k$上の六本の双次数$(1,1)$方程式$Hk=0$で計算する。
+上の階数表からincidenceは純七次元の整完全交差であり、その類は$(A+B)^6$である。
+$\Gamma=0$との交差を$Q$側に押すと$3B(A+B)^6$の$B^5$係数は$45A^2$である。
+階数四以下に写る部分は像の射影次元が五以下なので寄与しない。
+三境界成分はそれぞれ次数六、各成分の写像次数・重複度は一なので、主成分は$45-18=27$となる。
+\end{proof}
+
+\begin{proposition}[一ブロック核の非孤立極限]\label{mh:nonisolated}
+階数五で核が$(n,0,0)$なら、平面関数は形式右同値で$\sigma=q_5(y)$となる。
+従って$h^2=3\sigma$のファイバーは五次元通常二重点と形式直線の積であり、
+$T^1=K[[z]]$である。
+\end{proposition}
+\begin{proof}
+$Q_2n=Q_3n=0$である。$u=z\lambda x_1,v=z\mu x_1$への制限は
+$c(z)x_1^3+(x_2^3+x_3^3)/3$、$c(0)=1/3$となる。
+対角規格化でHesse係数は恒等的に零であり、二つの正規偏微分も$x_1^2$の倍数なので全平面微分が零である。
+高速五方向の停留解は一意なのでこの曲線に一致する。形式Morse分裂により残余関数は厳密に零である。
+\end{proof}

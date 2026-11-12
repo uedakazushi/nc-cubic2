@@ -1,0 +1,124 @@
+\section{固定源座標の分岐jetと形式型}
+本節は全混合可換代表の次の入力を明示して用いる。
+対角平方線形項を除き、$e_i=p_iu+q_iv$、$m_i=a_iu^2+d_iuv+c_iv^2$とする。
+$h$の偶級数である純曲率代表が、$F_0=D/3+u^3+v^3$に
+\[
+ \frac{h^2}3xyz+\sum_i e_ix_jx_k+\sum_i m_ix_i
+ -\frac{h^2}{12}\sum_i e_i^2x_i+\frac{h^2}4e_1e_2e_3
+\]
+を加えた式に$h^3$を法として一致すると仮定する。
+さらに全次数の代表の追加係数が
+\begin{gather*}
+ b-1,\gamma-1=O(h^6),\qquad U_e=-h^2/12+O(h^8),\\
+ S_e=h^2/4+O(h^8),\qquad V_e,T_e=O(h^4),\qquad R_e=O(h^6).
+\end{gather*}
+という選択則を持つものとする。
+これらは形式量子化からの比較の入力であって、通常の三次式の軌道計算だけからは従わない。
+以下では、この入力を持つ任意の代表に対する幾何学的帰結を証明する。
+
+\begin{theorem}\label{mh:fibre}
+canonical Fermat sliceの九混合座標を零にして$(p,q,d)$を消去すると、一意な分岐式
+$h^2=\Phi(a,c)$を得る。その三、六、九次項は
+\begin{align*}
+ \Phi&=\frac23(P_a+P_c)+\frac2{27}R_6+\Phi_9+O((a,c)^{12}),\\
+ \Phi_9&=-\frac2{243}(P_aE_a+P_cE_c)-\frac4{243}(P_aE_c+P_cE_a)
+       +\frac4{243}(P_a+P_c)J_6,
+\end{align*}
+ただし
+\[
+ P_a=\prod_i a_i,\quad E_a=\sum_{i<j}a_i^3a_j^3,\quad
+ J_6=\sum_{i\ne j}a_i^2c_i a_jc_j^2,\quad
+ R_6=\sum_i a_i^2c_i^2(a_jc_k+a_kc_j)
+\]
+で、$P_c,E_c$も同様である。
+有限対角群の指標条件を持つ場合、$h$を固定した接写像恒等の形式座標で
+\[
+ \CC[[h,A,C]]/\bigl(h^2-\tfrac23(A_1A_2A_3+C_1C_2C_3)\bigr)
+\]
+となる。元の源係数での六、九次項は一般に零ではない。
+\end{theorem}
+\begin{proof}
+原点で九混合係数から九slice座標への微分は恒等なので、形式逆関数定理で一意に消去できる。
+$h$の偶性から残る式は$t=h^2$の級数で、$\partial_tS(0)=1/3$である。
+従って$S=\text{単元}\,(t-\Phi)$と一意に書ける。
+$u\mapsto u-A/3,v\mapsto v-C/3$、$A=\sum a_ix_i,C=\sum c_ix_i$を用いると
+$p_i=2a_ja_k/3+O(3),q_i=2c_jc_k/3+O(3),d_i=O(3)$、
+$S=t/3-2(P_a+P_c)/9+O(4)$を得る。
+
+古典軌道の計算を源係数を固定して行う。
+$z=(x_1,x_2,x_3,u,v)$、$\kappa=(1/3,1/3,1/3,1,1)$とし、
+$F_0(Mz)$の二十五の非squarefree係数を
+$H=F_0+u^2\sum a_ix_i+v^2\sum c_ix_i$に一致させる。
+$M\equiv I$は一意で、次数$n$の増分は
+\[
+ (\delta M_{ij})_n=-\frac1{3\kappa_i}[z_i^2z_j](F_0(M_{<n}z)-H)_n.
+\]
+この再帰は係数パラメータで割らない。古典分岐式は
+$\Phi^{\rm cl}=18\sum_{r=1}^5\kappa_rM_{r1}M_{r2}M_{r3}$である。
+必要な行列成分は
+\begin{align*}
+ M_{ii}&=1-(a_i^3+c_i^3)/27+O(6),\\
+ M_{ij}&=-(a_i^2a_j+c_i^2c_j)/9+N_{ij}+O(8)\quad(i\ne j),\\
+ N_{ij}&=\{4(a_i^5a_j+c_i^5c_j)-2(a_i^2a_jc_i^3+a_i^3c_i^2c_j)
+                    -6a_ia_j^2c_ic_j^2\}/243,\\
+ M_{ui}&=a_i/3-a_i^4/27+
+ \{7a_i^7+a_i\sum_{j\ne i}a_j^6-3a_i^4c_i^3+3c_i\sum_{j\ne i}a_j^4c_j^2\}/729+O(8),
+\end{align*}
+$v$行は$a,c$を交換した式である。
+表示の再帰を次数七まで代入して得られ、全二十五方程式の残差は七次以下で零である。
+$x$行の$xyz$係数は次数$3+3+3$または$0+3+6$、
+$u,v$行では$1+1+7$または$1+4+4$から生じる。
+八次以上の未知行列成分はそれぞれ次数十一、十以上にしか寄与しない。
+代入して
+\[
+ \Phi^{\rm cl}=\frac23(P_a+P_c)+\frac2{27}R_6+
+ \frac2{243}(P_aE_a+P_cE_c)+\frac4{243}(P_a+P_c)J_6+O(10)
+\]
+を得る。この有限多項式計算は、入力行列を使わない現行検証器でも再生成する。
+
+実際の代表で$\operatorname{ord}t\ge3,\operatorname{ord}(p,q)\ge2,\operatorname{ord}d\ge3$を用いる。
+純$u,v$三次補正は九次以上なので、一意な$\GL_2$正規化$I+O(9)$で除ける。
+それが$a,c$へ与える変化は十次以上、$p,q$へは十一次以上である。
+九次分岐式へ影響する量子項は$-t\sum e_i^2x_i/12$だけであり、有効係数は
+\[
+ \widetilde a_i=a_i-tp_i^2/12+O(10),\quad
+ \widetilde c_i=c_i-tq_i^2/12+O(10),\quad
+ \widetilde d_i=d_i-tp_iq_i/6+O(10).
+\]
+従って$t=\Phi^{\rm cl}(\widetilde a,\widetilde c)$である。
+七次係数増分は$\delta a_i=-t_3a_j^2a_k^2/27$、同じ$c$式となるので
+三次項のTaylor一次効果は$-4(P_a+P_c)(E_a+E_c)/243$である。
+これを古典九次項へ加えると表示式を得る。
+
+対角群$\lambda_i^3=\eta^3=\theta^3=1$、$\Lambda=\prod\lambda_i$に対して
+$a_i\mapsto\lambda_i^{-1}\eta a_i,c_i\mapsto\lambda_i^{-1}\theta c_i$、
+$\Phi\mapsto\Lambda^{-1}\Phi$という指標を持つとする。
+単項式$a^Ac^C$は$A_i+C_i\equiv1\pmod3$、$\sum A_i\equiv\sum C_i\equiv0\pmod3$を満たす。
+従って全次数は三の倍数で、四、五、七、八、十、十一次はない。
+また全ての添字がsupportに現れ、二群への配分の鳩ノ巣原理から
+各単項式は$a_ia_j$または$c_ic_j$で割れる。
+これは$f_3=2(P_a+P_c)/3$のJacobianイデアルである。
+次数$N$の誤差を$V_N(f_3)$と書き、有限群で平均した不変な次数$N-2$ベクトル場を選ぶ。
+$z\mapsto z-V_N(z)$で誤差を除き、次数順に反復する。
+最初の修正は四次であり、各有限jetは有限回で安定する。
+これが$h$を固定する同変形式右同値を与える。
+\end{proof}
+
+\begin{corollary}
+最初の座標修正は
+$\delta a_k=-C_k\sum_{i\ne k}A_iC_i^2/18$、
+$\delta c_k=-A_k\sum_{i\ne k}C_iA_i^2/18$と取れ、六次項を消す。
+形式ファイバーは正規六次元整域で、接空間次元七、重複度二。
+特異スキームは
+\[
+ (h,A_1A_2,A_1A_3,A_2A_3,C_1C_2,C_1C_3,C_2C_3)
+\]
+という被約な九座標二次元平面の和であり、一般横断型は四次元通常二重点である。
+\end{corollary}
+\begin{proof}
+$df_3(\delta a,\delta c)=-2R_6/27$を展開すれば修正の式を得る。
+$f_3$は位数三なので正規環$\CC[[A,C]]$の分数体でも平方でなく、二重被覆は整域である。
+偏微分の表示イデアルは九平面の素イデアルの共通部分であり、特異集合の余次元は四である。
+超曲面の$(S_2)$と$(R_1)$から正規性を得る。
+一般点では$A_i,C_j$が単元なので、横断方程式は$h$と残る四変数の非退化二次形式である。
+\end{proof}

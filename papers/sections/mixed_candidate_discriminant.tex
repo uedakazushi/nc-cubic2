@@ -1,0 +1,69 @@
+\section{一混合Hesse三次式の完全resultant}
+この節は形式比較から独立した三次式の幾何である。
+\[
+ F_{c,\kappa,\alpha}=(x^3+y^3+z^3)/3+cxyz+
+ \kappa(\alpha uvx+u^3+v^3),\qquad d=1+c^3
+\]
+と置く。gradient resultantは$\operatorname{Res}(x^2,y^2,z^2,u^2,v^2)=1$で正規化する。
+\begin{theorem}
+全パラメータで多項式恒等式
+\[
+ \operatorname{Res}(F_x,F_y,F_z,F_u,F_v)
+ =3^8\kappa^{32}d^3(\kappa\alpha^3+9)^3(\kappa\alpha^3+9d)^9
+\]
+が成立する。
+$c\kappa d\ne0$なら特異条件は$(\kappa\alpha^3+9)(\kappa\alpha^3+9d)=0$であり、
+前者は三つ、後者は九つの通常二重点を与える。
+$c=0,\kappa\ne0$では二因子が一致して重複度十二となり、三特異点の局所型は
+$p^2+q^2+y^3+z^3$である。
+\end{theorem}
+\begin{proof}
+$\kappa d\ne0$の開集合でまず計算する。
+$x=0$上では$F_y=F_z=0$から$y=z=0$、$F_u=F_v=0$から$u=v=0$なので射影的特異点はない。
+$x=1$の勾配式は
+\[
+ y^2+cz=z^2+cy=0,\quad u^2+\alpha v/3=v^2+\alpha u/3=0,\quad
+ 1+cyz+\kappa\alpha uv=0.
+\]
+最初の対は$(0,0)$または$(-c\omega,-c\omega^2)$、$\omega^3=1$、
+次の対は$(0,0)$または$(-\alpha\eta/3,-\alpha\eta^2/3)$、$\eta^3=1$である。
+従って最後の式は二種類の因子を与え、点数はそれぞれ三、九となる。
+四変数Hessianは二ブロック
+\[
+ \begin{pmatrix}2y&c\\c&2z\end{pmatrix},\qquad
+ \kappa\begin{pmatrix}6u&\alpha\\\alpha&6v\end{pmatrix}
+\]
+に分かれ、その行列式はそれぞれ全体として$-3c^2\kappa^2\alpha^2$、
+$9c^2\kappa^2\alpha^2$である。よって全点が通常二重点である。
+
+定数と重複度をnormで決める。
+$K[r,s]/(r^2+ts,s^2+tr)$の基底$(1,r,s,rs)$で$M_t=$乗法$\,rs$の行列は
+\[
+ M_t=\begin{pmatrix}0&0&0&0\\0&t^2&0&0\\0&0&t^2&0\\1&0&0&t^2\end{pmatrix}.
+\]
+従って上の四二次式による十六次元商上で$F_x$のnormは
+\[
+ \det(I_{16}+cM_c\otimes I_4+\kappa\alpha I_4\otimes M_{\alpha/3})
+ =d^3(1+\kappa\alpha^3/9)^3(d+\kappa\alpha^3/9)^9.
+\]
+無限遠の先頭四式のresultantは$(3\kappa)^{16}$であり、
+Poisson積公式で次数二の$F_x$を加えるとその平方が掛かる。
+分母$9^{12}$を整理して$3^8$を得る。
+稠密開集合の計算は全パラメータの多項式恒等式へ延長する。
+$c=0$では三つの$(u,v)$点でそのHessianは非退化で、$y,z$は独立三乗項のままなので表示の局所型となる。
+$\kappa=0$なら頂点$\PP^1$を持つcone、$d=0$なら$u=v=0$上に三つの特異点が残ることも式から分かる。
+\end{proof}
+
+\begin{corollary}
+$c=h^2/3,d=1+h^6/27,\kappa=d$とした候補式は
+\[
+ D/3+h^2xyz/3+d(\alpha uvx+u^3+v^3)
+\]
+であり、そのresultantは
+$3^8d^{44}(d\alpha^3+9)^3(\alpha^3+9)^9$である。
+$d\ne0$なら特異条件は
+$(\alpha^3+9)((27+h^6)\alpha^3+243)=0$となる。
+形式的には$b(h)^3=d,b(0)=1$により$u,v$を$b^{-1}$倍すれば
+$D/3+h^2xyz/3+u^3+v^3+\alpha b(h)uvx$に移る。
+この座標恒等式だけから有限$h$での圏同値や比較核の代数化は従わない。
+\end{corollary}

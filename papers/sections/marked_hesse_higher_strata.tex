@@ -1,0 +1,170 @@
+\section{四次残余の消失弧とA4}
+\begin{theorem}\label{mh:a4}
+滑らかな三次三様体の標識付き平面incidenceに、六次元$A_4$ファイバーの非空層がある。
+$K=\CC((\tau))$, $\rho=\tau^2$とし、
+\begin{align*}
+ Q_1&=\rho\begin{pmatrix}(17-3q)/20&-3(q+1)/10\\-3(q+1)/10&(2-3q)/5\end{pmatrix},\\
+ Q_2&=\rho\begin{pmatrix}(q+1)/4&(q-1)/2\\(q-1)/2&q\end{pmatrix},\qquad
+ Q_3=\rho\begin{pmatrix}-3&1\\1&0\end{pmatrix}.
+\end{align*}
+と取る。$v_0^2=-952/1215$の一方を選び、
+\[
+ -405v(s)^2-952/3-190s v(s)+228s^2v(s)^2+144s^3v(s)^3=0,
+ \quad v(0)=v_0,\quad q=5/3+\tau^3v(\tau^3)
+\]
+で形式弧を定める。この点の十次元標的近傍は、$h$を固定して
+\[
+ h^2=3\{q_5(y)+\kappa z^5+a_3z^3+a_2z^2+a_1z+a_0\},\qquad
+ \kappa=\rho\frac{135(3q-1)}{2(4q-1)}\ne0
+\]
+となり、四つの係数は独立な標的座標である。
+\end{theorem}
+\begin{proof}
+$H=\rho H_0(q)$の核は$k=(1,1,1,2,2,-1)$、最初の五次小行列式は
+$D_q/10$、$D_q=(3q-1)(4q-1)$である。
+$\Gamma(k)=0$であり、高速三次勾配は$g=(12,-12,12,-6,6)^t$。
+$\eta=-H_{0,\mathrm{fast}}^{-1}g$を取ると
+\begin{align*}
+ B_4&=g^t\eta/2=-45(3q-5)^2/(4D_q),\\
+ B_5&=\eta^t\Gamma''_{\mathrm{fast}}(k)\eta/2
+ =-135(3q-5)^2(165q^2-54q-59)/(8D_q^2).
+\end{align*}
+これらは停留消去に由来する寄与である。Hesse規格化の寄与も計算する。
+$L=x_1+x_2+2x_3,M=x_1+2x_2-x_3$、
+$p_2=\tfrac12\sum x_i\{(Q_i/\rho)_{11}L^2+2(Q_i/\rho)_{12}LM+(Q_i/\rho)_{22}M^2\}$、
+$p_3=L^3+M^3$とし、$N(p)_{ij}=-[x_i^2x_j]p$と置く。
+$A=N(p_2)x,B=N(p_3)x$から
+\begin{align*}
+ C_4&=[xyz]\sum_i\{(\partial_i p_2)A_i+x_iA_i^2\}=(6q-17)/2,\\
+ C_5&=[xyz]\sum_i\{(\partial_i p_2)B_i+(\partial_i p_3)A_i+2x_iA_iB_i\}
+ =3(39q+175)/4.
+\end{align*}
+一般の核変数で定義した$C_4$の$(\eta,0)$方向微分は
+$3(261q^3-2073q^2+605q+459)/(2D_q)$である。
+従って$G_5=dC_4(k)[(\eta,0)]+C_5
+=3(990q^3-2319q^2+24q+1093)/(4D_q)$。
+停留解の三次補正の五次寄与は$(H_{0,\mathrm{fast}}\eta+g)^t\xi=0$なので、
+残余四、五次は正確に
+\[
+ \kappa_4=\rho^{-1}B_4+\rho^2C_4,\qquad
+ \kappa_5=\rho^{-2}B_5+\rho G_5
+\]
+となる。$\kappa_4=0$に上の弧を代入して$\tau^6$で割ると表示の$v$方程式を得る。
+$v$微分は$-810v_0\ne0$なので形式陰関数定理が適用でき、$v=v_0-19s/81+O(s^2)$となる。
+有理恒等式
+\[
+ B_4\left(G_5-\frac{135(3q-1)}{2(4q-1)}\right)-C_4B_5=0
+\]
+と$B_4=-\rho^3C_4$から$\kappa_5=\kappa=(810/17)\tau^2+O(\tau^5)\ne0$を得る。
+全$Q_i$は$\tau^2$で割れるので三次式はFermat還元を持ち、一般ファイバーは幾何学的に滑らかである。
+五変数Morse分裂と定数項一の単元の五乗根で中央関数を$\kappa z^5$にする。
+残余Jacobian商$K[[z]]/(z^4)$において、標的方向$xyz,ux_2x_3,x_1uv,u^3$の先頭類は
+$1,z,3z^2,12z^3$であり、行列式は$36$である。
+軌道方向は平面移動で相殺されるので十次元sliceに降りる。
+定理\ref{mh:versal}と同じ小拡大帰納で四係数を吸収して正規形を得る。
+\end{proof}
+
+\begin{corollary}
+上の二パラメータ族では$\rho D_q\ne0,\kappa_4=0$なら常に$\kappa_5\ne0$であり、$A_5$点はない。
+これは九係数族全体の$A_5$不存在を意味しない。
+$A_4$近傍の臨界値写像は
+\[
+ a_1=-5\kappa z^4-3a_3z^2-2a_2z,\qquad
+ a_0=4\kappa z^5+2a_3z^3+a_2z^2
+\]
+であり、五次多項式の判別式で定義される像の有限正規化である。
+三次以下の残余が消える層は$a_3=-10\kappa z^2,a_2=20\kappa z^3$。
+この七次元空間では$z=0$が$A_4$層、$z\ne0$は$A_3$層である。
+\end{corollary}
+\begin{proof}
+$C_4=0$の$q=17/6$では$B_4\ne0$なので、四次消失上で$C_4$は非零である。
+前証明の恒等式から五次は表示の非零式となる。
+臨界値写像の式は$g=g'=0$を解けばよい。
+$z$はmonic四次関係を満たすので有限であり、一般に一つの二重根を持つ多項式の重根指定なので双有理である。
+判別式は既約被約で重み$(2,3,4,5)$の準斉次式であり、形式的にも既約である。
+被約性は例えば$(a_3,a_2,a_1,a_0)=(0,0,-5\kappa,4\kappa)$で
+$\partial_{a_0}\operatorname{Disc}=800000\kappa^7\ne0$からも確認できる。
+$g''=g'''=0$を解いて層の式を得る。
+そこで$g''''=120\kappa z,g'''''=120\kappa$であるから最後の主張が従う。
+\end{proof}
+
+\section{D4点、二次錐、主成分の非正規性}
+\begin{theorem}\label{mh:d4}
+$K=\CC((\rho))$上で$Q_1=\rho I,Q_2=\rho\operatorname{diag}(1,-1),
+Q_3=\rho\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$とすると、
+三次三様体は滑らかで、平面incidenceは$D_4$ファイバーを持つ。
+$h$を固定した標的・相対形式座標で
+\[
+ h^2=3\{\rho(y_1y_4+y_2y_3)+6st(s-t)+\alpha st+\beta s+\gamma t+\delta\}
+\]
+となり、四係数は独立な標的座標で、他に六つの自由な標的座標がある。
+臨界源は$K[[\alpha,s,t,\tau_1,\ldots,\tau_6]]$で、写像は
+\begin{align*}
+ \beta&=-12st+6t^2-\alpha t,&
+ \gamma&=-6s^2+12st-\alpha s,&
+ \delta&=12st(s-t)+\alpha st.
+\end{align*}
+この近傍で$(\Delta)=I_9(d\pi)=(R)$、
+$R=(\alpha+12(s-t))^2+144st$である。
+従って六次退化因子は通常二次曲面錐と六次元円板の積で、特異スキームは$(\alpha,s,t)$である。
+\end{theorem}
+\begin{proof}
+$H$の核は$n(s,t)=(s,t,-s,t,-t,-s)$で、最初の四座標上のHessianは
+$\rho\left(\begin{smallmatrix}0&0&0&1\\0&0&1&0\\0&1&0&0\\1&0&0&0\end{smallmatrix}\right)$、行列式$\rho^4$である。
+核上三次は$f_3=6st(s-t)$で、判別式$1296$を持つ。
+Jacobian商は$K\langle1,s,t,st\rangle$、$s^2=t^2=2st$、$(s,t)^3=0$である。
+従って四次以上の各誤差は、次数を二つ下げた係数を持つ二偏微分の線形結合となる。
+Morse分裂後にこの誤差を次数順に除けば中央関数は$f_3$へ右同値となる。
+$u=s-t,v=s+t$で$f_3=3u(v^2-u^2)/2$だから幾何学的に$D_4$型である。
+Fermat還元から周囲三様体も滑らかである。
+
+高速停留解の二次項は$(6st/\rho)(1,1,1,-1)$である。
+核上の$L=sx_1-sx_2-tx_3,M=tx_1+tx_2-sx_3$に対し
+$p_2=x_1(L^2+M^2)/2+x_2(L^2-M^2)/2+x_3LM$と置く。
+二次規格化行列$B_2$の跡は$-(s^2+st)$である。
+標的方向$xyz,ux_2x_3,vx_2x_3,x_2uv$の残余商での列は、基底$(1,s,t,st)$について
+\[
+ \begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\-3\rho&6/\rho&6/\rho&-4\end{pmatrix}
+\]
+となり、行列式$-4$で全射である。
+軌道方向を除いた十次元sliceにも降りるので、小拡大で誤差を
+$e_0+e_1s+e_2t+e_3st+A\partial_sf_3+B\partial_tf_3$へ分ける帰納が正規形を与える。
+全過程で$h$を変えず、方程式の単元倍を用いない。
+
+$g=g_s=g_t=0$を解くと表示の臨界値写像を得る。
+残余Hessianは
+$\left(\begin{smallmatrix}12t&12(s-t)+\alpha\\12(s-t)+\alpha&-12s\end{smallmatrix}\right)$で行列式$-R$。
+$d\delta=-s\,d\beta-t\,d\gamma-st\,d\alpha$から微分の最大小行列式も$R$で生成される。
+四つの高速方向の行列式は単元なので元の$\Delta$も同じイデアルを与える。
+$A=\alpha+12(s-t)$と置くと$R=A^2+144st$であり、Jacobianイデアルは$(A,s,t)$である。
+\end{proof}
+
+\begin{proposition}
+この近傍の$A_3$層の被約閉包は三直線
+\[
+ s=0,\ \alpha=12t;\qquad t=0,\ \alpha=-12s;\qquad
+ s=-t,\ \alpha=12t
+\]
+と六次元円板の積である。頂点以外は全て$A_3$型で$A_4$点を持たない。
+三枝は全て大域的主成分$M$に属し、三つの境界成分ではない。
+$S=K[[\tau_1,\ldots,\tau_6]]$とすると主成分の被約完備局所環は
+\[
+ A_M=S[[X,Y,Z]]/(XY,XZ,YZ),\quad
+ X=s+\alpha/12,\ Y=t-\alpha/12,\ Z=t-s-\alpha/12.
+\]
+正規化は$\bar A_M=S[[X]]\times S[[Y]]\times S[[Z]]$、導手は$(X,Y,Z)$、
+$\bar A_M/A_M\simeq S^2$である。従って$M$はこの$D_4$層に沿って非正規で、横断$\delta$不変量は二である。
+\end{proposition}
+\begin{proof}
+二次錐の頂点外で残余Hessianの階数は一である。
+核上$f_3$の消失は核が$(0,1),(1,0),(1,1)$のいずれかとなることなので三直線を得る。
+第一の$(s,t,\alpha)=(0,u,12u)$では平行移動後の関数は
+$6(u+z)x^2-6xz^2$であり、停留消去後$-3z^4/(2(u+z))$となる。
+第二では$3z^4/(2(u+z))$、第三では$-3z^4/(2(u+z))$となるから全て四次残余非零である。
+元の$Q_i$は全て可逆なので、$\det Q_i=0$に含まれる境界成分はこの近傍を通らない。
+表示の可逆線形変換は三直線を座標三軸へ移す。
+有限型の被約環の完備化はexcellent性により被約なので、これが主成分の完備局所環である。
+積環への像は三つの定数項が一致する組であり、成分冪等元の添加は整である。
+各成分が正規なので表示の積環が有限正規化となる。
+二つの定数項の差が正規化商を$S^2$へ同定し、冪等元を掛けても像に戻る条件は共通定数項が零であることなので導手を得る。
+\end{proof}
