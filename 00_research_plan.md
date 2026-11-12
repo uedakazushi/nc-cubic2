@@ -1,5 +1,7 @@
 # 研究方針：独立境界・モジュライ研究
 
+> **nc-cubic2の現行最優先は、残る5本のpdf-only研究原稿から数学的に重要な定理・証明を回収し、必要に応じて新しい結果・概念的証明・一般化・応用を加え、公表価値の高い現行論文を完成させてからGit追跡PDFを解除すること。** 単純なPDF→TeX転記や削除本数の最大化ではない。Codexの具体的な研究指示、優先順位の変更基準、検証と削除のゲートは [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md) に記した。
+
 ## nc cubic threefoldの17次元モジュライ（現行の主題）
 
 - [現行草稿](papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。
@@ -10,7 +12,7 @@
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 - **可換点の全Artin形式局所構造をTeX化**：`papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。ただし有限位数境界と非可換Bertiniに依存する正則な四次元開集合の存在は独立再監査前なので条件付き。原PDFの全係数Hesse中心元・有限証明書・周囲37次元成分の細部は未完全照合で保持する。
 
-**2026-11-12 / v29。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v30。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -64,7 +66,7 @@ embedded componentの長さの解明。
 
 ## 目的と優先順位
 
-本リポジトリは `nc-cubic` のPoisson構造・量子化・ambient復元・可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。研究全体の当面の最優先は**主リポジトリの可換復元**であり、この分離作業のためにそのSM証明を遅らせない。
+本リポジトリは `nc-cubic` のPoisson構造・量子化・ambient復元・可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。**本リポジトリのCodex作業の最優先はPDF-onlyの数学的発展・現行TeX統合と、証明を失わない追跡解除**である。主リポジトリ `nc-cubic` の可換復元（特にSM証明）は独立の優先研究として尊重し、その証明を壊したり不用意に移転・重複収録したりしない。
 
 本体：`papers/pfaffian_brill_noether_technical.tex` の79節を形式変形・Brill–Noether境界・低次/高次接触計算・検証範囲の5節ファイルへ、証明本文を失わずに分割した。独立した完成度・新規性はまだ外部査読していない。旧版別5節の計算履歴を現行の検証範囲・再現不能箇所の1節へ整理し、本文の主定理・証明は保持する。旧検算コードと整数入力は現行treeに欠落するため計算的証明の独立追試は未了。判別式は `papers/central_fiber_discriminant.tex` に証明と検算を収録した。
 

@@ -1,44 +1,29 @@
-# nc-cubic2 AGENTS.md
+# Codex / AGENTS.md — nc-cubic2
 
-**最初に `00_research_plan.md` を読む。一般次元Poisson分類はnc-cubic論文Aを正本とする。fourfoldのscheme構造は `notes/poisson_cubic_fourfold_moduli.md`、非可換三次三様体の17次元モジュライは `notes/nc_cubic_threefold_moduli.md` と `papers/nc_cubic_threefold_moduli.tex` を読む。それ以外は `notes/research_notes.md` を読む。**
+**2026-11-12 / v2。Codexは最初に `00_research_plan.md`、続いて `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を読む。** 研究の現行詳細は `notes/research_notes.md` と各論文のTeXにある。古い会話や旧PDFだけを再開の前提にしない。
 
-- **6/7次元Poisson cubic幾何**：`notes/poisson_cubic_six_seven_geometry.md`、
-  `papers/poisson_cubic_six_seven_geometry.tex`、
-  `computations/verify_poisson_cubic_six_seven_numerics.py` を使用。
-  旧main論文Aから専用節を移し、原文の完全一致を確認済み。
-  一般退化イデアルの証明も移管先に保持し、
-  主リポジトリAには一般次元の定理・証明を残す。
-  一般rank/成分数より独立な価値の候補は七次元rank6の
-  primary分解とembedded componentsの長さ。
-  独立監査と新規性確認は未完成。
-- 本リポジトリは独立モジュライ・境界研究の正本。17次元nc cubic moduli研究を統合し、構成族の既約成分性・接空間と障害理論を未解決の主課題とする。Poisson構造・代数量子化・一般次元ambient復元・rotation付き可換復元の主論文A/Cは `uedakazushi/nc-cubic` にある。
-- 17次元nc cubicの41次元incidence、31次行列式、分離型余次元15、忘却核7、Picard障害は現行 `papers/nc_cubic_threefold_moduli.tex` と `papers/sections/mixed_center_picard.tex` に収録した。横断性・中心・分離型の計算ソースは `computations/independent/` と `computations/verify_split_codimension.py`。独立監査・LuaLaTeX実組版・本移管後のスクリプト再実行は未了。一般次元ambient復元は主リポジトリAに統合し、旧Bに依存しない。
-- 研究内容を移す際は、原稿の証明全文・入力・再現コード・文献情報を含める。移管先のblob/hash/組版/計算確認を済ませるまでは移管元の唯一の原本を削除しない。
-- 論文は `papers/`、ノートは `notes/`、コードは `computations/`。日本語LuaLaTeXで `.latexmkrc` を用いて再生成する。
-- 原PDFは完全なTeX置換の検証前に廃棄しない。Git管理のPDF例外は本当に原本が唯一の情報源である場合だけ。
-- GitHub mainへ通常fast-forwardで更新し、遠隔ファイルを再取得して確かめる。force push、PR、GitHub Actionsを通常使わない。
-- LibraryはGitHub push失敗時の緊急退避のみ。旧版・重複・ログを積まない。重要な主張の確実性（証明済み・条件付き・未完成・予想・計算観察）を区別する。
+## 現在の最優先タスク
 
-- Poisson cubic fourfold の同時モジュライは、集合論的既約成分分類（正規形定理依存）と、未解決のscheme構造・新規性を厳密に区別する。Poissonスカラーを割るか保持するかを常に明記する。入力定理の独立監査を最優先し、既存のnc-cubicの可換復元作業は変更しない。
+`papers/pdf-only/` にある残りの研究原PDFから価値ある数学的内容をすべて救い、**必要なら新しい研究成果を加えて、より重要で厳密かつ理解しやすい論文へ発展させる**こと。その後、原PDFをGit追跡から解除する。**単純なPDF→TeXの逐語変換、ページ数合わせ、PDF削除数の最大化は目的ではない。**
 
-- 一般次元Poisson成分分類・次元公式はnc-cubic論文Aを正本とし、本リポジトリでは重複させない。fourfold稿には追加的scheme smoothnessを保持する。
-- VS Code LaTeX Workshopは `.vscode/settings.json` の明示的なcwdとルート `.latexmkrc` を使用する。TeXはLuaLaTeX、出力はbuild、生成PDFは追跡しない。
+完全な具体的手順、5本ごとの数学的研究課題、検証と削除の条件は **`CODEX_PDF_RECOVERY.md`** に定める。短い計画だけで止まらず、可能な限り証明・計算・執筆・実際のpushまで進める。数学的重要性、先行研究、新規性、理解の深化、応用可能性、正確性、実現可能性を考えて研究方針を柔軟に調整する。
 
-- The 79 sections of `papers/pfaffian_brill_noether_technical.tex` have been divided losslessly among five thematic `papers/sections/` inputs; the parent `.tex` is the sole entry point. The final verification input contains legacy version records and may refer to missing computation files; audit before treating them as reproducible. See `papers/README.md`.
+## 研究の守るべき原則
 
-- The former five version-specific verification-history sections have been replaced by one current proof-dependency and reproducibility section. Missing `verification/` and `source_vNN/` are NOT valid current reproduction commands. Preserve actual theorems in the two contact-normal-form inputs; rebuild only essential certificates. No GitHub Actions.
+- **正確性・出典：** 定理の仮定、既知の入力、独自の寄与、証明の所在、独立監査の有無、厳密計算と経験的計算を区別する。旧原稿に定理と書いてあっても証明と依存を検査する。新しい主張には十分な証明を付ける。誤りを見つけたら依存先のabstract/Introduction/方針を含めて訂正する。先行研究は一次資料と適用範囲を確認し、未確認の書誌を作らない。
+- **研究の改善：** 仮定の弱化、構造的な証明への置換、自然な一般化・系・応用、意味のある例や反例の追加を積極的に試す。数学的価値に従って論文の統合や分割を行い、旧版ごとの追記・歴史ログ・重複原稿を増やさない。重要な既存結果や証明は落とさない。
+- **現在有効な記録：** 現行研究方針は `00_research_plan.md`、実際の独立成果は `papers/`、まだ論文に入れない重要な着想・障害は `notes/` に整理。論文にある証明をノートに全文重複させない。PDF固有の未移管内容と削除条件だけを `PDF_SOURCES.md` に反映する。
+- **言語・再現：** 日本語LuaLaTeX、現行 `.latexmkrc`、`latexmk` を使用。コード・入力・有限証明書を最小限保持し、実行した範囲を正確に報告する。生成PDFと中間生成物は追跡しない。**有限体での等式の消滅を特性零での証明と混同しない。**
+- **削除ゲート：** PDFにしか残っていない数学的価値を失わず、必要な証明・再現資産・書誌を現行TeXへ組み込み、参照・組版・計算を確認してから `git rm`。未解決の依存があるPDFは維持し、次の解決すべき数学を進める。
+- **正本と保存：** `uedakazushi/nc-cubic2` のGitHub `main` が正本。変更前に最新状態を確認し、節目ごとに通常のfast-forward pushと遠隔headを検証する。force push、GitHub Actions、不要なPR、旧版ZIP、バックアップ・重複ファイルは作らない。Library保存はGitHub pushが失敗した場合の緊急避難のみ。研究bundleをLibraryに保存する一般許可はあるが、本研究ではこの具体的運用を優先する。
 
-- Highest immediate priority: eliminate remaining pdf-only files by proving their valuable results in current Japanese LuaLaTeX and then removing tracked originals. Do NOT delete the five research-paper PDFs just on heading correspondence. Library has matching-size source PDFs; the old III contains additional nonlinear contact / Hessian / Pfaffian graph results absent from the current long TeX. The now-consolidated finite-smoothness research note is in `notes/ambient_finite_smoothness_and_recovery.tex`. Keep GitHub main canonical and no Actions.
+## 研究対象と他リポジトリとの境界
 
-- `papers/sections/pfaffian_hessian_geometry.tex` now contains the restored proofs of the Hessian 5-variable Milnor/Tjurina and Pfaffian graph strict transform/quadric fibration. Do not conflate these with the full nonlinear-contact classification and vertex-kernel claims in the old PDF paper III; those remain unincorporated and require independent audit before removing `pfaffian_contact.pdf`.
+- **PDF研究**：中心商特異性、中心三次対の形式モジュライ、Pfaffian/Brill--Noether接触境界、中心三次の技術論、Sklyanin全混合量子化。詳細は `CODEX_PDF_RECOVERY.md`。
+- **17次元非可換cubic threefoldモジュライ**：`papers/nc_cubic_threefold_moduli.tex` と `notes/nc_cubic_threefold_moduli.md`。ambient周期性と商イデアル保存を混同せず、有限係数17次元族とArtin局所の接空間次元20を混同しない。
+- **Poisson cubic fourfoldのscheme構造・6/7次元固有の退化幾何**：各対応原稿と研究ノートを参照。一般次元のPoisson成分分類・量子化・ambient復元・rotation付き可換復元の正本は別リポジトリ `uedakazushi/nc-cubic` の論文A/Cである。既存証明を壊したり同じ一般定理を無用に重複収録したりしない。
+- **実務**：VS Code LaTeX Workshopは `.vscode/settings.json` でリポジトリrootを作業ディレクトリとして使用し、PDFと補助生成物は `build/` に出力。全てのTeXは必要に応じて親ファイルから入力する。
 
-- The PDF V's valuable Artin-local moduli comparison has been restored in `papers/sections/central_pair_artin_formal_moduli.tex`, included from `papers/nc_cubic_threefold_moduli.tex`. The 17-dimensional **topological** family is distinct from the obstructed Artin-local ring (dimension 17, tangent space 20). External Kontsevich/Yekutieli/De Deken--Lowen inputs need independent auditing. Do not delete PDF V until its mixed-center, rigid ambient example, and finite certificates are compared.
+## 完了の意味
 
-- Additional current source `papers/sections/central_pair_mixed_derived_rigid.tex` contains all-mixed low centers, even Veronese, derived O-marked reconstruction, and an explicit rigid ambient. Correctly distinguish a four-dimensional **pairwise nonisomorphic** family (under THCR input) from the stronger assertion of an open family with smooth tails, which has unverified Rains/RSVdB dependencies. Do not remove PDF V until its general Hesse center and certificate content is reconciled.
-
-- Continue deletion-first PDF recovery: old paper VI now has `papers/central_quotient_local_models.tex` and `computations/verify_central_quotient_local_hessian.py` (four A1 points, Brauer index six, 21 central vs three homological singularities). Key finite-center, Azumaya, representation exclusion and singular-category proofs remain to be incorporated. Preserve original PDF until all valuable results are independently auditable. Other repository's paper V Artin-local source is already in `papers/sections/central_pair_artin_formal_moduli.tex`; avoid duplicating it.
-
-- **PDF VI current status**: `papers/central_quotient_local_models.tex` inputs the current TeX proofs of center/Azumaya, small representations, Karoubi-completed singularity category, spherical twist and exact one-mixed-parameter tails criterion. Preserve the PDF until all indispensable proofs and finite certificates are self-contained. Center chart gluing, Azumaya hypotheses and full rational nonhomogeneous center equation still require audit. No GitHub Actions.
-- **Verified center**: `computations/verify_center_degree7.py` checks Q-center kernel through degree6 using exact arithmetic and mod101 rank78; `verify_center_homogeneous_symbols.py` checks the rank4 graded symbols. With the known graded Sklyanin center theorem, `Z(R1)=C[g,U,V,W]` and the weight<=18 rank49 are established. `verify_center_weight18_mod101.py` shows Phi=0 **only mod101**; never call it a Q-proof.
-- **Priority mathematical reduction**: Proposition `prop:quotient-parity-reduction` in `papers/sections/central_quotient_center_azumaya.tex` uses the sign involution `g→-g`, `U,V,W→U,V,W`. Once the homogeneous weight18 relation is correctly identified, the nonhomogeneous correction lies in the 15-dimensional even center of weight<=12 (1+4+10). `verify_center_parity_candidates.py` checks this count and the proposed Phi's parity; it does not prove Phi=0. For the proposed P18 (every monomial contains U,V or W), abelianization R1^ab=C[x,y,z]/(x²+1,y²,z²) gives U=V=W=0 and g²=-1+2yz. This imposes two independent conditions, leaving a 13-dimensional correction space. Proposition `prop:quotient-abelianization-reduction` and `verify_center_parity_candidates.py` record the exact check. The axial and three nonaxial 3D simple representations have now been evaluated exactly for g,U,V,W, giving four more independent constraints; together with abelianization the correction space is 9-dimensional (Proposition `prop:quotient-representation-reduction`). The augmented `verify_central_quotient_reps.py` reproduces the Q[t]/q and Q(omega) calculations. Next: prove the graded top relation and the remaining 9 coefficients over Q.
-- **Exact computation**: `verify_center_phi_exact.py` is an incremental exact-Q verifier, but the same algorithm only reached degree13 in local execution; degree14 exceeded 200 seconds. Do not claim the checked-in script or `--verify` succeeded. Avoid huge generated matrices; seek a low-degree rational certificate. Keep GitHub main canonical, TeX sources preferred, and PDF tracking only while unique results remain.
+単なるTeXファイル追加は成果ではない。**主張と証明の質が高まり、旧PDFに唯一残る有用内容がなくなり、現行ソースから独立に理解・再生成できるようになったとき**に研究上の移管が完了する。未完成の計算、未読の固有節、監査不能な外部仮定が残る間はPDFを消さず、理由と次の着手を簡潔に示す。

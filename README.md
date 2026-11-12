@@ -1,5 +1,9 @@
 # nc-cubic2：非可換cubicの独立境界・モジュライ研究
 
+## Codexへの現在の研究指示
+
+**[CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)** に、残るpdf-onlyの研究・TeX統合・独立検証・Git追跡解除の手順を定めた。単なるPDFの転記ではなく、重要な定理を強め、証明を洗練し、必要なら新しい結果・一般化・応用を加える。実行前に [研究方針](00_research_plan.md)、[AGENTS.md](AGENTS.md)、[現行のPDF別状態](PDF_SOURCES.md) を読む。数学的成果と再現性を犠牲にしてPDFを削除しない。
+
 ## nc cubic threefoldの17次元モジュライ（現行の主題）
 
 - [現行草稿](papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。
@@ -9,7 +13,7 @@
 - **正則正規三次族からの1周期性**：一般$N,d$について最小周期が$\gcd(N,d)$を割る定理と5次元・三次の場合の系を、モジュライ原稿の [周期性節](papers/sections/ambient_periodicity.tex) に証明ごと統合。ambientの1周期性と、商イデアルを保つ周期性を区別する。後者と初出・新規性の確定は未了。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 
-**2026年11月12日・v11。独立した研究内容の正本は本リポジトリの `main`。**
+**2026年11月12日・v12。独立した研究内容の正本は本リポジトリの `main`。**
 
 ## 六・七次元Poisson cubicの独立なscheme幾何
 
