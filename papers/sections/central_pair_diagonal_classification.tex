@@ -86,9 +86,8 @@ $h=\pm1$について、両方のtailsが正則となる$f$の非空開集合が�
 $\{0,\infty,1,2,4,9\}$の最初の三点の像を選ぶ120通りの有理射影行列を列挙し、
 全六点を保つものを照合すると恒等変換だけである。
 \texttt{verify\_central\_pair\_orbits.py}はこの厳密列挙を行う。
-$h=\pm1$の境界の位数は6であり、
-\href{https://github.com/uedakazushi/nc-cubic2/blob/main/papers/sections/central_quotient_global_regularity.tex}
-{中心商論文の有限位数境界に関する開な正則性定理}を両周囲に適用する。
+$h=\pm1$の境界の位数は補題\ref{CSBGlem:order-six}により6であり、
+定理\ref{CSBGthm:global-open}を両周囲に適用する。
 全ての$f$で相対PBW・中心正則商の自由性があり、最高次中心元は非零正則なので全仮定が揃う。
 二つの非空開集合は交わり、$f=0$を除いても非空である。
 Serre関手・偶数Veroneseによる復元定理と前命題から導来同値の不存在を得る。

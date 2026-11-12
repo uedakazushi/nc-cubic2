@@ -1,6 +1,8 @@
 # 研究方針：独立境界・モジュライ研究
 
-> **Codexの直近優先作業：** [Cayley–Sklyanin独立移管指示](MIGRATE_CAYLEY_SKLYANIN.md)。`uedakazushi/cayley-sklyanin` に `papers/cayley-sklyanin.tex` と自足する証明・再現コードを保存・検証した後でのみ、`nc-cubic2` 側の真の重複を整理する。Pfaffianの移管は完了済み。移管完了後は相対復元統合稿の公表再構成へ戻る。
+Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。元モジュライ稿に必要な有限位数境界の正則性は `papers/sections/central_pair_finite_order_regularity.tex` に10個の定理・補題と完全な証明をローカル保存し、モジュライ稿40頁を再組版済み。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
+
+
 
 
 Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
@@ -52,7 +54,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 本リポジトリは `nc-cubic` のPoisson構造・量子化・ambient復元・可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。**Pfaffian–Brill–Noether移管完了後のCodex最優先は相対復元統合稿の公表向け再構成と証明の保全監査**である。PDF-only資料のTeX統合と追跡解除は既に完了しており、繰り返さない。主リポジトリ `nc-cubic` の可換復元（特にSM証明）は独立の優先研究として尊重し、その証明を壊したり不用意に移転・重複収録したりしない。
 
-本体：`https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/pfaffian_brill_noether_technical.tex` の79節を形式変形・Brill–Noether境界・低次/高次接触計算・検証範囲の5節ファイルへ、証明本文を失わずに分割した。独立した完成度・新規性はまだ外部査読していない。旧版別5節の計算履歴を現行の検証範囲・再現不能箇所の1節へ整理し、本文の主定理・証明は保持する。旧検算コードと整数入力は現行treeに欠落するため計算的証明の独立追試は未了。判別式は `papers/central_fiber_discriminant.tex` に証明と検算を収録した。
+本体：`https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/pfaffian_brill_noether_technical.tex` の79節を形式変形・Brill–Noether境界・低次/高次接触計算・検証範囲の5節ファイルへ、証明本文を失わずに分割した。独立した完成度・新規性はまだ外部査読していない。旧版別5節の計算履歴を現行の検証範囲・再現不能箇所の1節へ整理し、本文の主定理・証明は保持する。旧検算コードと整数入力は現行treeに欠落するため計算的証明の独立追試は未了。判別式は `https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/central_fiber_discriminant.tex` に証明と検算を収録した。
 
 ## 未解決
 
@@ -72,13 +74,13 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ### 1. 中心商特異性（旧論文VI、PDF追跡解除済み）
 
-現行原稿：`papers/central_quotient_local_models.tex`。以下の現在有効な証明を `papers/sections/` に保持する。
+現行原稿：`https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/cayley-sklyanin.tex`。以下の現在有効な証明を `papers/sections/` に保持する。
 
-- `central_quotient_center_azumaya.tex`：非斉次四中心元、中心超曲面、Rees退化・Azumaya locus。**次数6の全中心核を独立に厳密検証済み**（`computations/verify_center_degree7.py`、Q上で6中心元が独立・中心、F7=120, F6=84、mod101の交換子rank78ゆえQ上もrank78）。重み18はF18=1330を有理数上で構成し、`computations/verify_center_phi_exact.py`のFLINT厳密有理数演算で**Φ=0を実行確認した**。中心単項式rank49は既知の斉次中心定理と最高記号rank4から特性零で従う。
-- `central_quotient_simple_representations.tex`：低次元単純表現の排除、二種の三次元単純表現、六次分裂元、軸上表現の一次剛性。法29非零19次小行列式は `computations/verify_central_quotient_reps.py` に保存。
+- `central_quotient_center_azumaya.tex`：非斉次四中心元、中心超曲面、Rees退化・Azumaya locus。**次数6の全中心核を独立に厳密検証済み**（`https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_center_degree7.py`、Q上で6中心元が独立・中心、F7=120, F6=84、mod101の交換子rank78ゆえQ上もrank78）。重み18はF18=1330を有理数上で構成し、`https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_center_phi_exact.py`のFLINT厳密有理数演算で**Φ=0を実行確認した**。中心単項式rank49は既知の斉次中心定理と最高記号rank4から特性零で従う。
+- `central_quotient_simple_representations.tex`：低次元単純表現の排除、二種の三次元単純表現、六次分裂元、軸上表現の一次剛性。法29非零19次小行列式は `https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_central_quotient_reps.py` に保存。
 - `central_quotient_categories_and_twist.tex`：Karoubi完備な特異圏の3因子分解と構造対象の標識を保たない球面ツイスト。同原稿内の有限中心・Azumaya・正則性の証明を用いる。
 - `central_quotient_exact_tails.tex`：一次元表現の長さ3非被約局所環、真に悪い中心値、有限射影行列因子化と二重分岐、曲面・三様体のtails正則性の必要十分判別
-  `(alpha^3+9)(28alpha^3+243)`。有限中心・PBW/CY・中心chart貼合せの証明も同原稿に収録。小計算は `computations/verify_quotient_exact_tails.py`、BGVの一次論文（JNCG 10 (2016), Theorems 6.3, 6.6, 6.7, Corollary 6.8）を確認した。
+  `(alpha^3+9)(28alpha^3+243)`。有限中心・PBW/CY・中心chart貼合せの証明も同原稿に収録。小計算は `https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_quotient_exact_tails.py`、BGVの一次論文（JNCG 10 (2016), Theorems 6.3, 6.6, 6.7, Corollary 6.8）を確認した。
 
 **削除ゲート達成：** 全22節を本文の証明・数式まで照合し、初期の一般正則性諸定理とCayley幾何を現行論文へ統合した。一般hの中心性・5-CY性、古典判別式、Cayley変換、定常点の長さ24も厳密検算し、LuaLaTeX組版を確認した。原PDFを追跡解除し、対応表は `PDF_SOURCES.md` に保持する。未解決の一般有効判別式・Brauer symbol・標識なし復元を解決済みとはしない。
 
@@ -95,13 +97,13 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ### 非斉次中心関係の確定と次の監査
 
-`computations/verify_center_phi_exact.py`で次数2–18の有理数商を構成し、dim F18=1330と、自由語3751項に展開したΦの剰余が厳密に零であることを確認した。python-flint 0.9.0のfmpqを任意の高速backendとし、標準Fraction版を維持する。次数8までの全基底・包含・左乗法行列は両backendで一致し、Horner評価と語ごとの評価も比較した。有限体での零から特性零へ推論していない。
+`https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_center_phi_exact.py`で次数2–18の有理数商を構成し、dim F18=1330と、自由語3751項に展開したΦの剰余が厳密に零であることを確認した。python-flint 0.9.0のfmpqを任意の高速backendとし、標準Fraction版を維持する。次数8までの全基底・包含・左乗法行列は両backendで一致し、Horner評価と語ごとの評価も比較した。有限体での零から特性零へ推論していない。
 
-次数6中心核・最高次記号rank4・三次元表現の中心指標も再実行済み。既知の斉次Sklyanin中心定理を入力として、全中心生成と唯一の関係Φを確定した。証明は `papers/sections/central_quotient_center_azumaya.tex` に集約する。表現評価による9自由係数への削減は、零条件ではなく **Q(p)=P18(p)** というアフィン条件に訂正した。具体的な評価値は軸上1/7、非軸上−1である。
+次数6中心核・最高次記号rank4・三次元表現の中心指標も再実行済み。既知の斉次Sklyanin中心定理を入力として、全中心生成と唯一の関係Φを確定した。証明は `https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/sections/central_quotient_center_azumaya.tex` に集約する。表現評価による9自由係数への削減は、零条件ではなく **Q(p)=P18(p)** というアフィン条件に訂正した。具体的な評価値は軸上1/7、非軸上−1である。
 
 Rees退化による非Azumaya locusの次元上界を一般補題にし、WWY Theorem 1.3/Lemma 5.4、Levasseur Proposition 3.2(ii)、Brown–Macleod Theorems 3.13/4.8の本文と仮定を照合した。PBWと既知Sklyanin入力からR1の大域次元3、中心の正規性、Azumaya locus同定を導く。二重étale被覆とrank6 monic式から中心降下と分岐位置を証明し、21特異点中15点の非零Hessianを厳密検算した。IW Theorem 5.1(1)の二素因子のflag分類から四点の局所模型を得る。
 
-`papers/sections/central_quotient_chart_gluing.tex`に、CCKMの行列因子化同値、分母払い、導分の中心因子、Chen/Yekutieli–Zhangの双対性による正確な次元を収録した。指定混合族の判別式の貼合せは追加仮定から除いた。chartのIwanaga–Gorenstein性も中心正則商と忠実平坦降下から証明する。`papers/sections/central_quotient_pbw_cy.tex`にBGの三次syzygy条件、被約基底での相対PBW、自己双対な双加群解消、周囲のKoszul AS正則性を証明した。Koszul双対をQ[α]上で計算し、全pivotが非零有理定数、Frobenius対合のdetが±1であることから全αでNakayama twistが恒等と確定した（`computations/verify_central_quotient_koszul.py`）。全8三次元単純表現のExt1表は構造的に証明し、代数体上のrank19/16・内的微分rank8/9も厳密再実行した（`computations/verify_central_quotient_extensions.py`）。初期諸節とCayley幾何も全照合して現行TeXへ統合した。全原PDFは有用内容を置換して追跡解除済み。生成物は追跡しない。
+`https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/sections/central_quotient_chart_gluing.tex`に、CCKMの行列因子化同値、分母払い、導分の中心因子、Chen/Yekutieli–Zhangの双対性による正確な次元を収録した。指定混合族の判別式の貼合せは追加仮定から除いた。chartのIwanaga–Gorenstein性も中心正則商と忠実平坦降下から証明する。`https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/sections/central_quotient_pbw_cy.tex`にBGの三次syzygy条件、被約基底での相対PBW、自己双対な双加群解消、周囲のKoszul AS正則性を証明した。Koszul双対をQ[α]上で計算し、全pivotが非零有理定数、Frobenius対合のdetが±1であることから全αでNakayama twistが恒等と確定した（`https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_central_quotient_koszul.py`）。全8三次元単純表現のExt1表は構造的に証明し、代数体上のrank19/16・内的微分rank8/9も厳密再実行した（`https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_central_quotient_extensions.py`）。初期諸節とCayley幾何も全照合して現行TeXへ統合した。全原PDFは有用内容を置換して追跡解除済み。生成物は追跡しない。
 
 ## 混合研究の到達点と次の数学
 

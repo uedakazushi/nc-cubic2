@@ -1,6 +1,8 @@
 # nc-cubic2：非可換cubicの独立境界・モジュライ研究
 
-> **Codexの直近優先作業：** [Cayley–Sklyanin独立移管指示](MIGRATE_CAYLEY_SKLYANIN.md)。`uedakazushi/cayley-sklyanin` に `papers/cayley-sklyanin.tex` と自足する証明・再現コードを保存・検証した後でのみ、`nc-cubic2` 側の真の重複を整理する。Pfaffianの移管は完了済み。移管完了後は相対復元統合稿の公表再構成へ戻る。
+Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。元モジュライ稿に必要な有限位数境界の正則性は `papers/sections/central_pair_finite_order_regularity.tex` に10個の定理・補題と完全な証明をローカル保存し、モジュライ稿40頁を再組版済み。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
+
+
 
 
 Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
@@ -56,7 +58,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 ## 現在の研究内容
 
 - `https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/pfaffian_brill_noether_technical.tex`：境界・モジュライ・Pfaffian・Brill–Noether等の大部技術原稿。形式変形・接触分類・Hessian幾何を入力節へ整理し、全次数頂点核と非線形接触分類・同変代数化を追加した。親TeX全体277頁の組版と追加部分の表示、Tate再帰の有理数再構成を確認済み。全証明の外部査読とは区別する。
-- `papers/central_fiber_discriminant.tex`：中心三次曲面の必要十分判別式・特異点の解析。対応する正確な記号計算は `computations/verify_central_fiber_discriminant.py`。
+- `https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/central_fiber_discriminant.tex`：中心三次曲面の必要十分判別式・特異点の解析。対応する正確な記号計算は `https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_central_fiber_discriminant.py`。
 - `notes/research_notes.md`：現行の数学的状態、欠けている入力、研究再開手順。
 
 初期の完全TeX転送に加え、PDFにしかなかった固有の証明・反例・再現入力も全件回収した。中心商、中心三次対、Pfaffian接触、全混合量子化を現行論文と厳密計算へ統合し、追跡PDFは0件。有限smoothnessノートも [現行LuaLaTeXノート](notes/ambient_finite_smoothness_and_recovery.tex) と `nc-cubic` に統合済み。対応と実行範囲は `PDF_SOURCES.md`。
@@ -67,9 +69,9 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ```sh
 latexmk https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/pfaffian_brill_noether_technical.tex
-latexmk papers/central_fiber_discriminant.tex
+latexmk https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/central_fiber_discriminant.tex
 python3 -m pip install sympy
-python3 computations/verify_central_fiber_discriminant.py
+python3 https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_central_fiber_discriminant.py
 ```
 
 LuaLaTeX、LuaTeX-ja、HaranoAji日本語フォント、標準数学パッケージが必要。PDF・補助ファイルは `build/` に生成しGit追跡しない。各原稿の配置確認・実組版・数学的監査の状態を区別する。
@@ -84,15 +86,15 @@ GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗
 
 ### 中心商特異性・chart貼合せ・特異圏
 
-[中心商原稿](papers/central_quotient_local_models.tex)に、全中心、四つの非可換A1局所模型とBrauer指数6、二中心chartの21特異点と三つのホモロジー的特異点、Karoubi特異圏、球面twist、指定一混合族の正確なtails判別式を整理した。[PBW/CY節](papers/sections/central_quotient_pbw_cy.tex)に定数項変形と周囲の基礎性質も証明した。斉次Sklyaninの標準的性質と楕円境界は既知入力として明示する。
+[中心商原稿](https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/cayley-sklyanin.tex)に、全中心、四つの非可換A1局所模型とBrauer指数6、二中心chartの21特異点と三つのホモロジー的特異点、Karoubi特異圏、球面twist、指定一混合族の正確なtails判別式を整理した。[PBW/CY節](https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/sections/central_quotient_pbw_cy.tex)に定数項変形と周囲の基礎性質も証明した。斉次Sklyaninの標準的性質と楕円境界は既知入力として明示する。
 
-[全中心とAzumaya locus](papers/sections/central_quotient_center_azumaya.tex)では、Rees退化の一般補題と一次文献の仮定を照合した。`computations/verify_center_degree7.py` はQ上の6中心元と交換子rank78、`computations/verify_center_phi_exact.py` は次数18・dim1330・Φ=0を厳密有理数演算で実行確認済み。再現：`python computations/verify_center_phi_exact.py --backend flint --run-all --verify`（python-flintが必要）。
+[全中心とAzumaya locus](https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/sections/central_quotient_center_azumaya.tex)では、Rees退化の一般補題と一次文献の仮定を照合した。`https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_center_degree7.py` はQ上の6中心元と交換子rank78、`https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_center_phi_exact.py` は次数18・dim1330・Φ=0を厳密有理数演算で実行確認済み。再現：`python https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_center_phi_exact.py --backend flint --run-all --verify`（python-flintが必要）。
 
-[chart貼合せの証明](papers/sections/central_quotient_chart_gluing.tex)は、行列因子化の分母払いと導分による三切断への帰着を与える。二重étale中心降下、rank6 monic比較、分岐位置、15通常二重点のHessianも明示計算した。検算：`computations/verify_central_quotient_local_hessian.py` と `computations/verify_quotient_exact_tails.py`。
+[chart貼合せの証明](https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/sections/central_quotient_chart_gluing.tex)は、行列因子化の分母払いと導分による三切断への帰着を与える。二重étale中心降下、rank6 monic比較、分岐位置、15通常二重点のHessianも明示計算した。検算：`https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_central_quotient_local_hessian.py` と `https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_quotient_exact_tails.py`。
 
-[三次元表現](papers/sections/central_quotient_simple_representations.tex)と[特異圏・twist](papers/sections/central_quotient_categories_and_twist.tex)では、軸上剛性の法29の19次minor、境界正則性、chartのIwanaga–Gorenstein性を現行証明に保持する。全8単純表現のExt表も構造的に証明し、`computations/verify_central_quotient_extensions.py`で代数体上の厳密rankを再実行した。Nakayama twist恒等性は`computations/verify_central_quotient_koszul.py`の全αで有効なFrobenius証明書から従う。
+[三次元表現](https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/sections/central_quotient_simple_representations.tex)と[特異圏・twist](https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/sections/central_quotient_categories_and_twist.tex)では、軸上剛性の法29の19次minor、境界正則性、chartのIwanaga–Gorenstein性を現行証明に保持する。全8単純表現のExt表も構造的に証明し、`https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_central_quotient_extensions.py`で代数体上の厳密rankを再実行した。Nakayama twist恒等性は`https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_central_quotient_koszul.py`の全αで有効なFrobenius証明書から従う。
 
-[正確なtails判別](papers/sections/central_quotient_exact_tails.tex)の原稿をLuaLaTeXで組版済み。[一般正則性](papers/sections/central_quotient_global_regularity.tex)と[Cayley幾何](papers/sections/central_quotient_cayley_geometry.tex)も証明・厳密計算付きで回収した。全22節の固有内容を置換できたため、原PDF VI（61頁）を追跡解除した。[削除判定の対応表](PDF_SOURCES.md)を参照。全混合量子化も固有証明と計算を回収してPDF追跡解除済み。
+[正確なtails判別](https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/sections/central_quotient_exact_tails.tex)の原稿をLuaLaTeXで組版済み。[一般正則性](https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/sections/central_quotient_global_regularity.tex)と[Cayley幾何](https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/sections/central_quotient_cayley_geometry.tex)も証明・厳密計算付きで回収した。全22節の固有内容を置換できたため、原PDF VI（61頁）を追跡解除した。[削除判定の対応表](PDF_SOURCES.md)を参照。全混合量子化も固有証明と計算を回収してPDF追跡解除済み。
 
 中心三次対（旧V、60頁）も全21節を現行モジュライ論文に統合してPDF追跡解除済み。全係数中心式・規格化の恒等式、軌道rank24、同型判定を厳密検算し、親TeXを組版した。全研究原PDFの移管が完了した。
 

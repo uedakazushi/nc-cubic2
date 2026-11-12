@@ -1,6 +1,8 @@
 # Codex / AGENTS.md — nc-cubic2
 
-> **Codexの直近優先作業：** [Cayley–Sklyanin独立移管指示](MIGRATE_CAYLEY_SKLYANIN.md)。`uedakazushi/cayley-sklyanin` に `papers/cayley-sklyanin.tex` と自足する証明・再現コードを保存・検証した後でのみ、`nc-cubic2` 側の真の重複を整理する。Pfaffianの移管は完了済み。移管完了後は相対復元統合稿の公表再構成へ戻る。
+Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。元モジュライ稿に必要な有限位数境界の正則性は `papers/sections/central_pair_finite_order_regularity.tex` に10個の定理・補題と完全な証明をローカル保存し、モジュライ稿40頁を再組版済み。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
+
+
 
 
 Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
@@ -8,7 +10,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 
 
-**2026-11-13 / v9。再開時は `00_research_plan.md`、本 `AGENTS.md`、`MIGRATE_CAYLEY_SKLYANIN.md`（移管完了まで）、`notes/relative_reconstruction_models.md`、関連する現行TeXを最初に読む。** PDF由来の独立研究に取り組む場合だけ `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を参照する。旧PDFや旧版の記録を再開の前提にしない。
+**2026-11-13 / v9。再開時は `00_research_plan.md`、本 `AGENTS.md`、`notes/relative_reconstruction_models.md`、関連する現行TeXを最初に読む。** PDF由来の独立研究に取り組む場合だけ `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を参照する。旧PDFや旧版の記録を再開の前提にしない。
 
 ## 独立成果の所在
 

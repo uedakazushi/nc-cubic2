@@ -1,5 +1,8 @@
 # PDF-onlyの現行判定（2026-11-13 / v27）
 
+Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。元モジュライ稿に必要な有限位数境界の正則性は `papers/sections/central_pair_finite_order_regularity.tex` に10個の定理・補題と完全な証明をローカル保存し、モジュライ稿40頁を再組版済み。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
+
+
 Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
 
 
@@ -9,7 +12,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## 中心商特異性（旧VI、61頁）の削除判定
 
-現行の独立入口は [central_quotient_local_models.tex](papers/central_quotient_local_models.tex)。旧PDFの本文・数式・証明・例・参考文献を照合し、以下の全22節を現行論文へ統合した。以下のファイル名は `papers/sections/` 以下である。旧PDFへの参照を証明の代わりに使わない。
+現行の独立入口は [central_quotient_local_models.tex](https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/cayley-sklyanin.tex)。旧PDFの本文・数式・証明・例・参考文献を照合し、以下の全22節を現行論文へ統合した。以下のファイル名は `papers/sections/` 以下である。旧PDFへの参照を証明の代わりに使わない。
 
 | 旧節 | 保持した数学と現行の証明所在 |
 | --- | --- |
