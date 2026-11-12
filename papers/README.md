@@ -37,3 +37,5 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 - `sections/pfaffian_computation_audit.tex`：検算の現行依存関係、整数証明書の状態、未解決の26次問題（旧§75–79を置換）。旧 `verification/` と `source_vNN/` は現行mainに存在せず、独立追試は未実施。
 
 親ファイルだけを `latexmk papers/pfaffian_brill_noether_technical.tex` で組版する。今回の検証は文字列単位の内容保持に限られ、LuaLaTeXの実行と証明の独立監査は行っていない。
+
+- `sections/pfaffian_hessian_geometry.tex`：旧Pfaffian論文IIIの§23–24から復元した五変数Hessian摂動のMilnor/Tjurina、Pfaffian graphのstrict transform・quadric fibration。親の `pfaffian_brill_noether_technical.tex` へ入力済み。独立再監査未了。

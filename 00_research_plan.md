@@ -9,7 +9,7 @@
 - **ambientの周期性**：`papers/nc_cubic_threefold_moduli.tex` の `papers/sections/ambient_periodicity.tex` に、正則正規次数$d$族を持つKoszul AS正則$\mathbb Z$-代数の最小周期が$\gcd(N,d)$を割る定理と証明を収録。標準5次元・三次なら1周期的。商イデアルを保存する1周期性は未証明。既知双対性からの帰結として新規性は未確認。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 
-**2026-11-12 / v11。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v12。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -74,7 +74,7 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 ## 次の作業：PDFの追跡解除を最優先
 
 1. 主題別に分割した`papers/pfaffian_brill_noether_technical.tex`をLuaLaTeXで実組版し、本稿をLuaLaTeXで実組版し、接触計算の必要な整数入力・証明書を現行repoから自立的に再構成する。
-2. LibraryにあるPDF原本をコンテナで本文抽出できることを確認した。特に `pfaffian_contact.pdf` の旧論文III後半（普遍同変非線形接触分類・Milnor/Tjurina・Pfaffian graph）、`central_quotient_singularities.pdf` のA1局所模型・Brauer指数・特異圏、`central_pair_formal_moduli.pdf` の全Artin比較をそれぞれ現行TeXに証明付きで統合し、原PDFの追跡解除を判定する。
+2. LibraryにあるPDF原本をコンテナで本文抽出できることを確認した。特に `pfaffian_contact.pdf` の旧論文III後半（Milnor/TjurinaとPfaffian graphの解消については `papers/sections/pfaffian_hessian_geometry.tex` に証明を復元済み。未移管の普遍非線形接触分類と全次数頂点核）、`central_quotient_singularities.pdf` のA1局所模型・Brauer指数・特異圏、`central_pair_formal_moduli.pdf` の全Artin比較をそれぞれ現行TeXに証明付きで統合し、原PDFの追跡解除を判定する。
 3. 研究の現在有効な成果を分かりやすい公表用原稿へ再編する。単なる旧原稿の蓄積にしない。
 
 ## 一般研究原則と保存許可
