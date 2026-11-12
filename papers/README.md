@@ -16,3 +16,12 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 主要な数学的独立課題は七次元rank6のprimary分解・embedded componentの再監査。
 計算は`python3 computations/verify_poisson_cubic_six_seven_numerics.py`。
 最新の再開ノートは`notes/poisson_cubic_six_seven_geometry.md`。
+
+## nc cubic threefoldの17次元モジュライ（現行の主題）
+
+- [現行草稿](papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。
+- [研究ノート](notes/nc_cubic_threefold_moduli.md)：仮定・未解決の既約成分性・再現手順。
+- 再現コード：`computations/independent/verify_generic17_slice.py`、`verify_generic17_center.py`、`computations/verify_split_codimension.py`。
+- 一般次元ambient復元の定理と証明は `nc-cubic/papers/paper_a.tex`、本稿には同型類判定に必要な証明も保持する。
+- 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
+
