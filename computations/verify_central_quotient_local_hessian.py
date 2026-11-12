@@ -21,10 +21,17 @@ print("PASS: four A1 central points up to cubic symmetry, exact Hessians")
 Hparam = sp.symbols("H")
 Fh = (49*u**3-(13*Hparam+14)*u**2+(Hparam+1)**2*u
       +(11*u-Hparam-1)*v*w+v**3-w**3)
-for value in [sp.Integer(0), -sp.Integer(1), -sp.Rational(28, 27)]:
+expected = {
+    sp.Integer(0): [-v**2 + 4*w, -56*u + v**3 + 8,
+                    v*(u + 1), (u + 1)*(7*u - 1)],
+    -sp.Integer(1): [w**2, -2*u + 11*v*w, u*w, v**2, u*v, u**2],
+    -sp.Rational(28, 27): [w, v, u - sp.Rational(1, 189)],
+}
+for value, generators in expected.items():
     f = Fh.subs(Hparam, value)
     basis = sp.groebner([sp.diff(f, x) for x in (u, v, w)] + [f],
                         w, v, u, order="lex")
-    print("H=", value, "singular ideal basis:",
-          [sp.factor(poly.as_expr()) for poly in basis.polys])
-print("PASS: critical-fiber Groebner checks for 21-point count")
+    assert len(basis.polys) == len(generators)
+    assert all(sp.expand(poly.as_expr()-want) == 0
+               for poly, want in zip(basis.polys, generators))
+print("PASS: singular ideals at H=0,-1,-28/27 (exact Groebner bases)")
