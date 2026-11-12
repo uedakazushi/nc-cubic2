@@ -15,7 +15,7 @@ d_{n,k}=k(3N-8)+{m+2\choose3}
 
 隣接する成分の商以前の次元差は \(3(3k-1)(N-3k)+8>0\)。supportの縮約写像の階数 \(3k\) はdeterminantalな閉条件で上から制御でき、これと次元の単調性により、rankの異なる既約層の閉包は互いに包含されない。軌道・線形三次式のパラメータ空間を用いた全文証明は `papers/poisson_cubic_pair_components.tex`。
 
-**入力**：`uedakazushi/nc-cubic/papers/sections/poisson_geometry.tex`（`thm:pg-normal`、`prop:pg-represent`、`prop:pg-jacobi-extension`）。これは既存原稿に証明記載のある定理であり、今回すべてを独立に再検証したという意味ではない。この依存が破綻した場合は全次元分類の再評価が必要。
+**入力**：`uedakazushi/nc-cubic/papers/support/papers/sections/poisson_geometry.tex`（`thm:pg-normal`、`prop:pg-represent`、`prop:pg-jacobi-extension`）。これは既存原稿に証明記載のある定理であり、今回すべてを独立に再検証したという意味ではない。この依存が破綻した場合は全次元分類の再評価が必要。
 
 ## 関連する n=4 の深化
 
