@@ -3986,7 +3986,7 @@ $\mathcal K^{\mathrm{nor}}$ は有限次元の次数付き複素ベクトル空�
 \end{equation}
 と書ける。$E_{\mathrm{vert}}(t)$ は有限な多項式で、
 既知の十次類によりその $t^{10}$ 係数は1である。
-$E_{\mathrm{vert}}(t)=t^{10}$ という全生成予想は、なお未決定である。
+$E_{\mathrm{vert}}(t)=t^{10}$ は定理\ref{thm:pf-full-contact-module}で決定する。
 \end{theorem}
 
 \begin{proof}
@@ -5969,7 +5969,7 @@ $n>N_*$ では代表空間は零なので、その後の項は全て消せる。
 \]
 が証明されれば、式\eqref{eq:v18-finite-even-normal-form}の和は全て消え、
 実際の境界が $P+H/96$ と普遍形式接触同値であることが従う。
-現在はこのHilbert級数の等式も、$\mathcal K_{26}^{\mathrm{nor}}=0$ も未確定である。
+この二つは定理\ref{thm:pf-full-contact-module}の全次数証明で確定する。
 \end{remark}
 
 % END theory/v18_finite_determinacy_ja.tex
@@ -6290,16 +6290,16 @@ $\mathcal K^{\mathrm{nor}}$ に集中する。
 以下では、この理論的な有限還元を、小さい構造定理または有限証明書へ置き換える。
 \begin{enumerate}
  \item 指定された同変頂点成分 $\mathcal K^{\mathrm{nor}}$ を決定する。
- 最も重要な未解決式は $E_{\mathrm{vert}}=t^{10}$ である。
- これが成立すれば、今回の全次数normal消滅と合わせて
- 実際の境界の普遍形式 $P+H/96$ 正規形が従う。
+ 定理\ref{thm:pf-full-contact-module}で $E_{\mathrm{vert}}=t^{10}$ を証明した。
+ 全次数normal消滅と合わせた $P+H/96$ 正規形とその代数化も
+ 第\ref{sec:pf-equivariant-algebraization}節で与える。
  全頂点加群 $T_0$ には $H_j=\partial_{q_j}H$ も存在するので、
  $T_0=\mathbb C[F]H$ という強すぎる簡約は使えない。
  独立な $q$ 変数での完全交叉と、非平坦なPfaffian代入の差を
  二重次数とdeterminant指標を保ったまま制御する。
 
  \item 二十六次の残る頂点類を決める。
- 全指標とnormal射影は確定したが、通常26次商の二次元性は未証明である。
+ 通常26次商の二次元性は定理\ref{thm:pf-full-contact-module}から従う。
  $[R_{26}^{\mathrm{ev}}]\in\mathcal K_{26}^{\mathrm{nor}}$ の直接消去、
  小さい理論的上界、または十分な通常接触minorのいずれかが必要になる。
  96列の有限minorは部分的な下界証拠であり、必要な2663本の独立方向を与えていない。
@@ -6318,7 +6318,7 @@ $\mathcal K^{\mathrm{nor}}$ に集中する。
  五つの勾配のheightは3なので、代入後も五元正則列であるとは扱わない。
 
  \item 有限形式正規形の収束・代数化と、表示の縮約を調べる。
- 今回の $N_*$-jet への無限合成は形式的である。
+ 特定の $N_*$-jet への無限合成自体の収束は別問題だが、同じ十次正規形への代数的・収束的な同値の存在を第\ref{sec:pf-equivariant-algebraization}節で示す。
  既知の有限次数の代数的・収束的正規化と、そのまま同一視しない。
  また4929補助変数と共役の5890追加未知数を含む既存表示を小さくし、
  $16\times5$ 行列によるincidenceと相対Picardの幾何を直接比較する課題が残る。
@@ -6344,267 +6344,3 @@ $\mathcal K^{\mathrm{nor}}$ に集中する。
  評価核から曲線と線形束を $F_L^{**}/F_L=j_*L$ として回復する構成を、
  他の数値類や非自由支持型へ広げることも考えられる。
 \end{enumerate}
-
-\clearpage
-\appendix
-\section{検証コードと再現方法}
-
-第12版までのPythonコードと第13版の重み空間・Tate再帰は標準ライブラリを用いる。
-第13版のテンソルグラフ縮約ではNumPyも用いる。
-有限体、Python多倍長整数、有理数の厳密演算を使い、浮動小数点近似で階数を判定しない。
-
-\begin{enumerate}
- \item \texttt{nc\_cubic\_verify\_central.py} は $\mathbb Q[h]\langle x,y,z\rangle$ 内で
- $[G_h,x],[G_h,y],[G_h,z]$ が関係式の両側イデアルに入る有限の証明書を生成する。
- 抽出した証明書を別途展開し直して元の多項式と一致することも確認する。
- \item \texttt{nc\_cubic\_verify\_pfaffian.py} は5個の二次式のsyzygy、
- および $a_{01}=1$、他の $a_{ij}=0$ におけるJacobian階数3を厳密計算する。
- \item \texttt{nc\_cubic\_verify\_point\_curve.py} は多重線形化行列の行列式を展開し、
- \eqref{eq:elliptic} を検証する。
- \item \texttt{nc\_cubic\_verify\_hesse.py} はJacobian環の対称性、rotationの数値行列、
- Hesse曲線のWeierstrass変換による $j$-公式、固定曲線の補正を有理数上で検証する。
- \item \texttt{nc\_cubic\_verify\_exceptional.py} は $\mathbb Q(\omega)$ 上で
- Fourier変換・Zhang twist・中心式を検証し、特異性を検出する階数4のMFの
- $d^2=W I$ を全成分で検証する。
- \item \texttt{nc\_cubic\_verify\_points.py} は全非零パラメータでの階数2を保証する
- 小行列式、長さ8の局所代数の積表、socleの三次形式、中心三次式の消去、
- および非被約点の $j$-不変量を厳密に検証する。
- \item \texttt{nc\_cubic\_verify\_reconstruction.py} はHessianの表示、
- 二つの $j$ の逆数関係、次数2・4の復元式、
- 3-isogenyの商曲線とWeierstrass不変量、$X_0(3)$ の二つの $j$-写像、
- Fricke involution、形式展開および一般のSklyanin復元式を検証する。
- \item \texttt{nc\_cubic\_verify\_v5.py} は普遍的な双ベクトルの表示の
- Euler-horizontal性と外積恒等式、写像の階数126、
- traceを含めたFermatの固定接方向、および $j_{\mathrm{fat}}=432$ の
- 復元多項式の因数分解と判別式を厳密に検証する。
- \item \texttt{nc\_cubic\_verify\_v6.py} は符号付きPfaffianのkernel恒等式、
- 三次式のPfaffian代入の係数行列の階数35、
- $GL(5)$ の29族の生成元についての共変性、および六次Euler恒等式を検証する。
- 係数行列は全5005行・35列を対象とし、零でない660行を疎形式で保持する。
- \item \texttt{nc\_cubic\_verify\_v7.py} は35個の三次単項式の重みとWeyl alternantを使い、
- 6次から12次までの普遍共変式空間の次元、座標変更とunit変更の次元、
- および10次に関係する $\delta q$ の表現の重複度1を整数で検証する。
- Fermatの8次候補の非零性、有限対称群に対するcharacter、固定軸上の横断式、
- Hesseの $j$-不変量の先頭係数も検証する。
- またFermatの10次Hessian候補について、全2002個の5次単項式から20個の
- characterに適合する候補を選び、Reynolds投影によるJacobian像の階数2、
- Hessian候補を加えた階数3、および非所属を示す一つの単項式の係数を検証する。
- このコードは実際の境界の10次係数を決定するものではない。
- \item \texttt{nc\_cubic\_verify\_v8.py} は、対角三次式のClifford模型で
- Maurer--Cartan方程式を6次まで有理多項式として検証する。
- 本文の $5\times5$ 行列式の10次係数 $-648$、正規化比 $1/96$、
- Fermatの別標本、および六次先頭係数2を再計算する。
- 32次元外積空間の作用素による独立の積の実装も照合し、
- \texttt{nc\_cubic\_v8\_certificates.json} に行列と厳密な値を保存する。
- \item \texttt{nc\_cubic\_verify\_v9.py} は変更していないv8のClifford演算を用い、
- 再帰をblock次数8、行列式を次数12まで延ばす。
- 五つの標本で有理多項式としてのMaurer--Cartan方程式と独立な32次元作用素を照合し、
- 十二次の混合行列式係数および $dP(\operatorname{Alt}K_7)$ を検証する。
- 完全な行列と値を \texttt{nc\_cubic\_v9\_certificates.json} に保存する。
- \item \texttt{nc\_cubic\_v9\_finite\_tate\_dimensions.py} は、
- 有限係数空間の5890、homotopyの像の4929、および曲率空間の20330を、
- de Rhamの再帰・hookの次元式・Koszul複体の階数という三つの方法で照合する。
- \item \texttt{v9\_verify\_contact\_bounds.py} はv7の整数character計算を用い、
- $\mathcal G_7,\mathcal D_8,\mathcal U_6,\mathcal C_{12}$ の次元とPieri表を検証する。
- 二つの最高重みベクトルの像の係数3と8を厳密展開し、保存された全五標本について
- $K_7$ の交代化、Pfaffian微分、および $dP(\phi_7)$ を独立に再計算する。
- \item \texttt{v10\_rank\_certificate.py} は
- $\Psi_7=\operatorname{Alt}\kappa h(A_1h(A_3^2))$ を有理数で再計算し、
- $\Phi_7$ と合わせた評価行列の行列式 $147288/25$ を検証する。
- 再帰の3次までを独立な外積作用素でも照合する。
- \item \texttt{v10\_jet\_contact\_certificate.py} は、四次単元の対角重みから
- 五つの星型単項式を列挙し、正規化を錐外の標本で確認する。
- $\rho(\Theta_8U_4)=1$、$\rho(d^{\mathrm T}_{12})=0$、
- および二つの普遍座標変更の係数を厳密計算する。
- \item \texttt{v10\_degree13\_certificate.py} は13次のSchur重複度、
- $\mathcal G_8$、$\mathcal U_7$ の次元を再計算し、
- 全五標本で $dP(\operatorname{Alt}K_8)$ を独立に照合する。
- \item \texttt{v10\_jet\_thirteenth.py} は標準点でTate再帰を $A_9$ まで計算し、
- 有理多項式でのMC等式、既存の全ブロックとの一致、独立な外積作用素を検査する。
- $[t^{13}]\det K=9200/9$ と普遍係数 $-4600/2189$ を再現する。
- 第10版の四つのスクリプトはそれぞれ同名の \texttt{.json} 証明書を生成する。
-
- \item \texttt{v11\_character\_certificate.py} は14次の四つの次元
- $15,28,7,17$、Schur重複度、六つの最高重みの像と $\delta q$ の全射性を検証する。
- \texttt{v11\_fermat\_scope\_certificate.py} は有限Fermat安定化群の
- 指標平均を $\mathbb Q(\zeta_3)$ で計算し、対角制限の核と法方向一階微分の範囲を検証する。
- \item \texttt{v11\_filtered\_koszul\_certificate.py} は三つの自然な縮約を
- 整数だけで計算し、独立なsyzygyの小行列式 $-1990656$ を再現する。
- \texttt{v11\_tetrahedral\_u4.py} は四面体縮約、四次補間による方向微分、
- 非対角三次式を生む剪断について $U_4$ の公式を検証する。
- \item \texttt{v11\_contact\_rank\_certificate.py} は七つの像の評価行列と
- その非零行列式を再検証する。\texttt{--recompute} を付けると、
- 補助モジュール \texttt{v11\_dual\_rank.py} によってTate再帰と
- 非対角三次式の一階微分をキャッシュなしで構成し直す。
- 有理数でのMC等式、独立な外積作用素、使用ブロックの $x=0$ での作用を検証する。
- \item \texttt{v11\_actual\_fourteenth.py} は標準点の $A_{10}$ までの完全な
- Tate再帰と独立作用素を検証する。
- \texttt{v11\_fourteenth\_coefficients.py} は五点で $A_8$ までを新たに構成し、
- 厳密な $x$ 次数切断から $K_9,K_{10}$ と14次係数を求める。
- 標準点では完全な再帰の全ブロックと一致することを確認する。
- \item \texttt{v11\_degree14\_complement.py} は六頂点の単元 $J_6$ を直接計算し、
- 五点のPfaffian微分、七つの画像基底、$\rho_{14}(\Theta_8J_6)=1$、
- $\rho_{14}(H_{10}U_4)=\rho_{14}(d^{\mathrm T}_{14})=0$ を有理数で検証する。
- \texttt{--recompute-fields} では、階数証明の四点に加えて必要な第五点の
- ベクトル場をTate再帰から新たに作り直す。
- 第11版の八つのJSON証明書は、上記スクリプトに対応する入力・行列・結果を保存する。
-
- \item \texttt{v12\_character\_certificate.py} は15次の次元
- $7,35,1,22$、十二個のPieri成分、八個の最高重みの像、低次の安定化空間、
- Koszul源の次元 $19,3$、Fermat制限の上界を厳密に検証する。
- \item \texttt{v12\_filtered\_contact\_certificate.py} はC型の最高重みの係数
- $v+2$ を $1\le r\le12$ の42成分で整数多項式として検算する。
- また既存の五点で $\Phi_6,\Psi_{10}$ のPfaffian持ち上げ、
- $dH(\Phi_6)=-dP(\Psi_{10})$、$\operatorname{Alt}K_6=-\Phi_6/9$ を検証する。
- これらは本文の全次数の証明に対する有限の補助検算である。
- \item \texttt{v12\_contact\_rank\_certificate.py} は六つの非単元方向の
- 全ての交代行列・Pfaffian微分・接触像、および非零な $6\times6$ 行列式を監査する。
- \texttt{--compare-fresh} は新たに計算した三つの通常評価と三つの一階変分との完全一致を確認する。
- \texttt{--recompute} は同じ六行をキャッシュなしで再構成する。
- \item \texttt{v12\_fifteenth\_tate.py} は十一個のブロックから15次の行列式を求める。
- \texttt{--full} は標準点で切断しない $A_1,\ldots,A_{11}$ を作り、
- 有理数MC等式・独立な32次元作用素・正確な $x$ 切断との一致を検証する。
- \texttt{--audit} は保存済みの十一個のブロックから係数を再計算する。
- \item \texttt{v12\_fifteenth\_dual.py} は三つの一階変分を新たに構成し、
- 両項を含む接触像の方向微分を有理数で検証する。
- 使用した全ブロックは独立の外積・縮約作用素とも照合する。
- 第12版の六つの証明書は、次元、Pfaffian持ち上げ、六行のコンパクトな評価データ、
- 完全な標準再帰、通常評価、一階変分を別々のJSONに保存する。
-
- \item \texttt{v13\_weight\_space\_certificate.py} は内部重み空間の次元
- $0,50,1002,5890,20330$ と、共役方向の次元951を検証する。
- 全6942基底でcontraction、$\delta^2=h^2=0$ を確認し、二つの微分の階数50、951を
- 有理数の疎消去でも求める。有限方程式のJacobian同型を使う代数化の証明は本文による。
- \item \texttt{v13\_character\_certificate.py} は16次の四空間の次元
- $40,103,59,18$、Koszul源の次元 $22,2,0$、十六個のPieri成分、
- 対角制限の階数上界を整数指標で検証する。
- \item \texttt{v13\_tensor\_contractions.py} は、NumPyの\texttt{object}配列を使い、
- 多倍長整数と有理数によるグラフの縮約を実装する。
- \texttt{v13\_tensor\_rank\_certificate.py} は二十個のKoszulベクトル、
- 二十一個の非単元接触像、補元、および $H\mathcal U_6$ の所属の正確な証明書を監査する。
- \texttt{--recompute} は全入力で全グラフを再計算し、自由脚から場を復元する方法とも照合する。
- \item \texttt{v13\_tate\_sixteenth.py} は完全な $A_1,\ldots,A_8$ と正確な
- $x$ 次数切断から $K_9,\ldots,K_{12}$ を求める。
- 曲率の閉性、Maurer--Cartan等式、独立な外積作用素を照合し、
- 16次の行列式と低次正規化から生じるHessian微分を同時に計算する。
- 標準点のJSONは既存15次までの係数との一致も含む。
- \item \texttt{v13\_diagonal\_rho\_certificate.py} は十二点の評価行列と
- 整数重みを使い、$\rho_{16}(J_{16})=0$ と
- $\rho_{16}(\Theta_8U_4^2)=1$ を有理数で確認する。
- \texttt{--recompute} は二十一個のグラフを全十二点で縮約し直す。
- \item \texttt{v13\_actual\_sixteenth\_certificate.py} は、十二点全てのブロックを
- 統合した同名のJSONから、各行列式・Pfaffian微分・Hessian微分を検算し、
- 未正規化係数、補正項、正規化後の代表元それぞれに $\rho_{16}$ を適用する。
- \texttt{--merge} は下記の新規再計算による二群と標準点を統合する。
- Tateデータには統合JSONを用い、rho証明書とも照合する。
- 中間の二群や非公開キャッシュには依存しない。
-
-\end{enumerate}
-
-実行例（左列、右列の順）：
-\begin{quote}\footnotesize\ttfamily
-\begin{tabular}{@{}ll@{}}
-python3 nc\_cubic\_verify\_central.py & python3 nc\_cubic\_verify\_v7.py \\
-python3 nc\_cubic\_verify\_pfaffian.py & python3 nc\_cubic\_verify\_v8.py \\
-python3 nc\_cubic\_verify\_point\_curve.py & python3 nc\_cubic\_verify\_v9.py \\
-python3 nc\_cubic\_verify\_hesse.py & python3 nc\_cubic\_v9\_finite\_tate\_dimensions.py \\
-python3 nc\_cubic\_verify\_exceptional.py & python3 v9\_verify\_contact\_bounds.py \\
-python3 nc\_cubic\_verify\_points.py & python3 v10\_rank\_certificate.py \\
-python3 nc\_cubic\_verify\_reconstruction.py & python3 v10\_jet\_contact\_certificate.py \\
-python3 nc\_cubic\_verify\_v5.py & python3 v10\_degree13\_certificate.py \\
-python3 nc\_cubic\_verify\_v6.py & python3 v10\_jet\_thirteenth.py \\
-\end{tabular}
-\end{quote}
-
-第11版の追加検証は、次の順で実行できる。
-\begin{quote}\footnotesize\ttfamily
-\begin{tabular}{@{}l@{}}
-python3 v11\_character\_certificate.py\\
-python3 v11\_fermat\_scope\_certificate.py\\
-python3 v11\_filtered\_koszul\_certificate.py\\
-python3 v11\_tetrahedral\_u4.py\\
-python3 v11\_contact\_rank\_certificate.py --recompute\\
-python3 v11\_actual\_fourteenth.py\\
-python3 v11\_fourteenth\_coefficients.py\\
-python3 v11\_degree14\_complement.py --recompute-fields\\
-\end{tabular}
-\end{quote}
-\texttt{v11\_contact\_rank\_certificate.py} と
-\texttt{v11\_degree14\_complement.py} は、オプションを省略すると保存済みの
-有理数証明書を監査する。再帰の全再計算には上記オプションを用いる。
-
-
-第12版の新規計算と監査は次の順で再現できる。
-\begin{quote}\footnotesize\ttfamily
-\begin{tabular}{@{}l@{}}
-python3 v12\_character\_certificate.py\\
-python3 v12\_filtered\_contact\_certificate.py\\
-python3 v12\_fifteenth\_tate.py --full --indices 0\\
-\quad --output v12\_fifteenth\_full.json\\
-python3 v12\_fifteenth\_tate.py --indices 1 2\\
-\quad --output v12\_fifteenth\_tate.json\\
-python3 v12\_fifteenth\_dual.py --indices 0 1 3\\
-\quad --output v12\_fifteenth\_dual.json\\
-python3 v12\_contact\_rank\_certificate.py --compare-fresh\\
-\end{tabular}
-\end{quote}
-字下げしたオプションは直前のコマンドと同じ行に続ける。
-接触階数だけを再構成する場合は
-\texttt{python3 v12\_contact\_rank\_certificate.py --recompute} でもよい。
-完全再計算は保存済みの私的な再帰キャッシュを使用しない。
-\texttt{--audit --output v12\_fifteenth\_full.json} および
-\texttt{--audit --output v12\_fifteenth\_tate.json} は行列式の高速監査に使う。
-
-第13版の再現は次の順で行える。テンソル縮約にはNumPyを用いる。
-今回の実行環境はPython 3.12.14、NumPy 2.3.5である。
-\begin{quote}\footnotesize\ttfamily
-\begin{tabular}{@{}l@{}}
-python3 v13\_weight\_space\_certificate.py\\
-python3 v13\_character\_certificate.py\\
-python3 v13\_tensor\_rank\_certificate.py --recompute\\
-python3 v13\_diagonal\_rho\_certificate.py --recompute\\
-python3 v13\_tate\_sixteenth.py --indices 0\\
-\quad --output v13\_tate\_sixteenth.json\\
-python3 v13\_tate\_sixteenth.py --manifest\\
-\quad v13\_diagonal\_rho\_certificate.json --indices 1 2 3 4 5\\
-\quad --no-fields --output v13\_tate\_rho\_group\_a.json\\
-python3 v13\_tate\_sixteenth.py --manifest\\
-\quad v13\_diagonal\_rho\_certificate.json --indices 6 7 8 9 10 11\\
-\quad --no-fields --output v13\_tate\_rho\_group\_b.json\\
-python3 v13\_actual\_sixteenth\_certificate.py --merge\\
-\end{tabular}
-\end{quote}
-字下げしたオプションは直前のコマンドと同じ行に続ける。
-二群のTate再計算は出力先を分けた別プロセスで並行実行できる。
-配布ZIPには統合済みの十二点データを含み、中間の二群は含めない。
-高速監査には \texttt{--recompute} や \texttt{--merge} を外し、
-Tate標準点には \texttt{--audit --output v13\_tate\_sixteenth.json} を用いる。
-旧32個のPythonと21個のJSONは保持し、第13版の7個のPythonと6個のJSONを追加した。
-
-16次の普遍接触階数は、一般三次テンソルによる上下界を別々に証明して決定した。
-十二点の対角評価は、その後で一つの商の係数を読み取るために用いる。
-全次数の偶化の代数性・収束性は、5890方程式とそのJacobianの同型から証明しており、
-有限個のTate係数の一致から推測しているものではない。
-
-Hilbert級数の低次数の数値一致は補助検査である。
-全次数の平坦性の証明は、Sklyaninの定理とmonicな三次式による加群分解であり、
-有限次数までの計算で代用していない。
-PDFの再生成にはLuaLaTeX、LuaTeX-ja、Harano Ajiフォントを用いる。
-計算コードが証明するのは有限の代数的恒等式である。
-dg圏の同値・生成性・smoothnessは本文の証明によるものであり、数値検査の結論ではない。
-第8版以降の行列コードは、対角三次式への特殊化の厳密計算を再現する。
-第11版では非対角三次式の一階変分も独立なChevalley記号の外積作用素で検証する。
-第10版の12次の消去は、先に商を1次元と証明し、その係数汎関数を構成することで、
-有限個の厳密な評価を普遍的な多項式恒等式へ結び付けている。
-第11版の14次も、普遍階数を先に決定してから五点の係数汎関数を適用する。
-第12版の15次は、七次元の候補空間に対する七個の独立な接触像で全射性を示す。
-全次数のPfaffian微分の全射性と境界の偶性は本文の一般的な証明に依拠し、
-有限個のTate係数から推測しているわけではない。
-対角評価だけによる普遍次元の推測は用いていない。
-第9版の有限代数化と収束は全次数の証明であり、有限次数の検算で代用していない。
-共変式の次元、Tate族と実際のgluing対象の同定、および全ての滑らかな $F$ での
-Jacobian非所属は本文の数学的証明に依拠する。
-同様に、第7版の普遍座標の存在、proper imageの性質、Picard族の不変性、
-および解消の構成は、有限の表現計算だけからは従わず、本文の幾何的証明を用いる。
-
-\clearpage

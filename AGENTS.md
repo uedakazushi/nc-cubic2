@@ -1,6 +1,6 @@
 # Codex / AGENTS.md — nc-cubic2
 
-**2026-11-13 / v4。Codexは最初に `00_research_plan.md`、続いて `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を読む。** 研究の現行詳細は `notes/research_notes.md` と各論文のTeXにある。古い会話や旧PDFだけを再開の前提にしない。
+**2026-11-13 / v5。Codexは最初に `00_research_plan.md`、続いて `CODEX_PDF_RECOVERY.md` と `PDF_SOURCES.md` を読む。** 研究の現行詳細は `notes/research_notes.md` と各論文のTeXにある。古い会話や旧PDFだけを再開の前提にしない。
 
 ## 現在の最優先タスク
 
@@ -8,7 +8,7 @@
 
 完全な具体的手順、研究主題ごとの数学的課題、検証と削除の条件は **`CODEX_PDF_RECOVERY.md`** に定める。短い計画だけで止まらず、可能な限り証明・計算・執筆・実際のpushまで進める。数学的重要性、先行研究、新規性、理解の深化、応用可能性、正確性、実現可能性を考えて研究方針を柔軟に調整する。
 
-中心商特異性（旧VI）の全22節は現行TeXと厳密検算へ統合済み。原PDFは追跡解除し、残る原PDFは3本。中心三次対（旧V）の全21節もTeXと厳密検算に統合済み。削除判定の対応表は `PDF_SOURCES.md` にある。
+中心商特異性（旧VI）の全22節は現行TeXと厳密検算へ統合済み。原PDFは追跡解除し、残る原PDFは1本。中心三次対（旧V）の全21節もTeXと厳密検算に統合済み。Pfaffian接触境界と中心三次技術稿も固有証明を回収して追跡解除済み。削除判定の対応表は `PDF_SOURCES.md` にある。
 
 ## 研究の守るべき原則
 

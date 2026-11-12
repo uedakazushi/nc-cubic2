@@ -1,0 +1,193 @@
+\section{中心座標が非零の点加群と長さ24の因子}
+$u,v$を中心一次元、$q_i\in\CC[u,v]_2$として
+\[
+ B_{h,q}=\frac{\CC[u,v]\langle x,y,z\rangle}
+ {([x,y]-h(z^2+q_3),[y,z]-h(x^2+q_1),[z,x]-h(y^2+q_2))}
+\]
+を取る。$D=x^3+y^3+z^3$、$T$を六つの混合語の和として
+$W=D/3-h^2T/9+q_1x+q_2y+q_3z+f(u,v)$、$A=B_{h,q}/(W)$と置く。
+全有限$h$での周囲の相対PBW・CY性と$W$の中心性は\cite{Pair}に証明・有限恒等式を持つ。
+以下$h\ne0$とする。
+
+\begin{lemma}[定常点のスキーム表示]
+中心座標が非零の点加群スキームは
+\[
+ Q=\frac{\CC[x,y,z,u,v]}{(x^2+q_1,y^2+q_2,z^2+q_3)},\quad Y=\operatorname{Proj}Q,
+ \qquad Z_f=V_Y(w_f),
+\]
+\[
+ w_f=\frac23(q_1x+q_2y+q_3z)+f-\frac{2h^2}{3}xyz
+\]
+で表され、shiftは恒等である。この表示は非被約試験基底にも有効である。
+\end{lemma}
+\begin{proof}
+各次数のrank1加群を局所自明化し、$u_n$が単元なら中心性は
+$u_ns_{n+1}=s_nu_{n+1}$を与える。
+$s_{n+1}$が単位イデアルを生成することから$u_{n+1}$も単元である。
+$u$の冪で全次数を同一視すれば他の四座標は定常となる。
+逆に可換化した関係を満たす定常座標から点加群を作れる。$v$も同様で貼り合う。
+二次式で$W$を還元すると表示した$w_f$となる。
+\end{proof}
+
+\begin{proposition}[一混合族の全係数平坦性と局所環]
+\label{prop:point-uvx}
+$q_1=\alpha uv$, $q_2=q_3=0$, $\alpha h\ne0$なら、任意の$f$で
+$Z_f$は飽和完全交叉$(2,2,2,3)$、長さ24である。
+$f=u^3+v^3$では$\alpha=0$も含め全$(\alpha,h)$上で一様な24基底を持ち、
+$h\ne0$での局所環は次の通りである：
+\[
+\begin{array}{c|c|c}
+ \text{条件}&\text{台の個数}&\text{各局所環}\\\hline
+ \alpha\ne0,\ \alpha^3\ne-9&6&\CC[Y,Z]/(Y^2,Z^2)\\
+ \alpha=0&3&\CC[X,Y,Z]/(X^2,Y^2,Z^2)\\
+ \alpha^3=-9&3&\CC[T,Y,Z]/(Y^2,Z^2,T^2-YZ)
+\end{array}
+\]
+\end{proposition}
+\begin{proof}
+$T_0=\CC[u,v,x]/(x^2+\alpha uv)$は整域であり、$Q=T_0[y,z]/(y^2,z^2)$は
+$T_0$上自由である。$w_0=2\alpha uvx/3+f$は$x$係数が非零なので非零。
+$w_f$の乗法は基底$1,y,z,yz$で対角$w_0$の三角行列となり、行列式$w_0^4\ne0$から正則である。
+従って完全交叉、次元1のCohen--Macaulay環で不要torsionはなく飽和し、次数は24。
+$u=v=0$上には射影点がない。
+
+$f=u^3+v^3$では全点は$u,v\ne0$にあり、$u=1,a=v/u$で
+\[
+ X^2+\alpha a=Y^2=Z^2=0,\qquad
+ a^3+2\alpha aX/3+1-2h^2XYZ/3=0.
+\]
+次数付き辞書式$a>X>Y>Z$で先頭項は$a^3,X^2,Y^2,Z^2$と互いに素なのでmonic
+Gr\"obner基底となり、$a^iX^jY^kZ^l$ ($0\le i<3$, $j,k,l\in\{0,1\}$)が基底となる。
+$\alpha\ne0$では$a=-X^2/\alpha$を消すと
+\[
+ P_\alpha(X)+2h^2\alpha^3XYZ/3=0,
+ \quad P_\alpha=X^6+2\alpha^3X^3/3-\alpha^3,
+ \quad\operatorname{Disc}P_\alpha=64\alpha^{15}(\alpha^3+9)^3.
+\]
+単純根なら$X$を陰関数定理で消せる。$\alpha=0$では$a$を消せる。
+$\alpha^3=-9$では$(X^3-3)^2-6h^2XYZ=0$となり、$X$は単元なので
+$T=X^3-3$と$Y$の単元倍で最後の表示を得る。
+$h=0$への平坦特殊化を可換代数の全点スキームと同一視しない。
+\end{proof}
+
+\begin{proposition}[固定周囲の四係数の埋込み付き検出]
+前命題の$\alpha h\ne0$の範囲で、$Z_f=Z_{f'}\subset\PP^4$なら$f=f'$である。
+この四係数平坦族のHilbert schemeへの射は接空間上も単射である。
+\end{proposition}
+\begin{proof}
+飽和イデアルの一致から、共通の二次式で割った次数三で$\CC w_f=\CC w_{f'}$となる。
+$Q$は$\CC[u,v]$上の8基底を持つので、$uvx$係数の比較が比例定数を1に固定し、
+基底1の成分から$f=f'$を得る。
+各fiberが正則列なので局所平坦性判定から相対完全交叉は平坦である。
+双対数上でも同じ深さの議論で飽和性が成立し、自明な埋込み変形なら
+$\dot f=cw_f$となる。$uvx$係数から$c=0$、自由性から$\dot f=0$である。
+\end{proof}
+\begin{remark}[pencil上の台が忘れるもの]
+$f(1,0)f(0,1)\ne0$なら被約台の射影は
+$\Delta_f=9f(u,v)^2+4\alpha^3u^3v^3=0$で、
+$x=-3f/(2\alpha uv)$である。
+$c=\alpha^3/(\alpha^3+9)$、$f=u^3+v^3$、$g=\sqrt c(u^3-v^3)$なら
+$\Delta_g=c\Delta_f$であり、pencil上の六点だけは$f$を符号以上の曖昧さで忘れる。
+上の検出は$x$座標と非被約構造も保持する。
+\end{remark}
+
+\section{六つの分岐値、標準曲線と点因子の線形系}
+\begin{theorem}[全ての分岐値が異なる対角族]
+\label{thm:point-canonical-curve}
+$q_1q_2q_3$の六零点が全て相異なるとする。
+このとき$Y$は滑らかな幾何学的整曲線で、$\deg Y=8$、$g(Y)=5$、
+$\omega_Y=\mathcal O_Y(1)$である。
+$\pi:Y\to\PP^1$, $[x:y:z:u:v]\mapsto[u:v]$は群$(\mathbb Z/2)^3$の次数8有限平坦被覆である。
+$Z_f$は全ての$f$で次数24の有効Cartier因子、一般の$f$では24相異点となる。
+\end{theorem}
+\begin{proof}
+三式はそれぞれ$x,y,z$のmonic二次式で、$Q$は$\CC[u,v]$上8基底を持つ。
+$u=v=0$に射影点はなく、二chartの自由基底から$\pi$は有限平坦で次数8。
+$\CC(\PP^1)$上の三平方類は、各$q_i$の固有の単純零点のvaluationにより独立である。
+従ってgeneric fiberは次数8の体であり、torsion-freenessから$Q$も整域となる。
+$x,y,z$が全て非零ならJacobian三行は独立。
+一つが零なら対応する$q_i$の根の単純性と他の二座標の非消滅から再びrank3。
+二つ以上が零なら共通根が必要なので起こらない。無限遠も同様で滑らかである。
+随伴公式から$\omega_Y=\mathcal O_Y(2+2+2-5)=\mathcal O_Y(1)$、次数8から種数5を得る。
+一次関係がないのでこれは標準埋込みである。
+
+$Q_3=H^0(Y,\mathcal O_Y(3))$は20次元であり、$w_f$の$xyz$係数は$-2h^2/3\ne0$。
+従ってどの$f$でも非零切断で、整性から正則、因子次数は24となる。
+一般の$f$は有限個の分岐点で零とならず、非分岐点で二重零点となる条件は
+$f$の値と一次jetに対する独立な二条件である。
+点を動かしてもincidenceは次元高々3なので、一般の$f\in\mathbb A^4$はそれを避ける。
+\end{proof}
+
+\begin{corollary}[四係数の線形系と埋込み付き同時復元]
+$V=\pi^*H^0(\PP^1,\mathcal O(3))$とすると、四係数族は
+\[
+ \mathbb A^4=\PP(\CC w_0\oplus V)\setminus\PP(V)\subset|3K_Y|=\PP^{19}
+\]
+という線形系のaffine chartである。
+指定座標の$Z_f\subset\PP^4$から$(q_1,q_2,q_3,h^2,f)$を一意に復元できる。
+\end{corollary}
+\begin{proof}
+$xyz$係数から$w_0\notin V$。同じ因子を与える二切断はスカラー倍であり、
+固定係数がスカラーを1にするので$f$が決まる。
+$Z_f$は飽和完全交叉$(2,2,2,3)$なので、$I_{Z_f}(2)$は三つの二次式のnetである。
+平方単項式$x^2,y^2,z^2$への係数射影は同型なので、三つの$q_i$と$Y$を回復できる。
+次に$I_{Z_f}(3)/I_Y(3)=\CC w_f$を取る。
+$2q_ix_i/3$の既知の非零係数で規格化し、$xyz$係数から$h^2$、基底1成分から$f$を得る。
+$h$の符号はこの因子だけでは決まらず、反対代数$A_{-h,q,f}$も同じ因子を持つ。
+\end{proof}
+\begin{remark}[ramification方向への量子補正]
+$R_\pi=\operatorname{div}_Y(xyz)\sim3K_Y$であり、24個の単純点からなる。
+各分岐値の上には指数2の点が四つあり、Riemann--Hurwitzでも
+$2g-2=8(-2)+6\cdot4=8$を確認できる。
+古典三次式$F=D/3+\sum q_ix_i+f$のpencilのrelative Jacobian因子は
+$\eta_f=2\sum q_ix_i/3+f$である。
+量子的な点因子は$w_f=\eta_f-2h^2xyz/3$なので、古典臨界因子をramification sectionの方向へ動かす。
+$h=0$のこの因子は可換三様体の全点加群ではない。
+例えば$q=(uv,(u-v)(u-2v),(u-3v)(u-4v))$は分岐値$0,\infty,1,2,3,4$の具体例である。
+一般の$f$では古典三様体$V(F)$も同時に滑らかとなる。
+実際、境界のFermat切断には勾配共通零点がなく、残る特異点incidenceは
+$Y$上の値と一次jetの二条件で次元高々3となる。
+\end{remark}
+
+\section{点因子の既約な次数56の衝突判別式}
+\begin{theorem}[六分岐値全体での衝突判別式]
+\label{thm:point-discriminant-56}
+定理\ref{thm:point-canonical-curve}の任意の三つの二次式と$h\ne0$を固定する。
+$Z_f$が非被約となる$f\in\mathbb A^4$の被約閉集合$\Delta_{\rm pt,h}$は
+既約超曲面であり、その次数は56である。
+一般点の因子は一つの通常二重点と22個の単純点からなる。
+これはtailsの正則性の判別式ではない。
+\end{theorem}
+\begin{proof}
+$w=w_0$とし、五次元線形系$\Lambda=\CC w\oplus V$を取る。
+非分岐点では$V$だけで値と一次jetを生成する。
+分岐点で例えば$x=0$なら$y,z$は単元で、$x$が局所座標となる。
+基底座標$t-t_0$は$x^2$の単元倍なので$V$の微分は零だが、
+$dw/dx=-2h^2y(P)z(P)/3\ne0$である。
+従って$\Lambda$は全点で一次jetを生成し、affine族$w+f$は分岐点で二重零点を持たない。
+
+被覆群の各非恒等元$\sigma$について$w-\sigma(w)\ne0$である。
+実際、$q_1x,q_2y,q_3z,xyz$は異なるcharacter成分で、前三者の係数は非零。
+従って$\CC(Y)=\CC(t,w)$で、$\Lambda$の写像は像へbirationalである。
+二重零点incidence
+\[
+ \mathcal I=\{(P,f):(w+f)(P)=0,\ j^1_P(w+f)=0\}\subset Y\times\mathbb A^4
+\]
+は閉で、分岐点を除いた$Y$上のaffine二次元束である。
+従って既約3次元であり、射影はproperかつ全fiberが有限なので、像は既約閉超曲面となる。
+
+三重零点は$f$の値・一次・二次jetの三独立条件で、incidenceは高々2次元。
+異なる基底値の二点が共に二重零点となる条件は四独立条件なので、同じく高々2次元。
+同じ基底値の異なる二点は$(P,\sigma P)$であり、まず$w(P)=w(\sigma P)$を要する。
+これは非零切断の零点なので有限個の点対に限られ、残る係数族も高々2次元である。
+従って一般の判別点には唯一の重複度2の零点だけがあり、二次Weierstrass模型から判別式はそこで滑らか。
+
+一般のaffine直線$f=f_0+sf_1$を取る。
+$f_1$の三根を単純で六分岐値と異なるように取り、$w+f_0$がその上で零とならないようにする。
+二切断は基点なしpencilとなり、$Y\to\PP^1$は次数24、無限遠fiberは24単純点である。
+上の次元高々2の集合を避ける一般直線では、全ramificationは単純でbranch valueは相異なる。
+Riemann--Hurwitzにより総ramification次数は
+$(2g(Y)-2)+2\cdot24=8+48=56$。
+無限遠で交わらない一般直線と被約判別超曲面の交点数が56となるので、これが次数である。
+この証明は特定の六分岐値に依存せず、全ての相異なる六点で成立する。
+\end{proof}

@@ -1,6 +1,6 @@
 # Codex 研究指示：pdf-only の数学的発展・論文化・追跡解除
 
-**日付：2026-11-13 / v5**
+**日付：2026-11-13 / v6**
 **適用対象：** `uedakazushi/nc-cubic2` の現行 `main`。本ファイルは履歴ではなく、今後の継続研究の指針である。  
 **着手順：** `00_research_plan.md` → 本ファイル → `PDF_SOURCES.md` → `notes/research_notes.md` → 対象の現行TeX・PDF・計算コード。
 
@@ -31,7 +31,7 @@
 
 再監査で誤りが判明したら依存定理・abstract・Introduction・研究方針まで訂正する。過去の誤記録の時系列蓄積はしないが、再発防止に必要な反例・障害はノートに残す。
 
-## 研究主題と具体的な伸ばし方（残る原PDF3本）
+## 研究主題と具体的な伸ばし方（残る原PDF1本）
 
 以下は開始時点の優先案であり、数学的価値が高い道筋を見つけた場合は理由を簡潔に示して変更してよい。**1本ずつ順番に削除することを義務化しない。** 複数PDFにまたがる自然な定理は同じ現行原稿で扱ってよい。
 
@@ -39,23 +39,19 @@
 
 入口：`papers/central_quotient_local_models.tex`。全22節の固有内容・証明・例・書誌を回収し、分離型の必要十分判別式、一般ambientのvery-general正則性・有限位数境界での非空正則開集合、Cayley表示まで現行TeXへ統合した。PBW/CY・全中心・Rees/Azumaya・局所模型・表現/Ext・特異圏/twist・有効tails判別式も現行証明と厳密計算を持つ。削除ゲートの対応と実行範囲は `PDF_SOURCES.md`。
 
-継続する研究課題は一般h/全混合方向の有効判別式、Brauer類の具体表示と大域stack、標識なし復元の存在分類、具体式の網羅的な初出照合。原PDFは再開の前提ではない。残る3本の固有証明の回収を次の優先とする。
+継続する研究課題は一般h/全混合方向の有効判別式、Brauer類の具体表示と大域stack、標識なし復元の存在分類、具体式の網羅的な初出照合。原PDFは再開の前提ではない。残る1本の固有証明の回収を次の優先とする。
 
 ### B. 中心三次対（旧V、60頁、PDF追跡解除済み）
 
 全21節の固有証明を `nc_cubic_threefold_moduli.tex` と入力節へ統合した。全Hesse中心式とFermat自由代数恒等式、37次元graph成分と一般中心、完全な対角同型条件、剛体周囲の正則な四次元族を回収し、厳密計算・LuaLaTeX組版・表示確認後に原PDFを追跡解除した。全Artin形式比較は通常の標識付き関手の主張であり、大域分類ではない。対応表は `PDF_SOURCES.md`。一般の可換対応と無標識分類は継続課題。
 
-### C. `papers/pdf-only/boundary/pfaffian_contact.pdf`（旧III、89頁）
+### C. Pfaffian接触境界（旧III、89頁、PDF追跡解除済み）
 
-入口：`papers/pfaffian_brill_noether_technical.tex` とその `papers/sections/` 入力、`pfaffian_hessian_geometry.tex`。
+全25節を現行大部TeXへ統合した。全次数頂点核はSchur分解・二行のBott/Čech–Koszulで決定し、旧大型有限rankへの依存を除いた。非線形接触分類、一意切片、有限決定性の必要十分条件、同変代数化と単元なし十次右同値も証明付きで回収した。実際のTate再帰を6次まで有理数で再構成し係数1/96を検証。一般の無限代表の収束性、固定Fで全座標変更を許す分類、低normal次数の全頂点加群は未解決である。
 
-普遍同変摂動の非線形接触分類、全次数頂点核、Hessian型局所特異性、Pfaffian graphの解消を体系的に比較する。旧PDFでは証明済み、現行TeXでは未解決とされた結果が存在するため、**仮定・同値関係・形式/収束/代数化・有限計算証明書の違いを解消すること**が先決。可能なら接触正規形をもっと概念的・座標非依存に記述し、moduliやBrill--Noether境界への帰結を導く。未解決の高次消去を成功したものとして扱わない。既存の数学的本文を省略しない。
+### D. 中心三次技術稿（61頁、PDF追跡解除済み）
 
-### D. `papers/pdf-only/ambient/central_cubic_technical.pdf`（旧技術稿、61頁）
-
-入口：`uedakazushi/nc-cubic` の論文A、`nc_cubic_threefold_moduli.tex`、関連する中心chart・Poisson資料。
-
-量子化、中心三次、point modules、PI中心とAzumaya locus、regularityの固有証明を現行資料と比較する。point schemeとPoisson零点との関係や、一般混合パラメータでの幾何学的意味、より一般の正則性判定・復元へ繋がる結果は新たな研究として追求してよい。別リポジトリの定理を誤引用したり、既存主論文A/Cの重要な証明を消したりしない。このリポジトリに不要な一般次元Poisson分類を重複収録しない。
+全34節は中心商論文・モジュライ論文・`diagonal_cubic_point_geometry.tex`へ統合した。最後の点加群固有結果（genus5標準曲線、長さ24因子、次数56衝突判別、shiftを含む復元）も独立論文に整理した。次数56の証明は六分岐値が相異なる全範囲へ拡張。検算・組版・表示確認を終えた。対応は `PDF_SOURCES.md`。
 
 ### E. `papers/pdf-only/quantization/sklyanin_mixed_quantization.pdf`（旧II、195頁）
 

@@ -59,11 +59,11 @@ embedded primary componentsの横断長8・64、
 
 ## 現在の研究内容
 
-- `papers/pfaffian_brill_noether_technical.tex`：境界・モジュライ・Pfaffian・Brill–Noether等の大部技術原稿。79節の数学的内容を5個の`papers/sections/`入力へ分割。親TeXが唯一の組版入口。分割の静的内容一致は確認したが、組版・独立証明検証は未実施。
+- `papers/pfaffian_brill_noether_technical.tex`：境界・モジュライ・Pfaffian・Brill–Noether等の大部技術原稿。形式変形・接触分類・Hessian幾何を入力節へ整理し、全次数頂点核と非線形接触分類・同変代数化を追加した。親TeX全体277頁の組版と追加部分の表示、Tate再帰の有理数再構成を確認済み。全証明の外部査読とは区別する。
 - `papers/central_fiber_discriminant.tex`：中心三次曲面の必要十分判別式・特異点の解析。対応する正確な記号計算は `computations/verify_central_fiber_discriminant.py`。
 - `notes/research_notes.md`：現行の数学的状態、欠けている入力、研究再開手順。
 
-初期移管の対象は**完全なTeXソースがGitHub APIで転送・blob一致検証できた部分のみ**。中心商特異性の全22節を現行TeX・厳密検算へ統合して原PDFを追跡解除し、PDF原資料は3点保持する。有限smoothnessの研究ノートは重要な内容を [現行LuaLaTeXノート](notes/ambient_finite_smoothness_and_recovery.tex) と `nc-cubic` の対応原稿へ整理し、PDF追跡を解除した。残る論文PDFについては、未収録の結果・証明があるため保全し、順にTeX化する。詳細は `PDF_SOURCES.md`。
+初期移管の対象は**完全なTeXソースがGitHub APIで転送・blob一致検証できた部分のみ**。中心商特異性の全22節を現行TeX・厳密検算へ統合して原PDFを追跡解除し、PDF原資料は1点保持する。有限smoothnessの研究ノートは重要な内容を [現行LuaLaTeXノート](notes/ambient_finite_smoothness_and_recovery.tex) と `nc-cubic` の対応原稿へ整理し、PDF追跡を解除した。残る論文PDFについては、未収録の結果・証明があるため保全し、順にTeX化する。詳細は `PDF_SOURCES.md`。
 
 ## 再現
 
@@ -96,6 +96,8 @@ GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗
 
 [三次元表現](papers/sections/central_quotient_simple_representations.tex)と[特異圏・twist](papers/sections/central_quotient_categories_and_twist.tex)では、軸上剛性の法29の19次minor、境界正則性、chartのIwanaga–Gorenstein性を現行証明に保持する。全8単純表現のExt表も構造的に証明し、`computations/verify_central_quotient_extensions.py`で代数体上の厳密rankを再実行した。Nakayama twist恒等性は`computations/verify_central_quotient_koszul.py`の全αで有効なFrobenius証明書から従う。
 
-[正確なtails判別](papers/sections/central_quotient_exact_tails.tex)の原稿をLuaLaTeXで組版済み。[一般正則性](papers/sections/central_quotient_global_regularity.tex)と[Cayley幾何](papers/sections/central_quotient_cayley_geometry.tex)も証明・厳密計算付きで回収した。全22節の固有内容を置換できたため、原PDF VI（61頁）を追跡解除した。[削除判定の対応表](PDF_SOURCES.md)を参照。残る3PDFは固有証明を回収するまで保持する。
+[正確なtails判別](papers/sections/central_quotient_exact_tails.tex)の原稿をLuaLaTeXで組版済み。[一般正則性](papers/sections/central_quotient_global_regularity.tex)と[Cayley幾何](papers/sections/central_quotient_cayley_geometry.tex)も証明・厳密計算付きで回収した。全22節の固有内容を置換できたため、原PDF VI（61頁）を追跡解除した。[削除判定の対応表](PDF_SOURCES.md)を参照。残る1PDFは固有証明を回収するまで保持する。
 
-中心三次対（旧V、60頁）も全21節を現行モジュライ論文に統合してPDF追跡解除済み。全係数中心式・規格化の恒等式、軌道rank24、同型判定を厳密検算し、親TeXを組版した。残る研究原PDFは3本。
+中心三次対（旧V、60頁）も全21節を現行モジュライ論文に統合してPDF追跡解除済み。全係数中心式・規格化の恒等式、軌道rank24、同型判定を厳密検算し、親TeXを組版した。残る研究原PDFは全混合量子化の1本。
+
+Pfaffian接触境界（89頁）は全次数頂点核・非線形接触分類・同変代数化を回収し、中心三次技術稿（61頁）は点因子/標準種数5曲線の新稿へ固有部分を回収して、両PDFを追跡解除した。残る原PDFは全混合量子化の195頁1本。

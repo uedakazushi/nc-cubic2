@@ -34,7 +34,7 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 - `sections/brill_noether_boundary_geometry.tex`：境界の三次錐、六次Torelli、二段階解消（旧§21–24）。
 - `sections/pfaffian_contact_low_order.tex`：普遍共変量とTate、低次から20次の接触正規形（旧§25–41）。
 - `sections/pfaffian_contact_high_order.tex`：20–26次、Koszul、横断Hessian、有限決定性（旧§42–74）。
-- `sections/pfaffian_computation_audit.tex`：検算の現行依存関係、整数証明書の状態、未解決の26次問題（旧§75–79を置換）。旧 `verification/` と `source_vNN/` は現行mainに存在せず、独立追試は未実施。
+- `sections/pfaffian_computation_audit.tex`：検算の現行依存関係、整数証明書の状態、全次数構造定理と旧有限計算の依存の区別（旧§75–79を置換）。旧 `verification/` と `source_vNN/` は現行mainに存在せず、旧大型計算の全追試は未実施だが、Tateの六次再帰は新コードで厳密再構成した。
 
 親ファイルだけを `latexmk papers/pfaffian_brill_noether_technical.tex` で組版する。今回の検証は文字列単位の内容保持に限られ、LuaLaTeXの実行と証明の独立監査は行っていない。
 
@@ -59,3 +59,9 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 - `sections/central_pair_explicit_centers.tex`：全Hesse有限中心式、Fermatの41項自由代数恒等式、形式PBW・有限微分性・平行移動と中央スカラー差。検算は `computations/verify_central_pair_centers.py`。
 - `sections/central_pair_generic_component.tex`：37次元graph成分、関数体上の重み(1,1,3)中心、41次元支配的incidence。
 - `sections/central_pair_diagonal_classification.tex`：対角族の完全同型条件、反対代数、軌道次元。`computations/verify_central_pair_orbits.py` は120射影変換と150×25微分を厳密検算。
+
+- `sections/pfaffian_vertex_structure.tex`：Schur分解・二行のBott/Čech–Koszul・16生成元・全次数頂点核。
+- `sections/pfaffian_contact_classification.tex`：全普遍形式接触類の一意切片、有限決定性の必要十分条件と残余moduli。
+- `sections/pfaffian_equivariant_algebraization.tex`：同変近似と中心重みでの代数化、実際の境界の単元なし十次右同値。
+- `computations/verify_pfaffian_vertex_and_tate.py`：全記号Schur恒等式と有限空間次元、Tate再帰の六次MC恒等式・四block・1/96。
+- `diagonal_cubic_point_geometry.tex`：長さ24因子・標準種数5曲線・全六分岐値での次数56判別・shift付き復元。`verify_diagonal_point_geometry.py` が多項式部分を検算。

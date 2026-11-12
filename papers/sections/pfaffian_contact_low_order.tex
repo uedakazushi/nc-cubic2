@@ -368,14 +368,13 @@ Fermat三次三次元多様体のBN境界は、その六次接錐と形式的に
 \]
 となる。この非零の四次法方向補正が、接錐では見えなかった境界の情報である。
 
-\begin{remark}[計算証明書の範囲]
-\texttt{nc\_cubic\_verify\_v8.py} は、上の標本のMaurer--Cartan方程式を
-6次まで有理多項式として検証し、行列式の三つの寄与を再計算する。
-Fermat式についても $q=(1,5,-7,-8,9)$ で独立に
-$[t^{10}]\det K=408240$、$\det\operatorname{Hess}_{F_0}(q)=19595520$ を得る。
-さらに32次元外積空間の実際の作用素を用い、別の積の実装で有限体上の恒等式も確認する。
-数値だけから境界を同定したのではなく、実際の対象とscheme-theoretic imageの同定は
-命題\ref{lem:tate-universal-object}--\ref{thm:tate-boundary-determinant}の証明による。
+\begin{remark}[現行の厳密再現]
+\texttt{computations/verify\_pfaffian\_vertex\_and\_tate.py}は
+外積・Cliffordの二つのbitmaskと有理多項式によって再帰を独立に再構成する。
+六次までの実際のMaurer--Cartan恒等式を確認し、表示した四つの定数block、
+三次・五次blockの零性、行列式係数$-648$と比$1/96$を再計算する。
+有限標本から境界を同定するのではなく、実際の対象とscheme-theoretic imageの同定には
+前の評価写像とdeterminantal idealの証明を用いる。
 \end{remark}
 
 \subsection{すべての滑らかな三次式に対するHessian類の非零性}
