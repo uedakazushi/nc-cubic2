@@ -10,7 +10,7 @@
   の滑らかさの必要十分条件が \(H(H+1)(27H+28)\neq0\) であることは `papers/central_fiber_discriminant.tex` に証明されている。追加の変数変換で \((\alpha^3+9)(28\alpha^3+243)\) が現れる。記号計算は `computations/verify_central_fiber_discriminant.py` に保持する。**中心曲面の判別式から非可換tailsの正則性・Azumaya性までは自動的に導かない。**
 - Brill–Noetherの形式変形・gluing object・相対Picard・六次境界・Torelliおよび二段階解消は `papers/pfaffian_brill_noether_technical.tex` に現行の証明を置く。旧`brill_noether.pdf`は章見出しの大部分がこれに対応するため追跡解除した（PDF本文との定理ごとの同値性を監査したものではない）。
 - 原PDF移管は全件完了。全混合形式比較・平面切断幾何・点因子の現行稿と厳密再生成器を入口とし、原PDFへ戻らない。
-- `finite_smoothness_notes.pdf`のdg perfectness反例に関する独立TeX再構成は `nc-cubic/notes/source_recovery/dg_perfectness_counterexamples.tex` に存在するが、有用な残部も現行ノートへ統合してPDF追跡を解除した。全主張を独立監査したという意味ではない。
+- `finite_smoothness_notes.pdf`のdg perfectness反例に関する独立TeX再構成は `papers/relative_reconstruction/dg_perfectness_counterexamples.tex` に存在するが、有用な残部も現行ノートへ統合してPDF追跡を解除した。全主張を独立監査したという意味ではない。
 - 先行研究の新規性・各証明の外部監査は未完了。未確認の内容を定理として拡張しない。
 
 ## 最優先の制約
