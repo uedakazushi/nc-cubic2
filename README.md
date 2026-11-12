@@ -63,7 +63,7 @@ embedded primary componentsの横断長8・64、
 - `papers/central_fiber_discriminant.tex`：中心三次曲面の必要十分判別式・特異点の解析。対応する正確な記号計算は `computations/verify_central_fiber_discriminant.py`。
 - `notes/research_notes.md`：現行の数学的状態、欠けている入力、研究再開手順。
 
-初期移管の対象は**完全なTeXソースがGitHub APIで転送・blob一致検証できた部分のみ**。PDF原資料は5点保持する。有限smoothnessの研究ノートは重要な内容を [現行LuaLaTeXノート](notes/ambient_finite_smoothness_and_recovery.tex) と `nc-cubic` の対応原稿へ整理し、PDF追跡を解除した。残る論文PDFについては、未収録の結果・証明があるため保全し、順にTeX化する。詳細は `PDF_SOURCES.md`。
+初期移管の対象は**完全なTeXソースがGitHub APIで転送・blob一致検証できた部分のみ**。中心商特異性の全22節を現行TeX・厳密検算へ統合して原PDFを追跡解除し、PDF原資料は4点保持する。有限smoothnessの研究ノートは重要な内容を [現行LuaLaTeXノート](notes/ambient_finite_smoothness_and_recovery.tex) と `nc-cubic` の対応原稿へ整理し、PDF追跡を解除した。残る論文PDFについては、未収録の結果・証明があるため保全し、順にTeX化する。詳細は `PDF_SOURCES.md`。
 
 ## 再現
 
@@ -96,4 +96,4 @@ GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗
 
 [三次元表現](papers/sections/central_quotient_simple_representations.tex)と[特異圏・twist](papers/sections/central_quotient_categories_and_twist.tex)では、軸上剛性の法29の19次minor、境界正則性、chartのIwanaga–Gorenstein性を現行証明に保持する。全8単純表現のExt表も構造的に証明し、`computations/verify_central_quotient_extensions.py`で代数体上の厳密rankを再実行した。Nakayama twist恒等性は`computations/verify_central_quotient_koszul.py`の全αで有効なFrobenius証明書から従う。
 
-[正確なtails判別](papers/sections/central_quotient_exact_tails.tex)の原稿をLuaLaTeXで組版済み。原PDF VIの初期諸節にある分離型三次式・一般ambient正則性・開性等の固有内容の全照合が終わるまでは、原PDFを保持する。
+[正確なtails判別](papers/sections/central_quotient_exact_tails.tex)の原稿をLuaLaTeXで組版済み。[一般正則性](papers/sections/central_quotient_global_regularity.tex)と[Cayley幾何](papers/sections/central_quotient_cayley_geometry.tex)も証明・厳密計算付きで回収した。全22節の固有内容を置換できたため、原PDF VI（61頁）を追跡解除した。[削除判定の対応表](PDF_SOURCES.md)を参照。残る4PDFは固有証明を回収するまで保持する。

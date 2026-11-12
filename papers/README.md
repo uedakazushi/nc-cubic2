@@ -44,21 +44,14 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 
 - `sections/central_pair_mixed_derived_rigid.tex`：旧論文V§19–21の全混合低次数中心、偶数Veronese復元、Serre関手を使うmarking付き導来復元、固定剛体ambientの四係数非同型族。`nc_cubic_threefold_moduli.tex`から入力。正則な四係数開集合は依存する非可換Bertiniの適用を未監査。
 
-- `central_quotient_local_models.tex`：旧論文VIの非可換A1局所模型、四つの中心特異点、局所skew group、Brauer指数、21中心点と三homological singularityの条件付き解析。LuaLaTeX独立入口。検算：`python3 computations/verify_central_quotient_local_hessian.py`（SymPy）。全中心表示・Azumaya locus・小表現排除は未移管の入力として明記。
-
-- `sections/central_quotient_simple_representations.tex`：旧論文VI§17–18から1/2次元単純表現排除、軸上2個と非軸上6個の三次元表現、六次分裂元の最小多項式を回収。親の `central_quotient_local_models.tex` から入力する。`python3 computations/verify_central_quotient_reps.py` は明示行列・三関係式・G1=0をQ[t]/(q)とQ[ω]/(ω²+ω+1)上で厳密検算する。全中心・Azumaya locus・Ext ranksは未完。
-
-- `sections/central_quotient_categories_and_twist.tex`：旧論文VI§21–22の射影特異圏の二段局所化と三つの通常二重点への完備化・Knörrer同値、および標識を保たない3-spherical twist。`central_quotient_local_models.tex`から入力。`sections/central_quotient_simple_representations.tex`は軸上3次元表現の無限小剛性の整数証明書を新設した。有限中心・tailsの正則性の完全証明はまだ未統合。
-
-- `sections/central_quotient_center_azumaya.tex`：旧VI§14–15。全中心四生成元・唯一の関係とRees退化を用いるAzumaya locus、中心ファイバーによる大域次元の条件付き判定。旧有限語証明書を独立再実行していない。
-
-- `sections/central_quotient_exact_tails.tex`：旧VI§16の一次元表現の非被約スキーム、悪い中心値、有限射影MFの二重分岐、曲面/三foldの正確な量子的判別。親 `central_quotient_local_models.tex` より入力。`computations/verify_quotient_exact_tails.py` を再現コードとし、中心・貼合せの未監査入力に注意する。
-
-- `computations/verify_center_degree7.py`：非斉次中心のF7=120/F6=84、中心核6元のQ上厳密証明とmod101 rank78。標準ライブラリのみ。
-- `computations/verify_center_weight18_mod101.py`：独立のfiltered recursionでF18=1330、50単項式rank49とΦ=0をmod101で検査。特性零の中心関係式の完全証明ではない。長時間の再実行が必要な計算であり、GitHub Actionsは使わない。
-
-- `computations/verify_center_homogeneous_symbols.py`：斉次Sklyaninの次数6最高次記号のQ上rank4。既知の斉次中心定理を入力に全中心生成・重み18の特性零rank49を導く。明示Phiの特性零恒等式は別の未解決課題。
-
-- `computations/verify_center_phi_exact.py`：Phiの特性零恒等式を有理数上で検証するための増分型スクリプト。標準ライブラリのみ。1回に1次数の商を構成しGit外にcheckpoint。次数18後に`--verify`。**現時点でPASSは未取得**（有理数計算は次数13まで）。
-
-- `verify_center_phi_exact.py --smoke` は現在次数2–8の有理数商次元を検査する。同じ帰納アルゴリズムの独立ローカル実装では次数13（次元560）まで実行確認。GitHub版スクリプトの実行と次数18のPhi検証は未完了。
+- `central_quotient_local_models.tex`：中心商研究の独立LuaLaTeX入口。旧VIの全22節を証明付きで回収し、原PDFを追跡解除。対応表と検証範囲は `../PDF_SOURCES.md`。
+- `sections/central_quotient_pbw_cy.tex`：相対PBW・自己双対解消・Koszul AS正則性・Nakayama恒等性。既知のEG一般定理との関係も明示。
+- `sections/central_quotient_center_azumaya.tex`：全中心・Rees/Azumaya・中心ファイバー。Φ=0は `verify_center_phi_exact.py --backend flint --run-all --verify` で次数18までQ上実行済み。
+- `sections/central_quotient_simple_representations.tex`：小表現排除・全8三次元単純表現・Ext表。`verify_central_quotient_reps.py` と `verify_central_quotient_extensions.py` で厳密再現。
+- `sections/central_quotient_categories_and_twist.tex`：特異圏の局所化・完備化・三因子分解、球面twist。有限中心・境界正則性・chartのGorenstein性の証明も現行稿に収録。
+- `sections/central_quotient_chart_gluing.tex`：行列因子化の分母払い、一chart・三切断の貼合せ、Serre次元。
+- `sections/central_quotient_global_regularity.tex`：分離型の必要十分判別式、一般hの混合例・5-CY性、超越的中心値、固定ambientと有限位数境界の正則開集合。
+- `sections/central_quotient_cayley_geometry.tex`：Cayleyコンパクト化・twisted NCCR・古典pencil/resultant・長さ24の非被約定常点。
+- `sections/central_quotient_exact_tails.tex`：悪い中心値、MF二重分岐、曲面/三foldの有効な必要十分条件。`verify_quotient_exact_tails.py` で検算。
+- `computations/verify_central_quotient_global_geometry.py`：一般hの中心性、判別式、Cayley変換、位数6等の厳密検算。
+- `computations/verify_central_quotient_koszul.py`：全αのFrobenius証明書。`--general-h` で例外因子h(h³+1)と対合行列式を検証し、本文で例外値も処理する。

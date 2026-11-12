@@ -212,8 +212,10 @@ conductorと剰余体の線形部分空間を標準化することにより、
 stable圏では$N_0$は零、後の二つは相互直交で
 stable Endが$\CC$、shiftは二つを交換する。
 よって$\SingCat(N_0)^\Kar\simeq\PerfCat_{\mathbb Z/2}(\CC)$。
-OrlovのKn\"orrer周期性
-\cite[Theorem~2.1]{OrlovSingcat}により
+まずaffineな$k[p,q]/(pq)$と$k[p,q,r,s]/(pq+rs)$に
+OrlovのKn\"orrer周期性\cite[Theorem~2.1]{OrlovSingcat}を適用する。
+両方の特異点は原点だけなので、補題\ref{lem:quotient-completion}を
+可換環に適用して完備化へ移せる。従って
 $N_0$と$k[[p,q,r,s]]/(pq+rs)$の
 Karoubi完備な特異圏は同値である。
 $\CC$上で後者の二次式は四変数の平方和と線形同型なので結論。
@@ -324,8 +326,12 @@ $j^*:\operatorname{QGr}A\to\operatorname{Mod}Q^\circ$
 を得る。その右随伴
 $j_*M=\pi(M\otimes_{Q^\circ}A^\circ)$は、
 $A^\circ$が左$Q^\circ$加群として自由なのでexactである。
-局所化済み加群の非負次数部分を取れば
-$j_*V\simeq\mathcal T$である。
+ここで局所化済み加群$L=M\otimes_{Q^\circ}A^\circ$はtorsion-freeかつ飽和している。
+実際、$A_{\ge n}\to L$という次数付き写像は、中心元$u^n$の像を
+$u^{-n}$倍することで$A\to L$へ一意に延長する。
+$V$から作る非負次数格子$N_V$に対して$L/N_V$はtorsionである
+（各負次数元は十分高い正次数で非負次数へ入る）。
+従って$j_*V\simeq\pi N_V=\mathcal T$である。
 $j^*$もexactだから導来随伴
 \[
  \mathbf R\operatorname{Hom}_{\operatorname{QGr}A}
@@ -381,6 +387,14 @@ Serre双対性は必要な合成対の非退化性を与える。
 補題の有限injective分解と
 coherent対象間の有限次元Extにより
 Seidel--Thomasの球面対象の条件を満たす。
+その際、大きい圏$\operatorname{QGr}A$は局所noetherianな
+Grothendieck圏なので十分なinjectiveを持ち、injectiveの直和もinjectiveである。
+小さい圏$\operatorname{qgr}A$はnoetherian対象からなるSerre部分圏で、
+全ての大きい対象はcoherent部分対象の有向和である。
+従ってcoherent対象への全射にはcoherent部分対象からの全射が存在し、
+Seidel--Thomasの条件(C1)--(C4)を満たす。
+有限大域次元とproper性により、各coherent対象との全Extも有限次元である。
+これでinjective enhancement上の評価写像とconeの構成が適用できる。
 これは同論文の一般Abel圏での構成であり、
 可換スキーム上の対象に限定しない。
 

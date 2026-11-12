@@ -1,6 +1,6 @@
 # Codex 研究指示：pdf-only の数学的発展・論文化・追跡解除
 
-**日付：2026-11-12 / v3**
+**日付：2026-11-13 / v4**
 **適用対象：** `uedakazushi/nc-cubic2` の現行 `main`。本ファイルは履歴ではなく、今後の継続研究の指針である。  
 **着手順：** `00_research_plan.md` → 本ファイル → `PDF_SOURCES.md` → `notes/research_notes.md` → 対象の現行TeX・PDF・計算コード。
 
@@ -31,21 +31,15 @@
 
 再監査で誤りが判明したら依存定理・abstract・Introduction・研究方針まで訂正する。過去の誤記録の時系列蓄積はしないが、再発防止に必要な反例・障害はノートに残す。
 
-## 現行5本の研究主題と具体的な伸ばし方
+## 研究主題と具体的な伸ばし方（残る原PDF4本）
 
 以下は開始時点の優先案であり、数学的価値が高い道筋を見つけた場合は理由を簡潔に示して変更してよい。**1本ずつ順番に削除することを義務化しない。** 複数PDFにまたがる自然な定理は同じ現行原稿で扱ってよい。
 
-### A. `papers/pdf-only/boundary/central_quotient_singularities.pdf`（旧VI、61頁）
+### A. 中心商特異性（旧VI、61頁、PDF追跡解除済み）
 
-入口：`papers/central_quotient_local_models.tex`、`papers/sections/central_quotient_center_azumaya.tex`、`central_quotient_exact_tails.tex`、`central_quotient_simple_representations.tex`、`central_quotient_categories_and_twist.tex` と既存検算コード。
+入口：`papers/central_quotient_local_models.tex`。全22節の固有内容・証明・例・書誌を回収し、分離型の必要十分判別式、一般ambientのvery-general正則性・有限位数境界での非空正則開集合、Cayley表示まで現行TeXへ統合した。PBW/CY・全中心・Rees/Azumaya・局所模型・表現/Ext・特異圏/twist・有効tails判別式も現行証明と厳密計算を持つ。削除ゲートの対応と実行範囲は `PDF_SOURCES.md`。
 
-現状：中心核の次数6、斉次中心からの生成、中心特異点、A1局所模型、Brauer障害、Karoubi特異圏、球面ツイスト、指定一混合項族のtails判別についてTeXがある。ただし一部は有限中心・Azumaya・chart貼合せの未監査入力に依存する。
-
-**現在の到達点：** Φ=0は現行の `computations/verify_center_phi_exact.py` による厳密有理数検証で確定した。中心の正規性とAzumaya locusはRees退化・既知Sklyanin入力・一次文献の仮定照合から導き、二重étale被覆とrank6 monic式で中心降下と分岐位置を証明した。中心chartと導分によるperfect性の貼合せを現行TeXに収録し、15点のHessianも厳密検算した。
-
-相対PBW・周囲のKoszul AS正則性・R1のCY性・Nakayama twistは現行証明とQ[α]上の有限証明書で確定し、全表現間Ext表も構造的証明と代数体上の厳密行列計算で再現した。
-
-**次の数学的ボトルネック：** 旧VI初期§1–13の固有結果（分離型三次式の必要十分条件、一般ambientの超越的中心値、有限位数境界の正則開集合）を現行資料と完全比較する。より概念的な証明・一般化が得られれば現行論文へ統合する。既存の重要な数学を失わない範囲で、原PDFの削除ゲートを引き続き判定する。
+継続する研究課題は一般h/全混合方向の有効判別式、Brauer類の具体表示と大域stack、標識なし復元の存在分類、具体式の網羅的な初出照合。原PDFは再開の前提ではない。他の4本の固有証明の回収を次の優先とする。
 
 ### B. `papers/pdf-only/ambient/central_pair_formal_moduli.pdf`（旧V、60頁）
 

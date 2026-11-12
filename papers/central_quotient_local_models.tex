@@ -20,7 +20,7 @@
 \newcommand{\CM}{\operatorname{CM}}
 \title{中心三次商の正則性と非可換$A_1$局所模型\\
 \large PBW変形、全中心、量子的判別式とBrauer障害}
-\date{2026年11月12日・v7}
+\date{2026年11月13日・v8}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -34,6 +34,9 @@
 射影特異圏の三因子分解および球面twistを説明する。
 中心chartと導分によるperfect性の貼合せから、指定混合族の
 正確なtails判別式$(\alpha^3+9)(28\alpha^3+243)$を得る。
+さらに分離型二変数三次式の必要十分判別式、固定した良い周囲の
+超越的中心値と有限位数楕円境界での非空正則開集合を証明する。
+零中心ファイバーをCayley三次曲面の反標準補集合として明示し、twisted NCCRと解釈する。
 基礎となる斉次Sklyaninの性質、既知の分類・双対性と本稿の具体的な証明・計算を区別する。
 \end{abstract}
 
@@ -266,6 +269,8 @@ $\End(N)$なら一般点では行列環となって矛盾する。
 零にするものではない。
 \end{proof}
 
+\input{papers/sections/central_quotient_cayley_geometry.tex}
+
 \section{二中心変数を逆にしたchartの21個の中心特異点}
 \label{sec:quantum-boundary-center}
 $\alpha^3=-243/28$とし、旧論文VIの二つの中心変数$u,v$を逆にした
@@ -441,6 +446,8 @@ Iwanaga--Gorenstein完備化によって証明する。
 
 \input{papers/sections/central_quotient_chart_gluing.tex}
 
+\input{papers/sections/central_quotient_global_regularity.tex}
+
 \input{papers/sections/central_quotient_exact_tails.tex}
 
 \section{証明の入力と残る照合対象}
@@ -460,13 +467,24 @@ Rees退化、中心の忠実平坦降下、15点のHessian、
 六次分裂元と\cite[Theorem~5.1(1)]{IW}の仮定を照合して導いた。
 小単純表現の行列と全表現間の一次Ext表は再現コードを持ち、
 命題\ref{prop:quotient-full-ext1}にはExt表の構造的証明も与えた。
-また旧PDFの分離型二変数三次式の必要十分条件、
-固定した一般ambientの超越的中心値と有限位数境界での開性など、
-初期諸節の固有結果と現行資料との完全比較は未了である。
-具体式・判別式・構成の初出と新規性は、先行研究との網羅的照合がなお必要である。
-本稿の進展だけをもって原PDFの追跡解除は行わない。
+分離型三次式の必要十分条件、一般周囲での超越的中心値、
+有限位数境界での正則開集合も、第\ref{sec:quotient-global-regularity}節以下に
+仮定と証明を収録した。Cayleyコンパクト化と古典判別式も独立に計算した。
+原資料全22節の対応と置換した弱い結果は\texttt{PDF\_SOURCES.md}に記す。
+既知の一般定理の具体化と厳密計算を区別し、
+具体式・構成の初出について網羅的な新規性を主張しない。
+一般の量子パラメータでの有効判別式、Brauer類の大域的表示、
+標識なし復元の存在分類はなお研究課題である。
 
 \begin{thebibliography}{99}
+\bibitem{ATVRegular}
+M.~Artin, J.~Tate and M.~Van den Bergh,
+\emph{Some algebras associated to automorphisms of elliptic curves},
+The Grothendieck Festschrift, Vol.~I, Progr. Math. 86 (1990), 33--85.
+\bibitem{ISSklyanin}
+N.~Iyudu and S.~Shkarin, \emph{Sklyanin algebras and a cubic root of 1},
+MPIM Preprint 2017 (49), Theorem~1.1;
+\url{https://archive.mpim-bonn.mpg.de/997/1/preprint_2017_49.pdf}.
 \bibitem{IW} O.~Iyama and M.~Wemyss,
 \emph{Reduction of triangulated categories and maximal modification
 algebras for cAn singularities},
@@ -495,6 +513,21 @@ A. Yekutieli and J. J. Zhang,
 \emph{Serre duality for noncommutative projective schemes},
 Proc. Amer. Math. Soc. 125 (1997), 697--707;
 \url{https://doi.org/10.1090/S0002-9939-97-03782-9}.
+\bibitem{RainsElliptic}
+E.~M.~Rains, \emph{Filtered deformations of elliptic algebras},
+\url{https://arxiv.org/abs/2107.13540}, v2 (2022), Theorem~2.13 and its preceding discussion.
+\bibitem{EGDelPezzo}
+P.~Etingof and V.~Ginzburg,
+\emph{Noncommutative del Pezzo surfaces and Calabi--Yau algebras},
+J. Eur. Math. Soc. 12 (2010), 1371--1416;
+\url{https://arxiv.org/abs/0709.3593}, Theorems~3.3.2, 3.4.4, 3.4.5.
+\bibitem{VdBOverview}
+M.~Van den Bergh, \emph{Non-commutative crepant resolutions, an overview},
+\url{https://arxiv.org/abs/2207.09703}, Definitions~2.1 and 2.2.
+\bibitem{DKSResultant}
+C.~D'Andrea, T.~Krick and A.~Szanto,
+\emph{Multivariate subresultants in roots}, J. Algebra 302 (2006), 16--36;
+\url{https://arxiv.org/abs/math/0501281}, equation~(2).
 \bibitem{RRZNakayama}
 M.~Reyes, D.~Rogalski and J.~J.~Zhang,
 \emph{Skew Calabi--Yau algebras and homological identities},

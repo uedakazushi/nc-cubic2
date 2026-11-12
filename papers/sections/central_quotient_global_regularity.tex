@@ -1,0 +1,315 @@
+% 分離型判別式、超越的中心値、有限位数境界の開な正則範囲。
+\section{一般の中心零化元と二つのchart}
+\label{sec:quotient-global-regularity}
+本節は指定した一混合項族だけでなく、中心三次商の一般的な十分条件を扱う。
+二次ambientの一般構成そのものを分類するものではなく、以下に明記した
+AS正則性・良いPBW chart・滑らかな量子的境界を満たす固定周囲に適用する。
+$B$を左右noetherian connected graded AS正則代数、
+$W\in Z(B)$を正次数の正則斉次元、$A=B/(W)$とする。
+$\mathcal P_A=\operatorname{thick}\{\pi A(n)\}$、
+$\mathcal Q_A=\mathrm D^b(\operatorname{qgr}A)/\mathcal P_A$と書く。
+
+\begin{lemma}[有限大域次元からtwistsによる生成へ]
+\label{lem:global-finite-to-perfect}
+$A$は次数1生成で、$\operatorname{qgr}A$が有限大域次元を持つなら、
+$\mathrm D^b(\operatorname{qgr}A)=\mathcal P_A$である。
+\end{lemma}
+\begin{proof}
+大域次元を$e$とし、graded自由表示を繰り返して
+$0\to K\to L_e\to\cdots\to L_0\to M\to0$を取る。
+各$L_i$は$\pi A(n)$の有限直和である。
+最後のYoneda拡大は$\operatorname{Ext}^{e+1}(M,K)=0$なので、
+$M$は有限複体$[L_e\to\cdots\to L_0]$の直和因子である。
+line object自体が射影的であるとは仮定していない。
+\end{proof}
+
+\begin{proposition}[中心零化元による十分条件]
+\label{prop:global-annihilators}
+$u,v\in Z(B)_1$が$A$上正則列をなし、
+$\mathrm D^b(\operatorname{qgr}A/(u,v))$が構造対象のtwistsで厚く生成されるとする。
+正次数の斉次中心元$p_1,\ldots,p_r\in Z(A)$が
+次数付き特異圏の全対象を零化し、ある$N$について
+$(u,v)^N\subset(p_1,\ldots,p_r)A$なら、$\mathcal Q_A=0$である。
+\end{proposition}
+\begin{proof}
+graded lift $M$のKoszul複体$K(p_1,\ldots,p_r;M)$のcohomologyは
+$(p_1,\ldots,p_r)$に殺され、従って$(u,v)$の冪に殺される。
+有限filtrationの各商は$A/(u,v)$加群である。
+正則列のKoszul分解から$\pi(A/(u,v))(n)\in\mathcal P_A$なので、
+境界の生成性によりこのKoszul複体は$\mathcal P_A$に入る。
+一方、$\mathrm D^b(\operatorname{gr}A)\to\mathcal Q_A$は
+次数付きperfect複体を殺すから次数付き特異圏を経由する。
+従って各$p_i$は$\mathcal Q_A$で零作用し、反復coneは
+$M$のshiftとtwistの直和へ分裂する。ゆえに$M$自身も零となる。
+\end{proof}
+
+\begin{proposition}[二つの中心chartの貼合せ]
+\label{prop:global-two-charts}
+$u,v\in Z(B)_1$が$B$上正則で$A$上正則列をなし、
+$A[u^{-1}]_0,A[v^{-1}]_0$が有限大域次元を持つとする。
+$\operatorname{qgr}A/(u,v)$の有界導来圏が構造対象のtwistsで厚く生成されるなら、
+$\mathcal Q_A=0$である。
+\end{proposition}
+\begin{proof}
+各coherent対象を行列因子化で表し、各chart上で縮約する。
+補題\ref{lem:gluing-contraction}の分母払いから、対象ごとに選んだ
+$u^r,v^s$が$\mathcal Q_A$で零作用する。
+二重Koszul coneのcohomologyは$(u^r,v^s)$に殺され、
+$(u,v)^{r+s-1}\subset(u^r,v^s)$から境界の有限filtrationを持つ。
+前命題と同じ議論でconeはperfectである。
+中心作用は自然変換なので、最初の零coneの直和分解とも可換し、
+二重coneは元の対象の四つのshift・twistの直和となる。
+従って元の対象は零である。一様な$r,s$は要求しない。
+\end{proof}
+
+\section{分離型二変数三次式の必要十分判別式}
+\label{sec:quotient-separated-discriminant}
+\begin{theorem}[分離族の正則性と二変数三次判別式]
+\label{thm:global-separated}
+$S$を次数1生成、Hilbert級数$(1-t)^{-3}$の左右noetherian
+三次元AS正則代数、$g\in Z(S)_3$を正則元とする。
+$\operatorname{qgr}(S/(g))\simeq\operatorname{coh}E$で、$E$は滑らかな楕円曲線、
+構造対象のtwistsはampleな直線束列と仮定する。
+$u,v$を中心一次変数として
+\[
+ A_f=S[u,v]/(g+f),\qquad f=au^3+bu^2v+cuv^2+dv^3
+\]
+と置く。このとき
+\[
+ \operatorname{gldim}\operatorname{qgr}A_f
+ =\begin{cases}3,&\Delta_f\ne0,\\\infty,&\Delta_f=0,\end{cases}
+\quad
+ \Delta_f=b^2c^2-4ac^3-4b^3d-27a^2d^2+18abcd.
+\]
+\end{theorem}
+\begin{proof}
+$B=S[u,v]$はAS正則次元5、index 5であり、$W=g+f$は中心正則元である。
+$S$次数のfiltrationから
+$\operatorname{gr}_S A_f=(S/(g))[u,v]$を得るので、$u,v$は中心正則列。
+$A_f$はAS--Gorenstein次元4、index 2である。
+
+$\Delta_f\ne0$なら、$f_u,f_v$の共通零点は原点のみで
+$(f_u,f_v)$は$(u,v)$-primaryである。
+次数2としての斉次resultantは$\operatorname{Res}(f_u,f_v)=-3\Delta_f$。
+$B$の真の導分$\partial_u,\partial_v$は
+$d\,\delta(d)+\delta(d)d=\delta(W)$から$f_u,f_v$を特異圏の零化元にする。
+楕円境界の生成性と命題\ref{prop:global-annihilators}でperfect性を得て、
+補題\ref{lem:gluing-serre-dimension}により正確な次元3となる。
+
+$\Delta_f=0$なら$\mathrm{GL}_2$変換とスカラーの吸収により
+$f=u^2v,u^3,0$のいずれかにできる。
+$v$-chartは順に$S[w]/(g+w^2),S[w]/(g+w^3),(S/(g))[w]$であり、
+全てaugmentationを持つ。
+最初の環には$\deg S_1=2,\deg w=3$、後二つには通常次数を入れる。
+Hilbert級数の逆数は順に
+\[
+ \frac{(1-t^2)^3}{1+t^3},\qquad
+ \frac{(1-t)^4}{1-t^3},\qquad
+ \frac{(1-t)^4}{1-t^3}.
+\]
+これらはそれぞれ原始6乗根、原始3乗根で極を持ち、多項式ではない。
+従って自明加群$k$のminimal graded自由分解は無限である。
+これをungraded分解として$\operatorname{Hom}(-,k)$を適用しても
+全微分が零なので、ungradedの射影次元も無限となる。
+一方$M=A_f/(S_+,u)\simeq\CC[v]$のtailはchart上で$k$へ移る。
+有限大域次元を仮定すれば補題\ref{lem:global-finite-to-perfect}により
+このtailはperfect、従ってchart上の$k$もperfectとなって矛盾する。
+\end{proof}
+\begin{corollary}[分離族の四係数と同型類]
+$\Delta_f\ne0$を満たす全ての$A_f$は、$S$を固定して$u,v$の線形変換を許すと同型である。
+\end{corollary}
+\begin{proof}
+$\mathbb P^1$の相異なる三点の組は$\mathrm{PGL}_2$で移り合い、
+残るスカラーは二変数の共通スカラーの三乗に吸収できる。
+従って分離型四係数は、座標を忘れた四次元モジュライを与えない。
+\end{proof}
+
+\section{超越的中心値と固定ambientの一般中心三次商}
+\label{sec:quotient-generic-central-values}
+\begin{lemma}[超越的中心値の有限大域次元]
+\label{lem:global-transcendental}
+$k_0\subset\CC$、$R_0$は$k_0$-代数、$z\in Z(R_0)$は$k_0$上超越的とする。
+$R=R_0\otimes_{k_0}\CC$が左右noetherianで$\operatorname{gldim}R\le n$なら、
+$k_0$上超越的な全ての$\lambda\in\CC$について
+$\operatorname{gldim}R/(z-\lambda)\le n$である。
+\end{lemma}
+\begin{proof}
+$\lambda$を含む$\CC/k_0$の超越基底$T$を選び、$K=k_0(T\setminus\{\lambda\})$とする。
+体拡大は自由かつ忠実平坦で、$K$-線形な$\CC\to K$の$1\mapsto1$という分裂がある。
+従って大域次元の上界とnoetherian性は$R_K=R_0\otimes K$へ降下する。
+$z$の冪は$K$上でも独立なので、中心局所化
+$R_\eta=R_K\otimes_{K[z]}K(z)$も大域次元高々$n$。
+$z\mapsto\lambda$で$K(z)=K(\lambda)$とみなすと
+$R_\eta\otimes_{K(z)}\CC=R/(z-\lambda)$である。
+最後の体拡大は代数的分離拡大で、右辺は$R$の商ゆえnoetherian。
+\cite[Lemmas~3.2, 3.3]{RSVBertini}の仮定が揃い、上界が保たれる。
+任意の超越的体拡大が有限大域次元を保つと仮定したわけではない。
+\end{proof}
+
+\begin{theorem}[固定した良いambientでのvery-generalな正則性]
+\label{thm:global-very-general}
+$B$は中心一次元$u,v$を持つ左右noetherian AS正則五次元代数とし、
+$G\in Z(B)_3$、$\operatorname{gr}_{x,y,z}B=S\otimes\CC[u,v]$とする。
+$S$は整域、$\operatorname{gr}G=\gamma\in Z(S)_3$は非零正則元とする。
+全ての$f\in\CC[u,v]_3$について$B/(G+f)$は$\CC[u,v]$上自由であり、
+$\operatorname{qgr}(S/(\gamma))$は滑らかな楕円曲線のcoherent圏と仮定する。
+有限表示の定義体$k_0$に対し、$a,d$が$k_0(b,c)$上代数的独立なら
+\[
+ \operatorname{gldim}\operatorname{qgr}
+ B/(G+au^3+bu^2v+cuv^2+dv^3)=3.
+\]
+\end{theorem}
+\begin{proof}
+$D_u=B[u^{-1}]_0$はnoetherianで有限大域次元を持つ。
+実際、中心局所化は大域次元を増やさず、
+$B[u^{-1}]=D_u[u,u^{-1}]$から制限・誘導と評価$u=1$で上界を降下できる。
+$t=v/u$とすると商の$u$-chartは
+$D_u/(G/u^3+bt+ct^2+dt^3+a)$。
+括弧内の$a$を除く中心元は$k_0(b,c,d)$上定義され、
+最高主変数成分が非零正則なので、その冪は独立である。
+前補題でchartの有限大域次元を得る。
+$v$-chartも$d$を中心値として同様に扱える。
+命題\ref{prop:global-two-charts}と
+補題\ref{lem:gluing-serre-dimension}が結論を与える。
+\end{proof}
+
+\subsection{任意の量子パラメータでの真の混合例}
+まず任意の$h\in\CC$について
+\begin{gather*}
+ S_h=\CC\langle X,Y,Z\rangle/
+ ([X,Y]-hZ^2,[Y,Z]-hX^2,[Z,X]-hY^2),\\
+ \Omega_h=\frac{X^3+Y^3+Z^3}{3}
+ -\frac{h^2}{9}\sum_{\sigma\in S_3}X_{\sigma(1)}X_{\sigma(2)}X_{\sigma(3)}
+\end{gather*}
+と置く。$S_h$は全ての有限$h$でKoszul AS正則三次元である。
+これはSklyaninパラメータ$[1:-1:-h]$に対する標準定理
+（\cite{ATVRegular,ISSklyanin}、後者Theorem~1.1）による。
+非正則例外条件$p^3=q^3=r^3$は$1\ne-1$により生じない。
+滑らかな楕円境界を用いるのは以下で$h^6\ne-27$に制限してからである。
+前節のPBW証明は$r_i=[X_{i+1},X_{i+2}]-hX_i^2$、$\beta(r_X)=h m$にそのまま適用できる。
+従って$[y,z]=h(x^2+\alpha uv)$を持つ相対周囲はAS正則五次元で、
+$W_{h,\alpha}=\Omega_h+\alpha uvx+u^3+v^3$は中心正則元となる。
+中心性は$3D-h^2T+9mx$の三交換子の重み4の有限証明書で確認できる。
+91語と84関係倍からなる行列のrankは69で、$\mathbb Q(h)$上の剰余は零となる。
+使用したpivotの例外は$h(h^6-1)=0$だけである。
+$h=0$は可換で、$h^6=1$では$h=1$での恒等式から
+$(h,y)\mapsto(\omega h,\omega y)$（$\omega^3=1$）と反対代数により従う。
+従って中心性を一般の$h$だけから例外値へ無条件に延長してはいない。
+さらに$B_{h,\alpha}$は全ての$h,\alpha$で5-Calabi--Yauである。
+実際、前節と同じKoszul双対を$\mathbb Q(h,\alpha)$上で計算すると、
+次元列は$(1,5,10,10,5,1,0)$、Frobenius対合の行列式は
+$(1,h^{-2},-h^{-6},-h^{-6},h^{-2},1)$となり、
+次数1と次数4の積のtraceは可換である。
+\texttt{verify\_central\_quotient\_koszul.py --general-h}は
+全消去pivotの分子・分母の因子が$h(h^3+1)$を割ることも検証する。
+従って$h\ne0$, $h^3\ne-1$では全ての$\alpha$で
+Nakayama自己同型が恒等であり、一般点だけの計算ではない。
+$h=0$は五変数多項式環、$h^3=-1$は$h=1$の場合の反対代数と
+上記の三乗根による変数変換なので、例外値でも同じ結論を得る。
+ここから$h^6\ne-27$とし、
+$A_{\alpha,h}=B_{h,\alpha}/(W_{h,\alpha})$、
+$C_{\alpha,h}=A_{\alpha,h}/(v-u)$とする。
+
+\begin{corollary}[超越的な混合係数の具体例]
+$\alpha$が$\mathbb Q(h)$上超越的なら
+\[
+ \operatorname{gldim}\operatorname{qgr}C_{\alpha,h}=2,\qquad
+ \operatorname{gldim}\operatorname{qgr}A_{\alpha,h}=3.
+\]
+特に$(h,\alpha)=(1,\pi)$は非零混合項を持つ正則例である。
+\end{corollary}
+\begin{proof}
+$\alpha\ne0$なので$x=\sqrt\alpha X,y=\sqrt\alpha Y,z=\sqrt\alpha Z$と規格化すると、
+曲面の$u$-chartは
+$R_h/(G_h+\beta)$、$G_h=\Omega_h+X$、$\beta=2\alpha^{-3/2}$となる。
+$\beta$は$\mathbb Q(h)$上超越的で、$R_h$はPBWにより有限大域次元を持つ。
+補題\ref{lem:global-transcendental}と命題\ref{prop:gluing-one-chart}を使う。
+境界は$S_h/(\Omega_h)$の滑らかな楕円曲線で、
+AS--Gorenstein次元3、index 1の双対性から曲面の正確な次元2を得る。
+三様体は$u\partial_u-v\partial_v$と三切断$v=\omega u$を使う
+命題\ref{prop:gluing-derivation}でperfectとなり、次元3が従う。
+\end{proof}
+
+\section{有限位数境界と非空Zariski開な正則範囲}
+\label{sec:quotient-open-regularity}
+以下の存在定理は、指定した一混合族の有効な必要十分判別式とは異なる。
+\begin{lemma}[被約基底上の中心の持上げ]
+\label{lem:global-center-lifting}
+$H=B(E,\mathcal L,\tau)$は標数零の滑らかな楕円曲線のTHCRで、
+$\mathcal L$はample、$\tau$は有限位数のtranslationとする。
+$R$を被約有限型可換代数とし、filtered $R$-代数$U$が
+$\operatorname{gr}U=H\otimes R$、各$F_dU$は有限自由で、
+閉点への基底変更と両立するとする。
+このとき各$z\in Z(H)_d$は$Z(U)\cap F_dU$へ持ち上がり、
+$U$は有限型可換中心部分代数上有限となる。
+\end{lemma}
+\begin{proof}
+斉次生成元の持上げ$u_i$を取り、有限自由加群間の交換子写像
+$M_d:F_dU\to\bigoplus_iF_{d+\deg u_i}U$を作る。
+Rains\cite[Theorem~2.13]{RainsElliptic}により各閉点$s$で
+$\operatorname{gr}Z(U_s)=Z(H)$なので、$M_d$のrankは一定である。
+被約性により高すぎるminorは恒等的に零となり、
+最大rankのminorで被覆すれば$\ker M_d$は有限射影で、形成は基底変更と可換する。
+最高次symbolの写像$\ker M_d\to Z(H)_d\otimes R$は
+各閉点で全射、従ってNakayamaにより全射である。
+右辺が自由なので、各斉次中心元は大域的に持ち上がる。
+$H$は有限位数translationのnorm line bundleによる中心上有限である。
+中心の有限生成元と中心上の有限加群生成元を持ち上げ、次数を下げる帰納法で
+$U$も持ち上げ中心部分代数上有限と分かる。
+ここではRainsの体上の定理を非被約基底へ拡張していない。
+\end{proof}
+
+\begin{theorem}[有限位数境界を持つ固定ambientの開な正則範囲]
+\label{thm:global-open}
+定理\ref{thm:global-very-general}の良い固定ambientを取り、さらに
+$H=S/(\gamma)=B(E,\mathcal L,\tau)$のtranslationが有限位数とする。
+ある非零多項式$P(a,b,c,d)$が存在して、$P\ne0$上では
+中心三次商のtails大域次元が3となる。
+周囲のPBW/Koszul解消とnoetherian AS条件が基底変更と両立する構成では、
+この十分条件は任意の代数閉拡大体上でも成立する。
+特に周囲の表示が有理数係数なら、有理数四係数の正則な商がZariski稠密に存在する。
+\end{theorem}
+\begin{proof}
+$D_u=B[u^{-1}]_0$、$t=v/u$、$G_u=G/u^3$とする。
+全係数を動かす$u$-chartの全代数は
+\[
+ \mathcal U=D_u[a,b,c,d]/(G_u+a+bt+ct^2+dt^3)
+ \simeq D_u[b,c,d]
+\]
+なので左右noetherianかつ有限大域次元である。
+$R=\CC[t,a,b,c,d]$をfiltration次数零とすると
+$\operatorname{gr}\mathcal U=H\otimes R$で、各filtered pieceは有限自由。
+前補題から$\mathcal U$は有限型可換中心部分代数$C_u$上有限である。
+この$C_u$は係数環$R_0=\CC[a,b,c,d]$上も有限型である。
+ここで\cite[Proposition~2.1, proof steps (6)--(7)]{RSVBertini}を
+$(R,S,A)=(R_0,C_u,\mathcal U)$へ適用する。
+その証明はある非零$P_u\in R_0$を逆にした上で、$\mathcal U$が$R_0$上平坦で、
+相対対角が有限射影解消を持つことを与える。
+従って全ての幾何学的fiberで有限大域次元が成立し、体拡大も許される。
+$v$-chartでも$d$を消去して$P_v$を得る。
+$P=P_uP_v$とし、二chartの貼合せとSerre双対性で結論する。
+$\mathbb Q^4$は複素四次元affine空間でもZariski稠密なので、
+非空開集合には有理数係数点が稠密に存在する。
+\end{proof}
+\begin{remark}
+これは正則locus全体の開性を証明したものではなく、$P$の零点全てが悪いとも述べない。
+$P$の係数・次数と一般混合族の有効判別式は未確定である。
+$h=1$では境界translationの位数は6である
+\cite[\S8.2]{WWYSklyanin}。
+一混合族ではさらに本稿の正確な判別式が有限例外と全有理数点の正則性を与え、
+この一次元部分族の正則locus自体はZariski開となる。
+一般の無限位数境界ではvery-generalな十分条件までであり、全正則locusの開性は未解決。
+\end{remark}
+
+\begin{lemma}[位数6の具体的な楕円曲線計算]
+$E_1=V(x^3+y^3+z^3+xyz)$で$O=[1:-1:0]$を原点とすると、
+$p=[1:-1:-1]$は位数6であり、$2p=[1:0:-1]$である。
+\end{lemma}
+\begin{proof}
+$E_1$は滑らかで、$O$は変曲点である。
+$p$の接線$2x+y+z=0$へ代入すると
+$7(y+z)(y-z)^2/8$となり、第三交点は$[0:1:-1]$である。
+この点と$O,[1:0:-1]$は共線なので、接線の第三交点を反転すると表示した$2p$を得る。
+$2p$は$O$と異なる変曲点なので位数3、$p$自体はHessianが非零で変曲点ではない。
+従って$p$の位数は6である。各代入は現行の厳密検算に含まれる。
+\end{proof}

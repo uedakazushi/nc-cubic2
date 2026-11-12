@@ -1,0 +1,140 @@
+\section{零中心ファイバーのCayley三次曲面と楕円境界}
+\label{sec:quotient-cayley}
+\begin{proposition}[選ばれた反標準因子を持つCayley表示]
+$C_0=Z(D_0)$の射影閉包$\overline S\subset\mathbb P^3_{U,V,W,T}$は
+\[
+ P=49U^3-14U^2T+UT^2+(11U-T)VW+V^3-W^3=0
+\]
+で定まり、Cayley三次曲面である。
+$\omega^2+\omega+1=0$として
+\[
+ \begin{pmatrix}U\\V\\W\\T\end{pmatrix}
+ =\begin{pmatrix}
+ -9&-1&-1&-1\\
+ 0&-4&-4\omega&-4\omega^2\\
+ 0&4&4\omega^2&4\omega\\
+ -63&1&1&1
+ \end{pmatrix}
+ \begin{pmatrix}a_0\\a_1\\a_2\\a_3\end{pmatrix}
+\]
+と置くと、変換は可逆で
+\[
+ P=-1728\sum_{i<j<k}a_i a_j a_k,\qquad
+ T=-63a_0+a_1+a_2+a_3.
+\]
+$\operatorname{Spec}C_0=\overline S\setminus E$で、
+$E=\overline S\cap\{T=0\}$は滑らかな反標準楕円曲線である。
+\end{proposition}
+\begin{proof}
+変換行列の行列式は$-3456(2\omega+1)\ne0$。
+$\omega^2+\omega+1$で剰余を取る直接代入で二式を得る。
+無限遠の曲線は
+\[
+ E:\quad49U^3+11UVW+V^3-W^3=0.
+\]
+その三偏微分が零なら、いずれかの座標が零のとき全座標が零となる。
+全座標が非零なら$147U^2=-11VW$、$3V^2=-11UW$、$-3W^2=-11UV$を掛け、
+$1323=1331$という矛盾を得る。
+従って$E$は滑らかで、無限遠に曲面の特異点もない。
+三次超曲面の随伴公式$\omega_{\overline S}=\mathcal O_{\overline S}(-1)$から反標準性が従う。
+\end{proof}
+
+\begin{corollary}[Brauer指数6のtwisted NCCR]
+$D_0$は正規Gorenstein曲面$C_0$のtwisted noncommutative crepant resolutionである。
+そのBrauer指数は6であり、通常の$\operatorname{End}_{C_0}(N)$型のNCCRではない。
+\end{corollary}
+\begin{proof}
+$C_0$は四つの$A_1$点以外で滑らかで、超曲面なので正規Gorenstein。
+$R_1$の中心Macaulay性を中心正則元$g$で割ると$D_0$は$C_0$上MCMである。
+従って反射的で、高さ1ではAzumaya、かつ大域次元2である。
+\cite[Definitions~2.1, 2.2]{VdBOverview}のtwisted NCCRの条件を満たす。
+一般中心分数体上は次数6の斜体なので、通常の自己準同型環なら行列環となって矛盾する。
+局所完備化での非捩れ模型と、この大域Brauer障害を区別する。
+\end{proof}
+\begin{remark}[非可換affine del Pezzoとの比較]
+この中心曲面は、選んだ滑らかな反標準楕円曲線を除いたCayley三次曲面であり、
+\cite[\S1.1, Theorems~3.4.4, 3.4.5]{EGDelPezzo}の非可換affine del Pezzoの具体的な有限PI例と比較できる。
+同文献のgenericな一生成元中心を、この特殊PI値の全中心へ適用してはいけない。
+また定数項変形のPBW・CY性自体は\cite[Theorem~3.3.2]{EGDelPezzo}の既知の一般定理の特殊化であり、
+本稿では具体的なsyzygyと自己双対解消も与えた。
+Brauer類の具体的なsymbol表示、大域stack上の実現と大域対象の復元は未解決である。
+\end{remark}
+
+\section{古典的pencil、量子的判別式と非被約な点加群}
+\label{sec:quotient-classical-comparison}
+\begin{proposition}[古典的pencilと三様体の判別式]
+\[
+ F_\alpha=\frac{x^3+y^3+z^3}{3}+\alpha uvx+u^3+v^3
+\]
+とし、$v=au$の曲面切断を考える。
+有限pencilパラメータでの特異条件と三様体の特異条件はそれぞれ
+\[
+ \Delta_\alpha(a)=4\alpha^3a^3+9(1+a^3)^2=0,\qquad
+ F_\alpha\text{が特異}\ \Longleftrightarrow\ \alpha^3=-9.
+\]
+$p(x)=x^3/3+\alpha ax+1+a^3$に対し
+$\operatorname{Res}_x(p,p')=\Delta_\alpha(a)/9$で、無限遠切断は滑らかである。
+さらに
+\[
+ \operatorname{Disc}_a\Delta_\alpha
+ =2^{12}3^{14}\alpha^9(\alpha^3+9)^3,\qquad
+ \Delta_\alpha(\omega)=4(\alpha^3+9)\quad(\omega^3=1).
+\]
+\end{proposition}
+\begin{proof}
+$u=0$上のFermat平面三次曲線は滑らかであり、$u=1$の特異点では$y=z=0$。
+従って曲面では$p,p'$の共通根を調べればよい。
+三様体の勾配は
+$y=z=0$、$x^2+\alpha uv=0$、$\alpha vx+3u^2=0$、$\alpha ux+3v^2=0$を与える。
+射影点では$u,v\ne0$で、$u=1$の消去は
+$3x-\alpha^2v^2=v^3-1=\alpha^3+9=0$となる。
+従って三特異点は$[\alpha^2\omega^2/3:0:0:1:\omega]$である。
+残りは一変数resultantとdiscriminantの厳密計算から従う。
+\end{proof}
+\begin{remark}[重複度を含むresultantの規格化]
+$\operatorname{Res}(X_1^2,\ldots,X_n^2)=1$で規格化すると
+\[
+ \operatorname{Res}(\nabla F_\alpha)=3^8(\alpha^3+9)^{12},\qquad
+ \operatorname{Res}(\nabla(F_\alpha|_{v=au}))=\Delta_\alpha(a)^4.
+\]
+最初は$(x,u,v)$の三変数resultant $9(\alpha^3+9)^3$の四乗である。
+$x=1$における$\CC[u,v]/(3u^2+\alpha v,3v^2+\alpha u)$の基底$1,u,v,uv$を使うと、
+$1+\alpha uv$の乗法行列式は$(\alpha^3+9)^3/729$となる。
+最高次係数$3^8$とPoisson積公式\cite[equation~(2)]{DKSResultant}で三変数の式を得る。
+切断の式も、残る二変数の勾配resultantと$y^2,z^2$の二つの平方から従う。
+これらは古典的判別式であり、量子的なtails判別式ではない。
+\end{remark}
+
+\begin{proposition}[正則性を区別しない定常点の粗い局所データ]
+$h\ne0$、$\alpha\ne0$、$\alpha^3\ne-9$とする。
+$A_{\alpha,h}$の中心一次元が非零となるpoint moduleのスキームは、
+六点を台とし、各局所環が$\CC[y,z]/(y^2,z^2)$である長さ24の有限スキームとなる。
+\end{proposition}
+\begin{proof}
+可換試験環上で$u$が可逆なら、中心性の多重線型関係
+$u_i a_{i+1}=a_i u_{i+1}$から$u_i=1$に規格化した点列は一定となる。
+従ってこのchartではpoint moduleは可換化で表される。
+可換化の関係は$y^2=z^2=0$、$x^2+\alpha v=0$である。
+$v=-x^2/\alpha$を消去すると中心三次式は
+\[
+ 1-\frac{2x^3}{3}-\frac{x^6}{\alpha^3}-\frac{2h^2}{3}xyz=0.
+\]
+$y=z=0$での$x^3$の方程式は
+$3q^2+2\alpha^3q-3\alpha^3=0$で、判別式は$4\alpha^3(\alpha^3+9)$。
+二根は相異なり非零なので六つの$x$を与える。
+$x$方向の微分は各点で単元であり、形式的陰関数定理で$x$を$yz$の式として消せる。
+従って各局所環は表示した長さ4の環である。
+$u=0,v\ne0$の可換化では$x^2=y^2=z^2=0$かつ$v^3=0$となり矛盾するので、
+中心座標が非零の点は全てこのchartに含まれる。
+\end{proof}
+\begin{remark}
+$h=1$で$\alpha^3=-243/28$なら、古典三様体と楕円境界は滑らかでもtailsは非正則である。
+$\alpha=1$の正則例とこの三つの非正則例は、上の定常点の台の個数、
+局所環型と全長が一致する。埋込みを含む全point schemeの同型を主張してはいない。
+$\alpha\ne0,\alpha^3\ne-9$の古典pencilには六つの特異曲面があり、
+$\alpha=0$では判別式は$9(a^3+1)^2$、三切断は滑らかなFermat曲線上の錐である。
+前者の各特異曲面は、$x$方向の非退化二次項を消去すると
+局所Jacobian環$\CC[y,z]/(y^2,z^2)$（長さ4）を持つ。
+$\alpha=0$の三つの錐の頂点では$\CC[x,y,z]/(x^2,y^2,z^2)$となり長さ8である。
+全切断の滑らかさやpencil判別式の重根の有無を、三様体自体の滑らかさと混同しない。
+\end{remark}

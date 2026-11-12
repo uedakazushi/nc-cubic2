@@ -6,21 +6,31 @@ rational constant, so every reduction and basis survives all alpha-values.
 Check orthogonality, dimensions, perfect Frobenius pairings with unit
 determinants, and the identity Nakayama map on degree one. No numerical
 specialization or inference from modular vanishing is used.
+With --general-h, the only excluded pivots are h=0 and h^3=-1;
+the text handles these by commutativity and the h=1 sign/cubic symmetries.
 """
 import sympy as sp
 from itertools import combinations
 from sympy.polys.matrices import DomainMatrix
-alpha=sp.symbols('alpha'); K=sp.QQ.frac_field(alpha); a=K.gens[0]
-REL=[{(0,0):K.one,(1,2):K.one},{(1,1):K.one,(2,0):K.one},{(2,2):K.one,(0,1):K.one},{(3,3):K.one},{(4,4):K.one}]
+import argparse
+parser=argparse.ArgumentParser()
+parser.add_argument("--general-h",action="store_true",help="verify h,alpha; exceptional h are handled by the proved sign/cubic symmetries")
+args=parser.parse_args()
+alpha,h=sp.symbols('alpha h')
+if args.general_h:
+ K=sp.QQ.frac_field(h,alpha); hh,a=K.gens
+else:
+ K=sp.QQ.frac_field(alpha); a=K.gens[0]; hh=K.one
+REL=[{(0,0):K.one,(1,2):hh},{(1,1):K.one,(2,0):hh},{(2,2):K.one,(0,1):hh},{(3,3):K.one},{(4,4):K.one}]
 for i,j in combinations(range(5),2):
  r={(i,j):K.one,(j,i):K.one}
- if (i,j)==(3,4):r[1,2]=a
+ if (i,j)==(3,4):r[1,2]=hh*a
  REL.append(r)
 # Original ten quadratic relations: dual orthogonality is checked directly.
 original = [
- {(0,1):K.one,(1,0):-K.one,(2,2):-K.one},
- {(1,2):K.one,(2,1):-K.one,(0,0):-K.one,(3,4):-a},
- {(2,0):K.one,(0,2):-K.one,(1,1):-K.one},
+ {(0,1):K.one,(1,0):-K.one,(2,2):-hh},
+ {(1,2):K.one,(2,1):-K.one,(0,0):-hh,(3,4):-hh*a},
+ {(2,0):K.one,(0,2):-K.one,(1,1):-hh},
 ]
 for i,j in combinations(range(5),2):
  if j>=3:
@@ -34,12 +44,15 @@ def add(out,row,factor=K.one):
   z=out.get(k,K.zero)+factor*v
   if z:out[k]=z
   else:out.pop(k,None)
+pivot_values=set()
 def eliminate(row,piv):
  while row:
   k=max(row)
   if k not in piv:
    c=row[k]
-   assert not c.numer.degree() and not c.denom.degree(),c
+   if args.general_h: pivot_values.add(str(K.to_sympy(c)))
+   if not args.general_h:
+    assert not c.numer.degree() and not c.denom.degree(),c
    piv[k]={j:v/c for j,v in row.items()}
    return
   add(row,piv[k],-row[k])
@@ -66,19 +79,31 @@ for n in range(2,7):
  def compact(row):return{pos[k]:v for k,v in normal(row,piv).items()}
  L.append([[compact({x*d+j:K.one}) for j in range(d)] for x in range(5)])
  assert len(keep)==[1,5,10,10,5,1,0][n]
- print(n,len(keep),'unit rational pivots',flush=True)
+ print(n,len(keep),'generic pivots' if args.general_h else 'unit rational pivots',flush=True)
+if args.general_h:
+ for value in pivot_values:
+  numerator,denominator=sp.together(sp.sympify(value)).as_numer_denom()
+  for expression in (numerator,denominator):
+   for factor,power in sp.factor_list(expression,h,alpha)[1]:
+    assert not factor.has(alpha)
+    assert sp.rem(h*(h**3+1),factor,h)==0
+ print("PASS: generic pivots exclude only h=0 or h^3=-1",flush=True)
 def word(w):
  if not w:return {0:K.one}
  return lin(L[len(w)-1][w[0]],word(w[1:]))
 for n in range(6):
  rows=[[word(w+v).get(0,K.zero) for v in B[5-n]] for w in B[n]]
  mat=DomainMatrix(rows,(len(rows),len(rows[0])),K)
- det=mat.det();assert det and not det.numer.degree() and not det.denom.degree(),det
- assert det == K.convert([1,1,-1,-1,1,1][n])
+ det=mat.det();assert det
+ if args.general_h:
+  assert det == [K.one,hh**-2,-hh**-6,-hh**-6,hh**-2,K.one][n]
+ if not args.general_h:
+  assert not det.numer.degree() and not det.denom.degree(),det
+  assert det == K.convert([1,1,-1,-1,1,1][n])
  print('pairing',n,det,flush=True)
 for i in range(5):
  for w in B[4]:assert word((i,)+w)==word(w+(i,))
-print('PASS: Frobenius Nakayama on degree one is identity for every alpha',flush=True)
+print('PASS: Nakayama identity off h*(h^3+1)=0; exceptional h follow by commutativity and the proved sign/cubic symmetries' if args.general_h else 'PASS: Frobenius Nakayama on degree one is identity for every alpha',flush=True)
 
 # Independent small checks of the constant-deformation bimodule complex.
 from verify_center_phi_exact import Filtered

@@ -316,3 +316,22 @@ $\alpha^3=-243/28$では古典三次三様体と
 $\CC[Y,Z]/(Y^2,Z^2)$を持つ。
 これは埋込を含む点スキーム全体の同型を主張しない。
 \end{remark}
+
+
+\begin{corollary}[全affine中心値の必要十分判別式]
+\label{cor:tails-all-affine}
+全ての$\beta\in\CC$について
+\[
+ \operatorname{gldim}R_1/(G_1+\beta)
+ =\begin{cases}
+ 2,&(9\beta^2+4)(243\beta^2+112)\ne0,\\
+ \infty,&(9\beta^2+4)(243\beta^2+112)=0.
+ \end{cases}
+\]
+\end{corollary}
+\begin{proof}
+$\beta=0$は系\ref{cor:zero}による。
+それ以外は$g=-3\beta/2$、$H=9\beta^2/4$として
+系\ref{cor:quotient-azumaya-fibers}の滑らかな中心ファイバーと特異Azumaya点の判定を使う。
+$9\beta^2+4=0$の場合は定理\ref{thm:tails-bad-affine}による。
+\end{proof}
