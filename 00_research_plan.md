@@ -10,7 +10,7 @@
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 - **可換点の全Artin形式局所構造をTeX化**：`papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。ただし有限位数境界と非可換Bertiniに依存する正則な四次元開集合の存在は独立再監査前なので条件付き。原PDFの全係数Hesse中心元・有限証明書・周囲37次元成分の細部は未完全照合で保持する。
 
-**2026-11-12 / v15。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v16。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
@@ -89,3 +89,7 @@ pdf-onlyの整理を最優先とし、有限正則性研究ノートの有効な
 ## 中心商特異性PDFのTeX回収（2026-11-12）
 
 `papers/central_quotient_local_models.tex`に、旧論文VI§19の中心零ファイバー四つのA1点、conifold局所のrank-one corner・modifying generator、局所skew group algebra、中心値零の大域次元2と八つの三次元単純表現、Brauer指数6を、入力の仮定を明示して再構成した。旧§21の21中心特異点と3つのhomological singularityも条件付きで移した。`computations/verify_central_quotient_local_hessian.py`の厳密有理数Hessian・Gröbner検算をローカル実行してPASS。旧論文VIの全中心・Azumaya性・小単純表現排除の完全な独立監査、特異圏同値・球面twistの移植、LuaLaTeX組版は未完了。原PDFは削除しない。PDF削除が本研究の最優先である。
+
+## 旧論文VIの有限次元表現と六次分裂元（2026-11-12）
+
+旧論文VI§17–18の一次・二次元単純表現の不存在、軸上の多項式族の二つの三次元単純表現、非軸上の六表現、六次分裂元 `Z` の最小多項式 `T^6-gT^3+U` を `papers/sections/central_quotient_simple_representations.tex` に証明付きで収録し、`papers/central_quotient_local_models.tex` から入力した。`computations/verify_central_quotient_reps.py` の軸上 `Q[t]/(q)` と非軸上 `Q[ω]/(ω²+ω+1)` の正確な行列関係・`G1=0` 検算を独立に実行してPASS。これにより旧局所模型が仮定していた小次元単純表現排除・六次最小多項式を、中心正規性と中心恒等式 `U=Z³(g-Z³)`の入力の下で内部証明へ変更した。中心の生成元 `V,W` と全Azumaya locusの証明、Ext¹の27変数rank証明書はなお未回収。従ってPDF VIは保持し、これらのTeX化を優先する。

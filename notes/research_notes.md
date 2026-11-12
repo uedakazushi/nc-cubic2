@@ -1,6 +1,6 @@
 # 研究ノート：境界研究の現在の知識と障害
 
-**2026-11-12 / v7**
+**2026-11-12 / v8**
 
 - 独立の大部原稿は `papers/pfaffian_brill_noether_technical.tex` にTeXソースで存在する。旧79節を一字も削らず5個の `papers/sections/` ファイルへ分割した。主論文A・Cから直接入力されない一方、内容上の引用・既知結果への依存は今後も監査する。
 - 中心三次曲面
@@ -42,3 +42,7 @@
 ## 旧論文VI：中心商非可換A1とBrauer障害（2026-11-12）
 
 現行の`papers/central_quotient_local_models.tex`で、中心`C=ℂ[g,U,V,W]/(Φ)`の`g=0`上の四特異点、Hessian非退化とconifold局所模型を明示した。元の代数の六次分裂元`Z`の最小多項式、中心有限性・Azumaya locus、1・2次元単純表現不存在を条件付き入力とし、`Mat_3 End_R(R⊕I)`、切断の`Mat_3(ℂ[[a,b]]⋊{±1})`、八つの三次元単純表現と一般Brauer指数6の導出を収録した。二中心chartの中心21特異点（12+6+3）の有限計算と、三つのhomological singularityも条件付きで復元。正確な中心のHessianとH=0,-1,-28/27のGröbner基底は独立に計算済み。局所分裂と大域Brauer分裂は異なる。特異圏のKaroubi完備化と球面twistは別途証明移植が必要。原PDFは保持する。
+
+## 中心商の小次元表現：現行証明と検算
+
+`papers/sections/central_quotient_simple_representations.tex` に旧論文VI§17–18からPauli分解による2次元単純表現不存在、q(t) の軸上二表現、ω 行列による非軸上六表現、6次分裂元の最小多項式を移植した。行列関係と `G1=0` を `computations/verify_central_quotient_reps.py` と同等のSymPy実装で標数零の正確な多項式剰余として再計算した。六次最小多項式の証明は全中心が正規で `U=Z³(g-Z³)` という既存の入力に依存する。`V,W`の中心指標とExt¹ rank19/16・内部微分rank8/9の完全証明書は未再計算、いずれも独立検証済みとは扱わない。旧論文VIの削除条件はこの残余の証明のTeX化である。

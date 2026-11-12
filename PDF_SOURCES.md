@@ -1,4 +1,4 @@
-# 現行PDF原資料と保持の基準（2026-11-12 / v6）
+# 現行PDF原資料と保持の基準（2026-11-12 / v7）
 
 Libraryに保全されている同名・同バイトサイズのPDF原本から本文を抽出して確認した。これはGitHub上のblobそのもののバイト一致を検証したという意味ではない。原本の全定理・証明と現行TeXの完全同値性はまだ立証していない。特に旧論文III・V・VIおよび195頁のIIは、独自の結果が多数含まれる。
 
@@ -40,4 +40,8 @@ Pfaffian・Brill--Noether大部原稿の79節を、既存内容を移動する�
 
 ## 旧論文VIからの局所模型回収（2026-11-12）
 
-`papers/central_quotient_local_models.tex`に旧論文VIの§19と§21の一部を命題と証明付きで回収：中心値零での四A1点、完備局所のconifold/非可換A1代数、skew groupの大域次元2、Brauer指数6、21個の中心特異点と条件付き三homological singularity。`computations/verify_central_quotient_local_hessian.py`に有理数Hessian・critical-fiberのGröbner基底検算を保持。従来の判別式論文は可換曲面の部分結果であり、今回の非可換局所模型と区別する。全中心の有限表示・Azumaya locus・小次元単純表現の不存在は旧論文VIの別節からの入力で、現行TeXの全証明としては未収録。特異圏の完全比較やspherical twistも未移管なので原PDFを保持する。局所数学の新規性は未確認。
+`papers/central_quotient_local_models.tex`に旧論文VIの§19と§21の一部を命題と証明付きで回収：中心値零での四A1点、完備局所のconifold/非可換A1代数、skew groupの大域次元2、Brauer指数6、21個の中心特異点と条件付き三homological singularity。`computations/verify_central_quotient_local_hessian.py`に有理数Hessian・critical-fiberのGröbner基底検算を保持。従来の判別式論文は可換曲面の部分結果であり、今回の非可換局所模型と区別する。全中心の有限表示・Azumaya locusは旧論文VIの別節からの入力。小次元単純表現の不存在と六次分裂元は新たに `papers/sections/central_quotient_simple_representations.tex` に証明付きで回収し、対応する明示行列を厳密検算済み。特異圏の完全比較やspherical twistも未移管なので原PDFを保持する。局所数学の新規性は未確認。
+
+## VIの旧§17–18をTeXに統合（2026-11-12）
+
+軸上の `q(t)=7t^6+21t^4+14t²+1` に付随する二つの三次元単純表現、非軸上の六つの三次元単純表現、Pauli行列による二次元単純表現不存在、中心零ファイバーでの一次元表現不存在、正規中心を仮定した `Z` の次数六最小多項式を `papers/sections/central_quotient_simple_representations.tex` に回収した。`computations/verify_central_quotient_reps.py` の厳密な代数的代入で両組の行列関係・`G1=0`を検証済み。これによりconifoldへの `rank-one corner` の入力を弱められた。未回収の中核：全中心生成元 `V,W` の明示式とその中心性/尽くし、Rees degenerationからのAzumaya locus証明、一次拡大の正確な整数rank証明書、正確なtails判別式への昇格、特異圏とspherical twist。これらがTeX化されるまでPDFを削除しない。

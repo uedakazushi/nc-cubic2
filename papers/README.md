@@ -45,3 +45,5 @@ Fermat厚化を`papers/sections/`下の三つのTeX節に分割。
 - `sections/central_pair_mixed_derived_rigid.tex`：旧論文V§19–21の全混合低次数中心、偶数Veronese復元、Serre関手を使うmarking付き導来復元、固定剛体ambientの四係数非同型族。`nc_cubic_threefold_moduli.tex`から入力。正則な四係数開集合は依存する非可換Bertiniの適用を未監査。
 
 - `central_quotient_local_models.tex`：旧論文VIの非可換A1局所模型、四つの中心特異点、局所skew group、Brauer指数、21中心点と三homological singularityの条件付き解析。LuaLaTeX独立入口。検算：`python3 computations/verify_central_quotient_local_hessian.py`（SymPy）。全中心表示・Azumaya locus・小表現排除は未移管の入力として明記。
+
+- `sections/central_quotient_simple_representations.tex`：旧論文VI§17–18から1/2次元単純表現排除、軸上2個と非軸上6個の三次元表現、六次分裂元の最小多項式を回収。親の `central_quotient_local_models.tex` から入力する。`python3 computations/verify_central_quotient_reps.py` は明示行列・三関係式・G1=0をQ[t]/(q)とQ[ω]/(ω²+ω+1)上で厳密検算する。全中心・Azumaya locus・Ext ranksは未完。
