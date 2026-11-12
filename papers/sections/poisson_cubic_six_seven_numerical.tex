@@ -78,3 +78,44 @@ $h^0(\OO_\Delta(3))=\binom{11}{3}-6\cdot9=111$ からも確認できる。
 2g(Z)-2=6\cdot192=1152,\qquad g(Z)=577.
 \end{equation}
 この式は特殊な非被約完全交叉でも算術種数の公式として保たれる。
+
+
+\subsection{Fermat型の横断厚化と量子化の数値}
+Fermat型の任意次元Jacobian正規形において
+\begin{equation}
+ F_{\mathrm{Fer}}
+ =\frac13\left(
+ \sum_{\alpha=1}^{m}u_\alpha^3+
+ \sum_{s=1}^k\sum_{i=1}^3x_{si}^3
+ \right)
+ \label{eq:six-seven-fermat-form}
+\end{equation}
+と置けば、active gradient理想は
+$(x_{si}^2\mid s,i)$である。
+従って$m>0$のcritical cover$\Delta$は
+中心線形空間$\PP_u^{m-1}$を台とする横断長$8^k$の厚化となる。
+$m\ge2$の$Z=\Delta\cap X$は
+\begin{equation}
+ Z=V\left(x_{si}^2\ (s,i),\
+ \sum_\alpha u_\alpha^3\right)\subset X,
+ \label{eq:six-seven-fermat-thickening}
+\end{equation}
+すなわち中心超曲面$V(\sum u_\alpha^3)$の同じ厚化である。
+この計算は原稿Aの一般次元のFermat厚化命題に含まれていたが、
+以下では6・7次元の具体的幾何として記録する。
+
+六次元・階数四（$k=2,m=2$）では
+$Z$は中心$\PP^1$上の三点それぞれに横断長64の厚みを持つ。
+七次元・階数四（$k=2,m=3$）では
+中心$\PP^2$上の滑らかなFermat楕円曲線に横断長64の厚みを持つ。
+次数はいずれも192で、後者の算術種数は577となる。
+従って一般のデータにおける対応する完全交叉と
+次数や算術種数は一致しても、
+被約性・滑らかさは大きく異なる。
+
+また既存の一般次元の二次Koszul AS正則量子化定理の
+$N=n+2$を適用すれば、六次元の場合には
+生成元数8、独立な二次関係数28、ambientの大域次元8、
+三次中心商のinjective dimension7、AS parameter5となる。
+七次元では順に9、36、9、8、6である。
+これらは独立した分類定理ではなく、一般式の数値的特殊化にすぎない。
