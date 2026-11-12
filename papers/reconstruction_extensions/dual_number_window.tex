@@ -1,0 +1,246 @@
+\section{双対数基底上の線束残余圏とMFの比較}
+\label{fdw:sec:window}
+
+この節は圏論的接空間の結論に必要な相対比較を収録する。
+$D=\mathbb C[\varepsilon]/(\varepsilon^2)$、$d\ge5$とし、
+$A_0=D$、各$A_j$が有限自由で、$A/\varepsilon A=\mathbb C[x_1,\ldots,x_d]$となる
+次数付き中央$D$-代数$A$を考える。
+$\Omega\in Z(A)_3$の剰余$F$は滑らかな射影三次超曲面を定め、
+$B=A/(\Omega)$、$a=d-3$、$i=1-a$と置く。
+各dg圏は有限coneと直和因子について閉じたものとする。
+全coherent圏ではなく線束で生成される部分を扱い、
+非正則な$D$上で絶対特異圏への比較を適用しない。
+
+\subsection{次数別自由性と相対stabilization}
+
+\begin{lemma}[相対Koszul分解と中心商]\label{fdw:lem:resolution}
+$A,B$は左右noetherianで、$D$は左右の次数付き$A$-加群として
+$P_j=A(-j)^{\binom dj}$、$0\le j\le d$という有限自由分解を持つ。
+各内部次数でこの分解は$D$-分裂し、剰余への底変更後も完全である。
+$\Omega$は正則で、$B_j$は$D$-自由である。
+\end{lemma}
+\begin{proof}
+$\varepsilon$による有限filtrationの随伴次数環は
+$\mathbb C[x_1,\ldots,x_d]\otimes D$なので、有限filtrationによる
+持上げから左右noetherian性を得る。
+$A\to D$のaugmentation核は次数別$D$-自由である。
+その剰余の生成元を持ち上げて$A(-1)^d$から全射を作る。
+次数別の余核が$D$-自由だから核も$D$-自由で、剰余へのtensorは完全性を保つ。
+これを繰り返すと、剰余が多項式環のKoszul syzygyであることから、
+$j$段目には次数$j$の$\binom dj$個の生成元だけが必要になる。
+$d$段の後の核の剰余は零なので、次数別Nakayamaによって核は零である。
+同じ議論は左加群にも通る。
+$\Omega:A_{j-3}\to A_j$の剰余は非零多項式による単射である。
+有限自由$D$-加群の行列の単元小行列式を用いれば分裂単射となり、
+各次数の余核$B_j$が自由であることと$\Omega$の正則性が従う。
+ここから$A$の有限大域次元を結論してはいない。
+\end{proof}
+
+$\operatorname{Res}_A$を制限関手とし、標準dg enhancementで
+\[
+ \mathcal D_{B/A}=
+ \{M\in D^b(\operatorname{gr}B):\operatorname{Res}_AM\in\operatorname{Perf}(\operatorname{gr}A)\},
+ \qquad
+ \mathcal S_{B/A}=(\mathcal D_{B/A}/\operatorname{Perf}(\operatorname{gr}B))^{\rm idem}
+\]
+と定める。$B$は$A$上長さ一の分解を持つので、このdg商は定義される。
+
+\begin{lemma}[enhancedな余核比較]\label{fdw:lem:stabilization}
+有限自由graded MFの余核関手は、内部shiftと三次周期を保つdg Morita同値
+$\operatorname{MF}^{\mathbb Z}(A,\Omega)\simeq\mathcal S_{B/A}$を与える。
+その逆を$\operatorname{stab}$と書く。比較は$D\to\mathbb C$への底変更と両立する。
+\end{lemma}
+\begin{proof}
+有限次数付き射影$A$-加群は、そのaugmentation商の自由基底を持ち上げ、
+次数付きNakayamaを使えば有限次数付き自由である。
+$\mathcal E$を、有限生成次数付きGorenstein-projective $B$-加群のうち
+$A$上有限射影次元を持つもののexact圏とする。
+Chenのchange-of-rings定理\cite[Theorem~2.10, Corollary~2.11]{AMChen}から、
+その非零対象の$A$-射影次元は一である。
+syzygyとcosyzygyでこの性質が保たれるので、$\mathcal E$は
+有限射影$B$-加群をprojective-injectiveとするFrobenius圏である。
+
+有限自由MFの成分別分裂exact圏を$\mathcal F$とする。
+余核は$\mathcal F\to\mathcal E$のexact関手である。
+逆に$M\in\mathcal E$について
+$0\to P_1\xrightarrow{\varphi}P_0\to M\to0$を取ると、
+$\Omega M=0$より$\Omega\operatorname{id}_{P_0}$は$\varphi$を通る。
+$\varphi$の単射性により他方の積も$\Omega\operatorname{id}_{P_1}$となり、MFを得る。
+射の持上げとhomotopyを含めた安定圏の同値は
+\cite[Theorem~7.2]{AMChen}による。斉次分解を選べば次数付きでも同じ証明が通る。
+
+enhancementは三角同値だけから宣言しない。
+上のexact関手が誘導するdg商の関手
+\[
+ D^b_{\rm dg}(\mathcal F)/K^b_{\rm dg}(\operatorname{proj\!-\!inj}\mathcal F)
+ \longrightarrow
+ D^b_{\rm dg}(\mathcal E)/K^b_{\rm dg}(\operatorname{proj}B)
+\]
+を使う。Frobenius分解により$H^0$は安定圏であり、全shiftでの同値から
+全Homのcohomologyも同型になる。
+左のdg商とMFの比較は有限複体のtotalizationによる。
+成分別splitなacyclic複体で、横微分とcontractionを$d,s$、
+縦のMF微分を$\delta$とし、$ds+sd=1$、$s^2=0$、
+$d\delta+\delta d=0$、$\delta^2=w$とする。
+横方向が有限なので$q=s(1+\delta s)^{-1}=(1+s\delta)^{-1}s$は有限和であり、
+\[
+ (1+s\delta)\{1-(d+\delta)q-q(d+\delta)\}(1+\delta s)
+ =-sws=0.
+\]
+よってtotalizationは可縮で、dg商を通る。
+
+右のdg商から$\mathcal S_{B/A}$への関手は加群圏への包含による。
+完全射影分解から全shiftのstable Homが特異圏のHomと一致する。
+$\mathcal D_{B/A}$の任意の対象は高い$B$-syzygyのshiftと特異圏で同型である。
+このsyzygyは$A$上有限射影次元を持ち、Chenの定理によって$B$上有限
+Gorenstein-projective次元を持つため、さらにsyzygyを取れば$\mathcal E$に入る。
+これで本質的全射性を得る。
+
+有限自由MFの余核の各次数について、剰余上のfactorization mapは単射である。
+実際、その二つの積は非零多項式$F$である。
+単元小行列式から余核は次数別$D$-自由となり、
+余核・exact列・有限totalizationは剰余への底変更と両立する。
+以上のdg関手のzigzagとMorita逆により、所要の自然な比較を得る。
+内部shiftと指定中心元に由来する周期も各段階で保存される。
+\end{proof}
+
+\subsection{線束Hom、proper性、底変更}
+
+$\pi:\operatorname{Gr}B\to\operatorname{QGr}B$、
+$\mathcal O(j)=\pi B(j)$、導来sectionを$\mathbf R\omega$とする。
+
+\begin{lemma}[線束の有限window]\label{fdw:lem:lines}
+線束の導来Homは$D$-perfectで剰余への底変更と両立し、
+\[
+ \operatorname{Ext}^q(\mathcal O(r),\mathcal O(s))=
+ \begin{cases}B_{s-r}&q=0,\\B_{r-s-a}^{\vee}&q=d-2,\\0&\text{その他}\end{cases}
+\]
+となる。ここで$(-)^\vee=\operatorname{Hom}_D(-,D)$、負の添字は零とする。
+$0\le j\le d-1$について
+$(\mathbf R\omega\mathcal O(j))_{\ge i}=B(j)_{\ge i}$である。
+$E=\bigoplus_{j=0}^{d-1}\mathcal O(j)$は線束生成部分
+$\mathcal C_B=\operatorname{thick}_D\{\mathcal O(j):j\in\mathbb Z\}$を生成する。
+\end{lemma}
+\begin{proof}
+補題\ref{fdw:lem:resolution}の有限Koszul分解を双対化する。
+固定内部次数では有界有限自由$D$-複体で、剰余のKoszul双対性を
+単元成分の消去で持ち上げると
+\[
+ \mathbf R\underline{\operatorname{Hom}}_A(D,A)=D(d)[-d],\qquad
+ \mathbf R\underline{\operatorname{Hom}}_B(D,B)=D(a)[-(d-1)]
+\]
+を得る。後者には正則中心元のchange-of-ringsを使う。
+$\chi$も確認する。$B/(\varepsilon)$の$B$-自由分解は
+$\varepsilon$の乗法による周期分解であり、有限生成$M$のHom cohomologyは
+有限生成$B/(\varepsilon)$-加群である。
+change-of-rings spectral sequenceと可換剰余環の$\chi$、
+$D$の有限な剰余体filtrationを用いれば、
+$\operatorname{Ext}_B^q(D,M)$は各$q$で内部次数について有限である。
+従ってArtin--Zhangのsection--torsion三角を適用できる\cite{AZ}。
+
+$B/B_{\ge\ell}$の次数filtrationの商は$B_j\otimes_DD(-j)$である。
+上の双対性と$B_j$の自由性より、固定内部次数$t$では$j=-t-a$の一層だけが寄与し、
+$\ell>j$で安定する。従って
+\[
+ H^q(\mathbf R\tau B)_t=
+ \begin{cases}B_{-t-a}^{\vee}&q=d-1,\\0&\text{その他}\end{cases}
+\]
+となる。三角$\mathbf R\tau B\to B\to\mathbf R\omega\pi B$からHom公式を得る。
+$\mathbf R\omega\mathcal O(j)$の正のcohomologyは$t\le-j-a$にしかなく、
+$i=1-a>-j-a$なので指定切断後に消える。
+
+底変更には、次数別$D$-自由なsyzygyを持つ$B/B_{\ge\ell}$の分解を用いる。
+固定次数のHom複体の剰余はcohomologyが一つの次数にしかない。
+剰余上のsplit contractionを$\varepsilon$進の有限摂動で持ち上げれば、
+有限自由cohomologyの一項複体へのhomotopy同値を得る。
+従って通常のtensorが導来tensorを計算する。
+Hom、filtered colimit、section三角を通じて自然な底変更写像が準同型となる。
+filtered colimitはK-flat性を保つので、無限複体の平坦性を無条件に仮定していない。
+
+Koszul分解を$B$へ導来tensorした複体のcohomologyは$D$と$D(-3)$のshiftであり、
+いずれも射影商で消える。よって長さ$d$の線束複体は完全である。
+両端の階数一を用いれば、連続した$d$本から全てのtwistを前後に生成できる。
+Hom公式を有限coneと直和因子へ延長すれば、$\mathcal C_B$のproper性と底変更も従う。
+\end{proof}
+
+\begin{lemma}[MF Homの有限縮約と生成子の持上げ]\label{fdw:lem:mf}
+有限自由graded MFのHomは$D$-perfectで、剰余への導来底変更と両立する。
+$P$の剰余が古典graded MFを生成するなら、$P$も$D$上で全MFを生成する。
+\end{lemma}
+\begin{proof}
+周期変数$t$の二重次数を$(2,-3)$とする。
+有限rank行列のHomのcohomological次数と内部次数を固定すると$t$の冪が定まり、
+その成分は有限個の$A_j$の直和である。
+剰余Homは滑らかな三次超曲面のgraded MFであるから、
+古典Orlov比較によって有界有限次元cohomologyを持つ\cite{Orlov}。
+この剰余複体のcohomologyへのsplit contractionを選ぶ。
+微分の差を$\delta\in\varepsilon\operatorname{End}$とすれば、
+$(1+s\delta)^{-1}$と$(1+\delta s)^{-1}$は二乗零性により有限和であり、
+homological perturbationによって有界有限自由複体へ縮約できる。
+これはK-flat性と自然なHom底変更を与える。
+
+生成性は右直交の消滅だけで済ませず、$\mathcal D=\operatorname{Ind}(\operatorname{MF})$で示す。
+Homの底変更と剰余$\bar P$の生成性により、カテゴリーの剰余は古典MFとMorita同値である。
+$P$はcompactであり、そのHomはcolimitと可換する。
+$M\in\mathcal D$が$P$と右直交なら、
+$\operatorname{RHom}(\bar P,M\otimes_D^{\mathbf L}\mathbb C)=0$なので
+$M\otimes_D^{\mathbf L}\mathbb C=0$である。
+$D$は$D(D)$において$\mathbb C$の二段のextensionだから、$M=0$となる。
+よって$P$は$\mathcal D$のcompact generatorであり、そのcompact部分でも生成する。
+\end{proof}
+
+\subsection{windowとrotationの比較}
+
+\begin{theorem}[双対数上のenhanced window]\label{am:thm:comparison}
+$\mathcal K_B^{\rm lin}=\mathcal C_B\cap
+\langle\mathcal O,\ldots,\mathcal O(a-1)\rangle^\perp$とする。
+関手$\Psi=\operatorname{stab}\circ(\mathbf R\omega-)_{\ge i}$はdg Morita同値
+\[
+ \Psi:\mathcal K_B^{\rm lin}\xrightarrow{\sim}\operatorname{MF}^{\mathbb Z}(A,\Omega)
+\]
+を与える。これは剰余への底変更と両立し、
+$\rho=L_{\mathcal O}\circ(1)$を内部shiftへ移す。
+指定中心元の周期性は$\rho^3\simeq[2]$へ移る。
+\end{theorem}
+\begin{proof}
+線束Hom公式から$\mathcal O,\ldots,\mathcal O(a-1)$は$D$-例外列であり、
+evaluation coneによる射影$p$を持つ。従って$G=p(E)$が残余圏を生成する。
+derived sectionと切断、補題\ref{fdw:lem:stabilization}のMorita逆から$\Psi$を構成する。
+$0\le j\le d-1$について、その入力は$B(j)_{\ge i}$である。
+短完全列$0\to B(j)_{\ge i}\to B(j)\to T_j\to0$の
+有限長商$T_j=B(j)_{<i}$は、有限自由$D$の内部shiftから構成される。
+$D$と$B$は$A$上perfectだから、三項とも$\mathcal D_{B/A}$に属する。
+従って$\Psi$は有限coneと直和因子を通して$\mathcal C_B$全体に定義される。
+
+$j<a$では$T_j=0$なので、$\Psi$は例外部分を消す。
+$j=a,a+1,a+2$では$\Psi(\mathcal O(j))=\operatorname{stab}(T_j)[-1]$で、
+\[
+ \operatorname{gr}T_j=\bigoplus_{r=0}^{j-a}B_r\otimes_DD(j-r).
+\]
+$B_0=D$より、三つの像は三角的に三つのstabilizationを生成する。
+剰余では$\Psi$は古典Orlovのsection--windowであり、
+例外部分によるVerdier商からMFへの同値になる\cite[Theorem~6.4]{BS}。
+左直交と右直交は、同じVerdier商を表示することを介して比較する。
+
+sourceのHomは補題\ref{fdw:lem:lines}、targetのHomは補題\ref{fdw:lem:mf}により
+$D$-perfectで底変更と両立する。自然なHom比較のconeの剰余は零なので、
+導来Nakayamaによりcone自体も零である。これで完全忠実性を得る。
+$\Psi(G)$の剰余は古典MFのgeneratorであり、補題\ref{fdw:lem:mf}によって
+$D$上でも全MFを生成するので、本質的全射性が従う。
+
+$M$が残余圏に属するとき、$j\ge1$の直交性は
+$\operatorname{RHom}(\mathcal O(j),M(1))=0$と線束Hom公式から、
+$j=0$の直交性は左mutationの定義から従う。よって$\rho$は残余圏を保つ。
+また
+$(\mathbf R\omega M)_i=\operatorname{RHom}(\mathcal O(a-1),M)=0$
+なので、自然な切断三角により
+\[
+ ((\mathbf R\omega M)(1))_{\ge i}
+ =(\mathbf R\omega M)_{\ge i+1}(1)
+ \simeq(\mathbf R\omega M)_{\ge i}(1).
+\]
+$\Psi(\mathcal O)=0$とevaluation三角を併せると
+$\Psi\rho\simeq(1)\Psi$を得る。
+内部shiftは自己同値なので$\rho$も自己同値であり、周期性はMFの$t$から移る。
+以上は全coherent圏の任意の底変更定理を用いていない。
+\end{proof}

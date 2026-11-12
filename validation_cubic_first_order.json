@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-13",
+  "version": "v1",
+  "entry": "papers/cubic_first_order_deformations.tex",
+  "source_repository": "uedakazushi/nc-cubic",
+  "source_commit": "ea228b7958045bbc72c77c3319d82863baf33277",
+  "preservation": {
+    "original_main_section_blob": "f2875c5e7ed2312d8139dc4e9ca56960e04018f1",
+    "all_original_22_labels_retained": true,
+    "original_math_environment_counts_retained": {"theorem": 3, "proposition": 1, "corollary": 2, "proof": 6, "remark": 4},
+    "editorial_changes": "Remove all-orders reference from introduction; inline the Koszul primitive argument previously cross-referenced; add HKR/twisting citations; correct underlying-dg versus rotation-forgetting wording.",
+    "byte_identical_main_section": false,
+    "appendix": "Specialized and reorganized necessary proof of existing Artin comparison to dual numbers, including local algebra and exact-category enhancement. General Artin source retained.",
+    "existing_two_scripts_byte_identical": true,
+    "new_research_theorems_added": false
+  },
+  "build": {
+    "executed": true,
+    "command": "latexmk -g -r .latexmkrc papers/cubic_first_order_deformations.tex",
+    "engine": "LuaLaTeX",
+    "latexmkrc_blob": "e91814c24c952db2ee886837d0c827cd64498f3d",
+    "pages": 10,
+    "pdf_sha256": "287a373b472da1375c25a55888f2457a489afa004e2995bfbb064b4c3a676fae",
+    "undefined_refs_and_citations": 0,
+    "overfull_boxes": 0,
+    "missing_characters": 0,
+    "multiply_defined_labels": 0,
+    "other_warnings": "microtype font-size warnings for ltjsarticle; not missing characters",
+    "visual_review": "All 10 pages rendered and inspected in three contact sheets. After matching the final remote appendix wording, rebuilt and inspected page 9 again; no clipping or overlap observed.",
+    "pdf_git_tracked": false
+  },
+  "source_check": {
+    "executed": true,
+    "checker": "scripts/check_cubic_first_order.py",
+    "checker_with_calculations_executed": true,
+    "tex_files": 5,
+    "labels": 28,
+    "references": 24,
+    "citation_occurrences": 13,
+    "bibliography_entries": 8,
+    "undefined_references": 0,
+    "undefined_citations": 0,
+    "duplicate_labels": 0,
+    "duplicate_bibliography_keys": 0,
+    "source_blobs": {
+      "papers/cubic_first_order_deformations.tex": "ecccfec1c0e90ae821a741b2ce020219f2df153b",
+      "papers/reconstruction_extensions/first_order_preamble.tex": "e8d0695aab43deea3f6b26d3cf6bcca651abed5b",
+      "papers/reconstruction_extensions/first_order_poisson_kernel.tex": "9b63fcd60612d504461eb9ee39babfcc8bf69b1d",
+      "papers/reconstruction_extensions/dual_number_window.tex": "67d0728503eded03d70d25d4ccc88964ddd00343",
+      "papers/reconstruction_extensions/first_order_references.tex": "fdf5070322b9fceda4dc691eb6ed57e5375142bb"
+    }
+  },
+  "calculations": {
+    "python": "3.13.5",
+    "sympy": "1.14.0",
+    "both_existing_scripts_executed": true,
+    "first_order_HKR_insertion_identities": 8,
+    "Jacobian_degree_three_ranks": [25, 36],
+    "Jacobian_quotient_dimensions": [10, 20],
+    "second_order_coefficient_quadrics": [20, 56],
+    "Jacobi_quadratic_span_ranks": [5, 5],
+    "joined_with_Plucker_span_ranks": [5, 5],
+    "nondecomposable_Xi_negative_control": "PASS",
+    "scope": "Finite exact symbolic examples, not a computation of nc dg Hom or an A-infinity/category-level proof.",
+    "code_blobs": {
+      "computations/verify_first_order_curved_kernel.py": "18718f6c0eab8686f765101abde888a1f2f7ffc6",
+      "computations/verify_second_order_plucker.py": "d113eeb317ef7b4bb2d1fc3e832dc9a6ecd2f816",
+      "scripts/check_cubic_first_order.py": "75527267453f4acc41460b5c7df47ca788f52b99"
+    }
+  },
+  "primary_sources_checked": {
+    "Mayanskiy": "arXiv:1303.5916 primary text Theorem 1 (attribution to Loray-Pereira-Touzet) and Section 2 coefficients",
+    "JLLZ": "Author PDF printed p.15 Theorem 4.4(2), text and screenshot: eta is an isomorphism for cubic threefold",
+    "Chen": "arXiv:2402.11613v3 HTML Theorem 2.10, Corollary 2.11, Theorem 7.2",
+    "other_references": "Existing bibliography retained; all cited proof passages were not newly independently re-audited in this migration"
+  },
+  "independent_full_mathematical_audit": false,
+  "formal_proof_verification": false,
+  "comprehensive_novelty_audit": false,
+  "paper_A_and_focused_paper_B_modified": false,
+  "concurrent_destination_work_preserved": "47cc55e6e0a7191d0af5fba3b3bd73c41620c3c4"
+}

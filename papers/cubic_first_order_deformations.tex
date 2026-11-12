@@ -1,0 +1,47 @@
+% !TEX root = cubic_first_order_deformations.tex
+\input{papers/reconstruction_extensions/first_order_preamble}
+\hypersetup{pdftitle={中心三次対の一次変形とPlücker二次障害}}
+\title{中心三次対の一次変形とPl\"ucker二次障害}
+\author{}
+\date{2026年11月13日／研究草稿 v1}
+\begin{document}
+\maketitle
+\begin{abstract}
+滑らかな三次超曲面を定める多項式環と中心三次元の対について、
+双対数環上の変形を調べる。一次の非可換積を曲率付きHochschild境界として消去し、
+内部次数シフトと三次周期性を保つmatrix factorizationの比較を構成する。
+五変数では、結合積の二次延長障害の係数イデアルがPl\"ucker二次式のイデアルと一致する。
+さらに双対数基底上の線束残余圏との比較を付録に収め、
+既知のinfinitesimal categorical Torelliから圏論的接空間への完全列を得る。
+一次変形、二次障害の零スキーム、全高次の形式変形空間を区別する。
+\end{abstract}
+
+\section*{問題設定と既知結果との関係}
+多項式環の結合積と指定された中心三次元を同時に変形する。
+剰余の多項式環との同定は固定し、同型はその同定の下で恒等になるものに限る。
+主な対象は次数別有限自由な双対数変形であり、
+一般の有限パラメータの非可換三次超曲面を分類するものではない。
+
+一次変形の議論はHochschild--Kostant--Rosenberg同型を用いるが、
+Kontsevichの全次数formalityそのものは必要としない\cite{Kontsevich}。
+曲率付きbar写像の行列因子分解への拡張は
+C\u{a}ld\u{a}raru--Tuのtwisted complexの記述\cite{CT}に沿って有限式で行う。
+滑らかな三次三様体のPoisson構造とGrassmannianとの対応は既知であり、
+Mayanskiyの定理と係数計算\cite[Theorem~1, Section~2]{PMayanskiy}と比較する。
+ここで扱うのは、その二次式が中心対の結合積の延長障害として現れることの直接的な説明である。
+圏論的接空間の同型はJacovskis--Lin--Liu--Zhangの既知定理\cite[Theorem~4.4(2)]{JLLZ}を用いる。
+これらの組合せの初出・新規性の包括的な確認は未完了である。
+
+一般の変数数$N\ge5$について一次消去と接空間を扱い、
+Pl\"ucker表示および圏論的接空間の完全列は$N=5$に限定する。
+後者の証明が使う相対stabilization、Homの底変更、生成性、rotationの比較は
+付録\ref{fdw:sec:window}で証明する。
+非正則な双対数基底で、全coherent圏の絶対特異圏へ通常のOrlov定理を適用することはない。
+
+\input{papers/reconstruction_extensions/first_order_poisson_kernel}
+\appendix
+\input{papers/reconstruction_extensions/dual_number_window}
+\begin{thebibliography}{99}
+\input{papers/reconstruction_extensions/first_order_references}
+\end{thebibliography}
+\end{document}

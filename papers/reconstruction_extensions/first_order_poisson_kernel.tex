@@ -4,7 +4,7 @@
 
 この節では一般点の全次数形式比較を前提とせず、
 双対数環上で非可換積の一次摂動が曲率付きMFにどう作用するかを直接調べる。
-これは全次数の定理\ref{cft:thm:complete}の一次部分の独立検証でもある。
+全次数の形式的MF比較の存在は仮定しない。
 曲率の一次変形を固定しなければ、任意の非可換変形が自明という意味ではない。
 
 $S=\mathbb C[x_1,\ldots,x_N]$、$N\ge5$、
@@ -49,7 +49,7 @@ rotation付きgraded MF圏の一次変形を生じない。
 単位を保つよう標識を取り、$\beta$をnormalizedな内部weight零の
 Hochschild二cochainとする。結合律の一次部分は
 $d_{\mathrm{Hoch}}\beta=0$である。
-polynomial algebraのHKR同型により、そのクラスは
+多項式環のHKR同型\cite[Section~4.6.2]{Kontsevich}により、そのクラスは
 二次係数bivector$\pi$の反対称微分cochain$\Theta_\pi$で表せる。
 差$\beta-\Theta_\pi$は内部weight零のHochschild coboundaryなので、
 $\mathrm{id}+\varepsilon T$という一次の厳密な加群標識変更で
@@ -108,6 +108,7 @@ $\varepsilon^2=0$だから、そのbar写像は
 $F_0=0,F_1=\mathrm{id},F_3=\varepsilon t^{-1}\Theta_\Xi$のみを持ち、
 逆は$F_3$の符号を反転させればよい。
 
+曲率付きtwistingの規約は\cite[Section~2]{CT}に従う。
 有限rank MFの行列$Q$は$\varepsilon$の倍数である必要はない。
 しかし対象像$Q'=Q+F_3(Q,Q,Q)$および射のtwisting挿入公式は
 双対数環上では有限和である。
@@ -151,8 +152,11 @@ $[\pi,\pi]=0$は必要ない。
 二次以降で同じゲージを延長するには
 $[\Xi,\pi]=0$が必要になる。
 滑らかな三次式の下では、Jacobi条件$[\pi,\pi]=0$から
-勾配Koszulと係数次数により$[\Xi,\pi]=0$を導ける
-（補題\ref{cft:lem:primitive}）。
+勾配Koszulと係数次数により$[\Xi,\pi]=0$を導ける。
+実際、$D_\Xi=[\Xi,\pi]$は係数次数一・rank四であり、
+graded Jacobiから$[W,D_\Xi]=-[\pi,\pi]=0$となる。
+そのKoszul原像は係数次数$-1$を要求するため、$D_\Xi=0$である。
+ここでは$W=F$とする。
 従って一次消滅と全次数の比較は異なる論理的強さを持つ。
 \end{remark}
 
@@ -312,7 +316,7 @@ $T^1_{\mathrm{pair},(S,F)}$を考える。
 Artin基底上のenhancedなstabilization/window比較
 （定理\ref{am:thm:comparison}）によって、
 rotation付き残余圏の変形に付随する
-\emph{基礎dg圏を忘れた}Kodaira--Spencer写像
+rotationを忘れた\emph{基礎dg圏の}Kodaira--Spencer写像
 \[
  \kappa_{\rm cat}:T^1_{\mathrm{pair},(S,F)}
  \longrightarrow HH^2(\operatorname{Ku}(X))
