@@ -1,0 +1,136 @@
+% 中心chartと導分によるperfect性の局所大域判定。
+\section{中心chartと導分による射影的perfect性の判定}
+\label{sec:quotient-chart-gluing}
+以下の判定は有限位数・無限位数の楕円境界を区別しない。
+使う外部入力は、noetherian AS正則代数の中心正則超曲面に対する
+行列因子化と特異圏の同値（右加群には反対環を適用）
+\cite[Theorems~4.7, 5.5]{CCKM}である。
+中心元のnormalizing automorphismは恒等なので、
+同文献のtwisted因子化は次数shiftを伴う通常の二周期因子化となる。
+
+\begin{lemma}[有限射影因子化の縮約と分母払い]
+\label{lem:gluing-contraction}
+$2$が可逆な左右noetherian環$S$と中心正則元$w$を取り、
+有限生成射影加群の行列因子化を$d^2=w$と書く。
+$S/(w)$上のcokernelが有限射影次元なら、この因子化は縮約可能である。
+さらに中心正則元$u$で局所化した後に縮約可能なら、
+ある$N$について$u^N\mathrm{id}=dK+Kd$となる。
+次数付きの場合も、因子化の次数shiftを含めて同じ主張が成立する。
+\end{lemma}
+\begin{proof}
+$\bar S=S/(w)$上の二周期分解から、cokernelの有限射影次元は
+各周期syzygyの射影性を意味する。従って分解は分裂し、
+$\bar S$上で$d\bar H+\bar Hd=1$となる奇写像を取れる。
+有限射影性からこれを$S$上の$H$へ持ち上げると
+$dH+Hd=1+wT$となる。
+左辺は$d$と可換なので、$w$の正則性により$[d,T]=0$。
+ゆえに$H'=H-\frac12dT$は$dH'+H'd=1$を満たす。
+局所化後の$H'$の有限個の成分の分母を$u^N$で払い、
+$S\hookrightarrow S[u^{-1}]$の単射性を使えば最後の等式を得る。
+\end{proof}
+
+$B$を標数零の体上の左右noetherian connected graded AS正則代数、
+$W\in Z(B)$を正次数の正則斉次元、$A=B/(W)$とする。
+\[
+ \mathcal P_A=\operatorname{thick}\{\pi A(n):n\in\mathbb Z\},\qquad
+ \mathcal Q_A=\mathrm D^b(\operatorname{qgr}A)/\mathcal P_A
+\]
+と置く。以下で消滅させるのは$\mathcal Q_A$であり、
+次数付き代数そのものの$\mathrm D_{\mathrm{sg}}^{\mathrm{gr}}(A)$ではない。
+
+\begin{proposition}[一つの中心chartと正則境界]
+\label{prop:gluing-one-chart}
+$u\in Z(B)_1$が$B$と$A$上正則であり、
+\[
+ \mathrm D^b(\operatorname{qgr}A/(u))
+ =\operatorname{thick}\{\pi(A/(u))(n):n\in\mathbb Z\}
+\]
+とする。$A[u^{-1}]_0$が有限大域次元を持つなら、
+$\mathcal Q_A=0$である。
+\end{proposition}
+\begin{proof}
+coherent対象のgraded liftを$M$とする。
+$u:M(-1)\to M$のconeのcohomologyは$u$に殺される。
+境界の生成性と
+$0\to A(-1)\xrightarrow{u}A\to A/(u)\to0$
+により、このconeは$\mathcal P_A$に属する。
+従って$u$の作用は$\mathcal Q_A$で可逆である。
+一方、\cite[Theorems~4.7, 5.5]{CCKM}から$M$の
+次数付き特異圏の像を有限graded自由行列因子化で表せる。
+$A[u^{-1}]\simeq A[u^{-1}]_0[u,u^{-1}]$のgraded加群圏は
+次数零部分の加群圏と同値なので、局所化後のcokernelは有限射影次元を持つ。
+補題\ref{lem:gluing-contraction}で縮約の分母を払うと、
+$u^N$の作用は次数付き特異圏で零となり、従って$\mathcal Q_A$でも零となる。
+可逆かつ零なので$M$の像は零である。
+全coherent対象に適用して結論する。指数$N$は対象ごとに選べばよい。
+\end{proof}
+
+\begin{proposition}[中心因子を持つ導分による切断判定]
+\label{prop:gluing-derivation}
+次数零の真の導分$\delta:B\to B$が存在し、
+\[
+ \delta(W)=c\prod_{j=1}^r l_j,\qquad c\ne0,
+\]
+で、各$l_j\in Z(B)$は正次数の斉次元で$A$上正則とする。
+各$A/(l_j)$のqgrの有界導来圏がその構造対象のtwistsで厚く生成されるなら、
+$\mathcal Q_A=0$である。
+\end{proposition}
+\begin{proof}
+前命題のconeの議論により、各$l_j$は$\mathcal Q_A$で可逆に作用する。
+一方、有限graded自由行列因子化$d^2=W$の行列成分へ$\delta$を作用させると
+\[
+ d\,\delta(d)+\delta(d)\,d=\delta(W)\mathrm{id}
+\]
+なので、$\delta(W)$の作用は次数付き特異圏で零である。
+従って積$\prod_j l_j$は$\mathcal Q_A$で零かつ可逆となり、全対象が零となる。
+\end{proof}
+
+\begin{lemma}[中心値を動かす導分]
+\label{lem:gluing-moving-central-value}
+$R$は左右noetherianで$\operatorname{gldim}R\le n<\infty$（$n\ge1$）、
+$w=g+\beta$は中心正則元とする。
+導分$\delta$が$\delta(g)=P(g)$、$P(-\beta)\ne0$を満たせば
+$\operatorname{gldim}R/(g+\beta)\le n-1$である。
+\end{lemma}
+\begin{proof}
+有限生成$D=R/(w)$加群$M$の$(n-1)$次syzygy $N$は
+$R$上の射影次元が高々1である。
+実際、$D$-自由分解の各短完全列と$\operatorname{pd}_R D=1$から
+次元を順に下げればよい。
+有限射影分解$0\to P_1\xrightarrow{\phi}P_0\to N\to0$を取り、
+$wN=0$から$\phi\psi=w$、単射性から$\psi\phi=w$を得る。
+各$P_i$は有限自由加群の直和因子なので$\delta$-connectionを持つ。
+その和を$\nabla$とすると$D(d)=[\nabla,d]$は$R$-線形で
+$dD(d)+D(d)d=P(g)$である。
+$c=P(-\beta)$、$P(g)-c=wQ(g)$と置けば
+\[
+ H=c^{-1}\left(D(d)-\tfrac12Q(g)d\right),\qquad dH+Hd=1.
+\]
+従って$N$は$D$上射影的で$\operatorname{pd}_D M\le n-1$。
+noetherian環の巡回加群による大域次元判定から結論する。
+\end{proof}
+
+\begin{lemma}[perfect性とSerre双対性からの正確な次元]
+\label{lem:gluing-serre-dimension}
+$A$は左右noetherian connected graded AS--Gorensteinで、
+balanced dualizing complexが$A_\nu(-\ell)[d+1]$（$d\ge0$）で、
+$\pi A\ne0$とする。
+$\mathrm D^b(\operatorname{qgr}A)=\mathcal P_A$なら
+$\operatorname{gldim}\operatorname{qgr}A=d$である。
+\end{lemma}
+\begin{proof}
+\cite[Theorem~4.2, Corollary~4.3]{YZSerre}は左右の$\chi$と
+有限cohomological dimensionを与える。
+特に$\pi A(n)$は有限射影次元を持つ。
+Chen\cite[Theorem~3.10]{ChenGeneralizedSerre}の一般化Serre双対性は
+有限射影次元の対象に適用でき、その関手は
+$S(M)=M_\nu(-\ell)[d]$となる。
+仮定により全coherent対象が適用範囲に入るので、
+\[
+ \operatorname{Ext}^i(M,N)^*
+ \simeq\operatorname{Ext}^{d-i}(N,M_\nu(-\ell)).
+\]
+$i>d$では右辺が負次数ゆえ零。
+また$M=\pi A$、$N=M_\nu(-\ell)$と取ると
+$\operatorname{Ext}^d(M,N)^*\simeq\operatorname{Hom}(N,N)\ne0$なので等号となる。
+\end{proof}

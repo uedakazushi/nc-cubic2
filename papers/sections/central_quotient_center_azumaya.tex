@@ -376,88 +376,135 @@ $P_{18}$の最高次記号は斉次中心の関係であり、
 非可換恒等式自体の証明は厳密有理数商での零簡約による。
 \end{remark}
 
-\begin{proposition}[Azumaya locusの同定：既知Sklyanin入力付き]
-\label{prop:quotient-azumaya}
-命題\ref{prop:quotient-full-center}の中心表示と
-$\operatorname{gr}Z(R_1)=Z(S_1)$を仮定し、
-$S_1$がPI次数6の三次元AS正則Sklyanin代数で、
-その非Azumaya locusが三本の曲線からなること
-\cite{WWYSklyanin}、
-また$R_1$がfiltered deformationとして
-左右大域次元3のprime noetherian整域であることを入力とする。
-このとき
+\begin{lemma}[Rees退化による非Azumaya locusの次元上界]
+\label{lem:quotient-rees-azumaya}
+$k$を代数閉体とし、$\mathcal C$を有限生成connected非負次数付き
+可換整域、$t\in\mathcal C_1$を非零元とする。
+$\mathcal T$を$\mathcal C$上有限な次数付き代数とし、
+$\mathcal C\subset Z(\mathcal T)$、$\mathcal T$は
+$\mathcal C$上torsion-free、$\mathcal C/(t)$は整域とする。
+一般rankを$r^2$とし、$\mathcal T/(t)$も
+$\mathcal C/(t)$上の一般rankが$r^2$であると仮定する。
+特殊ファイバーの非Azumaya locusの次元が高々$e$なら、
 \[
+ \dim\bigl(\operatorname{Spec}\mathcal C
+       \setminus\operatorname{Az}_{\mathcal C}(\mathcal T)\bigr)
+ \le e+1.
+\]
+さらに$\mathcal T[t^{-1}]\simeq R[t,t^{-1}]$、
+$\mathcal C[t^{-1}]\simeq Z[t,t^{-1}]$が成り立てば、
+$R$の$Z$上の非Azumaya locusは次元高々$e$である。
+\end{lemma}
+\begin{proof}
+$V(t)$上の閉点$\mathfrak m$で特殊ファイバーがAzumayaなら、
+$\mathcal T/\mathfrak m\mathcal T\simeq\operatorname{Mat}_r(k)$。
+Nakayamaにより$\mathcal C_{\mathfrak m}^{r^2}$から
+$\mathcal T_{\mathfrak m}$への全射を得る。
+両者の一般rankは等しく、核は整域上の自由加群の部分加群なので
+torsion-freeかつrank零、従って零である。
+よって$\mathcal T_{\mathfrak m}$は自由であり、
+\[
+ \mathcal T_{\mathfrak m}\otimes_{\mathcal C_{\mathfrak m}}
+ \mathcal T_{\mathfrak m}^{\mathrm{op}}
+ \longrightarrow
+ \operatorname{End}_{\mathcal C_{\mathfrak m}}(\mathcal T_{\mathfrak m})
+\]
+は同rankの自由加群間の写像で剰余体上同型だから同型。
+逆向きはAzumaya代数の基底変換による。
+従って非Azumaya閉集合$D$と$V(t)$の交叉は
+特殊ファイバーの非Azumaya locusに一致する。
+
+$D$は次数の$\mathbb G_m$作用で不変で、連結群はその各既約成分を保つ。
+$\mathcal C_0=k$なのでscaling orbitは$\mathbb A^1$へ延長し、
+零で頂点に達する。従って各成分$D_0$は頂点を含む。
+$D_0\subset V(t)$なら$\dim D_0\le e$。
+そうでなければ$t$は$D_0$上非零非単元で、有限型整域の次元公式から
+\[
+ \dim(D_0\cap V(t))=\dim D_0-1\le e.
+\]
+最後に$t\ne0$で非Azumaya locusは
+$\bigl(\operatorname{Spec}Z\setminus\operatorname{Az}_Z(R)\bigr)
+\times\mathbb G_m$なので、次元を一つ引く。
+\end{proof}
+
+\begin{proposition}[Azumaya locusの同定：PBWと既知Sklyanin入力]
+\label{prop:quotient-azumaya}
+PBW同型$\operatorname{gr}R_1=S_1$と、
+$S_1=S(1,-1,-1)$がnoetherianな三次元AS正則整域で
+Auslander-regularかつGK-Cohen--Macaulayであるという
+既知の入力を用いる。
+命題\ref{prop:quotient-full-center}の中心表示、
+および$S_1$のPI次数6と三曲線の非Azumaya locus
+\cite[Theorem~1.3, Lemma~5.4, \S8.2]{WWYSklyanin}の下で
+\[
+ \operatorname{gldim}R_1=3,\qquad
  \operatorname{Az}(R_1)
  =\operatorname{Sm}(\operatorname{Spec}Z(R_1)).
 \]
-特に$R_1$は中心上有限な最大Cohen--Macaulay加群で、
-中心上の一般rankは$36$であり、
-高さ1ではAzumayaである。
+$R_1$は中心上有限な最大Cohen--Macaulay加群で、
+中心上の一般rankは36、高さ1ではAzumayaである。
+$R_1$の整域性・noetherian性・有限大域次元は
+追加の独立仮定とはしない。
 \end{proposition}
 \begin{proof}
-$Z=Z(R_1)$、$S_1=\operatorname{gr}R_1$とし、
-Rees環と中心のRees環を
+$Z=Z(R_1)$とする。$\operatorname{gr}Z=Z(S_1)$および
+$S_1$の中心上の有限斉次生成元を持ち上げ、最高次数を下げると、
+$R_1$は$Z$上有限となる。同じ議論でRees環
 \[
- \mathcal T=\bigoplus_{d\ge0}F_dR_1\,t^d,\qquad
+ \mathcal T=\bigoplus_{d\ge0}F_dR_1t^d,\qquad
  \mathcal C=\bigoplus_{d\ge0}(Z\cap F_dR_1)t^d
 \]
-と書く。元の中心のassociated gradedが
-$Z(S_1)$に等しいことから、有限個の斉次中心生成元を
-次数を下げつつ持ち上げられる。
-従って$\mathcal T$は$\mathcal C$上有限で、
-\[
- \mathcal T/(t)=S_1,\quad
- \mathcal C/(t)=Z(S_1),\quad
- \mathcal T[t^{-1}]=R_1[t,t^{-1}],\quad
- \mathcal C[t^{-1}]=Z[t,t^{-1}]
-\]
-が成り立つ。
-$\mathcal C_{(t)}$は一次元noetherian局所整域で
-極大イデアルが$t$で生成されるためDVR。
-$\mathcal T_{(t)}$は有限torsion-freeゆえ自由で、
-そのrankは特殊ファイバー$S_1$の中心上の一般rank
-$6^2=36$に一致する。
-従って$R_1$の$Z$上の一般rankも$36$。
+についても$\mathcal T$は$\mathcal C$上有限である。
+$\mathcal C$は$t$と$gt^3,Ut^6,Vt^6,Wt^6$で生成される
+connected次数付き可換整域なのでnoetherian。
+従って$\mathcal T$と$R_1$も左右noetherianである。
+$S_1$が整域なので最高次項の積から$R_1$も整域となる。
 
-Zariskian filtrationのgrade/GK次元比較
-\cite{LevasseurNoncomm}により、
-有限生成$R_1$加群$M$について
+$\mathcal C/(t)=Z(S_1)$は整域で、
+$\mathcal C_{(t)}$は極大イデアルが$t$で生成されるDVR。
+有限torsion-free加群$\mathcal T_{(t)}$のrankは、
+剰余体$\operatorname{Frac}Z(S_1)$上の特殊ファイバーの次元36に等しい。
+$\mathcal T[t^{-1}]=R_1[t,t^{-1}]$から$R_1$の$Z$上のrankも36である。
+特殊ファイバーの非Azumaya locusは三曲線で次元1なので、
+補題\ref{lem:quotient-rees-azumaya}により
+$R_1$の非Azumaya locusも次元高々1、従ってheight one Azumayaである。
+
+語長filtrationは非負でRees環がnoetherianだからZariskianである。
+有限生成加群のgood filtrationに対し、
+$S_1$上の長さ3以下のgraded自由分解をstrict filtered分解へ持ち上げると
+$\operatorname{gldim}R_1\le3$となる。
+また\cite[Proposition~3.2(ii)]{LevasseurNoncomm}の
+仮定であるZariskian性と$S_1$のAuslander--Gorenstein性が成立するので
 \[
- j_{R_1}(M)=j_{S_1}(\operatorname{gr}M),\quad
+ j_{R_1}(M)=j_{S_1}(\operatorname{gr}M),\qquad
  \operatorname{GKdim}M=\operatorname{GKdim}\operatorname{gr}M.
 \]
-$S_1$はAuslander-regularかつGK-Cohen--Macaulay
-なので$j_{R_1}(M)+\operatorname{GKdim}M=3$。
-中心上有限であるからKrull次元とGK次元が一致し、
-Brown--Macleodの基準\cite[Theorem~4.8]{BrownMacleod}
-によって$R_1$は$Z$-Macaulayである。
+従って任意の非零有限生成左右加群について
+$j_{R_1}(M)+\operatorname{GKdim}M=3$。
+中心上有限なaffine代数では、このGK次元は$Z$上の台のKrull次元に等しい。
+ゆえに$R_1$はKrull--Macaulayであり、
+Brown--Macleod\cite[Theorem~4.8, (i)$\Rightarrow$(iii)]{BrownMacleod}から
+$Z$-Macaulayである。
+一次元加群$X=i,Y=Z=0$のgradeは3なので大域次元の下界も3となる。
 
-$\mathcal C$の$(t)$を含む閉点で$S_1$がAzumayaなら、
-$\mathcal T/\mathfrak m\mathcal T\simeq\operatorname{Mat}_6(\CC)$。
-Nakayamaと一般rank36から
-$\mathcal T_{\mathfrak m}$は$\mathcal C_{\mathfrak m}$上自由rank36で、
-剰余体で同型となる
-$\mathcal T_{\mathfrak m}\otimes_{\mathcal C_{\mathfrak m}}
- \mathcal T_{\mathfrak m}^{\mathrm{op}}
-\to\operatorname{End}_{\mathcal C_{\mathfrak m}}(\mathcal T_{\mathfrak m})$
-はNakayamaにより同型。
-従って特殊中心のAzumaya点はRees族でもAzumayaである。
-
-$\mathcal T$の非Azumaya locusを$D$とする。
-次数からの$\mathbb G_m$作用で$D$は不変。
-$D\cap V(t)$は$S_1$の非Azumaya locusの三曲線で次元1。
-$t\ne0$と交わる$D$の既約成分の閉包は
-$V(t)$にも交わり、次元公式によりその次元は高々2。
-$t\ne0$で$D$は
-$(\operatorname{Spec}Z\setminus\operatorname{Az}(R_1))
-\times\mathbb G_m$なので、
-$R_1$の非Azumaya locusは中心3次元において
-次元高々1、すなわちheight one Azumaya。
-Brown--Macleod\cite[Theorem~3.13]{BrownMacleod}の
-prime、中心有限、有限大域次元、$Z$-Macaulay、
-height one Azumayaの条件が揃い、
-Azumaya locusと中心のsmooth locusが一致する。
+以上のprime noetherian性、中心有限性、有限大域次元、
+$Z$-Macaulay性、height one Azumaya性は、
+\cite[Theorem~3.13]{BrownMacleod}の三条件(i)--(iii)と基礎仮定を満たす。
+同定理によりAzumaya locusは中心の正則locusと一致する。
+標数零の有限型中心では正則性と滑らかさが一致する。
 \end{proof}
+
+\begin{corollary}[全中心の正規性]
+\label{cor:quotient-normal-center}
+上のPBW・既知Sklyanin入力の下で$Z(R_1)$は正規整域である。
+\end{corollary}
+\begin{proof}
+$R_1$の整域性から中心も整域で、表示された超曲面は$S_2$を満たす。
+Azumaya locusとsmooth locusが一致し、非Azumaya locusは次元高々1。
+三次元中心の高さ1の点は正則なので$R_1$条件も成立する。
+Serreの正規性判定を適用する。
+\end{proof}
+
 
 \begin{lemma}[Azumaya環と中心の大域次元]
 \label{lem:quotient-azumaya-gldim}
@@ -472,8 +519,12 @@ separability idempotentにより
 $B$は$C$上射影的なので
 $C$-射影分解を誘導して
 $\operatorname{gldim}B\le\operatorname{gldim}C$を得る。
-逆向きには中心への正規化traceで$C\hookrightarrow B$が
-$C$加群として分裂する。
+逆向きには$C\hookrightarrow B$が$C$加群として分裂することを使う。
+実際、$B$は有限射影で、任意の極大イデアルで$1_B$の像は非零なので、
+双対加群による評価イデアル$\{f(1_B):f\in\operatorname{Hom}_C(B,C)\}$は
+どの極大イデアルにも含まれず$C$である。
+従って$f(1_B)=1$となる$f$が存在し、これが分裂を与える。
+この証明はrankを可逆と仮定しない。
 任意の$C$加群$N$は$B\otimes_CN$の
 $C$直和因子となり、$B$-射影加群を制限すれば
 $C$-射影的なので逆の不等式も得る。

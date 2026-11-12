@@ -13,7 +13,7 @@
 - **正則正規三次族からの1周期性**：一般$N,d$について最小周期が$\gcd(N,d)$を割る定理と5次元・三次の場合の系を、モジュライ原稿の [周期性節](papers/sections/ambient_periodicity.tex) に証明ごと統合。ambientの1周期性と、商イデアルを保つ周期性を区別する。後者と初出・新規性の確定は未了。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 
-**2026年11月12日・v13。独立した研究内容の正本は本リポジトリの `main`。**
+**2026年11月12日・v14。独立した研究内容の正本は本リポジトリの `main`。**
 
 ## 六・七次元Poisson cubicの独立なscheme幾何
 
@@ -78,14 +78,14 @@ LuaLaTeX、LuaTeX-ja、HaranoAji日本語フォント、標準数学パッケー
 
 GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗時の緊急避難に限る。
 
-### 中心商特異性のTeX化と特異圏・球面ツイスト
+### 中心商特異性・chart貼合せ・特異圏
 
-旧論文VIの非可換A1局所模型とBrauer障害、二中心chartの21中心特異点を[独立LuaLaTeX原稿](papers/central_quotient_local_models.tex)へ部分回収し、さらに[旧§17–18の三次元表現・六次分裂元](papers/sections/central_quotient_simple_representations.tex)を証明付きで統合した。対応する厳密有理数検算は`computations/verify_central_quotient_local_hessian.py`。元の全中心表示・Azumaya locus・小単純表現の分類は条件付き入力として明記し、独立再監査していない。特異圏・twistの回収が完了するまでは原PDFを残す。
+[中心商原稿](papers/central_quotient_local_models.tex)に、全中心、四つの非可換A1局所模型とBrauer指数6、二中心chartの21特異点と三つのホモロジー的特異点、Karoubi特異圏、球面twist、指定一混合族の正確なtails判別式を整理した。相対PBW・周囲のAS正則性・CY性・楕円境界は既知入力として明示する。
 
-旧論文VIの§21–22を `papers/sections/central_quotient_categories_and_twist.tex` に移植した。三中心nodeのKaroubi特異圏と3-spherical twistの証明は、中心有限性・Azumaya locusと正則性の既存入力を明示している。三次元表現の剛性は `computations/verify_central_quotient_reps.py` の法29の非零19次小行列式で再現可能。
+[全中心とAzumaya locus](papers/sections/central_quotient_center_azumaya.tex)では、Rees退化の一般補題と一次文献の仮定を照合した。`computations/verify_center_degree7.py` はQ上の6中心元と交換子rank78、`computations/verify_center_phi_exact.py` は次数18・dim1330・Φ=0を厳密有理数演算で実行確認済み。再現：`python computations/verify_center_phi_exact.py --backend flint --run-all --verify`（python-flintが必要）。
 
-中心商原稿には、[非斉次四中心元・Azumaya locusの証明構造](papers/sections/central_quotient_center_azumaya.tex)も回収した。旧有限語計算は現行コードで再構成し、下記の厳密有理数検証を実行した。Azumaya入力の監査はこれと区別する。
+[chart貼合せの証明](papers/sections/central_quotient_chart_gluing.tex)は、行列因子化の分母払いと導分による三切断への帰着を与える。二重étale中心降下、rank6 monic比較、分岐位置、15通常二重点のHessianも明示計算した。検算：`computations/verify_central_quotient_local_hessian.py` と `computations/verify_quotient_exact_tails.py`。
 
-旧論文VI§16の正確な量子的tails判別と二重分岐の有限射影行列因子化の証明は [central_quotient_exact_tails.tex](papers/sections/central_quotient_exact_tails.tex) に回収。可換化・分岐・判別式の厳密検算は `python3 computations/verify_quotient_exact_tails.py`。中心関係は下記の厳密計算で確定したが、貼合せ等の監査が残るため原PDFは保持。
+[三次元表現](papers/sections/central_quotient_simple_representations.tex)と[特異圏・twist](papers/sections/central_quotient_categories_and_twist.tex)では、軸上剛性の法29の19次minor、境界正則性、chartのIwanaga–Gorenstein性を現行証明に保持する。球面性のNakayama twistと全表現間Ext表の監査は残る。
 
-中心商の有限中心計算は `computations/verify_center_degree7.py`（Q上の6中心元・交換子rank78）と `computations/verify_center_phi_exact.py`（FLINT厳密有理数演算で次数18・dim1330・Φ=0）を実行確認した。既知の斉次中心定理を入力として全中心表示を確定し、中心商原稿をLuaLaTeXで組版済み。Azumaya・二中心chart貼合せの入力監査と旧稿固有内容の全照合が残るため、原PDF VIは維持する。再現：`python computations/verify_center_phi_exact.py --backend flint --run-all --verify`（python-flintが必要）。
+[正確なtails判別](papers/sections/central_quotient_exact_tails.tex)の原稿をLuaLaTeXで組版済み。原PDF VIの初期諸節にある分離型三次式・一般ambient正則性・開性等の固有内容の全照合が終わるまでは、原PDFを保持する。

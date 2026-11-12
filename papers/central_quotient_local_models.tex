@@ -20,7 +20,7 @@
 \newcommand{\CM}{\operatorname{CM}}
 \title{中心三次商の零ファイバーと非可換$A_1$局所模型\\
 \large 中心の四特異点、局所分裂、Brauer障害}
-\date{2026年11月12日・v5}
+\date{2026年11月12日・v6}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -29,8 +29,9 @@
 全中心表示の具体的な非斉次関係式を有理数上で厳密に検証し、
 既知の斉次Sklyanin中心定理を入力として全中心表示を確定した。
 三次元表現と一次・二次元単純表現の排除も現行TeXに復元し、
-明示行列関係式を厳密検算した。Azumaya locusと中心chartの貼合せの
-外部入力については独立監査が残る。
+明示行列関係式を厳密検算した。Rees退化の一般補題と一次文献の定理により
+Azumaya locusを同定し、中心chartの有限平坦比較と射影的perfect性の貼合せも証明する。
+相対PBW性、周囲のAS正則性、CY性と楕円境界の記述は既知の入力として明示する。
 中心多項式とHessianの有限検算は別途実行した。
 \end{abstract}
 
@@ -47,7 +48,7 @@ $g=3G_1/2$を中心正則元とし、$C=Z(A)$と書く。
  +(11U-g^2-1)VW+V^3-W^3 .
 \end{equation}
 また$A$が$C$上有限なCohen--Macaulay整域、中心的斜体の次数6、
-Azumaya locusが$\Spec C$のsmooth locusに一致することは、上の中心の有限計算と既知SklyaninのAzumaya結果を入力にした命題\ref{prop:quotient-azumaya}で証明構造を与える。
+Azumaya locusが$\Spec C$のsmooth locusに一致することは、上の中心の有限計算と既知SklyaninのAzumaya結果を入力にした命題\ref{prop:quotient-azumaya}で証明した。
 これらは本稿の多項式検算のみから従う主張ではない。
 
 \begin{lemma}\label{lem:four}
@@ -132,7 +133,8 @@ rankの等式も従う。
 最小次数が6であることを証明している。
 軸上の二つの明示表現とその全行列は第\ref{sec:central-quotient-representations}節にTeX化し、
 関係式を\texttt{computations/verify\_central\_quotient\_reps.py}で
-厳密に独立検算した。ただし中心全生成元の表示と$U$の恒等式は別の入力である。
+厳密に独立検算した。中心全生成元と$U$の恒等式は第\ref{sec:quotient-center-azumaya}節、
+中心の正規性は系\ref{cor:quotient-normal-center}で確立した。
 \end{remark}
 \begin{proposition}[非可換$A_1$局所模型]\label{prop:local-model}
 補題\ref{lem:splitting}の仮定に加え、
@@ -149,13 +151,17 @@ $R$はconifold型の三次元完備局所超曲面である。
 $M$は$R$を直和因子に持ち、$\End_R(M)$はMCMなので
 modifying generatorである。
 Iyama--WemyssのcAn型局所分類
-\cite[Theorem~5.1(1)]{IW}を
-$pq=(r-\gamma)(r+\gamma)$へ適用すると、
+\cite[Theorem~5.1(1)]{IW}を適用する。
+同定理の基底は$\CC[[r,\gamma]]$、
+$f=(r-\gamma)(r+\gamma)$の二因子は相異なる素元である。
+$M$はMCMで$R$を直和因子に持ち、$\End_R(M)$もMCMなので、
+同定理のmodifying generatorの仮定を満たす。
+因子集合$\{1,2\}$のflagは空flag、$\{1\}$、$\{2\}$だけなので、
 基本generatorは$R$または
 $R\oplus(p,r\pm\gamma)$に限る。
 よって$M\simeq R^a\oplus I^b$、$a\ge1$と書ける。
 $b=0$なら$\End_R(M)$はAzumayaとなり、
-中心特異点でAzumayaでないという入力に矛盾するので$b\ge1$。
+命題\ref{prop:quotient-azumaya}の中心特異点で非Azumayaという結論に矛盾するので$b\ge1$。
 二つの非同型直和因子のend環の半単純剰余は
 $\Mat_a(\CC)\oplus\Mat_b(\CC)$である。
 低次元単純表現の不存在から$a,b\ge3$。
@@ -199,8 +205,8 @@ $\End_S(T)\simeq T\rtimes\{\pm1\}$となる。
 \end{proof}
 
 \begin{corollary}[零ファイバーの局所正則性と単純表現]\label{cor:zero}
-旧論文VIの中心有限性・Azumaya locusと
-上記局所模型を入力とする（小単純表現排除は命題\ref{prop:local-no-small-simples}で証明した）。
+命題\ref{prop:quotient-azumaya}のPBW・既知Sklyanin入力と
+上記の局所模型を用いる（小単純表現排除は命題\ref{prop:local-no-small-simples}で証明した）。
 $D_0=A/(g)$の中心は$C/(g)$であり、
 $\gldim D_0=2$である。
 各四つの$A_1$中心点には三次元単純表現が二つ、
@@ -208,6 +214,9 @@ $\gldim D_0=2$である。
 従って$D_0$の三次元単純表現は全部で8同型類となる。
 \end{corollary}
 \begin{proof}
+まず$C\cap gA=gC$である。実際、$ga\in C$なら
+$g[a,x]=0$と$g$の正則性から$a\in C$となる。
+従って$C/(g)\hookrightarrow A/(g)$であり、商はこの中心部分環上有限である。
 中心の滑らかな点ではAzumaya性により
 完備化は$\Mat_6(\CC[[a,b]])$となる。
 四特異点では命題\ref{prop:skew}の模型がある。
@@ -226,11 +235,7 @@ $\Mat_3(\CC)\oplus\Mat_3(\CC)$、
 \end{proof}
 
 \begin{corollary}[局所分裂と大域Brauer障害]\label{cor:brauer}
-さらに旧論文VIのfiltered presentationについて
-\[
- \operatorname{gr}D_0\simeq S_1/(\Omega_1)
-\]
-が整域となることを仮定する。
+上記と同じPBW・既知Sklyanin入力を用いる。
 このとき$D_0$は整域で、一般中心分数体$K_0$上で
 $D_0\otimes_{Z(D_0)}K_0$は次数6の中心的斜体となり、
 Brauer指数は6である。
@@ -239,7 +244,13 @@ Brauer指数は6である。
 命題\ref{prop:skew}の行列模型へ分裂する。
 \end{corollary}
 \begin{proof}
-filtered代数のassociated gradedが整域なら元の代数も整域。
+PBW同型の下で$g$の最高次記号は非零正則元$3\Omega_1/2$であり、
+$\deg(ag)=\deg a+3$から
+$\operatorname{gr}(A/(g))=S_1/(\Omega_1)$となる。
+右辺は滑らかな楕円曲線のtwisted homogeneous coordinate ringで、
+その関数体のskew Laurent環に埋め込まれる
+\cite[Lemmas~2.18, 2.19]{WWYSklyanin}から整域である。
+従って$D_0$も整域となる。
 中心有限な$D_0$の一般中心局所化は
 次数6、次元36の有限次元中心的単純代数であり、
 整域性から斜体となる。そのBrauer指数は次数と等しく6。
@@ -254,16 +265,65 @@ $\alpha^3=-243/28$とし、旧論文VIの二つの中心変数$u,v$を逆にし�
 次数零chartを$Q=A_{\alpha,1}[u^{-1},v^{-1}]_0$、
 $t=v/u\in\CC^\times$とする。
 \begin{equation}\label{eq:Ht}
- H(t)=-\frac7{27}(t^3+2+t^{-3}),\qquad
- F_H=49U^3-(13H+14)U^2+(H+1)^2U
- +(11U-H-1)VW+V^3-W^3 .
+ \begin{aligned}
+ H(t)&=-\frac7{27}(t^3+2+t^{-3}),\\
+ F_H&=49U^3-(13H+14)U^2+(H+1)^2U\\
+ &\quad +(11U-H-1)VW+V^3-W^3 .
+ \end{aligned}
 \end{equation}
-以下の全中心表示は旧論文VIの有限平坦降下の結果を
-\emph{入力}として用いる：
+\begin{proposition}[二重\'etale被覆による中心の忠実平坦降下]
+\label{prop:chart-descent}
+$Q$の定義に用いる相対PBW性・中心正則性を仮定する。
+中心表示\ref{prop:quotient-full-center}の下で
 \begin{equation}\label{eq:chart-center}
  Z(Q)\simeq
  \CC[t,t^{-1},U,V,W]/(F_{H(t)}).
 \end{equation}
+また$Q$は中心上有限で一般rank36である。
+比較写像の有限平坦性と分岐位置は以下の明示式から従い、
+独立した未証明の入力とはしない。
+\end{proposition}
+\begin{proof}
+$Q$に$s^2=\alpha t$を添加し、$x/u=sX,y/u=sY,z/u=sZ$と置く。
+$s,\alpha,t$は可逆だから、代入は可逆であり、
+\[
+ Q'=Q\otimes_{\CC[t,t^{-1}]}\CC[s,s^{-1}]
+ \simeq R_1\otimes_{\CC[g]}\CC[s,s^{-1}],\qquad
+ g\longmapsto-\tfrac32\left(s^{-3}+s^3/\alpha^3\right).
+\]
+左の拡大は階数2の有限忠実平坦\'etale拡大である。
+右辺の係数拡大は
+\[
+ \CC[s,s^{-1}]
+ \simeq\CC[g,s]/\left(s^6+\tfrac23\alpha^3gs^3+\alpha^3\right)
+\]
+というmonic表示を持ち、定数項が可逆なので$s$も可逆。
+従って$\CC[g]$上自由rank6である。
+微分$\frac92(s^{-4}-s^2/\alpha^3)$は
+$s^6\ne\alpha^3$、すなわち$t^3\ne1$で可逆となる。
+さらに
+\[
+ g(s)^2-\frac9{\alpha^3}
+ =\frac{9(s^6-\alpha^3)^2}{4\alpha^6s^6}
+\]
+だから、この開集合は基底の$g^2-9/\alpha^3$を逆にしたものに等しく、
+比較はそこで有限\'etaleである。
+
+有限個の代数生成元との交換子写像の核は中心なので、
+平坦基底変更は中心の形成と可換である。
+従って$Z(Q')=Z(R_1)\otimes_{\CC[g]}\CC[s,s^{-1}]$。
+被覆の対合は$s\mapsto-s$、$(X,Y,Z)\mapsto(-X,-Y,-Z)$で、
+$g$を反転し$U,V,W$を固定する。
+$g(s)^2=H(t)$なので、この中心は
+$\CC[s,s^{-1},U,V,W]/(F_{H(t)})$である。
+$\CC[s,s^{-1}]$は$\CC[t,t^{-1}]$上の
+基底$1,s$を持ち、対合は後者の成分を反転する。
+不変部分を取れば\eqref{eq:chart-center}を得る。
+有限性と一般rank36もこの忠実平坦被覆で検出できる。
+なお比較構成とmonic表示は任意の$\alpha\ne0$で有効であり、
+その場合は$H(t)=9(t^3+2+t^{-3})/(4\alpha^3)$と置けばよい。
+\end{proof}
+
 \begin{proposition}[中心の21個の特異閉点]\label{prop:21}
 \eqref{eq:chart-center}の中心特異点は21個に尽き、次の通りである：
 \[
@@ -292,17 +352,28 @@ $\partial_HF_H=0$なので、表の全点が全中心でも特異である。
 それ以外に候補はなく、$t$の各方程式は相互に共通根を持たない。
 $7s^2-13s+7$の判別式は$-27$であり、$s=0$の根を持たないので
 それぞれの根は三つの$t$を与え、点数は$12+6+3=21$である。
-通常二重点性は旧論文VIの対応する四変数Hessianの
-非退化性から得られる。ここではその全15点の
-Hessian行列を独立に再計算したとは主張しない。
+通常二重点性も厳密に検算できる。
+局所座標$q=t^3$を使うと$H(q)=-7(q+2+q^{-1})/27$で、
+$q=\pm1$では$H'=0$、$H''=-14/(27q^3)\ne0$。
+従って四変数Hessianの行列式は
+\[
+ (\partial_HF_H)H''(q)\,
+ \det\operatorname{Hess}_{U,V,W}(F_H).
+\]
+$q=-1$では、軸上点と非軸上点でそれぞれ
+$\partial_HF_H=1/49,1$、三変数行列式$-32/7,288$である。
+$q=1$では$\partial_HF_H=-1/1323$、
+三変数行列式$-8/1701$であり、いずれも非零。
+$dt\mapsto dq=3t^2dt$は可逆なので、15点すべての通常二重点性が従う。
+残る6点では四変数Hessianはrank1である。
+これらは\texttt{computations/verify\_central\_quotient\_local\_hessian.py}で
+有理数および$\CC[q]/(7q^2-13q+7)$上の厳密計算として再現できる。
 \end{proof}
 
-\begin{theorem}[ホモロジー的特異点の条件付き同定]
+\begin{theorem}[ホモロジー的特異点の同定：明示的平坦比較]
 \label{thm:three-homological}
-旧論文VIの有限中心上のAzumaya locusの同定、
-$R_1$の大域次元3と$\alpha$に関する二中心chartの
-有限忠実平坦比較を仮定する。
-その比較が$t^3\ne1$で有限\'etaleであるとき、
+命題\ref{prop:quotient-azumaya}のPBW・既知Sklyanin入力と
+命題\ref{prop:chart-descent}の明示的比較の下で、
 $Q$の有限大域次元を持たない中心閉点は
 \[
  \mathfrak p_\tau=(t-\tau,U-1/189,V,W),\qquad \tau^3=1
@@ -318,7 +389,7 @@ $Q$の有限大域次元を持たない中心閉点は
 中心環が非正則でも代数はホモロジー的に正則である。
 \end{theorem}
 \begin{proof}
-旧論文VIの\'etale比較は
+命題\ref{prop:chart-descent}の比較は
 $s^2=\alpha t$の被覆での
 $\CC[g]\to\CC[s,s^{-1}]$という写像に基づく。
 この写像の分岐値は$g^2=-28/27$、逆像は$t^3=1$である。
@@ -331,14 +402,22 @@ $\CC[g]\to\CC[s,s^{-1}]$という写像に基づく。
 ゆえに$t^3\ne1$での局所代数の大域次元は高々3。
 
 $t^3=1$に対応する全中心上では、
-元の$R_1$は中心上Azumayaである（これは入力した
-Azumaya locusの定理による）。
+元の$R_1$は中心上Azumayaである。
+実際、中心曲面の唯一の特異点では$\partial_g\Phi\ne0$で、
+他の点では$(U,V,W)$方向が既に滑らかなので、
+全中心のこのファイバーは全点が滑らかである。
+ここで命題\ref{prop:quotient-azumaya}を適用する。
 忠実平坦降下から$Q$もAzumayaである。
 $\mathfrak p_\tau$以外の中心点は滑らかなので
 局所大域次元は有限である。
-三点の中心は三次元通常二重点であり、完備局所Brauer群の
-分裂と元のAzumaya代数の次数6によって表示した
-$\Mat_6$模型を得る。通常二重点の剰余体は無限射影次元なので、
+三点の中心は三次元通常二重点である。
+完備局所中心上のAzumaya代数を$L$とすると、
+剰余環$L/\mathfrak mL=\Mat_6(\CC)$のprimitive idempotentを
+完備性により$e\in L$へ持ち上げられる。
+$eLe$は中心上rank1の自由加群で、単位写像は剰余体上同型だから中心と同型。
+$e$はfullで$Le$は自由rank6なので、
+$L\simeq\operatorname{End}(Le)\simeq\Mat_6(\widehat Z)$となる。
+形式Morse補題で$\widehat Z$を表示したnodeに直せばよい。通常二重点の剰余体は無限射影次元なので、
 この三点の局所代数は有限大域次元を持たない。
 \end{proof}
 \begin{remark}[特異圏の同値の証明の所在]
@@ -347,29 +426,36 @@ $\operatorname{Perf}_{\mathbb Z/2}(\CC)^{\oplus3}$
 への条件付き同値は、後の
 第\ref{sec:quotient-singcat}節で二つの中心局所化と
 Iwanaga--Gorenstein完備化によって証明する。
-中心有限性とAzumaya locusは依然として旧原稿からの入力である。
+中心有限性とAzumaya locusは第\ref{sec:quotient-center-azumaya}節、
+有限平坦比較は命題\ref{prop:chart-descent}に証明した。
 \end{remark}
 
 \input{papers/sections/central_quotient_categories_and_twist.tex}
 
+\input{papers/sections/central_quotient_chart_gluing.tex}
+
 \input{papers/sections/central_quotient_exact_tails.tex}
 
-\section{今後の照合対象と正確性}
-本稿で証明したのは、明記した既存の中心有限性、
-Azumaya locusと中心の全生成元を\emph{入力として}得られる局所的・表現論的帰結である。
-全中心の四生成元とAzumaya locusの証明構造を第\ref{sec:quotient-center-azumaya}節で整理した。六次最小多項式と小単純表現排除、軸上三次元表現のExt$^1$消滅を第\ref{sec:central-quotient-representations}節に復元し、法29のJacobi小行列式を独立検算した。
-それら入力の具体的証明と全次数の検算は旧論文VIを参照し、
-今回の独立検証範囲には含めない。
-中心商の正確なtails判別式
-$(\alpha^3+9)(28\alpha^3+243)$は第\ref{sec:quotient-exact-tails}節で条件付き証明とする。
-21個の中心特異点と3つのhomological singularityの条件付き同定、
-$\operatorname{Perf}_{\mathbb Z/2}(\CC)^{\oplus3}$型のKaroubi完備特異圏、
-球面twistの標識非保存の証明構造は現行TeXに収録した。
-ただしtailsの正則性の必要十分条件の外部入力の独立監査とその一般化、
-中心の完全表示の有限整数・有理数証明書、
-Azumaya locusの根拠となるfiltered中心・特殊ファイバー比較の
-独立再実行、局所中心の有限平坦比較の一部は未完了である。
-従ってこの節だけをもって原PDFの追跡を解除しない。
+\section{証明の入力と残る照合対象}
+全中心の関係式は有理数上の有限計算で確認した。
+全中心生成には既知の斉次Sklyanin中心定理を用い、
+Azumaya locusにはPBW性、斉次Sklyaninの諸性質と
+一次文献\cite{WWYSklyanin,LevasseurNoncomm,BrownMacleod}の
+明記した定理を適用した。
+Rees退化、中心の忠実平坦降下、15点のHessian、
+三つのホモロジー的特異点の行列node模型、境界とchartのGorenstein性、
+中心chartおよび導分によるperfect性の貼合せは現行の証明に含まれる。
+
+一方、相対PBW性と周囲のAS正則性、$R_1$のCY性、
+楕円境界の記述は既知入力であり、ここで全ての基礎定理を再証明したわけではない。
+非Azumayaな四点でのrank-one cornerとmodifying generatorは、
+六次分裂元と\cite[Theorem~5.1(1)]{IW}の仮定を照合して導いた。
+小単純表現の行列と軸上剛性は再現コードを持つが、
+全表現間のExt表の再計算と球面性のNakayama twistの入力には監査が残る。
+また旧PDFの分離型二変数三次式の必要十分条件、
+固定した一般ambientの超越的中心値と有限位数境界での開性など、
+初期諸節の固有結果と現行資料との完全比較は未了である。
+本稿の進展だけをもって原PDFの追跡解除は行わない。
 
 \begin{thebibliography}{9}
 \bibitem{IW} O.~Iyama and M.~Wemyss,
@@ -378,7 +464,7 @@ algebras for cAn singularities},
 J.\ Reine Angew.\ Math.\ \textbf{738} (2018), 149--202,
 \href{https://doi.org/10.1515/crelle-2015-0031}{doi:10.1515/crelle-2015-0031};
 \url{https://arxiv.org/abs/1304.5259}.
-Theorem~5.1(1)（適用条件の独立再監査は未完了）。
+Theorem~5.1(1)（$f=(r-\gamma)(r+\gamma)$の二素因子とflag分類を適用）。
 \bibitem{ChenRelativeSingcat}
 X.-W. Chen, \emph{Relative singularity categories and
 Gorenstein-projective modules}, Math. Nachr. 284 (2011), 199--212,
@@ -400,17 +486,29 @@ A. Yekutieli and J. J. Zhang,
 \emph{Serre duality for noncommutative projective schemes},
 Proc. Amer. Math. Soc. 125 (1997), 697--707;
 \url{https://doi.org/10.1090/S0002-9939-97-03782-9}.
+\bibitem{RSVBertini}
+J.~V.~Rennemo, E.~Segal and M.~Van den Bergh,
+\emph{A non-commutative Bertini theorem},
+\url{https://arxiv.org/abs/1705.01366}, v2 (2020), Lemmas~3.4 and 3.5.
+\bibitem{CCKM}
+T.~Cassidy, A.~Conner, E.~Kirkman and W.~F.~Moore,
+\emph{Periodic free resolutions from twisted matrix factorizations},
+J. Algebra 455 (2016), 137--163;
+\url{https://arxiv.org/abs/1307.8415}, Theorems~4.7 and 5.5.
+\bibitem{ChenGeneralizedSerre}
+X.-W.~Chen, \emph{Generalized Serre duality},
+\url{https://arxiv.org/abs/math/0610258}, Theorem~3.10.
 \bibitem{WWYSklyanin}
 C.~Walton, X.~Wang and M.~Yakimov,
 \emph{Poisson geometry of PI 3-dimensional Sklyanin algebras},
 \url{https://arxiv.org/abs/1704.04975};
-Proposition~2.31, Theorem~1.3 and \S8.2.
+Proposition~2.31, Theorem~1.3, Lemma~5.4 and \S8.2.
 \bibitem{LevasseurNoncomm}
 T.~Levasseur,
 \emph{Some properties of non-commutative regular graded rings},
 Glasgow Math. J. 34 (1992), 277--300,
 \url{https://doi.org/10.1017/S0017089500008843};
-Proposition~3.2 and \S5.
+Proposition~3.2(ii) and \S5.
 \bibitem{BrownMacleod}
 K.~A.~Brown and M.~J.~Macleod,
 \emph{The Cohen Macaulay property for noncommutative rings},

@@ -15,16 +15,51 @@
        -\frac{xyz+xzy+yxz+yzx+zxy+zyx}{9}
 \]
 であり、$u,v$は一次中心元である。
-以下の本質的な入力は旧原稿で証明されたと記載されているが、
-このTeXで独立に検証されたわけではない：
-$A_\alpha$のnoetherian性と中心正則性、
-$A_\alpha/(u)$および$u$-chartの$t=v/u=0$における正則性、
-中心有限な$Q_\alpha=A_\alpha[u^{-1},v^{-1}]_0$の
-Iwanaga--Gorenstein性である。
-さらに$28\alpha^3+243=0$では
-定理\ref{thm:three-homological}の三つの完備行列node模型と、
-それ以外の点での有限大域次元を入力する。
-本節の結論はそれらの仮定を伴うものである。
+相対PBW性と周囲のAS正則性は
+定理\ref{thm:quotient-exact-tails}に明示した既知入力を用いる。
+中心有限性・Azumaya locusと二重被覆の比較は
+命題\ref{prop:quotient-azumaya}、\ref{prop:chart-descent}で証明した。
+以下で用いる境界の正則性とIwanaga--Gorenstein性も、
+次の補題でこれらの入力から導く。
+
+\begin{lemma}[境界の正則性とchartのGorenstein性]
+\label{lem:quotient-boundary-gorenstein}
+$\alpha\ne0$とする（比較構成は命題\ref{prop:chart-descent}の末尾の一般化を用いる）。
+$A_\alpha/(u)$のqgrは大域次元2を持ち、
+$u$-chartの$t=v/u=0$での商$S_1/(\Omega_1+1)$は
+大域次元高々2を持つ。
+また$Q_\alpha=A_\alpha[u^{-1},v^{-1}]_0$は
+左右noetherianで中心上有限なIwanaga--Gorenstein代数であり、
+左右自己入射次元は高々3である。
+\end{lemma}
+\begin{proof}
+$A_\alpha/(u)=S_1[v]/(\Omega_1+v^3)$であり、
+$v$-chartは$S_1/(\Omega_1+1)$、境界は$S_1/(\Omega_1)$である。
+Euler導分$\delta(\Omega_1)=3\Omega_1$と
+補題\ref{lem:gluing-moving-central-value}でchartの大域次元は高々2。
+境界は滑らかな楕円曲線のcoherent圏なので、
+命題\ref{prop:gluing-one-chart}と
+補題\ref{lem:gluing-serre-dimension}からqgrの大域次元は2となる。
+
+命題\ref{prop:chart-descent}の階数2の中心\'etale被覆で
+\[
+ Q'_\alpha\simeq
+ R_1[s,s^{-1}]/\left(g+\tfrac32(s^{-3}+s^3/\alpha^3)\right).
+\]
+$R_1[s,s^{-1}]$は左右noetherianで大域次元高々4。
+括弧内は非零中心正則元なので、中心正則元に対するReesの補題は
+任意の有限生成左右$Q'_\alpha$加群$M$について
+\[
+ \operatorname{Ext}^i_{Q'_\alpha}(M,Q'_\alpha)
+ \simeq
+ \operatorname{Ext}^{i+1}_{R_1[s,s^{-1}]}
+                  (M,R_1[s,s^{-1}])
+\]
+を与える。従って左右自己入射次元は高々3。
+中心平坦基底変更で有限生成加群のExtは可換であり、
+忠実平坦性がその消滅を検出するので、この上界は$Q_\alpha$へ降下する。
+中心上有限性・noetherian性は命題\ref{prop:chart-descent}による。
+\end{proof}
 
 \newcommand{\SingCat}{\operatorname{D}_{\mathrm{sg}}}
 \newcommand{\PerfCat}{\operatorname{Perf}}
@@ -74,8 +109,7 @@ twistsの有限和とconeから得られる。
 
 \begin{corollary}[二つの中心chartの除去]
 \label{cor:quotient-two-chart}
-上述の$A_\alpha/(u)$の正則性、および$u$-chartの
-$t=0$での有限大域次元を仮定すると
+補題\ref{lem:quotient-boundary-gorenstein}の下で
 \[
  \mathcal S_\alpha^\Kar\simeq\SingCat(Q_\alpha)^\Kar .
 \]
@@ -84,12 +118,12 @@ $t=0$での有限大域次元を仮定すると
 $A_\alpha/(u)\simeq
  S_1[v]/(\Omega_1+v^3)$は
 $v$の非零スカラー変換で既知の正則曲面のモデルに同型である。
-有限大域次元二とtwistsの厚い生成性を入力として、
+同補題の大域次元二とtwistsの厚い生成性により、
 まず補題\ref{lem:quotient-central-localization}を$z=u$に適用する。
 $u$-chartにおける$t=0$の商は
 $S_1/(\Omega_1+1)$であり、
 Euler導分$\delta(\Omega_1)=3\Omega_1$を用いる
-既存の中心値判定により有限大域次元二を持つ。
+補題\ref{lem:gluing-moving-central-value}により有限大域次元を持つ。
 同補題のaffine版を$t$に適用して$Q_\alpha$に至る。
 共通境界$u=v=0$も最初のfiltrationに含まれる。
 \end{proof}
@@ -145,8 +179,11 @@ $z_j$のKoszul複体は元の対象を直和因子として含み、
 \begin{theorem}[三つの通常二重点に集中する射影特異圏]
 \label{thm:quotient-three-singcat}
 $28\alpha^3+243=0$とし、
-上記の中心局所化・Iwanaga--Gorenstein・
-定理\ref{thm:three-homological}の局所模型を仮定する。
+上記のPBW・既知Sklyanin入力を用いる。
+中心局所化の前提とIwanaga--Gorenstein性は
+補題\ref{lem:quotient-boundary-gorenstein}、
+三つの局所模型とそれ以外の点での有限大域次元は
+定理\ref{thm:three-homological}から従う。
 このとき
 \[
  \mathcal S_\alpha^\Kar\simeq
@@ -164,7 +201,9 @@ $[1]$は各二つの直既約対象を交換し、$[2]\simeq\mathrm{id}$。
 系\ref{cor:quotient-two-chart}で$Q_\alpha$に局所化する。
 局所模型\ref{thm:three-homological}と
 補題\ref{lem:quotient-completion}から最初の圏同値を得る。
-各nodeのIwanaga--Gorenstein性と完備化の仮定を使用した。
+ここでは中心上有限な代数の剰余環が$\Mat_6(\CC)$なので、
+そのcolumn単純加群を$Q_\alpha$加群と見れば、
+補題\ref{lem:quotient-completion}の生成元の存在条件も満たされる。
 
 二次元node $N_0=k[[p,q]]/(pq)$のMCM加群は
 正規化$k[[p]]\oplus k[[q]]$上の飽和を取り、
@@ -192,11 +231,10 @@ $D^b(\operatorname{qgr}A_\alpha)$そのものや
 \label{sec:quotient-spherical-twist}
 本節は$\alpha=1$の正則例を対象とする。
 $A=A_1$、$\mathcal O=\pi A$とし、
-次の旧原稿の入力を明示的に仮定する：
-\[
- \operatorname{gldim}\operatorname{qgr}A=3,\qquad
- \mathbb S_{\Db(\operatorname{qgr}A)}\simeq(-2)[3].
-\]
+正則性$\operatorname{gldim}\operatorname{qgr}A=3$は
+定理\ref{thm:quotient-exact-tails}から従う。
+以下ではさらに、既知の双対化複体のNakayama twistが恒等であるという入力を用い、
+$\mathbb S_{\Db(\operatorname{qgr}A)}\simeq(-2)[3]$とする。
 さらにfiltered三変数代数
 \[
  R_1=
@@ -235,9 +273,8 @@ $u$がtailで可逆なので$\mathcal T(1)\simeq\mathcal T$。
  \operatorname{End}_{Q^\circ}(V)=\CC,\qquad
  \operatorname{Ext}^1_{Q^\circ}(V,V)=0 .
 \]
-さらに$R_1$の大域次元三と
-旧論文VIの中心$g=3G_1/2$に関する有限
-\'etale比較を仮定すると
+さらに命題\ref{prop:quotient-azumaya}と
+命題\ref{prop:chart-descent}の$\alpha=1$での比較から
 $\operatorname{gldim}Q^\circ\le3$。
 \end{lemma}
 \begin{proof}

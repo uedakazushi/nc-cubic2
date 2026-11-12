@@ -35,3 +35,35 @@ for value, generators in expected.items():
     assert all(sp.expand(poly.as_expr()-want) == 0
                for poly, want in zip(basis.polys, generators))
 print("PASS: singular ideals at H=0,-1,-28/27 (exact Groebner bases)")
+
+# All 21 points in the double-center chart. q=t^3 is a local coordinate
+# since t is invertible. At q=+-1 the Hessian is block diagonal.
+q = sp.symbols("q", nonzero=True)
+Hq = -sp.Rational(7,27)*(q+2+1/q)
+assert sp.diff(Hq,q).subs(q,1) == sp.diff(Hq,q).subs(q,-1) == 0
+for q0, point, dH, det3 in [
+    (-1, (sp.Rational(1,7),0,0), sp.Rational(1,49), -sp.Rational(32,7)),
+    (-1, (-1,-4,4), sp.Integer(1), sp.Integer(288)),
+    (1, (sp.Rational(1,189),0,0), -sp.Rational(1,1323), -sp.Rational(8,1701)),
+]:
+    at = dict(zip((u,v,w),point)) | {Hparam:Hq.subs(q,q0)}
+    assert sp.diff(Fh,Hparam).subs(at) == dH
+    assert sp.hessian(Fh,(u,v,w)).subs(at).det() == det3
+    expected_det = sp.factor(dH*sp.diff(Hq,q,2).subs(q,q0)*det3)
+    assert expected_det != 0
+    actual = sp.hessian(Fh.subs(Hparam,Hq),(q,u,v,w)).subs(
+        dict(zip((q,u,v,w),(q0,)+point)))
+    assert sp.factor(actual.det()) == expected_det
+
+# Cubic root symmetry accounts for the three nonaxial points, and
+# each nonzero q has exactly three distinct t-roots.
+assert sp.expand(Fh.subs({v:sp.Symbol("r")*v,w:sp.Symbol("r")**2*w},
+                        simultaneous=True)-Fh).subs(sp.Symbol("r")**3,1) == 0
+assert sp.hessian(Fh,(Hparam,u,v,w)).subs(
+    {Hparam:-1,u:0,v:0,w:0}).rank() == 1
+poly = 7*q**2-13*q+7
+assert sp.discriminant(poly,q) == -27
+assert sp.gcd(poly,q*(q*q-1)) == 1
+assert sp.cancel(Hq+1+poly/(27*q)) == 0
+assert 3*(1+3)+2*3+3 == 21
+print("PASS: all 15 ordinary double points have nonzero Hessian; other six have rank 1")
