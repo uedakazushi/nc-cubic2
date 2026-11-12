@@ -1,6 +1,6 @@
 # 研究方針：独立境界・モジュライ研究
 
-**2026-11-11 / v3。再開時は最初に本ファイルを読む。**
+**2026-11-12 / v4。再開時は最初に本ファイルを読む。**
 
 ## 最重要の構造結果：全次元のPoisson cubic pairの既約成分
 
@@ -8,6 +8,37 @@
 - **主張の確実性**：軌道次元、係数空間、層の既約性、閉包の非包含について原稿に証明を記載。深い正規形定理は `nc-cubic/papers/sections/poisson_geometry.tex` に既存証明があるが、今回その独立再監査は未完了。全次元のPoisson schemeのgeneric reducedness・交叉のscheme構造・初出確認は未解決。
 - **最優先の研究手順**：正規形定理の独立監査→各成分の接空間／非被約性→成分交叉・零切断→先行研究に基づく公表稿の再編。詳細は `notes/poisson_cubic_all_dimensions.md`。
 - **保存と組版**：GitHub mainが正本、.vscodeでLaTeX Workshop + LuaLaTeX、PDFはbuildに生成してGit追跡しない。GitHub Actionsとforce pushは使わない。
+
+## 別の研究対象：六・七次元Poisson cubicの退化スキーム
+
+**対象：** 一般次元の正規形・量子化の主結果から独立した、
+n=6,7の零点・退化scheme・数値幾何の詳細解析。
+現行の独立LuaLaTeX草稿は
+`papers/poisson_cubic_six_seven_geometry.tex`、
+再開ノートは`notes/poisson_cubic_six_seven_geometry.md`。
+一般退化イデアル・finite flat critical cover・零点完全交叉の
+証明を`papers/sections/poisson_cubic_degeneracy_background.tex`へ、
+n=6,7の階数2,4,6、7次元rank6のprimary分解と
+embedded length 8,64およびreduced kernel長49の証明を
+`papers/sections/poisson_cubic_six_seven_geometry.tex`へ、
+Hodge/Chern/算術種数とFermat横断厚化を
+`papers/sections/poisson_cubic_six_seven_numerical.tex`へ収録した。
+元の論文Aから対応する6・7次元専用節と数値節を除き、
+主定理のための一般次元退化イデアルと証明は論文Aに残した。
+
+**価値の評価：** 階数表・標準完全交叉数値だけの公表価値は低い。
+研究の核心候補は七次元rank6のscheme-theoretic primary分解と
+embedded componentの長さの解明。
+数学的新規性は未確認で、局所イデアル交叉の全独立監査は未完成。
+本プロジェクトは`nc-cubic`の論文A一般次元の公表準備を妨げない
+副次的研究として維持する。
+
+**再現：**
+`latexmk papers/poisson_cubic_six_seven_geometry.tex`、
+`python3 computations/verify_poisson_cubic_six_seven_numerics.py`。
+元のTeX本文の完全一致、ラベル参照の静的整合性をGitHub上で確認。
+数値に対する同等のSymPy計算をローカルで実行してPASS。
+新稿全体のLuaLaTeX組版・PDF表示検査は未実施。
 
 ## 新しい重点課題：Poisson cubic fourfold pairモジュライ（独立研究）
 
