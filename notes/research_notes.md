@@ -17,10 +17,6 @@
 
 主リポジトリの可換復元（特に相対残余対角のperfectness）を妨げない。必要なdg perfectness反例や中心正則性補題は `nc-cubic` 側に残し、この独立研究のために主論文A/Cを削除・書き換えない。
 
-## 同時Poisson cubic fourfold の現行知識
-
-専用の研究方針・正規形依存の2成分分類・未解決事項は `notes/poisson_cubic_fourfold_moduli.md` と `papers/poisson_cubic_fourfold_moduli.tex` にまとめた。証明や研究課題は専用ファイルに集約し、ここで重複しない。
-
 ## Pfaffian接触分類の現行到達点
 
 Schur分解と二行のBott/Čech–Koszul比較で全次数頂点核 `K^nor=C[H10]`、`E_vert=t^10` を証明した。非線形形式接触分類と一意な主イデアル切片、有限決定性の必要十分条件、実際の境界の `P+H10/96` への同変代数化も現行TeXにある。旧大型rankや旧JSONを再実行したとはしない。実際のTate再帰は新コードで6次まで再構成し、MC恒等式と四block、係数1/96を厳密再確認した。

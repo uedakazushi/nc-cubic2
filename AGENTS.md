@@ -37,7 +37,7 @@
 
 - **PDF研究**：中心商特異性、中心三次対の形式モジュライ、Pfaffian/Brill--Noether接触境界、中心三次の技術論、Sklyanin全混合量子化。詳細は `CODEX_PDF_RECOVERY.md`。
 - **17次元非可換cubic threefoldモジュライ**：`papers/nc_cubic_threefold_moduli.tex` と `notes/nc_cubic_threefold_moduli.md`。ambient周期性と商イデアル保存を混同せず、有限係数17次元族とArtin局所の接空間次元20を混同しない。
-- **Poisson cubic fourfoldのscheme構造・6/7次元固有の退化幾何**：各対応原稿と研究ノートを参照。一般次元のPoisson成分分類・量子化・ambient復元・rotation付き可換復元の正本は別リポジトリ `uedakazushi/nc-cubic` の論文A/Bである。既存証明を壊したり同じ一般定理を無用に重複収録したりしない。
+- **一般次元Poisson構造・量子化**：正本は別リポジトリ `uedakazushi/nc-cubic` の論文A。必要証明を壊したり重複収録したりしない。
 - **実務**：VS Code LaTeX Workshopは `.vscode/settings.json` でリポジトリrootを作業ディレクトリとして使用し、PDFと補助生成物は `build/` に出力。全てのTeXは必要に応じて親ファイルから入力する。
 
 ## 完了の意味

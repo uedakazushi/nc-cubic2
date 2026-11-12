@@ -38,49 +38,7 @@
 
 ## 一般Poisson cubicモジュライの正本
 
-一般次元Poisson正規形、固定・相対Poissonスタック、既約成分数と次元公式、量子化は `uedakazushi/nc-cubic` の論文Aに既に証明を収録。ここに同じ一般分類の単独論文・ノート・専用計算を再収録しない。これらの証明の全面独立監査・新規性の確認は未完成。本リポジトリにはfourfoldの追加的scheme論、6/7次元固有の退化schemeと非可換モジュライ研究を残す。
-
-## 別の研究対象：六・七次元Poisson cubicの退化スキーム
-
-**対象：** 一般次元の正規形・量子化の主結果から独立した、
-n=6,7の零点・退化scheme・数値幾何の詳細解析。
-現行の独立LuaLaTeX草稿は
-`papers/poisson_cubic_six_seven_geometry.tex`、
-再開ノートは`notes/poisson_cubic_six_seven_geometry.md`。
-一般退化イデアル・finite flat critical cover・零点完全交叉の
-証明を`papers/sections/poisson_cubic_degeneracy_background.tex`へ、
-n=6,7の階数2,4,6、7次元rank6のprimary分解と
-embedded length 8,64およびreduced kernel長49の証明を
-`papers/sections/poisson_cubic_six_seven_geometry.tex`へ、
-Hodge/Chern/算術種数とFermat横断厚化を
-`papers/sections/poisson_cubic_six_seven_numerical.tex`へ収録した。
-元の論文Aから対応する6・7次元専用節と数値節を除き、
-主定理のための一般次元退化イデアルと証明は論文Aに残した。
-
-**価値の評価：** 階数表・標準完全交叉数値だけの公表価値は低い。
-研究の核心候補は七次元rank6のscheme-theoretic primary分解と
-embedded componentの長さの解明。
-数学的新規性は未確認で、局所イデアル交叉の全独立監査は未完成。
-本プロジェクトは`nc-cubic`の論文A一般次元の公表準備を妨げない
-副次的研究として維持する。
-
-**再現：**
-`latexmk papers/poisson_cubic_six_seven_geometry.tex`、
-`python3 computations/verify_poisson_cubic_six_seven_numerics.py`。
-元のTeX本文の完全一致、ラベル参照の静的整合性をGitHub上で確認。
-数値に対する同等のSymPy計算をローカルで実行してPASS。
-新稿全体のLuaLaTeX組版・PDF表示検査は未実施。
-
-## 新しい重点課題：Poisson cubic fourfold pairモジュライ（独立研究）
-
-滑らかなcubic fourfold $X\subset\mathbb P^5$と非零正則Poisson構造$\pi$の組を同時に動かす相対Poisson schemeを、既知の集合論的分類の先のscheme構造を解析する。Poissonスカラーを保持する。
-
-- **既知入力**：rank2/rank4の2成分と商次元30/4はnc-cubic論文Aの結果であり、ここでは再証明しない。
-- **依存**：主リポジトリ `nc-cubic/papers/support/papers/sections/poisson_geometry.tex` のPoisson正規形定理（独立再監査は未実施）。そのため、公表完成定理であるとの主張はしない。数学的な帰結の証明と定理の独立監査を区別する。
-- **新たに確認した点**：rank4成分のgeneric reducednessをFermat点のJacobi微分の整数36次小行列式で証明。検算コードは `verify_poisson_cubic_fourfold_tangent.py`。
-- **未解決の核心**：rank2成分のgeneric reducedness、交叉のscheme構造、零Poissonの近傍、成分の境界、および新規性の一次文献照合。
-- **優先手順**：六変数で正規形の独立証明→generic tangent/obstruction計算→交叉の局所環→全scheme分類→最終稿の先行研究調査。
-- **再開順**：本方針→`notes/poisson_cubic_fourfold_moduli.md`→`papers/poisson_cubic_fourfold_moduli.tex`→`computations/verify_poisson_cubic_fourfold_tangent.py`。既存の独立Pfaffian研究も保持する。
+一般次元Poisson正規形、固定・相対Poissonスタック、既約成分数と次元公式、量子化は `uedakazushi/nc-cubic` の論文Aに既に証明を収録。ここに同じ一般分類の単独論文・ノート・専用計算を再収録しない。これらの証明の全面独立監査・新規性の確認は未完成。本リポジトリでは独立した非可換モジュライ・境界研究を扱う。
 
 ## 目的と優先順位
 

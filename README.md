@@ -37,25 +37,6 @@
 
 **2026年11月13日・v17。独立した研究内容の正本は本リポジトリの `main`。**
 
-## 六・七次元Poisson cubicの独立なscheme幾何
-
-論文Aの一般次元の主定理に不要な、n=6,7の退化スキーム・
-primary分解・Calabi--Yau完全交叉の数値計算を、
-[独立LuaLaTeX草稿](papers/poisson_cubic_six_seven_geometry.tex)
-へ整理した。7次元rank6で、被約joinと非被約な
-embedded primary componentsの横断長8・64、
-被約化との差の横断長49が主要な独立研究課題。
-[研究ノート](notes/poisson_cubic_six_seven_geometry.md)に
-仮定・依存・計算・未解決事項を整理し、退化イデアルの
-一般補題・証明全文を同じリポジトリの`papers/sections/`に収録した。
-主リポジトリの論文Aには一般次元の結果と依存証明を保持している。
-
-組版：`latexmk papers/poisson_cubic_six_seven_geometry.tex`
-数値検算：`python3 computations/verify_poisson_cubic_six_seven_numerics.py`。
-移管本文の一致と参照の静的検査、同等のSymPy数値計算を確認。
-新稿のLuaLaTeX実組版・PDF目視は未確認。
-新規性・primary decompositionの独立監査は未完。
-
 ## 全次元Poisson分類の所在
 
 一般次元Poisson pairの成分数・次元公式・固定/相対stackの証明は[主リポジトリ論文A](https://github.com/uedakazushi/nc-cubic/blob/main/papers/paper_a.tex)にある。重複した全次元論文・ノート・専用検算は本リポジトリから除外する。
@@ -63,13 +44,6 @@ embedded primary componentsの横断長8・64、
 ## VS Code / LaTeX Workshop
 
 リポジトリをVS Codeで**フォルダとして開き**、TeX LiveとLaTeX Workshopを導入する。`.vscode/settings.json` の既定recipeは `latexmk (LuaLaTeX, repository root)`。どの `papers/*.tex` を開いても、リポジトリrootを作業ディレクトリにしてルートの `.latexmkrc` を明示的に読み、生成物は `build/` に置く。TeXを保存するとビルド、手動では `LaTeX Workshop: Build LaTeX project`。ルートから `latexmk papers/nc_cubic_threefold_moduli.tex` などを実行できる。LaTeX Workshopの設定だけではTeX Live自体はインストールされない。
-
-## 新プロジェクト：Poisson cubic fourfold の同時モジュライ
-
-- [研究方針](00_research_plan.md) → [研究ノート](notes/poisson_cubic_fourfold_moduli.md) → [日本語LuaLaTeX草稿](papers/poisson_cubic_fourfold_moduli.tex)
-- **集合論的分類はnc-cubic論文Aが正本**。fourfold稿は独自のrank4 generic scheme smoothnessを扱う。
-- rank4成分はFermat点のJacobi線形化の階数36からgeneric reducednessも確認。重要な残課題は入力定理の独立検証、rank2と成分交叉のscheme構造、新規性の照合。検算：`python3 computations/verify_poisson_cubic_fourfold_tangent.py`（SymPy）。
-- LuaLaTeX：`latexmk papers/poisson_cubic_fourfold_moduli.tex`。GitHub Actions不使用、PDFは生成物としてbuild/へ。
 
 ## 現在の研究内容
 
