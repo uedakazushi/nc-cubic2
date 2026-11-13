@@ -1,5 +1,7 @@
 # nc-cubic2：非可換cubicの独立境界・モジュライ研究
 
+> **Point scheme 研究の正本（2026-11-13）:** [uedakazushi/nc-cubic-point](https://github.com/uedakazushi/nc-cubic-point)。専用論文、証明節、研究ノート、計算器は移管済み。以下の旧記述に本repo内のpoint-schemeファイル名が現れる場合、移管先の同名パスを参照する。相対復元などの共有証明は必要な範囲で本repoにも保持する。
+
 17次元非可換cubic moduli研究の正本は [nc-cubic-moduli](https://github.com/uedakazushi/nc-cubic-moduli)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
 
 
@@ -31,7 +33,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## 論文Bから分離した点スキームの現行原稿
 
-[混合三次非可換超曲面の点スキームとPoisson零点](papers/mixed_cubic_point_schemes.tex) は、中心三次元の閉公式・証明、点加群の台と非被約構造、平坦閉包、混合係数の衝突と判別式上の局所型をまとめた独立稿である。一般次元の可換復元定理は入力としない。研究再開は [専用ノート・方針](notes/mixed_cubic_point_schemes.md) から。
+[混合三次非可換超曲面の点スキームとPoisson零点](https://github.com/uedakazushi/nc-cubic-point/blob/main/papers/mixed_cubic_point_schemes.tex) は、中心三次元の閉公式・証明、点加群の台と非被約構造、平坦閉包、混合係数の衝突と判別式上の局所型をまとめた独立稿である。一般次元の可換復元定理は入力としない。研究再開は [専用ノート・方針](https://github.com/uedakazushi/nc-cubic-point/blob/main/notes/mixed_cubic_point_schemes.md) から。
 
 全文12頁をLuaLaTeXで組版・全頁表示確認し、8TeXファイル、47ラベル、22参照、6引用、2文献項目に未解決・重複はない。4本の有限計算スクリプトを実行し、元の3証明書を正確に再生成した。数学的な全証明の独立監査ではない。検証範囲は [validation_mixed_cubic_point_schemes.json](validation_mixed_cubic_point_schemes.json)。再現は `latexmk papers/mixed_cubic_point_schemes.tex` と `python scripts/check_mixed_point_schemes.py --calculations`。
 

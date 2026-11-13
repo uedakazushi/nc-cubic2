@@ -1,5 +1,7 @@
 # 論文Bから独立した成果の現行原稿
 
+> **Point scheme 研究の正本（2026-11-13）:** [uedakazushi/nc-cubic-point](https://github.com/uedakazushi/nc-cubic-point)。専用論文、証明節、研究ノート、計算器は移管済み。以下の旧記述に本repo内のpoint-schemeファイル名が現れる場合、移管先の同名パスを参照する。相対復元などの共有証明は必要な範囲で本repoにも保持する。
+
 2026-11-13。既存の五単位と、残る相対理論・有限模型を統合した現行稿がある。
 
 | 入口 | 内容 |
