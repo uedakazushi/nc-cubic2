@@ -1,5 +1,8 @@
 # nc-cubic2：非可換cubicの独立境界・モジュライ研究
 
+> **Codexの直近優先作業：** [17次元非可換cubic moduli移管指示](MIGRATE_NC_CUBIC_MODULI.md)。公開の `uedakazushi/nc-cubic-moduli` に、研究の公開適否を確認して自足する論文・証明・計算を先に保存・検証し、それから本repo側の真の重複を整理する。移管後は相対復元統合稿の公表向け再構成へ戻る。
+
+
 Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。元モジュライ稿に必要な有限位数境界の正則性は `papers/sections/central_pair_finite_order_regularity.tex` に10個の定理・補題と完全な証明をローカル保存し、モジュライ稿40頁を再組版済み。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
 
 
