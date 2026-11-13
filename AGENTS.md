@@ -1,9 +1,11 @@
 # Codex / AGENTS.md — nc-cubic2
 
-> **Codexの直近優先作業：** [17次元非可換cubic moduli移管指示](MIGRATE_NC_CUBIC_MODULI.md)。公開の `uedakazushi/nc-cubic-moduli` に、研究の公開適否を確認して自足する論文・証明・計算を先に保存・検証し、それから本repo側の真の重複を整理する。移管後は相対復元統合稿の公表向け再構成へ戻る。
+17次元非可換cubic moduli研究の正本は [nc-cubic-moduli](https://github.com/uedakazushi/nc-cubic-moduli)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
 
 
-Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。元モジュライ稿に必要な有限位数境界の正則性は `papers/sections/central_pair_finite_order_regularity.tex` に10個の定理・補題と完全な証明をローカル保存し、モジュライ稿40頁を再組版済み。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
+
+
+Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。有限位数境界の正則性10個の定理・補題と完全な証明はnc-cubic-moduliの現行入力に保持する。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
 
 
 
@@ -19,7 +21,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 論文Bから分離した相対理論・有限模型は `papers/relative_reconstruction_models.tex` と既存五稿に統合した。共有証明を複製せず、再現と移管の対応は `validation_reconstruction_manifest.json`・専用validation・`notes/relative_reconstruction_models.md` で確認する。
 
-## Cayley移管完了後の最優先タスク：公表向けの独立成果再構成
+## moduli移管完了後の最優先タスク：公表向けの独立成果再構成
 
 **移管は既に完了している。** `papers/relative_reconstruction_models.tex`（現行244頁）、独立五稿、`notes/relative_reconstruction_models.md`、`validation_reconstruction_manifest.json` を基礎として、**数学的重要性・新規性・理解・正確性・公表価値を最大化するように論文構成を再検討し、実際に改稿・検証・pushする**。固定の論文数・頁数は設定しない。機械的分割も244頁維持も目的ではない。
 
@@ -49,7 +51,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 ## 研究対象と他リポジトリとの境界
 
 - **PDF研究**：中心商特異性、中心三次対の形式モジュライ、Pfaffian/Brill--Noether接触境界、中心三次の技術論、Sklyanin全混合量子化。詳細は `CODEX_PDF_RECOVERY.md`。
-- **17次元非可換cubic threefoldモジュライ**：`papers/nc_cubic_threefold_moduli.tex` と `notes/nc_cubic_threefold_moduli.md`。ambient周期性と商イデアル保存を混同せず、有限係数17次元族とArtin局所の接空間次元20を混同しない。
+- **17次元非可換cubic threefoldモジュライ**：`https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/nc_cubic_threefold_moduli.tex` と `https://github.com/uedakazushi/nc-cubic-moduli/blob/main/notes/research_notes.md`。ambient周期性と商イデアル保存を混同せず、有限係数17次元族とArtin局所の接空間次元20を混同しない。
 - **一般次元Poisson構造・量子化**：正本は別リポジトリ `uedakazushi/nc-cubic` の論文A。必要証明を壊したり重複収録したりしない。
 - **実務**：VS Code LaTeX Workshopは `.vscode/settings.json` でリポジトリrootを作業ディレクトリとして使用し、PDFと補助生成物は `build/` に出力。全てのTeXは必要に応じて親ファイルから入力する。
 
