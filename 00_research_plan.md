@@ -2,12 +2,12 @@
 
 > **Point scheme 研究の正本（2026-11-13）:** [uedakazushi/nc-cubic-point](https://github.com/uedakazushi/nc-cubic-point)。専用論文、証明節、研究ノート、計算器は移管済み。以下の旧記述に本repo内のpoint-schemeファイル名が現れる場合、移管先の同名パスを参照する。相対復元などの共有証明は必要な範囲で本repoにも保持する。
 
-17次元非可換cubic moduli研究の正本は [nc-cubic-moduli](https://github.com/uedakazushi/nc-cubic-moduli)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
+17次元非可換cubic moduli研究の正本は [nc-cubic-classification](https://github.com/uedakazushi/nc-cubic-classification)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
 
 
 
 
-Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。有限位数境界の正則性10個の定理・補題と完全な証明はnc-cubic-moduliの現行入力に保持する。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
+Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。有限位数境界の正則性10個の定理・補題と完全な証明はnc-cubic-classificationの現行入力に保持する。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
 
 
 
@@ -39,19 +39,19 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## nc cubic threefoldの17次元モジュライ（現行の主題）
 
-- [現行草稿](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。
-- [研究ノート](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/notes/research_notes.md)：仮定・未解決の既約成分性・再現手順。
-- 再現コード：`https://github.com/uedakazushi/nc-cubic-moduli/blob/main/computations/independent/verify_generic17_slice.py`、[中心検算](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/computations/independent/verify_generic17_center.py)、`https://github.com/uedakazushi/nc-cubic-moduli/blob/main/computations/verify_split_codimension.py`。
+- [現行草稿](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。
+- [研究ノート](https://github.com/uedakazushi/nc-cubic-classification/blob/main/notes/research_notes.md)：仮定・未解決の既約成分性・再現手順。
+- 再現コード：`https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/independent/verify_generic17_slice.py`、[中心検算](https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/independent/verify_generic17_center.py)、`https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/verify_split_codimension.py`。
 - 一般次元ambient復元の定理と証明は `nc-cubic/papers/paper_a.tex`、本稿には同型類判定に必要な証明も保持する。
-- **ambientの周期性**：`https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/nc_cubic_threefold_moduli.tex` の `https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/ambient_periodicity.tex` に、正則正規次数$d$族を持つKoszul AS正則$\mathbb Z$-代数の最小周期が$\gcd(N,d)$を割る定理と証明を収録。標準5次元・三次なら1周期的。商イデアルを保存する1周期性は未証明。既知双対性からの帰結として新規性は未確認。
+- **ambientの周期性**：`https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/nc_cubic_threefold_moduli.tex` の `https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/ambient_periodicity.tex` に、正則正規次数$d$族を持つKoszul AS正則$\mathbb Z$-代数の最小周期が$\gcd(N,d)$を割る定理と証明を収録。標準5次元・三次なら1周期的。商イデアルを保存する1周期性は未証明。既知双対性からの帰結として新規性は未確認。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
-- **可換点の全Artin形式局所構造をTeX化**：`https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。全係数Hesse中心元・有限証明書・37次元graph成分と一般中心・剛体例の正則開集合も現行稿へ回収し、旧V全21節を照合した。原PDFは追跡解除済み。
+- **可換点の全Artin形式局所構造をTeX化**：`https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。全係数Hesse中心元・有限証明書・37次元graph成分と一般中心・剛体例の正則開集合も現行稿へ回収し、旧V全21節を照合した。原PDFは追跡解除済み。
 
 **2026-11-13 / v39。再開時は最初に本ファイルを読む。**
 
 ## ambient周期性の適用範囲と次の課題
 
-正規族の消去による$d$周期と、Koszul双対の局所Frobenius対合による$N$周期を合成する。$N=5,d=3$では$2\cdot3-5=1$。定理は左右AS条件、有限最小線型解消と正則正規族を仮定し、中心性を不要とする。周期同型が三次商イデアルを保存すること、全nc cubicの中心三次表示、既約成分性は結論しない。研究ノートは`https://github.com/uedakazushi/nc-cubic-moduli/blob/main/notes/research_notes.md`、次の着手は一般の$\mathbb Z$-代数への適用に必要な正則族とAS条件の検証。詳細証明は現行論文の節にあり、旧単独稿は再開の前提にしない。
+正規族の消去による$d$周期と、Koszul双対の局所Frobenius対合による$N$周期を合成する。$N=5,d=3$では$2\cdot3-5=1$。定理は左右AS条件、有限最小線型解消と正則正規族を仮定し、中心性を不要とする。周期同型が三次商イデアルを保存すること、全nc cubicの中心三次表示、既約成分性は結論しない。研究ノートは`https://github.com/uedakazushi/nc-cubic-classification/blob/main/notes/research_notes.md`、次の着手は一般の$\mathbb Z$-代数への適用に必要な正則族とAS条件の検証。詳細証明は現行論文の節にあり、旧単独稿は再開の前提にしない。
 
 ## 一般Poisson cubicモジュライの正本
 
