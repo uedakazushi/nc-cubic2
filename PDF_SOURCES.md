@@ -1,9 +1,9 @@
 # PDF-onlyの現行判定（2026-11-13 / v27）
 
-17次元非可換cubic moduli研究の正本は [nc-cubic-moduli](https://github.com/uedakazushi/nc-cubic-moduli)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
+17次元非可換cubic moduli研究の正本は [nc-cubic-classification](https://github.com/uedakazushi/nc-cubic-classification)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
 
 
-Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。有限位数境界の正則性10個の定理・補題と完全な証明はnc-cubic-moduliの現行入力に保持する。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
+Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。有限位数境界の正則性10個の定理・補題と完全な証明はnc-cubic-classificationの現行入力に保持する。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
 
 
 Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
@@ -49,18 +49,18 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## 中心三次対（旧V、60頁）の削除判定
 
-入口は `https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/nc_cubic_threefold_moduli.tex`。旧全21節を本文・数式まで照合した。一般Poisson分類はnc-cubic論文Aを正本とし、その一般次元の証明を重複収録しない。以下は現行の証明所在（`papers/sections/`以下）。
+入口は `https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/nc_cubic_threefold_moduli.tex`。旧全21節を本文・数式まで照合した。一般Poisson分類はnc-cubic論文Aを正本とし、その一般次元の証明を重複収録しない。以下は現行の証明所在（`papers/sections/`以下）。
 
 | 旧節 | 現行の数学的な所在と検証 |
 | --- | --- |
 | §1–6 | 規約・射影Poissonの一意延長・忘却四係数・Poisson成分は論文Aの既知入力。中心対への適用は親TeXの導入・構成節 |
-| §7–9 | 全混合相対PBW、CY5、中心の多項式持上げ、可換点近傍の平坦族：親TeXのPBW/CY/中心補題と [現行の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_explicit_centers.tex)。低次数中心の可換点での跳躍を区別 |
-| §10–11 | 37次元graph成分、相対Poisson全中心、形式量子化から一般点への単射、重み(1,1,3)の一般中心、41次元incidence：[現行の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_generic_component.tex)。Pymの形式比較とPoisson成分性は既知入力 |
-| §12–13 | 全Artinの自動中心性・Plückerイデアル・完備局所環・Ore局所化・偏極・二次cover：[現行の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_artin_formal_moduli.tex)。通常の標識付き変形関手でありderived stackや大域分類とは同一視しない |
-| §14 | 全Hesse有限中心式・整列語minor・全六二次係数のFermat中心式・41項の自由代数恒等式・形式PBW・有限微分性・正則商・中央スカラー差：[現行の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_explicit_centers.tex)。有限gaugeと可換対応の高次幾何は下記の混合形式比較稿と平面incidence稿へ回収 |
-| §15–17 | 対角族の定義・section algebraと二次包絡の復元・完全同型条件・h^6不変量・反対代数：親TeXと [現行の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_diagonal_classification.tex) |
-| §18 | 一般軌道24次元、商13/17次元、忘却4次元、対角飽和余次元7：[現行の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_generic_component.tex) と [現行の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_diagonal_classification.tex) |
-| §19–20 | 中心二次曲線と二重被覆による偶数Veronese復元、全混合低次数中心、構造対象付き導来復元、有限同型条件：[現行の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_mixed_derived_rigid.tex) |
+| §7–9 | 全混合相対PBW、CY5、中心の多項式持上げ、可換点近傍の平坦族：親TeXのPBW/CY/中心補題と [現行の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_explicit_centers.tex)。低次数中心の可換点での跳躍を区別 |
+| §10–11 | 37次元graph成分、相対Poisson全中心、形式量子化から一般点への単射、重み(1,1,3)の一般中心、41次元incidence：[現行の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_generic_component.tex)。Pymの形式比較とPoisson成分性は既知入力 |
+| §12–13 | 全Artinの自動中心性・Plückerイデアル・完備局所環・Ore局所化・偏極・二次cover：[現行の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_artin_formal_moduli.tex)。通常の標識付き変形関手でありderived stackや大域分類とは同一視しない |
+| §14 | 全Hesse有限中心式・整列語minor・全六二次係数のFermat中心式・41項の自由代数恒等式・形式PBW・有限微分性・正則商・中央スカラー差：[現行の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_explicit_centers.tex)。有限gaugeと可換対応の高次幾何は下記の混合形式比較稿と平面incidence稿へ回収 |
+| §15–17 | 対角族の定義・section algebraと二次包絡の復元・完全同型条件・h^6不変量・反対代数：親TeXと [現行の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_diagonal_classification.tex) |
+| §18 | 一般軌道24次元、商13/17次元、忘却4次元、対角飽和余次元7：[現行の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_generic_component.tex) と [現行の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_diagonal_classification.tex) |
+| §19–20 | 中心二次曲線と二重被覆による偶数Veronese復元、全混合低次数中心、構造対象付き導来復元、有限同型条件：[現行の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_mixed_derived_rigid.tex) |
 | §21 | 固定周囲の中心直線の有限群商、明示剛体周囲、四次元非同型族、正則開部分、可換滑らかさとの同時実現：同ファイルとArtin節。中心持上げ・Bertiniの仮定は現行中心商論文の証明で照合 |
 
 `verify_central_pair_centers.py`でRainsの全係数式をQ(q,t)上で検証した（339語、162関係、rank144、三交換子零）。17次minorは厳密に −q^5(q^3−t^3)^2。別の自由代数展開で三つの41項恒等式、全六係数の平行移動とRainsの中央スカラー差を確認した。数値補間・有限体の零を証明に使わない。
