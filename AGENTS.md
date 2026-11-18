@@ -2,12 +2,12 @@
 
 > **Point scheme 研究の正本（2026-11-13）:** [uedakazushi/nc-cubic-point](https://github.com/uedakazushi/nc-cubic-point)。専用論文、証明節、研究ノート、計算器は移管済み。以下の旧記述に本repo内のpoint-schemeファイル名が現れる場合、移管先の同名パスを参照する。相対復元などの共有証明は必要な範囲で本repoにも保持する。
 
-17次元非可換cubic moduli研究の正本は [nc-cubic-moduli](https://github.com/uedakazushi/nc-cubic-moduli)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
+17次元非可換cubic moduli研究の正本は [nc-cubic-classification](https://github.com/uedakazushi/nc-cubic-classification)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
 
 
 
 
-Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。有限位数境界の正則性10個の定理・補題と完全な証明はnc-cubic-moduliの現行入力に保持する。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
+Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。有限位数境界の正則性10個の定理・補題と完全な証明はnc-cubic-classificationの現行入力に保持する。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
 
 
 
@@ -53,7 +53,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 ## 研究対象と他リポジトリとの境界
 
 - **PDF研究**：中心商特異性、中心三次対の形式モジュライ、Pfaffian/Brill--Noether接触境界、中心三次の技術論、Sklyanin全混合量子化。詳細は `CODEX_PDF_RECOVERY.md`。
-- **17次元非可換cubic threefoldモジュライ**：`https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/nc_cubic_threefold_moduli.tex` と `https://github.com/uedakazushi/nc-cubic-moduli/blob/main/notes/research_notes.md`。ambient周期性と商イデアル保存を混同せず、有限係数17次元族とArtin局所の接空間次元20を混同しない。
+- **17次元非可換cubic threefoldモジュライ**：`https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/nc_cubic_threefold_moduli.tex` と `https://github.com/uedakazushi/nc-cubic-classification/blob/main/notes/research_notes.md`。ambient周期性と商イデアル保存を混同せず、有限係数17次元族とArtin局所の接空間次元20を混同しない。
 - **一般次元Poisson構造・量子化**：正本は別リポジトリ `uedakazushi/nc-cubic` の論文A。必要証明を壊したり重複収録したりしない。
 - **実務**：VS Code LaTeX Workshopは `.vscode/settings.json` でリポジトリrootを作業ディレクトリとして使用し、PDFと補助生成物は `build/` に出力。全てのTeXは必要に応じて親ファイルから入力する。
 
