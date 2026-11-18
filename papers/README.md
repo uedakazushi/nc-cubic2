@@ -2,10 +2,10 @@
 
 > **Point scheme 研究の正本（2026-11-13）:** [uedakazushi/nc-cubic-point](https://github.com/uedakazushi/nc-cubic-point)。専用論文、証明節、研究ノート、計算器は移管済み。以下の旧記述に本repo内のpoint-schemeファイル名が現れる場合、移管先の同名パスを参照する。相対復元などの共有証明は必要な範囲で本repoにも保持する。
 
-17次元非可換cubic moduli研究の正本は [nc-cubic-moduli](https://github.com/uedakazushi/nc-cubic-moduli)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
+17次元非可換cubic moduli研究の正本は [nc-cubic-classification](https://github.com/uedakazushi/nc-cubic-classification)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
 
 
-Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。有限位数境界の正則性10個の定理・補題と完全な証明はnc-cubic-moduliの現行入力に保持する。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
+Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakazushi/cayley-sklyanin)、主論文は `papers/cayley-sklyanin.tex`（41頁）、中心曲面判別式の補助稿は3頁。両稿の全文組版・全頁描画とレイアウト確認、次数18の有理数Phi=0を含む必要検算を実行した。有限位数境界の正則性10個の定理・補題と完全な証明はnc-cubic-classificationの現行入力に保持する。共有検算 `verify_central_symmetry.py` は保持する。全面的な一次資料・新規性監査は未了。
 
 
 Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
@@ -17,9 +17,9 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## nc cubic threefoldの17次元モジュライ（現行の主題）
 
-- [現行草稿](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。
-- [研究ノート](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/notes/research_notes.md)：仮定・未解決の既約成分性・再現手順。
-- 再現コード：`https://github.com/uedakazushi/nc-cubic-moduli/blob/main/computations/independent/verify_generic17_slice.py`、[中心検算](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/computations/independent/verify_generic17_center.py)、`https://github.com/uedakazushi/nc-cubic-moduli/blob/main/computations/verify_split_codimension.py`。
+- [現行草稿](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。
+- [研究ノート](https://github.com/uedakazushi/nc-cubic-classification/blob/main/notes/research_notes.md)：仮定・未解決の既約成分性・再現手順。
+- 再現コード：`https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/independent/verify_generic17_slice.py`、[中心検算](https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/independent/verify_generic17_center.py)、`https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/verify_split_codimension.py`。
 - 一般次元ambient復元の定理と証明は `nc-cubic/papers/paper_a.tex`、本稿には同型類判定に必要な証明も保持する。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 
@@ -38,9 +38,9 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 - `sections/pfaffian_hessian_geometry.tex`：旧Pfaffian論文IIIの§23–24から復元した五変数Hessian摂動のMilnor/Tjurina、Pfaffian graphのstrict transform・quadric fibration。親の `pfaffian_brill_noether_technical.tex` へ入力済み。独立再監査未了。
 
-- [移管先の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_artin_formal_moduli.tex)：旧論文Vから、中心三次対の全Artin形式局所環・Ore局所化・偏極付き二次cover復元・固定ambientの四次元fiberを回収し、`nc_cubic_threefold_moduli.tex`から入力する。外部定理の適用監査は未了。原PDFの有用内容のTeX統合は完了している。
+- [移管先の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_artin_formal_moduli.tex)：旧論文Vから、中心三次対の全Artin形式局所環・Ore局所化・偏極付き二次cover復元・固定ambientの四次元fiberを回収し、`nc_cubic_threefold_moduli.tex`から入力する。外部定理の適用監査は未了。原PDFの有用内容のTeX統合は完了している。
 
-- [移管先の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_mixed_derived_rigid.tex)：旧論文V§19–21の全混合低次数中心、偶数Veronese復元、Serre関手を使うmarking付き導来復元、固定剛体ambientの四係数非同型族。`nc_cubic_threefold_moduli.tex`から入力。正則な四係数開集合も、中心商論文の中心持上げ・Bertiniの仮定を照合して証明した。
+- [移管先の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_mixed_derived_rigid.tex)：旧論文V§19–21の全混合低次数中心、偶数Veronese復元、Serre関手を使うmarking付き導来復元、固定剛体ambientの四係数非同型族。`nc_cubic_threefold_moduli.tex`から入力。正則な四係数開集合も、中心商論文の中心持上げ・Bertiniの仮定を照合して証明した。
 
 - `central_quotient_local_models.tex`：中心商研究の独立LuaLaTeX入口。旧VIの全22節を証明付きで回収し、原PDFを追跡解除。対応表と検証範囲は `../PDF_SOURCES.md`。
 - `sections/central_quotient_pbw_cy.tex`：相対PBW・自己双対解消・Koszul AS正則性・Nakayama恒等性。既知のEG一般定理との関係も明示。
@@ -54,9 +54,9 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 - `https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_central_quotient_global_geometry.py`：一般hの中心性、判別式、Cayley変換、位数6等の厳密検算。
 - `https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_central_quotient_koszul.py`：全αのFrobenius証明書。`--general-h` で例外因子h(h³+1)と対合行列式を検証し、本文で例外値も処理する。
 
-- [移管先の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_explicit_centers.tex)：全Hesse有限中心式、Fermatの41項自由代数恒等式、形式PBW・有限微分性・平行移動と中央スカラー差。検算は `https://github.com/uedakazushi/nc-cubic-moduli/blob/main/computations/verify_central_pair_centers.py`。
-- [移管先の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_generic_component.tex)：37次元graph成分、関数体上の重み(1,1,3)中心、41次元支配的incidence。
-- [移管先の対応節](https://github.com/uedakazushi/nc-cubic-moduli/blob/main/papers/sections/central_pair_diagonal_classification.tex)：対角族の完全同型条件、反対代数、軌道次元。`https://github.com/uedakazushi/nc-cubic-moduli/blob/main/computations/verify_central_pair_orbits.py` は120射影変換と150×25微分を厳密検算。
+- [移管先の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_explicit_centers.tex)：全Hesse有限中心式、Fermatの41項自由代数恒等式、形式PBW・有限微分性・平行移動と中央スカラー差。検算は `https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/verify_central_pair_centers.py`。
+- [移管先の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_generic_component.tex)：37次元graph成分、関数体上の重み(1,1,3)中心、41次元支配的incidence。
+- [移管先の対応節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_diagonal_classification.tex)：対角族の完全同型条件、反対代数、軌道次元。`https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/verify_central_pair_orbits.py` は120射影変換と150×25微分を厳密検算。
 
 - `sections/pfaffian_vertex_structure.tex`：Schur分解・二行のBott/Čech–Koszul・16生成元・全次数頂点核。
 - `sections/pfaffian_contact_classification.tex`：全普遍形式接触類の一意切片、有限決定性の必要十分条件と残余moduli。
