@@ -125,7 +125,7 @@ GitHub mainが正本。現行の日本語LuaLaTeX証明と必要最小限の計�
 
 | 旧節 | 有用な数学と現行の証明所在 |
 | --- | --- |
-| §1–2 | 対象・標識・既知の再構成入力：形式比較稿の導入・分離Hesse比較への明示参照。一般次元の再構成はnc-cubic-n-foldに統合された旧論文Bを正本として重複しない |
+| §1–2 | 対象・標識・既知の再構成入力：形式比較稿の導入・分離Hesse比較への明示参照。一般次元の再構成はnc-cubicに統合された旧論文Bを正本として重複しない |
 | §3–7 | Fermat明示族、中心とPBW、射影正則性、楕円block、Picard共役、Hesse比較、固定残余圏補正：既存の `pfaffian_formal_deformations_gluing.tex` の各証明 |
 | §8 | 実際のabelianizationの長さ24は点因子稿。一混合Hesse候補の全パラメータresultant、三/九node、c=0退化、hによる候補と規格化：`mixed_candidate_discriminant.tex`。有限hの圏同値と区別 |
 | §9.1–5 | marked Fermat切片、有限群/細分次数、係数付き変形複体：`mixed_coefficient_complexes.tex`、`mixed_six_series_and_incidence.tex`。標準形式対応は分離Hesseと既知再構成を明示入力とする |

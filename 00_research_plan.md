@@ -25,7 +25,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 実行の詳細と削除ゲートは `AGENTS.md`、主張の所在と未解決条件は `notes/relative_reconstruction_models.md`。各論文の完全証明、文献一次資料の適用条件、引用/TeX入力閉包、LuaLaTeX組版・必要計算、保存を確認してから旧統合稿の真の重複を整理する。現行bundleだけで再開できる正本を維持し、旧版アーカイブを作らない。
 
-**分業：** Poisson正規形・量子化の正本はpoisson-cubic、形式MF比較・一般点の代数的降下はnc-cubic-n-fold、および両研究の先行研究・新規性の独立監査を行う。本repoは両研究の再帰入力を触らず、疑義は正確な仮定・反例候補・証明箇所を明記して伝える。
+**分業：** Poisson正規形・量子化の正本はpoisson-cubic、形式MF比較・一般点の代数的降下はnc-cubic、および両研究の先行研究・新規性の独立監査を行う。本repoは両研究の再帰入力を触らず、疑義は正確な仮定・反例候補・証明箇所を明記して伝える。
 
 ## 重点監査から得た独立稿と次の着手
 
@@ -35,7 +35,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## 論文Bから独立した相対復元・明示模型
 
-`papers/relative_reconstruction_models.tex` に残る41支持節とノート固有の証明を統合した。一般Artin・étale、楕円/多ブロック、全次数MF存在、Artin残余復元、混合jet、有限対角/bar/Morita、相対proper模型を扱う。既存五稿の証明を同じTeXから共用し、論文Aの正本はpoisson-cubic、旧論文Bの正本はnc-cubic-n-foldに保持する。再開は `notes/relative_reconstruction_models.md`、範囲は `validation_relative_reconstruction_models.json`。新規性・全独立監査、各具体模型の未証明比較は移管作業と分けて扱う。
+`papers/relative_reconstruction_models.tex` に残る41支持節とノート固有の証明を統合した。一般Artin・étale、楕円/多ブロック、全次数MF存在、Artin残余復元、混合jet、有限対角/bar/Morita、相対proper模型を扱う。既存五稿の証明を同じTeXから共用し、論文Aの正本はpoisson-cubic、旧論文Bの正本はnc-cubicに保持する。再開は `notes/relative_reconstruction_models.md`、範囲は `validation_relative_reconstruction_models.json`。新規性・全独立監査、各具体模型の未証明比較は移管作業と分けて扱う。
 
 ## nc cubic threefoldの17次元モジュライ（現行の主題）
 
@@ -59,7 +59,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## 目的と優先順位
 
-本リポジトリは `poisson-cubic` のPoisson構造・量子化・ambient復元、および `nc-cubic-n-fold` の可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。**独立moduli移管完了後のCodex最優先は相対復元統合稿の公表向け再構成と証明の保全監査**である。PDF-only資料のTeX統合と追跡解除は既に完了しており、繰り返さない。`nc-cubic-n-fold` の可換復元（特にSM証明）は独立の優先研究として尊重し、その証明を壊したり不用意に移転・重複収録したりしない。
+本リポジトリは `poisson-cubic` のPoisson構造・量子化・ambient復元、および `nc-cubic` の可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。**独立moduli移管完了後のCodex最優先は相対復元統合稿の公表向け再構成と証明の保全監査**である。PDF-only資料のTeX統合と追跡解除は既に完了しており、繰り返さない。`nc-cubic` の可換復元（特にSM証明）は独立の優先研究として尊重し、その証明を壊したり不用意に移転・重複収録したりしない。
 
 本体：`https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/pfaffian_brill_noether_technical.tex` の79節を形式変形・Brill–Noether境界・低次/高次接触計算・検証範囲の5節ファイルへ、証明本文を失わずに分割した。独立した完成度・新規性はまだ外部査読していない。旧版別5節の計算履歴を現行の検証範囲・再現不能箇所の1節へ整理し、本文の主定理・証明は保持する。旧検算コードと整数入力は現行treeに欠落するため計算的証明の独立追試は未了。判別式は `https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/central_fiber_discriminant.tex` に証明と検算を収録した。
 

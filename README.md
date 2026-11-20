@@ -37,7 +37,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 全文12頁をLuaLaTeXで組版・全頁表示確認し、8TeXファイル、47ラベル、22参照、6引用、2文献項目に未解決・重複はない。4本の有限計算スクリプトを実行し、元の3証明書を正確に再生成した。数学的な全証明の独立監査ではない。検証範囲は [validation_mixed_cubic_point_schemes.json](validation_mixed_cubic_point_schemes.json)。再現は `latexmk papers/mixed_cubic_point_schemes.tex` と `python scripts/check_mixed_point_schemes.py --calculations`。
 
-この移管単位の保存確認後、poisson-cubic側の17専用重複ファイルを除外した。Poisson正規形・量子化論文Aはpoisson-cubic、一般次元の可換復元論文Bはnc-cubic-n-foldに統合済みであり、いずれもそのmainを正本とする。[移管全体の現在の状態](validation_reconstruction_transfer.json) と [独立成果の入力案内](papers/reconstruction_extensions/README.md) は、各独立稿の検証範囲と全体の移管状態を区別する。
+この移管単位の保存確認後、poisson-cubic側の17専用重複ファイルを除外した。Poisson正規形・量子化論文Aはpoisson-cubic、一般次元の可換復元論文Bはnc-cubicに統合済みであり、いずれもそのmainを正本とする。[移管全体の現在の状態](validation_reconstruction_transfer.json) と [独立成果の入力案内](papers/reconstruction_extensions/README.md) は、各独立稿の検証範囲と全体の移管状態を区別する。
 
 ## 標識付き平面切断の臨界幾何
 
@@ -85,9 +85,9 @@ LuaLaTeX、LuaTeX-ja、HaranoAji日本語フォント、標準数学パッケー
 
 ## Poisson論文・一般可換復元との関係
 
-[uedakazushi/poisson-cubic](https://github.com/uedakazushi/poisson-cubic) は一般次元Poisson正規形・代数的量子化論文Aの正本である。旧論文B（一般次元の中心三次変形の可換復元と完備MF比較）の全証明は [nc-cubic-n-fold](https://github.com/uedakazushi/nc-cubic-n-fold) の主論文に統合された。一般点での同値と、特殊点を含む相対smoothness・相対同値の問題は区別する。
+[uedakazushi/poisson-cubic](https://github.com/uedakazushi/poisson-cubic) は一般次元Poisson正規形・代数的量子化論文Aの正本である。旧論文B（一般次元の中心三次変形の可換復元と完備MF比較）の全証明は [nc-cubic](https://github.com/uedakazushi/nc-cubic) の主論文に統合された。一般点での同値と、特殊点を含む相対smoothness・相対同値の問題は区別する。
 
-主定理に必要な証明は各正本で完結させ、Poisson論文Aはpoisson-cubic、可換復元の基礎定理はnc-cubic-n-foldの現行原稿を参照する。独立した境界・変形論・具体模型は本リポジトリへ、数学的内容と再現性を保って整理する。現行の独立成果は上記統合稿と既存五稿に揃えた。元の専用重複142ファイルは、移管先保存とA・B入力閉包の確認後に整理済み。
+主定理に必要な証明は各正本で完結させ、Poisson論文Aはpoisson-cubic、可換復元の基礎定理はnc-cubicの現行原稿を参照する。独立した境界・変形論・具体模型は本リポジトリへ、数学的内容と再現性を保って整理する。現行の独立成果は上記統合稿と既存五稿に揃えた。元の専用重複142ファイルは、移管先保存とA・B入力閉包の確認後に整理済み。
 
 GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗時の緊急避難に限る。
 

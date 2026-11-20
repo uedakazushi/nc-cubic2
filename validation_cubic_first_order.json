@@ -120,5 +120,5 @@
   "concurrent_destination_work_preserved": "ab4da97348cc270d119e28f745b78c6ec0b228d1",
   "persistence_policy": "Fast-forward main only, no Actions or force push; Library only after actual push failure.",
   "source_repository_at_original_transfer": "uedakazushi/nc-cubic",
-  "former_paper_B_current_repository": "uedakazushi/nc-cubic-n-fold"
+  "former_paper_B_current_repository": "uedakazushi/nc-cubic"
 }

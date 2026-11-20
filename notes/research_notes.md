@@ -26,7 +26,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## 最優先の制約
 
-nc-cubic-n-foldの可換復元（特に相対残余対角のperfectness）を妨げない。必要なdg perfectness反例や中心正則性補題は 各現行正本に残し、この独立研究のために関連主原稿を削除・書き換えない。
+nc-cubicの可換復元（特に相対残余対角のperfectness）を妨げない。必要なdg perfectness反例や中心正則性補題は 各現行正本に残し、この独立研究のために関連主原稿を削除・書き換えない。
 
 ## Pfaffian接触分類の現行到達点
 
