@@ -2,7 +2,7 @@
   "date": "2026-11-13",
   "version": "v2",
   "entry": "papers/cubic_first_order_deformations.tex",
-  "source_repository": "uedakazushi/nc-cubic",
+  "source_repository": "uedakazushi/poisson-cubic",
   "source_commit": "549c7e0aad8353daafe4c19c124401e2e02f2928",
   "editorial_scope": "Integrate the existing Todd-corrected HKR alternative proof into the first-order/Plucker paper. No new mathematical result. Papers A and B-v55 unchanged.",
   "preservation": {
@@ -12,8 +12,20 @@
     "original_todd_path": "papers/support/papers/reconstruction/poisson_first_order.tex",
     "all_8_todd_labels_preserved": true,
     "all_9_todd_mathematical_environment_blocks_preserved_up_to_declared_tokens": true,
-    "todd_environment_counts": {"lemma": 2, "proposition": 1, "corollary": 1, "proof": 4, "remark": 1},
-    "declared_changes": ["Expand CC/PP/OO/HH/Ku macros", "Use Jac(F) for the quotient, preserving J(F) for the ideal elsewhere", "Unify JLLZER citation key as JLLZ", "Correct cited author-version Theorem 3.11 to Theorem 3.10", "Normalize one mathematically inactive space before Jac"],
+    "todd_environment_counts": {
+      "lemma": 2,
+      "proposition": 1,
+      "corollary": 1,
+      "proof": 4,
+      "remark": 1
+    },
+    "declared_changes": [
+      "Expand CC/PP/OO/HH/Ku macros",
+      "Use Jac(F) for the quotient, preserving J(F) for the ideal elsewhere",
+      "Unify JLLZER citation key as JLLZ",
+      "Correct cited author-version Theorem 3.11 to Theorem 3.10",
+      "Normalize one mathematically inactive space before Jac"
+    ],
     "new_theorems_added": false
   },
   "build": {
@@ -59,11 +71,26 @@
     "rerun_during_Todd_integration": false,
     "retained_verified_results": {
       "first_order_HKR_insertion_identities": 8,
-      "Jacobian_degree_three_ranks": [25, 36],
-      "Jacobian_quotient_dimensions": [10, 20],
-      "second_order_coefficient_quadrics": [20, 56],
-      "Jacobi_quadratic_span_ranks": [5, 5],
-      "joined_with_Plucker_span_ranks": [5, 5],
+      "Jacobian_degree_three_ranks": [
+        25,
+        36
+      ],
+      "Jacobian_quotient_dimensions": [
+        10,
+        20
+      ],
+      "second_order_coefficient_quadrics": [
+        20,
+        56
+      ],
+      "Jacobi_quadratic_span_ranks": [
+        5,
+        5
+      ],
+      "joined_with_Plucker_span_ranks": [
+        5,
+        5
+      ],
       "nondecomposable_Xi_negative_control": "PASS"
     },
     "scope": "Previously executed finite examples retained; no new arithmetic or category-level verification in Todd integration.",
@@ -81,7 +108,9 @@
     "status": "COMPLETED for Todd alternative-proof body",
     "destination_content_commit_verified": "c98c57a511ad550954ae47ba776e57dff89f08bd",
     "source_cleanup_commit": "ba01a766666c51eebf1bc1d382cafb20760363eb",
-    "removed": ["papers/support/papers/reconstruction/poisson_first_order.tex"],
+    "removed": [
+      "papers/support/papers/reconstruction/poisson_first_order.tex"
+    ],
     "shared_bibliography_retained": "poisson_first_order_references.tex retained because the remaining source bibliography inputs it",
     "paper_A_and_focused_B_unchanged": true
   },
@@ -89,5 +118,7 @@
   "formal_proof_verification": false,
   "comprehensive_novelty_audit": false,
   "concurrent_destination_work_preserved": "ab4da97348cc270d119e28f745b78c6ec0b228d1",
-  "persistence_policy": "Fast-forward main only, no Actions or force push; Library only after actual push failure."
+  "persistence_policy": "Fast-forward main only, no Actions or force push; Library only after actual push failure.",
+  "source_repository_at_original_transfer": "uedakazushi/nc-cubic",
+  "former_paper_B_current_repository": "uedakazushi/nc-cubic-n-fold"
 }

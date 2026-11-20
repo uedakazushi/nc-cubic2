@@ -2,7 +2,7 @@
   "date": "2026-11-13",
   "version": "v1",
   "entry": "papers/cubic_jacobian_recovery.tex",
-  "source_repository": "uedakazushi/nc-cubic",
+  "source_repository": "uedakazushi/poisson-cubic",
   "source_commit": "da722ca8b7feec57ff73609154a7e2d27351e922",
   "preservation": {
     "original_section_blob": "a08e2b1279ee265d27dd6231521e8fbae0edd15b",
@@ -50,10 +50,26 @@
     "python": "3.13.5",
     "sympy": "1.14.0",
     "exact_rational_arithmetic": true,
-    "integrability_matrix_ranks": [20, 24, 25],
-    "kernel_dimensions": [5, 1, 0],
+    "integrability_matrix_ranks": [
+      20,
+      24,
+      25
+    ],
+    "kernel_dimensions": [
+      5,
+      1,
+      0
+    ],
     "negative_control_minor": "15872",
-    "common_hilbert_function": [1, 5, 10, 10, 5, 1, 0],
+    "common_hilbert_function": [
+      1,
+      5,
+      10,
+      10,
+      5,
+      1,
+      0
+    ],
     "asymmetric_product_rejected": true,
     "scope": "Commutative polynomial quotients only; no noncommutative dg Hom, Morita-equivalence or general proof verification."
   },
@@ -70,5 +86,7 @@
   "new_theorems_added": false,
   "independent_full_mathematical_audit": false,
   "comprehensive_novelty_audit": false,
-  "concurrent_destination_work": "Built on central-quotient recovery commit 83c787d231b1e0ce5929a897626a17c72185c1e5; those edits and PDF deletion preserved."
+  "concurrent_destination_work": "Built on central-quotient recovery commit 83c787d231b1e0ce5929a897626a17c72185c1e5; those edits and PDF deletion preserved.",
+  "source_repository_at_original_transfer": "uedakazushi/nc-cubic",
+  "former_paper_B_current_repository": "uedakazushi/nc-cubic-n-fold"
 }

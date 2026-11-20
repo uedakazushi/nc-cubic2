@@ -2,7 +2,7 @@
   "date": "2026-11-13",
   "version": "v2",
   "entry": "papers/relative_cubic_realization.tex",
-  "source_repository": "uedakazushi/nc-cubic",
+  "source_repository": "uedakazushi/poisson-cubic",
   "source_commit": "7521283a6e2cf691a72c3df6bf47a3cd75067ef1",
   "destination_base_commit": "8b9d77c57094ed3578cdac3d2120b7168303d6a8",
   "scope": "Edit and integrate existing etale realization criterion, cubic Hochschild sector bookkeeping, and complete-base counterexample. No new mathematical theorem; source papers A and B unchanged.",
@@ -97,5 +97,7 @@
     "Artin_dg_calculations_rerun": true,
     "sector_arithmetic_rerun": true,
     "scope": "Current follow-up; previous revision validation record retained as historical evidence, not current pending work."
-  }
+  },
+  "source_repository_at_original_transfer": "uedakazushi/nc-cubic",
+  "former_paper_B_current_repository": "uedakazushi/nc-cubic-n-fold"
 }

@@ -74,7 +74,7 @@
   },
   "limit": "Source consistency, typesetting and finite checks; not an independent mathematical proof audit.",
   "date_jst": "2026-11-13",
-  "source_repository": "uedakazushi/nc-cubic",
+  "source_repository": "uedakazushi/poisson-cubic",
   "source_head": "ba7ec3422e53efc0f64f6d8280734296b98aacfe",
   "calculations": [
     {
@@ -411,5 +411,7 @@
   },
   "novelty": "not independently determined",
   "date": "2026-11-13",
-  "status": "COMPLETED"
+  "status": "COMPLETED",
+  "source_repository_at_original_transfer": "uedakazushi/nc-cubic",
+  "former_paper_B_current_repository": "uedakazushi/nc-cubic-n-fold"
 }

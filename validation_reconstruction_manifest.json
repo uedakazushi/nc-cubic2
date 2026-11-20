@@ -1,5 +1,5 @@
 {
-  "source_repository": "uedakazushi/nc-cubic",
+  "source_repository": "uedakazushi/poisson-cubic",
   "source_head": "ba7ec3422e53efc0f64f6d8280734296b98aacfe",
   "chapters": [
     {
@@ -1139,5 +1139,8 @@
     "verify_three_object_window.py",
     "verify_universal_fermat_mixed_center.py",
     "verify_general_dimension_multiblock.py"
-  ]
+  ],
+  "source_repository_at_original_transfer": "uedakazushi/nc-cubic",
+  "former_paper_B_current_repository": "uedakazushi/nc-cubic-n-fold",
+  "historical_path_note": "Blob paths papers/paper_a.tex and papers/paper_b.tex are immutable paths from the original transfer. The current Poisson manuscript is poisson-cubic/papers/poisson-cubic.tex, and paper B's proofs now reside in nc-cubic-n-fold."
 }

@@ -2,10 +2,10 @@
   "date": "2026-11-13",
   "version": "v12",
   "status": "COMPLETED: current independent results integrated, verified and saved; dedicated source duplicates retired after destination persistence",
-  "source_repository": "uedakazushi/nc-cubic",
+  "source_repository": "uedakazushi/poisson-cubic",
   "destination_repository": "uedakazushi/nc-cubic2",
-  "paper_A": "Unchanged in nc-cubic, A-v51",
-  "focused_paper_B": "Unchanged in nc-cubic, B-v55; general n>=3 theorem and necessary proofs",
+  "paper_A": "Originally unchanged in nc-cubic (now poisson-cubic), A-v51",
+  "focused_paper_B": "Originally in nc-cubic, now integrated into nc-cubic-n-fold, B-v55; general n>=3 theorem and necessary proofs",
   "completed_companion": {
     "entry": "papers/mixed_cubic_point_schemes.tex",
     "notes": "notes/mixed_cubic_point_schemes.md",
@@ -140,5 +140,7 @@
     "protected_A_B_inputs_unchanged": 26,
     "source_closure_checks_passed": true
   },
-  "destination_content_commit": "8ca6ccae84413d88fcaa4fc7062f0b23750ddfc5"
+  "destination_content_commit": "8ca6ccae84413d88fcaa4fc7062f0b23750ddfc5",
+  "source_repository_at_original_transfer": "uedakazushi/nc-cubic",
+  "former_paper_B_current_repository": "uedakazushi/nc-cubic-n-fold"
 }
