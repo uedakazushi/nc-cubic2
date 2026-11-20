@@ -11,7 +11,7 @@ Cayley–Sklyanin研究の正本は [cayley-sklyanin](https://github.com/uedakaz
 Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://github.com/uedakazushi/pfaffian-brill-noether)。現行入口 `papers/pfaffian_brill_noether_technical.tex`、完全な証明と検算・研究方針を移管し、移管先で277頁の全文組版・全頁描画と表示概観、Schur/Tateの厳密検算を確認した。旧大型rank入力と一次文献の全面独立監査は未了。一般形式変形・Hesse比較・Picard/gluingを含む共有節 `papers/sections/pfaffian_formal_deformations_gluing.tex` は、混合形式比較の証明を保つため本repoにも内容を変更せず保持する。Pfaffian固有研究の正本は移管先とする。
 
 
-一般次元のPoisson pair成分分類・量子化は `nc-cubic` の論文Aを正本とする。
+一般次元のPoisson pair成分分類・量子化は `poisson-cubic` の論文Aを正本とする。
 
 独立の主原稿：`pfaffian_brill_noether_technical.tex`。中心判別式の独立補論：`central_fiber_discriminant.tex`。ルートから `latexmk https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/pfaffian_brill_noether_technical.tex` と `latexmk https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/central_fiber_discriminant.tex` を実行する。生成PDFは `build/` にあり、Git追跡しない。大部の原稿には一次資料・適用仮定の再監査が残る。
 
@@ -20,7 +20,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 - [現行草稿](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。
 - [研究ノート](https://github.com/uedakazushi/nc-cubic-classification/blob/main/notes/research_notes.md)：仮定・未解決の既約成分性・再現手順。
 - 再現コード：`https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/independent/verify_generic17_slice.py`、[中心検算](https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/independent/verify_generic17_center.py)、`https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/verify_split_codimension.py`。
-- 一般次元ambient復元の定理と証明は `nc-cubic/papers/paper_a.tex`、本稿には同型類判定に必要な証明も保持する。
+- 一般次元ambient復元の定理と証明は `poisson-cubic/papers/poisson-cubic.tex`、本稿には同型類判定に必要な証明も保持する。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 
 

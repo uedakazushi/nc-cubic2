@@ -49,7 +49,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## 中心三次対（旧V、60頁）の削除判定
 
-入口は `https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/nc_cubic_threefold_moduli.tex`。旧全21節を本文・数式まで照合した。一般Poisson分類はnc-cubic論文Aを正本とし、その一般次元の証明を重複収録しない。以下は現行の証明所在（`papers/sections/`以下）。
+入口は `https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/nc_cubic_threefold_moduli.tex`。旧全21節を本文・数式まで照合した。一般Poisson分類はpoisson-cubic論文Aを正本とし、その一般次元の証明を重複収録しない。以下は現行の証明所在（`papers/sections/`以下）。
 
 | 旧節 | 現行の数学的な所在と検証 |
 | --- | --- |
@@ -97,7 +97,7 @@ LuaLaTeXで親TeX全体を組版し、追加した数式をPDF表示で確認。
 
 | 旧節 | 現行の証明所在 |
 | --- | --- |
-| §1–13 | 一意延長・Poisson成分はnc-cubic論文A。PBW/CY、中心持上げ、一般中心、37/41次元graph/incidence、形式中心対とHesse有限中心式は `nc_cubic_threefold_moduli.tex` と `central_pair_*` 入力節 |
+| §1–13 | 一意延長・Poisson成分はpoisson-cubic論文A。PBW/CY、中心持上げ、一般中心、37/41次元graph/incidence、形式中心対とHesse有限中心式は `nc_cubic_threefold_moduli.tex` と `central_pair_*` 入力節 |
 | §14–19 | 分離族・真の混合例・古典pencil・中心零化元・導分による三切断：`central_quotient_local_models.tex` の一般正則性・古典比較・chart貼合せ節 |
 | §20–23 | 全係数長さ24平坦族と三局所環型、四係数と接空間の埋込み付き検出、genus5曲線・点因子の線形系・同時復元・ramification・次数56判別・楕円成分とshiftのscheme分解：`diagonal_cubic_point_geometry.tex` と二つの入力節 |
 | §24–28 | 超越的中心値、分母払い、一般hの曲面/三fold正則例、固定良ambientのvery-general正則性：中心商論文 |
@@ -125,7 +125,7 @@ GitHub mainが正本。現行の日本語LuaLaTeX証明と必要最小限の計�
 
 | 旧節 | 有用な数学と現行の証明所在 |
 | --- | --- |
-| §1–2 | 対象・標識・既知の再構成入力：形式比較稿の導入・分離Hesse比較への明示参照。一般次元の再構成はnc-cubic論文Bを正本として重複しない |
+| §1–2 | 対象・標識・既知の再構成入力：形式比較稿の導入・分離Hesse比較への明示参照。一般次元の再構成はnc-cubic-n-foldに統合された旧論文Bを正本として重複しない |
 | §3–7 | Fermat明示族、中心とPBW、射影正則性、楕円block、Picard共役、Hesse比較、固定残余圏補正：既存の `pfaffian_formal_deformations_gluing.tex` の各証明 |
 | §8 | 実際のabelianizationの長さ24は点因子稿。一混合Hesse候補の全パラメータresultant、三/九node、c=0退化、hによる候補と規格化：`mixed_candidate_discriminant.tex`。有限hの圏同値と区別 |
 | §9.1–5 | marked Fermat切片、有限群/細分次数、係数付き変形複体：`mixed_coefficient_complexes.tex`、`mixed_six_series_and_incidence.tex`。標準形式対応は分離Hesseと既知再構成を明示入力とする |

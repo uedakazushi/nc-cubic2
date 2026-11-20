@@ -37,7 +37,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ### 他担当との境界
 
-**Chatは `uedakazushi/nc-cubic` の論文AのPoisson正規形・量子化、論文Bの完備MF比較・一般点降下、および両論文の一次文献・新規性の独立監査を担当する。** Codexは論文A/B、その再帰TeX入力・共通設定をこの担当で編集しない。問題を発見したら、正確な主張・仮定・反例候補・証明箇所を現行ノートに残し、Chat側へ引き継ぐ。移管済み142ファイルの再導入、PDF削除の再実施、単なる大規模ファイル移動はしない。既存の17次元モジュライと独立稿を保護する。Pfaffian専用成果は移管指示に従い、移管先の検証後にのみ移管元の真の重複を整理する。
+**Poisson正規形・量子化論文Aの正本は `uedakazushi/poisson-cubic`、旧論文Bの完備MF比較・一般点降下を統合した正本は `uedakazushi/nc-cubic-n-fold` である。** 本repoでは各正本の主原稿を直接編集せず、必要な入力は現在の正本の定理・仮定を確認して引用する。問題を発見したら、正確な主張・仮定・反例候補・証明箇所を現行ノートに残し、Chat側へ引き継ぐ。移管済み142ファイルの再導入、PDF削除の再実施、単なる大規模ファイル移動はしない。既存の17次元モジュライと独立稿を保護する。Pfaffian専用成果は移管指示に従い、移管先の検証後にのみ移管元の真の重複を整理する。
 
 現行統合稿の検証記録は244頁、54TeX入力、708ラベル、29有限検算だが、**全数学的証明の独立監査・新規性の確定ではない**。旧PDFのTeX移管とGit追跡解除は完了しており、`CODEX_PDF_RECOVERY.md` は必要な場合の参考指示であって現在の最優先業務ではない。
 
@@ -54,7 +54,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 - **PDF研究**：中心商特異性、中心三次対の形式モジュライ、Pfaffian/Brill--Noether接触境界、中心三次の技術論、Sklyanin全混合量子化。詳細は `CODEX_PDF_RECOVERY.md`。
 - **17次元非可換cubic threefoldモジュライ**：`https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/nc_cubic_threefold_moduli.tex` と `https://github.com/uedakazushi/nc-cubic-classification/blob/main/notes/research_notes.md`。ambient周期性と商イデアル保存を混同せず、有限係数17次元族とArtin局所の接空間次元20を混同しない。
-- **一般次元Poisson構造・量子化**：正本は別リポジトリ `uedakazushi/nc-cubic` の論文A。必要証明を壊したり重複収録したりしない。
+- **一般次元Poisson構造・量子化**：正本は別リポジトリ `uedakazushi/poisson-cubic` の論文A。必要証明を壊したり重複収録したりしない。
 - **実務**：VS Code LaTeX Workshopは `.vscode/settings.json` でリポジトリrootを作業ディレクトリとして使用し、PDFと補助生成物は `build/` に出力。全てのTeXは必要に応じて親ファイルから入力する。
 
 ## 完了の意味

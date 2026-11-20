@@ -19,13 +19,13 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 > **全研究原PDFの現行TeXへの移管とGit追跡解除が完了し、追跡PDFは0件。** 今後は論文・証明・再生成可能な計算を正本として、正確性、先行研究、新規性、公表価値を高める。削除判定と全対応は [PDF_SOURCES.md](PDF_SOURCES.md)、恒久原則は [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)。
 
-## nc-cubic論文Bからの独立成果：公表用再構成（moduli移管完了後の優先課題）
+## 可換復元（旧論文B）からの独立成果：公表用再構成（moduli移管完了後の優先課題）
 
 **移管そのものは完了した。** 現行の `papers/relative_reconstruction_models.tex`（244頁）と独立五稿を、数学的中心結果・論理のまとまり・公表価値に照らし、必要なら分割・統合して自足した日本語LuaLaTeX論文へ改稿する。固定の論文数や頁数に合わせず、公表価値のある定理・証明・反例を削らない。まず移管時に文脈調整されたArtin比較・smoothness反例・Hochschild障害の9環境と共有証明を、現行 `validation_reconstruction_manifest.json` と元ソースに照らして監査する。未確認の新規性を断定しない。
 
 実行の詳細と削除ゲートは `AGENTS.md`、主張の所在と未解決条件は `notes/relative_reconstruction_models.md`。各論文の完全証明、文献一次資料の適用条件、引用/TeX入力閉包、LuaLaTeX組版・必要計算、保存を確認してから旧統合稿の真の重複を整理する。現行bundleだけで再開できる正本を維持し、旧版アーカイブを作らない。
 
-**分業：** Chatはnc-cubic論文Aの正規形・量子化、論文Bの形式MF比較・一般点への代数的降下、およびA/Bの先行研究・新規性の独立監査を行う。CodexはA/Bと再帰入力を触らず、疑義は正確な仮定・反例候補・証明箇所を明記して伝える。
+**分業：** Poisson正規形・量子化の正本はpoisson-cubic、形式MF比較・一般点の代数的降下はnc-cubic-n-fold、および両研究の先行研究・新規性の独立監査を行う。本repoは両研究の再帰入力を触らず、疑義は正確な仮定・反例候補・証明箇所を明記して伝える。
 
 ## 重点監査から得た独立稿と次の着手
 
@@ -35,17 +35,17 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## 論文Bから独立した相対復元・明示模型
 
-`papers/relative_reconstruction_models.tex` に残る41支持節とノート固有の証明を統合した。一般Artin・étale、楕円/多ブロック、全次数MF存在、Artin残余復元、混合jet、有限対角/bar/Morita、相対proper模型を扱う。既存五稿の証明を同じTeXから共用し、A・Bの正本と必要入力はnc-cubicに保持する。再開は `notes/relative_reconstruction_models.md`、範囲は `validation_relative_reconstruction_models.json`。新規性・全独立監査、各具体模型の未証明比較は移管作業と分けて扱う。
+`papers/relative_reconstruction_models.tex` に残る41支持節とノート固有の証明を統合した。一般Artin・étale、楕円/多ブロック、全次数MF存在、Artin残余復元、混合jet、有限対角/bar/Morita、相対proper模型を扱う。既存五稿の証明を同じTeXから共用し、論文Aの正本はpoisson-cubic、旧論文Bの正本はnc-cubic-n-foldに保持する。再開は `notes/relative_reconstruction_models.md`、範囲は `validation_relative_reconstruction_models.json`。新規性・全独立監査、各具体模型の未証明比較は移管作業と分けて扱う。
 
 ## nc cubic threefoldの17次元モジュライ（現行の主題）
 
 - [現行草稿](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。
 - [研究ノート](https://github.com/uedakazushi/nc-cubic-classification/blob/main/notes/research_notes.md)：仮定・未解決の既約成分性・再現手順。
 - 再現コード：`https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/independent/verify_generic17_slice.py`、[中心検算](https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/independent/verify_generic17_center.py)、`https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/verify_split_codimension.py`。
-- 一般次元ambient復元の定理と証明は `nc-cubic/papers/paper_a.tex`、本稿には同型類判定に必要な証明も保持する。
+- 一般次元ambient復元の定理と証明は `poisson-cubic/papers/poisson-cubic.tex`、本稿には同型類判定に必要な証明も保持する。
 - **ambientの周期性**：`https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/nc_cubic_threefold_moduli.tex` の `https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/ambient_periodicity.tex` に、正則正規次数$d$族を持つKoszul AS正則$\mathbb Z$-代数の最小周期が$\gcd(N,d)$を割る定理と証明を収録。標準5次元・三次なら1周期的。商イデアルを保存する1周期性は未証明。既知双対性からの帰結として新規性は未確認。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
-- **可換点の全Artin形式局所構造をTeX化**：`https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はnc-cubic論文Aの普遍公式を代入して照合済み。全係数Hesse中心元・有限証明書・37次元graph成分と一般中心・剛体例の正則開集合も現行稿へ回収し、旧V全21節を照合した。原PDFは追跡解除済み。
+- **可換点の全Artin形式局所構造をTeX化**：`https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_artin_formal_moduli.tex` に、平坦な正規三次元の自動中心性、Plücker方程式のイデアル同値、形式局所環（41次元・接空間44次元、商は17次元・接空間20次元）、Ore局所化と偏極の一意性、次数付き二次cover復元、および固定ambientの四次元fiberを証明付きで収録した。Kontsevich/Yekutieli/Lowenの形式変形比較は外部入力で、今回一次文献の独立適用監査は未完了。さらに `https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/central_pair_mixed_derived_rigid.tex` に§19–21の中心二次非増大、偶数Veroneseと次数1シフトなしの構造対象付き導来復元、一般混合potentialの有限同型条件、具体的剛体ambient `B_*` の証明を移した。`B_*` の中心公式はpoisson-cubic論文Aの普遍公式を代入して照合済み。全係数Hesse中心元・有限証明書・37次元graph成分と一般中心・剛体例の正則開集合も現行稿へ回収し、旧V全21節を照合した。原PDFは追跡解除済み。
 
 **2026-11-13 / v39。再開時は最初に本ファイルを読む。**
 
@@ -55,17 +55,17 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## 一般Poisson cubicモジュライの正本
 
-一般次元Poisson正規形、固定・相対Poissonスタック、既約成分数と次元公式、量子化は `uedakazushi/nc-cubic` の論文Aに既に証明を収録。ここに同じ一般分類の単独論文・ノート・専用計算を再収録しない。これらの証明の全面独立監査・新規性の確認は未完成。本リポジトリでは独立した非可換モジュライ・境界研究を扱う。
+一般次元Poisson正規形、固定・相対Poissonスタック、既約成分数と次元公式、量子化は `uedakazushi/poisson-cubic` の論文Aに既に証明を収録。ここに同じ一般分類の単独論文・ノート・専用計算を再収録しない。これらの証明の全面独立監査・新規性の確認は未完成。本リポジトリでは独立した非可換モジュライ・境界研究を扱う。
 
 ## 目的と優先順位
 
-本リポジトリは `nc-cubic` のPoisson構造・量子化・ambient復元・可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。**独立moduli移管完了後のCodex最優先は相対復元統合稿の公表向け再構成と証明の保全監査**である。PDF-only資料のTeX統合と追跡解除は既に完了しており、繰り返さない。主リポジトリ `nc-cubic` の可換復元（特にSM証明）は独立の優先研究として尊重し、その証明を壊したり不用意に移転・重複収録したりしない。
+本リポジトリは `poisson-cubic` のPoisson構造・量子化・ambient復元、および `nc-cubic-n-fold` の可換復元という主目標から独立した、Pfaffian接触、Brill–Noether境界、中心商特異性、独立モジュライ理論を整理する。**独立moduli移管完了後のCodex最優先は相対復元統合稿の公表向け再構成と証明の保全監査**である。PDF-only資料のTeX統合と追跡解除は既に完了しており、繰り返さない。`nc-cubic-n-fold` の可換復元（特にSM証明）は独立の優先研究として尊重し、その証明を壊したり不用意に移転・重複収録したりしない。
 
 本体：`https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/papers/pfaffian_brill_noether_technical.tex` の79節を形式変形・Brill–Noether境界・低次/高次接触計算・検証範囲の5節ファイルへ、証明本文を失わずに分割した。独立した完成度・新規性はまだ外部査読していない。旧版別5節の計算履歴を現行の検証範囲・再現不能箇所の1節へ整理し、本文の主定理・証明は保持する。旧検算コードと整数入力は現行treeに欠落するため計算的証明の独立追試は未了。判別式は `https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/central_fiber_discriminant.tex` に証明と検算を収録した。
 
 ## 未解決
 
-全原PDFの有用内容を現行論文・計算へ統合し、追跡PDFは0件となった。有限正則性ノートも `notes/ambient_finite_smoothness_and_recovery.tex` と `nc-cubic` の対応原稿へ統合済み（`PDF_SOURCES.md`）。主リポジトリの定理に引用・依存する補題は、移管元に自立した証明を保持してから移す。文献の一次資料照合も追加監査が必要。
+全原PDFの有用内容を現行論文・計算へ統合し、追跡PDFは0件となった。有限正則性ノートも `notes/ambient_finite_smoothness_and_recovery.tex` と `poisson-cubic` の対応原稿へ統合済み（`PDF_SOURCES.md`）。主リポジトリの定理に引用・依存する補題は、移管元に自立した証明を保持してから移す。文献の一次資料照合も追加監査が必要。
 
 ## 一般研究原則と保存許可
 

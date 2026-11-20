@@ -37,7 +37,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 全文12頁をLuaLaTeXで組版・全頁表示確認し、8TeXファイル、47ラベル、22参照、6引用、2文献項目に未解決・重複はない。4本の有限計算スクリプトを実行し、元の3証明書を正確に再生成した。数学的な全証明の独立監査ではない。検証範囲は [validation_mixed_cubic_point_schemes.json](validation_mixed_cubic_point_schemes.json)。再現は `latexmk papers/mixed_cubic_point_schemes.tex` と `python scripts/check_mixed_point_schemes.py --calculations`。
 
-この移管単位の保存確認後、nc-cubic側の17専用重複ファイルを除外した。論文Aと一般次元の論文Bはnc-cubicに保持し、本文を変更しない。[移管全体の現在の状態](validation_reconstruction_transfer.json) と [独立成果の入力案内](papers/reconstruction_extensions/README.md) は、各独立稿の検証範囲と全体の移管状態を区別する。
+この移管単位の保存確認後、poisson-cubic側の17専用重複ファイルを除外した。Poisson正規形・量子化論文Aはpoisson-cubic、一般次元の可換復元論文Bはnc-cubic-n-foldに統合済みであり、いずれもそのmainを正本とする。[移管全体の現在の状態](validation_reconstruction_transfer.json) と [独立成果の入力案内](papers/reconstruction_extensions/README.md) は、各独立稿の検証範囲と全体の移管状態を区別する。
 
 ## 標識付き平面切断の臨界幾何
 
@@ -48,7 +48,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 - [現行草稿](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/nc_cubic_threefold_moduli.tex)：41次元中心三次対、17係数横断形、分離型余次元15、忘却核7（6+1）、混合中心と相対Picard障害。
 - [研究ノート](https://github.com/uedakazushi/nc-cubic-classification/blob/main/notes/research_notes.md)：仮定・未解決の既約成分性・再現手順。
 - 再現コード：`https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/independent/verify_generic17_slice.py`、[中心検算](https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/independent/verify_generic17_center.py)、`https://github.com/uedakazushi/nc-cubic-classification/blob/main/computations/verify_split_codimension.py`。
-- 一般次元ambient復元の定理と証明は `nc-cubic/papers/paper_a.tex`、本稿には同型類判定に必要な証明も保持する。
+- 一般次元ambient復元の定理と証明は `poisson-cubic/papers/poisson-cubic.tex`、本稿には同型類判定に必要な証明も保持する。
 - **正則正規三次族からの1周期性**：一般$N,d$について最小周期が$\gcd(N,d)$を割る定理と5次元・三次の場合の系を、モジュライ原稿の [周期性節](https://github.com/uedakazushi/nc-cubic-classification/blob/main/papers/sections/ambient_periodicity.tex) に証明ごと統合。ambientの1周期性と、商イデアルを保つ周期性を区別する。後者と初出・新規性の確定は未了。
 - 構成した17次元族がnc cubic moduli stackの既約成分であることはまだ未証明。
 
@@ -56,7 +56,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## 全次元Poisson分類の所在
 
-一般次元Poisson pairの成分数・次元公式・固定/相対stackの証明は[主リポジトリ論文A](https://github.com/uedakazushi/nc-cubic/blob/main/papers/paper_a.tex)にある。重複した全次元論文・ノート・専用検算は本リポジトリから除外する。
+一般次元Poisson pairの成分数・次元公式・固定/相対stackの証明は[主リポジトリ論文A](https://github.com/uedakazushi/poisson-cubic/blob/main/papers/poisson-cubic.tex)にある。重複した全次元論文・ノート・専用検算は本リポジトリから除外する。
 
 ## VS Code / LaTeX Workshop
 
@@ -68,7 +68,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 - `https://github.com/uedakazushi/cayley-sklyanin/blob/main/papers/central_fiber_discriminant.tex`：中心三次曲面の必要十分判別式・特異点の解析。対応する正確な記号計算は `https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/verify_central_fiber_discriminant.py`。
 - `notes/research_notes.md`：現行の数学的状態、欠けている入力、研究再開手順。
 
-初期の完全TeX転送に加え、PDFにしかなかった固有の証明・反例・再現入力も全件回収した。中心商、中心三次対、Pfaffian接触、全混合量子化を現行論文と厳密計算へ統合し、追跡PDFは0件。有限smoothnessノートも [現行LuaLaTeXノート](notes/ambient_finite_smoothness_and_recovery.tex) と `nc-cubic` に統合済み。対応と実行範囲は `PDF_SOURCES.md`。
+初期の完全TeX転送に加え、PDFにしかなかった固有の証明・反例・再現入力も全件回収した。中心商、中心三次対、Pfaffian接触、全混合量子化を現行論文と厳密計算へ統合し、追跡PDFは0件。有限smoothnessノートも [現行LuaLaTeXノート](notes/ambient_finite_smoothness_and_recovery.tex) と `poisson-cubic` に統合済み。対応と実行範囲は `PDF_SOURCES.md`。
 
 ## 再現
 
@@ -83,11 +83,11 @@ python3 https://github.com/uedakazushi/cayley-sklyanin/blob/main/computations/ve
 
 LuaLaTeX、LuaTeX-ja、HaranoAji日本語フォント、標準数学パッケージが必要。PDF・補助ファイルは `build/` に生成しGit追跡しない。各原稿の配置確認・実組版・数学的監査の状態を区別する。
 
-## nc-cubicとの関係
+## Poisson論文・一般可換復元との関係
 
-[uedakazushi/nc-cubic](https://github.com/uedakazushi/nc-cubic) には、論文A（一般次元Poisson構造・代数的量子化）と、論文B（一般次元の中心三次変形の一般点可換復元および必要証明）を保持する。一般点での同値と、特殊点を含む相対smoothness・相対同値の問題は区別する。
+[uedakazushi/poisson-cubic](https://github.com/uedakazushi/poisson-cubic) は一般次元Poisson正規形・代数的量子化論文Aの正本である。旧論文B（一般次元の中心三次変形の可換復元と完備MF比較）の全証明は [nc-cubic-n-fold](https://github.com/uedakazushi/nc-cubic-n-fold) の主論文に統合された。一般点での同値と、特殊点を含む相対smoothness・相対同値の問題は区別する。
 
-主定理に必要な証明は移管先だけへの参照で代用せず、nc-cubicに自立的に保持する。独立した境界・変形論・具体模型は本リポジトリへ、数学的内容と再現性を保って整理する。現行の独立成果は上記統合稿と既存五稿に揃えた。元の専用重複142ファイルは、移管先保存とA・B入力閉包の確認後に整理済み。
+主定理に必要な証明は各正本で完結させ、Poisson論文Aはpoisson-cubic、可換復元の基礎定理はnc-cubic-n-foldの現行原稿を参照する。独立した境界・変形論・具体模型は本リポジトリへ、数学的内容と再現性を保って整理する。現行の独立成果は上記統合稿と既存五稿に揃えた。元の専用重複142ファイルは、移管先保存とA・B入力閉包の確認後に整理済み。
 
 GitHub Actionsは使用しない。force pushをしない。Libraryはpush失敗時の緊急避難に限る。
 

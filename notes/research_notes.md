@@ -26,7 +26,7 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## 最優先の制約
 
-主リポジトリの可換復元（特に相対残余対角のperfectness）を妨げない。必要なdg perfectness反例や中心正則性補題は `nc-cubic` 側に残し、この独立研究のために主論文A/Cを削除・書き換えない。
+nc-cubic-n-foldの可換復元（特に相対残余対角のperfectness）を妨げない。必要なdg perfectness反例や中心正則性補題は 各現行正本に残し、この独立研究のために関連主原稿を削除・書き換えない。
 
 ## Pfaffian接触分類の現行到達点
 
@@ -36,7 +36,7 @@ Schur分解と二行のBott/Čech–Koszul比較で全次数頂点核 `K^nor=C[H
 
 ## PDF整理のためにTeX化した有限正則性の有効な数学
 
-`notes/ambient_finite_smoothness_and_recovery.tex` に、全21混合方向の一様PBWの適用範囲、超越的な中心値での有限大域次元の補題、良い中心chartと滑らかな量子的境界からのtails大域次元3、具体的な `(h,α)=(1,π)` の混合例（非被約な長さ24の点加群スキーム）、偏極付き圏からの二次ambientと中心三次元の復元、対角混合族のnormalizer、Artin perfectnessから完備smoothnessへの誤った推論をまとめた。一般Poisson・PBWとdg反例の十分な証明は `nc-cubic` 論文Aと独立ノートを正本とする。原PDF研究ノートは長大な公表用論文としての価値が低いため追跡を解除した。本文の全主張を独立監査したという意味ではない。
+`notes/ambient_finite_smoothness_and_recovery.tex` に、全21混合方向の一様PBWの適用範囲、超越的な中心値での有限大域次元の補題、良い中心chartと滑らかな量子的境界からのtails大域次元3、具体的な `(h,α)=(1,π)` の混合例（非被約な長さ24の点加群スキーム）、偏極付き圏からの二次ambientと中心三次元の復元、対角混合族のnormalizer、Artin perfectnessから完備smoothnessへの誤った推論をまとめた。一般Poisson・PBWとdg反例の十分な証明は `poisson-cubic` 論文Aと独立ノートを正本とする。原PDF研究ノートは長大な公表用論文としての価値が低いため追跡を解除した。本文の全主張を独立監査したという意味ではない。
 
 追跡PDFは0件。旧VIの非可換A1局所模型・Brauer指数6・三因子特異圏だけでなく、初期の一般正則性定理とCayley幾何も現行論文へ回収し、原PDFを追跡解除した。判定は `PDF_SOURCES.md` に集約する。
 
