@@ -19,13 +19,17 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 > **全研究原PDFの現行TeXへの移管とGit追跡解除が完了し、追跡PDFは0件。** 今後は論文・証明・再生成可能な計算を正本として、正確性、先行研究、新規性、公表価値を高める。削除判定と全対応は [PDF_SOURCES.md](PDF_SOURCES.md)、恒久原則は [CODEX_PDF_RECOVERY.md](CODEX_PDF_RECOVERY.md)。
 
+## 三次三様体固有の研究との分担
+
+[非可換三次三様体の総合的な研究入口](https://github.com/uedakazushi/nc-cubic-threefold) は、全O-marked Abel圏の可換三次三様体点での形式Artin変形、17次元部分stackと実際のKuznetsov残余射を正本とする。本repoの相対復元・有限対角・Artin比較は独立公表単位として保持し、全次元の完成した基礎定理は [nc-cubic](https://github.com/uedakazushi/nc-cubic) に譲る。共通の証明の移管・重複削除は、具体的な仮定と証明の対応を確認してから行う。
+
 ## 可換復元（旧論文B）からの独立成果：公表用再構成（moduli移管完了後の優先課題）
 
 **移管そのものは完了した。** 現行の `papers/relative_reconstruction_models.tex`（244頁）と独立五稿を、数学的中心結果・論理のまとまり・公表価値に照らし、必要なら分割・統合して自足した日本語LuaLaTeX論文へ改稿する。固定の論文数や頁数に合わせず、公表価値のある定理・証明・反例を削らない。まず移管時に文脈調整されたArtin比較・smoothness反例・Hochschild障害の9環境と共有証明を、現行 `validation_reconstruction_manifest.json` と元ソースに照らして監査する。未確認の新規性を断定しない。
 
 実行の詳細と削除ゲートは `AGENTS.md`、主張の所在と未解決条件は `notes/relative_reconstruction_models.md`。各論文の完全証明、文献一次資料の適用条件、引用/TeX入力閉包、LuaLaTeX組版・必要計算、保存を確認してから旧統合稿の真の重複を整理する。現行bundleだけで再開できる正本を維持し、旧版アーカイブを作らない。
 
-**分業：** Poisson正規形・量子化の正本はpoisson-cubic、形式MF比較・一般点の代数的降下はnc-cubic、および両研究の先行研究・新規性の独立監査を行う。本repoは両研究の再帰入力を触らず、疑義は正確な仮定・反例候補・証明箇所を明記して伝える。
+**分業：** Poisson正規形の正本はpoisson-cubic、代数的量子化はcubic-quantization、形式MF比較・一般点の代数的降下はnc-cubic、および両研究の先行研究・新規性の独立監査を行う。本repoは両研究の再帰入力を触らず、疑義は正確な仮定・反例候補・証明箇所を明記して伝える。
 
 ## 重点監査から得た独立稿と次の着手
 
