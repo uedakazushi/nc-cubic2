@@ -1,5 +1,10 @@
 # nc-cubic2：非可換cubicの独立境界・モジュライ研究
 
+## 三次三様体固有の研究との分担
+
+[非可換三次三様体の総合的な研究入口](https://github.com/uedakazushi/nc-cubic-threefold) は、全O-marked Abel圏の可換三次三様体点での形式Artin変形、17次元Jacobian部分stackと実際のKuznetsov残余射を正本とする。本repoに残る相対復元・有限対角・Artin比較は独立した公表単位として保持する。全次元の復元・残余Poisson射の正本は [nc-cubic](https://github.com/uedakazushi/nc-cubic)、古典的Poisson正規形は [poisson-cubic](https://github.com/uedakazushi/poisson-cubic)、代数的量子化は [cubic-quantization](https://github.com/uedakazushi/cubic-quantization) とする。固有の証明・計算を重複移管せず、仮定と出典を照合する。
+
+
 > **Point scheme 研究の正本（2026-11-13）:** [uedakazushi/nc-cubic-point](https://github.com/uedakazushi/nc-cubic-point)。専用論文、証明節、研究ノート、計算器は移管済み。以下の旧記述に本repo内のpoint-schemeファイル名が現れる場合、移管先の同名パスを参照する。相対復元などの共有証明は必要な範囲で本repoにも保持する。
 
 17次元非可換cubic moduli研究の正本は [nc-cubic-classification](https://github.com/uedakazushi/nc-cubic-classification)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
