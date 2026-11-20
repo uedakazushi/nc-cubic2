@@ -5,7 +5,7 @@
 [非可換三次三様体の総合的な研究入口](https://github.com/uedakazushi/nc-cubic-threefold) は、全O-marked Abel圏の可換三次三様体点での形式Artin変形、17次元Jacobian部分stackと実際のKuznetsov残余射を正本とする。本repoに残る相対復元・有限対角・Artin比較は独立した公表単位として保持する。全次元の復元・残余Poisson射の正本は [nc-cubic](https://github.com/uedakazushi/nc-cubic)、古典的Poisson正規形は [poisson-cubic](https://github.com/uedakazushi/poisson-cubic)、代数的量子化は [cubic-quantization](https://github.com/uedakazushi/cubic-quantization) とする。固有の証明・計算を重複移管せず、仮定と出典を照合する。
 
 
-> **Point scheme 研究の正本（2026-11-13）:** [uedakazushi/nc-cubic-point](https://github.com/uedakazushi/nc-cubic-point)。専用論文、証明節、研究ノート、計算器は移管済み。以下の旧記述に本repo内のpoint-schemeファイル名が現れる場合、移管先の同名パスを参照する。相対復元などの共有証明は必要な範囲で本repoにも保持する。
+> **Point scheme研究の現行正本（2026-11-21）：** [uedakazushi/nc-cubic-threefold](https://github.com/uedakazushi/nc-cubic-threefold)。独立論文は `papers/mixed-cubic-point-schemes.tex` と `papers/diagonal-cubic-point-geometry.tex`、証明節は `papers/point/`、ノートは `notes/point_schemes.md`、計算は `computations/point/` に移管済み。以前のファイル名を使った検証記録は旧版の実績であり、現行の再現手順は移管先を参照する。相対復元などの共有証明は本repoにも保持する。
 
 17次元非可換cubic moduli研究の正本は [nc-cubic-classification](https://github.com/uedakazushi/nc-cubic-classification)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
 
@@ -38,9 +38,9 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 
 ## 論文Bから分離した点スキームの現行原稿
 
-[混合三次非可換超曲面の点スキームとPoisson零点](https://github.com/uedakazushi/nc-cubic-point/blob/main/papers/mixed_cubic_point_schemes.tex) は、中心三次元の閉公式・証明、点加群の台と非被約構造、平坦閉包、混合係数の衝突と判別式上の局所型をまとめた独立稿である。一般次元の可換復元定理は入力としない。研究再開は [専用ノート・方針](https://github.com/uedakazushi/nc-cubic-point/blob/main/notes/mixed_cubic_point_schemes.md) から。
+[混合三次非可換超曲面の点スキームとPoisson零点](https://github.com/uedakazushi/nc-cubic-threefold/blob/main/papers/mixed-cubic-point-schemes.tex) は、中心三次元の閉公式・証明、点加群の台と非被約構造、平坦閉包、混合係数の衝突と判別式上の局所型をまとめた独立稿である。一般次元の可換復元定理は入力としない。研究再開は [専用ノート・方針](https://github.com/uedakazushi/nc-cubic-threefold/blob/main/notes/point_schemes.md) から。
 
-全文12頁をLuaLaTeXで組版・全頁表示確認し、8TeXファイル、47ラベル、22参照、6引用、2文献項目に未解決・重複はない。4本の有限計算スクリプトを実行し、元の3証明書を正確に再生成した。数学的な全証明の独立監査ではない。検証範囲は [validation_mixed_cubic_point_schemes.json](validation_mixed_cubic_point_schemes.json)。再現は `latexmk papers/mixed_cubic_point_schemes.tex` と `python scripts/check_mixed_point_schemes.py --calculations`。
+全文12頁をLuaLaTeXで組版・全頁表示確認し、8TeXファイル、47ラベル、22参照、6引用、2文献項目に未解決・重複はない。4本の有限計算スクリプトを実行し、元の3証明書を正確に再生成した。数学的な全証明の独立監査ではない。検証範囲は [validation_mixed_cubic_point_schemes.json](validation_mixed_cubic_point_schemes.json)。**移管前の検証記録：** 当時12頁を組版し有限計算を実行。現行再現は移管先で `latexmk papers/mixed-cubic-point-schemes.tex` と `python3 scripts/check_point_schemes.py --calculations` を実行する。
 
 この移管単位の保存確認後、poisson-cubic側の17専用重複ファイルを除外した。Poisson正規形・量子化論文Aはpoisson-cubic、一般次元の可換復元論文Bはnc-cubicに統合済みであり、いずれもそのmainを正本とする。[移管全体の現在の状態](validation_reconstruction_transfer.json) と [独立成果の入力案内](papers/reconstruction_extensions/README.md) は、各独立稿の検証範囲と全体の移管状態を区別する。
 

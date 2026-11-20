@@ -1,6 +1,6 @@
 # 論文と再生成
 
-> **Point scheme 研究の正本（2026-11-13）:** [uedakazushi/nc-cubic-point](https://github.com/uedakazushi/nc-cubic-point)。専用論文、証明節、研究ノート、計算器は移管済み。以下の旧記述に本repo内のpoint-schemeファイル名が現れる場合、移管先の同名パスを参照する。相対復元などの共有証明は必要な範囲で本repoにも保持する。
+> **Point scheme研究の現行正本（2026-11-21）：** [uedakazushi/nc-cubic-threefold](https://github.com/uedakazushi/nc-cubic-threefold)。独立論文は `papers/mixed-cubic-point-schemes.tex` と `papers/diagonal-cubic-point-geometry.tex`、証明節は `papers/point/`、ノートは `notes/point_schemes.md`、計算は `computations/point/` に移管済み。以前のファイル名を使った検証記録は旧版の実績であり、現行の再現手順は移管先を参照する。相対復元などの共有証明は本repoにも保持する。
 
 17次元非可換cubic moduli研究の正本は [nc-cubic-classification](https://github.com/uedakazushi/nc-cubic-classification)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
 
@@ -62,4 +62,4 @@ Pfaffian–Brill–Noether研究の正本は [pfaffian-brill-noether](https://gi
 - `sections/pfaffian_contact_classification.tex`：全普遍形式接触類の一意切片、有限決定性の必要十分条件と残余moduli。
 - `sections/pfaffian_equivariant_algebraization.tex`：同変近似と中心重みでの代数化、実際の境界の単元なし十次右同値。
 - `https://github.com/uedakazushi/pfaffian-brill-noether/blob/main/computations/verify_pfaffian_vertex_and_tate.py`：全記号Schur恒等式と有限空間次元、Tate再帰の六次MC恒等式・四block・1/96。
-- `diagonal_cubic_point_geometry.tex`：長さ24因子・標準種数5曲線・全六分岐値での次数56判別・shift付き復元。`verify_diagonal_point_geometry.py` が多項式部分を検算。
+- [対角点因子の現行稿](https://github.com/uedakazushi/nc-cubic-threefold/blob/main/papers/diagonal-cubic-point-geometry.tex)：長さ24因子・標準種数5曲線・全六分岐値での次数56判別・shift付き復元。`verify_diagonal_point_geometry.py` が多項式部分を検算。

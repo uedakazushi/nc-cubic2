@@ -1,6 +1,6 @@
 # 研究ノート：境界研究の現在の知識と障害
 
-> **Point scheme 研究の正本（2026-11-13）:** [uedakazushi/nc-cubic-point](https://github.com/uedakazushi/nc-cubic-point)。専用論文、証明節、研究ノート、計算器は移管済み。以下の旧記述に本repo内のpoint-schemeファイル名が現れる場合、移管先の同名パスを参照する。相対復元などの共有証明は必要な範囲で本repoにも保持する。
+> **Point scheme研究の現行正本（2026-11-21）：** [uedakazushi/nc-cubic-threefold](https://github.com/uedakazushi/nc-cubic-threefold)。独立論文は `papers/mixed-cubic-point-schemes.tex` と `papers/diagonal-cubic-point-geometry.tex`、証明節は `papers/point/`、ノートは `notes/point_schemes.md`、計算は `computations/point/` に移管済み。以前のファイル名を使った検証記録は旧版の実績であり、現行の再現手順は移管先を参照する。相対復元などの共有証明は本repoにも保持する。
 
 17次元非可換cubic moduli研究の正本は [nc-cubic-classification](https://github.com/uedakazushi/nc-cubic-classification)。主論文40頁・9入力・6本の厳密検算を独立再現し、専用15ファイルを移管した。共有の相対混合中心/Picard証明、中心対称性持上げ証明、対称性コードと証明書は本repoに保持する。既約成分性・generic reducedness・量子化の代数化と降下、全面的な証明・新規性監査は未了。
 
@@ -66,7 +66,7 @@ Schur分解と二行のBott/Čech–Koszul比較で全次数頂点核 `K^nor=C[H
 
 ## 対角点因子の新しい一般化
 
-`papers/diagonal_cubic_point_geometry.tex` に、次数24の点因子・標準種数5曲線・全点スキームのshift付き分解を整理した。衝突判別式の既約性と次数56は六分岐値が相異なる全範囲で証明した。抽象点スキームの無標識復元やtails判別式との一致は主張しない。旧技術稿全34節も置換して原PDF追跡を解除した。
+[対角点因子の現行稿](https://github.com/uedakazushi/nc-cubic-threefold/blob/main/papers/diagonal-cubic-point-geometry.tex) に、次数24の点因子・標準種数5曲線・全点スキームのshift付き分解を整理した。衝突判別式の既約性と次数56は六分岐値が相異なる全範囲で証明した。抽象点スキームの無標識復元やtails判別式との一致は主張しない。旧技術稿全34節も置換して原PDF追跡を解除した。
 
 ## 混合形式比較の継続課題
 

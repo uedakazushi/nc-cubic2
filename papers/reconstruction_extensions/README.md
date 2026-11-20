@@ -1,12 +1,12 @@
 # 論文Bから独立した成果の現行原稿
 
-> **Point scheme 研究の正本（2026-11-13）:** [uedakazushi/nc-cubic-point](https://github.com/uedakazushi/nc-cubic-point)。専用論文、証明節、研究ノート、計算器は移管済み。以下の旧記述に本repo内のpoint-schemeファイル名が現れる場合、移管先の同名パスを参照する。相対復元などの共有証明は必要な範囲で本repoにも保持する。
+> **Point scheme研究の現行正本（2026-11-21）：** [uedakazushi/nc-cubic-threefold](https://github.com/uedakazushi/nc-cubic-threefold)。独立論文は `papers/mixed-cubic-point-schemes.tex` と `papers/diagonal-cubic-point-geometry.tex`、証明節は `papers/point/`、ノートは `notes/point_schemes.md`、計算は `computations/point/` に移管済み。以前のファイル名を使った検証記録は旧版の実績であり、現行の再現手順は移管先を参照する。相対復元などの共有証明は本repoにも保持する。
 
 2026-11-13。既存の五単位と、残る相対理論・有限模型を統合した現行稿がある。
 
 | 入口 | 内容 |
 | --- | --- |
-| `papers/mixed_cubic_point_schemes.tex` | 混合中心式、点加群、平坦閉包、判別式 |
+| [mixed-cubic-point-schemes.tex](https://github.com/uedakazushi/nc-cubic-threefold/blob/main/papers/mixed-cubic-point-schemes.tex) | 混合中心式、点加群、平坦閉包、判別式 |
 | `papers/cubic_jacobian_recovery.tex` | 有限可積分性、一意性、反例 |
 | `papers/cubic_first_order_deformations.tex` | 一次MF比較、Plücker障害、Todd-HKR |
 | `papers/cubic_artin_windows.tex` | 全一変数有限切断の線束残余/MF比較と反例 |
