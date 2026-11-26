@@ -1,5 +1,7 @@
 # nc-cubic2：非可換cubicの独立境界・モジュライ研究
 
+**共同研究：** 本リポジトリは大川新之介・植田一石の共同研究プロジェクトです。この表示は個々の論文の著者を確定するものではありません。
+
 ## 三次三様体固有の研究との分担
 
 [非可換三次三様体の総合的な研究入口](https://github.com/uedakazushi/nc-cubic-threefold) は、全O-marked Abel圏の可換三次三様体点での形式Artin変形、17次元Jacobian部分stackと実際のKuznetsov残余射を正本とする。本repoに残る相対復元・有限対角・Artin比較は独立した公表単位として保持する。全次元の復元・残余Poisson射の正本は [nc-cubic](https://github.com/uedakazushi/nc-cubic)、古典的Poisson正規形は [poisson-cubic](https://github.com/uedakazushi/poisson-cubic)、代数的量子化は [cubic-quantization](https://github.com/uedakazushi/cubic-quantization) とする。固有の証明・計算を重複移管せず、仮定と出典を照合する。
